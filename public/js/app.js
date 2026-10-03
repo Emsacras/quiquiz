@@ -14,6 +14,35 @@ import { startOnboarding } from "./onboarding.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
+const MASCOT = {
+  idle: "assets/mascot/cui-cui.png",
+  think: "assets/mascot/cui-cui-think.png",
+  love: "assets/mascot/love.png",
+  point: "assets/mascot/point-left.png",
+  investigator: "assets/mascot/investigator.png",
+  victory: "assets/mascot/victory.png",
+  cool: "assets/mascot/flexing-cool.png",
+  sleepy: "assets/mascot/sleepy.png",
+};
+
+function mascotImg(src, className = "results-mascot", width = "120") {
+  return h("img", {
+    class: className,
+    src,
+    alt: "",
+    width,
+    height: width,
+    decoding: "async",
+  });
+}
+
+function resultsMascot(percent, perfect) {
+  if (perfect) return MASCOT.love;
+  if (percent >= 80) return MASCOT.victory;
+  if (percent >= 50) return MASCOT.cool;
+  return MASCOT.sleepy;
+}
+
 function optionButtons(options, onPick) {
   return (options || []).map((option, index) => {
     const letter = OPTION_LETTERS[index] || "a";
@@ -1025,7 +1054,12 @@ function paintReveal(selected, correct) {
   const feedback = document.querySelector("[data-feedback]");
   feedback.className = correct ? "feedback is-correct" : "feedback is-wrong";
   feedback.replaceChildren(
-    h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
+    h(
+      "div",
+      { class: "feedback-head" },
+      mascotImg(correct ? MASCOT.victory : MASCOT.think, "feedback-mascot", "56"),
+      h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
+    ),
     h("p", {
       text: correct
         ? question.explication
@@ -1239,41 +1273,43 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
   const row = h("div", { class: "top-row" });
   const quizOn = screen !== "reference" && screen !== "fiche";
   const refOn = !quizOn;
+  const showReference = Boolean(state.category);
   row.append(
     h(
       "button",
       { class: "brand", type: "button", onClick: goHome, "aria-label": "QuiQuiz — accueil" },
-      h("img", {
-        class: "brand-mark",
-        src: "assets/mascot/cui-cui.png",
-        alt: "",
-        width: "36",
-        height: "36",
-        decoding: "async",
-      }),
+      mascotImg(MASCOT.idle, "brand-mark", "36"),
       h("span", { text: "QuiQuiz" }),
     ),
-    h(
-      "div",
-      { class: "app-tabs", role: "tablist", "aria-label": "Sections" },
-      h("button", {
-        class: quizOn ? "app-tab is-selected" : "app-tab",
-        type: "button",
-        role: "tab",
-        text: "Quiz",
-        "aria-selected": quizOn ? "true" : "false",
-        onClick: goHome,
-      }),
-      h("button", {
-        class: refOn ? "app-tab is-selected" : "app-tab",
-        type: "button",
-        role: "tab",
-        text: "Référence",
-        "aria-selected": refOn ? "true" : "false",
-        onClick: openReference,
-      }),
-    ),
   );
+  if (showReference) {
+    row.append(
+      h(
+        "div",
+        { class: "app-tabs", role: "tablist", "aria-label": "Sections" },
+        h("button", {
+          class: quizOn ? "app-tab is-selected" : "app-tab",
+          type: "button",
+          role: "tab",
+          text: "Quiz",
+          "aria-selected": quizOn ? "true" : "false",
+          onClick: () => {
+            if (!state.category || screen === "levels") return;
+            state.prepToken += 1;
+            setScreen("levels");
+          },
+        }),
+        h("button", {
+          class: refOn ? "app-tab is-selected" : "app-tab",
+          type: "button",
+          role: "tab",
+          text: "Référence",
+          "aria-selected": refOn ? "true" : "false",
+          onClick: openReference,
+        }),
+      ),
+    );
+  }
   if (typeof score === "number") {
     row.append(
       h("p", { class: "score-pill" }, "Score ", h("strong", { "data-score": "true", text: String(score) })),
@@ -3334,7 +3370,15 @@ function mountPreparing() {
     h("div", { class: "spinner" }),
     h("p", { class: "frame-status", text: lines[1] }),
   );
-  view.replaceChildren(h("p", { class: "lede", text: lines[0] }), frame);
+  view.replaceChildren(
+    h(
+      "div",
+      { class: "prep-hero" },
+      mascotImg(MASCOT.investigator, "prep-mascot", "96"),
+      h("p", { class: "lede", text: lines[0] }),
+    ),
+    frame,
+  );
 }
 
 async function loadPhoto(question, position) {
@@ -3473,8 +3517,8 @@ function mountResults() {
   });
 
   const percent = total ? Math.round((state.score / total) * 100) : 0;
-  const mascotPose =
-    percent >= 80 ? "assets/mascot/cui-cui.png" : "assets/mascot/cui-cui-think.png";
+  const perfect = total > 0 && state.score === total;
+  const mascotPose = resultsMascot(percent, perfect);
   const recordLine = outcome?.improved
     ? "Nouveau record pour ce mode."
     : outcome?.best
@@ -3520,14 +3564,7 @@ function mountResults() {
     h(
       "div",
       { class: "results-hero" },
-      h("img", {
-        class: "results-mascot",
-        src: mascotPose,
-        alt: "",
-        width: "120",
-        height: "120",
-        decoding: "async",
-      }),
+      mascotImg(mascotPose, "results-mascot", "120"),
       h(
         "div",
         { class: "results-score-wrap" },

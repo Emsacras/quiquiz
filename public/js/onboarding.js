@@ -2,16 +2,16 @@ const STORAGE_KEY = "quiquiz:onboarding:v1";
 
 const STEPS = [
   {
-    pose: "assets/mascot/cui-cui.png",
+    pose: "assets/mascot/love.png",
     text: "Salut ! Moi c’est Cui-Cui. Bienvenue sur QuiQuiz — on va reconnaître des espèces (et des pays) en s’amusant.",
   },
   {
-    pose: "assets/mascot/cui-cui-think.png",
-    text: "Choisis un thème, un niveau, puis une question. Les pastilles A B C D t’aident à répondre vite.",
+    pose: "assets/mascot/point-left.png",
+    text: "Choisis un thème, puis un niveau. Les pastilles A B C D t’aident à répondre vite.",
   },
   {
-    pose: "assets/mascot/cui-cui.png",
-    text: "Tu peux aussi ouvrir l’onglet Référence pour réviser. Prêt à jouer ?",
+    pose: "assets/mascot/investigator.png",
+    text: "Une fois dans un thème, l’onglet Référence sert à réviser. Prêt à jouer ?",
   },
 ];
 

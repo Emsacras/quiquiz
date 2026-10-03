@@ -413,10 +413,44 @@ body.theme-cuicui::after {
   margin-bottom: 8px;
 }
 
-.theme-cuicui .results-mascot {
+.theme-cuicui .results-mascot,
+.theme-cuicui .prep-mascot,
+.theme-cuicui .feedback-mascot {
   width: min(120px, 28vw);
   height: auto;
+  object-fit: contain;
   filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--ink) 35%, transparent));
+}
+
+.theme-cuicui .prep-mascot {
+  width: min(96px, 24vw);
+}
+
+.theme-cuicui .feedback-mascot {
+  width: 56px;
+  flex: none;
+}
+
+.theme-cuicui .prep-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.theme-cuicui .prep-hero .lede {
+  margin: 0;
+}
+
+.theme-cuicui .feedback-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.theme-cuicui .feedback-head h2 {
+  margin: 0;
 }
 
 .theme-cuicui .site-footer {
