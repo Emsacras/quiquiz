@@ -20,6 +20,11 @@ const config = {
         apiKey: process.env.STEAM_WEB_API_KEY || "",
         returnUrl: process.env.STEAM_RETURN_URL || "http://localhost:4789/auth/steam/return",
         realm: process.env.STEAM_REALM || "http://localhost:4789/"
+    },
+    google: {
+        clientId: process.env.GOOGLE_CLIENT_ID || "",
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+        callbackUrl: process.env.GOOGLE_CALLBACK_URL || "http://localhost:4789/auth/google/callback"
     }
 };
 
@@ -27,4 +32,8 @@ function isSteamAuthConfigured() {
     return Boolean(config.steam.apiKey && config.steam.returnUrl && config.steam.realm);
 }
 
-module.exports = { config, isSteamAuthConfigured };
+function isGoogleAuthConfigured() {
+    return Boolean(config.google.clientId && config.google.clientSecret && config.google.callbackUrl);
+}
+
+module.exports = { config, isSteamAuthConfigured, isGoogleAuthConfigured };

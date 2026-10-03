@@ -198,6 +198,20 @@ body.theme-cuicui::after {
   flex: none;
 }
 
+.theme-cuicui .profile-chip {
+  border-color: color-mix(in srgb, var(--accent) 35%, #fff);
+  background: color-mix(in srgb, var(--panel, #fff) 92%, var(--accent));
+}
+
+.theme-cuicui .profile-chip.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.theme-cuicui .profile-name-input {
+  border-color: color-mix(in srgb, var(--accent) 25%, #c9d2c4);
+}
+
 .theme-cuicui .back-link,
 .theme-cuicui .wiki-link {
   color: var(--accent);

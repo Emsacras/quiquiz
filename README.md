@@ -7,8 +7,8 @@ Site : [quiquiz.fr](https://quiquiz.fr)
 ## Stack
 
 - Frontend statique dans `public/`
-- API Node/Express dans `server/` (bassin photos, fichiers validés, admin Steam)
-- Données runtime (pools, blacklist, images validées) dans `data-runtime/` (gitignoré)
+- API Node/Express dans `server/` (bassin photos, fichiers validés, profil Steam/Google, admin Steam)
+- Données runtime (pools, blacklist, images validées, profils) dans `data-runtime/` (gitignoré)
 
 ## Développement local
 
@@ -20,7 +20,9 @@ npm start
 
 Ouvre http://localhost:4789/ et http://localhost:4789/admin/
 
-Pour l’admin Steam en local, mets des URLs `http://localhost:4789/...` dans `.env`.
+Pour Steam/Google en local, mets des URLs `http://localhost:4789/...` dans `.env` (voir `.env.example`).
+
+Profil joueur : bouton en haut à droite → Steam et/ou Google ; scores, badges, défi du jour et SRS sont synchronisés sur le serveur.
 
 ## Production (même VPS que CsShowcase)
 
@@ -32,4 +34,4 @@ Pour l’admin Steam en local, mets des URLs `http://localhost:4789/...` dans `.
 ## Admin
 
 Compte Steam autorisé via `ADMIN_STEAM_IDS` (défaut : `76561198269405845`).  
-Connexion : `/auth/steam` puis `/admin/`.
+Connexion : `/auth/steam?returnTo=admin` puis `/admin/`.

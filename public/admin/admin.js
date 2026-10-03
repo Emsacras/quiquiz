@@ -829,7 +829,7 @@ async function boot() {
       );
       const link = el("p", "hint");
       const a = document.createElement("a");
-      a.href = "/auth/steam";
+      a.href = "/auth/steam?returnTo=admin";
       a.textContent = "Connexion Steam";
       link.appendChild(a);
       gate.appendChild(link);

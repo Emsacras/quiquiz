@@ -53,6 +53,25 @@ STEAM_REALM=https://quiquiz.fr/
 STEAM_WEB_API_KEY=...   # même clé CsShowcase OK
 ```
 
-## 6. Données validées
+Admin : `/auth/steam?returnTo=admin` (lien déjà dans `/admin/`).
+
+## 6. Google OAuth
+
+Dans Google Cloud Console, crée un ID client OAuth « Application Web » avec :
+
+- Origines JavaScript autorisées : `https://quiquiz.fr`
+- URI de redirection : `https://quiquiz.fr/auth/google/callback`
+
+Puis dans `.env` :
+
+```
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+GOOGLE_CALLBACK_URL=https://quiquiz.fr/auth/google/callback
+```
+
+Profils joueurs + sync : `data-runtime/users/` (à sauvegarder comme le reste du runtime).
+
+## 7. Données validées
 
 Les images validées vivent dans `data-runtime/`. Persiste ce dossier (backup) ; ne le mets pas dans git.

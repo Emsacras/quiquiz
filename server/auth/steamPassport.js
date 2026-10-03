@@ -1,8 +1,16 @@
 const passport = require("passport");
 const SteamStrategy = require("passport-steam").Strategy;
 const { config, isSteamAuthConfigured } = require("../config");
+const { upsertFromProvider } = require("../services/userStore");
 
 let installed = false;
+
+function steamAvatar(profile) {
+    const photos = profile?.photos;
+    if (!Array.isArray(photos) || !photos.length) return "";
+    const full = photos.find((p) => /full/i.test(String(p?.value || ""))) || photos[photos.length - 1];
+    return full?.value ? String(full.value) : "";
+}
 
 function installSteamStrategy() {
     if (installed) return;
@@ -18,26 +26,36 @@ function installSteamStrategy() {
             {
                 returnURL: config.steam.returnUrl,
                 realm: config.steam.realm,
-                apiKey: config.steam.apiKey
+                apiKey: config.steam.apiKey,
+                passReqToCallback: true
             },
-            (identifier, profile, done) => {
+            (req, identifier, profile, done) => {
                 const steamId = profile && profile.id ? String(profile.id) : "";
                 if (!steamId) return done(null, false);
-                return done(null, {
-                    steamId,
-                    displayName: profile.displayName || null
-                });
+                const linkUserId = req.session?.linkUserId || null;
+                const result = upsertFromProvider(
+                    "steam",
+                    {
+                        id: steamId,
+                        displayName: profile.displayName || null,
+                        avatarUrl: steamAvatar(profile)
+                    },
+                    linkUserId
+                );
+                if (result.conflict) {
+                    req.session.authFlash = "conflict";
+                    return done(null, false);
+                }
+                if (!result.user) return done(null, false);
+                req.session.authFlash = result.linked ? "linked" : "ok";
+                return done(null, { id: result.user.id });
             }
         )
     );
     installed = true;
 }
 
-passport.serializeUser((user, done) => done(null, user));
-passport.deserializeUser((user, done) => done(null, user || false));
-
 module.exports = {
-    passport,
     installSteamStrategy,
     isSteamAuthConfigured
 };

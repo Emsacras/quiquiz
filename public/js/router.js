@@ -16,9 +16,11 @@ function decodeName(value) {
 
 export function parseHash(hash = location.hash) {
   const raw = String(hash || "").replace(/^#/, "");
-  const path = raw.startsWith("/") ? raw : `/${raw}`;
+  const pathWithQuery = raw.startsWith("/") ? raw : `/${raw}`;
+  const path = pathWithQuery.split("?")[0];
   const parts = path.split("/").filter(Boolean);
   if (!parts.length) return { name: "home" };
+  if (parts[0] === "profil" || parts[0] === "profile") return { name: "profil" };
   if (parts[0] === "quiz" && parts[1] && parts[2] === "levels") {
     return { name: "levels", categoryId: parts[1] };
   }
@@ -40,12 +42,15 @@ export function parseHash(hash = location.hash) {
 export function setHashRoute(route) {
   let next = "#/";
   if (!route || route.name === "home") next = "#/";
+  else if (route.name === "profil") next = "#profil";
   else if (route.name === "levels" || route.name === "quiz-entry") {
     next = route.name === "levels" ? `#/quiz/${route.categoryId}/levels` : `#/quiz/${route.categoryId}`;
   } else if (route.name === "reference") next = `#/ref/${route.categoryId}`;
   else if (route.name === "fiche") {
     next = `#/fiche/${route.categoryId}/${encodeName(route.scientificName)}`;
   } else if (route.name === "revise") next = `#/revise/${route.categoryId}`;
+  // Conserve ?auth=… tant qu’on reste sur le profil.
+  if (route?.name === "profil" && /\?auth=/.test(location.hash)) return;
   if (location.hash === next) return;
   history.replaceState(null, "", next);
 }

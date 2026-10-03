@@ -49,6 +49,22 @@ import {
   playableLeaves,
   regionSessionId,
 } from "./catalog-nav.js";
+import {
+  authFlashFromLocation,
+  bootstrapProfile,
+  clearAuthFlashFromLocation,
+  getCachedMe,
+  getProviders,
+  getSyncStatus,
+  installProgressSyncHooks,
+  loginGoogle,
+  loginSteam,
+  logout,
+  saveDisplayName,
+  scheduleProgressSync,
+  syncProgressNow,
+  unlinkProvider,
+} from "./profile.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
@@ -189,6 +205,10 @@ function badgesStrip() {
 }
 
 function syncRouteFromScreen() {
+  if (screen === "profil") {
+    setHashRoute({ name: "profil" });
+    return;
+  }
   if (!state.category) {
     setHashRoute({ name: "home" });
     return;
@@ -586,6 +606,27 @@ const LEVEL_COPY = {
   melange: "Toutes les entrées du pool · une seule fois chacune · arrêt possible.",
 };
 
+const PAYS_LEVEL_COPY = {
+  facile: "Jusqu’à 16 questions · pays les plus connus.",
+  moyen: "Jusqu’à 16 questions · pays moins familiers.",
+  difficile: "Jusqu’à 16 questions · pays rares ou formes proches.",
+  melange: "Tous les pays du pool · une seule fois chacun · arrêt possible.",
+};
+
+const CAPITALES_LEVEL_COPY = {
+  facile: "Jusqu’à 16 questions · capitales les plus connues.",
+  moyen: "Jusqu’à 16 questions · capitales moins familières.",
+  difficile: "Jusqu’à 16 questions · capitales rares ou proches.",
+  melange: "Toutes les capitales du pool · une seule fois chacune · arrêt possible.",
+};
+
+const DRAPEAUX_LEVEL_COPY = {
+  facile: "Jusqu’à 16 questions · drapeaux les plus connus.",
+  moyen: "Jusqu’à 16 questions · drapeaux moins familiers.",
+  difficile: "Jusqu’à 16 questions · drapeaux rares ou très proches.",
+  melange: "Tous les drapeaux du pool · une seule fois chacun · arrêt possible.",
+};
+
 function quizCopy(category = state.category) {
   const kind = quizKind(category);
   if (kind === "pays") {
@@ -594,9 +635,9 @@ function quizCopy(category = state.category) {
       unit: "pays",
       units: "pays",
       groupLegend: "Continents",
-      groupsHelp: "La difficulté ne change pas. Seuls les continents cochés entrent dans la partie.",
+      groupsHelp: "Le niveau filtre les pays. Seuls les continents cochés entrent dans la partie.",
       levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
-      levels: { ...LEVEL_COPY },
+      levels: { ...PAYS_LEVEL_COPY },
       modes: {
         qcm: { label: "Choix multiple", blurb: "Une carte, quatre pays." },
         texte: {
@@ -653,9 +694,9 @@ function quizCopy(category = state.category) {
       unit: "capitale",
       units: "capitales",
       groupLegend: "Continents",
-      groupsHelp: "Seuls les continents cochés entrent dans la partie.",
+      groupsHelp: "Le niveau filtre les capitales. Seuls les continents cochés entrent dans la partie.",
       levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
-      levels: { ...LEVEL_COPY },
+      levels: { ...CAPITALES_LEVEL_COPY },
       modes: {
         qcm: { label: "Choix multiple", blurb: "Une photo de ville, quatre capitales." },
         texte: {
@@ -712,9 +753,9 @@ function quizCopy(category = state.category) {
       unit: "pays",
       units: "pays",
       groupLegend: "Continents",
-      groupsHelp: "Seuls les continents cochés entrent dans la partie.",
+      groupsHelp: "Le niveau filtre les drapeaux. Seuls les continents cochés entrent dans la partie.",
       levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
-      levels: { ...LEVEL_COPY },
+      levels: { ...DRAPEAUX_LEVEL_COPY },
       modes: {
         qcm: { label: "Choix multiple", blurb: "Un drapeau, quatre pays." },
         texte: {
@@ -1532,6 +1573,7 @@ function backToMenu() {
     // Abandon = tentative consommée (score partiel / total du défi).
     saveDailyResult(state.category.id, state.score, scoreTotal());
     state.isDaily = false;
+    scheduleProgressSync();
   }
   state.prepToken += 1;
   state.questions = [];
@@ -1578,6 +1620,7 @@ function finishQuiz(options = {}) {
   }
   state.pendingBadges = unlocked.filter(Boolean);
   state.resultTotal = total;
+  scheduleProgressSync();
   setScreen("results");
 }
 
@@ -1655,6 +1698,7 @@ function startDailyChallenge() {
     setScreen("levels");
     return;
   }
+  scheduleProgressSync();
   state.isDaily = true;
   state.mode = "qcm";
   state.difficulty = "melange";
@@ -2109,12 +2153,34 @@ async function fillVernacularFrame(frame, commonName, stillHere) {
   if (img) img.alt = commonName;
 }
 
+function openProfile() {
+  state.prepToken += 1;
+  setScreen("profil");
+}
+
+function profileChip() {
+  const me = getCachedMe();
+  if (me?.avatarUrl) {
+    return h("img", {
+      class: "profile-chip-avatar",
+      src: me.avatarUrl,
+      alt: "",
+      width: "36",
+      height: "36",
+    });
+  }
+  return h("span", {
+    class: "profile-chip-letter",
+    text: (me?.displayName || "?").slice(0, 1).toUpperCase(),
+  });
+}
+
 function renderTop({ kicker, title, score, onBack, backLabel }) {
   top.replaceChildren();
   const row = h("div", { class: "top-row" });
-  const quizOn = screen !== "reference" && screen !== "fiche";
-  const refOn = !quizOn;
-  const showReference = Boolean(state.category);
+  const quizOn = screen !== "reference" && screen !== "fiche" && screen !== "profil";
+  const refOn = screen === "reference" || screen === "fiche";
+  const showReference = Boolean(state.category) && screen !== "profil";
   row.append(
     h(
       "button",
@@ -2151,17 +2217,208 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
       ),
     );
   }
+  const end = h("div", { class: "top-end" });
   if (typeof score === "number") {
-    row.append(
+    end.append(
       h("p", { class: "score-pill" }, "Score ", h("strong", { "data-score": "true", text: String(score) })),
     );
   }
+  end.append(
+    h(
+      "button",
+      {
+        class: screen === "profil" ? "profile-chip is-selected" : "profile-chip",
+        type: "button",
+        title: getCachedMe() ? "Mon profil" : "Connexion",
+        "aria-label": getCachedMe() ? "Mon profil" : "Connexion",
+        onClick: openProfile,
+      },
+      profileChip(),
+    ),
+  );
+  row.append(end);
   top.append(row);
   if (onBack) {
     top.append(h("button", { class: "back-link", type: "button", text: backLabel || "Retour au menu", onClick: onBack }));
   }
   if (kicker) top.append(h("p", { class: "kicker", text: kicker }));
   if (title) top.append(h("h1", { text: title }));
+}
+
+function authFlashMessage(code) {
+  if (code === "ok") return "Connexion réussie. Progression synchronisée.";
+  if (code === "linked") return "Compte lié. Tu peux utiliser Steam et Google.";
+  if (code === "conflict") return "Ce compte est déjà lié à un autre profil.";
+  if (code === "failed") return "Connexion impossible. Réessaie.";
+  return "";
+}
+
+function mountProfile() {
+  document.title = "Profil — QuiQuiz";
+  const me = getCachedMe();
+  const providers = getProviders();
+  const flash = authFlashMessage(authFlashFromLocation());
+  if (flash) clearAuthFlashFromLocation();
+
+  renderTop({
+    title: "Profil",
+    onBack: () => {
+      if (state.category) setScreen("levels");
+      else goHome();
+    },
+    backLabel: state.category ? "Retour aux niveaux" : "Retour à l’accueil",
+  });
+
+  const nodes = [];
+  if (flash) nodes.push(h("p", { class: "note", text: flash }));
+
+  if (!me) {
+    nodes.push(
+      h("p", {
+        class: "lede",
+        text: "Connecte-toi pour synchroniser scores, badges, défi du jour et révisions entre tes appareils.",
+      }),
+      h(
+        "div",
+        { class: "profile-actions" },
+        providers.steam
+          ? h("button", {
+              class: "btn",
+              type: "button",
+              text: "Continuer avec Steam",
+              onClick: loginSteam,
+            })
+          : null,
+        providers.google
+          ? h("button", {
+              class: "btn secondary",
+              type: "button",
+              text: "Continuer avec Google",
+              onClick: loginGoogle,
+            })
+          : null,
+      ),
+      !providers.steam && !providers.google
+        ? h("p", {
+            class: "meta",
+            text: "Auth non configurée sur ce serveur (Steam / Google).",
+          })
+        : null,
+    );
+    show(view, ...nodes.filter(Boolean));
+    return;
+  }
+
+  const nameInput = h("input", {
+    class: "profile-name-input",
+    type: "text",
+    maxlength: "40",
+    value: me.displayName || "",
+    "aria-label": "Pseudo",
+  });
+
+  nodes.push(
+    h(
+      "div",
+      { class: "profile-card" },
+      me.avatarUrl
+        ? h("img", { class: "profile-avatar", src: me.avatarUrl, alt: "", width: "88", height: "88" })
+        : h("div", { class: "profile-avatar is-placeholder", text: (me.displayName || "?").slice(0, 1).toUpperCase() }),
+      h(
+        "div",
+        { class: "profile-card-copy" },
+        h("label", { class: "field-label", text: "Pseudo" }),
+        nameInput,
+        h("button", {
+          class: "btn secondary",
+          type: "button",
+          text: "Enregistrer le pseudo",
+          onClick: async () => {
+            const result = await saveDisplayName(nameInput.value);
+            state.notice = result.ok ? "Pseudo enregistré." : "Pseudo invalide (2–40 caractères).";
+            mountProfile();
+          },
+        }),
+      ),
+    ),
+    h("p", { class: "meta", text: getSyncStatus() || "Sync prête." }),
+    h(
+      "section",
+      { class: "profile-links" },
+      h("h2", { text: "Comptes liés" }),
+      h(
+        "div",
+        { class: "profile-link-row" },
+        h("span", { text: me.steamLinked ? "Steam · lié" : "Steam · non lié" }),
+        me.steamLinked
+          ? h("button", {
+              class: "text-btn",
+              type: "button",
+              text: "Délier",
+              disabled: !me.googleLinked,
+              title: me.googleLinked ? "Délier Steam" : "Impossible : dernier compte",
+              onClick: async () => {
+                const result = await unlinkProvider("steam");
+                state.notice = result.ok ? "Steam délié." : "Impossible de délier.";
+                mountProfile();
+              },
+            })
+          : providers.steam
+            ? h("button", { class: "text-btn", type: "button", text: "Lier", onClick: loginSteam })
+            : null,
+      ),
+      h(
+        "div",
+        { class: "profile-link-row" },
+        h("span", { text: me.googleLinked ? "Google · lié" : "Google · non lié" }),
+        me.googleLinked
+          ? h("button", {
+              class: "text-btn",
+              type: "button",
+              text: "Délier",
+              disabled: !me.steamLinked,
+              title: me.steamLinked ? "Délier Google" : "Impossible : dernier compte",
+              onClick: async () => {
+                const result = await unlinkProvider("google");
+                state.notice = result.ok ? "Google délié." : "Impossible de délier.";
+                mountProfile();
+              },
+            })
+          : providers.google
+            ? h("button", { class: "text-btn", type: "button", text: "Lier", onClick: loginGoogle })
+            : null,
+      ),
+    ),
+    h(
+      "div",
+      { class: "profile-actions" },
+      h("button", {
+        class: "btn secondary",
+        type: "button",
+        text: "Synchroniser maintenant",
+        onClick: async () => {
+          await syncProgressNow();
+          mountProfile();
+        },
+      }),
+      h("button", {
+        class: "btn",
+        type: "button",
+        text: "Se déconnecter",
+        onClick: async () => {
+          await logout();
+          mountProfile();
+        },
+      }),
+    ),
+  );
+
+  if (state.notice) {
+    nodes.unshift(h("p", { class: "note", text: state.notice }));
+    state.notice = "";
+  }
+
+  show(view, ...nodes.filter(Boolean));
 }
 
 async function openQuizFile(file) {
@@ -3267,7 +3524,8 @@ function paintPairReveal(answer, correct) {
     }
   }
 
-  const mediaPlural = quizCopy().media === "carte" ? "cartes" : "photos";
+  const mediaPlural =
+    quizCopy().media === "carte" ? "cartes" : quizCopy().media === "drapeau" ? "drapeaux" : "photos";
   const detail = question.same
     ? `Les deux ${mediaPlural} montrent ${question.left.nom_commun}.`
     : `À gauche : ${question.left.nom_commun}. À droite : ${question.right.nom_commun}.`;
@@ -5103,6 +5361,7 @@ function mountRevise() {
           text: "Encore",
           onClick: () => {
             markCardAgain(category.id, card.scientificName);
+            scheduleProgressSync();
             state.reviseIndex += 1;
             state.reviseRevealed = false;
             mountRevise();
@@ -5114,6 +5373,7 @@ function mountRevise() {
           text: "OK",
           onClick: () => {
             markCardOk(category.id, card.scientificName);
+            scheduleProgressSync();
             state.reviseIndex += 1;
             state.reviseRevealed = false;
             mountRevise();
@@ -5169,6 +5429,7 @@ function mount() {
   else if (screen === "reference") mountReference();
   else if (screen === "fiche") mountFiche();
   else if (screen === "revise") mountRevise();
+  else if (screen === "profil") mountProfile();
   else if (screen === "error") mountError();
   else {
     renderTop({ title: "QuiQuiz" });
@@ -5179,6 +5440,10 @@ function mount() {
 async function applyRoute(route) {
   if (!route || route.name === "home") {
     if (screen !== "home") goHome();
+    return;
+  }
+  if (route.name === "profil") {
+    setScreen("profil");
     return;
   }
   const category = await ensureCategoryById(route.categoryId);
@@ -5350,6 +5615,8 @@ async function loadCategory(file) {
 async function boot() {
   updateFooter();
   hydrateReportedTitles();
+  installProgressSyncHooks();
+  await bootstrapProfile();
   await loadAdminSession();
   try {
     const catalogResponse = await fetch("data/catalog.json");
