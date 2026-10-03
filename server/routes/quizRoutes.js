@@ -72,6 +72,37 @@ function createQuizRoutes() {
         res.sendFile(abs);
     });
 
+    /** Proxy drapeau same-origin (évite blocages flagcdn côté navigateur). */
+    router.get("/flag/:iso2", async (req, res) => {
+        const iso = String(req.params.iso2 || "")
+            .trim()
+            .toLowerCase();
+        if (!/^[a-z]{2}$/.test(iso)) {
+            res.status(400).json({ error: "iso2" });
+            return;
+        }
+        try {
+            const upstream = await fetch(`https://flagcdn.com/w1280/${iso}.png`, {
+                headers: { "User-Agent": "QuiQuiz/1.0 (https://quiquiz.fr)", Accept: "image/png,*/*" }
+            });
+            if (!upstream.ok) {
+                res.status(502).json({ error: "flag" });
+                return;
+            }
+            const buffer = Buffer.from(await upstream.arrayBuffer());
+            if (!buffer.length) {
+                res.status(502).json({ error: "flag" });
+                return;
+            }
+            res.set("Cache-Control", "public, max-age=604800, immutable");
+            res.set("Content-Type", upstream.headers.get("content-type") || "image/png");
+            res.send(buffer);
+        } catch (error) {
+            console.error("[flag-proxy]", iso, error && error.message ? error.message : error);
+            res.status(502).json({ error: "flag" });
+        }
+    });
+
     return router;
 }
 

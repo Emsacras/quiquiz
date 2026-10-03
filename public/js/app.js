@@ -469,8 +469,29 @@ function modesForKind(kind) {
   return MODES_BY_KIND[kind] || CORE_MODES;
 }
 
+function flagUrlsForQuestion(question) {
+  const urls = [];
+  const name = String(question?.nom_scientifique || "").trim();
+  const iso = String(question?.iso2 || "")
+    .trim()
+    .toLowerCase();
+  // 1) Wikimedia Special:FilePath — même CDN que l’utilisateur arrive déjà à joindre.
+  if (name) {
+    const filePath = (file) =>
+      `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, "_"))}`;
+    urls.push(filePath(`Flag of ${name}.svg`));
+    urls.push(filePath(`Flag of the ${name}.svg`));
+  }
+  // 2) Proxy same-origin (si le VPS joint flagcdn).
+  if (iso) urls.push(`/api/flag/${iso}`);
+  // 3) flagcdn direct.
+  const cdn = flagCdnUrl(iso, 1280);
+  if (cdn) urls.push(cdn);
+  return [...new Set(urls.filter(Boolean))];
+}
+
 function flagUrlForQuestion(question) {
-  return flagCdnUrl(question?.iso2 || "", 1280);
+  return flagUrlsForQuestion(question)[0] || "";
 }
 
 function imageOptionsForQuestion(question, category = state.category) {
@@ -527,7 +548,7 @@ function preloadQuizQuestions(questions, priorityQuestion = null) {
   for (const question of list) {
     const opts = imageOptionsForQuestion(question);
     if (opts.kind === "flag") {
-      const url = flagUrlForQuestion(question);
+      const url = flagUrlsForQuestion(question)[0];
       if (url) {
         const warm = new Image();
         warm.decoding = "async";
@@ -704,9 +725,9 @@ function quizCopy(category = state.category) {
       mediaSignaled: "Drapeau signalé",
       noMedia: "Pas de drapeau pour ce pays.",
       unavailable: "Image indisponible",
-      creditCommons: "Drapeau : flagcdn.com",
+      creditCommons: "Drapeau : Wikimedia Commons",
       creditWiki: "Drapeau : Wikipédia",
-      creditList: "Drapeaux : flagcdn.com",
+      creditList: "Drapeaux : Wikimedia Commons",
       otherMedia: "Autres drapeaux",
       nameField: "Nom du pays",
       sameItemPrompt: "Ces deux drapeaux montrent-ils le même pays ?",
@@ -4401,9 +4422,14 @@ function fillFlagFrame(frame, question, stillHere, onReady) {
   const spinner = frame.querySelector("[data-spinner]");
   const status = frame.querySelector("[data-status]");
   if (!img) return;
-  const url = flagUrlForQuestion(question);
+  const urls = flagUrlsForQuestion(question);
   const name = imageSearchName(question);
+  const iso = String(question?.iso2 || "")
+    .trim()
+    .toLowerCase();
   img.dataset.species = name;
+  let cursor = 0;
+
   const fail = () => {
     if (!stillHere()) return;
     img.dataset.final = "1";
@@ -4415,39 +4441,68 @@ function fillFlagFrame(frame, question, stillHere, onReady) {
     if (status) status.textContent = "Image indisponible.";
     onReady?.({ failed: true, source: "none" });
   };
-  if (!url) {
-    fail();
-    return;
-  }
-  img.hidden = true;
-  img.alt = quizCopy().alt;
-  img.dataset.photoTitle = `Flag:${String(question.iso2 || "").trim().toLowerCase()}`;
-  img.dataset.sourceUrl = url;
-  const onError = () => {
-    img.removeEventListener("error", onError);
-    img.removeEventListener("load", onLoad);
-    fail();
+
+  const sourceForUrl = (url) => {
+    if (String(url).includes("commons.wikimedia.org") || String(url).includes("upload.wikimedia.org")) {
+      return "commons";
+    }
+    if (String(url).includes("flagcdn.com")) return "flagcdn";
+    if (String(url).startsWith("/api/flag/")) return "flagcdn";
+    return "flagcdn";
   };
-  const onLoad = () => {
-    img.removeEventListener("error", onError);
-    img.removeEventListener("load", onLoad);
+
+  const tryNext = () => {
     if (!stillHere()) return;
-    if (img.naturalWidth === 0) {
+    if (cursor >= urls.length) {
       fail();
       return;
     }
-    img.hidden = false;
-    if (spinner) spinner.hidden = true;
-    frame.classList.remove("is-loading");
-    if (status) status.textContent = "";
-    const credit = document.querySelector("[data-credit]");
-    if (credit) credit.textContent = quizCopy().creditCommons || "Drapeau : flagcdn.com";
-    attachPlayerMediaTools(frame, img, name, () => fail());
-    onReady?.({ failed: false, source: "flagcdn" });
+    const url = urls[cursor];
+    cursor += 1;
+    img.hidden = true;
+    img.alt = quizCopy().alt;
+    img.dataset.photoTitle = iso ? `Flag:${iso}` : `Flag:${name}`;
+    img.dataset.sourceUrl = url;
+    img.dataset.final = "";
+
+    const onError = () => {
+      img.removeEventListener("error", onError);
+      img.removeEventListener("load", onLoad);
+      tryNext();
+    };
+    const onLoad = () => {
+      img.removeEventListener("error", onError);
+      img.removeEventListener("load", onLoad);
+      if (!stillHere()) return;
+      if (img.naturalWidth === 0) {
+        tryNext();
+        return;
+      }
+      img.hidden = false;
+      if (spinner) spinner.hidden = true;
+      frame.classList.remove("is-loading");
+      if (status) status.textContent = "";
+      const source = sourceForUrl(url);
+      const credit = document.querySelector("[data-credit]");
+      if (credit) {
+        credit.textContent =
+          source === "commons"
+            ? "Drapeau : Wikimedia Commons"
+            : quizCopy().creditCommons || "Drapeau : flagcdn.com";
+      }
+      attachPlayerMediaTools(frame, img, name, () => tryNext());
+      onReady?.({ failed: false, source });
+    };
+    img.addEventListener("error", onError);
+    img.addEventListener("load", onLoad);
+    img.src = url;
   };
-  img.addEventListener("error", onError);
-  img.addEventListener("load", onLoad);
-  img.src = url;
+
+  if (!urls.length) {
+    fail();
+    return;
+  }
+  tryNext();
 }
 
 async function loadPhoto(question, position) {
@@ -4471,15 +4526,15 @@ async function loadPhoto(question, position) {
       credit.textContent =
         source === "wikipedia"
           ? copy.creditWiki
-          : source === "flagcdn"
-            ? copy.creditCommons
+          : source === "commons"
+            ? "Drapeau : Wikimedia Commons"
             : copy.creditCommons;
     }
   };
 
-  // QCM / texte drapeaux : flagcdn direct, jamais le pipeline espèces.
+  // QCM / texte drapeaux : URLs drapeau dédiées, jamais le pipeline espèces.
   const opts = imageOptionsForQuestion(question);
-  if (opts.kind === "flag" && flagUrlForQuestion(question)) {
+  if (opts.kind === "flag" && flagUrlsForQuestion(question).length) {
     fillFlagFrame(frame, question, stillHere, onReady);
     return;
   }

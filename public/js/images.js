@@ -859,21 +859,34 @@ export function flagCdnUrl(iso2, width = 1280) {
 
 async function fetchFlagImages(countryName, options = {}) {
   const iso2 = normalizeIso2(options.iso2);
-  if (!iso2) return { urls: [], items: [], source: "none" };
-  const url = flagCdnUrl(iso2, 1280);
-  const title = `Flag:${iso2}`;
+  const name = String(countryName || "").trim();
+  const urls = [];
+  if (name) {
+    const filePath = (file) =>
+      `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, "_"))}`;
+    urls.push(filePath(`Flag of ${name}.svg`));
+    urls.push(filePath(`Flag of the ${name}.svg`));
+  }
+  if (iso2) {
+    urls.push(`/api/flag/${iso2}`);
+    const cdn = flagCdnUrl(iso2, 1280);
+    if (cdn) urls.push(cdn);
+  }
+  if (!urls.length) return { urls: [], items: [], source: "none" };
+  const url = urls[0];
+  const title = iso2 ? `Flag:${iso2}` : `Flag:${name}`;
   const item = {
     title,
     url,
     validated: false,
     sourceUrl: url,
-    artist: "flagcdn.com",
+    artist: "Wikimedia Commons",
     license: "Public domain / country flag",
-    licenseUrl: "https://flagcdn.com/",
+    licenseUrl: "https://commons.wikimedia.org/",
     commonsPage: "",
   };
   rememberItems([item]);
-  return applyRejections({ urls: [url], items: [item], source: "flagcdn" });
+  return applyRejections({ urls: [url], items: [item], source: "commons" });
 }
 
 const CAPITAL_TITLE_REJECT =
