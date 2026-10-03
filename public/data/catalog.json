@@ -1,0 +1,60 @@
+{
+  "themes": [
+    {
+      "id": "animaux",
+      "nom": "Animaux",
+      "description": "Oiseaux, reptiles et poissons.",
+      "branches": [
+        {
+          "id": "oiseaux",
+          "nom": "Oiseaux",
+          "description": "Par pays. La France reste le grand quiz.",
+          "lieux": [
+            {
+              "id": "france",
+              "nom": "France",
+              "fichier": "data/oiseaux-francais.json",
+              "description": "154 espèces, dans les cinq groupes."
+            },
+            {
+              "id": "royaume-uni",
+              "nom": "Royaume-Uni",
+              "fichier": "data/oiseaux-royaume-uni.json",
+              "description": "166 espèces, dans les cinq groupes."
+            }
+          ]
+        },
+        {
+          "id": "reptiles",
+          "nom": "Reptiles",
+          "fichier": "data/reptiles-france.json",
+          "description": "40 reptiles de France, des lézards aux tortues marines."
+        },
+        {
+          "id": "poissons",
+          "nom": "Poissons",
+          "fichier": "data/poissons-france.json",
+          "description": "154 poissons de rivière, de lac et de mer."
+        }
+      ]
+    },
+    {
+      "id": "plantes",
+      "nom": "Plantes",
+      "fichier": "data/plantes-france.json",
+      "description": "165 plantes de France, du jardin à la montagne."
+    },
+    {
+      "id": "champignons",
+      "nom": "Champignons",
+      "fichier": "data/champignons-france.json",
+      "description": "167 champignons de France, de la forêt à la pinède."
+    },
+    {
+      "id": "geographie",
+      "nom": "Géographie",
+      "fichier": "data/pays-monde.json",
+      "description": "197 pays du monde à reconnaître à leur contour."
+    }
+  ]
+}

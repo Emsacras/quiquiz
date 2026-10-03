@@ -1,0 +1,682 @@
+{
+  "id": "reptiles-france",
+  "categorie": "Reptiles de France",
+  "description": "Les reptiles de France métropolitaine, des lézards des murs aux tortues marines.",
+  "groupes": [
+    {
+      "id": "murs",
+      "label": "Murs et rochers",
+      "questions": [
+        {
+          "id": "r1",
+          "difficulte": "facile",
+          "nom_commun": "Lézard des murailles",
+          "nom_scientifique": "Podarcis muralis",
+          "groupe": "murs",
+          "options": [
+            "Lézard des murailles",
+            "Tarente de Maurétanie",
+            "Hémidactyle verruqueux",
+            "Orvet fragile"
+          ],
+          "indice": "Fin, brun, plaqué au mur",
+          "description": "Lézard fin et brun, taches sombres, souvent une ligne claire sur les flancs.",
+          "explication": "Lézard des murailles : Lézard fin et brun, taches sombres, souvent une ligne claire sur les flancs. C'est le reptile le plus facile à voir, sur les murs et les rochers."
+        },
+        {
+          "id": "r2",
+          "difficulte": "facile",
+          "nom_commun": "Tarente de Maurétanie",
+          "nom_scientifique": "Tarentola mauritanica",
+          "groupe": "murs",
+          "options": [
+            "Tarente de Maurétanie",
+            "Lézard des murailles",
+            "Hémidactyle verruqueux",
+            "Orvet fragile"
+          ],
+          "indice": "Doigts élargis, peau granuleuse",
+          "description": "Gecko trapu, peau couverte de tubercules, doigts élargis et pupille verticale.",
+          "explication": "Tarente de Maurétanie : Gecko trapu, peau couverte de tubercules, doigts élargis et pupille verticale. Elle chasse la nuit sur les murs, souvent près des lampes."
+        },
+        {
+          "id": "r3",
+          "difficulte": "moyen",
+          "nom_commun": "Hémidactyle verruqueux",
+          "nom_scientifique": "Hemidactylus turcicus",
+          "groupe": "murs",
+          "options": [
+            "Hémidactyle verruqueux",
+            "Orvet fragile",
+            "Lézard tyrrhénien",
+            "Lézard des murailles"
+          ],
+          "indice": "Petit gecko rose, peau translucide",
+          "description": "Petit gecko rosâtre, peau presque translucide à tubercules, et doigts élargis à la base.",
+          "explication": "Hémidactyle verruqueux : Petit gecko rosâtre, peau presque translucide à tubercules, et doigts élargis à la base. Il est plus discret que la tarente, et souvent dans les maisons."
+        },
+        {
+          "id": "r4",
+          "difficulte": "moyen",
+          "nom_commun": "Orvet fragile",
+          "nom_scientifique": "Anguis fragilis",
+          "groupe": "murs",
+          "options": [
+            "Orvet fragile",
+            "Hémidactyle verruqueux",
+            "Lézard tyrrhénien",
+            "Lézard des murailles"
+          ],
+          "indice": "Sans pattes, paupières mobiles",
+          "description": "Corps lisse de serpent, mais c'est un lézard : il a des paupières et peut perdre sa queue.",
+          "explication": "Orvet fragile : Corps lisse de serpent, mais c'est un lézard : il a des paupières et peut perdre sa queue. Le dos est brun, souvent avec une ligne sombre. Le ventre est sombre."
+        },
+        {
+          "id": "r5",
+          "difficulte": "moyen",
+          "nom_commun": "Lézard tyrrhénien",
+          "nom_scientifique": "Podarcis tiliguerta",
+          "groupe": "murs",
+          "options": [
+            "Lézard tyrrhénien",
+            "Hémidactyle verruqueux",
+            "Orvet fragile",
+            "Lézard des murailles"
+          ],
+          "indice": "Lézard des rochers de Corse et de Sardaigne",
+          "description": "Fin, très variable, souvent vert et réticulé de noir, avec le ventre parfois rouge ou orange.",
+          "explication": "Lézard tyrrhénien : Fin, très variable, souvent vert et réticulé de noir, avec le ventre parfois rouge ou orange. Il remplace le lézard des murailles en Corse."
+        },
+        {
+          "id": "r6",
+          "difficulte": "difficile",
+          "nom_commun": "Phyllodactyle d'Europe",
+          "nom_scientifique": "Euleptes europaea",
+          "groupe": "murs",
+          "options": [
+            "Phyllodactyle d'Europe",
+            "Algyroïde de Fitzinger",
+            "Lézard des murailles",
+            "Tarente de Maurétanie"
+          ],
+          "indice": "Minuscule gecko des îles",
+          "description": "Tout petit gecko, doigts élargis seulement à l'extrémité, et peau finement granuleuse.",
+          "explication": "Phyllodactyle d'Europe : Tout petit gecko, doigts élargis seulement à l'extrémité, et peau finement granuleuse. Il vit dans les fissures des rochers, en Corse et sur les îles."
+        },
+        {
+          "id": "r7",
+          "difficulte": "difficile",
+          "nom_commun": "Algyroïde de Fitzinger",
+          "nom_scientifique": "Algyroides fitzingeri",
+          "groupe": "murs",
+          "options": [
+            "Algyroïde de Fitzinger",
+            "Phyllodactyle d'Europe",
+            "Lézard des murailles",
+            "Tarente de Maurétanie"
+          ],
+          "indice": "Écailles du dos grandes et carénées",
+          "description": "Petit lézard sombre de Corse et de Sardaigne, gorge souvent bleutée et dos à grandes écailles carénées.",
+          "explication": "Algyroïde de Fitzinger : Petit lézard sombre de Corse et de Sardaigne, gorge souvent bleutée et dos à grandes écailles carénées. Il reste à l'ombre des rochers et des murets."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "sec",
+      "label": "Sec et broussailles",
+      "questions": [
+        {
+          "id": "r8",
+          "difficulte": "facile",
+          "nom_commun": "Lézard à deux raies",
+          "nom_scientifique": "Lacerta bilineata",
+          "groupe": "sec",
+          "options": [
+            "Lézard à deux raies",
+            "Lézard des souches",
+            "Couleuvre verte et jaune",
+            "Couleuvre d'Esculape"
+          ],
+          "indice": "Grand lézard vert, gorge souvent bleue",
+          "description": "Grand lézard vert. Le mâle a souvent la gorge bleue. Les jeunes montrent deux lignes claires le long du dos.",
+          "explication": "Lézard à deux raies : Grand lézard vert. Le mâle a souvent la gorge bleue. Les jeunes montrent deux lignes claires le long du dos. Il fuit dans les ronces et les talus ensoleillés."
+        },
+        {
+          "id": "r9",
+          "difficulte": "facile",
+          "nom_commun": "Lézard des souches",
+          "nom_scientifique": "Lacerta agilis",
+          "groupe": "sec",
+          "options": [
+            "Lézard des souches",
+            "Lézard à deux raies",
+            "Couleuvre verte et jaune",
+            "Couleuvre d'Esculape"
+          ],
+          "indice": "Trapu, bande dorsale brune",
+          "description": "Lézard trapu, bande dorsale brune bordée de clair, et flancs verts tachetés de noir chez le mâle.",
+          "explication": "Lézard des souches : Lézard trapu, bande dorsale brune bordée de clair, et flancs verts tachetés de noir chez le mâle. Il vit dans les landes, les talus et les lisières, pas seulement sur les souches."
+        },
+        {
+          "id": "r10",
+          "difficulte": "moyen",
+          "nom_commun": "Couleuvre verte et jaune",
+          "nom_scientifique": "Hierophis viridiflavus",
+          "groupe": "sec",
+          "options": [
+            "Couleuvre verte et jaune",
+            "Couleuvre d'Esculape",
+            "Couleuvre de Montpellier",
+            "Tortue d'Hermann"
+          ],
+          "indice": "Longue, sombre, mouchetée de jaune",
+          "description": "Longue et fine, sombre, fortement mouchetée de jaune, ventre jaunâtre.",
+          "explication": "Couleuvre verte et jaune : Longue et fine, sombre, fortement mouchetée de jaune, ventre jaunâtre. Elle est très vive et fuit dans les broussailles."
+        },
+        {
+          "id": "r11",
+          "difficulte": "moyen",
+          "nom_commun": "Couleuvre d'Esculape",
+          "nom_scientifique": "Zamenis longissimus",
+          "groupe": "sec",
+          "options": [
+            "Couleuvre d'Esculape",
+            "Couleuvre verte et jaune",
+            "Couleuvre de Montpellier",
+            "Tortue d'Hermann"
+          ],
+          "indice": "Longue, brune, écailles lisses",
+          "description": "Grande couleuvre élancée, brun olive uniforme, écailles lisses et ventre jaune.",
+          "explication": "Couleuvre d'Esculape : Grande couleuvre élancée, brun olive uniforme, écailles lisses et ventre jaune. Les jeunes ont un collier clair, un peu comme une couleuvre à collier."
+        },
+        {
+          "id": "r12",
+          "difficulte": "moyen",
+          "nom_commun": "Couleuvre de Montpellier",
+          "nom_scientifique": "Malpolon monspessulanus",
+          "groupe": "sec",
+          "options": [
+            "Couleuvre de Montpellier",
+            "Couleuvre verte et jaune",
+            "Couleuvre d'Esculape",
+            "Tortue d'Hermann"
+          ],
+          "indice": "Grande, sourcil en visière",
+          "description": "Très grande couleuvre, tête étroite à sourcil marqué. Le mâle est olive uni, la femelle plus bariolée.",
+          "explication": "Couleuvre de Montpellier : Très grande couleuvre, tête étroite à sourcil marqué. Le mâle est olive uni, la femelle plus bariolée. Elle chasse les lézards, souvent la tête dressée."
+        },
+        {
+          "id": "r13",
+          "difficulte": "moyen",
+          "nom_commun": "Tortue d'Hermann",
+          "nom_scientifique": "Testudo hermanni",
+          "groupe": "sec",
+          "options": [
+            "Tortue d'Hermann",
+            "Couleuvre verte et jaune",
+            "Couleuvre d'Esculape",
+            "Couleuvre de Montpellier"
+          ],
+          "indice": "Carapace bombée, éperon au bout de la queue",
+          "description": "Tortue terrestre, dossière jaune et noire, et un étui corné au bout de la queue.",
+          "explication": "Tortue d'Hermann : Tortue terrestre, dossière jaune et noire, et un étui corné au bout de la queue. En France, elle ne vit à l'état sauvage que dans le Var et en Corse."
+        },
+        {
+          "id": "r14",
+          "difficulte": "difficile",
+          "nom_commun": "Lézard ocellé",
+          "nom_scientifique": "Timon lepidus",
+          "groupe": "sec",
+          "options": [
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards",
+            "Acanthodactyle commun"
+          ],
+          "indice": "Très grand, ocelles bleus sur les flancs",
+          "description": "Le plus grand lézard de France, vert, avec des ocelles bleus sur les flancs.",
+          "explication": "Lézard ocellé : Le plus grand lézard de France, vert, avec des ocelles bleus sur les flancs. Il vit dans les garrigues, les murets et les éboulis du Midi."
+        },
+        {
+          "id": "r15",
+          "difficulte": "difficile",
+          "nom_commun": "Psammodrome algire",
+          "nom_scientifique": "Psammodromus algirus",
+          "groupe": "sec",
+          "options": [
+            "Psammodrome algire",
+            "Lézard ocellé",
+            "Psammodrome d'Edwards",
+            "Acanthodactyle commun"
+          ],
+          "indice": "Longue queue, bandes claires",
+          "description": "Lézard élancé à très longue queue, dos brun à deux bandes claires, et écailles du dos carénées.",
+          "explication": "Psammodrome algire : Lézard élancé à très longue queue, dos brun à deux bandes claires, et écailles du dos carénées. Il grimpe dans les buissons de la garrigue."
+        },
+        {
+          "id": "r16",
+          "difficulte": "difficile",
+          "nom_commun": "Psammodrome d'Edwards",
+          "nom_scientifique": "Psammodromus edwarsianus",
+          "groupe": "sec",
+          "options": [
+            "Psammodrome d'Edwards",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Acanthodactyle commun"
+          ],
+          "indice": "Minuscule, très rapide",
+          "description": "Tout petit lézard des dunes et des garrigues, dos rayé et queue très longue.",
+          "explication": "Psammodrome d'Edwards : Tout petit lézard des dunes et des garrigues, dos rayé et queue très longue. Il file entre les touffes, presque sans s'arrêter."
+        },
+        {
+          "id": "r17",
+          "difficulte": "difficile",
+          "nom_commun": "Acanthodactyle commun",
+          "nom_scientifique": "Acanthodactylus erythrurus",
+          "groupe": "sec",
+          "options": [
+            "Acanthodactyle commun",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Doigts frangés, bandes claires",
+          "description": "Lézard des sols sableux, doigts frangés d'écailles et dos à bandes longitudinales claires.",
+          "explication": "Acanthodactyle commun : Lézard des sols sableux, doigts frangés d'écailles et dos à bandes longitudinales claires. En France, il est limité au Roussillon."
+        },
+        {
+          "id": "r18",
+          "difficulte": "difficile",
+          "nom_commun": "Seps strié",
+          "nom_scientifique": "Chalcides striatus",
+          "groupe": "sec",
+          "options": [
+            "Seps strié",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Corps de serpent, pattes minuscules",
+          "description": "Corps très allongé, pattes minuscules à trois doigts, et dos à fines lignes longitudinales.",
+          "explication": "Seps strié : Corps très allongé, pattes minuscules à trois doigts, et dos à fines lignes longitudinales. On le prend souvent pour une couleuvre. C'est un lézard."
+        },
+        {
+          "id": "r19",
+          "difficulte": "difficile",
+          "nom_commun": "Couleuvre à échelons",
+          "nom_scientifique": "Zamenis scalaris",
+          "groupe": "sec",
+          "options": [
+            "Couleuvre à échelons",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Dessin d'échelle sur le dos",
+          "description": "Couleuvre trapue, deux bandes sombres longitudinales reliées par des barres, comme une échelle.",
+          "explication": "Couleuvre à échelons : Couleuvre trapue, deux bandes sombres longitudinales reliées par des barres, comme une échelle. Le dessin s'efface un peu chez les grands adultes."
+        },
+        {
+          "id": "r20",
+          "difficulte": "difficile",
+          "nom_commun": "Coronelle lisse",
+          "nom_scientifique": "Coronella austriaca",
+          "groupe": "sec",
+          "options": [
+            "Coronelle lisse",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Petite, bandeau sombre sur l'œil",
+          "description": "Petite couleuvre, dos brun ou gris à taches sombres appariées, et bandeau noir de l'œil au cou.",
+          "explication": "Coronelle lisse : Petite couleuvre, dos brun ou gris à taches sombres appariées, et bandeau noir de l'œil au cou. Elle est ovovivipare et fréquente les landes et les murets."
+        },
+        {
+          "id": "r21",
+          "difficulte": "difficile",
+          "nom_commun": "Coronelle girondine",
+          "nom_scientifique": "Coronella girondica",
+          "groupe": "sec",
+          "options": [
+            "Coronelle girondine",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Ventre en damier",
+          "description": "Proche de la coronelle lisse, ventre clair à damier noir, et bandeau sombre qui traverse l'œil.",
+          "explication": "Coronelle girondine : Proche de la coronelle lisse, ventre clair à damier noir, et bandeau sombre qui traverse l'œil. Elle est plus méridionale et plus nocturne."
+        },
+        {
+          "id": "r22",
+          "difficulte": "difficile",
+          "nom_commun": "Vipère aspic",
+          "nom_scientifique": "Vipera aspis",
+          "groupe": "sec",
+          "options": [
+            "Vipère aspic",
+            "Lézard ocellé",
+            "Psammodrome algire",
+            "Psammodrome d'Edwards"
+          ],
+          "indice": "Museau retroussé, pupille verticale",
+          "description": "Corps trapu, pupille verticale, tête triangulaire et museau nettement retroussé. Le dos porte souvent un zigzag.",
+          "explication": "Vipère aspic : Corps trapu, pupille verticale, tête triangulaire et museau nettement retroussé. Le dos porte souvent un zigzag. Elle est venimeuse. Le museau relevé la distingue de la péliade."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "eau",
+      "label": "Eau",
+      "questions": [
+        {
+          "id": "r23",
+          "difficulte": "facile",
+          "nom_commun": "Couleuvre helvétique",
+          "nom_scientifique": "Natrix helvetica",
+          "groupe": "eau",
+          "options": [
+            "Couleuvre helvétique",
+            "Couleuvre vipérine",
+            "Cistude d'Europe",
+            "Émyde lépreuse"
+          ],
+          "indice": "Collier clair derrière la tête",
+          "description": "Gris olive, barres sombres sur les flancs et collier clair, souvent bordé de noir, derrière la tête.",
+          "explication": "Couleuvre helvétique : Gris olive, barres sombres sur les flancs et collier clair, souvent bordé de noir, derrière la tête. Elle nage très bien et n'est pas venimeuse."
+        },
+        {
+          "id": "r24",
+          "difficulte": "moyen",
+          "nom_commun": "Couleuvre vipérine",
+          "nom_scientifique": "Natrix maura",
+          "groupe": "eau",
+          "options": [
+            "Couleuvre vipérine",
+            "Cistude d'Europe",
+            "Couleuvre helvétique",
+            "Émyde lépreuse"
+          ],
+          "indice": "Zigzag dorsal, pupille ronde",
+          "description": "Petite couleuvre des berges, dos à zigzag sombre, pupille ronde et écailles nettement carénées.",
+          "explication": "Couleuvre vipérine : Petite couleuvre des berges, dos à zigzag sombre, pupille ronde et écailles nettement carénées. Elle imite une vipère, mais sa tête est moins triangulaire et sa pupille est ronde."
+        },
+        {
+          "id": "r25",
+          "difficulte": "moyen",
+          "nom_commun": "Cistude d'Europe",
+          "nom_scientifique": "Emys orbicularis",
+          "groupe": "eau",
+          "options": [
+            "Cistude d'Europe",
+            "Couleuvre vipérine",
+            "Couleuvre helvétique",
+            "Émyde lépreuse"
+          ],
+          "indice": "Petite tortue noire à points jaunes",
+          "description": "Carapace et peau sombres ponctuées de jaune, dossière peu bombée.",
+          "explication": "Cistude d'Europe : Carapace et peau sombres ponctuées de jaune, dossière peu bombée. Elle se chauffe sur les troncs, puis plonge au moindre bruit."
+        },
+        {
+          "id": "r26",
+          "difficulte": "difficile",
+          "nom_commun": "Émyde lépreuse",
+          "nom_scientifique": "Mauremys leprosa",
+          "groupe": "eau",
+          "options": [
+            "Émyde lépreuse",
+            "Trachémyde écrite",
+            "Couleuvre helvétique",
+            "Couleuvre vipérine"
+          ],
+          "indice": "Cou rayé de jaune, carapace lisse",
+          "description": "Tortue d'eau, cou à lignes jaunes nettes et carapace plutôt plate, brun olive.",
+          "explication": "Émyde lépreuse : Tortue d'eau, cou à lignes jaunes nettes et carapace plutôt plate, brun olive. En France, elle est naturelle dans les Pyrénées-Orientales."
+        },
+        {
+          "id": "r27",
+          "difficulte": "difficile",
+          "nom_commun": "Trachémyde écrite",
+          "nom_scientifique": "Trachemys scripta",
+          "groupe": "eau",
+          "options": [
+            "Trachémyde écrite",
+            "Émyde lépreuse",
+            "Couleuvre helvétique",
+            "Couleuvre vipérine"
+          ],
+          "indice": "Tempe rouge ou jaune, carapace verte striée",
+          "description": "Tortue d'eau introduite, tempe marquée de rouge ou de jaune et dossière verte à dessins.",
+          "explication": "Trachémyde écrite : Tortue d'eau introduite, tempe marquée de rouge ou de jaune et dossière verte à dessins. C'est la tortue de Floride, souvent relâchée, qui concurrence la cistude."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "montagne",
+      "label": "Montagne",
+      "questions": [
+        {
+          "id": "r28",
+          "difficulte": "facile",
+          "nom_commun": "Lézard vivipare",
+          "nom_scientifique": "Zootoca vivipara",
+          "groupe": "montagne",
+          "options": [
+            "Lézard vivipare",
+            "Vipère péliade",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran"
+          ],
+          "indice": "Petit, trapu, écailles du dos carénées",
+          "description": "Petit lézard brun, corps trapu, dos souvent à bande sombre et écailles carénées.",
+          "explication": "Lézard vivipare : Petit lézard brun, corps trapu, dos souvent à bande sombre et écailles carénées. Il met au monde des petits déjà formés, d'où son nom."
+        },
+        {
+          "id": "r29",
+          "difficulte": "moyen",
+          "nom_commun": "Vipère péliade",
+          "nom_scientifique": "Vipera berus",
+          "groupe": "montagne",
+          "options": [
+            "Vipère péliade",
+            "Lézard vivipare",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran"
+          ],
+          "indice": "Museau plat, zigzag, pupille verticale",
+          "description": "Trapue, pupille verticale, museau droit non retroussé et zigzag dorsal très net.",
+          "explication": "Vipère péliade : Trapue, pupille verticale, museau droit non retroussé et zigzag dorsal très net. Elle monte plus au nord et plus en altitude que l'aspic."
+        },
+        {
+          "id": "r30",
+          "difficulte": "difficile",
+          "nom_commun": "Lézard de Bonnal",
+          "nom_scientifique": "Iberolacerta bonnali",
+          "groupe": "montagne",
+          "options": [
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran",
+            "Lézard d'Aurelio",
+            "Lézard de Bedriaga"
+          ],
+          "indice": "Lézard gris des éboulis pyrénéens",
+          "description": "Petit lézard des hautes altitudes, gris ou brun, réticulé, à ventre souvent bleuté.",
+          "explication": "Lézard de Bonnal : Petit lézard des hautes altitudes, gris ou brun, réticulé, à ventre souvent bleuté. Il ne vit que dans les éboulis des Pyrénées centrales."
+        },
+        {
+          "id": "r31",
+          "difficulte": "difficile",
+          "nom_commun": "Lézard du Val d'Aran",
+          "nom_scientifique": "Iberolacerta aranica",
+          "groupe": "montagne",
+          "options": [
+            "Lézard du Val d'Aran",
+            "Lézard de Bonnal",
+            "Lézard d'Aurelio",
+            "Lézard de Bedriaga"
+          ],
+          "indice": "Tout petit, seulement dans un coin des Pyrénées",
+          "description": "Minuscule lézard gris-brun des éboulis, à aire minuscule autour du val d'Aran.",
+          "explication": "Lézard du Val d'Aran : Minuscule lézard gris-brun des éboulis, à aire minuscule autour du val d'Aran. Le ventre est souvent blanc, sans les ocelles bleus marqués."
+        },
+        {
+          "id": "r32",
+          "difficulte": "difficile",
+          "nom_commun": "Lézard d'Aurelio",
+          "nom_scientifique": "Iberolacerta aurelioi",
+          "groupe": "montagne",
+          "options": [
+            "Lézard d'Aurelio",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran",
+            "Lézard de Bedriaga"
+          ],
+          "indice": "Lézard des éboulis de l'est des Pyrénées",
+          "description": "Petit lézard gris, parfois à points bleus sur les flancs, inféodé aux éboulis d'altitude.",
+          "explication": "Lézard d'Aurelio : Petit lézard gris, parfois à points bleus sur les flancs, inféodé aux éboulis d'altitude. Son aire française est extrêmement réduite."
+        },
+        {
+          "id": "r33",
+          "difficulte": "difficile",
+          "nom_commun": "Lézard de Bedriaga",
+          "nom_scientifique": "Archaeolacerta bedriagae",
+          "groupe": "montagne",
+          "options": [
+            "Lézard de Bedriaga",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran",
+            "Lézard d'Aurelio"
+          ],
+          "indice": "Lézard des rochers de Corse, souvent réticulé",
+          "description": "Lézard aplati, souvent vert ou brun fortement réticulé de noir, adapté aux rochers.",
+          "explication": "Lézard de Bedriaga : Lézard aplati, souvent vert ou brun fortement réticulé de noir, adapté aux rochers. Il est endémique de Corse et de Sardaigne."
+        },
+        {
+          "id": "r34",
+          "difficulte": "difficile",
+          "nom_commun": "Vipère d'Orsini",
+          "nom_scientifique": "Vipera ursinii",
+          "groupe": "montagne",
+          "options": [
+            "Vipère d'Orsini",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran",
+            "Lézard d'Aurelio"
+          ],
+          "indice": "Petite vipère au museau plat",
+          "description": "Petite, pupille verticale, museau non retroussé et zigzag dorsal fin, souvent coupé.",
+          "explication": "Vipère d'Orsini : Petite, pupille verticale, museau non retroussé et zigzag dorsal fin, souvent coupé. En France, elle ne vit que sur quelques montagnes de Provence."
+        },
+        {
+          "id": "r35",
+          "difficulte": "difficile",
+          "nom_commun": "Vipère de Seoane",
+          "nom_scientifique": "Vipera seoanei",
+          "groupe": "montagne",
+          "options": [
+            "Vipère de Seoane",
+            "Lézard de Bonnal",
+            "Lézard du Val d'Aran",
+            "Lézard d'Aurelio"
+          ],
+          "indice": "Vipère du Pays basque, museau peu relevé",
+          "description": "Proche de la péliade, museau légèrement relevé mais moins que l'aspic, dos très variable.",
+          "explication": "Vipère de Seoane : Proche de la péliade, museau légèrement relevé mais moins que l'aspic, dos très variable. Elle n'existe en France que dans les Pyrénées-Atlantiques."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "mer",
+      "label": "Mer",
+      "questions": [
+        {
+          "id": "r36",
+          "difficulte": "facile",
+          "nom_commun": "Tortue luth",
+          "nom_scientifique": "Dermochelys coriacea",
+          "groupe": "mer",
+          "options": [
+            "Tortue luth",
+            "Tortue caouanne",
+            "Tortue verte",
+            "Tortue de Kemp"
+          ],
+          "indice": "Énorme, carapace en cuir à carènes",
+          "description": "La plus grande tortue, sans écailles, carapace sombre à sept carènes longitudinales.",
+          "explication": "Tortue luth : La plus grande tortue, sans écailles, carapace sombre à sept carènes longitudinales. Elle se nourrit de méduses et s'approche des côtes atlantiques."
+        },
+        {
+          "id": "r37",
+          "difficulte": "facile",
+          "nom_commun": "Tortue caouanne",
+          "nom_scientifique": "Caretta caretta",
+          "groupe": "mer",
+          "options": [
+            "Tortue caouanne",
+            "Tortue luth",
+            "Tortue verte",
+            "Tortue de Kemp"
+          ],
+          "indice": "Grosse tête, carapace rougeâtre",
+          "description": "Tortue marine à grosse tête, dossière rouge-brun et nageoires en forme de rame.",
+          "explication": "Tortue caouanne : Tortue marine à grosse tête, dossière rouge-brun et nageoires en forme de rame. C'est la tortue marine la plus régulière en Méditerranée française."
+        },
+        {
+          "id": "r38",
+          "difficulte": "moyen",
+          "nom_commun": "Tortue verte",
+          "nom_scientifique": "Chelonia mydas",
+          "groupe": "mer",
+          "options": [
+            "Tortue verte",
+            "Tortue luth",
+            "Tortue caouanne",
+            "Tortue de Kemp"
+          ],
+          "indice": "Carapace lisse, une paire d'écailles préfrontales",
+          "description": "Dossière ovale brun-olive, et une seule paire d'écailles entre les yeux, contrairement à la caouanne.",
+          "explication": "Tortue verte : Dossière ovale brun-olive, et une seule paire d'écailles entre les yeux, contrairement à la caouanne. Elle est surtout herbivore à l'âge adulte, et rare sur les côtes françaises."
+        },
+        {
+          "id": "r39",
+          "difficulte": "difficile",
+          "nom_commun": "Tortue de Kemp",
+          "nom_scientifique": "Lepidochelys kempii",
+          "groupe": "mer",
+          "options": [
+            "Tortue de Kemp",
+            "Tortue imbriquée",
+            "Tortue luth",
+            "Tortue caouanne"
+          ],
+          "indice": "Petite, carapace presque ronde",
+          "description": "Petite tortue marine, dossière large et grise, à cinq paires d'écailles costales ou plus.",
+          "explication": "Tortue de Kemp : Petite tortue marine, dossière large et grise, à cinq paires d'écailles costales ou plus. Elle est exceptionnelle en France, surtout après les tempêtes atlantiques."
+        },
+        {
+          "id": "r40",
+          "difficulte": "difficile",
+          "nom_commun": "Tortue imbriquée",
+          "nom_scientifique": "Eretmochelys imbricata",
+          "groupe": "mer",
+          "options": [
+            "Tortue imbriquée",
+            "Tortue de Kemp",
+            "Tortue luth",
+            "Tortue caouanne"
+          ],
+          "indice": "Bec crochu, écailles qui se chevauchent",
+          "description": "Bec en crochet et écailles de la dossière qui se recouvrent comme des tuiles.",
+          "explication": "Tortue imbriquée : Bec en crochet et écailles de la dossière qui se recouvrent comme des tuiles. Elle est très rare en Méditerranée, mais elle fait partie de la faune marine française occasionnelle."
+        }
+      ],
+      "defaut": true
+    }
+  ]
+}

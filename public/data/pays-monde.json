@@ -1,0 +1,3190 @@
+{
+  "id": "pays-monde",
+  "categorie": "Contours des pays",
+  "description": "Reconnaître un pays à partir de son contour. Coche un ou plusieurs continents, puis choisis le niveau.",
+  "groupes": [
+    {
+      "id": "europe",
+      "label": "Europe",
+      "questions": [
+        {
+          "id": "w1",
+          "difficulte": "facile",
+          "nom_commun": "France",
+          "nom_scientifique": "France",
+          "groupe": "europe",
+          "options": [
+            "Allemagne",
+            "Islande",
+            "France",
+            "Suède"
+          ],
+          "indice": "Hexagone large, côte atlantique et méditerranéenne",
+          "description": "Forme hexagonale compacte, large façade atlantique et côte méditerranéenne dentelée.",
+          "explication": "France : Forme hexagonale compacte, large façade atlantique et côte méditerranéenne dentelée. Un des contours les plus reconnaissables d'Europe occidentale."
+        },
+        {
+          "id": "w2",
+          "difficulte": "facile",
+          "nom_commun": "Italie",
+          "nom_scientifique": "Italy",
+          "groupe": "europe",
+          "options": [
+            "Royaume-Uni",
+            "Italie",
+            "Espagne",
+            "Pologne"
+          ],
+          "indice": "Botte allongée en mer",
+          "description": "Péninsule en forme de botte, longue côte adriatique et tyrrhénienne.",
+          "explication": "Italie : Péninsule en forme de botte, longue côte adriatique et tyrrhénienne. La « botte » est un classique des cartes muettes."
+        },
+        {
+          "id": "w3",
+          "difficulte": "facile",
+          "nom_commun": "Espagne",
+          "nom_scientifique": "Spain",
+          "groupe": "europe",
+          "options": [
+            "Portugal",
+            "Espagne",
+            "Norvège",
+            "Allemagne"
+          ],
+          "indice": "Grand rectangle péninsulaire",
+          "description": "Grande péninsule ibérique carrée au nord, côte atlantique et méditerranéenne.",
+          "explication": "Espagne : Grande péninsule ibérique carrée au nord, côte atlantique et méditerranéenne. Occupe l'essentiel de la péninsule ibérique."
+        },
+        {
+          "id": "w4",
+          "difficulte": "facile",
+          "nom_commun": "Royaume-Uni",
+          "nom_scientifique": "United Kingdom",
+          "groupe": "europe",
+          "options": [
+            "Suède",
+            "Royaume-Uni",
+            "Allemagne",
+            "Grèce"
+          ],
+          "indice": "Archipel au nord-ouest",
+          "description": "Grandes îles irrégulières au large de l'Europe, Écosse au nord resserrée.",
+          "explication": "Royaume-Uni : Grandes îles irrégulières au large de l'Europe, Écosse au nord resserrée. L'île de Grande-Bretagne domine la silhouette."
+        },
+        {
+          "id": "w5",
+          "difficulte": "facile",
+          "nom_commun": "Allemagne",
+          "nom_scientifique": "Germany",
+          "groupe": "europe",
+          "options": [
+            "Italie",
+            "Grèce",
+            "Portugal",
+            "Allemagne"
+          ],
+          "indice": "Bloc central très large",
+          "description": "Forme compacte au centre de l'Europe, frontières relativement droites.",
+          "explication": "Allemagne : Forme compacte au centre de l'Europe, frontières relativement droites. Plus grand pays d'Europe occidentale par la population."
+        },
+        {
+          "id": "w6",
+          "difficulte": "facile",
+          "nom_commun": "Pologne",
+          "nom_scientifique": "Poland",
+          "groupe": "europe",
+          "options": [
+            "France",
+            "Allemagne",
+            "Suède",
+            "Pologne"
+          ],
+          "indice": "Grand rectangle à l'est",
+          "description": "Bloc est large et régulier, côte baltique au nord en ligne.",
+          "explication": "Pologne : Bloc est large et régulier, côte baltique au nord en ligne. Frontière orientale très longue en cartes historiques."
+        },
+        {
+          "id": "w7",
+          "difficulte": "facile",
+          "nom_commun": "Grèce",
+          "nom_scientifique": "Greece",
+          "groupe": "europe",
+          "options": [
+            "Pologne",
+            "Grèce",
+            "Finlande",
+            "Italie"
+          ],
+          "indice": "Péninsule et innombrables îles",
+          "description": "Continent étroit au sud des Balkans, mer Égée très découpée.",
+          "explication": "Grèce : Continent étroit au sud des Balkans, mer Égée très découpée. Les îles rendent le contour très reconnaissable."
+        },
+        {
+          "id": "w8",
+          "difficulte": "facile",
+          "nom_commun": "Suède",
+          "nom_scientifique": "Sweden",
+          "groupe": "europe",
+          "options": [
+            "Portugal",
+            "France",
+            "Suède",
+            "Norvège"
+          ],
+          "indice": "Longue bande nordique",
+          "description": "Pays très allongé du nord au sud, côte baltique orientale.",
+          "explication": "Suède : Pays très allongé du nord au sud, côte baltique orientale. La Scanie arrondit le sud du pays."
+        },
+        {
+          "id": "w9",
+          "difficulte": "facile",
+          "nom_commun": "Norvège",
+          "nom_scientifique": "Norway",
+          "groupe": "europe",
+          "options": [
+            "Suède",
+            "Norvège",
+            "Espagne",
+            "Islande"
+          ],
+          "indice": "Bande côtière très dentelée",
+          "description": "Bande étroite le long de l'Atlantique nord, fjords en dents de scie.",
+          "explication": "Norvège : Bande étroite le long de l'Atlantique nord, fjords en dents de scie. L'un des contours les plus découpés d'Europe."
+        },
+        {
+          "id": "w10",
+          "difficulte": "facile",
+          "nom_commun": "Finlande",
+          "nom_scientifique": "Finland",
+          "groupe": "europe",
+          "options": [
+            "Finlande",
+            "Italie",
+            "Islande",
+            "France"
+          ],
+          "indice": "Bloc nord-est arrondi",
+          "description": "Forme arrondie au nord-est, longue frontière avec la Russie.",
+          "explication": "Finlande : Forme arrondie au nord-est, longue frontière avec la Russie. Le pays des mille lacs creuse la carte intérieure."
+        },
+        {
+          "id": "w11",
+          "difficulte": "facile",
+          "nom_commun": "Portugal",
+          "nom_scientifique": "Portugal",
+          "groupe": "europe",
+          "options": [
+            "Grèce",
+            "Portugal",
+            "Islande",
+            "Italie"
+          ],
+          "indice": "Bande étroite à l'ouest",
+          "description": "Bande étroite le long de l'Atlantique, seule sur la côte ibérique ouest.",
+          "explication": "Portugal : Bande étroite le long de l'Atlantique, seule sur la côte ibérique ouest. Frontière longue et droite avec l'Espagne à l'est."
+        },
+        {
+          "id": "w12",
+          "difficulte": "facile",
+          "nom_commun": "Irlande",
+          "nom_scientifique": "Ireland",
+          "groupe": "europe",
+          "options": [
+            "Grèce",
+            "Pologne",
+            "Irlande",
+            "Espagne"
+          ],
+          "indice": "Grande île ovale",
+          "description": "Grande île ovale à l'ouest du Royaume-Uni, côtes arrondies.",
+          "explication": "Irlande : Grande île ovale à l'ouest du Royaume-Uni, côtes arrondies. L'île entière forme un seul bloc compact."
+        },
+        {
+          "id": "w13",
+          "difficulte": "facile",
+          "nom_commun": "Islande",
+          "nom_scientifique": "Iceland",
+          "groupe": "europe",
+          "options": [
+            "Islande",
+            "Portugal",
+            "Suède",
+            "Royaume-Uni"
+          ],
+          "indice": "Île volcanique arrondie",
+          "description": "Grande île circulaire au milieu de l'Atlantique nord.",
+          "explication": "Islande : Grande île circulaire au milieu de l'Atlantique nord. Peu de découpages, contour lisse et massif."
+        },
+        {
+          "id": "w14",
+          "difficulte": "moyen",
+          "nom_commun": "Pays-Bas",
+          "nom_scientifique": "Netherlands",
+          "groupe": "europe",
+          "options": [
+            "République tchèque",
+            "Slovaquie",
+            "Pays-Bas",
+            "Lettonie"
+          ],
+          "indice": "Petit pays côtier plat",
+          "description": "Petit rectangle au bord de la mer du Nord, delta du Rhin.",
+          "explication": "Pays-Bas : Petit rectangle au bord de la mer du Nord, delta du Rhin. Très plat sur la carte, côte ouest ouverte."
+        },
+        {
+          "id": "w15",
+          "difficulte": "moyen",
+          "nom_commun": "Belgique",
+          "nom_scientifique": "Belgium",
+          "groupe": "europe",
+          "options": [
+            "République tchèque",
+            "Bosnie-Herzégovine",
+            "Danemark",
+            "Belgique"
+          ],
+          "indice": "Petit pays entre France et Allemagne",
+          "description": "Forme compacte en forme de goutte, côte nord très courte.",
+          "explication": "Belgique : Forme compacte en forme de goutte, côte nord très courte. Frontières courtes avec plusieurs voisins."
+        },
+        {
+          "id": "w16",
+          "difficulte": "moyen",
+          "nom_commun": "Danemark",
+          "nom_scientifique": "Denmark",
+          "groupe": "europe",
+          "options": [
+            "Croatie",
+            "Roumanie",
+            "Danemark",
+            "Autriche"
+          ],
+          "indice": "Péninsule et îles",
+          "description": "Bloc continental au nord de l'Allemagne plus îles (Jutlande).",
+          "explication": "Danemark : Bloc continental au nord de l'Allemagne plus îles (Jutlande). Le Jutland s'étire vers le nord en péninsule."
+        },
+        {
+          "id": "w17",
+          "difficulte": "moyen",
+          "nom_commun": "Autriche",
+          "nom_scientifique": "Austria",
+          "groupe": "europe",
+          "options": [
+            "Lettonie",
+            "Autriche",
+            "Slovénie",
+            "Serbie"
+          ],
+          "indice": "Pays alpin sans littoral",
+          "description": "Bloc central compact, forme de goutte orientée est-ouest.",
+          "explication": "Autriche : Bloc central compact, forme de goutte orientée est-ouest. Enclavé, entouré de pays alpins et d'Europe centrale."
+        },
+        {
+          "id": "w18",
+          "difficulte": "moyen",
+          "nom_commun": "Suisse",
+          "nom_scientifique": "Switzerland",
+          "groupe": "europe",
+          "options": [
+            "Serbie",
+            "Slovaquie",
+            "Roumanie",
+            "Suisse"
+          ],
+          "indice": "Petit carré alpin",
+          "description": "Petit pays compact en forme de losange au cœur de l'Europe.",
+          "explication": "Suisse : Petit pays compact en forme de losange au cœur de l'Europe. Frontières montagneuses resserrées."
+        },
+        {
+          "id": "w19",
+          "difficulte": "moyen",
+          "nom_commun": "République tchèque",
+          "nom_scientifique": "Czech Republic",
+          "groupe": "europe",
+          "options": [
+            "République tchèque",
+            "Belgique",
+            "Roumanie",
+            "Pays-Bas"
+          ],
+          "indice": "Bloc bohmien arrondi",
+          "description": "Forme arrondie sans littoral au centre de l'Europe.",
+          "explication": "République tchèque : Forme arrondie sans littoral au centre de l'Europe. La Bohême domine la silhouette."
+        },
+        {
+          "id": "w20",
+          "difficulte": "moyen",
+          "nom_commun": "Roumanie",
+          "nom_scientifique": "Romania",
+          "groupe": "europe",
+          "options": [
+            "Slovénie",
+            "Roumanie",
+            "Serbie",
+            "Bulgarie"
+          ],
+          "indice": "Grand pays en arc de cercle",
+          "description": "Forme arrondie au sud-est, côte mer Noire courte.",
+          "explication": "Roumanie : Forme arrondie au sud-est, côte mer Noire courte. Les Carpates creusent le centre du pays."
+        },
+        {
+          "id": "w21",
+          "difficulte": "moyen",
+          "nom_commun": "Bulgarie",
+          "nom_scientifique": "Bulgaria",
+          "groupe": "europe",
+          "options": [
+            "Bulgarie",
+            "République tchèque",
+            "Lituanie",
+            "Belgique"
+          ],
+          "indice": "Rectangle côtier mer Noire",
+          "description": "Bande est-ouest, côte mer Noire au sud-est.",
+          "explication": "Bulgarie : Bande est-ouest, côte mer Noire au sud-est. Frontière longue avec la Grèce et la Turquie au sud."
+        },
+        {
+          "id": "w22",
+          "difficulte": "moyen",
+          "nom_commun": "Hongrie",
+          "nom_scientifique": "Hungary",
+          "groupe": "europe",
+          "options": [
+            "Hongrie",
+            "Suisse",
+            "Bulgarie",
+            "Lituanie"
+          ],
+          "indice": "Bloc danubien",
+          "description": "Forme arrondie sans littoral, au cœur des plaines.",
+          "explication": "Hongrie : Forme arrondie sans littoral, au cœur des plaines. Entouré de pays voisins sans accès à la mer."
+        },
+        {
+          "id": "w23",
+          "difficulte": "moyen",
+          "nom_commun": "Ukraine",
+          "nom_scientifique": "Ukraine",
+          "groupe": "europe",
+          "options": [
+            "Ukraine",
+            "Serbie",
+            "Estonie",
+            "Autriche"
+          ],
+          "indice": "Très grand bloc est",
+          "description": "Vaste pays rectangulaire, côte mer Noire au sud.",
+          "explication": "Ukraine : Vaste pays rectangulaire, côte mer Noire au sud. Deuxième plus grand pays d'Europe par la superficie."
+        },
+        {
+          "id": "w24",
+          "difficulte": "moyen",
+          "nom_commun": "Croatie",
+          "nom_scientifique": "Croatia",
+          "groupe": "europe",
+          "options": [
+            "Croatie",
+            "Danemark",
+            "Lituanie",
+            "Estonie"
+          ],
+          "indice": "Côte adriatique en croissant",
+          "description": "Bande côtière adriatique très découpée, forme de croissant.",
+          "explication": "Croatie : Bande côtière adriatique très découpée, forme de croissant. La Dalmatie crée un contour en dents de scie."
+        },
+        {
+          "id": "w25",
+          "difficulte": "moyen",
+          "nom_commun": "Serbie",
+          "nom_scientifique": "Serbia",
+          "groupe": "europe",
+          "options": [
+            "Lituanie",
+            "Serbie",
+            "Danemark",
+            "Ukraine"
+          ],
+          "indice": "Bloc des Balkans",
+          "description": "Pays enclavé au centre des Balkans, forme compacte.",
+          "explication": "Serbie : Pays enclavé au centre des Balkans, forme compacte. Frontières intérieures sans accès à la mer."
+        },
+        {
+          "id": "w26",
+          "difficulte": "moyen",
+          "nom_commun": "Slovaquie",
+          "nom_scientifique": "Slovakia",
+          "groupe": "europe",
+          "options": [
+            "Lituanie",
+            "Slovaquie",
+            "Hongrie",
+            "Bosnie-Herzégovine"
+          ],
+          "indice": "Petit bloc montagneux",
+          "description": "Forme rectangulaire au nord des Carpates.",
+          "explication": "Slovaquie : Forme rectangulaire au nord des Carpates. Entre Pologne, Hongrie et République tchèque."
+        },
+        {
+          "id": "w27",
+          "difficulte": "moyen",
+          "nom_commun": "Slovénie",
+          "nom_scientifique": "Slovenia",
+          "groupe": "europe",
+          "options": [
+            "Slovaquie",
+            "Ukraine",
+            "Slovénie",
+            "Croatie"
+          ],
+          "indice": "Petit triangle adriatique",
+          "description": "Petit pays en forme de coin, courte côte adriatique.",
+          "explication": "Slovénie : Petit pays en forme de coin, courte côte adriatique. Passage entre les Alpes et la mer."
+        },
+        {
+          "id": "w28",
+          "difficulte": "moyen",
+          "nom_commun": "Bosnie-Herzégovine",
+          "nom_scientifique": "Bosnia and Herzegovina",
+          "groupe": "europe",
+          "options": [
+            "République tchèque",
+            "Croatie",
+            "Roumanie",
+            "Bosnie-Herzégovine"
+          ],
+          "indice": "Forme de triangle adriatique",
+          "description": "Bloc triangulaire avec courte ouverture sur l'Adriatique.",
+          "explication": "Bosnie-Herzégovine : Bloc triangulaire avec courte ouverture sur l'Adriatique. Enclavé mais avec un accès maritime étroit."
+        },
+        {
+          "id": "w29",
+          "difficulte": "moyen",
+          "nom_commun": "Lituanie",
+          "nom_scientifique": "Lithuania",
+          "groupe": "europe",
+          "options": [
+            "Lituanie",
+            "Bosnie-Herzégovine",
+            "Roumanie",
+            "Ukraine"
+          ],
+          "indice": "Bande balte",
+          "description": "Bande côtière baltique, forme allongée est-ouest.",
+          "explication": "Lituanie : Bande côtière baltique, forme allongée est-ouest. Frontière longue avec la Biélorussie au sud-est."
+        },
+        {
+          "id": "w30",
+          "difficulte": "moyen",
+          "nom_commun": "Lettonie",
+          "nom_scientifique": "Latvia",
+          "groupe": "europe",
+          "options": [
+            "Lettonie",
+            "Slovénie",
+            "Roumanie",
+            "Bulgarie"
+          ],
+          "indice": "Bande balte intermédiaire",
+          "description": "Pays allongé le long de la mer Baltique.",
+          "explication": "Lettonie : Pays allongé le long de la mer Baltique. Entre l'Estonie et la Lituanie."
+        },
+        {
+          "id": "w31",
+          "difficulte": "moyen",
+          "nom_commun": "Estonie",
+          "nom_scientifique": "Estonia",
+          "groupe": "europe",
+          "options": [
+            "Autriche",
+            "Hongrie",
+            "Estonie",
+            "Pays-Bas"
+          ],
+          "indice": "Bande nordique baltique",
+          "description": "Forme compacte au nord de la mer Baltique.",
+          "explication": "Estonie : Forme compacte au nord de la mer Baltique. Côte nord très découpée avec des îles."
+        },
+        {
+          "id": "w32",
+          "difficulte": "difficile",
+          "nom_commun": "Biélorussie",
+          "nom_scientifique": "Belarus",
+          "groupe": "europe",
+          "options": [
+            "Andorre",
+            "Liechtenstein",
+            "Biélorussie",
+            "Malte"
+          ],
+          "indice": "Bloc forestier rectangulaire",
+          "description": "Rectangle arrondi sans littoral entre Pologne et Russie.",
+          "explication": "Biélorussie : Rectangle arrondi sans littoral entre Pologne et Russie. Peu de relief visible sur le contour seul."
+        },
+        {
+          "id": "w33",
+          "difficulte": "difficile",
+          "nom_commun": "Moldavie",
+          "nom_scientifique": "Moldova",
+          "groupe": "europe",
+          "options": [
+            "Macédoine du Nord",
+            "Malte",
+            "Moldavie",
+            "Albanie"
+          ],
+          "indice": "Petit bloc entre Roumanie et Ukraine",
+          "description": "Forme ovale compacte, enclavée sauf proche mer Noire.",
+          "explication": "Moldavie : Forme ovale compacte, enclavée sauf proche mer Noire. La Transnistrie complique parfois les cartes récentes."
+        },
+        {
+          "id": "w34",
+          "difficulte": "difficile",
+          "nom_commun": "Luxembourg",
+          "nom_scientifique": "Luxembourg",
+          "groupe": "europe",
+          "options": [
+            "Saint-Marin",
+            "Moldavie",
+            "Liechtenstein",
+            "Luxembourg"
+          ],
+          "indice": "Très petit triangle",
+          "description": "Minuscule pays entre Belgique, France et Allemagne.",
+          "explication": "Luxembourg : Minuscule pays entre Belgique, France et Allemagne. L'un des plus petits États d'Europe."
+        },
+        {
+          "id": "w35",
+          "difficulte": "difficile",
+          "nom_commun": "Andorre",
+          "nom_scientifique": "Andorra",
+          "groupe": "europe",
+          "options": [
+            "Saint-Marin",
+            "Malte",
+            "Andorre",
+            "Monténégro"
+          ],
+          "indice": "Micro-État pyrénéen",
+          "description": "Point minuscule entre France et Espagne.",
+          "explication": "Andorre : Point minuscule entre France et Espagne. Difficile à voir sans grossissement."
+        },
+        {
+          "id": "w36",
+          "difficulte": "difficile",
+          "nom_commun": "Monaco",
+          "nom_scientifique": "Monaco",
+          "groupe": "europe",
+          "options": [
+            "Monaco",
+            "Luxembourg",
+            "Macédoine du Nord",
+            "Liechtenstein"
+          ],
+          "indice": "Point côtier méditerranéen",
+          "description": "Micro-territoire sur la Côte d'Azur.",
+          "explication": "Monaco : Micro-territoire sur la Côte d'Azur. Souvent à peine visible sur les cartes."
+        },
+        {
+          "id": "w37",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Marin",
+          "nom_scientifique": "San Marino",
+          "groupe": "europe",
+          "options": [
+            "Liechtenstein",
+            "Saint-Marin",
+            "Luxembourg",
+            "Albanie"
+          ],
+          "indice": "Enclavé dans l'Italie",
+          "description": "Micro-État enclavé dans la péninsule italienne.",
+          "explication": "Saint-Marin : Micro-État enclavé dans la péninsule italienne. Contour quasi invisible à l'échelle européenne."
+        },
+        {
+          "id": "w38",
+          "difficulte": "difficile",
+          "nom_commun": "Monténégro",
+          "nom_scientifique": "Montenegro",
+          "groupe": "europe",
+          "options": [
+            "Monténégro",
+            "Andorre",
+            "Saint-Marin",
+            "Monaco"
+          ],
+          "indice": "Petite bande adriatique",
+          "description": "Petit pays côtier adriatique au sud des Balkans.",
+          "explication": "Monténégro : Petit pays côtier adriatique au sud des Balkans. Côte découpée mais territoire réduit."
+        },
+        {
+          "id": "w39",
+          "difficulte": "difficile",
+          "nom_commun": "Macédoine du Nord",
+          "nom_scientifique": "North Macedonia",
+          "groupe": "europe",
+          "options": [
+            "Chypre",
+            "Albanie",
+            "Macédoine du Nord",
+            "Luxembourg"
+          ],
+          "indice": "Bloc central des Balkans",
+          "description": "Forme arrondie enclavée, sans littoral.",
+          "explication": "Macédoine du Nord : Forme arrondie enclavée, sans littoral. Frontières intérieures avec Grèce et Albanie."
+        },
+        {
+          "id": "w40",
+          "difficulte": "difficile",
+          "nom_commun": "Albanie",
+          "nom_scientifique": "Albania",
+          "groupe": "europe",
+          "options": [
+            "Biélorussie",
+            "Malte",
+            "Macédoine du Nord",
+            "Albanie"
+          ],
+          "indice": "Bande adriatique étroite",
+          "description": "Bande côtière adriatique et ionienne, forme verticale.",
+          "explication": "Albanie : Bande côtière adriatique et ionienne, forme verticale. Côte ouest face à l'Italie."
+        },
+        {
+          "id": "w41",
+          "difficulte": "difficile",
+          "nom_commun": "Malte",
+          "nom_scientifique": "Malta",
+          "groupe": "europe",
+          "options": [
+            "Moldavie",
+            "Malte",
+            "Biélorussie",
+            "Saint-Marin"
+          ],
+          "indice": "Archipel minuscule",
+          "description": "Quelques points au sud de la Sicile.",
+          "explication": "Malte : Quelques points au sud de la Sicile. Îles trop petites pour un contour détaillé."
+        },
+        {
+          "id": "w42",
+          "difficulte": "difficile",
+          "nom_commun": "Chypre",
+          "nom_scientifique": "Cyprus",
+          "groupe": "europe",
+          "options": [
+            "Malte",
+            "Monténégro",
+            "Chypre",
+            "Saint-Marin"
+          ],
+          "indice": "Île méditerranéenne allongée",
+          "description": "Île ovale au large de la Turquie et du Levant.",
+          "explication": "Chypre : Île ovale au large de la Turquie et du Levant. Contour lisse, orienté est-ouest."
+        },
+        {
+          "id": "w43",
+          "difficulte": "difficile",
+          "nom_commun": "Liechtenstein",
+          "nom_scientifique": "Liechtenstein",
+          "groupe": "europe",
+          "options": [
+            "Biélorussie",
+            "Malte",
+            "Monténégro",
+            "Liechtenstein"
+          ],
+          "indice": "Micro-État alpin",
+          "description": "Minuscule bande entre Suisse et Autriche.",
+          "explication": "Liechtenstein : Minuscule bande entre Suisse et Autriche. Rarement visible sans zoom."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "afrique",
+      "label": "Afrique",
+      "questions": [
+        {
+          "id": "w44",
+          "difficulte": "facile",
+          "nom_commun": "Égypte",
+          "nom_scientifique": "Egypt",
+          "groupe": "afrique",
+          "options": [
+            "Nigeria",
+            "Égypte",
+            "Éthiopie",
+            "Madagascar"
+          ],
+          "indice": "Bande du Nil en forme de Y",
+          "description": "Bande du Nil en Y dans le désert, péninsule du Sinaï à l'est.",
+          "explication": "Égypte : Bande du Nil en Y dans le désert, péninsule du Sinaï à l'est. Le Nil dessine une ligne verticale très nette."
+        },
+        {
+          "id": "w45",
+          "difficulte": "facile",
+          "nom_commun": "Afrique du Sud",
+          "nom_scientifique": "South Africa",
+          "groupe": "afrique",
+          "options": [
+            "Nigeria",
+            "Madagascar",
+            "Tunisie",
+            "Afrique du Sud"
+          ],
+          "indice": "Pointe sud du continent",
+          "description": "Grand bloc au sud du continent, côtes atlantique et indienne.",
+          "explication": "Afrique du Sud : Grand bloc au sud du continent, côtes atlantique et indienne. Forme arrondie avec cap au sud-est."
+        },
+        {
+          "id": "w46",
+          "difficulte": "facile",
+          "nom_commun": "Algérie",
+          "nom_scientifique": "Algeria",
+          "groupe": "afrique",
+          "options": [
+            "Éthiopie",
+            "Libye",
+            "Soudan",
+            "Algérie"
+          ],
+          "indice": "Immense rectangle nord",
+          "description": "Vaste pays rectangulaire le long de la Méditerranée.",
+          "explication": "Algérie : Vaste pays rectangulaire le long de la Méditerranée. Plus grand pays d'Afrique par la superficie."
+        },
+        {
+          "id": "w47",
+          "difficulte": "facile",
+          "nom_commun": "Maroc",
+          "nom_scientifique": "Morocco",
+          "groupe": "afrique",
+          "options": [
+            "Madagascar",
+            "Libye",
+            "Algérie",
+            "Maroc"
+          ],
+          "indice": "Coin nord-ouest arrondi",
+          "description": "Forme arrondie au nord-ouest, côtes atlantique et méditerranéenne.",
+          "explication": "Maroc : Forme arrondie au nord-ouest, côtes atlantique et méditerranéenne. Proche de l'Espagne via le détroit."
+        },
+        {
+          "id": "w48",
+          "difficulte": "facile",
+          "nom_commun": "Nigeria",
+          "nom_scientifique": "Nigeria",
+          "groupe": "afrique",
+          "options": [
+            "Soudan",
+            "Algérie",
+            "Madagascar",
+            "Nigeria"
+          ],
+          "indice": "Grand bloc du golfe de Guinée",
+          "description": "Forme compacte au golfe de Guinée, côte convexe au sud.",
+          "explication": "Nigeria : Forme compacte au golfe de Guinée, côte convexe au sud. Le pays le plus peuplé d'Afrique."
+        },
+        {
+          "id": "w49",
+          "difficulte": "facile",
+          "nom_commun": "Éthiopie",
+          "nom_scientifique": "Ethiopia",
+          "groupe": "afrique",
+          "options": [
+            "Libye",
+            "Éthiopie",
+            "Maroc",
+            "Algérie"
+          ],
+          "indice": "Bloc est en forme de goutte",
+          "description": "Grand pays enclavé à la corne de l'Afrique, forme arrondie.",
+          "explication": "Éthiopie : Grand pays enclavé à la corne de l'Afrique, forme arrondie. Haut plateaux au centre du contour."
+        },
+        {
+          "id": "w50",
+          "difficulte": "facile",
+          "nom_commun": "Libye",
+          "nom_scientifique": "Libya",
+          "groupe": "afrique",
+          "options": [
+            "Éthiopie",
+            "Maroc",
+            "Libye",
+            "Tunisie"
+          ],
+          "indice": "Vaste désert méditerranéen",
+          "description": "Immense rectangle côtier au centre du Maghreb.",
+          "explication": "Libye : Immense rectangle côtier au centre du Maghreb. Peu de découpages côtiers, forme très régulière."
+        },
+        {
+          "id": "w51",
+          "difficulte": "facile",
+          "nom_commun": "Tunisie",
+          "nom_scientifique": "Tunisia",
+          "groupe": "afrique",
+          "options": [
+            "Kenya",
+            "Tunisie",
+            "Égypte",
+            "Algérie"
+          ],
+          "indice": "Bande méditerranéenne",
+          "description": "Bande nord-sud étroite entre Algérie et mer.",
+          "explication": "Tunisie : Bande nord-sud étroite entre Algérie et mer. Cap Bon arrondit le nord-est."
+        },
+        {
+          "id": "w52",
+          "difficulte": "facile",
+          "nom_commun": "Kenya",
+          "nom_scientifique": "Kenya",
+          "groupe": "afrique",
+          "options": [
+            "Tunisie",
+            "Afrique du Sud",
+            "Kenya",
+            "Maroc"
+          ],
+          "indice": "Bloc est côtier",
+          "description": "Forme verticale le long de l'océan Indien.",
+          "explication": "Kenya : Forme verticale le long de l'océan Indien. Côte est convexe, frontière ouest irrégulière."
+        },
+        {
+          "id": "w53",
+          "difficulte": "facile",
+          "nom_commun": "Madagascar",
+          "nom_scientifique": "Madagascar",
+          "groupe": "afrique",
+          "options": [
+            "Soudan",
+            "Éthiopie",
+            "Nigeria",
+            "Madagascar"
+          ],
+          "indice": "Grande île est allongée",
+          "description": "Grande île verticale au large de l'Afrique orientale.",
+          "explication": "Madagascar : Grande île verticale au large de l'Afrique orientale. L'une des îles les plus reconnaissables au monde."
+        },
+        {
+          "id": "w54",
+          "difficulte": "facile",
+          "nom_commun": "Soudan",
+          "nom_scientifique": "Sudan",
+          "groupe": "afrique",
+          "options": [
+            "Nigeria",
+            "Algérie",
+            "Soudan",
+            "Égypte"
+          ],
+          "indice": "Vaste bloc du Nil",
+          "description": "Grand rectangle au nord-est, forme très étendue.",
+          "explication": "Soudan : Grand rectangle au nord-est, forme très étendue. Le Nil traverse le pays du sud au nord."
+        },
+        {
+          "id": "w55",
+          "difficulte": "moyen",
+          "nom_commun": "Angola",
+          "nom_scientifique": "Angola",
+          "groupe": "afrique",
+          "options": [
+            "Côte d'Ivoire",
+            "Gabon",
+            "Angola",
+            "Niger"
+          ],
+          "indice": "Bloc atlantique sud",
+          "description": "Forme verticale le long de l'Atlantique, enclave du Cabinda.",
+          "explication": "Angola : Forme verticale le long de l'Atlantique, enclave du Cabinda. Le Cabinda apparaît comme un petit séparé au nord."
+        },
+        {
+          "id": "w56",
+          "difficulte": "moyen",
+          "nom_commun": "Mozambique",
+          "nom_scientifique": "Mozambique",
+          "groupe": "afrique",
+          "options": [
+            "Gabon",
+            "Tanzanie",
+            "Sénégal",
+            "Mozambique"
+          ],
+          "indice": "Bande côtière indienne",
+          "description": "Longue bande le long de l'océan Indien.",
+          "explication": "Mozambique : Longue bande le long de l'océan Indien. Côte très allongée du nord au sud."
+        },
+        {
+          "id": "w57",
+          "difficulte": "moyen",
+          "nom_commun": "Tanzanie",
+          "nom_scientifique": "Tanzania",
+          "groupe": "afrique",
+          "options": [
+            "Tanzanie",
+            "Tchad",
+            "Cameroun",
+            "République centrafricaine"
+          ],
+          "indice": "Bloc est large",
+          "description": "Forme carrée à l'est, côte indienne au est.",
+          "explication": "Tanzanie : Forme carrée à l'est, côte indienne au est. Frontière ouest avec les Grands Lacs."
+        },
+        {
+          "id": "w58",
+          "difficulte": "moyen",
+          "nom_commun": "Ouganda",
+          "nom_scientifique": "Uganda",
+          "groupe": "afrique",
+          "options": [
+            "Zambie",
+            "Ouganda",
+            "Gabon",
+            "Angola"
+          ],
+          "indice": "Petit bloc des Grands Lacs",
+          "description": "Forme arrondie autour du lac Victoria.",
+          "explication": "Ouganda : Forme arrondie autour du lac Victoria. Enclavé près des lacs centraux."
+        },
+        {
+          "id": "w59",
+          "difficulte": "moyen",
+          "nom_commun": "Ghana",
+          "nom_scientifique": "Ghana",
+          "groupe": "afrique",
+          "options": [
+            "République démocratique du Congo",
+            "Tanzanie",
+            "Niger",
+            "Ghana"
+          ],
+          "indice": "Bande côtière convexe",
+          "description": "Bande verticale au golfe de Guinée.",
+          "explication": "Ghana : Bande verticale au golfe de Guinée. Côte sud en arc de cercle."
+        },
+        {
+          "id": "w60",
+          "difficulte": "moyen",
+          "nom_commun": "Côte d'Ivoire",
+          "nom_scientifique": "Ivory Coast",
+          "groupe": "afrique",
+          "options": [
+            "Niger",
+            "République démocratique du Congo",
+            "Côte d'Ivoire",
+            "Sénégal"
+          ],
+          "indice": "Bloc côtier ouest",
+          "description": "Forme arrondie le long du golfe de Guinée.",
+          "explication": "Côte d'Ivoire : Forme arrondie le long du golfe de Guinée. Frontière nord relativement droite."
+        },
+        {
+          "id": "w61",
+          "difficulte": "moyen",
+          "nom_commun": "Cameroun",
+          "nom_scientifique": "Cameroon",
+          "groupe": "afrique",
+          "options": [
+            "Angola",
+            "Zambie",
+            "Cameroun",
+            "Ouganda"
+          ],
+          "indice": "Triangle du golfe",
+          "description": "Forme triangulaire au golfe de Guinée.",
+          "explication": "Cameroun : Forme triangulaire au golfe de Guinée. Le mont Cameroun marque l'angle ouest."
+        },
+        {
+          "id": "w62",
+          "difficulte": "moyen",
+          "nom_commun": "Sénégal",
+          "nom_scientifique": "Senegal",
+          "groupe": "afrique",
+          "options": [
+            "Cameroun",
+            "Angola",
+            "Tchad",
+            "Sénégal"
+          ],
+          "indice": "Bande atlantique ouest",
+          "description": "Bande côtière à l'extrême ouest du continent.",
+          "explication": "Sénégal : Bande côtière à l'extrême ouest du continent. Enclavé autour de la Gambie au sud."
+        },
+        {
+          "id": "w63",
+          "difficulte": "moyen",
+          "nom_commun": "Mali",
+          "nom_scientifique": "Mali",
+          "groupe": "afrique",
+          "options": [
+            "République centrafricaine",
+            "Zimbabwe",
+            "Mali",
+            "Tanzanie"
+          ],
+          "indice": "Immense bloc sahélien",
+          "description": "Vaste pays en forme de papillon au Sahel.",
+          "explication": "Mali : Vaste pays en forme de papillon au Sahel. Le Niger coule au sud-est."
+        },
+        {
+          "id": "w64",
+          "difficulte": "moyen",
+          "nom_commun": "Niger",
+          "nom_scientifique": "Niger",
+          "groupe": "afrique",
+          "options": [
+            "Tanzanie",
+            "Tchad",
+            "Niger",
+            "Gabon"
+          ],
+          "indice": "Bloc central désertique",
+          "description": "Grand rectangle landlocked au Sahel.",
+          "explication": "Niger : Grand rectangle landlocked au Sahel. Forme très régulière, peu de côtes."
+        },
+        {
+          "id": "w65",
+          "difficulte": "moyen",
+          "nom_commun": "Tchad",
+          "nom_scientifique": "Chad",
+          "groupe": "afrique",
+          "options": [
+            "République centrafricaine",
+            "Tchad",
+            "Zimbabwe",
+            "Angola"
+          ],
+          "indice": "Bloc central en forme de triangle",
+          "description": "Grand pays sans littoral au centre du continent.",
+          "explication": "Tchad : Grand pays sans littoral au centre du continent. Le lac Tchad creuse le nord-ouest."
+        },
+        {
+          "id": "w66",
+          "difficulte": "moyen",
+          "nom_commun": "République centrafricaine",
+          "nom_scientifique": "Central African Republic",
+          "groupe": "afrique",
+          "options": [
+            "Ouganda",
+            "République centrafricaine",
+            "Tanzanie",
+            "Niger"
+          ],
+          "indice": "Bloc équatorial",
+          "description": "Forme arrondie au centre de l'Afrique.",
+          "explication": "République centrafricaine : Forme arrondie au centre de l'Afrique. Enclavé, entouré de six voisins."
+        },
+        {
+          "id": "w67",
+          "difficulte": "moyen",
+          "nom_commun": "République démocratique du Congo",
+          "nom_scientifique": "Democratic Republic of the Congo",
+          "groupe": "afrique",
+          "options": [
+            "Sénégal",
+            "République démocratique du Congo",
+            "Mozambique",
+            "Niger"
+          ],
+          "indice": "Cœur du continent",
+          "description": "Vaste bloc central avec étroite bande atlantique.",
+          "explication": "République démocratique du Congo : Vaste bloc central avec étroite bande atlantique. Le fleuve Congo structure le centre."
+        },
+        {
+          "id": "w68",
+          "difficulte": "moyen",
+          "nom_commun": "Gabon",
+          "nom_scientifique": "Gabon",
+          "groupe": "afrique",
+          "options": [
+            "Ouganda",
+            "République centrafricaine",
+            "Gabon",
+            "Niger"
+          ],
+          "indice": "Bande équatoriale",
+          "description": "Bande côtière convexe au golfe de Guinée.",
+          "explication": "Gabon : Bande côtière convexe au golfe de Guinée. Forêt équatoriale, contour lisse."
+        },
+        {
+          "id": "w69",
+          "difficulte": "moyen",
+          "nom_commun": "Zambie",
+          "nom_scientifique": "Zambia",
+          "groupe": "afrique",
+          "options": [
+            "Niger",
+            "Ouganda",
+            "Zambie",
+            "Cameroun"
+          ],
+          "indice": "Bloc sans littoral sud",
+          "description": "Forme verticale enclavée au sud du Congo.",
+          "explication": "Zambie : Forme verticale enclavée au sud du Congo. Frontières longues avec plusieurs voisins."
+        },
+        {
+          "id": "w70",
+          "difficulte": "moyen",
+          "nom_commun": "Zimbabwe",
+          "nom_scientifique": "Zimbabwe",
+          "groupe": "afrique",
+          "options": [
+            "République centrafricaine",
+            "Tanzanie",
+            "Zimbabwe",
+            "Ouganda"
+          ],
+          "indice": "Bloc sud compact",
+          "description": "Pays enclavé au sud du Zambèze.",
+          "explication": "Zimbabwe : Pays enclavé au sud du Zambèze. Forme arrondie sans littoral."
+        },
+        {
+          "id": "w71",
+          "difficulte": "difficile",
+          "nom_commun": "Bénin",
+          "nom_scientifique": "Benin",
+          "groupe": "afrique",
+          "options": [
+            "Bénin",
+            "Seychelles",
+            "Cap-Vert",
+            "Guinée équatoriale"
+          ],
+          "indice": "Bande verticale étroite",
+          "description": "Bande étroite du golfe de Guinée au Niger.",
+          "explication": "Bénin : Bande étroite du golfe de Guinée au Niger. Forme très allongée nord-sud."
+        },
+        {
+          "id": "w72",
+          "difficulte": "difficile",
+          "nom_commun": "Togo",
+          "nom_scientifique": "Togo",
+          "groupe": "afrique",
+          "options": [
+            "Seychelles",
+            "Rwanda",
+            "Comores",
+            "Togo"
+          ],
+          "indice": "Très étroite bande côtière",
+          "description": "Mince bande verticale entre Ghana et Bénin.",
+          "explication": "Togo : Mince bande verticale entre Ghana et Bénin. L'un des pays les plus étroits d'Afrique."
+        },
+        {
+          "id": "w73",
+          "difficulte": "difficile",
+          "nom_commun": "Burkina Faso",
+          "nom_scientifique": "Burkina Faso",
+          "groupe": "afrique",
+          "options": [
+            "Somalie",
+            "São Tomé-et-Principe",
+            "Burkina Faso",
+            "Cap-Vert"
+          ],
+          "indice": "Bloc sahélien compact",
+          "description": "Rectangle arrondi sans littoral.",
+          "explication": "Burkina Faso : Rectangle arrondi sans littoral. Entouré par six pays voisins."
+        },
+        {
+          "id": "w74",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée",
+          "nom_scientifique": "Guinea",
+          "groupe": "afrique",
+          "options": [
+            "Togo",
+            "Lesotho",
+            "Bénin",
+            "Guinée"
+          ],
+          "indice": "Bloc atlantique ouest",
+          "description": "Forme arrondie le long de l'Atlantique.",
+          "explication": "Guinée : Forme arrondie le long de l'Atlantique. Cap Verga arrondit l'ouest."
+        },
+        {
+          "id": "w75",
+          "difficulte": "difficile",
+          "nom_commun": "Sierra Leone",
+          "nom_scientifique": "Sierra Leone",
+          "groupe": "afrique",
+          "options": [
+            "Sierra Leone",
+            "Togo",
+            "Gambie",
+            "Érythrée"
+          ],
+          "indice": "Petit triangle côtier",
+          "description": "Petit pays côtier convexe au sud.",
+          "explication": "Sierra Leone : Petit pays côtier convexe au sud. Contour compact au golfe de Guinée."
+        },
+        {
+          "id": "w76",
+          "difficulte": "difficile",
+          "nom_commun": "Libéria",
+          "nom_scientifique": "Liberia",
+          "groupe": "afrique",
+          "options": [
+            "Seychelles",
+            "Bénin",
+            "Libéria",
+            "São Tomé-et-Principe"
+          ],
+          "indice": "Bande côtière ouest",
+          "description": "Bande verticale le long de l'Atlantique.",
+          "explication": "Libéria : Bande verticale le long de l'Atlantique. Entre Sierra Leone et Côte d'Ivoire."
+        },
+        {
+          "id": "w77",
+          "difficulte": "difficile",
+          "nom_commun": "Gambie",
+          "nom_scientifique": "Gambia",
+          "groupe": "afrique",
+          "options": [
+            "Libéria",
+            "Guinée",
+            "Gambie",
+            "Burundi"
+          ],
+          "indice": "Bande enclavée dans le Sénégal",
+          "description": "Mince bande le long du fleuve Gambie.",
+          "explication": "Gambie : Mince bande le long du fleuve Gambie. Contour très étroit est-ouest."
+        },
+        {
+          "id": "w78",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée-Bissau",
+          "nom_scientifique": "Guinea-Bissau",
+          "groupe": "afrique",
+          "options": [
+            "Seychelles",
+            "Djibouti",
+            "Guinée-Bissau",
+            "Gambie"
+          ],
+          "indice": "Petit bloc atlantique",
+          "description": "Forme arrondie à l'ouest du continent.",
+          "explication": "Guinée-Bissau : Forme arrondie à l'ouest du continent. Archipel Bijagos complique parfois la côte."
+        },
+        {
+          "id": "w79",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée équatoriale",
+          "nom_scientifique": "Equatorial Guinea",
+          "groupe": "afrique",
+          "options": [
+            "Guinée-Bissau",
+            "Sierra Leone",
+            "Burundi",
+            "Guinée équatoriale"
+          ],
+          "indice": "Petit bloc côtier",
+          "description": "Petit pays côtier au golfe de Guinée.",
+          "explication": "Guinée équatoriale : Petit pays côtier au golfe de Guinée. Comprend l'île Bioko au nord."
+        },
+        {
+          "id": "w80",
+          "difficulte": "difficile",
+          "nom_commun": "Djibouti",
+          "nom_scientifique": "Djibouti",
+          "groupe": "afrique",
+          "options": [
+            "Rwanda",
+            "Djibouti",
+            "Somalie",
+            "Burundi"
+          ],
+          "indice": "Petit triangle de la Corne",
+          "description": "Minuscule territoire à l'entrée de la mer Rouge.",
+          "explication": "Djibouti : Minuscule territoire à l'entrée de la mer Rouge. Forme triangulaire très compacte."
+        },
+        {
+          "id": "w81",
+          "difficulte": "difficile",
+          "nom_commun": "Érythrée",
+          "nom_scientifique": "Eritrea",
+          "groupe": "afrique",
+          "options": [
+            "São Tomé-et-Principe",
+            "Bénin",
+            "Érythrée",
+            "Burkina Faso"
+          ],
+          "indice": "Bande de la mer Rouge",
+          "description": "Bande côtière orientale le long de la mer Rouge.",
+          "explication": "Érythrée : Bande côtière orientale le long de la mer Rouge. Frontière longue avec l'Éthiopie."
+        },
+        {
+          "id": "w82",
+          "difficulte": "difficile",
+          "nom_commun": "Somalie",
+          "nom_scientifique": "Somalia",
+          "groupe": "afrique",
+          "options": [
+            "Guinée équatoriale",
+            "Burkina Faso",
+            "Érythrée",
+            "Somalie"
+          ],
+          "indice": "Corne allongée",
+          "description": "Forme de corne le long de l'océan Indien.",
+          "explication": "Somalie : Forme de corne le long de l'océan Indien. Côte est très convexe."
+        },
+        {
+          "id": "w83",
+          "difficulte": "difficile",
+          "nom_commun": "Burundi",
+          "nom_scientifique": "Burundi",
+          "groupe": "afrique",
+          "options": [
+            "Burundi",
+            "Burkina Faso",
+            "Lesotho",
+            "Somalie"
+          ],
+          "indice": "Petit bloc des Grands Lacs",
+          "description": "Minuscule pays enclavé au sud du Rwanda.",
+          "explication": "Burundi : Minuscule pays enclavé au sud du Rwanda. Forme ovale très compacte."
+        },
+        {
+          "id": "w84",
+          "difficulte": "difficile",
+          "nom_commun": "Rwanda",
+          "nom_scientifique": "Rwanda",
+          "groupe": "afrique",
+          "options": [
+            "Érythrée",
+            "Comores",
+            "Rwanda",
+            "Guinée équatoriale"
+          ],
+          "indice": "Petit bloc montagneux",
+          "description": "Très petit pays enclavé au centre-est.",
+          "explication": "Rwanda : Très petit pays enclavé au centre-est. Contour arrondi, sans littoral."
+        },
+        {
+          "id": "w85",
+          "difficulte": "difficile",
+          "nom_commun": "Lesotho",
+          "nom_scientifique": "Lesotho",
+          "groupe": "afrique",
+          "options": [
+            "Guinée-Bissau",
+            "Seychelles",
+            "Burkina Faso",
+            "Lesotho"
+          ],
+          "indice": "Enclavé dans l'Afrique du Sud",
+          "description": "Petit territoire montagneux au sud-est.",
+          "explication": "Lesotho : Petit territoire montagneux au sud-est. Entièrement entouré par l'Afrique du Sud."
+        },
+        {
+          "id": "w86",
+          "difficulte": "difficile",
+          "nom_commun": "Eswatini",
+          "nom_scientifique": "Eswatini",
+          "groupe": "afrique",
+          "options": [
+            "Érythrée",
+            "Eswatini",
+            "Guinée équatoriale",
+            "Guinée"
+          ],
+          "indice": "Petit bloc sud-est",
+          "description": "Minuscule pays enclavé au sud-est.",
+          "explication": "Eswatini : Minuscule pays enclavé au sud-est. Forme compacte entre Afrique du Sud et Mozambique."
+        },
+        {
+          "id": "w87",
+          "difficulte": "difficile",
+          "nom_commun": "Maurice",
+          "nom_scientifique": "Mauritius",
+          "groupe": "afrique",
+          "options": [
+            "São Tomé-et-Principe",
+            "Gambie",
+            "Lesotho",
+            "Maurice"
+          ],
+          "indice": "Point dans l'océan Indien",
+          "description": "Petit archipel au sud-est de Madagascar.",
+          "explication": "Maurice : Petit archipel au sud-est de Madagascar. Contour réduit à quelques îles."
+        },
+        {
+          "id": "w88",
+          "difficulte": "difficile",
+          "nom_commun": "Seychelles",
+          "nom_scientifique": "Seychelles",
+          "groupe": "afrique",
+          "options": [
+            "Guinée",
+            "Burundi",
+            "Burkina Faso",
+            "Seychelles"
+          ],
+          "indice": "Archipel dispersé",
+          "description": "Groupe d'îles au nord-est de Madagascar.",
+          "explication": "Seychelles : Groupe d'îles au nord-est de Madagascar. Silhouette fragmentée sur les cartes."
+        },
+        {
+          "id": "w89",
+          "difficulte": "difficile",
+          "nom_commun": "Comores",
+          "nom_scientifique": "Comoros",
+          "groupe": "afrique",
+          "options": [
+            "Érythrée",
+            "Comores",
+            "Rwanda",
+            "Lesotho"
+          ],
+          "indice": "Archipel entre Afrique et Madagascar",
+          "description": "Quatre îles au nord de Madagascar.",
+          "explication": "Comores : Quatre îles au nord de Madagascar. Points isolés dans l'océan Indien."
+        },
+        {
+          "id": "w90",
+          "difficulte": "difficile",
+          "nom_commun": "São Tomé-et-Principe",
+          "nom_scientifique": "Sao Tome and Principe",
+          "groupe": "afrique",
+          "options": [
+            "Gambie",
+            "Djibouti",
+            "Burundi",
+            "São Tomé-et-Principe"
+          ],
+          "indice": "Deux îles au golfe de Guinée",
+          "description": "Deux îles proches sur l'équateur.",
+          "explication": "São Tomé-et-Principe : Deux îles proches sur l'équateur. Contour minimal, très petit."
+        },
+        {
+          "id": "w91",
+          "difficulte": "difficile",
+          "nom_commun": "Cap-Vert",
+          "nom_scientifique": "Cape Verde",
+          "groupe": "afrique",
+          "options": [
+            "Lesotho",
+            "Érythrée",
+            "Eswatini",
+            "Cap-Vert"
+          ],
+          "indice": "Archipel atlantique",
+          "description": "Îles au large du Sénégal dans l'Atlantique.",
+          "explication": "Cap-Vert : Îles au large du Sénégal dans l'Atlantique. Dispersion en arc de cercle."
+        }
+      ]
+    },
+    {
+      "id": "asie",
+      "label": "Asie",
+      "questions": [
+        {
+          "id": "w92",
+          "difficulte": "facile",
+          "nom_commun": "Russie",
+          "nom_scientifique": "Russia",
+          "groupe": "asie",
+          "options": [
+            "Inde",
+            "Russie",
+            "Iran",
+            "Chine"
+          ],
+          "indice": "Immense bloc eurasien",
+          "description": "Vaste territoire s'étendant de l'Europe à l'océan Pacifique.",
+          "explication": "Russie : Vaste territoire s'étendant de l'Europe à l'océan Pacifique. Le plus grand pays du monde par la superficie."
+        },
+        {
+          "id": "w93",
+          "difficulte": "facile",
+          "nom_commun": "Chine",
+          "nom_scientifique": "China",
+          "groupe": "asie",
+          "options": [
+            "Russie",
+            "Pakistan",
+            "Indonésie",
+            "Chine"
+          ],
+          "indice": "Grand bloc est asiatique",
+          "description": "Forme massive en est de l'Asie, côte pacifique dentelée.",
+          "explication": "Chine : Forme massive en est de l'Asie, côte pacifique dentelée. Contour très reconnaissable par sa taille."
+        },
+        {
+          "id": "w94",
+          "difficulte": "facile",
+          "nom_commun": "Inde",
+          "nom_scientifique": "India",
+          "groupe": "asie",
+          "options": [
+            "Chine",
+            "Inde",
+            "Arabie saoudite",
+            "Russie"
+          ],
+          "indice": "Triangle pointant au sud",
+          "description": "Grande péninsule triangulaire vers l'océan Indien.",
+          "explication": "Inde : Grande péninsule triangulaire vers l'océan Indien. Le sous-continent forme un bloc distinct."
+        },
+        {
+          "id": "w95",
+          "difficulte": "facile",
+          "nom_commun": "Japon",
+          "nom_scientifique": "Japan",
+          "groupe": "asie",
+          "options": [
+            "Turquie",
+            "Inde",
+            "Japon",
+            "Chine"
+          ],
+          "indice": "Archipel en arc",
+          "description": "Chaîne d'îles en arc le long de l'Asie orientale.",
+          "explication": "Japon : Chaîne d'îles en arc le long de l'Asie orientale. Honshu domine la silhouette."
+        },
+        {
+          "id": "w96",
+          "difficulte": "facile",
+          "nom_commun": "Arabie saoudite",
+          "nom_scientifique": "Saudi Arabia",
+          "groupe": "asie",
+          "options": [
+            "Indonésie",
+            "Inde",
+            "Japon",
+            "Arabie saoudite"
+          ],
+          "indice": "Vaste rectangle péninsulaire",
+          "description": "Grande péninsule arabique rectangulaire.",
+          "explication": "Arabie saoudite : Grande péninsule arabique rectangulaire. Détroit mer Rouge et golfe Persique encadrent."
+        },
+        {
+          "id": "w97",
+          "difficulte": "facile",
+          "nom_commun": "Turquie",
+          "nom_scientifique": "Turkey",
+          "groupe": "asie",
+          "options": [
+            "Arabie saoudite",
+            "Turquie",
+            "Inde",
+            "Kazakhstan"
+          ],
+          "indice": "Pont entre Europe et Asie",
+          "description": "Forme allongée entre mer Égée, Méditerranée et mer Noire.",
+          "explication": "Turquie : Forme allongée entre mer Égée, Méditerranée et mer Noire. Anatolie forme l'essentiel du bloc."
+        },
+        {
+          "id": "w98",
+          "difficulte": "facile",
+          "nom_commun": "Iran",
+          "nom_scientifique": "Iran",
+          "groupe": "asie",
+          "options": [
+            "Chine",
+            "Iran",
+            "Russie",
+            "Inde"
+          ],
+          "indice": "Bloc en forme de chat",
+          "description": "Grand pays entre golfe Persique et mer Caspienne.",
+          "explication": "Iran : Grand pays entre golfe Persique et mer Caspienne. Silhouette souvent comparée à un chat assis."
+        },
+        {
+          "id": "w99",
+          "difficulte": "facile",
+          "nom_commun": "Indonésie",
+          "nom_scientifique": "Indonesia",
+          "groupe": "asie",
+          "options": [
+            "Indonésie",
+            "Chine",
+            "Arabie saoudite",
+            "Pakistan"
+          ],
+          "indice": "Archipel équatorial immense",
+          "description": "Chaîne d'îles de Sumatra à la Papouasie.",
+          "explication": "Indonésie : Chaîne d'îles de Sumatra à la Papouasie. Plus long archipel du monde."
+        },
+        {
+          "id": "w100",
+          "difficulte": "facile",
+          "nom_commun": "Pakistan",
+          "nom_scientifique": "Pakistan",
+          "groupe": "asie",
+          "options": [
+            "Pakistan",
+            "Arabie saoudite",
+            "Turquie",
+            "Kazakhstan"
+          ],
+          "indice": "Bande ouest de l'Inde",
+          "description": "Bande verticale le long de l'Inde, côte mer d'Arabe.",
+          "explication": "Pakistan : Bande verticale le long de l'Inde, côte mer d'Arabe. Frontière longue avec l'Inde à l'est."
+        },
+        {
+          "id": "w101",
+          "difficulte": "facile",
+          "nom_commun": "Kazakhstan",
+          "nom_scientifique": "Kazakhstan",
+          "groupe": "asie",
+          "options": [
+            "Pakistan",
+            "Kazakhstan",
+            "Japon",
+            "Inde"
+          ],
+          "indice": "Vaste bloc central",
+          "description": "Immense pays rectangulaire en Asie centrale.",
+          "explication": "Kazakhstan : Immense pays rectangulaire en Asie centrale. Mer Caspienne au sud-ouest."
+        },
+        {
+          "id": "w102",
+          "difficulte": "moyen",
+          "nom_commun": "Viêt Nam",
+          "nom_scientifique": "Vietnam",
+          "groupe": "asie",
+          "options": [
+            "Syrie",
+            "Jordanie",
+            "Irak",
+            "Viêt Nam"
+          ],
+          "indice": "Bande côtière en S",
+          "description": "Bande étroite le long de la mer de Chine méridionale.",
+          "explication": "Viêt Nam : Bande étroite le long de la mer de Chine méridionale. Forme de S très caractéristique."
+        },
+        {
+          "id": "w103",
+          "difficulte": "moyen",
+          "nom_commun": "Thaïlande",
+          "nom_scientifique": "Thailand",
+          "groupe": "asie",
+          "options": [
+            "Thaïlande",
+            "Malaisie",
+            "Viêt Nam",
+            "Syrie"
+          ],
+          "indice": "Bloc en forme de tête d'éléphant",
+          "description": "Forme arrondie avec péninsule sud étroite.",
+          "explication": "Thaïlande : Forme arrondie avec péninsule sud étroite. La péninsule malaise prolonge le sud."
+        },
+        {
+          "id": "w104",
+          "difficulte": "moyen",
+          "nom_commun": "Myanmar",
+          "nom_scientifique": "Myanmar",
+          "groupe": "asie",
+          "options": [
+            "Ouzbékistan",
+            "Viêt Nam",
+            "Corée du Sud",
+            "Myanmar"
+          ],
+          "indice": "Bloc est allongé",
+          "description": "Bande verticale entre Inde et Thaïlande.",
+          "explication": "Myanmar : Bande verticale entre Inde et Thaïlande. Côte mer d'Andaman à l'ouest."
+        },
+        {
+          "id": "w105",
+          "difficulte": "moyen",
+          "nom_commun": "Corée du Sud",
+          "nom_scientifique": "South Korea",
+          "groupe": "asie",
+          "options": [
+            "Viêt Nam",
+            "Thaïlande",
+            "Corée du Sud",
+            "Corée du Nord"
+          ],
+          "indice": "Péninsule compacte",
+          "description": "Bloc compact au sud de la péninsule coréenne.",
+          "explication": "Corée du Sud : Bloc compact au sud de la péninsule coréenne. Côte ouest très découpée."
+        },
+        {
+          "id": "w106",
+          "difficulte": "moyen",
+          "nom_commun": "Corée du Nord",
+          "nom_scientifique": "North Korea",
+          "groupe": "asie",
+          "options": [
+            "Corée du Nord",
+            "Thaïlande",
+            "Corée du Sud",
+            "Syrie"
+          ],
+          "indice": "Bande nord de la péninsule",
+          "description": "Bande nord de la péninsule coréenne.",
+          "explication": "Corée du Nord : Bande nord de la péninsule coréenne. Frontière longue avec la Chine au nord."
+        },
+        {
+          "id": "w107",
+          "difficulte": "moyen",
+          "nom_commun": "Malaisie",
+          "nom_scientifique": "Malaysia",
+          "groupe": "asie",
+          "options": [
+            "Yémen",
+            "Myanmar",
+            "Malaisie",
+            "Syrie"
+          ],
+          "indice": "Deux blocs séparés",
+          "description": "Péninsule malaise et Bornéo oriental (Sarawak, Sabah).",
+          "explication": "Malaisie : Péninsule malaise et Bornéo oriental (Sarawak, Sabah). Silhouette en deux parties distinctes."
+        },
+        {
+          "id": "w108",
+          "difficulte": "moyen",
+          "nom_commun": "Philippines",
+          "nom_scientifique": "Philippines",
+          "groupe": "asie",
+          "options": [
+            "Philippines",
+            "Viêt Nam",
+            "Yémen",
+            "Israël"
+          ],
+          "indice": "Archipel en triangle",
+          "description": "Grand archipel en triangle vers le sud-est.",
+          "explication": "Philippines : Grand archipel en triangle vers le sud-est. Plus de sept mille îles."
+        },
+        {
+          "id": "w109",
+          "difficulte": "moyen",
+          "nom_commun": "Ouzbékistan",
+          "nom_scientifique": "Uzbekistan",
+          "groupe": "asie",
+          "options": [
+            "Ouzbékistan",
+            "Israël",
+            "Irak",
+            "Viêt Nam"
+          ],
+          "indice": "Bloc double enclavé",
+          "description": "Forme compacte en Asie centrale, double enclavé.",
+          "explication": "Ouzbékistan : Forme compacte en Asie centrale, double enclavé. Entouré par cinq pays sans littoral direct."
+        },
+        {
+          "id": "w110",
+          "difficulte": "moyen",
+          "nom_commun": "Afghanistan",
+          "nom_scientifique": "Afghanistan",
+          "groupe": "asie",
+          "options": [
+            "Syrie",
+            "Émirats arabes unis",
+            "Afghanistan",
+            "Irak"
+          ],
+          "indice": "Bloc montagneux enclavé",
+          "description": "Forme verticale entre Iran et Pakistan.",
+          "explication": "Afghanistan : Forme verticale entre Iran et Pakistan. Frontières très irrégilières."
+        },
+        {
+          "id": "w111",
+          "difficulte": "moyen",
+          "nom_commun": "Irak",
+          "nom_scientifique": "Iraq",
+          "groupe": "asie",
+          "options": [
+            "Corée du Nord",
+            "Irak",
+            "Jordanie",
+            "Viêt Nam"
+          ],
+          "indice": "Triangle entre deux fleuves",
+          "description": "Forme triangulaire entre Tigre et Euphrate.",
+          "explication": "Irak : Forme triangulaire entre Tigre et Euphrate. Courte côte sur le golfe Persique."
+        },
+        {
+          "id": "w112",
+          "difficulte": "moyen",
+          "nom_commun": "Syrie",
+          "nom_scientifique": "Syria",
+          "groupe": "asie",
+          "options": [
+            "Syrie",
+            "Philippines",
+            "Liban",
+            "Oman"
+          ],
+          "indice": "Bloc du Levant",
+          "description": "Forme arrondie le long de la Méditerranée orientale.",
+          "explication": "Syrie : Forme arrondie le long de la Méditerranée orientale. Frontière longue avec la Turquie au nord."
+        },
+        {
+          "id": "w113",
+          "difficulte": "moyen",
+          "nom_commun": "Israël",
+          "nom_scientifique": "Israel",
+          "groupe": "asie",
+          "options": [
+            "Israël",
+            "Émirats arabes unis",
+            "Irak",
+            "Malaisie"
+          ],
+          "indice": "Bande méditerranéenne étroite",
+          "description": "Bande verticale le long de la Méditerranée orientale.",
+          "explication": "Israël : Bande verticale le long de la Méditerranée orientale. Contour étroit nord-sud."
+        },
+        {
+          "id": "w114",
+          "difficulte": "moyen",
+          "nom_commun": "Jordanie",
+          "nom_scientifique": "Jordan",
+          "groupe": "asie",
+          "options": [
+            "Viêt Nam",
+            "Irak",
+            "Jordanie",
+            "Émirats arabes unis"
+          ],
+          "indice": "Bloc désertique enclavé",
+          "description": "Forme arrondie entre mer Morte et désert.",
+          "explication": "Jordanie : Forme arrondie entre mer Morte et désert. Accès restreint à la mer Rouge au sud."
+        },
+        {
+          "id": "w115",
+          "difficulte": "moyen",
+          "nom_commun": "Liban",
+          "nom_scientifique": "Lebanon",
+          "groupe": "asie",
+          "options": [
+            "Liban",
+            "Yémen",
+            "Thaïlande",
+            "Viêt Nam"
+          ],
+          "indice": "Bande côtière étroite",
+          "description": "Mince bande le long de la Méditerranée.",
+          "explication": "Liban : Mince bande le long de la Méditerranée. Frontière montagneuse à l'est."
+        },
+        {
+          "id": "w116",
+          "difficulte": "moyen",
+          "nom_commun": "Yémen",
+          "nom_scientifique": "Yemen",
+          "groupe": "asie",
+          "options": [
+            "Israël",
+            "Yémen",
+            "Afghanistan",
+            "Myanmar"
+          ],
+          "indice": "Coin sud de la péninsule",
+          "description": "Forme triangulaire au sud de l'Arabie.",
+          "explication": "Yémen : Forme triangulaire au sud de l'Arabie. Côtes mer Rouge et golfe d'Aden."
+        },
+        {
+          "id": "w117",
+          "difficulte": "moyen",
+          "nom_commun": "Oman",
+          "nom_scientifique": "Oman",
+          "groupe": "asie",
+          "options": [
+            "Syrie",
+            "Oman",
+            "Irak",
+            "Viêt Nam"
+          ],
+          "indice": "Bloc péninsulaire sud-est",
+          "description": "Forme arrondie au sud-est de l'Arabie.",
+          "explication": "Oman : Forme arrondie au sud-est de l'Arabie. Enclave des Émirats au nord-ouest."
+        },
+        {
+          "id": "w118",
+          "difficulte": "moyen",
+          "nom_commun": "Émirats arabes unis",
+          "nom_scientifique": "United Arab Emirates",
+          "groupe": "asie",
+          "options": [
+            "Myanmar",
+            "Viêt Nam",
+            "Malaisie",
+            "Émirats arabes unis"
+          ],
+          "indice": "Petit bloc du golfe Persique",
+          "description": "Forme compacte le long du golfe Persique.",
+          "explication": "Émirats arabes unis : Forme compacte le long du golfe Persique. Côte convexe vers le golfe."
+        },
+        {
+          "id": "w119",
+          "difficulte": "difficile",
+          "nom_commun": "Bangladesh",
+          "nom_scientifique": "Bangladesh",
+          "groupe": "asie",
+          "options": [
+            "Bangladesh",
+            "Bahreïn",
+            "Kirghizistan",
+            "Koweït"
+          ],
+          "indice": "Bande du delta du Gange",
+          "description": "Bande côtière convexe au nord-est de l'Inde.",
+          "explication": "Bangladesh : Bande côtière convexe au nord-est de l'Inde. Le delta du Gange-Brahmapoutre."
+        },
+        {
+          "id": "w120",
+          "difficulte": "difficile",
+          "nom_commun": "Sri Lanka",
+          "nom_scientifique": "Sri Lanka",
+          "groupe": "asie",
+          "options": [
+            "Brunei",
+            "Taïwan",
+            "Sri Lanka",
+            "Cambodge"
+          ],
+          "indice": "Goutte au sud de l'Inde",
+          "description": "Île en forme de goutte au large de l'Inde.",
+          "explication": "Sri Lanka : Île en forme de goutte au large de l'Inde. Contour lisse et compact."
+        },
+        {
+          "id": "w121",
+          "difficulte": "difficile",
+          "nom_commun": "Népal",
+          "nom_scientifique": "Nepal",
+          "groupe": "asie",
+          "options": [
+            "Népal",
+            "Bangladesh",
+            "Brunei",
+            "Cambodge"
+          ],
+          "indice": "Bande himalayenne",
+          "description": "Bande verticale entre Inde et Chine.",
+          "explication": "Népal : Bande verticale entre Inde et Chine. Enclavé dans l'Himalaya."
+        },
+        {
+          "id": "w122",
+          "difficulte": "difficile",
+          "nom_commun": "Bhoutan",
+          "nom_scientifique": "Bhoutan",
+          "groupe": "asie",
+          "options": [
+            "Bhoutan",
+            "Cambodge",
+            "Koweït",
+            "Singapour"
+          ],
+          "indice": "Petit bloc himalayen",
+          "description": "Petit pays enclavé entre Inde et Chine.",
+          "explication": "Bhoutan : Petit pays enclavé entre Inde et Chine. Forme verticale compacte."
+        },
+        {
+          "id": "w123",
+          "difficulte": "difficile",
+          "nom_commun": "Cambodge",
+          "nom_scientifique": "Cambodia",
+          "groupe": "asie",
+          "options": [
+            "Laos",
+            "Cambodge",
+            "Koweït",
+            "Palestine"
+          ],
+          "indice": "Bloc du Mekong",
+          "description": "Forme arrondie au centre de l'Indochine.",
+          "explication": "Cambodge : Forme arrondie au centre de l'Indochine. Côte mer de Chine méridionale au sud-ouest."
+        },
+        {
+          "id": "w124",
+          "difficulte": "difficile",
+          "nom_commun": "Laos",
+          "nom_scientifique": "Laos",
+          "groupe": "asie",
+          "options": [
+            "Bahreïn",
+            "Palestine",
+            "Laos",
+            "Qatar"
+          ],
+          "indice": "Bloc enclavé",
+          "description": "Pays enclavé en forme de goutte.",
+          "explication": "Laos : Pays enclavé en forme de goutte. Entouré par cinq voisins sans littoral."
+        },
+        {
+          "id": "w125",
+          "difficulte": "difficile",
+          "nom_commun": "Mongolie",
+          "nom_scientifique": "Mongolia",
+          "groupe": "asie",
+          "options": [
+            "Mongolie",
+            "Qatar",
+            "Bahreïn",
+            "Kirghizistan"
+          ],
+          "indice": "Vaste bloc sans littoral",
+          "description": "Grand rectangle entre Chine et Russie.",
+          "explication": "Mongolie : Grand rectangle entre Chine et Russie. Steppe, contour très régulier."
+        },
+        {
+          "id": "w126",
+          "difficulte": "difficile",
+          "nom_commun": "Taïwan",
+          "nom_scientifique": "Taiwan",
+          "groupe": "asie",
+          "options": [
+            "Népal",
+            "Kirghizistan",
+            "Taïwan",
+            "Azerbaïdjan"
+          ],
+          "indice": "Île est allongée",
+          "description": "Île verticale au large de la Chine.",
+          "explication": "Taïwan : Île verticale au large de la Chine. Forme ovale orientée nord-sud."
+        },
+        {
+          "id": "w127",
+          "difficulte": "difficile",
+          "nom_commun": "Singapour",
+          "nom_scientifique": "Singapore",
+          "groupe": "asie",
+          "options": [
+            "Turkménistan",
+            "Singapour",
+            "Taïwan",
+            "Népal"
+          ],
+          "indice": "Point à la pointe malaise",
+          "description": "Minuscule territoire à la pointe de la Malaisie.",
+          "explication": "Singapour : Minuscule territoire à la pointe de la Malaisie. Souvent invisible sans zoom."
+        },
+        {
+          "id": "w128",
+          "difficulte": "difficile",
+          "nom_commun": "Brunei",
+          "nom_scientifique": "Brunei",
+          "groupe": "asie",
+          "options": [
+            "Sri Lanka",
+            "Qatar",
+            "Brunei",
+            "Cambodge"
+          ],
+          "indice": "Petit bloc sur Bornéo",
+          "description": "Deux enclaves sur l'île de Bornéo.",
+          "explication": "Brunei : Deux enclaves sur l'île de Bornéo. Contour minuscule entouré de Malaisie."
+        },
+        {
+          "id": "w129",
+          "difficulte": "difficile",
+          "nom_commun": "Timor oriental",
+          "nom_scientifique": "East Timor",
+          "groupe": "asie",
+          "options": [
+            "Bahreïn",
+            "Cambodge",
+            "Géorgie",
+            "Timor oriental"
+          ],
+          "indice": "Moitié est de Timor",
+          "description": "Moitié orientale de l'île de Timor.",
+          "explication": "Timor oriental : Moitié orientale de l'île de Timor. Petit territoire insulaire."
+        },
+        {
+          "id": "w130",
+          "difficulte": "difficile",
+          "nom_commun": "Arménie",
+          "nom_scientifique": "Armenia",
+          "groupe": "asie",
+          "options": [
+            "Arménie",
+            "Tadjikistan",
+            "Bangladesh",
+            "Mongolie"
+          ],
+          "indice": "Petit bloc du Caucase",
+          "description": "Forme arrondie enclavée au sud du Caucase.",
+          "explication": "Arménie : Forme arrondie enclavée au sud du Caucase. Sans accès à la mer."
+        },
+        {
+          "id": "w131",
+          "difficulte": "difficile",
+          "nom_commun": "Géorgie",
+          "nom_scientifique": "Georgia",
+          "groupe": "asie",
+          "options": [
+            "Turkménistan",
+            "Mongolie",
+            "Bangladesh",
+            "Géorgie"
+          ],
+          "indice": "Bande côtière du Caucase",
+          "description": "Bande entre mer Noire et Caucase.",
+          "explication": "Géorgie : Bande entre mer Noire et Caucase. Forme allongée est-ouest."
+        },
+        {
+          "id": "w132",
+          "difficulte": "difficile",
+          "nom_commun": "Azerbaïdjan",
+          "nom_scientifique": "Azerbaijan",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Laos",
+            "Kirghizistan",
+            "Cambodge"
+          ],
+          "indice": "Bande caspienne",
+          "description": "Bande le long de la mer Caspienne.",
+          "explication": "Azerbaïdjan : Bande le long de la mer Caspienne. Enclave du Nakhitchevan séparée."
+        },
+        {
+          "id": "w133",
+          "difficulte": "difficile",
+          "nom_commun": "Kirghizistan",
+          "nom_scientifique": "Kyrgyzstan",
+          "groupe": "asie",
+          "options": [
+            "Brunei",
+            "Sri Lanka",
+            "Kirghizistan",
+            "Bangladesh"
+          ],
+          "indice": "Bloc montagneux central",
+          "description": "Forme arrondie en Asie centrale.",
+          "explication": "Kirghizistan : Forme arrondie en Asie centrale. Entouré de montagnes."
+        },
+        {
+          "id": "w134",
+          "difficulte": "difficile",
+          "nom_commun": "Tadjikistan",
+          "nom_scientifique": "Tajikistan",
+          "groupe": "asie",
+          "options": [
+            "Géorgie",
+            "Tadjikistan",
+            "Taïwan",
+            "Koweït"
+          ],
+          "indice": "Bloc est enclavé",
+          "description": "Forme verticale enclavée au sud de l'Asie centrale.",
+          "explication": "Tadjikistan : Forme verticale enclavée au sud de l'Asie centrale. Frontières montagneuses."
+        },
+        {
+          "id": "w135",
+          "difficulte": "difficile",
+          "nom_commun": "Turkménistan",
+          "nom_scientifique": "Turkmenistan",
+          "groupe": "asie",
+          "options": [
+            "Arménie",
+            "Turkménistan",
+            "Koweït",
+            "Brunei"
+          ],
+          "indice": "Bloc désert caspien",
+          "description": "Forme arrondie le long de la mer Caspienne.",
+          "explication": "Turkménistan : Forme arrondie le long de la mer Caspienne. Désert de Karakoum au centre."
+        },
+        {
+          "id": "w136",
+          "difficulte": "difficile",
+          "nom_commun": "Qatar",
+          "nom_scientifique": "Qatar",
+          "groupe": "asie",
+          "options": [
+            "Qatar",
+            "Arménie",
+            "Koweït",
+            "Timor oriental"
+          ],
+          "indice": "Péninsule du golfe Persique",
+          "description": "Petite péninsule convexe dans le golfe.",
+          "explication": "Qatar : Petite péninsule convexe dans le golfe. Contour arrondi très compact."
+        },
+        {
+          "id": "w137",
+          "difficulte": "difficile",
+          "nom_commun": "Bahreïn",
+          "nom_scientifique": "Bahrain",
+          "groupe": "asie",
+          "options": [
+            "Turkménistan",
+            "Bahreïn",
+            "Singapour",
+            "Laos"
+          ],
+          "indice": "Archipel du golfe",
+          "description": "Petit archipel dans le golfe Persique.",
+          "explication": "Bahreïn : Petit archipel dans le golfe Persique. Quelques îles très petites."
+        },
+        {
+          "id": "w138",
+          "difficulte": "difficile",
+          "nom_commun": "Koweït",
+          "nom_scientifique": "Kuwait",
+          "groupe": "asie",
+          "options": [
+            "Singapour",
+            "Koweït",
+            "Géorgie",
+            "Azerbaïdjan"
+          ],
+          "indice": "Petit triangle du golfe",
+          "description": "Minuscule territoire au fond du golfe Persique.",
+          "explication": "Koweït : Minuscule territoire au fond du golfe Persique. Frontière courte avec l'Irak."
+        },
+        {
+          "id": "w139",
+          "difficulte": "difficile",
+          "nom_commun": "Palestine",
+          "nom_scientifique": "Palestine",
+          "groupe": "asie",
+          "options": [
+            "Qatar",
+            "Bangladesh",
+            "Palestine",
+            "Laos"
+          ],
+          "indice": "Deux blocs séparés",
+          "description": "Bandes de Cisjordanie et bande de Gaza.",
+          "explication": "Palestine : Bandes de Cisjordanie et bande de Gaza. Silhouette fragmentée sur les cartes."
+        }
+      ]
+    },
+    {
+      "id": "ameriques",
+      "label": "Amériques",
+      "questions": [
+        {
+          "id": "w140",
+          "difficulte": "facile",
+          "nom_commun": "États-Unis",
+          "nom_scientifique": "United States",
+          "groupe": "ameriques",
+          "options": [
+            "États-Unis",
+            "Mexique",
+            "Colombie",
+            "Canada"
+          ],
+          "indice": "Grand bloc nord-américain",
+          "description": "Vaste territoire continental avec côtes atlantique et pacifique.",
+          "explication": "États-Unis : Vaste territoire continental avec côtes atlantique et pacifique. L'Alaska et Hawaï sont souvent insets séparés."
+        },
+        {
+          "id": "w141",
+          "difficulte": "facile",
+          "nom_commun": "Canada",
+          "nom_scientifique": "Canada",
+          "groupe": "ameriques",
+          "options": [
+            "Chili",
+            "Pérou",
+            "Canada",
+            "Mexique"
+          ],
+          "indice": "Immense bloc nord",
+          "description": "Second plus grand pays, forme très étendue vers le nord.",
+          "explication": "Canada : Second plus grand pays, forme très étendue vers le nord. Côte atlantique et pacifique très longues."
+        },
+        {
+          "id": "w142",
+          "difficulte": "facile",
+          "nom_commun": "Brésil",
+          "nom_scientifique": "Brazil",
+          "groupe": "ameriques",
+          "options": [
+            "Brésil",
+            "États-Unis",
+            "Mexique",
+            "Pérou"
+          ],
+          "indice": "Cœur convexe de l'Amérique du Sud",
+          "description": "Grand bloc convexe occupant l'est du continent.",
+          "explication": "Brésil : Grand bloc convexe occupant l'est du continent. L'Amazonie domine l'intérieur."
+        },
+        {
+          "id": "w143",
+          "difficulte": "facile",
+          "nom_commun": "Mexique",
+          "nom_scientifique": "Mexico",
+          "groupe": "ameriques",
+          "options": [
+            "Mexique",
+            "Venezuela",
+            "Colombie",
+            "Pérou"
+          ],
+          "indice": "Bande nord-sud large",
+          "description": "Grand pays entre États-Unis et Amérique centrale.",
+          "explication": "Mexique : Grand pays entre États-Unis et Amérique centrale. Péninsule du Yucatán au sud-est."
+        },
+        {
+          "id": "w144",
+          "difficulte": "facile",
+          "nom_commun": "Argentine",
+          "nom_scientifique": "Argentina",
+          "groupe": "ameriques",
+          "options": [
+            "Colombie",
+            "Argentine",
+            "Pérou",
+            "Brésil"
+          ],
+          "indice": "Triangle pointant au sud",
+          "description": "Long pays triangulaire vers le cap Horn.",
+          "explication": "Argentine : Long pays triangulaire vers le cap Horn. Les Andes marquent l'ouest."
+        },
+        {
+          "id": "w145",
+          "difficulte": "facile",
+          "nom_commun": "Colombie",
+          "nom_scientifique": "Colombia",
+          "groupe": "ameriques",
+          "options": [
+            "Chili",
+            "Colombie",
+            "Argentine",
+            "Cuba"
+          ],
+          "indice": "Bloc nord-ouest convexe",
+          "description": "Forme convexe le long de la côte pacifique et caraïbe.",
+          "explication": "Colombie : Forme convexe le long de la côte pacifique et caraïbe. Deux côtes, forme arrondie."
+        },
+        {
+          "id": "w146",
+          "difficulte": "facile",
+          "nom_commun": "Pérou",
+          "nom_scientifique": "Peru",
+          "groupe": "ameriques",
+          "options": [
+            "Pérou",
+            "Canada",
+            "Cuba",
+            "Chili"
+          ],
+          "indice": "Bande verticale pacifique",
+          "description": "Bande verticale le long de l'océan Pacifique.",
+          "explication": "Pérou : Bande verticale le long de l'océan Pacifique. Frontière andine à l'est."
+        },
+        {
+          "id": "w147",
+          "difficulte": "facile",
+          "nom_commun": "Chili",
+          "nom_scientifique": "Chile",
+          "groupe": "ameriques",
+          "options": [
+            "Brésil",
+            "Chili",
+            "Colombie",
+            "Cuba"
+          ],
+          "indice": "Bande verticale très étroite",
+          "description": "Longue bande étroite le long du Pacifique.",
+          "explication": "Chili : Longue bande étroite le long du Pacifique. L'un des pays les plus allongés nord-sud."
+        },
+        {
+          "id": "w148",
+          "difficulte": "facile",
+          "nom_commun": "Venezuela",
+          "nom_scientifique": "Venezuela",
+          "groupe": "ameriques",
+          "options": [
+            "Mexique",
+            "Venezuela",
+            "Colombie",
+            "Canada"
+          ],
+          "indice": "Bloc caraïbe nord",
+          "description": "Forme triangulaire au nord de l'Amérique du Sud.",
+          "explication": "Venezuela : Forme triangulaire au nord de l'Amérique du Sud. Côte caraïbe au nord."
+        },
+        {
+          "id": "w149",
+          "difficulte": "facile",
+          "nom_commun": "Cuba",
+          "nom_scientifique": "Cuba",
+          "groupe": "ameriques",
+          "options": [
+            "Mexique",
+            "Canada",
+            "Cuba",
+            "Pérou"
+          ],
+          "indice": "Longue île caraïbe",
+          "description": "Grande île allongée dans les Caraïbes.",
+          "explication": "Cuba : Grande île allongée dans les Caraïbes. Contour en crocodile allongé."
+        },
+        {
+          "id": "w150",
+          "difficulte": "moyen",
+          "nom_commun": "Équateur",
+          "nom_scientifique": "Ecuador",
+          "groupe": "ameriques",
+          "options": [
+            "Jamaïque",
+            "Bolivie",
+            "République dominicaine",
+            "Équateur"
+          ],
+          "indice": "Bande équatoriale compacte",
+          "description": "Bande compacte le long du Pacifique.",
+          "explication": "Équateur : Bande compacte le long du Pacifique. Les Galápagos sont un inset séparé."
+        },
+        {
+          "id": "w151",
+          "difficulte": "moyen",
+          "nom_commun": "Bolivie",
+          "nom_scientifique": "Bolivia",
+          "groupe": "ameriques",
+          "options": [
+            "Bolivie",
+            "République dominicaine",
+            "Panama",
+            "Guyana"
+          ],
+          "indice": "Bloc enclavé central",
+          "description": "Forme arrondie sans littoral au centre.",
+          "explication": "Bolivie : Forme arrondie sans littoral au centre. Entouré par cinq pays voisins."
+        },
+        {
+          "id": "w152",
+          "difficulte": "moyen",
+          "nom_commun": "Paraguay",
+          "nom_scientifique": "Paraguay",
+          "groupe": "ameriques",
+          "options": [
+            "Paraguay",
+            "Nicaragua",
+            "Équateur",
+            "Uruguay"
+          ],
+          "indice": "Bloc enclavé compact",
+          "description": "Pays enclavé entre Brésil, Argentine et Bolivie.",
+          "explication": "Paraguay : Pays enclavé entre Brésil, Argentine et Bolivie. Forme arrondie régulière."
+        },
+        {
+          "id": "w153",
+          "difficulte": "moyen",
+          "nom_commun": "Uruguay",
+          "nom_scientifique": "Uruguay",
+          "groupe": "ameriques",
+          "options": [
+            "République dominicaine",
+            "Uruguay",
+            "Suriname",
+            "Guyane française"
+          ],
+          "indice": "Bande atlantique sud",
+          "description": "Bande verticale le long de l'Atlantique.",
+          "explication": "Uruguay : Bande verticale le long de l'Atlantique. Entre Brésil et Argentine."
+        },
+        {
+          "id": "w154",
+          "difficulte": "moyen",
+          "nom_commun": "Guyana",
+          "nom_scientifique": "Guyana",
+          "groupe": "ameriques",
+          "options": [
+            "Guyana",
+            "Honduras",
+            "Guyane française",
+            "Costa Rica"
+          ],
+          "indice": "Bloc atlantique nord-est",
+          "description": "Forme arrondie le long de l'Atlantique.",
+          "explication": "Guyana : Forme arrondie le long de l'Atlantique. Forêt amazonienne à l'ouest."
+        },
+        {
+          "id": "w155",
+          "difficulte": "moyen",
+          "nom_commun": "Suriname",
+          "nom_scientifique": "Suriname",
+          "groupe": "ameriques",
+          "options": [
+            "Suriname",
+            "Costa Rica",
+            "Paraguay",
+            "Jamaïque"
+          ],
+          "indice": "Bande côtière compacte",
+          "description": "Bande verticale le long de l'Atlantique.",
+          "explication": "Suriname : Bande verticale le long de l'Atlantique. Entre Guyana et Guyane française."
+        },
+        {
+          "id": "w156",
+          "difficulte": "moyen",
+          "nom_commun": "Guyane française",
+          "nom_scientifique": "French Guiana",
+          "groupe": "ameriques",
+          "options": [
+            "Costa Rica",
+            "Nicaragua",
+            "Guyane française",
+            "Honduras"
+          ],
+          "indice": "Bande côtière française",
+          "description": "Bande le long de l'Atlantique au nord-est.",
+          "explication": "Guyane française : Bande le long de l'Atlantique au nord-est. Territoire français d'outre-mer."
+        },
+        {
+          "id": "w157",
+          "difficulte": "moyen",
+          "nom_commun": "Panama",
+          "nom_scientifique": "Panama",
+          "groupe": "ameriques",
+          "options": [
+            "Guatemala",
+            "Costa Rica",
+            "Panama",
+            "Équateur"
+          ],
+          "indice": "Isthme en S",
+          "description": "Bande en S entre deux océans.",
+          "explication": "Panama : Bande en S entre deux océans. Relie l'Amérique centrale et du Sud."
+        },
+        {
+          "id": "w158",
+          "difficulte": "moyen",
+          "nom_commun": "Costa Rica",
+          "nom_scientifique": "Costa Rica",
+          "groupe": "ameriques",
+          "options": [
+            "Équateur",
+            "Costa Rica",
+            "Panama",
+            "Guyane française"
+          ],
+          "indice": "Bande centrale étroite",
+          "description": "Bande verticale entre Nicaragua et Panama.",
+          "explication": "Costa Rica : Bande verticale entre Nicaragua et Panama. Côtes pacifique et caraïbe."
+        },
+        {
+          "id": "w159",
+          "difficulte": "moyen",
+          "nom_commun": "Nicaragua",
+          "nom_scientifique": "Nicaragua",
+          "groupe": "ameriques",
+          "options": [
+            "Paraguay",
+            "République dominicaine",
+            "Uruguay",
+            "Nicaragua"
+          ],
+          "indice": "Bloc central large",
+          "description": "Forme triangulaire en Amérique centrale.",
+          "explication": "Nicaragua : Forme triangulaire en Amérique centrale. Grands lacs au centre."
+        },
+        {
+          "id": "w160",
+          "difficulte": "moyen",
+          "nom_commun": "Honduras",
+          "nom_scientifique": "Honduras",
+          "groupe": "ameriques",
+          "options": [
+            "Costa Rica",
+            "Haïti",
+            "Équateur",
+            "Honduras"
+          ],
+          "indice": "Triangle côtier",
+          "description": "Forme triangulaire le long des Caraïbes.",
+          "explication": "Honduras : Forme triangulaire le long des Caraïbes. Côte nord convexe."
+        },
+        {
+          "id": "w161",
+          "difficulte": "moyen",
+          "nom_commun": "Guatemala",
+          "nom_scientifique": "Guatemala",
+          "groupe": "ameriques",
+          "options": [
+            "Uruguay",
+            "Guyana",
+            "Paraguay",
+            "Guatemala"
+          ],
+          "indice": "Bloc nord-ouest",
+          "description": "Forme arrondie au nord de l'Amérique centrale.",
+          "explication": "Guatemala : Forme arrondie au nord de l'Amérique centrale. Frontière longue avec le Mexique."
+        },
+        {
+          "id": "w162",
+          "difficulte": "moyen",
+          "nom_commun": "République dominicaine",
+          "nom_scientifique": "Dominican Republic",
+          "groupe": "ameriques",
+          "options": [
+            "Équateur",
+            "Haïti",
+            "Uruguay",
+            "République dominicaine"
+          ],
+          "indice": "Moitié est d'Hispaniola",
+          "description": "Moitié orientale de l'île d'Hispaniola.",
+          "explication": "République dominicaine : Moitié orientale de l'île d'Hispaniola. Forme triangulaire dans les Caraïbes."
+        },
+        {
+          "id": "w163",
+          "difficulte": "moyen",
+          "nom_commun": "Haïti",
+          "nom_scientifique": "Haiti",
+          "groupe": "ameriques",
+          "options": [
+            "Uruguay",
+            "Nicaragua",
+            "République dominicaine",
+            "Haïti"
+          ],
+          "indice": "Moitié ouest d'Hispaniola",
+          "description": "Moitié occidentale de l'île d'Hispaniola.",
+          "explication": "Haïti : Moitié occidentale de l'île d'Hispaniola. Plus étroit que la République dominicaine."
+        },
+        {
+          "id": "w164",
+          "difficulte": "moyen",
+          "nom_commun": "Jamaïque",
+          "nom_scientifique": "Jamaica",
+          "groupe": "ameriques",
+          "options": [
+            "Jamaïque",
+            "Suriname",
+            "Guyana",
+            "Panama"
+          ],
+          "indice": "Île caraïbe ovale",
+          "description": "Île ovale au sud de Cuba.",
+          "explication": "Jamaïque : Île ovale au sud de Cuba. Contour lisse et compact."
+        },
+        {
+          "id": "w165",
+          "difficulte": "difficile",
+          "nom_commun": "Belize",
+          "nom_scientifique": "Belize",
+          "groupe": "ameriques",
+          "options": [
+            "Bahamas",
+            "Grenade",
+            "Belize",
+            "Salvador"
+          ],
+          "indice": "Petit coin caraïbe",
+          "description": "Minuscule bande côtière au sud du Yucatán.",
+          "explication": "Belize : Minuscule bande côtière au sud du Yucatán. Seul pays anglophone d'Amérique centrale."
+        },
+        {
+          "id": "w166",
+          "difficulte": "difficile",
+          "nom_commun": "Salvador",
+          "nom_scientifique": "El Salvador",
+          "groupe": "ameriques",
+          "options": [
+            "Salvador",
+            "Belize",
+            "Saint-Kitts-et-Nevis",
+            "Bahamas"
+          ],
+          "indice": "Petit triangle pacifique",
+          "description": "Plus petit pays d'Amérique centrale.",
+          "explication": "Salvador : Plus petit pays d'Amérique centrale. Côte pacifique convexe."
+        },
+        {
+          "id": "w167",
+          "difficulte": "difficile",
+          "nom_commun": "Trinité-et-Tobago",
+          "nom_scientifique": "Trinidad and Tobago",
+          "groupe": "ameriques",
+          "options": [
+            "Trinité-et-Tobago",
+            "Saint-Vincent-et-les-Grenadines",
+            "Dominique",
+            "Barbade"
+          ],
+          "indice": "Deux îles au large du Venezuela",
+          "description": "Trinidad proche du continent, Tobago plus petite.",
+          "explication": "Trinité-et-Tobago : Trinidad proche du continent, Tobago plus petite. Contour en deux parties."
+        },
+        {
+          "id": "w168",
+          "difficulte": "difficile",
+          "nom_commun": "Barbade",
+          "nom_scientifique": "Barbade",
+          "groupe": "ameriques",
+          "options": [
+            "Dominique",
+            "Groenland",
+            "Porto Rico",
+            "Barbade"
+          ],
+          "indice": "Petite île caraïbe",
+          "description": "Petite île convexe dans les Antilles.",
+          "explication": "Barbade : Petite île convexe dans les Antilles. Forme ovale très compacte."
+        },
+        {
+          "id": "w169",
+          "difficulte": "difficile",
+          "nom_commun": "Bahamas",
+          "nom_scientifique": "Bahamas",
+          "groupe": "ameriques",
+          "options": [
+            "Antigua-et-Barbuda",
+            "Saint-Kitts-et-Nevis",
+            "Grenade",
+            "Bahamas"
+          ],
+          "indice": "Archipel au nord des Caraïbes",
+          "description": "Chaîne d'îles au sud-est de la Floride.",
+          "explication": "Bahamas : Chaîne d'îles au sud-est de la Floride. Nombreuses petites îles."
+        },
+        {
+          "id": "w170",
+          "difficulte": "difficile",
+          "nom_commun": "Grenade",
+          "nom_scientifique": "Grenada",
+          "groupe": "ameriques",
+          "options": [
+            "Sainte-Lucie",
+            "Belize",
+            "Saint-Vincent-et-les-Grenadines",
+            "Grenade"
+          ],
+          "indice": "Petite île sud des Antilles",
+          "description": "Petite île convexe au sud des Petites Antilles.",
+          "explication": "Grenade : Petite île convexe au sud des Petites Antilles. Contour minimal."
+        },
+        {
+          "id": "w171",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Vincent-et-les-Grenadines",
+          "nom_scientifique": "Saint Vincent and the Grenadines",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Vincent-et-les-Grenadines",
+            "Grenade",
+            "Saint-Kitts-et-Nevis",
+            "Groenland"
+          ],
+          "indice": "Chaîne d'îles",
+          "description": "Archipel des Petites Antilles.",
+          "explication": "Saint-Vincent-et-les-Grenadines : Archipel des Petites Antilles. Silhouette fragmentée."
+        },
+        {
+          "id": "w172",
+          "difficulte": "difficile",
+          "nom_commun": "Sainte-Lucie",
+          "nom_scientifique": "Saint Lucia",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Vincent-et-les-Grenadines",
+            "Sainte-Lucie",
+            "Bahamas",
+            "Grenade"
+          ],
+          "indice": "Île volcanique compacte",
+          "description": "Île allongée dans les Antilles.",
+          "explication": "Sainte-Lucie : Île allongée dans les Antilles. Forme de goutte verticale."
+        },
+        {
+          "id": "w173",
+          "difficulte": "difficile",
+          "nom_commun": "Dominique",
+          "nom_scientifique": "Dominica",
+          "groupe": "ameriques",
+          "options": [
+            "Bahamas",
+            "Porto Rico",
+            "Antigua-et-Barbuda",
+            "Dominique"
+          ],
+          "indice": "Île centrale des Antilles",
+          "description": "Île verticale entre Guadeloupe et Martinique.",
+          "explication": "Dominique : Île verticale entre Guadeloupe et Martinique. Petit territoire insulaire."
+        },
+        {
+          "id": "w174",
+          "difficulte": "difficile",
+          "nom_commun": "Antigua-et-Barbuda",
+          "nom_scientifique": "Antigua and Barbuda",
+          "groupe": "ameriques",
+          "options": [
+            "Barbade",
+            "Groenland",
+            "Salvador",
+            "Antigua-et-Barbuda"
+          ],
+          "indice": "Deux îles des Antilles",
+          "description": "Deux îles principales proches.",
+          "explication": "Antigua-et-Barbuda : Deux îles principales proches. Points dans les Caraïbes."
+        },
+        {
+          "id": "w175",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Kitts-et-Nevis",
+          "nom_scientifique": "Saint Kitts and Nevis",
+          "groupe": "ameriques",
+          "options": [
+            "Barbade",
+            "Grenade",
+            "Porto Rico",
+            "Saint-Kitts-et-Nevis"
+          ],
+          "indice": "Deux petites îles",
+          "description": "Deux îles voisines au nord des Antilles.",
+          "explication": "Saint-Kitts-et-Nevis : Deux îles voisines au nord des Antilles. Contour très réduit."
+        },
+        {
+          "id": "w176",
+          "difficulte": "difficile",
+          "nom_commun": "Porto Rico",
+          "nom_scientifique": "Puerto Rico",
+          "groupe": "ameriques",
+          "options": [
+            "Trinité-et-Tobago",
+            "Saint-Vincent-et-les-Grenadines",
+            "Dominique",
+            "Porto Rico"
+          ],
+          "indice": "Île rectangulaire des Caraïbes",
+          "description": "Île rectangulaire au sud-est de la Floride.",
+          "explication": "Porto Rico : Île rectangulaire au sud-est de la Floride. Territoire associé aux États-Unis."
+        },
+        {
+          "id": "w177",
+          "difficulte": "difficile",
+          "nom_commun": "Groenland",
+          "nom_scientifique": "Greenland",
+          "groupe": "ameriques",
+          "options": [
+            "Barbade",
+            "Groenland",
+            "Saint-Vincent-et-les-Grenadines",
+            "Bahamas"
+          ],
+          "indice": "Immense île arctique",
+          "description": "Grande île blanche au nord-est de l'Amérique.",
+          "explication": "Groenland : Grande île blanche au nord-est de l'Amérique. Territoire autonome du Danemark."
+        }
+      ]
+    },
+    {
+      "id": "oceanie",
+      "label": "Océanie",
+      "questions": [
+        {
+          "id": "w178",
+          "difficulte": "facile",
+          "nom_commun": "Australie",
+          "nom_scientifique": "Australia",
+          "groupe": "oceanie",
+          "options": [
+            "Fidji",
+            "Papouasie-Nouvelle-Guinée",
+            "Australie",
+            "Nouvelle-Zélande"
+          ],
+          "indice": "Grand bloc continental",
+          "description": "Vaste île-continent, côte très découpée.",
+          "explication": "Australie : Vaste île-continent, côte très découpée. Contour iconique du sud de l'océan Pacifique."
+        },
+        {
+          "id": "w179",
+          "difficulte": "facile",
+          "nom_commun": "Nouvelle-Zélande",
+          "nom_scientifique": "New Zealand",
+          "groupe": "oceanie",
+          "options": [
+            "Fidji",
+            "Papouasie-Nouvelle-Guinée",
+            "Australie",
+            "Nouvelle-Zélande"
+          ],
+          "indice": "Deux îles verticales",
+          "description": "Deux îles allongées nord-sud, l'île du Sud plus large.",
+          "explication": "Nouvelle-Zélande : Deux îles allongées nord-sud, l'île du Sud plus large. Silhouette en deux blocs inclinés."
+        },
+        {
+          "id": "w180",
+          "difficulte": "facile",
+          "nom_commun": "Papouasie-Nouvelle-Guinée",
+          "nom_scientifique": "Papua New Guinea",
+          "groupe": "oceanie",
+          "options": [
+            "Nouvelle-Zélande",
+            "Papouasie-Nouvelle-Guinée",
+            "Australie",
+            "Fidji"
+          ],
+          "indice": "Moitié est de la Nouvelle-Guinée",
+          "description": "Grande île orientale, côte très découpée.",
+          "explication": "Papouasie-Nouvelle-Guinée : Grande île orientale, côte très découpée. Partage l'île avec l'Indonésie à l'ouest."
+        },
+        {
+          "id": "w181",
+          "difficulte": "facile",
+          "nom_commun": "Fidji",
+          "nom_scientifique": "Fiji",
+          "groupe": "oceanie",
+          "options": [
+            "Australie",
+            "Papouasie-Nouvelle-Guinée",
+            "Fidji",
+            "Nouvelle-Zélande"
+          ],
+          "indice": "Archipel en arc",
+          "description": "Groupe d'îles en arc dans le Pacifique sud.",
+          "explication": "Fidji : Groupe d'îles en arc dans le Pacifique sud. Centaines d'îles volcaniques."
+        },
+        {
+          "id": "w182",
+          "difficulte": "moyen",
+          "nom_commun": "Nouvelle-Calédonie",
+          "nom_scientifique": "New Caledonia",
+          "groupe": "oceanie",
+          "options": [
+            "Nouvelle-Calédonie",
+            "Tonga",
+            "Samoa",
+            "Vanuatu"
+          ],
+          "indice": "Archipel allongé",
+          "description": "Grande terre allongée et îlots voisins.",
+          "explication": "Nouvelle-Calédonie : Grande terre allongée et îlots voisins. Territoire français du Pacifique sud."
+        },
+        {
+          "id": "w183",
+          "difficulte": "moyen",
+          "nom_commun": "Vanuatu",
+          "nom_scientifique": "Vanuatu",
+          "groupe": "oceanie",
+          "options": [
+            "Vanuatu",
+            "Nouvelle-Calédonie",
+            "Îles Salomon",
+            "Tonga"
+          ],
+          "indice": "Chaîne d'îles en Y",
+          "description": "Archipel en Y au nord de la Nouvelle-Calédonie.",
+          "explication": "Vanuatu : Archipel en Y au nord de la Nouvelle-Calédonie. Îles volcaniques dispersées."
+        },
+        {
+          "id": "w184",
+          "difficulte": "moyen",
+          "nom_commun": "Samoa",
+          "nom_scientifique": "Samoa",
+          "groupe": "oceanie",
+          "options": [
+            "Vanuatu",
+            "Tonga",
+            "Samoa",
+            "Nouvelle-Calédonie"
+          ],
+          "indice": "Deux îles principales",
+          "description": "Deux îles voisines au centre du Pacifique sud.",
+          "explication": "Samoa : Deux îles voisines au centre du Pacifique sud. Contour en deux parties."
+        },
+        {
+          "id": "w185",
+          "difficulte": "moyen",
+          "nom_commun": "Tonga",
+          "nom_scientifique": "Tonga",
+          "groupe": "oceanie",
+          "options": [
+            "Îles Salomon",
+            "Tonga",
+            "Nouvelle-Calédonie",
+            "Samoa"
+          ],
+          "indice": "Archipel dispersé",
+          "description": "Îles alignées du nord au sud.",
+          "explication": "Tonga : Îles alignées du nord au sud. Royaume insulaire du Pacifique."
+        },
+        {
+          "id": "w186",
+          "difficulte": "moyen",
+          "nom_commun": "Îles Salomon",
+          "nom_scientifique": "Solomon Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Tonga",
+            "Samoa",
+            "Îles Salomon",
+            "Nouvelle-Calédonie"
+          ],
+          "indice": "Archipel en double chaîne",
+          "description": "Double chaîne d'îles au nord-est de l'Australie.",
+          "explication": "Îles Salomon : Double chaîne d'îles au nord-est de l'Australie. Silhouette très fragmentée."
+        },
+        {
+          "id": "w187",
+          "difficulte": "difficile",
+          "nom_commun": "Micronésie",
+          "nom_scientifique": "Federated States of Micronesia",
+          "groupe": "oceanie",
+          "options": [
+            "Nauru",
+            "Guam",
+            "Palaos",
+            "Micronésie"
+          ],
+          "indice": "Archipel du nord du Pacifique",
+          "description": "Quatre états sur de nombreuses îles.",
+          "explication": "Micronésie : Quatre états sur de nombreuses îles. Points dispersés dans l'océan."
+        },
+        {
+          "id": "w188",
+          "difficulte": "difficile",
+          "nom_commun": "Palaos",
+          "nom_scientifique": "Palau",
+          "groupe": "oceanie",
+          "options": [
+            "Micronésie",
+            "Tuvalu",
+            "Îles Marshall",
+            "Palaos"
+          ],
+          "indice": "Archipel ouest du Pacifique",
+          "description": "Groupe d'îles au sud-est des Philippines.",
+          "explication": "Palaos : Groupe d'îles au sud-est des Philippines. Contour en arc de cercle."
+        },
+        {
+          "id": "w189",
+          "difficulte": "difficile",
+          "nom_commun": "Îles Marshall",
+          "nom_scientifique": "Marshall Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Nauru",
+            "Îles Marshall",
+            "Palaos",
+            "Micronésie"
+          ],
+          "indice": "Atolls dispersés",
+          "description": "Deux chaînes d'atolls au nord de l'équateur.",
+          "explication": "Îles Marshall : Deux chaînes d'atolls au nord de l'équateur. Silhouette en deux rangées."
+        },
+        {
+          "id": "w190",
+          "difficulte": "difficile",
+          "nom_commun": "Kiribati",
+          "nom_scientifique": "Kiribati",
+          "groupe": "oceanie",
+          "options": [
+            "Guam",
+            "Îles Cook",
+            "Kiribati",
+            "Micronésie"
+          ],
+          "indice": "Atolls sur l'équateur",
+          "description": "Archipel étalé de part et d'autre de l'équateur.",
+          "explication": "Kiribati : Archipel étalé de part et d'autre de l'équateur. L'un des pays les plus dispersés."
+        },
+        {
+          "id": "w191",
+          "difficulte": "difficile",
+          "nom_commun": "Tuvalu",
+          "nom_scientifique": "Tuvalu",
+          "groupe": "oceanie",
+          "options": [
+            "Îles Cook",
+            "Kiribati",
+            "Tuvalu",
+            "Samoa américaines"
+          ],
+          "indice": "Petits atolls",
+          "description": "Neuf atolls au sud des îles Marshall.",
+          "explication": "Tuvalu : Neuf atolls au sud des îles Marshall. Contour minimal."
+        },
+        {
+          "id": "w192",
+          "difficulte": "difficile",
+          "nom_commun": "Nauru",
+          "nom_scientifique": "Nauru",
+          "groupe": "oceanie",
+          "options": [
+            "Îles Marshall",
+            "Samoa américaines",
+            "Tuvalu",
+            "Nauru"
+          ],
+          "indice": "Point dans le Pacifique",
+          "description": "Une seule petite île au nord-est de la Papouasie.",
+          "explication": "Nauru : Une seule petite île au nord-est de la Papouasie. L'un des plus petits États du monde."
+        },
+        {
+          "id": "w193",
+          "difficulte": "difficile",
+          "nom_commun": "Polynésie française",
+          "nom_scientifique": "French Polynesia",
+          "groupe": "oceanie",
+          "options": [
+            "Polynésie française",
+            "Nauru",
+            "Micronésie",
+            "Kiribati"
+          ],
+          "indice": "Vaste archipel du Pacifique",
+          "description": "Cinq archipels dont Tahiti.",
+          "explication": "Polynésie française : Cinq archipels dont Tahiti. Territoire français très dispersé."
+        },
+        {
+          "id": "w194",
+          "difficulte": "difficile",
+          "nom_commun": "Guam",
+          "nom_scientifique": "Guam",
+          "groupe": "oceanie",
+          "options": [
+            "Polynésie française",
+            "Tuvalu",
+            "Guam",
+            "Palaos"
+          ],
+          "indice": "Île du Pacifique nord",
+          "description": "Île convexe au sud-est de l'Asie.",
+          "explication": "Guam : Île convexe au sud-est de l'Asie. Territoire des États-Unis."
+        },
+        {
+          "id": "w195",
+          "difficulte": "difficile",
+          "nom_commun": "Îles Cook",
+          "nom_scientifique": "Cook Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Palaos",
+            "Guam",
+            "Îles Cook",
+            "Îles Marshall"
+          ],
+          "indice": "Archipel associé à la Nouvelle-Zélande",
+          "description": "Quinze îles au sud de la Polynésie.",
+          "explication": "Îles Cook : Quinze îles au sud de la Polynésie. Silhouette fragmentée."
+        },
+        {
+          "id": "w196",
+          "difficulte": "difficile",
+          "nom_commun": "Samoa américaines",
+          "nom_scientifique": "American Samoa",
+          "groupe": "oceanie",
+          "options": [
+            "Îles Marshall",
+            "Palaos",
+            "Samoa américaines",
+            "Polynésie française"
+          ],
+          "indice": "Petit archipel oriental",
+          "description": "Cinq îles au sud-est des Samoa.",
+          "explication": "Samoa américaines : Cinq îles au sud-est des Samoa. Territoire des États-Unis."
+        },
+        {
+          "id": "w197",
+          "difficulte": "difficile",
+          "nom_commun": "Wallis-et-Futuna",
+          "nom_scientifique": "Wallis and Futuna",
+          "groupe": "oceanie",
+          "options": [
+            "Wallis-et-Futuna",
+            "Kiribati",
+            "Îles Cook",
+            "Micronésie"
+          ],
+          "indice": "Deux archipels du Pacifique",
+          "description": "Trois îles principales au nord-est des Fidji.",
+          "explication": "Wallis-et-Futuna : Trois îles principales au nord-est des Fidji. Collectivité française du Pacifique sud."
+        }
+      ]
+    }
+  ]
+}

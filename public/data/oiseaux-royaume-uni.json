@@ -1,0 +1,2694 @@
+{
+  "id": "oiseaux-royaume-uni",
+  "categorie": "Oiseaux du Royaume-Uni",
+  "description": "Identifier les oiseaux du Royaume-Uni à partir d'une photo. Coche un ou plusieurs groupes, puis choisis le niveau.",
+  "groupes": [
+    {
+      "id": "jardin",
+      "label": "Jardin et ville",
+      "questions": [
+        {
+          "id": "uk1",
+          "difficulte": "facile",
+          "nom_commun": "Moineau domestique",
+          "nom_scientifique": "Passer domesticus",
+          "groupe": "jardin",
+          "options": [
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier",
+            "Mésange bleue"
+          ],
+          "indice": "Bavette noire chez le mâle",
+          "description": "Le mâle a la calotte grise, la bavette noire et les joues blanches. La femelle est brun-gris strié.",
+          "explication": "Moineau domestique : Le mâle a la calotte grise, la bavette noire et les joues blanches. La femelle est brun-gris strié. Il sautille en bandes autour des maisons et des haies."
+        },
+        {
+          "id": "uk2",
+          "difficulte": "facile",
+          "nom_commun": "Merle noir",
+          "nom_scientifique": "Turdus merula",
+          "groupe": "jardin",
+          "options": [
+            "Merle noir",
+            "Moineau domestique",
+            "Rougegorge familier",
+            "Mésange bleue"
+          ],
+          "indice": "Mâle noir au bec jaune",
+          "description": "Le mâle est noir avec un bec et un cercle oculaire jaunes. La femelle est brune, plus claire en dessous.",
+          "explication": "Merle noir : Le mâle est noir avec un bec et un cercle oculaire jaunes. La femelle est brune, plus claire en dessous. Il chante depuis un toit ou une cime, souvent à l'aube."
+        },
+        {
+          "id": "uk3",
+          "difficulte": "facile",
+          "nom_commun": "Rougegorge familier",
+          "nom_scientifique": "Erithacus rubecula",
+          "groupe": "jardin",
+          "options": [
+            "Rougegorge familier",
+            "Moineau domestique",
+            "Merle noir",
+            "Mésange bleue"
+          ],
+          "indice": "Gorge orange",
+          "description": "Gorge et poitrine orange vif, dessus brun olive, ventre gris-blanc et grands yeux noirs.",
+          "explication": "Rougegorge familier : Gorge et poitrine orange vif, dessus brun olive, ventre gris-blanc et grands yeux noirs. Il se pose bien en vue, la queue souvent un peu relevée."
+        },
+        {
+          "id": "uk4",
+          "difficulte": "facile",
+          "nom_commun": "Mésange bleue",
+          "nom_scientifique": "Cyanistes caeruleus",
+          "groupe": "jardin",
+          "options": [
+            "Mésange bleue",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Calotte bleue et ventre jaune",
+          "description": "Calotte bleu cobalt, joues blanches bordées de noir, dessous jaune et barre alaire bleue.",
+          "explication": "Mésange bleue : Calotte bleu cobalt, joues blanches bordées de noir, dessous jaune et barre alaire bleue. Elle s'accroche aux branches fines et aux mangeoires."
+        },
+        {
+          "id": "uk5",
+          "difficulte": "facile",
+          "nom_commun": "Mésange charbonnière",
+          "nom_scientifique": "Parus major",
+          "groupe": "jardin",
+          "options": [
+            "Mésange charbonnière",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Cravate noire sur le ventre jaune",
+          "description": "Tête noire à joues blanches, ventre jaune coupé par une bande noire, dos verdâtre.",
+          "explication": "Mésange charbonnière : Tête noire à joues blanches, ventre jaune coupé par une bande noire, dos verdâtre. La bande noire du mâle est plus large que celle de la femelle."
+        },
+        {
+          "id": "uk6",
+          "difficulte": "facile",
+          "nom_commun": "Pinson des arbres",
+          "nom_scientifique": "Fringilla coelebs",
+          "groupe": "jardin",
+          "options": [
+            "Pinson des arbres",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Épaulettes blanches",
+          "description": "Double barre alaire blanche, épaule blanche et croupion verdâtre. Le mâle a la poitrine rose vineux.",
+          "explication": "Pinson des arbres : Double barre alaire blanche, épaule blanche et croupion verdâtre. Le mâle a la poitrine rose vineux. En vol, les bandes blanches des ailes se voient de loin."
+        },
+        {
+          "id": "uk7",
+          "difficulte": "facile",
+          "nom_commun": "Étourneau sansonnet",
+          "nom_scientifique": "Sturnus vulgaris",
+          "groupe": "jardin",
+          "options": [
+            "Étourneau sansonnet",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Noir piqueté, bec pointu",
+          "description": "Plumage noir à reflets verts et violets, piqueté de clair, bec pointu et queue courte.",
+          "explication": "Étourneau sansonnet : Plumage noir à reflets verts et violets, piqueté de clair, bec pointu et queue courte. Il marche au sol d'un pas pressé, souvent en troupe."
+        },
+        {
+          "id": "uk8",
+          "difficulte": "facile",
+          "nom_commun": "Pie bavarde",
+          "nom_scientifique": "Pica pica",
+          "groupe": "jardin",
+          "options": [
+            "Pie bavarde",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Noir et blanc, longue queue",
+          "description": "Noir et blanc contrasté, reflets verts et bleus sur l'aile, longue queue étagée.",
+          "explication": "Pie bavarde : Noir et blanc contrasté, reflets verts et bleus sur l'aile, longue queue étagée. Elle saute au sol et cache de la nourriture."
+        },
+        {
+          "id": "uk9",
+          "difficulte": "facile",
+          "nom_commun": "Tourterelle turque",
+          "nom_scientifique": "Streptopelia decaocto",
+          "groupe": "jardin",
+          "options": [
+            "Tourterelle turque",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Demi-collier noir",
+          "description": "Beige sable uniforme, demi-collier noir sur la nuque et dessous des ailes gris sombre.",
+          "explication": "Tourterelle turque : Beige sable uniforme, demi-collier noir sur la nuque et dessous des ailes gris sombre. Son chant est un triptyque roucoulé, très régulier."
+        },
+        {
+          "id": "uk10",
+          "difficulte": "facile",
+          "nom_commun": "Pigeon ramier",
+          "nom_scientifique": "Columba palumbus",
+          "groupe": "jardin",
+          "options": [
+            "Pigeon ramier",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Taches blanches au cou",
+          "description": "Grand pigeon gris, taches blanches sur les côtés du cou et bande blanche en travers de l'aile.",
+          "explication": "Pigeon ramier : Grand pigeon gris, taches blanches sur les côtés du cou et bande blanche en travers de l'aile. Il claque des ailes au décollage."
+        },
+        {
+          "id": "uk11",
+          "difficulte": "facile",
+          "nom_commun": "Corneille noire",
+          "nom_scientifique": "Corvus corone",
+          "groupe": "jardin",
+          "options": [
+            "Corneille noire",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Toute noire, bec fort",
+          "description": "Entièrement noire, bec fort et queue plutôt carrée. Le plumage peut luire sans être irisé comme le choucas.",
+          "explication": "Corneille noire : Entièrement noire, bec fort et queue plutôt carrée. Le plumage peut luire sans être irisé comme le choucas. Elle marche dans les prés et sur les pelouses."
+        },
+        {
+          "id": "uk12",
+          "difficulte": "facile",
+          "nom_commun": "Hirondelle rustique",
+          "nom_scientifique": "Hirundo rustica",
+          "groupe": "jardin",
+          "options": [
+            "Hirondelle rustique",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Filets de la queue",
+          "description": "Dessus bleu-noir, gorge rouge sombre, ventre crème et longs filets à la queue.",
+          "explication": "Hirondelle rustique : Dessus bleu-noir, gorge rouge sombre, ventre crème et longs filets à la queue. Elle chasse les insectes en rase-mottes au-dessus des prairies."
+        },
+        {
+          "id": "uk13",
+          "difficulte": "facile",
+          "nom_commun": "Rougequeue noir",
+          "nom_scientifique": "Phoenicurus ochruros",
+          "groupe": "jardin",
+          "options": [
+            "Rougequeue noir",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Queue rousse qui tremble",
+          "description": "Queue roux orangé toujours en mouvement. Le mâle est gris charbon, la femelle brun-gris.",
+          "explication": "Rougequeue noir : Queue roux orangé toujours en mouvement. Le mâle est gris charbon, la femelle brun-gris. Il se pose sur les toits, les murs et les rochers."
+        },
+        {
+          "id": "uk14",
+          "difficulte": "facile",
+          "nom_commun": "Bergeronnette grise",
+          "nom_scientifique": "Motacilla alba",
+          "groupe": "jardin",
+          "options": [
+            "Bergeronnette grise",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Longue queue noire et blanche",
+          "description": "Gris, noir et blanc, longue queue agitée sans cesse. En été, la bavette est noire.",
+          "explication": "Bergeronnette grise : Gris, noir et blanc, longue queue agitée sans cesse. En été, la bavette est noire. Elle court sur les pelouses, les toits et le bord de l'eau."
+        },
+        {
+          "id": "uk15",
+          "difficulte": "facile",
+          "nom_commun": "Troglodyte mignon",
+          "nom_scientifique": "Troglodytes troglodytes",
+          "groupe": "jardin",
+          "options": [
+            "Troglodyte mignon",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Minuscule, queue relevée",
+          "description": "Tout petit, brun barré, bec fin et queue courte souvent dressée.",
+          "explication": "Troglodyte mignon : Tout petit, brun barré, bec fin et queue courte souvent dressée. Il file dans les tas de bois et le bas des haies."
+        },
+        {
+          "id": "uk16",
+          "difficulte": "facile",
+          "nom_commun": "Accenteur mouchet",
+          "nom_scientifique": "Prunella modularis",
+          "groupe": "jardin",
+          "options": [
+            "Accenteur mouchet",
+            "Moineau domestique",
+            "Merle noir",
+            "Rougegorge familier"
+          ],
+          "indice": "Tête grise, corps brun strié",
+          "description": "Tête et poitrine gris ardoise, manteau brun fortement strié, bec fin d'insectivore.",
+          "explication": "Accenteur mouchet : Tête et poitrine gris ardoise, manteau brun fortement strié, bec fin d'insectivore. Il gratte le sol sous les buissons, discret comme un moineau mais au bec mince."
+        },
+        {
+          "id": "uk17",
+          "difficulte": "moyen",
+          "nom_commun": "Verdier d'Europe",
+          "nom_scientifique": "Chloris chloris",
+          "groupe": "jardin",
+          "options": [
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine",
+            "Sittelle torchepot"
+          ],
+          "indice": "Vert au gros bec",
+          "description": "Vert olive, gros bec pâle, jaune vif sur l'aile et les côtés de la queue.",
+          "explication": "Verdier d'Europe : Vert olive, gros bec pâle, jaune vif sur l'aile et les côtés de la queue. Le mâle est plus jaune, la femelle plus grise."
+        },
+        {
+          "id": "uk18",
+          "difficulte": "moyen",
+          "nom_commun": "Chardonneret élégant",
+          "nom_scientifique": "Carduelis carduelis",
+          "groupe": "jardin",
+          "options": [
+            "Chardonneret élégant",
+            "Verdier d'Europe",
+            "Bouvreuil pivoine",
+            "Sittelle torchepot"
+          ],
+          "indice": "Masque rouge et jaune à l'aile",
+          "description": "Masque rouge, joues blanches, grande plage jaune sur l'aile noire.",
+          "explication": "Chardonneret élégant : Masque rouge, joues blanches, grande plage jaune sur l'aile noire. Il se nourrit souvent sur les chardons et les mangeoires."
+        },
+        {
+          "id": "uk19",
+          "difficulte": "moyen",
+          "nom_commun": "Bouvreuil pivoine",
+          "nom_scientifique": "Pyrrhula pyrrhula",
+          "groupe": "jardin",
+          "options": [
+            "Bouvreuil pivoine",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Sittelle torchepot"
+          ],
+          "indice": "Poitrine rose et calotte noire",
+          "description": "Calotte noire, dos gris, croupion blanc. Le mâle a la poitrine rose, la femelle beige.",
+          "explication": "Bouvreuil pivoine : Calotte noire, dos gris, croupion blanc. Le mâle a la poitrine rose, la femelle beige. Bec court et épais, souvent dans les arbres fruitiers."
+        },
+        {
+          "id": "uk20",
+          "difficulte": "moyen",
+          "nom_commun": "Sittelle torchepot",
+          "nom_scientifique": "Sitta europaea",
+          "groupe": "jardin",
+          "options": [
+            "Sittelle torchepot",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Descend la tête en bas",
+          "description": "Dessus bleu-gris, bandeau noir sur l'œil, dessous orangé. Elle grimpe et descend les troncs.",
+          "explication": "Sittelle torchepot : Dessus bleu-gris, bandeau noir sur l'œil, dessous orangé. Elle grimpe et descend les troncs. Elle cale les graines dans l'écorce pour les ouvrir."
+        },
+        {
+          "id": "uk21",
+          "difficulte": "moyen",
+          "nom_commun": "Grimpereau des jardins",
+          "nom_scientifique": "Certhia brachydactyla",
+          "groupe": "jardin",
+          "options": [
+            "Grimpereau des jardins",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Bec arqué sur l'écorce",
+          "description": "Brun strié dessus, blanc dessous, bec fin arqué. Il grimpe en spirale le long des troncs.",
+          "explication": "Grimpereau des jardins : Brun strié dessus, blanc dessous, bec fin arqué. Il grimpe en spirale le long des troncs. Le sourcil est blanc, un peu moins net que chez le grimpereau des bois."
+        },
+        {
+          "id": "uk22",
+          "difficulte": "moyen",
+          "nom_commun": "Mésange à longue queue",
+          "nom_scientifique": "Aegithalos caudatus",
+          "groupe": "jardin",
+          "options": [
+            "Mésange à longue queue",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Boule rose et très longue queue",
+          "description": "Petite boule noire, rose et blanche, avec une queue plus longue que le corps.",
+          "explication": "Mésange à longue queue : Petite boule noire, rose et blanche, avec une queue plus longue que le corps. Elle circule en bandes familiales dans les haies."
+        },
+        {
+          "id": "uk23",
+          "difficulte": "moyen",
+          "nom_commun": "Geai des chênes",
+          "nom_scientifique": "Garrulus glandarius",
+          "groupe": "jardin",
+          "options": [
+            "Geai des chênes",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Miroir bleu sur l'aile",
+          "description": "Rose-brun, moustache noire, miroir alaire bleu barré de noir et croupion blanc.",
+          "explication": "Geai des chênes : Rose-brun, moustache noire, miroir alaire bleu barré de noir et croupion blanc. Il crie rauque et enterre les glands."
+        },
+        {
+          "id": "uk24",
+          "difficulte": "moyen",
+          "nom_commun": "Choucas des tours",
+          "nom_scientifique": "Corvus monedula",
+          "groupe": "jardin",
+          "options": [
+            "Choucas des tours",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Nuque grise et œil pâle",
+          "description": "Noir, nuque et côtés de la tête gris, œil clair très visible.",
+          "explication": "Choucas des tours : Noir, nuque et côtés de la tête gris, œil clair très visible. Il niche dans les cheminées, les clochers et les falaises."
+        },
+        {
+          "id": "uk25",
+          "difficulte": "moyen",
+          "nom_commun": "Pic épeiche",
+          "nom_scientifique": "Dendrocopos major",
+          "groupe": "jardin",
+          "options": [
+            "Pic épeiche",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Noir et blanc, sous-caudales rouges",
+          "description": "Dos noir à grandes taches blanches, sous-caudales rouges. Le mâle a une tache rouge sur la nuque.",
+          "explication": "Pic épeiche : Dos noir à grandes taches blanches, sous-caudales rouges. Le mâle a une tache rouge sur la nuque. Il tambourine sur les branches mortes."
+        },
+        {
+          "id": "uk26",
+          "difficulte": "moyen",
+          "nom_commun": "Pic vert",
+          "nom_scientifique": "Picus viridis",
+          "groupe": "jardin",
+          "options": [
+            "Pic vert",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Vert, calotte rouge",
+          "description": "Dos vert, croupion jaune, calotte rouge et moustache noire. Le mâle a le centre de la moustache rouge.",
+          "explication": "Pic vert : Dos vert, croupion jaune, calotte rouge et moustache noire. Le mâle a le centre de la moustache rouge. Il se nourrit souvent au sol, sur les fourmilières."
+        },
+        {
+          "id": "uk27",
+          "difficulte": "moyen",
+          "nom_commun": "Martinet noir",
+          "nom_scientifique": "Apus apus",
+          "groupe": "jardin",
+          "options": [
+            "Martinet noir",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Ailes en faucille",
+          "description": "Entièrement sombre, ailes longues en faux, queue courte fourchue. Il ne se pose presque jamais.",
+          "explication": "Martinet noir : Entièrement sombre, ailes longues en faux, queue courte fourchue. Il ne se pose presque jamais. On le voit crier en bandes au-dessus des toits."
+        },
+        {
+          "id": "uk28",
+          "difficulte": "moyen",
+          "nom_commun": "Hirondelle de fenêtre",
+          "nom_scientifique": "Delichon urbicum",
+          "groupe": "jardin",
+          "options": [
+            "Hirondelle de fenêtre",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Croupion blanc pur",
+          "description": "Dessus bleu-noir, dessous et croupion blancs, queue courte peu fourchue.",
+          "explication": "Hirondelle de fenêtre : Dessus bleu-noir, dessous et croupion blancs, queue courte peu fourchue. Elle colle son nid de boue sous les avancées de toit."
+        },
+        {
+          "id": "uk29",
+          "difficulte": "moyen",
+          "nom_commun": "Fauvette à tête noire",
+          "nom_scientifique": "Sylvia atricapilla",
+          "groupe": "jardin",
+          "options": [
+            "Fauvette à tête noire",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Calotte noire ou brune",
+          "description": "Gris-brun, sans gorge blanche marquée. Le mâle a la calotte noire, la femelle et le jeune une calotte rousse.",
+          "explication": "Fauvette à tête noire : Gris-brun, sans gorge blanche marquée. Le mâle a la calotte noire, la femelle et le jeune une calotte rousse. Elle chante dans les buissons, en strophes flûtées."
+        },
+        {
+          "id": "uk30",
+          "difficulte": "moyen",
+          "nom_commun": "Pouillot véloce",
+          "nom_scientifique": "Phylloscopus collybita",
+          "groupe": "jardin",
+          "options": [
+            "Pouillot véloce",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Petit, sourcil pâle, pattes sombres",
+          "description": "Petit, dessus vert-brun, sourcil pâle, pattes en général sombres. Il hoche souvent la queue.",
+          "explication": "Pouillot véloce : Petit, dessus vert-brun, sourcil pâle, pattes en général sombres. Il hoche souvent la queue. Son chant est un tchif-tchaf répété."
+        },
+        {
+          "id": "uk31",
+          "difficulte": "moyen",
+          "nom_commun": "Moineau friquet",
+          "nom_scientifique": "Passer montanus",
+          "groupe": "jardin",
+          "options": [
+            "Moineau friquet",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Calotte marron et point noir sur la joue",
+          "description": "Calotte chocolat, collier blanc et tache noire ronde sur la joue blanche, chez les deux sexes.",
+          "explication": "Moineau friquet : Calotte chocolat, collier blanc et tache noire ronde sur la joue blanche, chez les deux sexes. Il est plus petit et plus rural que le moineau domestique."
+        },
+        {
+          "id": "uk32",
+          "difficulte": "moyen",
+          "nom_commun": "Rougequeue à front blanc",
+          "nom_scientifique": "Phoenicurus phoenicurus",
+          "groupe": "jardin",
+          "options": [
+            "Rougequeue à front blanc",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Front blanc et poitrine orange",
+          "description": "Queue rousse. Le mâle a le front blanc, la gorge noire et la poitrine orange. La femelle est beige, plus claire que le rougequeue noir.",
+          "explication": "Rougequeue à front blanc : Queue rousse. Le mâle a le front blanc, la gorge noire et la poitrine orange. La femelle est beige, plus claire que le rougequeue noir. Il niche dans les cavités des vergers et des lisières."
+        },
+        {
+          "id": "uk33",
+          "difficulte": "moyen",
+          "nom_commun": "Coucou gris",
+          "nom_scientifique": "Cuculus canorus",
+          "groupe": "jardin",
+          "options": [
+            "Coucou gris",
+            "Verdier d'Europe",
+            "Chardonneret élégant",
+            "Bouvreuil pivoine"
+          ],
+          "indice": "Silhouette d'épervier, ventre barré",
+          "description": "Gris dessus, ventre barré, longue queue et ailes pointues. La femelle peut être rousse.",
+          "explication": "Coucou gris : Gris dessus, ventre barré, longue queue et ailes pointues. La femelle peut être rousse. Il pond dans le nid d'autres espèces."
+        },
+        {
+          "id": "uk34",
+          "difficulte": "difficile",
+          "nom_commun": "Gobemouche gris",
+          "nom_scientifique": "Muscicapa striata",
+          "groupe": "jardin",
+          "options": [
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis",
+            "Pouillot siffleur"
+          ],
+          "indice": "Perché droit, bec large",
+          "description": "Brun-gris, poitrine striée, bec large et posture dressée sur un perchoir dégagé.",
+          "explication": "Gobemouche gris : Brun-gris, poitrine striée, bec large et posture dressée sur un perchoir dégagé. Il s'élance pour gober un insecte et revient souvent à la même branche."
+        },
+        {
+          "id": "uk35",
+          "difficulte": "difficile",
+          "nom_commun": "Gobemouche noir",
+          "nom_scientifique": "Ficedula hypoleuca",
+          "groupe": "jardin",
+          "options": [
+            "Gobemouche noir",
+            "Gobemouche gris",
+            "Pouillot fitis",
+            "Pouillot siffleur"
+          ],
+          "indice": "Mâle noir et blanc au printemps",
+          "description": "Petit, souvent la queue un peu relevée. Le mâle nuptial est noir et blanc, avec une tache blanche sur l'aile. La femelle est brune.",
+          "explication": "Gobemouche noir : Petit, souvent la queue un peu relevée. Le mâle nuptial est noir et blanc, avec une tache blanche sur l'aile. La femelle est brune. En automne, le mâle ressemble à la femelle."
+        },
+        {
+          "id": "uk36",
+          "difficulte": "difficile",
+          "nom_commun": "Pouillot fitis",
+          "nom_scientifique": "Phylloscopus trochilus",
+          "groupe": "jardin",
+          "options": [
+            "Pouillot fitis",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot siffleur"
+          ],
+          "indice": "Pattes claires, sourcil plus long",
+          "description": "Plus jaune et plus pâle que le pouillot véloce, sourcil net et pattes en général claires.",
+          "explication": "Pouillot fitis : Plus jaune et plus pâle que le pouillot véloce, sourcil net et pattes en général claires. Son chant est une phrase descendante, fluide."
+        },
+        {
+          "id": "uk37",
+          "difficulte": "difficile",
+          "nom_commun": "Pouillot siffleur",
+          "nom_scientifique": "Phylloscopus sibilatrix",
+          "groupe": "jardin",
+          "options": [
+            "Pouillot siffleur",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Gorge jaune et ventre blanc",
+          "description": "Gorge et sourcil jaunes, ventre blanc pur, ailes plus longues que les autres pouillots.",
+          "explication": "Pouillot siffleur : Gorge et sourcil jaunes, ventre blanc pur, ailes plus longues que les autres pouillots. Il chante dans les hêtraies, souvent depuis une branche basse."
+        },
+        {
+          "id": "uk38",
+          "difficulte": "difficile",
+          "nom_commun": "Grimpereau des bois",
+          "nom_scientifique": "Certhia familiaris",
+          "groupe": "jardin",
+          "options": [
+            "Grimpereau des bois",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Sourcil blanc très net",
+          "description": "Brun strié, bec arqué, sourcil blanc plus franc et flancs plus roussâtres que le grimpereau des jardins.",
+          "explication": "Grimpereau des bois : Brun strié, bec arqué, sourcil blanc plus franc et flancs plus roussâtres que le grimpereau des jardins. Au Royaume-Uni il est le grimpereau des bois et des parcs du nord et de l'ouest."
+        },
+        {
+          "id": "uk39",
+          "difficulte": "difficile",
+          "nom_commun": "Mésange nonnette",
+          "nom_scientifique": "Poecile palustris",
+          "groupe": "jardin",
+          "options": [
+            "Mésange nonnette",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Calotte noire brillante, sans huppe",
+          "description": "Calotte noire luisante, joues blanches, petite bavette. Pas de panneau clair sur l'aile.",
+          "explication": "Mésange nonnette : Calotte noire luisante, joues blanches, petite bavette. Pas de panneau clair sur l'aile. Le cri est un pitchou explosif."
+        },
+        {
+          "id": "uk40",
+          "difficulte": "difficile",
+          "nom_commun": "Mésange boréale",
+          "nom_scientifique": "Poecile montanus",
+          "groupe": "jardin",
+          "options": [
+            "Mésange boréale",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Calotte mate et grande bavette",
+          "description": "Calotte noire mate, bavette plus grande et joues plus blanches que la nonnette. L'aile montre souvent un panneau pâle.",
+          "explication": "Mésange boréale : Calotte noire mate, bavette plus grande et joues plus blanches que la nonnette. L'aile montre souvent un panneau pâle. Elle fréquente les bois humides, les saules et les bouleaux."
+        },
+        {
+          "id": "uk41",
+          "difficulte": "difficile",
+          "nom_commun": "Mésange huppée",
+          "nom_scientifique": "Lophophanes cristatus",
+          "groupe": "jardin",
+          "options": [
+            "Mésange huppée",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Huppe pointillée noir et blanc",
+          "description": "Huppe noire et blanche toujours visible, bavette noire et joues blanches encadrées de noir.",
+          "explication": "Mésange huppée : Huppe noire et blanche toujours visible, bavette noire et joues blanches encadrées de noir. Elle est liée aux conifères, notamment aux pins."
+        },
+        {
+          "id": "uk42",
+          "difficulte": "difficile",
+          "nom_commun": "Gros-bec casse-noyaux",
+          "nom_scientifique": "Coccothraustes coccothraustes",
+          "groupe": "jardin",
+          "options": [
+            "Gros-bec casse-noyaux",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Énorme bec et masque noir",
+          "description": "Bec massif bleu-gris au printemps, masque noir, nuque grise et grande tache blanche sur l'aile.",
+          "explication": "Gros-bec casse-noyaux : Bec massif bleu-gris au printemps, masque noir, nuque grise et grande tache blanche sur l'aile. Il casse les noyaux de merises et de charmes."
+        },
+        {
+          "id": "uk43",
+          "difficulte": "difficile",
+          "nom_commun": "Roitelet huppé",
+          "nom_scientifique": "Regulus regulus",
+          "groupe": "jardin",
+          "options": [
+            "Roitelet huppé",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Minuscule, raie jaune sur la tête",
+          "description": "Plus petit passereau d'Europe, olivâtre, avec une raie jaune au sommet de la tête, bordée de noir.",
+          "explication": "Roitelet huppé : Plus petit passereau d'Europe, olivâtre, avec une raie jaune au sommet de la tête, bordée de noir. Il s'agite dans les conifères et les lierres."
+        },
+        {
+          "id": "uk44",
+          "difficulte": "difficile",
+          "nom_commun": "Roitelet à triple bandeau",
+          "nom_scientifique": "Regulus ignicapilla",
+          "groupe": "jardin",
+          "options": [
+            "Roitelet à triple bandeau",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Sourcil blanc et trait noir sur l'œil",
+          "description": "Comme le roitelet huppé, avec un sourcil blanc et une ligne noire qui traverse l'œil.",
+          "explication": "Roitelet à triple bandeau : Comme le roitelet huppé, avec un sourcil blanc et une ligne noire qui traverse l'œil. La raie du sommet est jaune, orange chez le mâle excité."
+        },
+        {
+          "id": "uk45",
+          "difficulte": "difficile",
+          "nom_commun": "Serin cini",
+          "nom_scientifique": "Serinus serinus",
+          "groupe": "jardin",
+          "options": [
+            "Serin cini",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Petit, jaune, bec minuscule",
+          "description": "Très petit, bec court. Le mâle a la tête et la poitrine jaunes, le croupion jaune vif.",
+          "explication": "Serin cini : Très petit, bec court. Le mâle a la tête et la poitrine jaunes, le croupion jaune vif. Son chant est un grésillement rapide, souvent en vol."
+        },
+        {
+          "id": "uk46",
+          "difficulte": "difficile",
+          "nom_commun": "Linotte mélodieuse",
+          "nom_scientifique": "Linaria cannabina",
+          "groupe": "jardin",
+          "options": [
+            "Linotte mélodieuse",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Mâle à poitrine rose",
+          "description": "Brun, bec gris. Le mâle a le front et la poitrine rouge carmin, plus ternes en hiver.",
+          "explication": "Linotte mélodieuse : Brun, bec gris. Le mâle a le front et la poitrine rouge carmin, plus ternes en hiver. Elle se pose en bandes sur les fils et les friches."
+        },
+        {
+          "id": "uk47",
+          "difficulte": "difficile",
+          "nom_commun": "Bruant jaune",
+          "nom_scientifique": "Emberiza citrinella",
+          "groupe": "jardin",
+          "options": [
+            "Bruant jaune",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Jaune, croupion roux",
+          "description": "Tête et dessous jaunes, manteau brun strié, croupion roux. La femelle est plus terne mais garde du jaune.",
+          "explication": "Bruant jaune : Tête et dessous jaunes, manteau brun strié, croupion roux. La femelle est plus terne mais garde du jaune. Il chante depuis un buisson ou un fil, une phrase brève et métallique."
+        },
+        {
+          "id": "uk48",
+          "difficulte": "difficile",
+          "nom_commun": "Bruant zizi",
+          "nom_scientifique": "Emberiza cirlus",
+          "groupe": "jardin",
+          "options": [
+            "Bruant zizi",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Mâle à gorge noire et bandeaux",
+          "description": "Mâle à gorge noire, bandeau oculaire noir et bandes jaune-vert sur la tête. Croupion olive, pas roux.",
+          "explication": "Bruant zizi : Mâle à gorge noire, bandeau oculaire noir et bandes jaune-vert sur la tête. Croupion olive, pas roux. Il aime les haies ensoleillées et les friches du sud."
+        },
+        {
+          "id": "uk49",
+          "difficulte": "difficile",
+          "nom_commun": "Fauvette grisette",
+          "nom_scientifique": "Curruca communis",
+          "groupe": "jardin",
+          "options": [
+            "Fauvette grisette",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Gorge blanche et pattes claires",
+          "description": "Dessus brun, gorge blanche, poitrine rosée, pattes claires et bords roux des rémiges.",
+          "explication": "Fauvette grisette : Dessus brun, gorge blanche, poitrine rosée, pattes claires et bords roux des rémiges. Elle chante en s'élevant d'un buisson, puis se laisse retomber."
+        },
+        {
+          "id": "uk50",
+          "difficulte": "difficile",
+          "nom_commun": "Fauvette des jardins",
+          "nom_scientifique": "Sylvia borin",
+          "groupe": "jardin",
+          "options": [
+            "Fauvette des jardins",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Gris-brun uniforme, sans calotte",
+          "description": "Entièrement gris-brun, sans calotte, sans gorge blanche marquée, avec un œil sombre et un bec assez fort.",
+          "explication": "Fauvette des jardins : Entièrement gris-brun, sans calotte, sans gorge blanche marquée, avec un œil sombre et un bec assez fort. Elle reste dans le feuillage dense des fourrés."
+        },
+        {
+          "id": "uk51",
+          "difficulte": "difficile",
+          "nom_commun": "Hypolaïs polyglotte",
+          "nom_scientifique": "Hippolais polyglotta",
+          "groupe": "jardin",
+          "options": [
+            "Hypolaïs polyglotte",
+            "Gobemouche gris",
+            "Gobemouche noir",
+            "Pouillot fitis"
+          ],
+          "indice": "Jaune pâle, bec large",
+          "description": "Dessus vert-brun, dessous jaune pâle, bec large et sourcil jaunâtre. Les pattes sont brunâtres.",
+          "explication": "Hypolaïs polyglotte : Dessus vert-brun, dessous jaune pâle, bec large et sourcil jaunâtre. Les pattes sont brunâtres. Son chant est rapide, varié, souvent lancé d'un buisson exposé."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "eau",
+      "label": "Oiseaux d'eau",
+      "questions": [
+        {
+          "id": "uk52",
+          "difficulte": "facile",
+          "nom_commun": "Cygne tuberculé",
+          "nom_scientifique": "Cygnus olor",
+          "groupe": "eau",
+          "options": [
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule",
+            "Gallinule poule-d'eau"
+          ],
+          "indice": "Grand blanc, bec orange",
+          "description": "Entièrement blanc, long cou en S, bec orange à tubercule noir. Les jeunes sont gris-beige.",
+          "explication": "Cygne tuberculé : Entièrement blanc, long cou en S, bec orange à tubercule noir. Les jeunes sont gris-beige. Il nage souvent la tête un peu penchée, les ailes gonflées quand il menace."
+        },
+        {
+          "id": "uk53",
+          "difficulte": "facile",
+          "nom_commun": "Canard colvert",
+          "nom_scientifique": "Anas platyrhynchos",
+          "groupe": "eau",
+          "options": [
+            "Canard colvert",
+            "Cygne tuberculé",
+            "Foulque macroule",
+            "Gallinule poule-d'eau"
+          ],
+          "indice": "Mâle à tête verte",
+          "description": "Le mâle a la tête verte, le collier blanc et la poitrine marron. La femelle est brune tachetée, avec un miroir bleu.",
+          "explication": "Canard colvert : Le mâle a la tête verte, le collier blanc et la poitrine marron. La femelle est brune tachetée, avec un miroir bleu. Le miroir bleu bordé de blanc se voit chez les deux sexes."
+        },
+        {
+          "id": "uk54",
+          "difficulte": "facile",
+          "nom_commun": "Foulque macroule",
+          "nom_scientifique": "Fulica atra",
+          "groupe": "eau",
+          "options": [
+            "Foulque macroule",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Gallinule poule-d'eau"
+          ],
+          "indice": "Noire, bec et front blancs",
+          "description": "Toute noire, bec et plaque frontale blancs. Elle hoche la tête en nageant.",
+          "explication": "Foulque macroule : Toute noire, bec et plaque frontale blancs. Elle hoche la tête en nageant. Les pattes ont des doigts lobés, pas de palmure complète."
+        },
+        {
+          "id": "uk55",
+          "difficulte": "facile",
+          "nom_commun": "Gallinule poule-d'eau",
+          "nom_scientifique": "Gallinula chloropus",
+          "groupe": "eau",
+          "options": [
+            "Gallinule poule-d'eau",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule"
+          ],
+          "indice": "Bec rouge à pointe jaune",
+          "description": "Gris ardoise, flancs rayés de blanc, bec rouge à pointe jaune et sous-caudales blanches.",
+          "explication": "Gallinule poule-d'eau : Gris ardoise, flancs rayés de blanc, bec rouge à pointe jaune et sous-caudales blanches. Elle marche sur les nénuphars et secoue la queue en nageant."
+        },
+        {
+          "id": "uk56",
+          "difficulte": "facile",
+          "nom_commun": "Héron cendré",
+          "nom_scientifique": "Ardea cinerea",
+          "groupe": "eau",
+          "options": [
+            "Héron cendré",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule"
+          ],
+          "indice": "Grand gris, long bec jaune",
+          "description": "Grand, gris, cou replié en vol, bec jaune en poignard et longues pattes.",
+          "explication": "Héron cendré : Grand, gris, cou replié en vol, bec jaune en poignard et longues pattes. Il pêche immobile au bord de l'eau."
+        },
+        {
+          "id": "uk57",
+          "difficulte": "facile",
+          "nom_commun": "Grèbe huppé",
+          "nom_scientifique": "Podiceps cristatus",
+          "groupe": "eau",
+          "options": [
+            "Grèbe huppé",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule"
+          ],
+          "indice": "Double huppe et collerette",
+          "description": "Long cou blanc, bec rose. En été, double huppe noire et collerette rousse et noire.",
+          "explication": "Grèbe huppé : Long cou blanc, bec rose. En été, double huppe noire et collerette rousse et noire. Les poussins rayés sont souvent portés sur le dos."
+        },
+        {
+          "id": "uk58",
+          "difficulte": "facile",
+          "nom_commun": "Martin-pêcheur d'Europe",
+          "nom_scientifique": "Alcedo atthis",
+          "groupe": "eau",
+          "options": [
+            "Martin-pêcheur d'Europe",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule"
+          ],
+          "indice": "Bleu et orange, bec en poignard",
+          "description": "Dessus bleu métallique, dessous orange, bec long et droit. Il file au ras de l'eau.",
+          "explication": "Martin-pêcheur d'Europe : Dessus bleu métallique, dessous orange, bec long et droit. Il file au ras de l'eau. Il pêche depuis un perchoir bas, puis plonge."
+        },
+        {
+          "id": "uk59",
+          "difficulte": "facile",
+          "nom_commun": "Bernache du Canada",
+          "nom_scientifique": "Branta canadensis",
+          "groupe": "eau",
+          "options": [
+            "Bernache du Canada",
+            "Cygne tuberculé",
+            "Canard colvert",
+            "Foulque macroule"
+          ],
+          "indice": "Grande oie noire à joue blanche",
+          "description": "Cou et tête noirs, grande joue blanche, corps brun et poitrine claire.",
+          "explication": "Bernache du Canada : Cou et tête noirs, grande joue blanche, corps brun et poitrine claire. Introduite, elle est maintenant commune sur les lacs et les pelouses."
+        },
+        {
+          "id": "uk60",
+          "difficulte": "moyen",
+          "nom_commun": "Sarcelle d'hiver",
+          "nom_scientifique": "Anas crecca",
+          "groupe": "eau",
+          "options": [
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau",
+            "Fuligule milouin"
+          ],
+          "indice": "Petite, miroir vert",
+          "description": "La plus petite des sarcelles. Le mâle a la tête rousse à bande verte, le miroir vert.",
+          "explication": "Sarcelle d'hiver : La plus petite des sarcelles. Le mâle a la tête rousse à bande verte, le miroir vert. Elle décolle presque à la verticale."
+        },
+        {
+          "id": "uk61",
+          "difficulte": "moyen",
+          "nom_commun": "Canard souchet",
+          "nom_scientifique": "Spatula clypeata",
+          "groupe": "eau",
+          "options": [
+            "Canard souchet",
+            "Sarcelle d'hiver",
+            "Canard chipeau",
+            "Fuligule milouin"
+          ],
+          "indice": "Bec en cuiller",
+          "description": "Bec très large, en spatule. Le mâle a la tête verte, la poitrine blanche et les flancs roux.",
+          "explication": "Canard souchet : Bec très large, en spatule. Le mâle a la tête verte, la poitrine blanche et les flancs roux. Il filtre l'eau en nageant, le bec entrouvert."
+        },
+        {
+          "id": "uk62",
+          "difficulte": "moyen",
+          "nom_commun": "Canard chipeau",
+          "nom_scientifique": "Mareca strepera",
+          "groupe": "eau",
+          "options": [
+            "Canard chipeau",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Fuligule milouin"
+          ],
+          "indice": "Miroir blanc",
+          "description": "Plumage gris-brun discret. Le miroir de l'aile est blanc, très visible en vol.",
+          "explication": "Canard chipeau : Plumage gris-brun discret. Le miroir de l'aile est blanc, très visible en vol. Le mâle a le croupion noir et le bec sombre."
+        },
+        {
+          "id": "uk63",
+          "difficulte": "moyen",
+          "nom_commun": "Fuligule milouin",
+          "nom_scientifique": "Aythya ferina",
+          "groupe": "eau",
+          "options": [
+            "Fuligule milouin",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Mâle à tête rousse",
+          "description": "Mâle à tête roux châtain, poitrine noire et corps gris. La femelle est brune, avec un cercle pâle autour de l'œil.",
+          "explication": "Fuligule milouin : Mâle à tête roux châtain, poitrine noire et corps gris. La femelle est brune, avec un cercle pâle autour de l'œil. Il plonge pour manger des herbes et des mollusques."
+        },
+        {
+          "id": "uk64",
+          "difficulte": "moyen",
+          "nom_commun": "Fuligule morillon",
+          "nom_scientifique": "Aythya fuligula",
+          "groupe": "eau",
+          "options": [
+            "Fuligule morillon",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Huppe et flancs blancs",
+          "description": "Mâle noir et blanc, huppe tombante, flancs blancs. La femelle est brune, avec une petite huppe.",
+          "explication": "Fuligule morillon : Mâle noir et blanc, huppe tombante, flancs blancs. La femelle est brune, avec une petite huppe. Il plonge souvent au milieu des lacs."
+        },
+        {
+          "id": "uk65",
+          "difficulte": "moyen",
+          "nom_commun": "Harle bièvre",
+          "nom_scientifique": "Mergus merganser",
+          "groupe": "eau",
+          "options": [
+            "Harle bièvre",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Bec rouge fin, dentelé",
+          "description": "Grand harle au bec rouge étroit. Le mâle a le corps blanc rosé et la tête verte sombre, sans huppe échevelée.",
+          "explication": "Harle bièvre : Grand harle au bec rouge étroit. Le mâle a le corps blanc rosé et la tête verte sombre, sans huppe échevelée. Il pêche en plongeant dans les lacs et les rivières."
+        },
+        {
+          "id": "uk66",
+          "difficulte": "moyen",
+          "nom_commun": "Grèbe castagneux",
+          "nom_scientifique": "Tachybaptus ruficollis",
+          "groupe": "eau",
+          "options": [
+            "Grèbe castagneux",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Petit, joues rousses",
+          "description": "Tout petit grèbe, cou et joues roux en été, tache claire à la base du bec.",
+          "explication": "Grèbe castagneux : Tout petit grèbe, cou et joues roux en été, tache claire à la base du bec. Il plonge sans cesse et disparaît dans la végétation."
+        },
+        {
+          "id": "uk67",
+          "difficulte": "moyen",
+          "nom_commun": "Cygne chanteur",
+          "nom_scientifique": "Cygnus cygnus",
+          "groupe": "eau",
+          "options": [
+            "Cygne chanteur",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Bec jaune et noir, cou droit",
+          "description": "Blanc, bec jaune à pointe noire, sans tubercule. Le cou est souvent tenu plus droit que chez le tuberculé.",
+          "explication": "Cygne chanteur : Blanc, bec jaune à pointe noire, sans tubercule. Le cou est souvent tenu plus droit que chez le tuberculé. Le jaune du bec dépasse les narines, contrairement au cygne de Bewick."
+        },
+        {
+          "id": "uk68",
+          "difficulte": "moyen",
+          "nom_commun": "Ouette d'Égypte",
+          "nom_scientifique": "Alopochen aegyptiaca",
+          "groupe": "eau",
+          "options": [
+            "Ouette d'Égypte",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Tache brune autour de l'œil",
+          "description": "Beige et brun, tache chocolat autour de l'œil, miroir blanc et tache brune sur la poitrine.",
+          "explication": "Ouette d'Égypte : Beige et brun, tache chocolat autour de l'œil, miroir blanc et tache brune sur la poitrine. Introduite, elle broute au bord des plans d'eau."
+        },
+        {
+          "id": "uk69",
+          "difficulte": "moyen",
+          "nom_commun": "Tadorne de Belon",
+          "nom_scientifique": "Tadorna tadorna",
+          "groupe": "eau",
+          "options": [
+            "Tadorne de Belon",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Blanc, bande rousse, tête verte",
+          "description": "Grand canard blanc, bande rousse sur la poitrine, tête vert sombre et bec rouge.",
+          "explication": "Tadorne de Belon : Grand canard blanc, bande rousse sur la poitrine, tête vert sombre et bec rouge. On le voit autant sur les vasières que sur les prés salés."
+        },
+        {
+          "id": "uk70",
+          "difficulte": "moyen",
+          "nom_commun": "Bergeronnette des ruisseaux",
+          "nom_scientifique": "Motacilla cinerea",
+          "groupe": "eau",
+          "options": [
+            "Bergeronnette des ruisseaux",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Ventre jaune, queue très longue",
+          "description": "Dos gris, gorge noire chez le mâle en été, dessous jaune et queue plus longue que chez la grise.",
+          "explication": "Bergeronnette des ruisseaux : Dos gris, gorge noire chez le mâle en été, dessous jaune et queue plus longue que chez la grise. Elle se pose sur les pierres au milieu des torrents."
+        },
+        {
+          "id": "uk71",
+          "difficulte": "moyen",
+          "nom_commun": "Cincle plongeur",
+          "nom_scientifique": "Cinclus cinclus",
+          "groupe": "eau",
+          "options": [
+            "Cincle plongeur",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Noir, plastron blanc",
+          "description": "Trapu, noir-brun, grande bavette blanche. Il s'incline sans cesse sur un rocher.",
+          "explication": "Cincle plongeur : Trapu, noir-brun, grande bavette blanche. Il s'incline sans cesse sur un rocher. Il marche sous l'eau pour chercher des larves."
+        },
+        {
+          "id": "uk72",
+          "difficulte": "moyen",
+          "nom_commun": "Rousserolle effarvatte",
+          "nom_scientifique": "Acrocephalus scirpaceus",
+          "groupe": "eau",
+          "options": [
+            "Rousserolle effarvatte",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Brune, dans les roseaux",
+          "description": "Dessus brun uni, dessous clair, sourcil peu marqué et bec fin. Elle vit dans les phragmites.",
+          "explication": "Rousserolle effarvatte : Dessus brun uni, dessous clair, sourcil peu marqué et bec fin. Elle vit dans les phragmites. Son chant est une suite de phrases grinçantes, répétées."
+        },
+        {
+          "id": "uk73",
+          "difficulte": "moyen",
+          "nom_commun": "Bruant des roseaux",
+          "nom_scientifique": "Emberiza schoeniclus",
+          "groupe": "eau",
+          "options": [
+            "Bruant des roseaux",
+            "Sarcelle d'hiver",
+            "Canard souchet",
+            "Canard chipeau"
+          ],
+          "indice": "Mâle à tête noire et moustache blanche",
+          "description": "Mâle à tête noire, collier et moustache blancs. La femelle est brune, avec un sourcil et une moustache clairs.",
+          "explication": "Bruant des roseaux : Mâle à tête noire, collier et moustache blancs. La femelle est brune, avec un sourcil et une moustache clairs. Il se tient aux tiges de roseaux et de joncs."
+        },
+        {
+          "id": "uk74",
+          "difficulte": "difficile",
+          "nom_commun": "Garrot à œil d'or",
+          "nom_scientifique": "Bucephala clangula",
+          "groupe": "eau",
+          "options": [
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet",
+            "Macreuse noire"
+          ],
+          "indice": "Tête triangulaire, œil jaune",
+          "description": "Tête triangulaire et œil jaune. Le mâle a une joue blanche ronde sur une tête vert sombre.",
+          "explication": "Garrot à œil d'or : Tête triangulaire et œil jaune. Le mâle a une joue blanche ronde sur une tête vert sombre. Il niche dans les cavités d'arbres près des lacs."
+        },
+        {
+          "id": "uk75",
+          "difficulte": "difficile",
+          "nom_commun": "Harle huppé",
+          "nom_scientifique": "Mergus serrator",
+          "groupe": "eau",
+          "options": [
+            "Harle huppé",
+            "Garrot à œil d'or",
+            "Eider à duvet",
+            "Macreuse noire"
+          ],
+          "indice": "Huppe échevelée, bec rouge fin",
+          "description": "Plus mince que le harle bièvre. Les deux sexes ont une huppe. Le mâle a la poitrine rousse tachetée.",
+          "explication": "Harle huppé : Plus mince que le harle bièvre. Les deux sexes ont une huppe. Le mâle a la poitrine rousse tachetée. Il fréquente surtout les côtes et les estuaires, et plonge pour pêcher."
+        },
+        {
+          "id": "uk76",
+          "difficulte": "difficile",
+          "nom_commun": "Eider à duvet",
+          "nom_scientifique": "Somateria mollissima",
+          "groupe": "eau",
+          "options": [
+            "Eider à duvet",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Macreuse noire"
+          ],
+          "indice": "Bec en coin, front long",
+          "description": "Gros canard marin, front long et bec en coin. Le mâle est blanc et noir, nuque verte, poitrine rosée.",
+          "explication": "Eider à duvet : Gros canard marin, front long et bec en coin. Le mâle est blanc et noir, nuque verte, poitrine rosée. La femelle est brune, barrée, très cryptique sur le nid."
+        },
+        {
+          "id": "uk77",
+          "difficulte": "difficile",
+          "nom_commun": "Macreuse noire",
+          "nom_scientifique": "Melanitta nigra",
+          "groupe": "eau",
+          "options": [
+            "Macreuse noire",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Canard tout noir, bec à bosse",
+          "description": "Le mâle est entièrement noir, avec une bosse jaune et noire sur le bec. La femelle est brune, joues claires.",
+          "explication": "Macreuse noire : Le mâle est entièrement noir, avec une bosse jaune et noire sur le bec. La femelle est brune, joues claires. Elle nage en groupes sur la mer, et plonge."
+        },
+        {
+          "id": "uk78",
+          "difficulte": "difficile",
+          "nom_commun": "Fuligule milouinan",
+          "nom_scientifique": "Aythya marila",
+          "groupe": "eau",
+          "options": [
+            "Fuligule milouinan",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Gris, tête verte, dos vermiculé",
+          "description": "Mâle à tête vert sombre, dos gris finement vermiculé et flancs blancs, sans huppe.",
+          "explication": "Fuligule milouinan : Mâle à tête vert sombre, dos gris finement vermiculé et flancs blancs, sans huppe. Il hiverne surtout sur les eaux côtières et les grands lacs."
+        },
+        {
+          "id": "uk79",
+          "difficulte": "difficile",
+          "nom_commun": "Canard siffleur",
+          "nom_scientifique": "Mareca penelope",
+          "groupe": "eau",
+          "options": [
+            "Canard siffleur",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Front jaune, corps gris",
+          "description": "Mâle à tête rousse à front crème, corps gris et croupion noir. Grandes couvertures blanches en vol.",
+          "explication": "Canard siffleur : Mâle à tête rousse à front crème, corps gris et croupion noir. Grandes couvertures blanches en vol. Il broute souvent sur les prés humides."
+        },
+        {
+          "id": "uk80",
+          "difficulte": "difficile",
+          "nom_commun": "Canard pilet",
+          "nom_scientifique": "Anas acuta",
+          "groupe": "eau",
+          "options": [
+            "Canard pilet",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Cou fin et longue queue pointue",
+          "description": "Mâle gris, tête brune, filet blanc sur le cou et longues rectrices centrales.",
+          "explication": "Canard pilet : Mâle gris, tête brune, filet blanc sur le cou et longues rectrices centrales. La femelle est tachetée, plus élancée qu'une cane colvert."
+        },
+        {
+          "id": "uk81",
+          "difficulte": "difficile",
+          "nom_commun": "Grèbe esclavon",
+          "nom_scientifique": "Podiceps auritus",
+          "groupe": "eau",
+          "options": [
+            "Grèbe esclavon",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Favoris dorés, cou roux",
+          "description": "En été, tête noire à éventails dorés, cou roux et dos noir. Bec droit, plus court que chez le grèbe huppé.",
+          "explication": "Grèbe esclavon : En été, tête noire à éventails dorés, cou roux et dos noir. Bec droit, plus court que chez le grèbe huppé. En hiver il est noir et blanc, avec la calotte jusqu'à l'œil."
+        },
+        {
+          "id": "uk82",
+          "difficulte": "difficile",
+          "nom_commun": "Grèbe à cou noir",
+          "nom_scientifique": "Podiceps nigricollis",
+          "groupe": "eau",
+          "options": [
+            "Grèbe à cou noir",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Toupet doré derrière l'œil",
+          "description": "En été, cou noir, flancs roux et touffe dorée en éventail derrière l'œil. Bec légèrement retroussé.",
+          "explication": "Grèbe à cou noir : En été, cou noir, flancs roux et touffe dorée en éventail derrière l'œil. Bec légèrement retroussé. Il niche sur les étangs à végétation, souvent en petite colonie."
+        },
+        {
+          "id": "uk83",
+          "difficulte": "difficile",
+          "nom_commun": "Butor étoilé",
+          "nom_scientifique": "Botaurus stellaris",
+          "groupe": "eau",
+          "options": [
+            "Butor étoilé",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Brun rayé, bec en dague",
+          "description": "Trapu, brun-jaune rayé et barré, bec jaune-vert. Il se fige le bec vers le ciel dans les roseaux.",
+          "explication": "Butor étoilé : Trapu, brun-jaune rayé et barré, bec jaune-vert. Il se fige le bec vers le ciel dans les roseaux. Son chant est un mugissement sourd, porté loin."
+        },
+        {
+          "id": "uk84",
+          "difficulte": "difficile",
+          "nom_commun": "Blongios nain",
+          "nom_scientifique": "Ixobrychus minutus",
+          "groupe": "eau",
+          "options": [
+            "Blongios nain",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Tout petit héron",
+          "description": "Très petit. Le mâle a la calotte et le dos noirs, les ailes beiges. Il se tient dans les roselières.",
+          "explication": "Blongios nain : Très petit. Le mâle a la calotte et le dos noirs, les ailes beiges. Il se tient dans les roselières. Il grimpe aux tiges plutôt que de pêcher à découvert."
+        },
+        {
+          "id": "uk85",
+          "difficulte": "difficile",
+          "nom_commun": "Râle d'eau",
+          "nom_scientifique": "Rallus aquaticus",
+          "groupe": "eau",
+          "options": [
+            "Râle d'eau",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Bec rouge très long",
+          "description": "Brun strié dessus, face et poitrine gris-bleu, flancs barrés et long bec rouge.",
+          "explication": "Râle d'eau : Brun strié dessus, face et poitrine gris-bleu, flancs barrés et long bec rouge. Il glousse et crie dans la végétation, plus souvent entendu que vu."
+        },
+        {
+          "id": "uk86",
+          "difficulte": "difficile",
+          "nom_commun": "Bécassine des marais",
+          "nom_scientifique": "Gallinago gallinago",
+          "groupe": "eau",
+          "options": [
+            "Bécassine des marais",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Très long bec droit",
+          "description": "Très long bec droit, dos brun rayé de clair, ventre blanc et flancs barrés.",
+          "explication": "Bécassine des marais : Très long bec droit, dos brun rayé de clair, ventre blanc et flancs barrés. Elle part en zigzag en poussant un cri râpeux."
+        },
+        {
+          "id": "uk87",
+          "difficulte": "difficile",
+          "nom_commun": "Phragmite des joncs",
+          "nom_scientifique": "Acrocephalus schoenobaenus",
+          "groupe": "eau",
+          "options": [
+            "Phragmite des joncs",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Sourcil blanc très large",
+          "description": "Petit, dos strié, sourcil blanc large et calotte rayée. Il chante souvent en montant en l'air.",
+          "explication": "Phragmite des joncs : Petit, dos strié, sourcil blanc large et calotte rayée. Il chante souvent en montant en l'air. Il fréquente les joncs et les bords de fossés, pas seulement les hauts roseaux."
+        },
+        {
+          "id": "uk88",
+          "difficulte": "difficile",
+          "nom_commun": "Locustelle tachetée",
+          "nom_scientifique": "Locustella naevia",
+          "groupe": "eau",
+          "options": [
+            "Locustelle tachetée",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Dessus fortement strié",
+          "description": "Brun-olive fortement strié, queue large et sourcil pâle. Elle rampe dans l'herbe.",
+          "explication": "Locustelle tachetée : Brun-olive fortement strié, queue large et sourcil pâle. Elle rampe dans l'herbe. Son chant est une stridulation d'insecte, longue et mécanique."
+        },
+        {
+          "id": "uk89",
+          "difficulte": "difficile",
+          "nom_commun": "Bouscarle de Cetti",
+          "nom_scientifique": "Cettia cetti",
+          "groupe": "eau",
+          "options": [
+            "Bouscarle de Cetti",
+            "Garrot à œil d'or",
+            "Harle huppé",
+            "Eider à duvet"
+          ],
+          "indice": "Rousse, queue large souvent relevée",
+          "description": "Brun-roux uni, sourcil pâle, queue large et arrondie souvent un peu relevée.",
+          "explication": "Bouscarle de Cetti : Brun-roux uni, sourcil pâle, queue large et arrondie souvent un peu relevée. Le chant est une explosion brève, très forte, depuis un buisson."
+        }
+      ]
+    },
+    {
+      "id": "littoral",
+      "label": "Bord de mer",
+      "questions": [
+        {
+          "id": "uk90",
+          "difficulte": "facile",
+          "nom_commun": "Goéland argenté",
+          "nom_scientifique": "Larus argentatus",
+          "groupe": "littoral",
+          "options": [
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan",
+            "Macareux moine"
+          ],
+          "indice": "Grand, manteau gris, pattes roses",
+          "description": "Grand goéland au manteau gris clair, tête blanche en été, pattes roses et bec jaune à point rouge.",
+          "explication": "Goéland argenté : Grand goéland au manteau gris clair, tête blanche en été, pattes roses et bec jaune à point rouge. En hiver la tête est striée de gris."
+        },
+        {
+          "id": "uk91",
+          "difficulte": "facile",
+          "nom_commun": "Mouette rieuse",
+          "nom_scientifique": "Chroicocephalus ridibundus",
+          "groupe": "littoral",
+          "options": [
+            "Mouette rieuse",
+            "Goéland argenté",
+            "Fou de Bassan",
+            "Macareux moine"
+          ],
+          "indice": "Capuchon chocolat au printemps",
+          "description": "En été, capuchon brun chocolat, bec et pattes rouges. En hiver, tête blanche avec une tache noire derrière l'œil.",
+          "explication": "Mouette rieuse : En été, capuchon brun chocolat, bec et pattes rouges. En hiver, tête blanche avec une tache noire derrière l'œil. Elle est petite à côté d'un goéland, et fréquente les parcs comme les vasières."
+        },
+        {
+          "id": "uk92",
+          "difficulte": "facile",
+          "nom_commun": "Fou de Bassan",
+          "nom_scientifique": "Morus bassanus",
+          "groupe": "littoral",
+          "options": [
+            "Fou de Bassan",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Macareux moine"
+          ],
+          "indice": "Grand, blanc, bout des ailes noir",
+          "description": "Grand oiseau marin blanc, tête jaune pâle, bout des ailes noir et bec en poignard.",
+          "explication": "Fou de Bassan : Grand oiseau marin blanc, tête jaune pâle, bout des ailes noir et bec en poignard. Il plonge en piqué, les ailes rabattues."
+        },
+        {
+          "id": "uk93",
+          "difficulte": "facile",
+          "nom_commun": "Macareux moine",
+          "nom_scientifique": "Fratercula arctica",
+          "groupe": "littoral",
+          "options": [
+            "Macareux moine",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan"
+          ],
+          "indice": "Bec triangulaire coloré",
+          "description": "Noir et blanc, joues grises et énorme bec triangulaire rouge, jaune et gris en été.",
+          "explication": "Macareux moine : Noir et blanc, joues grises et énorme bec triangulaire rouge, jaune et gris en été. Il niche en terrier dans les falaises herbeuses."
+        },
+        {
+          "id": "uk94",
+          "difficulte": "facile",
+          "nom_commun": "Huîtrier pie",
+          "nom_scientifique": "Haematopus ostralegus",
+          "groupe": "littoral",
+          "options": [
+            "Huîtrier pie",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan"
+          ],
+          "indice": "Noir et blanc, bec orange",
+          "description": "Noir et blanc, long bec orange-rouge, pattes roses et œil rouge.",
+          "explication": "Huîtrier pie : Noir et blanc, long bec orange-rouge, pattes roses et œil rouge. Il sonde les vasières et les champs, souvent en bande bruyante."
+        },
+        {
+          "id": "uk95",
+          "difficulte": "facile",
+          "nom_commun": "Grand cormoran",
+          "nom_scientifique": "Phalacrocorax carbo",
+          "groupe": "littoral",
+          "options": [
+            "Grand cormoran",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan"
+          ],
+          "indice": "Noir, bec crochu, souvent les ailes ouvertes",
+          "description": "Grand, noir, bec crochu jaune. Les adultes nuptiaux ont une tache blanche sur la cuisse.",
+          "explication": "Grand cormoran : Grand, noir, bec crochu jaune. Les adultes nuptiaux ont une tache blanche sur la cuisse. Il se sèche les ailes écartées sur un poteau ou un rocher."
+        },
+        {
+          "id": "uk96",
+          "difficulte": "facile",
+          "nom_commun": "Sterne pierregarin",
+          "nom_scientifique": "Sterna hirundo",
+          "groupe": "littoral",
+          "options": [
+            "Sterne pierregarin",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan"
+          ],
+          "indice": "Calotte noire, bec rouge à pointe noire",
+          "description": "Blanche et grise, calotte noire, queue fourchue, bec rouge à pointe noire et pattes rouges.",
+          "explication": "Sterne pierregarin : Blanche et grise, calotte noire, queue fourchue, bec rouge à pointe noire et pattes rouges. Elle plonge pour pêcher, en criant au-dessus de l'eau."
+        },
+        {
+          "id": "uk97",
+          "difficulte": "facile",
+          "nom_commun": "Avocette élégante",
+          "nom_scientifique": "Recurvirostra avosetta",
+          "groupe": "littoral",
+          "options": [
+            "Avocette élégante",
+            "Goéland argenté",
+            "Mouette rieuse",
+            "Fou de Bassan"
+          ],
+          "indice": "Bec mince recourbé vers le haut",
+          "description": "Blanche et noire, très longues pattes gris-bleu et bec fin retroussé.",
+          "explication": "Avocette élégante : Blanche et noire, très longues pattes gris-bleu et bec fin retroussé. Elle fauche l'eau de droite à gauche pour capturer ses proies."
+        },
+        {
+          "id": "uk98",
+          "difficulte": "moyen",
+          "nom_commun": "Goéland brun",
+          "nom_scientifique": "Larus fuscus",
+          "groupe": "littoral",
+          "options": [
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle",
+            "Guillemot de Troïl"
+          ],
+          "indice": "Manteau très sombre, pattes jaunes",
+          "description": "Manteau ardoise à noir, pattes jaunes, un peu plus élancé que l'argenté.",
+          "explication": "Goéland brun : Manteau ardoise à noir, pattes jaunes, un peu plus élancé que l'argenté. En vol, le dessus des ailes paraît presque noir."
+        },
+        {
+          "id": "uk99",
+          "difficulte": "moyen",
+          "nom_commun": "Goéland marin",
+          "nom_scientifique": "Larus marinus",
+          "groupe": "littoral",
+          "options": [
+            "Goéland marin",
+            "Goéland brun",
+            "Mouette tridactyle",
+            "Guillemot de Troïl"
+          ],
+          "indice": "Très grand, manteau noir, pattes roses",
+          "description": "Le plus grand goéland, manteau noir, pattes roses et gros bec jaune à point rouge.",
+          "explication": "Goéland marin : Le plus grand goéland, manteau noir, pattes roses et gros bec jaune à point rouge. Il domine les autres laridés sur les reposoirs."
+        },
+        {
+          "id": "uk100",
+          "difficulte": "moyen",
+          "nom_commun": "Mouette tridactyle",
+          "nom_scientifique": "Rissa tridactyla",
+          "groupe": "littoral",
+          "options": [
+            "Mouette tridactyle",
+            "Goéland brun",
+            "Goéland marin",
+            "Guillemot de Troïl"
+          ],
+          "indice": "Ailes grises à bout noir net",
+          "description": "Petite mouette des falaises, pattes noires courtes, bec jaune. Le bout de l'aile est noir, comme trempé dans l'encre.",
+          "explication": "Mouette tridactyle : Petite mouette des falaises, pattes noires courtes, bec jaune. Le bout de l'aile est noir, comme trempé dans l'encre. Elle niche sur les corniches, en colonies bruyantes."
+        },
+        {
+          "id": "uk101",
+          "difficulte": "moyen",
+          "nom_commun": "Guillemot de Troïl",
+          "nom_scientifique": "Uria aalge",
+          "groupe": "littoral",
+          "options": [
+            "Guillemot de Troïl",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Brun sombre, bec en alène",
+          "description": "Dessus brun-noir, dessous blanc, bec long et pointu. Il se tient droit sur les vires.",
+          "explication": "Guillemot de Troïl : Dessus brun-noir, dessous blanc, bec long et pointu. Il se tient droit sur les vires. En vol, le ventre blanc et les ailes étroites le font paraître en forme de croix."
+        },
+        {
+          "id": "uk102",
+          "difficulte": "moyen",
+          "nom_commun": "Pingouin torda",
+          "nom_scientifique": "Alca torda",
+          "groupe": "littoral",
+          "options": [
+            "Pingouin torda",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Bec haut, barré de blanc",
+          "description": "Noir et blanc, bec haut et comprimé, barré de blanc, et fine ligne blanche de l'œil au bec.",
+          "explication": "Pingouin torda : Noir et blanc, bec haut et comprimé, barré de blanc, et fine ligne blanche de l'œil au bec. Il est plus trapu que le guillemot, avec une queue un peu plus longue."
+        },
+        {
+          "id": "uk103",
+          "difficulte": "moyen",
+          "nom_commun": "Cormoran huppé",
+          "nom_scientifique": "Phalacrocorax aristotelis",
+          "groupe": "littoral",
+          "options": [
+            "Cormoran huppé",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Plus fin, souvent une huppe",
+          "description": "Plus petit et plus fin que le grand cormoran, bec plus étroit. En été, une courte huppe et pas de blanc sur la cuisse.",
+          "explication": "Cormoran huppé : Plus petit et plus fin que le grand cormoran, bec plus étroit. En été, une courte huppe et pas de blanc sur la cuisse. Il pêche le long des côtes rocheuses."
+        },
+        {
+          "id": "uk104",
+          "difficulte": "moyen",
+          "nom_commun": "Puffin des Anglais",
+          "nom_scientifique": "Puffinus puffinus",
+          "groupe": "littoral",
+          "options": [
+            "Puffin des Anglais",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Dessus noir, dessous blanc",
+          "description": "Dessus noir, dessous blanc net, vol rasant qui alterne battements rapides et glissés.",
+          "explication": "Puffin des Anglais : Dessus noir, dessous blanc net, vol rasant qui alterne battements rapides et glissés. Il revient aux colonies la nuit, dans les terriers des îles."
+        },
+        {
+          "id": "uk105",
+          "difficulte": "moyen",
+          "nom_commun": "Bernache cravant",
+          "nom_scientifique": "Branta bernicla",
+          "groupe": "littoral",
+          "options": [
+            "Bernache cravant",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Petite oie sombre, collier blanc",
+          "description": "Petite, tête et poitrine noires, petit collier blanc, ventre sombre.",
+          "explication": "Bernache cravant : Petite, tête et poitrine noires, petit collier blanc, ventre sombre. Elle broute les herbiers marins et les prés salés en hiver."
+        },
+        {
+          "id": "uk106",
+          "difficulte": "moyen",
+          "nom_commun": "Tournepierre à collier",
+          "nom_scientifique": "Arenaria interpres",
+          "groupe": "littoral",
+          "options": [
+            "Tournepierre à collier",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Court sur pattes, plastron noir",
+          "description": "Trapu, pattes orange, bec court légèrement retroussé. En été, plastron et joues noirs, dos roux.",
+          "explication": "Tournepierre à collier : Trapu, pattes orange, bec court légèrement retroussé. En été, plastron et joues noirs, dos roux. Il retourne les algues et les cailloux pour chercher ses proies."
+        },
+        {
+          "id": "uk107",
+          "difficulte": "moyen",
+          "nom_commun": "Bécasseau variable",
+          "nom_scientifique": "Calidris alpina",
+          "groupe": "littoral",
+          "options": [
+            "Bécasseau variable",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Bec un peu arqué, ventre noir en été",
+          "description": "Petit, bec légèrement courbé. En été, grande tache noire sur le ventre. En hiver, gris-brun dessus.",
+          "explication": "Bécasseau variable : Petit, bec légèrement courbé. En été, grande tache noire sur le ventre. En hiver, gris-brun dessus. C'est le bécasseau le plus répandu sur les vasières."
+        },
+        {
+          "id": "uk108",
+          "difficulte": "moyen",
+          "nom_commun": "Courlis cendré",
+          "nom_scientifique": "Numenius arquata",
+          "groupe": "littoral",
+          "options": [
+            "Courlis cendré",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Très grand, bec arqué vers le bas",
+          "description": "Grand limicole brun strié, très long bec décidément courbé vers le bas.",
+          "explication": "Courlis cendré : Grand limicole brun strié, très long bec décidément courbé vers le bas. Son chant est une série de notes flûtées, qui montent."
+        },
+        {
+          "id": "uk109",
+          "difficulte": "moyen",
+          "nom_commun": "Pluvier argenté",
+          "nom_scientifique": "Pluvialis squatarola",
+          "groupe": "littoral",
+          "options": [
+            "Pluvier argenté",
+            "Goéland brun",
+            "Goéland marin",
+            "Mouette tridactyle"
+          ],
+          "indice": "Gris, aisselles noires",
+          "description": "Trapu, gros œil, bec court. En hiver, gris pâle. En vol, les aisselles sont noires.",
+          "explication": "Pluvier argenté : Trapu, gros œil, bec court. En hiver, gris pâle. En vol, les aisselles sont noires. En été, le dessous devient noir, bordé de blanc."
+        },
+        {
+          "id": "uk110",
+          "difficulte": "difficile",
+          "nom_commun": "Plongeon catmarin",
+          "nom_scientifique": "Gavia stellata",
+          "groupe": "littoral",
+          "options": [
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique",
+            "Labbe parasite"
+          ],
+          "indice": "Bec fin relevé",
+          "description": "Bec fin légèrement relevé. En été, la gorge est rouge brique. En hiver, gris pâle, le dessus du bec clair.",
+          "explication": "Plongeon catmarin : Bec fin légèrement relevé. En été, la gorge est rouge brique. En hiver, gris pâle, le dessus du bec clair. Il tient souvent le bec un peu pointé vers le haut."
+        },
+        {
+          "id": "uk111",
+          "difficulte": "difficile",
+          "nom_commun": "Plongeon imbrin",
+          "nom_scientifique": "Gavia immer",
+          "groupe": "littoral",
+          "options": [
+            "Plongeon imbrin",
+            "Plongeon catmarin",
+            "Plongeon arctique",
+            "Labbe parasite"
+          ],
+          "indice": "Grand, bec en poignard, collier barré",
+          "description": "Grand plongeon au bec droit et fort. En été, tête noire, collier barré et dos à damier.",
+          "explication": "Plongeon imbrin : Grand plongeon au bec droit et fort. En été, tête noire, collier barré et dos à damier. En hiver il est sombre, avec un demi-collier sombre à la base du cou."
+        },
+        {
+          "id": "uk112",
+          "difficulte": "difficile",
+          "nom_commun": "Plongeon arctique",
+          "nom_scientifique": "Gavia arctica",
+          "groupe": "littoral",
+          "options": [
+            "Plongeon arctique",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Labbe parasite"
+          ],
+          "indice": "Dos gris uni, gorge noire",
+          "description": "En été, gorge noire, raies blanches sur le cou et dos gris sans damier. Bec droit, plus fin que l'imbrin.",
+          "explication": "Plongeon arctique : En été, gorge noire, raies blanches sur le cou et dos gris sans damier. Bec droit, plus fin que l'imbrin. En hiver, la calotte sombre descend sous l'œil, contrairement au catmarin."
+        },
+        {
+          "id": "uk113",
+          "difficulte": "difficile",
+          "nom_commun": "Labbe parasite",
+          "nom_scientifique": "Stercorarius parasiticus",
+          "groupe": "littoral",
+          "options": [
+            "Labbe parasite",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Sombre, filets au centre de la queue",
+          "description": "Taille d'une mouette, ailes pointues, tache blanche sur l'aile et rectrices centrales un peu allongées.",
+          "explication": "Labbe parasite : Taille d'une mouette, ailes pointues, tache blanche sur l'aile et rectrices centrales un peu allongées. Il poursuit les sternes pour leur faire lâcher le poisson."
+        },
+        {
+          "id": "uk114",
+          "difficulte": "difficile",
+          "nom_commun": "Mergule nain",
+          "nom_scientifique": "Alle alle",
+          "groupe": "littoral",
+          "options": [
+            "Mergule nain",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Tout petit pingouin",
+          "description": "Très petit, noir et blanc, bec court et trapu. Il vole bas, en battements rapides.",
+          "explication": "Mergule nain : Très petit, noir et blanc, bec court et trapu. Il vole bas, en battements rapides. Il niche dans les éboulis de l'Arctique et passe au large en hiver."
+        },
+        {
+          "id": "uk115",
+          "difficulte": "difficile",
+          "nom_commun": "Guillemot à miroir",
+          "nom_scientifique": "Cepphus grylle",
+          "groupe": "littoral",
+          "options": [
+            "Guillemot à miroir",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Noir, grande tache blanche sur l'aile",
+          "description": "En été, noir avec un grand ovale blanc sur l'aile et des pattes rouges. En hiver, beaucoup plus blanc.",
+          "explication": "Guillemot à miroir : En été, noir avec un grand ovale blanc sur l'aile et des pattes rouges. En hiver, beaucoup plus blanc. Il pêche près des côtes rocheuses, souvent seul ou en couple."
+        },
+        {
+          "id": "uk116",
+          "difficulte": "difficile",
+          "nom_commun": "Océanite tempête",
+          "nom_scientifique": "Hydrobates pelagicus",
+          "groupe": "littoral",
+          "options": [
+            "Océanite tempête",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Minuscule, croupion blanc",
+          "description": "Très petit pétrel noir, croupion blanc, vol papillonnant au ras des vagues.",
+          "explication": "Océanite tempête : Très petit pétrel noir, croupion blanc, vol papillonnant au ras des vagues. Il vient à terre seulement la nuit, sur les îles."
+        },
+        {
+          "id": "uk117",
+          "difficulte": "difficile",
+          "nom_commun": "Sterne arctique",
+          "nom_scientifique": "Sterna paradisaea",
+          "groupe": "littoral",
+          "options": [
+            "Sterne arctique",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Bec entièrement rouge, queue très longue",
+          "description": "Très proche de la pierregarin, bec rouge sans pointe noire nette, pattes plus courtes et queue plus longue.",
+          "explication": "Sterne arctique : Très proche de la pierregarin, bec rouge sans pointe noire nette, pattes plus courtes et queue plus longue. Elle niche plus au nord et migre jusqu'à l'Antarctique."
+        },
+        {
+          "id": "uk118",
+          "difficulte": "difficile",
+          "nom_commun": "Sterne caugek",
+          "nom_scientifique": "Thalasseus sandvicensis",
+          "groupe": "littoral",
+          "options": [
+            "Sterne caugek",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Bec noir à pointe jaune",
+          "description": "Plus grande, huppe noire en arrière, bec noir à pointe jaune et pattes noires.",
+          "explication": "Sterne caugek : Plus grande, huppe noire en arrière, bec noir à pointe jaune et pattes noires. Elle plonge d'assez haut, souvent en petites bandes."
+        },
+        {
+          "id": "uk119",
+          "difficulte": "difficile",
+          "nom_commun": "Bécasseau violet",
+          "nom_scientifique": "Calidris maritima",
+          "groupe": "littoral",
+          "options": [
+            "Bécasseau violet",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Sombre, pattes jaunes, sur les rochers",
+          "description": "Trapu, sombre, pattes jaunes et bec un peu arqué. Il se nourrit sur les rochers battus par les vagues.",
+          "explication": "Bécasseau violet : Trapu, sombre, pattes jaunes et bec un peu arqué. Il se nourrit sur les rochers battus par les vagues. En hiver il est gris-pourpre, presque ardoise."
+        },
+        {
+          "id": "uk120",
+          "difficulte": "difficile",
+          "nom_commun": "Bécasseau maubèche",
+          "nom_scientifique": "Calidris canutus",
+          "groupe": "littoral",
+          "options": [
+            "Bécasseau maubèche",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Gris en hiver, assez trapu",
+          "description": "Assez grand bécasseau, bec droit de longueur moyenne. En hiver, gris pâle uniforme. En été, dessous rouge brique.",
+          "explication": "Bécasseau maubèche : Assez grand bécasseau, bec droit de longueur moyenne. En hiver, gris pâle uniforme. En été, dessous rouge brique. Il forme des bandes denses sur les grandes vasières."
+        },
+        {
+          "id": "uk121",
+          "difficulte": "difficile",
+          "nom_commun": "Barge rousse",
+          "nom_scientifique": "Limosa lapponica",
+          "groupe": "littoral",
+          "options": [
+            "Barge rousse",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Bec légèrement retroussé",
+          "description": "Grande, bec long un peu relevé. En été, dessous rouge brique. En vol, pas de large barre blanche sur l'aile.",
+          "explication": "Barge rousse : Grande, bec long un peu relevé. En été, dessous rouge brique. En vol, pas de large barre blanche sur l'aile. En hiver elle est gris-brun, sur les vasières."
+        },
+        {
+          "id": "uk122",
+          "difficulte": "difficile",
+          "nom_commun": "Barge à queue noire",
+          "nom_scientifique": "Limosa limosa",
+          "groupe": "littoral",
+          "options": [
+            "Barge à queue noire",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Bec droit, barre alaire blanche",
+          "description": "Plus haute sur pattes, bec long presque droit. En vol, large bande blanche sur l'aile et queue noire à base blanche.",
+          "explication": "Barge à queue noire : Plus haute sur pattes, bec long presque droit. En vol, large bande blanche sur l'aile et queue noire à base blanche. Elle niche dans les prairies humides et hiverne sur les vasières."
+        },
+        {
+          "id": "uk123",
+          "difficulte": "difficile",
+          "nom_commun": "Chevalier gambette",
+          "nom_scientifique": "Tringa totanus",
+          "groupe": "littoral",
+          "options": [
+            "Chevalier gambette",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Pattes rouges, bec à pointe noire",
+          "description": "Gris-brun, pattes rouge-orange, bec droit rouge à pointe noire. En vol, large panneau blanc sur l'aile.",
+          "explication": "Chevalier gambette : Gris-brun, pattes rouge-orange, bec droit rouge à pointe noire. En vol, large panneau blanc sur l'aile. Il siffle un tchiou-tchiou inquiet sur les prés salés."
+        },
+        {
+          "id": "uk124",
+          "difficulte": "difficile",
+          "nom_commun": "Chevalier aboyeur",
+          "nom_scientifique": "Tringa nebularia",
+          "groupe": "littoral",
+          "options": [
+            "Chevalier aboyeur",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Grand, pattes verdâtres, bec relevé",
+          "description": "Grand chevalier gris, pattes verdâtres et bec épais légèrement retroussé.",
+          "explication": "Chevalier aboyeur : Grand chevalier gris, pattes verdâtres et bec épais légèrement retroussé. Il court dans l'eau peu profonde en poussant un tchou-tchou-tchou."
+        },
+        {
+          "id": "uk125",
+          "difficulte": "difficile",
+          "nom_commun": "Bécasseau sanderling",
+          "nom_scientifique": "Calidris alba",
+          "groupe": "littoral",
+          "options": [
+            "Bécasseau sanderling",
+            "Plongeon catmarin",
+            "Plongeon imbrin",
+            "Plongeon arctique"
+          ],
+          "indice": "Petit, pâle, court avec les vagues",
+          "description": "Petit et pâle, ventre blanc, bec court et droit. Il court au bord des vagues comme un jouet mécanique.",
+          "explication": "Bécasseau sanderling : Petit et pâle, ventre blanc, bec court et droit. Il court au bord des vagues comme un jouet mécanique. En été, la tête et la poitrine deviennent roux."
+        }
+      ]
+    },
+    {
+      "id": "montagne",
+      "label": "Montagne et landes",
+      "questions": [
+        {
+          "id": "uk126",
+          "difficulte": "facile",
+          "nom_commun": "Traquet motteux",
+          "nom_scientifique": "Oenanthe oenanthe",
+          "groupe": "montagne",
+          "options": [
+            "Traquet motteux",
+            "Alouette des champs",
+            "Pipit farlouse",
+            "Tarier pâtre"
+          ],
+          "indice": "Croupion blanc, masque noir",
+          "description": "Gris et sable, masque noir chez le mâle, croupion blanc et queue noire à T blanc inversé.",
+          "explication": "Traquet motteux : Gris et sable, masque noir chez le mâle, croupion blanc et queue noire à T blanc inversé. Il se dandine sur les pierriers et les murets."
+        },
+        {
+          "id": "uk127",
+          "difficulte": "facile",
+          "nom_commun": "Alouette des champs",
+          "nom_scientifique": "Alauda arvensis",
+          "groupe": "montagne",
+          "options": [
+            "Alouette des champs",
+            "Traquet motteux",
+            "Pipit farlouse",
+            "Tarier pâtre"
+          ],
+          "indice": "Petite huppe, chant en vol",
+          "description": "Brun strié, petite huppe souvent relevée, queue bordée de blanc.",
+          "explication": "Alouette des champs : Brun strié, petite huppe souvent relevée, queue bordée de blanc. Elle chante longtemps, suspendue haut dans le ciel."
+        },
+        {
+          "id": "uk128",
+          "difficulte": "facile",
+          "nom_commun": "Pipit farlouse",
+          "nom_scientifique": "Anthus pratensis",
+          "groupe": "montagne",
+          "options": [
+            "Pipit farlouse",
+            "Traquet motteux",
+            "Alouette des champs",
+            "Tarier pâtre"
+          ],
+          "indice": "Brun strié, bec fin",
+          "description": "Petit, brun-olive fortement strié, bec fin, pattes claires et ongles longs.",
+          "explication": "Pipit farlouse : Petit, brun-olive fortement strié, bec fin, pattes claires et ongles longs. Il s'envole du sol en poussant un tsi-tsi répété."
+        },
+        {
+          "id": "uk129",
+          "difficulte": "facile",
+          "nom_commun": "Tarier pâtre",
+          "nom_scientifique": "Saxicola rubicola",
+          "groupe": "montagne",
+          "options": [
+            "Tarier pâtre",
+            "Traquet motteux",
+            "Alouette des champs",
+            "Pipit farlouse"
+          ],
+          "indice": "Mâle à tête noire et poitrine orange",
+          "description": "Mâle à tête noire, collier blanc et poitrine orange. La femelle est brune, avec un sourcil pâle.",
+          "explication": "Tarier pâtre : Mâle à tête noire, collier blanc et poitrine orange. La femelle est brune, avec un sourcil pâle. Il se perche bien en vue sur une tige ou un fil."
+        },
+        {
+          "id": "uk130",
+          "difficulte": "facile",
+          "nom_commun": "Grand corbeau",
+          "nom_scientifique": "Corvus corax",
+          "groupe": "montagne",
+          "options": [
+            "Grand corbeau",
+            "Traquet motteux",
+            "Alouette des champs",
+            "Pipit farlouse"
+          ],
+          "indice": "Très grand, queue en coin",
+          "description": "Tout noir, très grand, gros bec et queue cunéiforme. Le cri est un croassement grave.",
+          "explication": "Grand corbeau : Tout noir, très grand, gros bec et queue cunéiforme. Le cri est un croassement grave. Il plane souvent, et niche sur les falaises."
+        },
+        {
+          "id": "uk131",
+          "difficulte": "moyen",
+          "nom_commun": "Lagopède des saules",
+          "nom_scientifique": "Lagopus lagopus",
+          "groupe": "montagne",
+          "options": [
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés",
+            "Pipit spioncelle"
+          ],
+          "indice": "Tétras des landes, blanc l'hiver",
+          "description": "Trapu, bec court et noir. Blanc l'hiver, brun-roux barré l'été, avec les ailes blanches.",
+          "explication": "Lagopède des saules : Trapu, bec court et noir. Blanc l'hiver, brun-roux barré l'été, avec les ailes blanches. Au Royaume-Uni, la forme des landes est le fameux red grouse."
+        },
+        {
+          "id": "uk132",
+          "difficulte": "moyen",
+          "nom_commun": "Merle à plastron",
+          "nom_scientifique": "Turdus torquatus",
+          "groupe": "montagne",
+          "options": [
+            "Merle à plastron",
+            "Lagopède des saules",
+            "Tarier des prés",
+            "Pipit spioncelle"
+          ],
+          "indice": "Plastron blanc en croissant",
+          "description": "Noir ou brun sombre, croissant blanc sur la poitrine et ailes un peu pâles.",
+          "explication": "Merle à plastron : Noir ou brun sombre, croissant blanc sur la poitrine et ailes un peu pâles. Il niche sur les landes et les pierriers, et fuit vite."
+        },
+        {
+          "id": "uk133",
+          "difficulte": "moyen",
+          "nom_commun": "Tarier des prés",
+          "nom_scientifique": "Saxicola rubetra",
+          "groupe": "montagne",
+          "options": [
+            "Tarier des prés",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Pipit spioncelle"
+          ],
+          "indice": "Sourcil blanc très marqué",
+          "description": "Dessus brun strié, sourcil blanc large, poitrine orangée. La queue montre beaucoup de blanc sur les côtés.",
+          "explication": "Tarier des prés : Dessus brun strié, sourcil blanc large, poitrine orangée. La queue montre beaucoup de blanc sur les côtés. Il chante depuis une tige, dans les prairies humides de montagne."
+        },
+        {
+          "id": "uk134",
+          "difficulte": "moyen",
+          "nom_commun": "Pipit spioncelle",
+          "nom_scientifique": "Anthus spinoletta",
+          "groupe": "montagne",
+          "options": [
+            "Pipit spioncelle",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés"
+          ],
+          "indice": "Moins strié, sourcil blanc",
+          "description": "En été, poitrine rose presque sans stries, sourcil blanc et dos gris-brun. En hiver, plus strié, près des côtes.",
+          "explication": "Pipit spioncelle : En été, poitrine rose presque sans stries, sourcil blanc et dos gris-brun. En hiver, plus strié, près des côtes. Il se tient sur les rochers des torrents et des sommets."
+        },
+        {
+          "id": "uk135",
+          "difficulte": "moyen",
+          "nom_commun": "Crave à bec rouge",
+          "nom_scientifique": "Pyrrhocorax pyrrhocorax",
+          "groupe": "montagne",
+          "options": [
+            "Crave à bec rouge",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés"
+          ],
+          "indice": "Noir, bec rouge arqué",
+          "description": "Tout noir, bec long, rouge et arqué, pattes rouges. Plus élancé qu'un choucas.",
+          "explication": "Crave à bec rouge : Tout noir, bec long, rouge et arqué, pattes rouges. Plus élancé qu'un choucas. Il niche dans les falaises côtières et les montagnes."
+        },
+        {
+          "id": "uk136",
+          "difficulte": "moyen",
+          "nom_commun": "Tétras lyre",
+          "nom_scientifique": "Lyrurus tetrix",
+          "groupe": "montagne",
+          "options": [
+            "Tétras lyre",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés"
+          ],
+          "indice": "Queue en lyre chez le mâle",
+          "description": "Le mâle est noir bleuté, sous-caudales blanches et queue en forme de lyre. La femelle est brune barrée.",
+          "explication": "Tétras lyre : Le mâle est noir bleuté, sous-caudales blanches et queue en forme de lyre. La femelle est brune barrée. À l'aube, les mâles paradent sur les arènes des landes."
+        },
+        {
+          "id": "uk137",
+          "difficulte": "moyen",
+          "nom_commun": "Bec-croisé des sapins",
+          "nom_scientifique": "Loxia curvirostra",
+          "groupe": "montagne",
+          "options": [
+            "Bec-croisé des sapins",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés"
+          ],
+          "indice": "Bec dont les mandibules se croisent",
+          "description": "Trapu, bec croisé. Le mâle est rouge brique, la femelle vert-jaune.",
+          "explication": "Bec-croisé des sapins : Trapu, bec croisé. Le mâle est rouge brique, la femelle vert-jaune. Il extrait les graines des cônes de conifères."
+        },
+        {
+          "id": "uk138",
+          "difficulte": "moyen",
+          "nom_commun": "Bécasse des bois",
+          "nom_scientifique": "Scolopax rusticola",
+          "groupe": "montagne",
+          "options": [
+            "Bécasse des bois",
+            "Lagopède des saules",
+            "Merle à plastron",
+            "Tarier des prés"
+          ],
+          "indice": "Grosse, bois, front barré",
+          "description": "Ronde, brun-roux marbré, long bec, gros œil haut placé et front barré de noir.",
+          "explication": "Bécasse des bois : Ronde, brun-roux marbré, long bec, gros œil haut placé et front barré de noir. Elle s'envole en zigzag entre les arbres, au crépuscule."
+        },
+        {
+          "id": "uk139",
+          "difficulte": "difficile",
+          "nom_commun": "Lagopède alpin",
+          "nom_scientifique": "Lagopus muta",
+          "groupe": "montagne",
+          "options": [
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard",
+            "Bruant des neiges"
+          ],
+          "indice": "Blanc l'hiver, ailes blanches",
+          "description": "Plus petit que le lagopède des saules. En été, gris finement barré. En hiver, blanc, avec un trait noir entre le bec et l'œil chez le mâle.",
+          "explication": "Lagopède alpin : Plus petit que le lagopède des saules. En été, gris finement barré. En hiver, blanc, avec un trait noir entre le bec et l'œil chez le mâle. Il vit sur les hautes croupes pierreuses, au-dessus des landes à grouse."
+        },
+        {
+          "id": "uk140",
+          "difficulte": "difficile",
+          "nom_commun": "Grand tétras",
+          "nom_scientifique": "Tetrao urogallus",
+          "groupe": "montagne",
+          "options": [
+            "Grand tétras",
+            "Lagopède alpin",
+            "Pluvier guignard",
+            "Bruant des neiges"
+          ],
+          "indice": "Énorme tétras des vieilles forêts",
+          "description": "Le mâle est très grand, noir, avec une queue arrondie en éventail et une plaque rouge au-dessus de l'œil. La femelle est brune barrée.",
+          "explication": "Grand tétras : Le mâle est très grand, noir, avec une queue arrondie en éventail et une plaque rouge au-dessus de l'œil. La femelle est brune barrée. Il dépend des vieilles pinèdes calmes."
+        },
+        {
+          "id": "uk141",
+          "difficulte": "difficile",
+          "nom_commun": "Pluvier guignard",
+          "nom_scientifique": "Charadrius morinellus",
+          "groupe": "montagne",
+          "options": [
+            "Pluvier guignard",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Bruant des neiges"
+          ],
+          "indice": "Sourcil blanc qui se rejoint sur la nuque",
+          "description": "Petit pluvier des sommets, sourcils blancs qui se rejoignent en V sur la nuque. En été, ventre roux et bande pectorale blanche.",
+          "explication": "Pluvier guignard : Petit pluvier des sommets, sourcils blancs qui se rejoignent en V sur la nuque. En été, ventre roux et bande pectorale blanche. La femelle est plus colorée que le mâle."
+        },
+        {
+          "id": "uk142",
+          "difficulte": "difficile",
+          "nom_commun": "Bruant des neiges",
+          "nom_scientifique": "Plectrophenax nivalis",
+          "groupe": "montagne",
+          "options": [
+            "Bruant des neiges",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard"
+          ],
+          "indice": "Beaucoup de blanc aux ailes",
+          "description": "En été, le mâle est blanc et noir. En hiver, beige et blanc, avec de grandes plages blanches sur les ailes.",
+          "explication": "Bruant des neiges : En été, le mâle est blanc et noir. En hiver, beige et blanc, avec de grandes plages blanches sur les ailes. On le voit sur les côtes et les sommets, souvent en bande."
+        },
+        {
+          "id": "uk143",
+          "difficulte": "difficile",
+          "nom_commun": "Linotte à bec jaune",
+          "nom_scientifique": "Linaria flavirostris",
+          "groupe": "montagne",
+          "options": [
+            "Linotte à bec jaune",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard"
+          ],
+          "indice": "Bec jaune, plumage brun chaud",
+          "description": "Petite, brun-roux fortement strié, face et poitrine teintées de rose chez le mâle, bec jaune en hiver.",
+          "explication": "Linotte à bec jaune : Petite, brun-roux fortement strié, face et poitrine teintées de rose chez le mâle, bec jaune en hiver. Elle fréquente les landes côtières et les prés salés."
+        },
+        {
+          "id": "uk144",
+          "difficulte": "difficile",
+          "nom_commun": "Bec-croisé d'Écosse",
+          "nom_scientifique": "Loxia scotica",
+          "groupe": "montagne",
+          "options": [
+            "Bec-croisé d'Écosse",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard"
+          ],
+          "indice": "Bec croisé, inféodé aux pins d'Écosse",
+          "description": "Très proche du bec-croisé des sapins. Le bec est intermédiaire, adapté aux cônes de pin sylvestre.",
+          "explication": "Bec-croisé d'Écosse : Très proche du bec-croisé des sapins. Le bec est intermédiaire, adapté aux cônes de pin sylvestre. C'est l'une des rares espèces endémiques du Royaume-Uni, dans les pinèdes d'Écosse."
+        },
+        {
+          "id": "uk145",
+          "difficulte": "difficile",
+          "nom_commun": "Engoulevent d'Europe",
+          "nom_scientifique": "Caprimulgus europaeus",
+          "groupe": "montagne",
+          "options": [
+            "Engoulevent d'Europe",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard"
+          ],
+          "indice": "Cryptique, grande bouche, vol papillonnant",
+          "description": "Gris-brun marbré comme une écorce, tête plate, grande bouche et longues ailes. Actif au crépuscule.",
+          "explication": "Engoulevent d'Europe : Gris-brun marbré comme une écorce, tête plate, grande bouche et longues ailes. Actif au crépuscule. Son chant est un ronronnement continu, porté loin sur les landes."
+        },
+        {
+          "id": "uk146",
+          "difficulte": "difficile",
+          "nom_commun": "Pipit maritime",
+          "nom_scientifique": "Anthus petrosus",
+          "groupe": "montagne",
+          "options": [
+            "Pipit maritime",
+            "Lagopède alpin",
+            "Grand tétras",
+            "Pluvier guignard"
+          ],
+          "indice": "Sombre, sur les rochers du rivage",
+          "description": "Plus sombre et plus olive que le pipit farlouse, pattes sombres, dessous très strié.",
+          "explication": "Pipit maritime : Plus sombre et plus olive que le pipit farlouse, pattes sombres, dessous très strié. Il marche sur les algues et les rochers, au bord de la mer."
+        }
+      ]
+    },
+    {
+      "id": "rapaces",
+      "label": "Rapaces",
+      "questions": [
+        {
+          "id": "uk147",
+          "difficulte": "facile",
+          "nom_commun": "Buse variable",
+          "nom_scientifique": "Buteo buteo",
+          "groupe": "rapaces",
+          "options": [
+            "Buse variable",
+            "Faucon crécerelle",
+            "Chouette hulotte",
+            "Effraie des clochers"
+          ],
+          "indice": "Large, queue barrée, souvent posée sur un piquet",
+          "description": "Rapace large, brun très variable, queue barrée et ailes digitées. Elle plane en cercles, les ailes un peu relevées.",
+          "explication": "Buse variable : Rapace large, brun très variable, queue barrée et ailes digitées. Elle plane en cercles, les ailes un peu relevées. On la voit souvent à l'affût sur un poteau."
+        },
+        {
+          "id": "uk148",
+          "difficulte": "facile",
+          "nom_commun": "Faucon crécerelle",
+          "nom_scientifique": "Falco tinnunculus",
+          "groupe": "rapaces",
+          "options": [
+            "Faucon crécerelle",
+            "Buse variable",
+            "Chouette hulotte",
+            "Effraie des clochers"
+          ],
+          "indice": "Fait le Saint-Esprit",
+          "description": "Petit faucon, dos roux tacheté, bout des ailes sombre. Il fait du surplace, queue étalée, face au vent.",
+          "explication": "Faucon crécerelle : Petit faucon, dos roux tacheté, bout des ailes sombre. Il fait du surplace, queue étalée, face au vent. Le mâle a la tête et la queue grises."
+        },
+        {
+          "id": "uk149",
+          "difficulte": "facile",
+          "nom_commun": "Chouette hulotte",
+          "nom_scientifique": "Strix aluco",
+          "groupe": "rapaces",
+          "options": [
+            "Chouette hulotte",
+            "Buse variable",
+            "Faucon crécerelle",
+            "Effraie des clochers"
+          ],
+          "indice": "Grosse tête ronde, yeux noirs",
+          "description": "Brun ou roux, grosse tête sans aigrettes, yeux très sombres et disques faciaux complets.",
+          "explication": "Chouette hulotte : Brun ou roux, grosse tête sans aigrettes, yeux très sombres et disques faciaux complets. Son chant est le hululement classique des bois."
+        },
+        {
+          "id": "uk150",
+          "difficulte": "facile",
+          "nom_commun": "Effraie des clochers",
+          "nom_scientifique": "Tyto alba",
+          "groupe": "rapaces",
+          "options": [
+            "Effraie des clochers",
+            "Buse variable",
+            "Faucon crécerelle",
+            "Chouette hulotte"
+          ],
+          "indice": "Masque blanc en cœur",
+          "description": "Dessus doré et gris piqueté, dessous et masque blancs en forme de cœur. Vol très silencieux.",
+          "explication": "Effraie des clochers : Dessus doré et gris piqueté, dessous et masque blancs en forme de cœur. Vol très silencieux. Elle chasse au-dessus des prairies, souvent au crépuscule."
+        },
+        {
+          "id": "uk151",
+          "difficulte": "facile",
+          "nom_commun": "Épervier d'Europe",
+          "nom_scientifique": "Accipiter nisus",
+          "groupe": "rapaces",
+          "options": [
+            "Épervier d'Europe",
+            "Buse variable",
+            "Faucon crécerelle",
+            "Chouette hulotte"
+          ],
+          "indice": "Ailes courtes et arrondies, longue queue",
+          "description": "Petit rapace des haies. Dessous barré. Le mâle est gris-bleu, la femelle brune, plus grande.",
+          "explication": "Épervier d'Europe : Petit rapace des haies. Dessous barré. Le mâle est gris-bleu, la femelle brune, plus grande. Il chasse en rasant les buissons, par surprise."
+        },
+        {
+          "id": "uk152",
+          "difficulte": "moyen",
+          "nom_commun": "Faucon émerillon",
+          "nom_scientifique": "Falco columbarius",
+          "groupe": "rapaces",
+          "options": [
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais",
+            "Busard Saint-Martin"
+          ],
+          "indice": "Petit faucon compact",
+          "description": "Petit, ailes pointues et queue assez courte. Le mâle est bleu-gris dessus, la femelle brune.",
+          "explication": "Faucon émerillon : Petit, ailes pointues et queue assez courte. Le mâle est bleu-gris dessus, la femelle brune. Il file bas au-dessus des landes et des prés salés."
+        },
+        {
+          "id": "uk153",
+          "difficulte": "moyen",
+          "nom_commun": "Hibou moyen-duc",
+          "nom_scientifique": "Asio otus",
+          "groupe": "rapaces",
+          "options": [
+            "Hibou moyen-duc",
+            "Faucon émerillon",
+            "Hibou des marais",
+            "Busard Saint-Martin"
+          ],
+          "indice": "Aigrettes longues, yeux orange",
+          "description": "Mince, aigrettes dressées, yeux orange et dessous finement barré et strié.",
+          "explication": "Hibou moyen-duc : Mince, aigrettes dressées, yeux orange et dessous finement barré et strié. Le jour, il se plaque contre un tronc dans un bosquet de conifères."
+        },
+        {
+          "id": "uk154",
+          "difficulte": "moyen",
+          "nom_commun": "Hibou des marais",
+          "nom_scientifique": "Asio flammeus",
+          "groupe": "rapaces",
+          "options": [
+            "Hibou des marais",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Busard Saint-Martin"
+          ],
+          "indice": "Chasse de jour, aigrettes courtes",
+          "description": "Brun-jaune, yeux jaunes, aigrettes courtes souvent invisibles. Il vole bas, en battements souples.",
+          "explication": "Hibou des marais : Brun-jaune, yeux jaunes, aigrettes courtes souvent invisibles. Il vole bas, en battements souples. On le voit au-dessus des marais et des dunes, même en plein jour."
+        },
+        {
+          "id": "uk155",
+          "difficulte": "moyen",
+          "nom_commun": "Busard Saint-Martin",
+          "nom_scientifique": "Circus cyaneus",
+          "groupe": "rapaces",
+          "options": [
+            "Busard Saint-Martin",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais"
+          ],
+          "indice": "Croupion blanc, vol bas",
+          "description": "Longues ailes et longue queue, croupion blanc. Le mâle est gris pâle, la femelle brune striée.",
+          "explication": "Busard Saint-Martin : Longues ailes et longue queue, croupion blanc. Le mâle est gris pâle, la femelle brune striée. Il prospecte les landes en vol lent, les ailes en V léger."
+        },
+        {
+          "id": "uk156",
+          "difficulte": "moyen",
+          "nom_commun": "Milan royal",
+          "nom_scientifique": "Milvus milvus",
+          "groupe": "rapaces",
+          "options": [
+            "Milan royal",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais"
+          ],
+          "indice": "Queue rousse profondément fourchue",
+          "description": "Grand, roux, tête claire et longue queue fourchue, tordue comme un gouvernail.",
+          "explication": "Milan royal : Grand, roux, tête claire et longue queue fourchue, tordue comme un gouvernail. Il plane au-dessus des collines et des routes."
+        },
+        {
+          "id": "uk157",
+          "difficulte": "moyen",
+          "nom_commun": "Bondrée apivore",
+          "nom_scientifique": "Pernis apivorus",
+          "groupe": "rapaces",
+          "options": [
+            "Bondrée apivore",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais"
+          ],
+          "indice": "Tête fine, queue à deux bandes",
+          "description": "Silhouette de buse, tête plus petite, comme un pigeon, et queue à bandes sombres espacées.",
+          "explication": "Bondrée apivore : Silhouette de buse, tête plus petite, comme un pigeon, et queue à bandes sombres espacées. Elle se nourrit surtout de nids de guêpes."
+        },
+        {
+          "id": "uk158",
+          "difficulte": "moyen",
+          "nom_commun": "Chevêche d'Athéna",
+          "nom_scientifique": "Athene noctua",
+          "groupe": "rapaces",
+          "options": [
+            "Chevêche d'Athéna",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais"
+          ],
+          "indice": "Petite, sourcils blancs",
+          "description": "Petite chouette trapue, tête plate, sourcils blancs et yeux jaunes. Souvent visible le jour sur un piquet.",
+          "explication": "Chevêche d'Athéna : Petite chouette trapue, tête plate, sourcils blancs et yeux jaunes. Souvent visible le jour sur un piquet. Elle hoche et s'étire quand elle est inquiète."
+        },
+        {
+          "id": "uk159",
+          "difficulte": "moyen",
+          "nom_commun": "Faucon hobereau",
+          "nom_scientifique": "Falco subbuteo",
+          "groupe": "rapaces",
+          "options": [
+            "Faucon hobereau",
+            "Faucon émerillon",
+            "Hibou moyen-duc",
+            "Hibou des marais"
+          ],
+          "indice": "Moustache noire, cuisses rousses",
+          "description": "Élancé, ailes très longues, moustache noire marquée et culottes rousses chez l'adulte.",
+          "explication": "Faucon hobereau : Élancé, ailes très longues, moustache noire marquée et culottes rousses chez l'adulte. Il capture des libellules et des hirondelles en vol."
+        },
+        {
+          "id": "uk160",
+          "difficulte": "difficile",
+          "nom_commun": "Pygargue à queue blanche",
+          "nom_scientifique": "Haliaeetus albicilla",
+          "groupe": "rapaces",
+          "options": [
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Faucon pèlerin",
+            "Autour des palombes"
+          ],
+          "indice": "Très grand, queue blanche, gros bec jaune",
+          "description": "Très grand, bec massif jaune, ailes larges et rectangulaires. L'adulte a la queue blanche courte.",
+          "explication": "Pygargue à queue blanche : Très grand, bec massif jaune, ailes larges et rectangulaires. L'adulte a la queue blanche courte. Il pêche et récupère aussi des cadavres au bord des lochs."
+        },
+        {
+          "id": "uk161",
+          "difficulte": "difficile",
+          "nom_commun": "Balbuzard pêcheur",
+          "nom_scientifique": "Pandion haliaetus",
+          "groupe": "rapaces",
+          "options": [
+            "Balbuzard pêcheur",
+            "Pygargue à queue blanche",
+            "Faucon pèlerin",
+            "Autour des palombes"
+          ],
+          "indice": "Blanc dessous, bandeau noir sur l'œil",
+          "description": "Dessous blanc, dessus brun, bandeau noir à travers l'œil et ailes étroites coudées.",
+          "explication": "Balbuzard pêcheur : Dessous blanc, dessus brun, bandeau noir à travers l'œil et ailes étroites coudées. Il plonge les pattes en avant pour saisir un poisson."
+        },
+        {
+          "id": "uk162",
+          "difficulte": "difficile",
+          "nom_commun": "Faucon pèlerin",
+          "nom_scientifique": "Falco peregrinus",
+          "groupe": "rapaces",
+          "options": [
+            "Faucon pèlerin",
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Autour des palombes"
+          ],
+          "indice": "Calotte noire, grandes moustaches",
+          "description": "Compact et puissant, dessus gris ardoise, dessous barré, calotte et larges moustaches noires.",
+          "explication": "Faucon pèlerin : Compact et puissant, dessus gris ardoise, dessous barré, calotte et larges moustaches noires. Il chasse en piqué, les ailes à demi fermées."
+        },
+        {
+          "id": "uk163",
+          "difficulte": "difficile",
+          "nom_commun": "Autour des palombes",
+          "nom_scientifique": "Accipiter gentilis",
+          "groupe": "rapaces",
+          "options": [
+            "Autour des palombes",
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Faucon pèlerin"
+          ],
+          "indice": "Grand épervier, sourcil blanc",
+          "description": "Bien plus grand que l'épervier, poitrine barrée, sourcil blanc et queue à bandes larges.",
+          "explication": "Autour des palombes : Bien plus grand que l'épervier, poitrine barrée, sourcil blanc et queue à bandes larges. Il chasse dans les bois, par des accélérations brusques."
+        },
+        {
+          "id": "uk164",
+          "difficulte": "difficile",
+          "nom_commun": "Busard cendré",
+          "nom_scientifique": "Circus pygargus",
+          "groupe": "rapaces",
+          "options": [
+            "Busard cendré",
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Faucon pèlerin"
+          ],
+          "indice": "Très fin, bande noire sur l'aile du mâle",
+          "description": "Plus mince que le Saint-Martin. Le mâle est gris, avec une barre noire sur l'aile et des flancs striés de roux.",
+          "explication": "Busard cendré : Plus mince que le Saint-Martin. Le mâle est gris, avec une barre noire sur l'aile et des flancs striés de roux. Il niche dans les cultures et les friches, au vol très léger."
+        },
+        {
+          "id": "uk165",
+          "difficulte": "difficile",
+          "nom_commun": "Busard des roseaux",
+          "nom_scientifique": "Circus aeruginosus",
+          "groupe": "rapaces",
+          "options": [
+            "Busard des roseaux",
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Faucon pèlerin"
+          ],
+          "indice": "Grand, souvent sans croupion blanc",
+          "description": "Le plus grand busard. Le mâle a la tête claire, les ailes tricolores. La femelle est brune, calotte et gorge crème.",
+          "explication": "Busard des roseaux : Le plus grand busard. Le mâle a la tête claire, les ailes tricolores. La femelle est brune, calotte et gorge crème. Il chasse au-dessus des roselières, les ailes en V."
+        },
+        {
+          "id": "uk166",
+          "difficulte": "difficile",
+          "nom_commun": "Aigle royal",
+          "nom_scientifique": "Aquila chrysaetos",
+          "groupe": "rapaces",
+          "options": [
+            "Aigle royal",
+            "Pygargue à queue blanche",
+            "Balbuzard pêcheur",
+            "Faucon pèlerin"
+          ],
+          "indice": "Très grand, ailes longues un peu relevées",
+          "description": "Immense, brun, nuque dorée, queue assez longue. Les jeunes ont des plages blanches sous les ailes et à la queue.",
+          "explication": "Aigle royal : Immense, brun, nuque dorée, queue assez longue. Les jeunes ont des plages blanches sous les ailes et à la queue. Il plane le long des crêtes, en Écosse et dans les hautes terres."
+        }
+      ]
+    }
+  ]
+}

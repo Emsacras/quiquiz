@@ -1,0 +1,327 @@
+{
+  "id": "rapaces",
+  "label": "Rapaces",
+  "defaut": false,
+  "questions": [
+    {
+      "id": "rap-f1",
+      "groupe": "rapaces",
+      "difficulte": "facile",
+      "nom_commun": "Milan royal",
+      "nom_scientifique": "Milvus milvus",
+      "options": [
+        "Milan royal",
+        "Milan noir",
+        "Buse variable",
+        "Busard des roseaux"
+      ],
+      "indice": "Queue très échancrée et rousse",
+      "explication": "Le milan royal a une longue queue profondément échancrée, rousse, et des ailes coudées avec de grandes taches blanches en dessous.",
+      "description": "Longue queue profondément échancrée et rousse, ailes coudées avec de grandes taches blanches en dessous."
+    },
+    {
+      "id": "rap-f2",
+      "groupe": "rapaces",
+      "difficulte": "facile",
+      "nom_commun": "Balbuzard pêcheur",
+      "nom_scientifique": "Pandion haliaetus",
+      "options": [
+        "Balbuzard pêcheur",
+        "Aigle botté",
+        "Buse variable",
+        "Circaète Jean-le-Blanc"
+      ],
+      "indice": "Dessous blanc, bandeau sombre sur l'œil",
+      "explication": "Le balbuzard a le dessous très blanc, un bandeau noir sur l'œil et des ailes étroites, souvent coudées. Il plonge les pattes en avant pour pêcher.",
+      "description": "Dessous très blanc, bandeau noir sur l'œil, ailes étroites souvent coudées. Plonge les pattes en avant pour pêcher."
+    },
+    {
+      "id": "rap-f3",
+      "groupe": "rapaces",
+      "difficulte": "facile",
+      "nom_commun": "Effraie des clochers",
+      "nom_scientifique": "Tyto alba",
+      "options": [
+        "Effraie des clochers",
+        "Chouette hulotte",
+        "Hibou moyen-duc",
+        "Chevêche d'Athéna"
+      ],
+      "indice": "Disque facial en cœur, dessous blanc ou roux",
+      "explication": "L'effraie a un disque facial blanc en forme de cœur, le dessus doré moucheté et le dessous clair. Elle chasse souvent la nuit près des granges.",
+      "description": "Disque facial blanc en forme de cœur, dessus doré moucheté, dessous clair. Chasse souvent la nuit près des granges."
+    },
+    {
+      "id": "rap-f4",
+      "groupe": "rapaces",
+      "difficulte": "facile",
+      "nom_commun": "Chouette hulotte",
+      "nom_scientifique": "Strix aluco",
+      "options": [
+        "Chouette hulotte",
+        "Effraie des clochers",
+        "Hibou moyen-duc",
+        "Chouette de Tengmalm"
+      ],
+      "indice": "Grosse tête ronde, sans aigrettes, yeux noirs",
+      "explication": "La hulotte a une grosse tête ronde, sans aigrettes, et de grands yeux noirs. Le plumage est brun ou gris, strié, avec un disque facial arrondi.",
+      "description": "Grosse tête ronde, sans aigrettes, grands yeux noirs. Plumage brun ou gris, strié."
+    },
+    {
+      "id": "rap-f5",
+      "groupe": "rapaces",
+      "difficulte": "facile",
+      "nom_commun": "Hibou moyen-duc",
+      "nom_scientifique": "Asio otus",
+      "options": [
+        "Hibou moyen-duc",
+        "Hibou grand-duc",
+        "Chouette hulotte",
+        "Hibou des marais"
+      ],
+      "indice": "Longues aigrettes, yeux orange",
+      "explication": "Le moyen-duc a de longues aigrettes souvent dressées, des yeux orange et un disque facial roux. Il est plus mince et plus petit que le grand-duc.",
+      "description": "Longues aigrettes souvent dressées, yeux orange, disque facial roux. Plus mince qu'un grand-duc."
+    },
+    {
+      "id": "rap-m1",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Épervier d'Europe",
+      "nom_scientifique": "Accipiter nisus",
+      "options": [
+        "Épervier d'Europe",
+        "Autour des palombes",
+        "Faucon crécerelle",
+        "Faucon hobereau"
+      ],
+      "indice": "Petites ailes rondes, longue queue barrée, poitrine rayée",
+      "explication": "L'épervier a des ailes courtes et arrondies et une longue queue. Le dessous est finement barré. Le mâle est gris-bleu, la femelle brune et plus grande.",
+      "description": "Ailes courtes et arrondies, longue queue, dessous finement barré. Le mâle est gris-bleu, la femelle brune et plus grande."
+    },
+    {
+      "id": "rap-m2",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Faucon hobereau",
+      "nom_scientifique": "Falco subbuteo",
+      "options": [
+        "Faucon hobereau",
+        "Faucon crécerelle",
+        "Faucon pèlerin",
+        "Épervier d'Europe"
+      ],
+      "indice": "Ailes très pointues, cuisses rousses",
+      "explication": "Le hobereau a de longues ailes pointues, le dessus ardoise et les cuisses rousses. Il chasse souvent les insectes et les hirondelles en vol.",
+      "description": "Longues ailes pointues, dessus ardoise, cuisses rousses. Chasse souvent les insectes et les hirondelles en vol."
+    },
+    {
+      "id": "rap-m3",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Busard des roseaux",
+      "nom_scientifique": "Circus aeruginosus",
+      "options": [
+        "Busard des roseaux",
+        "Busard Saint-Martin",
+        "Buse variable",
+        "Milan noir"
+      ],
+      "indice": "Vole bas, ailes en V. Le mâle a la tête claire",
+      "explication": "Le busard des roseaux plane bas, les ailes relevées en V. Le mâle est tricolore, avec la tête pâle. La femelle est brun sombre, avec la calotte et la gorge crème.",
+      "description": "Plane bas, ailes relevées en V. Le mâle est tricolore à tête pâle. La femelle est brun sombre, calotte et gorge crème."
+    },
+    {
+      "id": "rap-m4",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Autour des palombes",
+      "nom_scientifique": "Accipiter gentilis",
+      "options": [
+        "Autour des palombes",
+        "Épervier d'Europe",
+        "Buse variable",
+        "Faucon pèlerin"
+      ],
+      "indice": "Comme un grand épervier, avec un sourcil blanc",
+      "explication": "L'autour ressemble à un grand épervier, plus massif, avec un sourcil blanc net et un dessous barré. La femelle est particulièrement imposante.",
+      "description": "Silhouette d'un grand chasseur d'oiseaux, plus massif, sourcil blanc net et dessous barré."
+    },
+    {
+      "id": "rap-m5",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Circaète Jean-le-Blanc",
+      "nom_scientifique": "Circaetus gallicus",
+      "options": [
+        "Circaète Jean-le-Blanc",
+        "Balbuzard pêcheur",
+        "Buse variable",
+        "Aigle botté"
+      ],
+      "indice": "Grande tête, dessous très clair",
+      "explication": "Le circaète est grand, à grosse tête et dessous presque blanc, parfois légèrement barré. Il fait souvent le saint-esprit en cherchant des reptiles.",
+      "description": "Grand, grosse tête, dessous presque blanc parfois légèrement barré. Fait souvent le vol stationnaire au-dessus des reptiles."
+    },
+    {
+      "id": "rap-d1",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Bondrée apivore",
+      "nom_scientifique": "Pernis apivorus",
+      "options": [
+        "Bondrée apivore",
+        "Buse variable",
+        "Milan noir",
+        "Circaète Jean-le-Blanc"
+      ],
+      "indice": "Tête fine, et queue à bandes sombres espacées",
+      "explication": "La bondrée ressemble à une buse, mais la tête est plus fine et le bec plus faible. La queue montre souvent deux ou trois bandes sombres bien espacées.",
+      "description": "Silhouette de rapace large, mais tête plus fine et bec plus faible. Queue souvent marquée de deux ou trois bandes sombres espacées."
+    },
+    {
+      "id": "rap-d2",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Busard Saint-Martin",
+      "nom_scientifique": "Circus cyaneus",
+      "options": [
+        "Busard Saint-Martin",
+        "Busard cendré",
+        "Busard des roseaux",
+        "Épervier d'Europe"
+      ],
+      "indice": "Le mâle est gris très pâle, avec le bout des ailes noir",
+      "explication": "Le mâle du Saint-Martin est gris cendré, blanc dessous, avec le bout des ailes noir. La femelle est brune, avec un croupion blanc bien visible.",
+      "description": "Le mâle est gris cendré, blanc dessous, bout des ailes noir. La femelle est brune, avec un croupion blanc bien visible."
+    },
+    {
+      "id": "rap-d3",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Busard cendré",
+      "nom_scientifique": "Circus pygargus",
+      "options": [
+        "Busard cendré",
+        "Busard Saint-Martin",
+        "Busard des roseaux",
+        "Faucon crécerelle"
+      ],
+      "indice": "Plus fin que le Saint-Martin. Le mâle a une barre noire sur l'aile",
+      "explication": "Le busard cendré est plus svelte que le Saint-Martin. Le mâle est gris, avec une barre noire sur l'aile et le bout des ailes noir. La femelle a le croupion blanc.",
+      "description": "Plus svelte que son cousin gris pâle. Le mâle est gris, avec une barre noire sur l'aile. La femelle a le croupion blanc."
+    },
+    {
+      "id": "rap-d4",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Faucon pèlerin",
+      "nom_scientifique": "Falco peregrinus",
+      "options": [
+        "Faucon pèlerin",
+        "Faucon hobereau",
+        "Faucon crécerelle",
+        "Épervier d'Europe"
+      ],
+      "indice": "Compact, calotte et moustache noires, poitrine barrée",
+      "explication": "Le pèlerin est trapu, avec une calotte et de larges moustaches noires, le dessus ardoise et le dessous barré. Ses ailes sont pointues et puissantes.",
+      "description": "Trapu, calotte et larges moustaches noires, dessus ardoise, dessous barré. Ailes pointues et puissantes."
+    },
+    {
+      "id": "rap-d5",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Élanion blanc",
+      "nom_scientifique": "Elanus caeruleus",
+      "options": [
+        "Élanion blanc",
+        "Busard Saint-Martin",
+        "Balbuzard pêcheur",
+        "Effraie des clochers"
+      ],
+      "indice": "Blanc et gris pâle, épaules noires, œil rouge",
+      "explication": "L'élanion blanc a le corps blanc, le dessus gris pâle et les épaules noires. L'œil est rouge. Il fait souvent le vol stationnaire, la queue écartée.",
+      "description": "Corps blanc, dessus gris pâle, épaules noires, œil rouge. Fait souvent le vol stationnaire, queue écartée."
+    },
+    {
+      "id": "rapaces-x01",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Aigle botté",
+      "nom_scientifique": "Hieraaetus pennatus",
+      "options": [
+        "Aigle botté",
+        "Bondrée apivore",
+        "Buse variable",
+        "Circaète Jean-le-Blanc"
+      ],
+      "indice": "Petit aigle, forme claire ou sombre, taches blanches aux épaules",
+      "explication": "L'aigle botté est un petit aigle, clair ou sombre. En vol, les épaules montrent souvent des taches claires, et la queue est assez longue.",
+      "description": "Petit rapace, plumage clair ou sombre. Taches claires aux épaules, queue assez longue."
+    },
+    {
+      "id": "rapaces-x02",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Chevêche d'Athéna",
+      "nom_scientifique": "Athene noctua",
+      "options": [
+        "Chevêche d'Athéna",
+        "Effraie des clochers",
+        "Chouette hulotte",
+        "Hibou moyen-duc"
+      ],
+      "indice": "Petite chouette trapue, sourcils blancs, yeux jaunes, souvent perchée le jour",
+      "explication": "La chevêche d'Athéna est une petite chouette trapue, aux sourcils blancs et aux yeux jaunes. Elle se perche souvent en vue le jour, sur un piquet ou un toit.",
+      "description": "Petite chouette trapue, sourcils blancs, yeux jaunes. Souvent perchée en vue le jour."
+    },
+    {
+      "id": "rapaces-x03",
+      "groupe": "rapaces",
+      "difficulte": "difficile",
+      "nom_commun": "Chouette de Tengmalm",
+      "nom_scientifique": "Aegolius funereus",
+      "options": [
+        "Chouette de Tengmalm",
+        "Chouette hulotte",
+        "Chevêche d'Athéna",
+        "Hibou moyen-duc"
+      ],
+      "indice": "Petite chouette de forêt, disque facial clair bien délimité, yeux jaunes",
+      "explication": "La chouette de Tengmalm est une petite chouette des forêts de résineux. Le disque facial est clair et bien délimité, les yeux sont jaunes.",
+      "description": "Petit rapace nocturne des résineux. Disque facial clair bien délimité, yeux jaunes."
+    },
+    {
+      "id": "rapaces-x04",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Hibou des marais",
+      "nom_scientifique": "Asio flammeus",
+      "options": [
+        "Hibou des marais",
+        "Hibou moyen-duc",
+        "Effraie des clochers",
+        "Busard Saint-Martin"
+      ],
+      "indice": "Disque facial pâle, petits aigrettes peu visibles, chasse souvent le jour",
+      "explication": "Le hibou des marais a un disque facial pâle et de petites aigrettes peu visibles. Il chasse souvent en plein jour, au-dessus des marais et des champs.",
+      "description": "Disque facial pâle, petites aigrettes peu visibles. Chasse souvent en plein jour au-dessus des zones humides."
+    },
+    {
+      "id": "rapaces-x05",
+      "groupe": "rapaces",
+      "difficulte": "moyen",
+      "nom_commun": "Hibou grand-duc",
+      "nom_scientifique": "Bubo bubo",
+      "options": [
+        "Hibou grand-duc",
+        "Hibou moyen-duc",
+        "Chouette hulotte",
+        "Effraie des clochers"
+      ],
+      "indice": "Très grand, longues aigrettes, yeux orange, poitrine fortement rayée",
+      "explication": "Le hibou grand-duc est très grand, avec de longues aigrettes et des yeux orange. La poitrine est fortement rayée de noir.",
+      "description": "Très grand, longues aigrettes, yeux orange. Poitrine fortement rayée de noir."
+    }
+  ]
+}

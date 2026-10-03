@@ -1,0 +1,503 @@
+{
+  "id": "littoral",
+  "label": "Bord de mer",
+  "defaut": false,
+  "questions": [
+    {
+      "id": "mer-f1",
+      "groupe": "littoral",
+      "difficulte": "facile",
+      "nom_commun": "Goéland argenté",
+      "nom_scientifique": "Larus argentatus",
+      "options": [
+        "Goéland argenté",
+        "Goéland brun",
+        "Mouette rieuse",
+        "Goéland marin"
+      ],
+      "indice": "Grand, manteau gris pâle, pattes roses",
+      "explication": "L'adulte a le manteau gris clair, la tête blanche, le bec jaune avec une tache rouge, et les pattes roses. Le bout de l'aile est noir taché de blanc.",
+      "description": "Adulte au manteau gris clair, tête blanche, bec jaune à tache rouge, pattes roses. Bout de l'aile noir taché de blanc."
+    },
+    {
+      "id": "mer-f2",
+      "groupe": "littoral",
+      "difficulte": "facile",
+      "nom_commun": "Mouette rieuse",
+      "nom_scientifique": "Chroicocephalus ridibundus",
+      "options": [
+        "Mouette rieuse",
+        "Mouette mélanocéphale",
+        "Goéland argenté",
+        "Sterne pierregarin"
+      ],
+      "indice": "Plus petite. En été, capuchon brun chocolat",
+      "explication": "La mouette rieuse est petite, avec le dessous des ailes sombre à l'avant. En été, elle porte un capuchon brun chocolat. En hiver, il ne reste qu'une tache derrière l'œil.",
+      "description": "Petite, dessous des ailes sombre à l'avant. En été, capuchon brun chocolat. En hiver, une tache derrière l'œil."
+    },
+    {
+      "id": "mer-f3",
+      "groupe": "littoral",
+      "difficulte": "facile",
+      "nom_commun": "Fou de Bassan",
+      "nom_scientifique": "Morus bassanus",
+      "options": [
+        "Fou de Bassan",
+        "Goéland argenté",
+        "Grand cormoran",
+        "Sterne caugek"
+      ],
+      "indice": "Grand, blanc, bout des ailes noir, tête jaunâtre",
+      "explication": "L'adulte est blanc, avec le bout des ailes noir et la tête teintée de jaune. Il plonge en piqué, les ailes repliées.",
+      "description": "Adulte blanc, bout des ailes noir, tête teintée de jaune. Plonge en piqué, les ailes repliées."
+    },
+    {
+      "id": "mer-f4",
+      "groupe": "littoral",
+      "difficulte": "facile",
+      "nom_commun": "Macareux moine",
+      "nom_scientifique": "Fratercula arctica",
+      "options": [
+        "Macareux moine",
+        "Pingouin torda",
+        "Guillemot de Troïl",
+        "Mergule nain"
+      ],
+      "indice": "Bec triangulaire coloré, joues blanches",
+      "explication": "Le macareux a les joues blanches, le dessus noir et un gros bec triangulaire rouge, jaune et gris. Ses pattes sont orange.",
+      "description": "Joues blanches, dessus noir, gros bec triangulaire rouge, jaune et gris. Pattes orange."
+    },
+    {
+      "id": "mer-f5",
+      "groupe": "littoral",
+      "difficulte": "facile",
+      "nom_commun": "Huîtrier pie",
+      "nom_scientifique": "Haematopus ostralegus",
+      "options": [
+        "Huîtrier pie",
+        "Avocette élégante",
+        "Vanneau huppé",
+        "Courlis cendré"
+      ],
+      "indice": "Noir et blanc, long bec orange et pattes roses",
+      "explication": "L'huîtrier pie est noir et blanc, avec un long bec orange droit et des pattes roses. Une barre alaire blanche est très visible en vol.",
+      "description": "Noir et blanc, long bec orange droit, pattes roses. Barre alaire blanche très visible en vol."
+    },
+    {
+      "id": "mer-m1",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Sterne pierregarin",
+      "nom_scientifique": "Sterna hirundo",
+      "options": [
+        "Sterne pierregarin",
+        "Sterne caugek",
+        "Mouette rieuse",
+        "Sterne arctique"
+      ],
+      "indice": "Calotte noire, bec rouge à pointe noire, queue échancrée",
+      "explication": "La pierregarin a une calotte noire, un bec rouge à pointe noire et une queue fourchue. Elle est plus petite et plus fine qu'une mouette.",
+      "description": "Calotte noire, bec rouge à pointe noire, queue fourchue. Plus petite et plus fine qu'une mouette."
+    },
+    {
+      "id": "mer-m2",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Tadorne de Belon",
+      "nom_scientifique": "Tadorna tadorna",
+      "options": [
+        "Tadorne de Belon",
+        "Ouette d'Égypte",
+        "Canard colvert",
+        "Bernache cravant"
+      ],
+      "indice": "Blanc, avec une bande rousse et la tête vert foncé",
+      "explication": "Le tadorne est blanc, avec la tête vert bouteille, un collier roux et une bande ventrale rousse. Le bec est rouge.",
+      "description": "Blanc, tête vert bouteille, collier roux et bande ventrale rousse. Bec rouge."
+    },
+    {
+      "id": "mer-m3",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Courlis cendré",
+      "nom_scientifique": "Numenius arquata",
+      "options": [
+        "Courlis cendré",
+        "Courlis corlieu",
+        "Barge à queue noire",
+        "Huîtrier pie"
+      ],
+      "indice": "Très long bec arqué vers le bas",
+      "explication": "Le courlis cendré est un grand limicole brun, au très long bec décidément arqué vers le bas.",
+      "description": "Grand limicole brun, très long bec décidément arqué vers le bas."
+    },
+    {
+      "id": "mer-m4",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Tournepierre à collier",
+      "nom_scientifique": "Arenaria interpres",
+      "options": [
+        "Tournepierre à collier",
+        "Pluvier grand-gravelot",
+        "Bécasseau variable",
+        "Huîtrier pie"
+      ],
+      "indice": "Court sur pattes, plastron noir et dos marron",
+      "explication": "Le tournepierre a un bec court et pointu, un plastron noir et le dos marron et blanc. Il retourne les algues et les cailloux pour chercher sa nourriture.",
+      "description": "Bec court et pointu, plastron noir, dos marron et blanc. Retourne les algues et les cailloux."
+    },
+    {
+      "id": "mer-m5",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Pingouin torda",
+      "nom_scientifique": "Alca torda",
+      "options": [
+        "Pingouin torda",
+        "Guillemot de Troïl",
+        "Macareux moine",
+        "Mergule nain"
+      ],
+      "indice": "Noir et blanc, bec épais barré de blanc",
+      "explication": "Le pingouin torda est noir dessus et blanc dessous, avec un bec épais marqué d'une ligne blanche. Il se tient droit sur les falaises.",
+      "description": "Noir dessus, blanc dessous, bec épais marqué d'une ligne blanche. Se tient droit sur les falaises."
+    },
+    {
+      "id": "mer-d1",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Goéland brun",
+      "nom_scientifique": "Larus fuscus",
+      "options": [
+        "Goéland brun",
+        "Goéland argenté",
+        "Goéland marin",
+        "Goéland cendré"
+      ],
+      "indice": "Comme un argenté, mais le manteau est ardoise foncé",
+      "explication": "Le goéland brun ressemble à l'argenté, avec le bec jaune et souvent les pattes jaunes. Son manteau est beaucoup plus sombre, ardoise à noirâtre.",
+      "description": "Bec jaune, souvent pattes jaunes. Manteau beaucoup plus sombre que le gris pâle, ardoise à noirâtre."
+    },
+    {
+      "id": "mer-d2",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Goéland marin",
+      "nom_scientifique": "Larus marinus",
+      "options": [
+        "Goéland marin",
+        "Goéland brun",
+        "Goéland argenté",
+        "Grand labbe"
+      ],
+      "indice": "Le plus grand, manteau noir, pattes roses, gros bec",
+      "explication": "Le goéland marin est massif, au manteau noir, au bec très fort et aux pattes roses. Il dépasse nettement le goéland brun.",
+      "description": "Massif, manteau noir, bec très fort, pattes roses. Nettement plus grand que les autres grands laridés sombres."
+    },
+    {
+      "id": "mer-d3",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Sterne caugek",
+      "nom_scientifique": "Thalasseus sandvicensis",
+      "options": [
+        "Sterne caugek",
+        "Sterne pierregarin",
+        "Sterne naine",
+        "Mouette tridactyle"
+      ],
+      "indice": "Plus grande, bec noir à pointe jaune, huppe ébouriffée",
+      "explication": "La caugek est une grande sterne au bec noir terminé de jaune et à la huppe noire souvent ébouriffée. Ses ailes sont plus pâles que celles de la pierregarin.",
+      "description": "Grande, bec noir terminé de jaune, crête noire souvent ébouriffée. Ailes assez pâles."
+    },
+    {
+      "id": "mer-d4",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Mouette tridactyle",
+      "nom_scientifique": "Rissa tridactyla",
+      "options": [
+        "Mouette tridactyle",
+        "Mouette rieuse",
+        "Goéland argenté",
+        "Fulmar boréal"
+      ],
+      "indice": "Bout de l'aile noir uni, comme trempé dans l'encre",
+      "explication": "La tridactyle a le manteau gris, le bout des ailes noir sans miroir blanc, et de courtes pattes noires. Elle niche sur les falaises marines.",
+      "description": "Manteau gris, bout des ailes noir sans miroir blanc, courtes pattes noires. Niche sur les falaises marines."
+    },
+    {
+      "id": "mer-d5",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Guillemot de Troïl",
+      "nom_scientifique": "Uria aalge",
+      "options": [
+        "Guillemot de Troïl",
+        "Pingouin torda",
+        "Macareux moine",
+        "Mergule nain"
+      ],
+      "indice": "Bec fin et pointu, sans barre blanche",
+      "explication": "Le guillemot est noir et blanc comme le pingouin torda, mais son bec est long, fin et pointu, sans ligne blanche. Il se tient très droit.",
+      "description": "Noir et blanc, bec long, fin et pointu, sans ligne blanche. Se tient très droit."
+    },
+    {
+      "id": "littoral-x01",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Avocette élégante",
+      "nom_scientifique": "Recurvirostra avosetta",
+      "options": [
+        "Avocette élégante",
+        "Huîtrier pie",
+        "Vanneau huppé",
+        "Pluvier grand-gravelot"
+      ],
+      "indice": "Noir et blanc, bec long très arqué vers le haut",
+      "explication": "L'avocette est noire et blanche, avec un long bec très arqué vers le haut et de longues pattes gris-bleu.",
+      "description": "Noir et blanc, long bec très arqué vers le haut, longues pattes gris-bleu."
+    },
+    {
+      "id": "littoral-x02",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Barge à queue noire",
+      "nom_scientifique": "Limosa limosa",
+      "options": [
+        "Barge à queue noire",
+        "Courlis cendré",
+        "Courlis corlieu",
+        "Bécasseau variable"
+      ],
+      "indice": "Grand limicole, bec très long presque droit, queue barrée de noir",
+      "explication": "La barge à queue noire a un très long bec presque droit et une queue barrée de noir. En plumage nuptial, la tête et la poitrine sont roux.",
+      "description": "Très long bec presque droit, extrémité caudale barrée de noir. En été, tête et poitrine roux."
+    },
+    {
+      "id": "littoral-x03",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Bernache cravant",
+      "nom_scientifique": "Branta bernicla",
+      "options": [
+        "Bernache cravant",
+        "Bernache du Canada",
+        "Tadorne de Belon",
+        "Oie cendrée"
+      ],
+      "indice": "Petite oie sombre, tête et cou noirs, petite tache blanche au cou",
+      "explication": "La bernache cravant est une petite oie sombre, tête et cou noirs, avec une petite tache blanche de chaque côté du cou.",
+      "description": "Petite oie sombre, tête et cou noirs, petite tache blanche de chaque côté du cou."
+    },
+    {
+      "id": "littoral-x04",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Bécasseau variable",
+      "nom_scientifique": "Calidris alpina",
+      "options": [
+        "Bécasseau variable",
+        "Tournepierre à collier",
+        "Pluvier grand-gravelot",
+        "Barge à queue noire"
+      ],
+      "indice": "Petit limicole, bec légèrement arqué. En été, grande tache noire sur le ventre",
+      "explication": "Le bécasseau variable est un petit limicole au bec légèrement arqué. En plumage nuptial, une grande tache noire couvre le ventre.",
+      "description": "Petit limicole, bec légèrement arqué. En été, une grande tache noire couvre le ventre."
+    },
+    {
+      "id": "littoral-x05",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Cormoran huppé",
+      "nom_scientifique": "Gulosus aristotelis",
+      "options": [
+        "Cormoran huppé",
+        "Grand cormoran",
+        "Pingouin torda",
+        "Guillemot de Troïl"
+      ],
+      "indice": "Plus petit et plus fin que son cousin, gorge jaune peu étendue, souvent sur les falaises",
+      "explication": "Le cormoran huppé est plus petit et plus fin que le grand cormoran. La tache jaune de la gorge est peu étendue. Il niche sur les falaises marines.",
+      "description": "Plus petit et plus fin, tache jaune de la gorge peu étendue. Niche sur les falaises marines."
+    },
+    {
+      "id": "littoral-x06",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Courlis corlieu",
+      "nom_scientifique": "Numenius phaeopus",
+      "options": [
+        "Courlis corlieu",
+        "Courlis cendré",
+        "Barge à queue noire",
+        "Bécasseau variable"
+      ],
+      "indice": "Plus petit que le grand courlis, bec arqué, sourcil clair et calotte sombre rayée",
+      "explication": "Le courlis corlieu est plus petit que le courlis cendré. Le bec est arqué, avec un sourcil clair et une calotte sombre rayée de clair.",
+      "description": "Plus petit, bec arqué, sourcil clair et calotte sombre rayée de clair."
+    },
+    {
+      "id": "littoral-x07",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Fulmar boréal",
+      "nom_scientifique": "Fulmarus glacialis",
+      "options": [
+        "Fulmar boréal",
+        "Mouette tridactyle",
+        "Goéland argenté",
+        "Fou de Bassan"
+      ],
+      "indice": "Gris et blanc, bec court avec narines tubulaires, vol plané raide",
+      "explication": "Le fulmar boréal est gris et blanc, avec un bec court aux narines tubulaires. Il plane les ailes raides au-dessus de la mer.",
+      "description": "Gris et blanc, bec court aux narines tubulaires. Plane les ailes raides au-dessus de la mer."
+    },
+    {
+      "id": "littoral-x08",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Goéland cendré",
+      "nom_scientifique": "Larus canus",
+      "options": [
+        "Goéland cendré",
+        "Goéland argenté",
+        "Goéland brun",
+        "Mouette rieuse"
+      ],
+      "indice": "Manteau gris clair, bec et pattes jaunâtres, plus petit qu'un grand goéland",
+      "explication": "Le goéland cendré a le manteau gris clair, le bec et les pattes jaunâtres. Il est nettement plus petit que le goéland argenté, avec un bec plus fin.",
+      "description": "Manteau gris clair, bec et pattes jaunâtres. Plus petit, bec plus fin que les grands laridés gris."
+    },
+    {
+      "id": "littoral-x09",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Grand labbe",
+      "nom_scientifique": "Stercorarius skua",
+      "options": [
+        "Grand labbe",
+        "Goéland marin",
+        "Fou de Bassan",
+        "Grand cormoran"
+      ],
+      "indice": "Massif et brun, grandes taches blanches à la base des rémiges",
+      "explication": "Le grand labbe est massif et brun, avec de grandes taches blanches à la base des rémiges. Il poursuit les autres oiseaux marins pour leur voler le poisson.",
+      "description": "Massif et brun, grandes taches blanches à la base des rémiges. Poursuit les autres oiseaux marins."
+    },
+    {
+      "id": "littoral-x10",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Harle huppé",
+      "nom_scientifique": "Mergus serrator",
+      "options": [
+        "Harle huppé",
+        "Harle bièvre",
+        "Fuligule morillon",
+        "Macreuse noire"
+      ],
+      "indice": "Bec fin crochu, longue huppe ébouriffée. Le mâle a un collier sombre",
+      "explication": "Le harle huppé a un bec fin et crochu et une longue huppe ébouriffée. Le mâle montre un collier sombre sur la poitrine blanche.",
+      "description": "Bec fin et crochu, longue crête ébouriffée. Le mâle a un collier sombre sur la poitrine blanche."
+    },
+    {
+      "id": "littoral-x11",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Macreuse noire",
+      "nom_scientifique": "Melanitta nigra",
+      "options": [
+        "Macreuse noire",
+        "Fuligule morillon",
+        "Harle huppé",
+        "Fuligule milouinan"
+      ],
+      "indice": "Canard marin. Le mâle est entièrement noir, avec une bosse jaune sur le bec",
+      "explication": "La macreuse noire est un canard marin. Le mâle est entièrement noir, avec une bosse jaune sur le bec. La femelle est brune, joues pâles.",
+      "description": "Canard marin. Le mâle est entièrement noir, avec une bosse jaune sur le bec. La femelle est brune, joues pâles."
+    },
+    {
+      "id": "littoral-x12",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Mergule nain",
+      "nom_scientifique": "Alle alle",
+      "options": [
+        "Mergule nain",
+        "Macareux moine",
+        "Guillemot de Troïl",
+        "Pingouin torda"
+      ],
+      "indice": "Tout petit alcidé, noir dessus et blanc dessous, bec très court",
+      "explication": "Le mergule nain est un tout petit alcidé, noir dessus et blanc dessous, avec un bec très court. Il vole bas au-dessus des vagues.",
+      "description": "Tout petit, noir dessus et blanc dessous, bec très court. Vole bas au-dessus des vagues."
+    },
+    {
+      "id": "littoral-x13",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Mouette mélanocéphale",
+      "nom_scientifique": "Ichthyaetus melanocephalus",
+      "options": [
+        "Mouette mélanocéphale",
+        "Mouette rieuse",
+        "Goéland cendré",
+        "Sterne pierregarin"
+      ],
+      "indice": "En été, capuchon noir qui descend dans la nuque, bec et pattes rouge foncé",
+      "explication": "La mouette mélanocéphale a, en été, un capuchon noir qui descend dans la nuque, le bec et les pattes rouge foncé. Les ailes sont très pâles.",
+      "description": "En été, capuchon noir qui descend dans la nuque, bec et pattes rouge foncé. Ailes très pâles."
+    },
+    {
+      "id": "littoral-x14",
+      "groupe": "littoral",
+      "difficulte": "moyen",
+      "nom_commun": "Pluvier grand-gravelot",
+      "nom_scientifique": "Charadrius hiaticula",
+      "options": [
+        "Pluvier grand-gravelot",
+        "Tournepierre à collier",
+        "Bécasseau variable",
+        "Vanneau huppé"
+      ],
+      "indice": "Petit, masque noir, collier noir, bec orange à pointe noire, pattes orange",
+      "explication": "Le pluvier grand-gravelot est petit, avec un masque noir, un collier noir, un bec orange à pointe noire et des pattes orange.",
+      "description": "Petit, masque noir, collier noir, bec orange à pointe noire, pattes orange."
+    },
+    {
+      "id": "littoral-x15",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Sterne arctique",
+      "nom_scientifique": "Sterna paradisaea",
+      "options": [
+        "Sterne arctique",
+        "Sterne pierregarin",
+        "Sterne caugek",
+        "Sterne naine"
+      ],
+      "indice": "Bec entièrement rouge, sans pointe noire, très longues filets de la queue",
+      "explication": "La sterne arctique a le bec entièrement rouge, sans pointe noire, et de très longues filets à la queue. Le dessous est plus gris que chez la pierregarin.",
+      "description": "Bec entièrement rouge, sans pointe noire, très longues filets à la queue."
+    },
+    {
+      "id": "littoral-x16",
+      "groupe": "littoral",
+      "difficulte": "difficile",
+      "nom_commun": "Sterne naine",
+      "nom_scientifique": "Sternula albifrons",
+      "options": [
+        "Sterne naine",
+        "Sterne pierregarin",
+        "Sterne caugek",
+        "Mouette rieuse"
+      ],
+      "indice": "Toute petite, front blanc, bec jaune à pointe noire",
+      "explication": "La sterne naine est toute petite, avec le front blanc et le bec jaune à pointe noire. Elle plonge souvent près du rivage.",
+      "description": "Toute petite, front blanc, bec jaune à pointe noire. Plonge souvent près du rivage."
+    }
+  ]
+}

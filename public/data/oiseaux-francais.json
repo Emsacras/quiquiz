@@ -1,0 +1,12 @@
+{
+  "id": "oiseaux-francais",
+  "categorie": "Oiseaux français",
+  "description": "Identifier les oiseaux de France à partir d'une photo. Coche un ou plusieurs groupes, puis choisis le niveau.",
+  "groupes": [
+    "data/oiseaux/jardin.json",
+    "data/oiseaux/eau.json",
+    "data/oiseaux/rapaces.json",
+    "data/oiseaux/littoral.json",
+    "data/oiseaux/montagne.json"
+  ]
+}

@@ -1,0 +1,2678 @@
+{
+  "id": "plantes-france",
+  "categorie": "Plantes de France",
+  "description": "Identifier les plantes de France à partir d'une photo. Coche un ou plusieurs groupes, puis choisis le niveau.",
+  "groupes": [
+    {
+      "id": "jardin",
+      "label": "Jardin",
+      "questions": [
+        {
+          "id": "p1",
+          "difficulte": "facile",
+          "nom_commun": "Pâquerette",
+          "nom_scientifique": "Bellis perennis",
+          "groupe": "jardin",
+          "options": [
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot",
+            "Marguerite"
+          ],
+          "indice": "Petite fleur blanche à cœur jaune, au ras du sol",
+          "description": "Capitule blanc à cœur jaune, tige nue, au-dessus d'une rosette de feuilles spatulées.",
+          "explication": "Pâquerette : Capitule blanc à cœur jaune, tige nue, au-dessus d'une rosette de feuilles spatulées. Elle fleurit presque toute l'année dans les pelouses."
+        },
+        {
+          "id": "p2",
+          "difficulte": "facile",
+          "nom_commun": "Pissenlit",
+          "nom_scientifique": "Taraxacum officinale",
+          "groupe": "jardin",
+          "options": [
+            "Pissenlit",
+            "Pâquerette",
+            "Coquelicot",
+            "Marguerite"
+          ],
+          "indice": "Fleur jaune, feuilles en dents de lion",
+          "description": "Capitule jaune entièrement ligulé, feuilles en rosette profondément dentées, tige creuse à latex blanc.",
+          "explication": "Pissenlit : Capitule jaune entièrement ligulé, feuilles en rosette profondément dentées, tige creuse à latex blanc. Le fruit est une aigrette ronde, le fameux souffle."
+        },
+        {
+          "id": "p3",
+          "difficulte": "facile",
+          "nom_commun": "Coquelicot",
+          "nom_scientifique": "Papaver rhoeas",
+          "groupe": "jardin",
+          "options": [
+            "Coquelicot",
+            "Pâquerette",
+            "Pissenlit",
+            "Marguerite"
+          ],
+          "indice": "Quatre pétales rouges froissés",
+          "description": "Grande fleur rouge à quatre pétales chiffonnés, cœur noir et tige poilue à latex.",
+          "explication": "Coquelicot : Grande fleur rouge à quatre pétales chiffonnés, cœur noir et tige poilue à latex. Il pousse dans les champs, les talus et les friches."
+        },
+        {
+          "id": "p4",
+          "difficulte": "facile",
+          "nom_commun": "Marguerite",
+          "nom_scientifique": "Leucanthemum vulgare",
+          "groupe": "jardin",
+          "options": [
+            "Marguerite",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Grande pâquerette à tige feuillée",
+          "description": "Grand capitule blanc à cœur jaune, porté par une tige raide garnie de feuilles dentées.",
+          "explication": "Marguerite : Grand capitule blanc à cœur jaune, porté par une tige raide garnie de feuilles dentées. Elle est bien plus haute qu'une pâquerette."
+        },
+        {
+          "id": "p5",
+          "difficulte": "facile",
+          "nom_commun": "Bouton d'or",
+          "nom_scientifique": "Ranunculus acris",
+          "groupe": "jardin",
+          "options": [
+            "Bouton d'or",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Jaune luisant, feuilles découpées",
+          "description": "Fleurs jaune vif luisantes, feuilles profondément découpées et tige ramifiée.",
+          "explication": "Bouton d'or : Fleurs jaune vif luisantes, feuilles profondément découpées et tige ramifiée. Le vernis des pétales attire les insectes."
+        },
+        {
+          "id": "p6",
+          "difficulte": "facile",
+          "nom_commun": "Trèfle blanc",
+          "nom_scientifique": "Trifolium repens",
+          "groupe": "jardin",
+          "options": [
+            "Trèfle blanc",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Trois folioles, fleurs blanches en tête",
+          "description": "Feuilles à trois folioles souvent marquées d'un croissant pâle, têtes de fleurs blanches ou rosées.",
+          "explication": "Trèfle blanc : Feuilles à trois folioles souvent marquées d'un croissant pâle, têtes de fleurs blanches ou rosées. Il rampe et s'enracine aux nœuds, dans les pelouses."
+        },
+        {
+          "id": "p7",
+          "difficulte": "facile",
+          "nom_commun": "Ortie dioïque",
+          "nom_scientifique": "Urtica dioica",
+          "groupe": "jardin",
+          "options": [
+            "Ortie dioïque",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Feuilles dentées qui piquent",
+          "description": "Tige droite, feuilles opposées dentées couvertes de poils urticants, grappes de fleurs vertes.",
+          "explication": "Ortie dioïque : Tige droite, feuilles opposées dentées couvertes de poils urticants, grappes de fleurs vertes. Elle forme des colonies dans les sols riches."
+        },
+        {
+          "id": "p8",
+          "difficulte": "facile",
+          "nom_commun": "Lierre grimpant",
+          "nom_scientifique": "Hedera helix",
+          "groupe": "jardin",
+          "options": [
+            "Lierre grimpant",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Feuilles coriaces souvent lobées",
+          "description": "Feuilles coriaces vert sombre, souvent à trois ou cinq lobes sur les tiges stériles.",
+          "explication": "Lierre grimpant : Feuilles coriaces vert sombre, souvent à trois ou cinq lobes sur les tiges stériles. Il s'accroche aux murs et aux troncs par des crampons."
+        },
+        {
+          "id": "p9",
+          "difficulte": "facile",
+          "nom_commun": "Violette odorante",
+          "nom_scientifique": "Viola odorata",
+          "groupe": "jardin",
+          "options": [
+            "Violette odorante",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Fleurs violettes parfumées",
+          "description": "Fleurs violet foncé, éperon court, feuilles en cœur et stolons. Le parfum est sucré.",
+          "explication": "Violette odorante : Fleurs violet foncé, éperon court, feuilles en cœur et stolons. Le parfum est sucré. Elle fleurit tôt, à l'ombre des haies."
+        },
+        {
+          "id": "p10",
+          "difficulte": "facile",
+          "nom_commun": "Primevère acaule",
+          "nom_scientifique": "Primula vulgaris",
+          "groupe": "jardin",
+          "options": [
+            "Primevère acaule",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Fleurs jaune pâle sorties de la rosette",
+          "description": "Grandes fleurs jaune pâle à gorge plus foncée, presque sans tige, dans une rosette gaufrée.",
+          "explication": "Primevère acaule : Grandes fleurs jaune pâle à gorge plus foncée, presque sans tige, dans une rosette gaufrée. Elle annonce la fin de l'hiver dans les talus."
+        },
+        {
+          "id": "p11",
+          "difficulte": "facile",
+          "nom_commun": "Perce-neige",
+          "nom_scientifique": "Galanthus nivalis",
+          "groupe": "jardin",
+          "options": [
+            "Perce-neige",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Cloche blanche à marques vertes",
+          "description": "Fleur penchée, trois tépales externes blancs et trois internes plus courts marqués de vert.",
+          "explication": "Perce-neige : Fleur penchée, trois tépales externes blancs et trois internes plus courts marqués de vert. Elle sort de terre dès la fonte, souvent en tapis."
+        },
+        {
+          "id": "p12",
+          "difficulte": "facile",
+          "nom_commun": "Jonquille",
+          "nom_scientifique": "Narcissus pseudonarcissus",
+          "groupe": "jardin",
+          "options": [
+            "Jonquille",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Trompette jaune",
+          "description": "Fleur solitaire jaune, couronne en trompette aussi longue que les tépales, feuilles linéaires.",
+          "explication": "Jonquille : Fleur solitaire jaune, couronne en trompette aussi longue que les tépales, feuilles linéaires. Elle pousse dans les prairies fraîches et les vergers."
+        },
+        {
+          "id": "p13",
+          "difficulte": "moyen",
+          "nom_commun": "Rose trémière",
+          "nom_scientifique": "Alcea rosea",
+          "groupe": "jardin",
+          "options": [
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin",
+            "Thym commun"
+          ],
+          "indice": "Grande hampe de fleurs en entonnoir",
+          "description": "Tige très haute, grandes fleurs en coupe rose, rouge ou blanche, feuilles rondes lobées.",
+          "explication": "Rose trémière : Tige très haute, grandes fleurs en coupe rose, rouge ou blanche, feuilles rondes lobées. Elle se plaque contre les murs ensoleillés."
+        },
+        {
+          "id": "p14",
+          "difficulte": "moyen",
+          "nom_commun": "Lavande vraie",
+          "nom_scientifique": "Lavandula angustifolia",
+          "groupe": "jardin",
+          "options": [
+            "Lavande vraie",
+            "Rose trémière",
+            "Romarin",
+            "Thym commun"
+          ],
+          "indice": "Épis violets parfumés",
+          "description": "Petit buisson gris-vert, épis violacés denses et odeur camphrée très forte.",
+          "explication": "Lavande vraie : Petit buisson gris-vert, épis violacés denses et odeur camphrée très forte. Elle fleurit l'été, sur les sols secs."
+        },
+        {
+          "id": "p15",
+          "difficulte": "moyen",
+          "nom_commun": "Romarin",
+          "nom_scientifique": "Rosmarinus officinalis",
+          "groupe": "jardin",
+          "options": [
+            "Romarin",
+            "Rose trémière",
+            "Lavande vraie",
+            "Thym commun"
+          ],
+          "indice": "Feuilles en aiguilles, fleurs bleues",
+          "description": "Arbrisseau persistant, feuilles linéaires vert sombre dessus et blanches dessous, fleurs bleu pâle.",
+          "explication": "Romarin : Arbrisseau persistant, feuilles linéaires vert sombre dessus et blanches dessous, fleurs bleu pâle. Les feuilles froissées sentent fort."
+        },
+        {
+          "id": "p16",
+          "difficulte": "moyen",
+          "nom_commun": "Thym commun",
+          "nom_scientifique": "Thymus vulgaris",
+          "groupe": "jardin",
+          "options": [
+            "Thym commun",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Minuscule buisson aromatique",
+          "description": "Sous-arbrisseau, toutes petites feuilles opposées gris-vert et fleurs roses en petits glomérules.",
+          "explication": "Thym commun : Sous-arbrisseau, toutes petites feuilles opposées gris-vert et fleurs roses en petits glomérules. Il forme des coussins sur les sols maigres et chauds."
+        },
+        {
+          "id": "p17",
+          "difficulte": "moyen",
+          "nom_commun": "Sauge officinale",
+          "nom_scientifique": "Salvia officinalis",
+          "groupe": "jardin",
+          "options": [
+            "Sauge officinale",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Feuilles gris-vert gaufrées",
+          "description": "Buisson, feuilles épaisses gris-vert très aromatiques et fleurs violet-bleu en verticilles.",
+          "explication": "Sauge officinale : Buisson, feuilles épaisses gris-vert très aromatiques et fleurs violet-bleu en verticilles. On la reconnaît autant à l'odeur qu'à la fleur."
+        },
+        {
+          "id": "p18",
+          "difficulte": "moyen",
+          "nom_commun": "Menthe en épi",
+          "nom_scientifique": "Mentha spicata",
+          "groupe": "jardin",
+          "options": [
+            "Menthe en épi",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Épis de fleurs lilas, odeur de menthe",
+          "description": "Tige carrée, feuilles opposées dentées très odorantes et épis terminaux de fleurs lilas.",
+          "explication": "Menthe en épi : Tige carrée, feuilles opposées dentées très odorantes et épis terminaux de fleurs lilas. Elle s'étend par des rhizomes, souvent au jardin humide."
+        },
+        {
+          "id": "p19",
+          "difficulte": "moyen",
+          "nom_commun": "Ciboulette",
+          "nom_scientifique": "Allium schoenoprasum",
+          "groupe": "jardin",
+          "options": [
+            "Ciboulette",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Touffe de feuilles creuses, fleurs roses en boule",
+          "description": "Feuilles cylindriques creuses, odeur d'ail douce, fleurs roses en tête sphérique.",
+          "explication": "Ciboulette : Feuilles cylindriques creuses, odeur d'ail douce, fleurs roses en tête sphérique. Elle pousse en touffes denses."
+        },
+        {
+          "id": "p20",
+          "difficulte": "moyen",
+          "nom_commun": "Églantier",
+          "nom_scientifique": "Rosa canina",
+          "groupe": "jardin",
+          "options": [
+            "Églantier",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Fleurs roses à cinq pétales, fruits rouges",
+          "description": "Rosier sauvage à aiguillons crochus, fleurs rose pâle à cinq pétales et cynorrhodons rouges.",
+          "explication": "Églantier : Rosier sauvage à aiguillons crochus, fleurs rose pâle à cinq pétales et cynorrhodons rouges. Les sépales se rabattent après la floraison."
+        },
+        {
+          "id": "p21",
+          "difficulte": "moyen",
+          "nom_commun": "Ronce commune",
+          "nom_scientifique": "Rubus fruticosus",
+          "groupe": "jardin",
+          "options": [
+            "Ronce commune",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Tiges arquées épineuses, mûres",
+          "description": "Tiges longues, arquées, à aiguillons, fleurs blanches ou roses et fruits noirs composés.",
+          "explication": "Ronce commune : Tiges longues, arquées, à aiguillons, fleurs blanches ou roses et fruits noirs composés. Elle forme des fourrés impénétrables."
+        },
+        {
+          "id": "p22",
+          "difficulte": "moyen",
+          "nom_commun": "Sureau noir",
+          "nom_scientifique": "Sambucus nigra",
+          "groupe": "jardin",
+          "options": [
+            "Sureau noir",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Corymbes blancs, baies noires",
+          "description": "Grand buisson, moelle blanche dans les rameaux, larges plateaux de fleurs crème puis baies noires.",
+          "explication": "Sureau noir : Grand buisson, moelle blanche dans les rameaux, larges plateaux de fleurs crème puis baies noires. Les feuilles sont composées de cinq à sept folioles dentées."
+        },
+        {
+          "id": "p23",
+          "difficulte": "moyen",
+          "nom_commun": "Aubépine à un style",
+          "nom_scientifique": "Crataegus monogyna",
+          "groupe": "jardin",
+          "options": [
+            "Aubépine à un style",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Épines, fleurs blanches en bouquets",
+          "description": "Petit arbre épineux, feuilles profondément lobées, fleurs blanches odorantes puis fruits rouges à un noyau.",
+          "explication": "Aubépine à un style : Petit arbre épineux, feuilles profondément lobées, fleurs blanches odorantes puis fruits rouges à un noyau. Elle fleurit en mai, dans les haies."
+        },
+        {
+          "id": "p24",
+          "difficulte": "moyen",
+          "nom_commun": "Lamier pourpre",
+          "nom_scientifique": "Lamium purpureum",
+          "groupe": "jardin",
+          "options": [
+            "Lamier pourpre",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Feuilles en cœur, fleurs roses en étages",
+          "description": "Petite plante, feuilles opposées souvent lavées de pourpre et fleurs roses à deux lèvres en verticilles.",
+          "explication": "Lamier pourpre : Petite plante, feuilles opposées souvent lavées de pourpre et fleurs roses à deux lèvres en verticilles. Elle fleurit très tôt sur les sols nus."
+        },
+        {
+          "id": "p25",
+          "difficulte": "moyen",
+          "nom_commun": "Chélidoine",
+          "nom_scientifique": "Chelidonium majus",
+          "groupe": "jardin",
+          "options": [
+            "Chélidoine",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Fleurs jaunes à quatre pétales, latex orange",
+          "description": "Feuilles molles très découpées, fleurs jaunes à quatre pétales et latex orange vif si on casse la tige.",
+          "explication": "Chélidoine : Feuilles molles très découpées, fleurs jaunes à quatre pétales et latex orange vif si on casse la tige. On la trouve au pied des murs."
+        },
+        {
+          "id": "p26",
+          "difficulte": "moyen",
+          "nom_commun": "Lierre terrestre",
+          "nom_scientifique": "Glechoma hederacea",
+          "groupe": "jardin",
+          "options": [
+            "Lierre terrestre",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Rampant, fleurs violettes à deux lèvres",
+          "description": "Tiges rampantes, feuilles rondes crénelées et petites fleurs violet-bleu à la base des feuilles.",
+          "explication": "Lierre terrestre : Tiges rampantes, feuilles rondes crénelées et petites fleurs violet-bleu à la base des feuilles. Il forme des tapis à l'ombre, et sent fort quand on le froisse."
+        },
+        {
+          "id": "p27",
+          "difficulte": "difficile",
+          "nom_commun": "Capselle bourse-à-pasteur",
+          "nom_scientifique": "Capsella bursa-pastoris",
+          "groupe": "jardin",
+          "options": [
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge",
+            "Plantain lancéolé"
+          ],
+          "indice": "Fruits en cœur triangulaire",
+          "description": "Petite crucifère, fleurs blanches minuscules et fruits plats triangulaires sur une longue grappe.",
+          "explication": "Capselle bourse-à-pasteur : Petite crucifère, fleurs blanches minuscules et fruits plats triangulaires sur une longue grappe. Elle pousse entre les pavés et dans les potagers."
+        },
+        {
+          "id": "p28",
+          "difficulte": "difficile",
+          "nom_commun": "Véronique de Perse",
+          "nom_scientifique": "Veronica persica",
+          "groupe": "jardin",
+          "options": [
+            "Véronique de Perse",
+            "Capselle bourse-à-pasteur",
+            "Mouron rouge",
+            "Plantain lancéolé"
+          ],
+          "indice": "Petites fleurs bleues à œil blanc",
+          "description": "Rampante, fleurs bleues solitaires à centre blanc et lobe inférieur plus pâle.",
+          "explication": "Véronique de Perse : Rampante, fleurs bleues solitaires à centre blanc et lobe inférieur plus pâle. Elle fleurit presque toute l'année dans les cultures."
+        },
+        {
+          "id": "p29",
+          "difficulte": "difficile",
+          "nom_commun": "Mouron rouge",
+          "nom_scientifique": "Anagallis arvensis",
+          "groupe": "jardin",
+          "options": [
+            "Mouron rouge",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Plantain lancéolé"
+          ],
+          "indice": "Fleurs rouge brique qui se ferment",
+          "description": "Petite plante étalée, fleurs à cinq pétales rouge-orangé, à gorge pourpre, sur un pédoncule fin.",
+          "explication": "Mouron rouge : Petite plante étalée, fleurs à cinq pétales rouge-orangé, à gorge pourpre, sur un pédoncule fin. Les fleurs se ferment par temps couvert."
+        },
+        {
+          "id": "p30",
+          "difficulte": "difficile",
+          "nom_commun": "Plantain lancéolé",
+          "nom_scientifique": "Plantago lanceolata",
+          "groupe": "jardin",
+          "options": [
+            "Plantain lancéolé",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Feuilles en fer de lance, épi brun",
+          "description": "Rosette de feuilles allongées à nervures parallèles, et épi ovale brun au bout d'une longue hampe.",
+          "explication": "Plantain lancéolé : Rosette de feuilles allongées à nervures parallèles, et épi ovale brun au bout d'une longue hampe. Il est très commun dans les pelouses piétinées."
+        },
+        {
+          "id": "p31",
+          "difficulte": "difficile",
+          "nom_commun": "Plantain majeur",
+          "nom_scientifique": "Plantago major",
+          "groupe": "jardin",
+          "options": [
+            "Plantain majeur",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Larges feuilles en cuillère",
+          "description": "Grandes feuilles ovales à pétioles ailés, épi long et étroit de fleurs verdâtres.",
+          "explication": "Plantain majeur : Grandes feuilles ovales à pétioles ailés, épi long et étroit de fleurs verdâtres. Il supporte le piétinement des chemins."
+        },
+        {
+          "id": "p32",
+          "difficulte": "difficile",
+          "nom_commun": "Achillée millefeuille",
+          "nom_scientifique": "Achillea millefolium",
+          "groupe": "jardin",
+          "options": [
+            "Achillée millefeuille",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Feuilles en dentelle, fleurs blanches en plateau",
+          "description": "Feuilles très finement découpées, comme une plume, et corymbe plat de petits capitules blancs.",
+          "explication": "Achillée millefeuille : Feuilles très finement découpées, comme une plume, et corymbe plat de petits capitules blancs. Les feuilles froissées ont une odeur aromatique."
+        },
+        {
+          "id": "p33",
+          "difficulte": "difficile",
+          "nom_commun": "Compagnon rouge",
+          "nom_scientifique": "Silene dioica",
+          "groupe": "jardin",
+          "options": [
+            "Compagnon rouge",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Fleurs roses à calice renflé",
+          "description": "Fleurs rose vif à cinq pétales échancrés, calice gonflé et poilu, feuilles opposées.",
+          "explication": "Compagnon rouge : Fleurs rose vif à cinq pétales échancrés, calice gonflé et poilu, feuilles opposées. Il fleurit à l'ombre des haies et des lisières."
+        },
+        {
+          "id": "p34",
+          "difficulte": "difficile",
+          "nom_commun": "Compagnon blanc",
+          "nom_scientifique": "Silene latifolia",
+          "groupe": "jardin",
+          "options": [
+            "Compagnon blanc",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Fleurs blanches qui s'ouvrent le soir",
+          "description": "Fleurs blanches à pétales profondément fendus, calice renflé souvent violacé, ouvert surtout le soir.",
+          "explication": "Compagnon blanc : Fleurs blanches à pétales profondément fendus, calice renflé souvent violacé, ouvert surtout le soir. Le calice du fruit est plus ventru que chez le compagnon rouge."
+        },
+        {
+          "id": "p35",
+          "difficulte": "difficile",
+          "nom_commun": "Lotier corniculé",
+          "nom_scientifique": "Lotus corniculatus",
+          "groupe": "jardin",
+          "options": [
+            "Lotier corniculé",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Fleurs jaunes souvent teintées de rouge",
+          "description": "Tiges étalées, feuilles à cinq folioles et fleurs jaunes en petite tête, souvent lavées d'orange.",
+          "explication": "Lotier corniculé : Tiges étalées, feuilles à cinq folioles et fleurs jaunes en petite tête, souvent lavées d'orange. Les fruits sont de longues gousses fines."
+        },
+        {
+          "id": "p36",
+          "difficulte": "difficile",
+          "nom_commun": "Vesce cracca",
+          "nom_scientifique": "Vicia cracca",
+          "groupe": "jardin",
+          "options": [
+            "Vesce cracca",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Grappes de fleurs violettes, vrilles",
+          "description": "Grimpante, feuilles pennées terminées par une vrille et longues grappes unilatérales de fleurs bleu-violet.",
+          "explication": "Vesce cracca : Grimpante, feuilles pennées terminées par une vrille et longues grappes unilatérales de fleurs bleu-violet. Elle s'enroule aux herbes des talus."
+        },
+        {
+          "id": "p37",
+          "difficulte": "difficile",
+          "nom_commun": "Carotte sauvage",
+          "nom_scientifique": "Daucus carota",
+          "groupe": "jardin",
+          "options": [
+            "Carotte sauvage",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Ombelle blanche à fleur pourpre au centre",
+          "description": "Grande ombelle blanche souvent avec une fleur centrale pourpre, et bractées très découpées.",
+          "explication": "Carotte sauvage : Grande ombelle blanche souvent avec une fleur centrale pourpre, et bractées très découpées. En fruit, l'ombelle se referme en nid."
+        },
+        {
+          "id": "p38",
+          "difficulte": "difficile",
+          "nom_commun": "Grande berce",
+          "nom_scientifique": "Heracleum sphondylium",
+          "groupe": "jardin",
+          "options": [
+            "Grande berce",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Très grande ombelle blanche, tige creuse",
+          "description": "Haute, feuilles énormes divisées, tige creuse cannelée et poilue, grandes ombelles blanches.",
+          "explication": "Grande berce : Haute, feuilles énormes divisées, tige creuse cannelée et poilue, grandes ombelles blanches. Elle est bien plus petite et moins rouge que la berce du Caucase."
+        },
+        {
+          "id": "p39",
+          "difficulte": "difficile",
+          "nom_commun": "Berce du Caucase",
+          "nom_scientifique": "Heracleum mantegazzianum",
+          "groupe": "jardin",
+          "options": [
+            "Berce du Caucase",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Géante, tige tachetée de rouge",
+          "description": "Plante géante introduite, feuilles immenses, tige robuste tachée de pourpre et ombelles énormes.",
+          "explication": "Berce du Caucase : Plante géante introduite, feuilles immenses, tige robuste tachée de pourpre et ombelles énormes. La sève, au soleil, peut brûler la peau."
+        },
+        {
+          "id": "p40",
+          "difficulte": "difficile",
+          "nom_commun": "Cardamine des prés",
+          "nom_scientifique": "Cardamine pratensis",
+          "groupe": "jardin",
+          "options": [
+            "Cardamine des prés",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Fleurs lilas pâle en grappe",
+          "description": "Fleurs lilacées à quatre pétales et veines plus foncées, feuilles divisées, dans les prés humides.",
+          "explication": "Cardamine des prés : Fleurs lilacées à quatre pétales et veines plus foncées, feuilles divisées, dans les prés humides. Elle fleurit au printemps, souvent en colonies."
+        },
+        {
+          "id": "p41",
+          "difficulte": "difficile",
+          "nom_commun": "Lychnis fleur de coucou",
+          "nom_scientifique": "Lychnis flos-cuculi",
+          "groupe": "jardin",
+          "options": [
+            "Lychnis fleur de coucou",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Pétales roses découpés en lanières",
+          "description": "Fleurs roses dont chaque pétale est fendu en quatre lanières étroites, calice strié.",
+          "explication": "Lychnis fleur de coucou : Fleurs roses dont chaque pétale est fendu en quatre lanières étroites, calice strié. On la trouve dans les prairies humides, pas seulement au jardin."
+        },
+        {
+          "id": "p85",
+          "difficulte": "facile",
+          "nom_commun": "Bleuet",
+          "nom_scientifique": "Centaurea cyanus",
+          "groupe": "jardin",
+          "options": [
+            "Bleuet",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Capitule bleu des moissons",
+          "description": "Capitule bleu vif, fleurons extérieurs plus grands, et feuilles étroites gris-vert.",
+          "explication": "Bleuet : Capitule bleu vif, fleurons extérieurs plus grands, et feuilles étroites gris-vert. Il accompagne le coquelicot dans les champs."
+        },
+        {
+          "id": "p86",
+          "difficulte": "facile",
+          "nom_commun": "Primevère officinale",
+          "nom_scientifique": "Primula veris",
+          "groupe": "jardin",
+          "options": [
+            "Primevère officinale",
+            "Pâquerette",
+            "Pissenlit",
+            "Coquelicot"
+          ],
+          "indice": "Fleurs jaunes en bouquet sur une hampe",
+          "description": "Hampe dressée portant une ombelle de fleurs jaune d'or, à calice renflé et gorge orange.",
+          "explication": "Primevère officinale : Hampe dressée portant une ombelle de fleurs jaune d'or, à calice renflé et gorge orange. On l'appelle aussi coucou."
+        },
+        {
+          "id": "p87",
+          "difficulte": "moyen",
+          "nom_commun": "Lamier blanc",
+          "nom_scientifique": "Lamium album",
+          "groupe": "jardin",
+          "options": [
+            "Lamier blanc",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Fleurs blanches en casque, feuilles d'ortie",
+          "description": "Feuilles opposées dentées qui rappellent l'ortie, mais sans poils qui piquent, et fleurs blanches à deux lèvres.",
+          "explication": "Lamier blanc : Feuilles opposées dentées qui rappellent l'ortie, mais sans poils qui piquent, et fleurs blanches à deux lèvres. Il forme des colonies au bord des chemins."
+        },
+        {
+          "id": "p88",
+          "difficulte": "moyen",
+          "nom_commun": "Pensée sauvage",
+          "nom_scientifique": "Viola tricolor",
+          "groupe": "jardin",
+          "options": [
+            "Pensée sauvage",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Fleur tricolore, jaune, blanc et violet",
+          "description": "Petite pensée, pétales violets, blancs et jaunes, et stipules très découpées.",
+          "explication": "Pensée sauvage : Petite pensée, pétales violets, blancs et jaunes, et stipules très découpées. Elle pousse dans les champs sableux et les jardins."
+        },
+        {
+          "id": "p89",
+          "difficulte": "moyen",
+          "nom_commun": "Liseron des haies",
+          "nom_scientifique": "Calystegia sepium",
+          "groupe": "jardin",
+          "options": [
+            "Liseron des haies",
+            "Rose trémière",
+            "Lavande vraie",
+            "Romarin"
+          ],
+          "indice": "Grande fleur blanche en entonnoir",
+          "description": "Liane, grandes feuilles en fer de flèche et fleurs blanches en entonnoir, bractées qui cachent le calice.",
+          "explication": "Liseron des haies : Liane, grandes feuilles en fer de flèche et fleurs blanches en entonnoir, bractées qui cachent le calice. Il s'enroule à tout support, dans les haies humides."
+        },
+        {
+          "id": "p90",
+          "difficulte": "difficile",
+          "nom_commun": "Oseille des prés",
+          "nom_scientifique": "Rumex acetosa",
+          "groupe": "jardin",
+          "options": [
+            "Oseille des prés",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Feuilles en fer de lance, goût acide",
+          "description": "Feuilles en forme de fer de lance, oreillettes rabattues, et panicule rougeâtre. Le goût est nettement acide.",
+          "explication": "Oseille des prés : Feuilles en forme de fer de lance, oreillettes rabattues, et panicule rougeâtre. Le goût est nettement acide. Les feuilles de la base ont un long pétiole."
+        },
+        {
+          "id": "p91",
+          "difficulte": "difficile",
+          "nom_commun": "Orchis mâle",
+          "nom_scientifique": "Orchis mascula",
+          "groupe": "jardin",
+          "options": [
+            "Orchis mâle",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Épi violet, feuilles tachetées",
+          "description": "Orchidée, épi de fleurs violettes, labelle trilobé plus clair au centre, et feuilles souvent tachetées.",
+          "explication": "Orchis mâle : Orchidée, épi de fleurs violettes, labelle trilobé plus clair au centre, et feuilles souvent tachetées. Elle fleurit au printemps, dans les prairies et les lisières."
+        },
+        {
+          "id": "p92",
+          "difficulte": "difficile",
+          "nom_commun": "Ophrys abeille",
+          "nom_scientifique": "Ophrys apifera",
+          "groupe": "jardin",
+          "options": [
+            "Ophrys abeille",
+            "Capselle bourse-à-pasteur",
+            "Véronique de Perse",
+            "Mouron rouge"
+          ],
+          "indice": "Labelle qui imite une abeille",
+          "description": "Orchidée, sépales roses et labelle brun velouté qui évoque l'abdomen d'une abeille.",
+          "explication": "Ophrys abeille : Orchidée, sépales roses et labelle brun velouté qui évoque l'abdomen d'une abeille. Elle pousse sur les pelouses sèches et les talus calcaires."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "foret",
+      "label": "Forêt",
+      "questions": [
+        {
+          "id": "p42",
+          "difficulte": "facile",
+          "nom_commun": "Hêtre",
+          "nom_scientifique": "Fagus sylvatica",
+          "groupe": "foret",
+          "options": [
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile",
+            "Noisetier"
+          ],
+          "indice": "Écorce lisse grise, feuilles ovales",
+          "description": "Grand arbre à écorce grise lisse, feuilles ovales à bord légèrement ondulé et bourgeons pointus brun clair.",
+          "explication": "Hêtre : Grand arbre à écorce grise lisse, feuilles ovales à bord légèrement ondulé et bourgeons pointus brun clair. Les faînes sont enfermées dans une cupule hérissée."
+        },
+        {
+          "id": "p43",
+          "difficulte": "facile",
+          "nom_commun": "Chêne pédonculé",
+          "nom_scientifique": "Quercus robur",
+          "groupe": "foret",
+          "options": [
+            "Chêne pédonculé",
+            "Hêtre",
+            "Chêne sessile",
+            "Noisetier"
+          ],
+          "indice": "Glands au bout d'un long pédoncule",
+          "description": "Feuilles lobées à très court pétiole, et glands portés par un long pédoncule.",
+          "explication": "Chêne pédonculé : Feuilles lobées à très court pétiole, et glands portés par un long pédoncule. Le tronc devient massif et crevassé avec l'âge."
+        },
+        {
+          "id": "p44",
+          "difficulte": "facile",
+          "nom_commun": "Chêne sessile",
+          "nom_scientifique": "Quercus petraea",
+          "groupe": "foret",
+          "options": [
+            "Chêne sessile",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Noisetier"
+          ],
+          "indice": "Glands sans queue, feuilles pétiolées",
+          "description": "Feuilles lobées à pétiole net, glands sessiles ou presque, souvent groupés.",
+          "explication": "Chêne sessile : Feuilles lobées à pétiole net, glands sessiles ou presque, souvent groupés. Il domine beaucoup de forêts sur sols filtrants."
+        },
+        {
+          "id": "p45",
+          "difficulte": "facile",
+          "nom_commun": "Noisetier",
+          "nom_scientifique": "Corylus avellana",
+          "groupe": "foret",
+          "options": [
+            "Noisetier",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Chatons jaunes et noisettes",
+          "description": "Grand buisson, feuilles rondes dentées, chatons mâles jaunes pendants et noisettes dans une cupule feuillée.",
+          "explication": "Noisetier : Grand buisson, feuilles rondes dentées, chatons mâles jaunes pendants et noisettes dans une cupule feuillée. Il rejette de souche et forme des cépées."
+        },
+        {
+          "id": "p46",
+          "difficulte": "facile",
+          "nom_commun": "Houx",
+          "nom_scientifique": "Ilex aquifolium",
+          "groupe": "foret",
+          "options": [
+            "Houx",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Feuilles piquantes luisantes, baies rouges",
+          "description": "Arbuste persistant, feuilles coriaces souvent épineuses, vert sombre luisant, et baies rouges.",
+          "explication": "Houx : Arbuste persistant, feuilles coriaces souvent épineuses, vert sombre luisant, et baies rouges. Les feuilles hautes, à l'ombre, sont parfois entières."
+        },
+        {
+          "id": "p47",
+          "difficulte": "facile",
+          "nom_commun": "Fougère aigle",
+          "nom_scientifique": "Pteridium aquilinum",
+          "groupe": "foret",
+          "options": [
+            "Fougère aigle",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Très grande fronde triangulaire",
+          "description": "Grande fougère, fronde unique triangulaire divisée trois fois, qui forme des nappes.",
+          "explication": "Fougère aigle : Grande fougère, fronde unique triangulaire divisée trois fois, qui forme des nappes. Le pétiole coupé montre un dessin d'aigle."
+        },
+        {
+          "id": "p48",
+          "difficulte": "facile",
+          "nom_commun": "Anémone sylvie",
+          "nom_scientifique": "Anemone nemorosa",
+          "groupe": "foret",
+          "options": [
+            "Anémone sylvie",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Fleur blanche à six tépales",
+          "description": "Fleur blanche, souvent rosée dessous, à six ou sept tépales, au-dessus de feuilles très découpées.",
+          "explication": "Anémone sylvie : Fleur blanche, souvent rosée dessous, à six ou sept tépales, au-dessus de feuilles très découpées. Elle tapisse les sous-bois au printemps, puis disparaît."
+        },
+        {
+          "id": "p49",
+          "difficulte": "facile",
+          "nom_commun": "Muguet",
+          "nom_scientifique": "Convallaria majalis",
+          "groupe": "foret",
+          "options": [
+            "Muguet",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Clochettes blanches parfumées",
+          "description": "Deux grandes feuilles ovales et une hampe de clochettes blanches très odorantes.",
+          "explication": "Muguet : Deux grandes feuilles ovales et une hampe de clochettes blanches très odorantes. Le fruit est une baie rouge. Toute la plante est toxique."
+        },
+        {
+          "id": "p50",
+          "difficulte": "moyen",
+          "nom_commun": "Charme",
+          "nom_scientifique": "Carpinus betulus",
+          "groupe": "foret",
+          "options": [
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore",
+            "Érable champêtre"
+          ],
+          "indice": "Tronc cannelé, feuilles plissées",
+          "description": "Écorce lisse grisâtre, tronc souvent cannelé, feuilles ovales doublement dentées à nervures marquées.",
+          "explication": "Charme : Écorce lisse grisâtre, tronc souvent cannelé, feuilles ovales doublement dentées à nervures marquées. Les fruits sont des samares accrochées à une bractée trilobée."
+        },
+        {
+          "id": "p51",
+          "difficulte": "moyen",
+          "nom_commun": "Frêne élevé",
+          "nom_scientifique": "Fraxinus excelsior",
+          "groupe": "foret",
+          "options": [
+            "Frêne élevé",
+            "Charme",
+            "Érable sycomore",
+            "Érable champêtre"
+          ],
+          "indice": "Feuilles composées, bourgeons noirs",
+          "description": "Grand arbre, feuilles à folioles dentées opposées et bourgeons d'un noir caractéristique.",
+          "explication": "Frêne élevé : Grand arbre, feuilles à folioles dentées opposées et bourgeons d'un noir caractéristique. Les fruits sont des samares allongées en grappes."
+        },
+        {
+          "id": "p52",
+          "difficulte": "moyen",
+          "nom_commun": "Érable sycomore",
+          "nom_scientifique": "Acer pseudoplatanus",
+          "groupe": "foret",
+          "options": [
+            "Érable sycomore",
+            "Charme",
+            "Frêne élevé",
+            "Érable champêtre"
+          ],
+          "indice": "Feuilles à cinq lobes, samares en V",
+          "description": "Grandes feuilles à cinq lobes aigus, écorce qui s'exfolie en plaques, samares à ailes en angle droit.",
+          "explication": "Érable sycomore : Grandes feuilles à cinq lobes aigus, écorce qui s'exfolie en plaques, samares à ailes en angle droit. Il se ressème abondamment dans les lisières."
+        },
+        {
+          "id": "p53",
+          "difficulte": "moyen",
+          "nom_commun": "Érable champêtre",
+          "nom_scientifique": "Acer campestre",
+          "groupe": "foret",
+          "options": [
+            "Érable champêtre",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Petites feuilles à lobes arrondis",
+          "description": "Plus petit, feuilles à cinq lobes obtus, rameaux parfois liégeux et samares à ailes alignées.",
+          "explication": "Érable champêtre : Plus petit, feuilles à cinq lobes obtus, rameaux parfois liégeux et samares à ailes alignées. On le trouve dans les haies et les forêts claires."
+        },
+        {
+          "id": "p54",
+          "difficulte": "moyen",
+          "nom_commun": "Bouleau verruqueux",
+          "nom_scientifique": "Betula pendula",
+          "groupe": "foret",
+          "options": [
+            "Bouleau verruqueux",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Écorce blanche, rameaux pendants",
+          "description": "Écorce blanche qui noircit et se crevasse à la base, rameaux fins retombants et petites feuilles triangulaires.",
+          "explication": "Bouleau verruqueux : Écorce blanche qui noircit et se crevasse à la base, rameaux fins retombants et petites feuilles triangulaires. Les chatons libèrent un pollen abondant."
+        },
+        {
+          "id": "p55",
+          "difficulte": "moyen",
+          "nom_commun": "Aulne glutineux",
+          "nom_scientifique": "Alnus glutinosa",
+          "groupe": "foret",
+          "options": [
+            "Aulne glutineux",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Feuilles arrondies échancrées au bout",
+          "description": "Arbre des bords d'eau, feuilles arrondies à pointe échancrée, chatons et petits cônes ligneux.",
+          "explication": "Aulne glutineux : Arbre des bords d'eau, feuilles arrondies à pointe échancrée, chatons et petits cônes ligneux. Le bois fraîchement coupé se teinte d'orange."
+        },
+        {
+          "id": "p56",
+          "difficulte": "moyen",
+          "nom_commun": "Saule marsault",
+          "nom_scientifique": "Salix caprea",
+          "groupe": "foret",
+          "options": [
+            "Saule marsault",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Chatons gris soyeux",
+          "description": "Grand buisson ou petit arbre, feuilles ovales à dessous gris, chatons mâles jaune d'or très visibles.",
+          "explication": "Saule marsault : Grand buisson ou petit arbre, feuilles ovales à dessous gris, chatons mâles jaune d'or très visibles. C'est le saule des chatons de Pâques, plutôt forestier."
+        },
+        {
+          "id": "p57",
+          "difficulte": "moyen",
+          "nom_commun": "Tremble",
+          "nom_scientifique": "Populus tremula",
+          "groupe": "foret",
+          "options": [
+            "Tremble",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Feuilles qui tremblent",
+          "description": "Feuilles presque rondes à long pétiole aplati, qui s'agitent au moindre air. Écorce lisse gris-vert.",
+          "explication": "Tremble : Feuilles presque rondes à long pétiole aplati, qui s'agitent au moindre air. Écorce lisse gris-vert. Les rejets forment des clones autour du pied."
+        },
+        {
+          "id": "p58",
+          "difficulte": "moyen",
+          "nom_commun": "If",
+          "nom_scientifique": "Taxus baccata",
+          "groupe": "foret",
+          "options": [
+            "If",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Aiguilles plates, arille rouge",
+          "description": "Conifère sans cône visible, aiguilles plates vert sombre, et graine entourée d'un arille rouge charnu.",
+          "explication": "If : Conifère sans cône visible, aiguilles plates vert sombre, et graine entourée d'un arille rouge charnu. Toute la plante est toxique, sauf la chair rouge de l'arille."
+        },
+        {
+          "id": "p59",
+          "difficulte": "moyen",
+          "nom_commun": "Digitale pourpre",
+          "nom_scientifique": "Digitalis purpurea",
+          "groupe": "foret",
+          "options": [
+            "Digitale pourpre",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Clochettes roses tachetées",
+          "description": "Grande hampe unilatérale de clochettes rose pourpré, tachées de pourpre à l'intérieur, feuilles en rosette duveteuse.",
+          "explication": "Digitale pourpre : Grande hampe unilatérale de clochettes rose pourpré, tachées de pourpre à l'intérieur, feuilles en rosette duveteuse. Elle colonise les coupes forestières."
+        },
+        {
+          "id": "p60",
+          "difficulte": "moyen",
+          "nom_commun": "Jacinthe des bois",
+          "nom_scientifique": "Hyacinthoides non-scripta",
+          "groupe": "foret",
+          "options": [
+            "Jacinthe des bois",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Grappes de clochettes bleues penchées",
+          "description": "Hampe arquée de clochettes bleu-violet parfumées, anthères crème, feuilles linéaires luisantes.",
+          "explication": "Jacinthe des bois : Hampe arquée de clochettes bleu-violet parfumées, anthères crème, feuilles linéaires luisantes. Elle forme des tapis dans les vieilles forêts atlantiques."
+        },
+        {
+          "id": "p61",
+          "difficulte": "difficile",
+          "nom_commun": "Parisette à quatre feuilles",
+          "nom_scientifique": "Paris quadrifolia",
+          "groupe": "foret",
+          "options": [
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante",
+            "Oxalis petite oseille"
+          ],
+          "indice": "Quatre feuilles en croix, une fleur verte",
+          "description": "Quatre feuilles en croix au sommet de la tige, et une seule fleur verte à pétales étroits.",
+          "explication": "Parisette à quatre feuilles : Quatre feuilles en croix au sommet de la tige, et une seule fleur verte à pétales étroits. Le fruit est une baie noire. La plante est toxique."
+        },
+        {
+          "id": "p62",
+          "difficulte": "difficile",
+          "nom_commun": "Sceau-de-Salomon",
+          "nom_scientifique": "Polygonatum multiflorum",
+          "groupe": "foret",
+          "options": [
+            "Sceau-de-Salomon",
+            "Parisette à quatre feuilles",
+            "Aspérule odorante",
+            "Oxalis petite oseille"
+          ],
+          "indice": "Clochettes blanches sous la tige arquée",
+          "description": "Tige arquée, feuilles alternes, et fleurs blanches à bord vert suspendues sous la tige.",
+          "explication": "Sceau-de-Salomon : Tige arquée, feuilles alternes, et fleurs blanches à bord vert suspendues sous la tige. La cicatrice de la tige sur le rhizome évoque un sceau."
+        },
+        {
+          "id": "p63",
+          "difficulte": "difficile",
+          "nom_commun": "Aspérule odorante",
+          "nom_scientifique": "Galium odoratum",
+          "groupe": "foret",
+          "options": [
+            "Aspérule odorante",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Oxalis petite oseille"
+          ],
+          "indice": "Étages de feuilles en étoile",
+          "description": "Feuilles en verticilles de six à huit, petites fleurs blanches en étoile. Séchée, elle sent la vanille.",
+          "explication": "Aspérule odorante : Feuilles en verticilles de six à huit, petites fleurs blanches en étoile. Séchée, elle sent la vanille. Elle couvre le sol des hêtraies fraîches."
+        },
+        {
+          "id": "p64",
+          "difficulte": "difficile",
+          "nom_commun": "Oxalis petite oseille",
+          "nom_scientifique": "Oxalis acetosella",
+          "groupe": "foret",
+          "options": [
+            "Oxalis petite oseille",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Fleur blanche veinée de rose",
+          "description": "Trois folioles en cœur, comme un trèfle, et fleur blanche solitaire veinée de lilas.",
+          "explication": "Oxalis petite oseille : Trois folioles en cœur, comme un trèfle, et fleur blanche solitaire veinée de lilas. Les feuilles ont un goût acide."
+        },
+        {
+          "id": "p65",
+          "difficulte": "difficile",
+          "nom_commun": "Fougère mâle",
+          "nom_scientifique": "Dryopteris filix-mas",
+          "groupe": "foret",
+          "options": [
+            "Fougère mâle",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Touffe de frondes, écailles brun doré",
+          "description": "Frondes en touffe, pétiole écailleux brun, limbe deux fois divisé, pas triangulaire comme la fougère aigle.",
+          "explication": "Fougère mâle : Frondes en touffe, pétiole écailleux brun, limbe deux fois divisé, pas triangulaire comme la fougère aigle. Les sores sont ronds, sous les divisions."
+        },
+        {
+          "id": "p66",
+          "difficulte": "difficile",
+          "nom_commun": "Polypode vulgaire",
+          "nom_scientifique": "Polypodium vulgare",
+          "groupe": "foret",
+          "options": [
+            "Polypode vulgaire",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Fougère des troncs et des murs",
+          "description": "Frondes simples, une fois divisées, un peu coriaces, souvent sur les troncs moussus et les rochers.",
+          "explication": "Polypode vulgaire : Frondes simples, une fois divisées, un peu coriaces, souvent sur les troncs moussus et les rochers. Le rhizome a un goût sucré, d'où son vieux nom de réglisse des bois."
+        },
+        {
+          "id": "p67",
+          "difficulte": "difficile",
+          "nom_commun": "Scolopendre",
+          "nom_scientifique": "Asplenium scolopendrium",
+          "groupe": "foret",
+          "options": [
+            "Scolopendre",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Feuilles en langue, entières",
+          "description": "Fougère à frondes entières, en lanière luisante, à base en cœur. Les sores sont en traits obliques.",
+          "explication": "Scolopendre : Fougère à frondes entières, en lanière luisante, à base en cœur. Les sores sont en traits obliques. Elle aime les puits, les ravins et les sous-bois calcaires."
+        },
+        {
+          "id": "p68",
+          "difficulte": "difficile",
+          "nom_commun": "Capillaire des murailles",
+          "nom_scientifique": "Asplenium trichomanes",
+          "groupe": "foret",
+          "options": [
+            "Capillaire des murailles",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Petit, rachis noir",
+          "description": "Petite fougère des murs, rachis noir brillant et pinnules arrondies opposées.",
+          "explication": "Capillaire des murailles : Petite fougère des murs, rachis noir brillant et pinnules arrondies opposées. Elle pousse dans les joints de pierre, à l'ombre."
+        },
+        {
+          "id": "p69",
+          "difficulte": "difficile",
+          "nom_commun": "Ail des ours",
+          "nom_scientifique": "Allium ursinum",
+          "groupe": "foret",
+          "options": [
+            "Ail des ours",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Tapis de feuilles, odeur d'ail",
+          "description": "Larges feuilles ovales à odeur d'ail très forte, et ombelle de fleurs blanches en étoile.",
+          "explication": "Ail des ours : Larges feuilles ovales à odeur d'ail très forte, et ombelle de fleurs blanches en étoile. Il couvre des hectares de sous-bois humide au printemps."
+        },
+        {
+          "id": "p70",
+          "difficulte": "difficile",
+          "nom_commun": "Hellébore fétide",
+          "nom_scientifique": "Helleborus foetidus",
+          "groupe": "foret",
+          "options": [
+            "Hellébore fétide",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Clochettes vertes bordées de pourpre",
+          "description": "Feuilles en éventail très découpées, et grappes de clochettes vertes ourlées de pourpre.",
+          "explication": "Hellébore fétide : Feuilles en éventail très découpées, et grappes de clochettes vertes ourlées de pourpre. Toute la plante dégage une odeur désagréable."
+        },
+        {
+          "id": "p71",
+          "difficulte": "difficile",
+          "nom_commun": "Ancolie commune",
+          "nom_scientifique": "Aquilegia vulgaris",
+          "groupe": "foret",
+          "options": [
+            "Ancolie commune",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Fleurs violettes à éperons crochus",
+          "description": "Fleurs penchées violet-bleu, à cinq éperons recourbés, et feuilles divisées en folioles arrondies.",
+          "explication": "Ancolie commune : Fleurs penchées violet-bleu, à cinq éperons recourbés, et feuilles divisées en folioles arrondies. Elle pousse dans les lisières et les prairies fraîches."
+        },
+        {
+          "id": "p72",
+          "difficulte": "difficile",
+          "nom_commun": "Chèvrefeuille des bois",
+          "nom_scientifique": "Lonicera periclymenum",
+          "groupe": "foret",
+          "options": [
+            "Chèvrefeuille des bois",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Liane, fleurs en tube crème et rose",
+          "description": "Liane volubile, fleurs en long tube crème lavé de rose, très odorantes le soir, puis baies rouges.",
+          "explication": "Chèvrefeuille des bois : Liane volubile, fleurs en long tube crème lavé de rose, très odorantes le soir, puis baies rouges. Il s'enroule aux arbustes des haies et des forêts."
+        },
+        {
+          "id": "p73",
+          "difficulte": "difficile",
+          "nom_commun": "Clématite des haies",
+          "nom_scientifique": "Clematis vitalba",
+          "groupe": "foret",
+          "options": [
+            "Clématite des haies",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Liane, fleurs blanc-vert, fruits plumeux",
+          "description": "Liane vigoureuse, fleurs blanc verdâtre à quatre sépales, puis fruits à aigrettes argentées.",
+          "explication": "Clématite des haies : Liane vigoureuse, fleurs blanc verdâtre à quatre sépales, puis fruits à aigrettes argentées. Les tiges âgées sont épaisses et fibreuses."
+        },
+        {
+          "id": "p74",
+          "difficulte": "difficile",
+          "nom_commun": "Gui",
+          "nom_scientifique": "Viscum album",
+          "groupe": "foret",
+          "options": [
+            "Gui",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Boule verte dans un arbre, baies blanches",
+          "description": "Plante parasite en boule, tiges vertes dichotomiques, feuilles opposées coriaces et baies blanches.",
+          "explication": "Gui : Plante parasite en boule, tiges vertes dichotomiques, feuilles opposées coriaces et baies blanches. Il s'installe surtout sur les pommiers, les peupliers et les tilleuls."
+        },
+        {
+          "id": "p75",
+          "difficulte": "facile",
+          "nom_commun": "Sapin blanc",
+          "nom_scientifique": "Abies alba",
+          "groupe": "foret",
+          "options": [
+            "Sapin blanc",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Aiguilles plates, cônes dressés",
+          "description": "Grand conifère, aiguilles plates à deux raies blanches dessous, et cônes dressés qui se désarticulent sur l'arbre.",
+          "explication": "Sapin blanc : Grand conifère, aiguilles plates à deux raies blanches dessous, et cônes dressés qui se désarticulent sur l'arbre. L'écorce des vieux arbres est gris clair, un peu crevassée."
+        },
+        {
+          "id": "p76",
+          "difficulte": "facile",
+          "nom_commun": "Épicéa",
+          "nom_scientifique": "Picea abies",
+          "groupe": "foret",
+          "options": [
+            "Épicéa",
+            "Hêtre",
+            "Chêne pédonculé",
+            "Chêne sessile"
+          ],
+          "indice": "Aiguilles piquantes tout autour du rameau",
+          "description": "Conifère, aiguilles à quatre angles qui piquent, insérées tout autour du rameau, et cônes pendants.",
+          "explication": "Épicéa : Conifère, aiguilles à quatre angles qui piquent, insérées tout autour du rameau, et cônes pendants. On le plante beaucoup, et il se ressème en montagne."
+        },
+        {
+          "id": "p77",
+          "difficulte": "moyen",
+          "nom_commun": "Pin sylvestre",
+          "nom_scientifique": "Pinus sylvestris",
+          "groupe": "foret",
+          "options": [
+            "Pin sylvestre",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Écorce saumonée, aiguilles par deux",
+          "description": "Aiguilles groupées par deux, assez courtes, et écorce du haut du tronc orangée, en fines plaques.",
+          "explication": "Pin sylvestre : Aiguilles groupées par deux, assez courtes, et écorce du haut du tronc orangée, en fines plaques. La couronne devient plate avec l'âge."
+        },
+        {
+          "id": "p78",
+          "difficulte": "moyen",
+          "nom_commun": "Châtaignier",
+          "nom_scientifique": "Castanea sativa",
+          "groupe": "foret",
+          "options": [
+            "Châtaignier",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Feuilles dentées en lance, bogues",
+          "description": "Grand arbre, longues feuilles dentées à nervures parallèles, chatons et bogues hérissées.",
+          "explication": "Châtaignier : Grand arbre, longues feuilles dentées à nervures parallèles, chatons et bogues hérissées. Les fruits sont les châtaignes, deux ou trois dans une bogue."
+        },
+        {
+          "id": "p79",
+          "difficulte": "moyen",
+          "nom_commun": "Tilleul à grandes feuilles",
+          "nom_scientifique": "Tilia platyphyllos",
+          "groupe": "foret",
+          "options": [
+            "Tilleul à grandes feuilles",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Feuilles en cœur, bractée sur les fleurs",
+          "description": "Feuilles en cœur, un peu poilues, et fleurs jaunâtres attachées à une longue bractée pâle.",
+          "explication": "Tilleul à grandes feuilles : Feuilles en cœur, un peu poilues, et fleurs jaunâtres attachées à une longue bractée pâle. Il est souvent planté sur les places, et aussi spontané."
+        },
+        {
+          "id": "p80",
+          "difficulte": "moyen",
+          "nom_commun": "Robinier",
+          "nom_scientifique": "Robinia pseudoacacia",
+          "groupe": "foret",
+          "options": [
+            "Robinier",
+            "Charme",
+            "Frêne élevé",
+            "Érable sycomore"
+          ],
+          "indice": "Grappes blanches, épines, feuilles composées",
+          "description": "Feuilles pennées, épines sur les rameaux et longues grappes de fleurs blanches parfumées.",
+          "explication": "Robinier : Feuilles pennées, épines sur les rameaux et longues grappes de fleurs blanches parfumées. Introduit, il drageonne et colonise les talus."
+        },
+        {
+          "id": "p81",
+          "difficulte": "difficile",
+          "nom_commun": "Fraisier des bois",
+          "nom_scientifique": "Fragaria vesca",
+          "groupe": "foret",
+          "options": [
+            "Fraisier des bois",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Petites fraises, fleurs blanches",
+          "description": "Petite rosette, feuilles à trois folioles dentées, fleurs blanches à cinq pétales et fraises parfumées.",
+          "explication": "Fraisier des bois : Petite rosette, feuilles à trois folioles dentées, fleurs blanches à cinq pétales et fraises parfumées. Il court par des stolons, dans les lisières."
+        },
+        {
+          "id": "p82",
+          "difficulte": "difficile",
+          "nom_commun": "Géranium herbe à Robert",
+          "nom_scientifique": "Geranium robertianum",
+          "groupe": "foret",
+          "options": [
+            "Géranium herbe à Robert",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Feuilles découpées, fleurs roses, odeur forte",
+          "description": "Feuilles très divisées souvent rougissantes, fleurs roses à cinq pétales et long bec sur le fruit.",
+          "explication": "Géranium herbe à Robert : Feuilles très divisées souvent rougissantes, fleurs roses à cinq pétales et long bec sur le fruit. Froissé, il sent fort, d'où ses surnoms."
+        },
+        {
+          "id": "p83",
+          "difficulte": "difficile",
+          "nom_commun": "Alliaire",
+          "nom_scientifique": "Alliaria petiolata",
+          "groupe": "foret",
+          "options": [
+            "Alliaire",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Feuilles en cœur, odeur d'ail",
+          "description": "Feuilles en cœur dentées, fleurs blanches à quatre pétales et nette odeur d'ail au froissement.",
+          "explication": "Alliaire : Feuilles en cœur dentées, fleurs blanches à quatre pétales et nette odeur d'ail au froissement. Elle fleurit au printemps, en colonies à l'ombre."
+        },
+        {
+          "id": "p84",
+          "difficulte": "difficile",
+          "nom_commun": "Fougère femelle",
+          "nom_scientifique": "Athyrium filix-femina",
+          "groupe": "foret",
+          "options": [
+            "Fougère femelle",
+            "Parisette à quatre feuilles",
+            "Sceau-de-Salomon",
+            "Aspérule odorante"
+          ],
+          "indice": "Fronde fine, sores en virgule",
+          "description": "Touffe de frondes très divisées, plus fines que la fougère mâle, et sores allongés en virgule.",
+          "explication": "Fougère femelle : Touffe de frondes très divisées, plus fines que la fougère mâle, et sores allongés en virgule. Elle aime les sous-bois frais."
+        }
+      ]
+    },
+    {
+      "id": "eau",
+      "label": "Eau",
+      "questions": [
+        {
+          "id": "p93",
+          "difficulte": "moyen",
+          "nom_commun": "Saule blanc",
+          "nom_scientifique": "Salix alba",
+          "groupe": "eau",
+          "options": [
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune",
+            "Reine-des-prés"
+          ],
+          "indice": "Feuilles étroites argentées dessous",
+          "description": "Grand arbre des berges, feuilles lancéolées blanches soyeuses en dessous, et rameaux souples.",
+          "explication": "Saule blanc : Grand arbre des berges, feuilles lancéolées blanches soyeuses en dessous, et rameaux souples. Les chatons apparaissent avec les feuilles."
+        },
+        {
+          "id": "p94",
+          "difficulte": "moyen",
+          "nom_commun": "Lysimaque commune",
+          "nom_scientifique": "Lysimachia vulgaris",
+          "groupe": "eau",
+          "options": [
+            "Lysimaque commune",
+            "Saule blanc",
+            "Salicaire commune",
+            "Reine-des-prés"
+          ],
+          "indice": "Épis de fleurs jaunes, feuilles verticillées",
+          "description": "Tige droite, feuilles par trois ou quatre et grappes de fleurs jaunes à cinq pétales.",
+          "explication": "Lysimaque commune : Tige droite, feuilles par trois ou quatre et grappes de fleurs jaunes à cinq pétales. Elle pousse dans les mégaphorbiaies, les pieds au frais."
+        },
+        {
+          "id": "p95",
+          "difficulte": "difficile",
+          "nom_commun": "Osmonde royale",
+          "nom_scientifique": "Osmunda regalis",
+          "groupe": "eau",
+          "options": [
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé",
+            "Renoncule aquatique"
+          ],
+          "indice": "Très grande fougère, épi fertile roux",
+          "description": "Très grande fougère, frondes stériles bipennées et, au centre, des frondes terminées par une panicule rousse fertile.",
+          "explication": "Osmonde royale : Très grande fougère, frondes stériles bipennées et, au centre, des frondes terminées par une panicule rousse fertile. Elle vit dans les bois tourbeux et les bords de ruisseaux acides."
+        },
+        {
+          "id": "p104",
+          "difficulte": "facile",
+          "nom_commun": "Nénuphar blanc",
+          "nom_scientifique": "Nymphaea alba",
+          "groupe": "eau",
+          "options": [
+            "Nénuphar blanc",
+            "Nénuphar jaune",
+            "Iris des marais",
+            "Roseau commun"
+          ],
+          "indice": "Grande fleur blanche posée sur l'eau",
+          "description": "Grandes feuilles rondes flottantes et fleur blanche à nombreux pétales, à la surface.",
+          "explication": "Nénuphar blanc : Grandes feuilles rondes flottantes et fleur blanche à nombreux pétales, à la surface. Les fleurs s'ouvrent dans la journée et se ferment le soir."
+        },
+        {
+          "id": "p105",
+          "difficulte": "facile",
+          "nom_commun": "Nénuphar jaune",
+          "nom_scientifique": "Nuphar lutea",
+          "groupe": "eau",
+          "options": [
+            "Nénuphar jaune",
+            "Nénuphar blanc",
+            "Iris des marais",
+            "Roseau commun"
+          ],
+          "indice": "Fleur jaune en boule",
+          "description": "Feuilles ovales flottantes et fleur jaune globuleuse, à cinq grands sépales, qui dépasse un peu de l'eau.",
+          "explication": "Nénuphar jaune : Feuilles ovales flottantes et fleur jaune globuleuse, à cinq grands sépales, qui dépasse un peu de l'eau. Il sent souvent la vieille pomme."
+        },
+        {
+          "id": "p106",
+          "difficulte": "facile",
+          "nom_commun": "Iris des marais",
+          "nom_scientifique": "Iris pseudacorus",
+          "groupe": "eau",
+          "options": [
+            "Iris des marais",
+            "Nénuphar blanc",
+            "Nénuphar jaune",
+            "Roseau commun"
+          ],
+          "indice": "Grandes fleurs jaunes, feuilles en lame",
+          "description": "Grandes fleurs jaunes et longues feuilles en lame, dressées au bord de l'eau.",
+          "explication": "Iris des marais : Grandes fleurs jaunes et longues feuilles en lame, dressées au bord de l'eau. Il forme des touffes denses dans les fossés."
+        },
+        {
+          "id": "p107",
+          "difficulte": "facile",
+          "nom_commun": "Roseau commun",
+          "nom_scientifique": "Phragmites australis",
+          "groupe": "eau",
+          "options": [
+            "Roseau commun",
+            "Nénuphar blanc",
+            "Nénuphar jaune",
+            "Iris des marais"
+          ],
+          "indice": "Très hautes cannes, panicule plumeuse",
+          "description": "Tiges creuses de plusieurs mètres, feuilles larges et panicule brun-pourpre plumeuse au sommet.",
+          "explication": "Roseau commun : Tiges creuses de plusieurs mètres, feuilles larges et panicule brun-pourpre plumeuse au sommet. Il constitue les roselières."
+        },
+        {
+          "id": "p108",
+          "difficulte": "facile",
+          "nom_commun": "Massette à larges feuilles",
+          "nom_scientifique": "Typha latifolia",
+          "groupe": "eau",
+          "options": [
+            "Massette à larges feuilles",
+            "Nénuphar blanc",
+            "Nénuphar jaune",
+            "Iris des marais"
+          ],
+          "indice": "Quenouille brune",
+          "description": "Hautes feuilles en lame et épi cylindrique brun sombre, la partie mâle collée au-dessus de la partie femelle.",
+          "explication": "Massette à larges feuilles : Hautes feuilles en lame et épi cylindrique brun sombre, la partie mâle collée au-dessus de la partie femelle. On l'appelle aussi roseau des étangs, à tort."
+        },
+        {
+          "id": "p109",
+          "difficulte": "facile",
+          "nom_commun": "Populage des marais",
+          "nom_scientifique": "Caltha palustris",
+          "groupe": "eau",
+          "options": [
+            "Populage des marais",
+            "Nénuphar blanc",
+            "Nénuphar jaune",
+            "Iris des marais"
+          ],
+          "indice": "Grosses fleurs jaunes luisantes",
+          "description": "Touffes de feuilles rondes en cœur et grandes fleurs jaune d'or à cinq sépales luisants.",
+          "explication": "Populage des marais : Touffes de feuilles rondes en cœur et grandes fleurs jaune d'or à cinq sépales luisants. Il fleurit tôt au bord des ruisseaux."
+        },
+        {
+          "id": "p110",
+          "difficulte": "moyen",
+          "nom_commun": "Salicaire commune",
+          "nom_scientifique": "Lythrum salicaria",
+          "groupe": "eau",
+          "options": [
+            "Salicaire commune",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Reine-des-prés"
+          ],
+          "indice": "Épis rose vif",
+          "description": "Tige droite, feuilles opposées ou verticillées et longs épis denses de fleurs rose pourpré.",
+          "explication": "Salicaire commune : Tige droite, feuilles opposées ou verticillées et longs épis denses de fleurs rose pourpré. Elle colore les bords de fossés en été."
+        },
+        {
+          "id": "p111",
+          "difficulte": "moyen",
+          "nom_commun": "Reine-des-prés",
+          "nom_scientifique": "Filipendula ulmaria",
+          "groupe": "eau",
+          "options": [
+            "Reine-des-prés",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Mousse de fleurs crème parfumées",
+          "description": "Feuilles divisées, la foliole terminale plus grande, et grappes mousseuses de fleurs crème à odeur d'amande.",
+          "explication": "Reine-des-prés : Feuilles divisées, la foliole terminale plus grande, et grappes mousseuses de fleurs crème à odeur d'amande. Elle pousse dans les mégaphorbiaies, les pieds dans l'humidité."
+        },
+        {
+          "id": "p112",
+          "difficulte": "moyen",
+          "nom_commun": "Menthe aquatique",
+          "nom_scientifique": "Mentha aquatica",
+          "groupe": "eau",
+          "options": [
+            "Menthe aquatique",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Têtes rondes lilas, odeur de menthe",
+          "description": "Tige carrée, feuilles opposées odorantes et fleurs lilas en têtes rondes, souvent un verticille en dessous.",
+          "explication": "Menthe aquatique : Tige carrée, feuilles opposées odorantes et fleurs lilas en têtes rondes, souvent un verticille en dessous. Elle pousse les pieds dans l'eau ou la vase."
+        },
+        {
+          "id": "p113",
+          "difficulte": "moyen",
+          "nom_commun": "Myosotis des marais",
+          "nom_scientifique": "Myosotis scorpioides",
+          "groupe": "eau",
+          "options": [
+            "Myosotis des marais",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Petites fleurs bleues à œil jaune",
+          "description": "Tige un peu charnue, fleurs bleu ciel à centre jaune, en cymes qui s'enroulent.",
+          "explication": "Myosotis des marais : Tige un peu charnue, fleurs bleu ciel à centre jaune, en cymes qui s'enroulent. Les poils du calice sont appliqués, pas crochus."
+        },
+        {
+          "id": "p114",
+          "difficulte": "moyen",
+          "nom_commun": "Cresson de fontaine",
+          "nom_scientifique": "Nasturtium officinale",
+          "groupe": "eau",
+          "options": [
+            "Cresson de fontaine",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Feuilles charnues, fleurs blanches à quatre pétales",
+          "description": "Plante des eaux courantes, feuilles pennées un peu charnues et petites fleurs blanches.",
+          "explication": "Cresson de fontaine : Plante des eaux courantes, feuilles pennées un peu charnues et petites fleurs blanches. Il reste vert l'hiver dans les ruisseaux."
+        },
+        {
+          "id": "p115",
+          "difficulte": "moyen",
+          "nom_commun": "Lentille d'eau",
+          "nom_scientifique": "Lemna minor",
+          "groupe": "eau",
+          "options": [
+            "Lentille d'eau",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Minuscules feuilles rondes flottantes",
+          "description": "Toutes petites lames vertes ovales, une racine en dessous, qui forment un tapis à la surface.",
+          "explication": "Lentille d'eau : Toutes petites lames vertes ovales, une racine en dessous, qui forment un tapis à la surface. Elle se multiplie en se divisant."
+        },
+        {
+          "id": "p116",
+          "difficulte": "moyen",
+          "nom_commun": "Sagittaire",
+          "nom_scientifique": "Sagittaria sagittifolia",
+          "groupe": "eau",
+          "options": [
+            "Sagittaire",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Feuilles en fer de flèche",
+          "description": "Feuilles aériennes en pointe de flèche, et fleurs blanches à trois pétales, cœur pourpre.",
+          "explication": "Sagittaire : Feuilles aériennes en pointe de flèche, et fleurs blanches à trois pétales, cœur pourpre. Les feuilles immergées sont en ruban, très différentes."
+        },
+        {
+          "id": "p117",
+          "difficulte": "moyen",
+          "nom_commun": "Plantain d'eau",
+          "nom_scientifique": "Alisma plantago-aquatica",
+          "groupe": "eau",
+          "options": [
+            "Plantain d'eau",
+            "Saule blanc",
+            "Lysimaque commune",
+            "Salicaire commune"
+          ],
+          "indice": "Feuilles ovales, panicule de fleurs pâles",
+          "description": "Grandes feuilles ovales à long pétiole, et grande panicule de petites fleurs blanc-rosé à trois pétales.",
+          "explication": "Plantain d'eau : Grandes feuilles ovales à long pétiole, et grande panicule de petites fleurs blanc-rosé à trois pétales. Il pousse dans la vase des bords d'étang."
+        },
+        {
+          "id": "p118",
+          "difficulte": "difficile",
+          "nom_commun": "Butome en ombelle",
+          "nom_scientifique": "Butomus umbellatus",
+          "groupe": "eau",
+          "options": [
+            "Butome en ombelle",
+            "Osmonde royale",
+            "Rubanier dressé",
+            "Renoncule aquatique"
+          ],
+          "indice": "Ombelle de fleurs roses",
+          "description": "Feuilles en glaive, triquètres à la base, et ombelle de fleurs roses à trois pétales et trois sépales.",
+          "explication": "Butome en ombelle : Feuilles en glaive, triquètres à la base, et ombelle de fleurs roses à trois pétales et trois sépales. Il fleurit hors de l'eau, sur la berge."
+        },
+        {
+          "id": "p119",
+          "difficulte": "difficile",
+          "nom_commun": "Rubanier dressé",
+          "nom_scientifique": "Sparganium erectum",
+          "groupe": "eau",
+          "options": [
+            "Rubanier dressé",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Renoncule aquatique"
+          ],
+          "indice": "Feuilles en glaive, fruits en boules",
+          "description": "Feuilles dressées en lame, inflorescence ramifiée de capitules sphériques verts, les mâles au-dessus des femelles.",
+          "explication": "Rubanier dressé : Feuilles dressées en lame, inflorescence ramifiée de capitules sphériques verts, les mâles au-dessus des femelles. Il forme des herbiers dans les eaux peu profondes."
+        },
+        {
+          "id": "p120",
+          "difficulte": "difficile",
+          "nom_commun": "Renoncule aquatique",
+          "nom_scientifique": "Ranunculus aquatilis",
+          "groupe": "eau",
+          "options": [
+            "Renoncule aquatique",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Tapis de fleurs blanches sur l'eau",
+          "description": "Fleurs blanches à cœur jaune posées sur l'eau, feuilles flottantes lobées et feuilles immergées en lanières.",
+          "explication": "Renoncule aquatique : Fleurs blanches à cœur jaune posées sur l'eau, feuilles flottantes lobées et feuilles immergées en lanières. Elle peut couvrir un fossé entier au printemps."
+        },
+        {
+          "id": "p121",
+          "difficulte": "difficile",
+          "nom_commun": "Potamot nageant",
+          "nom_scientifique": "Potamogeton natans",
+          "groupe": "eau",
+          "options": [
+            "Potamot nageant",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Feuilles ovales flottantes à long pétiole",
+          "description": "Feuilles flottantes ovales, coriaces, à pétiole souvent plus clair près du limbe, et épi de fleurs verdâtres hors de l'eau.",
+          "explication": "Potamot nageant : Feuilles flottantes ovales, coriaces, à pétiole souvent plus clair près du limbe, et épi de fleurs verdâtres hors de l'eau. Les feuilles immergées sont réduites à un pétiole."
+        },
+        {
+          "id": "p122",
+          "difficulte": "difficile",
+          "nom_commun": "Morène",
+          "nom_scientifique": "Hydrocharis morsus-ranae",
+          "groupe": "eau",
+          "options": [
+            "Morène",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Petite feuille ronde, fleur blanche",
+          "description": "Petites feuilles rondes flottantes, en cœur à la base, et fleurs blanches à trois pétales.",
+          "explication": "Morène : Petites feuilles rondes flottantes, en cœur à la base, et fleurs blanches à trois pétales. Elle forme des hibernacles qui coulent à l'automne."
+        },
+        {
+          "id": "p123",
+          "difficulte": "difficile",
+          "nom_commun": "Jonc épars",
+          "nom_scientifique": "Juncus effusus",
+          "groupe": "eau",
+          "options": [
+            "Jonc épars",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Tiges vertes lisses, fleurs latérales",
+          "description": "Touffe de tiges cylindriques vertes, lisses, avec une inflorescence qui semble sortir sur le côté.",
+          "explication": "Jonc épars : Touffe de tiges cylindriques vertes, lisses, avec une inflorescence qui semble sortir sur le côté. La tige continue au-dessus des fleurs, en pointe."
+        },
+        {
+          "id": "p124",
+          "difficulte": "difficile",
+          "nom_commun": "Baldingère",
+          "nom_scientifique": "Phalaris arundinacea",
+          "groupe": "eau",
+          "options": [
+            "Baldingère",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Grand roseau des berges, panicule claire",
+          "description": "Haute graminée des berges, larges feuilles et panicule d'abord rosée puis beige, aux épillets comprimés.",
+          "explication": "Baldingère : Haute graminée des berges, larges feuilles et panicule d'abord rosée puis beige, aux épillets comprimés. Elle forme des massifs le long des rivières."
+        },
+        {
+          "id": "p125",
+          "difficulte": "difficile",
+          "nom_commun": "Prêle des champs",
+          "nom_scientifique": "Equisetum arvense",
+          "groupe": "eau",
+          "options": [
+            "Prêle des champs",
+            "Osmonde royale",
+            "Butome en ombelle",
+            "Rubanier dressé"
+          ],
+          "indice": "Tiges vertes en sapin miniature",
+          "description": "Tiges stériles vertes, aux rameaux en verticilles réguliers. Au printemps, une tige beige fertile à épi.",
+          "explication": "Prêle des champs : Tiges stériles vertes, aux rameaux en verticilles réguliers. Au printemps, une tige beige fertile à épi. Les tiges sont creuses et siliceuses."
+        }
+      ]
+    },
+    {
+      "id": "montagne",
+      "label": "Montagne",
+      "questions": [
+        {
+          "id": "p96",
+          "difficulte": "facile",
+          "nom_commun": "Callune",
+          "nom_scientifique": "Calluna vulgaris",
+          "groupe": "montagne",
+          "options": [
+            "Callune",
+            "Edelweiss",
+            "Gentiane acaule",
+            "Gentiane jaune"
+          ],
+          "indice": "Tapis de clochettes roses",
+          "description": "Sous-arbrisseau, toutes petites feuilles en écaille sur quatre rangs et grappes de clochettes roses.",
+          "explication": "Callune : Sous-arbrisseau, toutes petites feuilles en écaille sur quatre rangs et grappes de clochettes roses. Elle constitue les landes, avec les bruyères."
+        },
+        {
+          "id": "p97",
+          "difficulte": "moyen",
+          "nom_commun": "Bruyère cendrée",
+          "nom_scientifique": "Erica cinerea",
+          "groupe": "montagne",
+          "options": [
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux",
+            "Mélèze d'Europe"
+          ],
+          "indice": "Clochettes pourpres, feuilles en aiguille",
+          "description": "Buisson, feuilles linéaires groupées par trois et grappes de clochettes rose pourpré.",
+          "explication": "Bruyère cendrée : Buisson, feuilles linéaires groupées par trois et grappes de clochettes rose pourpré. Elle fleurit l'été, sur les landes sèches."
+        },
+        {
+          "id": "p98",
+          "difficulte": "moyen",
+          "nom_commun": "Genévrier commun",
+          "nom_scientifique": "Juniperus communis",
+          "groupe": "montagne",
+          "options": [
+            "Genévrier commun",
+            "Bruyère cendrée",
+            "Rhododendron ferrugineux",
+            "Mélèze d'Europe"
+          ],
+          "indice": "Aiguilles piquantes par trois, baies bleues",
+          "description": "Arbrisseau, aiguilles raides en verticilles de trois, avec une bande blanche dessus, et baies bleu-noir.",
+          "explication": "Genévrier commun : Arbrisseau, aiguilles raides en verticilles de trois, avec une bande blanche dessus, et baies bleu-noir. Les cônes mettent deux ans à mûrir."
+        },
+        {
+          "id": "p99",
+          "difficulte": "difficile",
+          "nom_commun": "Arnica",
+          "nom_scientifique": "Arnica montana",
+          "groupe": "montagne",
+          "options": [
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes",
+            "Grassette commune"
+          ],
+          "indice": "Grand capitule jaune, feuilles opposées",
+          "description": "Une ou deux paires de feuilles opposées et un grand capitule jaune orangé, solitaire.",
+          "explication": "Arnica : Une ou deux paires de feuilles opposées et un grand capitule jaune orangé, solitaire. Elle pousse sur les pelouses acides de montagne."
+        },
+        {
+          "id": "p100",
+          "difficulte": "difficile",
+          "nom_commun": "Chardon bleu",
+          "nom_scientifique": "Eryngium alpinum",
+          "groupe": "montagne",
+          "options": [
+            "Chardon bleu",
+            "Arnica",
+            "Droséra à feuilles rondes",
+            "Grassette commune"
+          ],
+          "indice": "Inflorescence bleu métallique",
+          "description": "Feuilles épineuses et une grande inflorescence bleu acier, entourée de bractées découpées.",
+          "explication": "Chardon bleu : Feuilles épineuses et une grande inflorescence bleu acier, entourée de bractées découpées. Il est rare, dans les mégaphorbiaies calcaires des Alpes."
+        },
+        {
+          "id": "p101",
+          "difficulte": "difficile",
+          "nom_commun": "Droséra à feuilles rondes",
+          "nom_scientifique": "Drosera rotundifolia",
+          "groupe": "montagne",
+          "options": [
+            "Droséra à feuilles rondes",
+            "Arnica",
+            "Chardon bleu",
+            "Grassette commune"
+          ],
+          "indice": "Feuilles rondes collantes, en rosace",
+          "description": "Petite plante des tourbières, feuilles rondes couvertes de poils rouges gluants.",
+          "explication": "Droséra à feuilles rondes : Petite plante des tourbières, feuilles rondes couvertes de poils rouges gluants. Les insectes restent collés aux feuilles."
+        },
+        {
+          "id": "p102",
+          "difficulte": "difficile",
+          "nom_commun": "Grassette commune",
+          "nom_scientifique": "Pinguicula vulgaris",
+          "groupe": "montagne",
+          "options": [
+            "Grassette commune",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Feuilles en étoile, gluantes, fleur violette",
+          "description": "Rosette de feuilles jaunâtres visqueuses et fleur violette à éperon, sur une hampe nue.",
+          "explication": "Grassette commune : Rosette de feuilles jaunâtres visqueuses et fleur violette à éperon, sur une hampe nue. Elle capture de petits insectes sur les feuilles."
+        },
+        {
+          "id": "p103",
+          "difficulte": "difficile",
+          "nom_commun": "Campanule à feuilles rondes",
+          "nom_scientifique": "Campanula rotundifolia",
+          "groupe": "montagne",
+          "options": [
+            "Campanule à feuilles rondes",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Clochettes bleues sur une tige fine",
+          "description": "Feuilles de la base arrondies, feuilles de la tige étroites et clochettes bleues penchées.",
+          "explication": "Campanule à feuilles rondes : Feuilles de la base arrondies, feuilles de la tige étroites et clochettes bleues penchées. Elle pousse sur les rochers et les pelouses maigres."
+        },
+        {
+          "id": "p126",
+          "difficulte": "facile",
+          "nom_commun": "Edelweiss",
+          "nom_scientifique": "Leontopodium nivale",
+          "groupe": "montagne",
+          "options": [
+            "Edelweiss",
+            "Callune",
+            "Gentiane acaule",
+            "Gentiane jaune"
+          ],
+          "indice": "Étoile laineuse blanche",
+          "description": "Étoile de bractées laineuses blanches autour de petits capitules jaunâtres, sur une tige courte et feutrée.",
+          "explication": "Edelweiss : Étoile de bractées laineuses blanches autour de petits capitules jaunâtres, sur une tige courte et feutrée. Il pousse sur les pelouses rocailleuses calcaires."
+        },
+        {
+          "id": "p127",
+          "difficulte": "facile",
+          "nom_commun": "Gentiane acaule",
+          "nom_scientifique": "Gentiana acaulis",
+          "groupe": "montagne",
+          "options": [
+            "Gentiane acaule",
+            "Callune",
+            "Edelweiss",
+            "Gentiane jaune"
+          ],
+          "indice": "Grande trompette bleu profond",
+          "description": "Grande fleur en trompette bleu profond, tachée de vert à l'intérieur, presque posée sur la rosette.",
+          "explication": "Gentiane acaule : Grande fleur en trompette bleu profond, tachée de vert à l'intérieur, presque posée sur la rosette. Elle s'ouvre au soleil, sur les pelouses alpines."
+        },
+        {
+          "id": "p128",
+          "difficulte": "facile",
+          "nom_commun": "Gentiane jaune",
+          "nom_scientifique": "Gentiana lutea",
+          "groupe": "montagne",
+          "options": [
+            "Gentiane jaune",
+            "Callune",
+            "Edelweiss",
+            "Gentiane acaule"
+          ],
+          "indice": "Très haute, fleurs jaunes en étages",
+          "description": "Grande plante, feuilles opposées largement ovales et fleurs jaunes étoilées en verticilles le long de la tige.",
+          "explication": "Gentiane jaune : Grande plante, feuilles opposées largement ovales et fleurs jaunes étoilées en verticilles le long de la tige. La racine est amère. On ne la confond pas avec le vératre, aux feuilles alternes."
+        },
+        {
+          "id": "p129",
+          "difficulte": "facile",
+          "nom_commun": "Myrtille",
+          "nom_scientifique": "Vaccinium myrtillus",
+          "groupe": "montagne",
+          "options": [
+            "Myrtille",
+            "Callune",
+            "Edelweiss",
+            "Gentiane acaule"
+          ],
+          "indice": "Baies bleues, rameaux verts anguleux",
+          "description": "Sous-arbrisseau, rameaux verts à angles vifs, feuilles ovales dentées et baies bleu-noir pruineuses.",
+          "explication": "Myrtille : Sous-arbrisseau, rameaux verts à angles vifs, feuilles ovales dentées et baies bleu-noir pruineuses. Elle forme des landes sous les pins et les rhododendrons."
+        },
+        {
+          "id": "p130",
+          "difficulte": "facile",
+          "nom_commun": "Pin cembro",
+          "nom_scientifique": "Pinus cembra",
+          "groupe": "montagne",
+          "options": [
+            "Pin cembro",
+            "Callune",
+            "Edelweiss",
+            "Gentiane acaule"
+          ],
+          "indice": "Aiguilles par cinq",
+          "description": "Pin d'altitude, aiguilles groupées par cinq, cônes ovoïdes qui ne s'ouvrent pas tout seuls.",
+          "explication": "Pin cembro : Pin d'altitude, aiguilles groupées par cinq, cônes ovoïdes qui ne s'ouvrent pas tout seuls. Les graines sont les pignons, dispersés par le casse-noix."
+        },
+        {
+          "id": "p131",
+          "difficulte": "moyen",
+          "nom_commun": "Rhododendron ferrugineux",
+          "nom_scientifique": "Rhododendron ferrugineum",
+          "groupe": "montagne",
+          "options": [
+            "Rhododendron ferrugineux",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Mélèze d'Europe"
+          ],
+          "indice": "Buisson, fleurs roses, dessous rouille",
+          "description": "Buisson persistant, feuilles à dessous couleur rouille, et grappes de fleurs rose vif.",
+          "explication": "Rhododendron ferrugineux : Buisson persistant, feuilles à dessous couleur rouille, et grappes de fleurs rose vif. Il couvre les ubacs siliceux, au-dessus de la forêt."
+        },
+        {
+          "id": "p132",
+          "difficulte": "moyen",
+          "nom_commun": "Mélèze d'Europe",
+          "nom_scientifique": "Larix decidua",
+          "groupe": "montagne",
+          "options": [
+            "Mélèze d'Europe",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Conifère qui jaunit et perd ses aiguilles",
+          "description": "Aiguilles molles en touffes, vert clair, jaunes à l'automne puis caduques. Cônes petits et dressés.",
+          "explication": "Mélèze d'Europe : Aiguilles molles en touffes, vert clair, jaunes à l'automne puis caduques. Cônes petits et dressés. C'est le conifère des versants ensoleillés."
+        },
+        {
+          "id": "p133",
+          "difficulte": "moyen",
+          "nom_commun": "Dryade à huit pétales",
+          "nom_scientifique": "Dryas octopetala",
+          "groupe": "montagne",
+          "options": [
+            "Dryade à huit pétales",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Petit tapis, fleur blanche à huit pétales",
+          "description": "Sous-arbrisseau rampant, feuilles en petit chêne à dessous blanc, fleur blanche à huit pétales.",
+          "explication": "Dryade à huit pétales : Sous-arbrisseau rampant, feuilles en petit chêne à dessous blanc, fleur blanche à huit pétales. Les fruits portent une aigrette plumeuse."
+        },
+        {
+          "id": "p134",
+          "difficulte": "moyen",
+          "nom_commun": "Soldanelle des Alpes",
+          "nom_scientifique": "Soldanella alpina",
+          "groupe": "montagne",
+          "options": [
+            "Soldanelle des Alpes",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Clochettes frangées, violettes",
+          "description": "Petites fleurs violettes en cloche, au bord découpé en franges, au-dessus de feuilles rondes coriaces.",
+          "explication": "Soldanelle des Alpes : Petites fleurs violettes en cloche, au bord découpé en franges, au-dessus de feuilles rondes coriaces. Elle fleurit dès la fonte, au bord des névés."
+        },
+        {
+          "id": "p135",
+          "difficulte": "moyen",
+          "nom_commun": "Silène acaule",
+          "nom_scientifique": "Silene acaulis",
+          "groupe": "montagne",
+          "options": [
+            "Silène acaule",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Coussin rose collé au rocher",
+          "description": "Coussin très dense de petites feuilles, couvert de fleurs roses à cinq pétales.",
+          "explication": "Silène acaule : Coussin très dense de petites feuilles, couvert de fleurs roses à cinq pétales. Il pousse dans les fentes des rochers d'altitude."
+        },
+        {
+          "id": "p136",
+          "difficulte": "moyen",
+          "nom_commun": "Joubarbe des toits",
+          "nom_scientifique": "Sempervivum tectorum",
+          "groupe": "montagne",
+          "options": [
+            "Joubarbe des toits",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Rosette grasse, hampe de fleurs roses",
+          "description": "Rosettes de feuilles charnues à pointe rougeâtre, et hampe de fleurs roses en étoile.",
+          "explication": "Joubarbe des toits : Rosettes de feuilles charnues à pointe rougeâtre, et hampe de fleurs roses en étoile. Elle vit sur les rochers et les vieux toits."
+        },
+        {
+          "id": "p137",
+          "difficulte": "moyen",
+          "nom_commun": "Pulsatille des Alpes",
+          "nom_scientifique": "Pulsatilla alpina",
+          "groupe": "montagne",
+          "options": [
+            "Pulsatille des Alpes",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Grande fleur blanche soyeuse",
+          "description": "Grande fleur blanche à cœur jaune, tige et feuilles très poilues, puis fruits en tête hirsute.",
+          "explication": "Pulsatille des Alpes : Grande fleur blanche à cœur jaune, tige et feuilles très poilues, puis fruits en tête hirsute. La forme soufrée, à fleurs jaunes, pousse sur silice."
+        },
+        {
+          "id": "p138",
+          "difficulte": "moyen",
+          "nom_commun": "Aster des Alpes",
+          "nom_scientifique": "Aster alpinus",
+          "groupe": "montagne",
+          "options": [
+            "Aster des Alpes",
+            "Bruyère cendrée",
+            "Genévrier commun",
+            "Rhododendron ferrugineux"
+          ],
+          "indice": "Capitule violet à cœur jaune",
+          "description": "Un seul capitule par tige, ligules violettes et disque jaune, feuilles en rosette.",
+          "explication": "Aster des Alpes : Un seul capitule par tige, ligules violettes et disque jaune, feuilles en rosette. Il fleurit sur les pelouses sèches et les rochers."
+        },
+        {
+          "id": "p139",
+          "difficulte": "difficile",
+          "nom_commun": "Saxifrage à feuilles opposées",
+          "nom_scientifique": "Saxifraga oppositifolia",
+          "groupe": "montagne",
+          "options": [
+            "Saxifrage à feuilles opposées",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Coussin, fleurs rose pourpré",
+          "description": "Coussin de petites feuilles opposées, et fleurs rose-pourpre presque sans pédoncule, à cinq pétales.",
+          "explication": "Saxifrage à feuilles opposées : Coussin de petites feuilles opposées, et fleurs rose-pourpre presque sans pédoncule, à cinq pétales. C'est l'une des plantes qui fleurissent le plus haut."
+        },
+        {
+          "id": "p140",
+          "difficulte": "difficile",
+          "nom_commun": "Androsace des Alpes",
+          "nom_scientifique": "Androsace alpina",
+          "groupe": "montagne",
+          "options": [
+            "Androsace des Alpes",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Coussin, fleurs blanches ou roses à œil jaune",
+          "description": "Coussin lâche de petites feuilles, fleurs blanches ou roses à gorge jaune, presque sessiles.",
+          "explication": "Androsace des Alpes : Coussin lâche de petites feuilles, fleurs blanches ou roses à gorge jaune, presque sessiles. Elle colonise les moraines et les éboulis siliceux."
+        },
+        {
+          "id": "p141",
+          "difficulte": "difficile",
+          "nom_commun": "Raisin d'ours",
+          "nom_scientifique": "Arctostaphylos uva-ursi",
+          "groupe": "montagne",
+          "options": [
+            "Raisin d'ours",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Tapis, baies rouges, feuilles coriaces",
+          "description": "Arbrisseau rampant, feuilles ovales coriaces entières et petites fleurs en grelot, puis baies rouges.",
+          "explication": "Raisin d'ours : Arbrisseau rampant, feuilles ovales coriaces entières et petites fleurs en grelot, puis baies rouges. Il couvre les landes sèches et les pins."
+        },
+        {
+          "id": "p142",
+          "difficulte": "difficile",
+          "nom_commun": "Airelle rouge",
+          "nom_scientifique": "Vaccinium vitis-idaea",
+          "groupe": "montagne",
+          "options": [
+            "Airelle rouge",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Petites feuilles coriaces, baies rouges",
+          "description": "Sous-arbrisseau, feuilles ovales luisantes à dessous ponctué, fleurs en cloche blanche et baies rouges.",
+          "explication": "Airelle rouge : Sous-arbrisseau, feuilles ovales luisantes à dessous ponctué, fleurs en cloche blanche et baies rouges. Contrairement à la myrtille, les rameaux sont ronds et bruns."
+        },
+        {
+          "id": "p143",
+          "difficulte": "difficile",
+          "nom_commun": "Camarine noire",
+          "nom_scientifique": "Empetrum nigrum",
+          "groupe": "montagne",
+          "options": [
+            "Camarine noire",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Tiges couchées, baies noires",
+          "description": "Sous-arbrisseau de lande, feuilles en aiguilles, fleurs minuscules et baies noires.",
+          "explication": "Camarine noire : Sous-arbrisseau de lande, feuilles en aiguilles, fleurs minuscules et baies noires. Elle pousse dans les tourbières et les landes froides."
+        },
+        {
+          "id": "p144",
+          "difficulte": "difficile",
+          "nom_commun": "Azalée des Alpes",
+          "nom_scientifique": "Kalmia procumbens",
+          "groupe": "montagne",
+          "options": [
+            "Azalée des Alpes",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Tapis, fleurs roses à cinq lobes",
+          "description": "Tout petit buisson prostré, feuilles opposées coriaces et fleurs roses à cinq lobes.",
+          "explication": "Azalée des Alpes : Tout petit buisson prostré, feuilles opposées coriaces et fleurs roses à cinq lobes. On la trouve sur les crêtes ventées, avec la camarine."
+        },
+        {
+          "id": "p145",
+          "difficulte": "difficile",
+          "nom_commun": "Linaigrette à feuilles étroites",
+          "nom_scientifique": "Eriophorum angustifolium",
+          "groupe": "montagne",
+          "options": [
+            "Linaigrette à feuilles étroites",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Pompons de coton blanc",
+          "description": "Feuilles étroites en gouttière et plusieurs pompons blancs soyeux par tige, dans les tourbières.",
+          "explication": "Linaigrette à feuilles étroites : Feuilles étroites en gouttière et plusieurs pompons blancs soyeux par tige, dans les tourbières. Les houppes sont les soies des fruits."
+        },
+        {
+          "id": "p146",
+          "difficulte": "difficile",
+          "nom_commun": "Lys martagon",
+          "nom_scientifique": "Lilium martagon",
+          "groupe": "montagne",
+          "options": [
+            "Lys martagon",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Fleurs roses ponctuées, pétales recourbés",
+          "description": "Hampe de fleurs rose ponctué de pourpre, pétales fortement recourbés, feuilles en verticilles.",
+          "explication": "Lys martagon : Hampe de fleurs rose ponctué de pourpre, pétales fortement recourbés, feuilles en verticilles. Il pousse dans les mégaphorbiaies et les lisières de montagne."
+        },
+        {
+          "id": "p147",
+          "difficulte": "difficile",
+          "nom_commun": "Sabot de Vénus",
+          "nom_scientifique": "Cypripedium calceolus",
+          "groupe": "montagne",
+          "options": [
+            "Sabot de Vénus",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Fleur en sabot jaune",
+          "description": "Grande orchidée, sépales bruns torsadés et labelle jaune gonflé en sabot.",
+          "explication": "Sabot de Vénus : Grande orchidée, sépales bruns torsadés et labelle jaune gonflé en sabot. Elle est rare, liée aux sous-bois calcaires de montagne."
+        },
+        {
+          "id": "p148",
+          "difficulte": "difficile",
+          "nom_commun": "Nigritelle noire",
+          "nom_scientifique": "Gymnadenia rhellicani",
+          "groupe": "montagne",
+          "options": [
+            "Nigritelle noire",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Épi presque noir, odeur de vanille",
+          "description": "Petit épi dense, fleurs très sombres rouge-noir, à odeur de vanille.",
+          "explication": "Nigritelle noire : Petit épi dense, fleurs très sombres rouge-noir, à odeur de vanille. Elle fleurit tôt sur les pelouses alpines."
+        },
+        {
+          "id": "p149",
+          "difficulte": "difficile",
+          "nom_commun": "Ancolie des Alpes",
+          "nom_scientifique": "Aquilegia alpina",
+          "groupe": "montagne",
+          "options": [
+            "Ancolie des Alpes",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Grande fleur bleue à longs éperons",
+          "description": "Grande fleur bleu vif, à éperons droits ou peu courbés, plus grande que l'ancolie commune.",
+          "explication": "Ancolie des Alpes : Grande fleur bleu vif, à éperons droits ou peu courbés, plus grande que l'ancolie commune. Elle pousse dans les mégaphorbiaies et les couloirs d'altitude."
+        },
+        {
+          "id": "p150",
+          "difficulte": "difficile",
+          "nom_commun": "Vératre blanc",
+          "nom_scientifique": "Veratrum album",
+          "groupe": "montagne",
+          "options": [
+            "Vératre blanc",
+            "Arnica",
+            "Chardon bleu",
+            "Droséra à feuilles rondes"
+          ],
+          "indice": "Haut, grappes de fleurs blanches",
+          "description": "Très grande plante, larges feuilles alternes plissées et longue grappe de fleurs blanches ou verdâtres.",
+          "explication": "Vératre blanc : Très grande plante, larges feuilles alternes plissées et longue grappe de fleurs blanches ou verdâtres. Toxique. On le distingue de la gentiane jaune aux feuilles opposées."
+        }
+      ]
+    },
+    {
+      "id": "littoral",
+      "label": "Bord de mer",
+      "questions": [
+        {
+          "id": "p151",
+          "difficulte": "facile",
+          "nom_commun": "Oyat",
+          "nom_scientifique": "Ammophila arenaria",
+          "groupe": "littoral",
+          "options": [
+            "Oyat",
+            "Armérie maritime",
+            "Criste marine",
+            "Salicorne d'Europe"
+          ],
+          "indice": "Grande herbe des dunes, feuilles enroulées",
+          "description": "Graminée en touffes, feuilles gris-vert enroulées, et panicule beige en épi allongé.",
+          "explication": "Oyat : Graminée en touffes, feuilles gris-vert enroulées, et panicule beige en épi allongé. Ses rhizomes fixent les dunes."
+        },
+        {
+          "id": "p152",
+          "difficulte": "facile",
+          "nom_commun": "Armérie maritime",
+          "nom_scientifique": "Armeria maritima",
+          "groupe": "littoral",
+          "options": [
+            "Armérie maritime",
+            "Oyat",
+            "Criste marine",
+            "Salicorne d'Europe"
+          ],
+          "indice": "Pompons roses sur une hampe",
+          "description": "Coussin de feuilles linéaires et pompon rose au bout d'une hampe nue.",
+          "explication": "Armérie maritime : Coussin de feuilles linéaires et pompon rose au bout d'une hampe nue. Elle pousse sur les falaises et les prés salés."
+        },
+        {
+          "id": "p153",
+          "difficulte": "facile",
+          "nom_commun": "Criste marine",
+          "nom_scientifique": "Crithmum maritimum",
+          "groupe": "littoral",
+          "options": [
+            "Criste marine",
+            "Oyat",
+            "Armérie maritime",
+            "Salicorne d'Europe"
+          ],
+          "indice": "Feuilles charnues divisées, fleurs jaune-vert",
+          "description": "Feuilles épaisses, glauques, divisées en segments charnus, et ombelles de fleurs jaunâtres.",
+          "explication": "Criste marine : Feuilles épaisses, glauques, divisées en segments charnus, et ombelles de fleurs jaunâtres. Elle pousse dans les fentes des rochers battus par les embruns."
+        },
+        {
+          "id": "p154",
+          "difficulte": "facile",
+          "nom_commun": "Salicorne d'Europe",
+          "nom_scientifique": "Salicornia europaea",
+          "groupe": "littoral",
+          "options": [
+            "Salicorne d'Europe",
+            "Oyat",
+            "Armérie maritime",
+            "Criste marine"
+          ],
+          "indice": "Tiges charnues sans feuilles visibles",
+          "description": "Tiges articulées, charnues, vertes puis rouges, sans feuilles développées, dans la vase salée.",
+          "explication": "Salicorne d'Europe : Tiges articulées, charnues, vertes puis rouges, sans feuilles développées, dans la vase salée. On la croque, d'où son nom de cornichon de mer."
+        },
+        {
+          "id": "p155",
+          "difficulte": "moyen",
+          "nom_commun": "Chou marin",
+          "nom_scientifique": "Crambe maritima",
+          "groupe": "littoral",
+          "options": [
+            "Chou marin",
+            "Panicaut maritime",
+            "Liseron des dunes",
+            "Cakilier"
+          ],
+          "indice": "Grosses feuilles bleutées, fleurs blanches",
+          "description": "Grandes feuilles épaisses, bleu-vert, ondulées, et grappes de fleurs blanches à quatre pétales.",
+          "explication": "Chou marin : Grandes feuilles épaisses, bleu-vert, ondulées, et grappes de fleurs blanches à quatre pétales. Il pousse sur les galets et le haut des plages."
+        },
+        {
+          "id": "p156",
+          "difficulte": "moyen",
+          "nom_commun": "Panicaut maritime",
+          "nom_scientifique": "Eryngium maritimum",
+          "groupe": "littoral",
+          "options": [
+            "Panicaut maritime",
+            "Chou marin",
+            "Liseron des dunes",
+            "Cakilier"
+          ],
+          "indice": "Bleu-gris, feuilles épineuses, fleurs en tête",
+          "description": "Plante bleu métallique, feuilles raides très épineuses et fleurs en têtes arrondies.",
+          "explication": "Panicaut maritime : Plante bleu métallique, feuilles raides très épineuses et fleurs en têtes arrondies. Il est typique des dunes mobiles."
+        },
+        {
+          "id": "p157",
+          "difficulte": "moyen",
+          "nom_commun": "Liseron des dunes",
+          "nom_scientifique": "Calystegia soldanella",
+          "groupe": "littoral",
+          "options": [
+            "Liseron des dunes",
+            "Chou marin",
+            "Panicaut maritime",
+            "Cakilier"
+          ],
+          "indice": "Fleur rose en entonnoir, feuilles en rein",
+          "description": "Tiges rampantes, feuilles réniformes charnues et grandes fleurs roses rayées de blanc.",
+          "explication": "Liseron des dunes : Tiges rampantes, feuilles réniformes charnues et grandes fleurs roses rayées de blanc. Il court sur le sable, sans s'enrouler en hauteur."
+        },
+        {
+          "id": "p158",
+          "difficulte": "moyen",
+          "nom_commun": "Cakilier",
+          "nom_scientifique": "Cakile maritima",
+          "groupe": "littoral",
+          "options": [
+            "Cakilier",
+            "Chou marin",
+            "Panicaut maritime",
+            "Liseron des dunes"
+          ],
+          "indice": "Fleurs lilas, feuilles charnues",
+          "description": "Plante étalée des laisses de mer, feuilles épaisses découpées et fleurs lilas à quatre pétales.",
+          "explication": "Cakilier : Plante étalée des laisses de mer, feuilles épaisses découpées et fleurs lilas à quatre pétales. Les fruits sont articulés en deux parties."
+        },
+        {
+          "id": "p159",
+          "difficulte": "difficile",
+          "nom_commun": "Obione",
+          "nom_scientifique": "Halimione portulacoides",
+          "groupe": "littoral",
+          "options": [
+            "Obione",
+            "Soude maritime",
+            "Statice commun",
+            "Betterave maritime"
+          ],
+          "indice": "Buisson gris argenté des vases",
+          "description": "Sous-arbrisseau, feuilles opposées épaisses gris argenté, et petites fleurs verdâtres.",
+          "explication": "Obione : Sous-arbrisseau, feuilles opposées épaisses gris argenté, et petites fleurs verdâtres. Il forme des tapis sur les prés salés."
+        },
+        {
+          "id": "p160",
+          "difficulte": "difficile",
+          "nom_commun": "Soude maritime",
+          "nom_scientifique": "Suaeda maritima",
+          "groupe": "littoral",
+          "options": [
+            "Soude maritime",
+            "Obione",
+            "Statice commun",
+            "Betterave maritime"
+          ],
+          "indice": "Petite, charnue, souvent rougeâtre",
+          "description": "Petite plante aux feuilles charnues demi-cylindriques, vertes puis pourpres, sans épines.",
+          "explication": "Soude maritime : Petite plante aux feuilles charnues demi-cylindriques, vertes puis pourpres, sans épines. Elle pousse dans la vase, avec les salicornes."
+        },
+        {
+          "id": "p161",
+          "difficulte": "difficile",
+          "nom_commun": "Statice commun",
+          "nom_scientifique": "Limonium vulgare",
+          "groupe": "littoral",
+          "options": [
+            "Statice commun",
+            "Obione",
+            "Soude maritime",
+            "Betterave maritime"
+          ],
+          "indice": "Nuage de petites fleurs violettes",
+          "description": "Rosette de feuilles en spatule et hampe ramifiée de petites fleurs violet-bleu à bractées parcheminées.",
+          "explication": "Statice commun : Rosette de feuilles en spatule et hampe ramifiée de petites fleurs violet-bleu à bractées parcheminées. Il fleurit en été sur les prés salés."
+        },
+        {
+          "id": "p162",
+          "difficulte": "difficile",
+          "nom_commun": "Betterave maritime",
+          "nom_scientifique": "Beta vulgaris subsp. maritima",
+          "groupe": "littoral",
+          "options": [
+            "Betterave maritime",
+            "Obione",
+            "Soude maritime",
+            "Statice commun"
+          ],
+          "indice": "Tige rougeâtre, fleurs en glomérules",
+          "description": "Tige souvent rouge, feuilles charnues en losange et fleurs verdâtres en glomérules le long des rameaux.",
+          "explication": "Betterave maritime : Tige souvent rouge, feuilles charnues en losange et fleurs verdâtres en glomérules le long des rameaux. C'est l'ancêtre sauvage de la betterave, sur le haut de plage."
+        },
+        {
+          "id": "p163",
+          "difficulte": "difficile",
+          "nom_commun": "Pourpier de mer",
+          "nom_scientifique": "Honckenya peploides",
+          "groupe": "littoral",
+          "options": [
+            "Pourpier de mer",
+            "Obione",
+            "Soude maritime",
+            "Statice commun"
+          ],
+          "indice": "Coussin de feuilles ovales charnues",
+          "description": "Plante en coussin, feuilles opposées ovales très épaisses, et petites fleurs blanc-vert.",
+          "explication": "Pourpier de mer : Plante en coussin, feuilles opposées ovales très épaisses, et petites fleurs blanc-vert. Elle retient le sable au pied des dunes."
+        },
+        {
+          "id": "p164",
+          "difficulte": "difficile",
+          "nom_commun": "Élyme des sables",
+          "nom_scientifique": "Leymus arenarius",
+          "groupe": "littoral",
+          "options": [
+            "Élyme des sables",
+            "Obione",
+            "Soude maritime",
+            "Statice commun"
+          ],
+          "indice": "Grand chiendent bleu des dunes",
+          "description": "Grande graminée bleu-gris, feuilles larges raides et épi dense beige.",
+          "explication": "Élyme des sables : Grande graminée bleu-gris, feuilles larges raides et épi dense beige. Il fixe la dune avec l'oyat, mais ses feuilles sont plus larges et plus bleues."
+        },
+        {
+          "id": "p165",
+          "difficulte": "difficile",
+          "nom_commun": "Silène de mer",
+          "nom_scientifique": "Silene uniflora",
+          "groupe": "littoral",
+          "options": [
+            "Silène de mer",
+            "Obione",
+            "Soude maritime",
+            "Statice commun"
+          ],
+          "indice": "Calice gonflé, fleurs blanches",
+          "description": "Coussins sur les galets, fleurs blanches à pétales fendus et calice en vessie très renflé.",
+          "explication": "Silène de mer : Coussins sur les galets, fleurs blanches à pétales fendus et calice en vessie très renflé. Chaque tige ne porte en général qu'une à trois fleurs."
+        }
+      ]
+    }
+  ]
+}

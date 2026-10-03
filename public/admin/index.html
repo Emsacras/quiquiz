@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Admin — photos quiz</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <p class="crumb"><a href="/">← QuiQuiz</a></p>
+        <h1>Admin — photos quiz</h1>
+        <p class="lead">
+          Parcours les quiz comme en référence, ouvre une espèce, puis valide ou blacklist ses photos.
+        </p>
+      </header>
+
+      <section id="gate" class="panel">
+        <p class="status">Vérification de la session Steam…</p>
+      </section>
+
+      <section id="app" class="hidden">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab is-active" data-tab="browse">Parcourir</button>
+          <button type="button" class="tab" data-tab="lists">Listes</button>
+        </div>
+        <div id="nav" class="nav-bar"></div>
+        <div id="panel" class="panel"></div>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Aperçu photo" hidden>
+      <button type="button" class="lightbox-backdrop" aria-label="Fermer"></button>
+      <div class="lightbox-dialog">
+        <button type="button" class="lightbox-close btn" aria-label="Fermer">Fermer</button>
+        <img id="lightboxImg" class="lightbox-img" alt="" />
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <script type="module" src="./admin.js"></script>
+  </body>
+</html>

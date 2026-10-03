@@ -1,0 +1,2502 @@
+{
+  "id": "poissons-france",
+  "categorie": "Poissons de France",
+  "description": "Identifier les poissons de France à partir d'une photo. Coche un ou plusieurs groupes, puis choisis le niveau.",
+  "groupes": [
+    {
+      "id": "riviere",
+      "label": "Rivières",
+      "questions": [
+        {
+          "id": "fi1",
+          "difficulte": "facile",
+          "nom_commun": "Truite fario",
+          "nom_scientifique": "Salmo trutta",
+          "groupe": "riviere",
+          "options": [
+            "Truite fario",
+            "Brochet",
+            "Perche",
+            "Gardon"
+          ],
+          "indice": "Tachetée, nageoire adipeuse",
+          "description": "Corps fuselé, dos brun-olive, flancs tachés de noir et souvent de rouge, et petite nageoire adipeuse.",
+          "explication": "Truite fario : Corps fuselé, dos brun-olive, flancs tachés de noir et souvent de rouge, et petite nageoire adipeuse. La forme de mer et la forme de lac sont la même espèce. Ici, c'est la truite des rivières."
+        },
+        {
+          "id": "fi2",
+          "difficulte": "facile",
+          "nom_commun": "Brochet",
+          "nom_scientifique": "Esox lucius",
+          "groupe": "riviere",
+          "options": [
+            "Brochet",
+            "Truite fario",
+            "Perche",
+            "Gardon"
+          ],
+          "indice": "Bec de canard, dos en flèche",
+          "description": "Très allongé, museau aplati en bec, nageoire dorsale rejetée en arrière et robe verte barrée.",
+          "explication": "Brochet : Très allongé, museau aplati en bec, nageoire dorsale rejetée en arrière et robe verte barrée. Il chasse à l'affût dans les herbiers."
+        },
+        {
+          "id": "fi3",
+          "difficulte": "facile",
+          "nom_commun": "Perche",
+          "nom_scientifique": "Perca fluviatilis",
+          "groupe": "riviere",
+          "options": [
+            "Perche",
+            "Truite fario",
+            "Brochet",
+            "Gardon"
+          ],
+          "indice": "Rayures verticales, nageoires rouges",
+          "description": "Dos élevé, bandes verticales sombres, nageoires pelviennes et anale rougeâtres.",
+          "explication": "Perche : Dos élevé, bandes verticales sombres, nageoires pelviennes et anale rougeâtres. La première dorsale est épineuse."
+        },
+        {
+          "id": "fi4",
+          "difficulte": "facile",
+          "nom_commun": "Gardon",
+          "nom_scientifique": "Rutilus rutilus",
+          "groupe": "riviere",
+          "options": [
+            "Gardon",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Écailles argentées, œil rouge",
+          "description": "Corps argenté, œil à iris rouge, nageoires souvent rougeâtres et bouche terminale.",
+          "explication": "Gardon : Corps argenté, œil à iris rouge, nageoires souvent rougeâtres et bouche terminale. C'est le poisson blanc le plus commun des eaux calmes."
+        },
+        {
+          "id": "fi5",
+          "difficulte": "facile",
+          "nom_commun": "Chevesne",
+          "nom_scientifique": "Squalius cephalus",
+          "groupe": "riviere",
+          "options": [
+            "Chevesne",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Grosse tête, écailles larges bordées de sombre",
+          "description": "Corps allongé, grosses écailles sombres sur le bord, nageoires sombres et bouche large.",
+          "explication": "Chevesne : Corps allongé, grosses écailles sombres sur le bord, nageoires sombres et bouche large. Il gobe en surface, souvent sous les arbres."
+        },
+        {
+          "id": "fi6",
+          "difficulte": "facile",
+          "nom_commun": "Goujon",
+          "nom_scientifique": "Gobio gobio",
+          "groupe": "riviere",
+          "options": [
+            "Goujon",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Petits barbillons, taches le long du flanc",
+          "description": "Petit, ventre plat, deux barbillons aux coins de la bouche et une rangée de taches sombres sur le flanc.",
+          "explication": "Goujon : Petit, ventre plat, deux barbillons aux coins de la bouche et une rangée de taches sombres sur le flanc. Il vit sur le fond, en bancs."
+        },
+        {
+          "id": "fi7",
+          "difficulte": "facile",
+          "nom_commun": "Vairon",
+          "nom_scientifique": "Phoxinus phoxinus",
+          "groupe": "riviere",
+          "options": [
+            "Vairon",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Minuscule, bande sombre, souvent une ligne dorée",
+          "description": "Tout petit, bande latérale sombre, et chez le mâle en frai une bande dorée et un ventre rouge.",
+          "explication": "Vairon : Tout petit, bande latérale sombre, et chez le mâle en frai une bande dorée et un ventre rouge. Il forme des bancs vifs dans les radiers."
+        },
+        {
+          "id": "fi8",
+          "difficulte": "facile",
+          "nom_commun": "Épinoche",
+          "nom_scientifique": "Gasterosteus aculeatus",
+          "groupe": "riviere",
+          "options": [
+            "Épinoche",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Trois épines sur le dos",
+          "description": "Petit, trois épines dorsales libres. Le mâle en frai a le ventre rouge vif.",
+          "explication": "Épinoche : Petit, trois épines dorsales libres. Le mâle en frai a le ventre rouge vif. Il construit un nid et le garde."
+        },
+        {
+          "id": "fi9",
+          "difficulte": "moyen",
+          "nom_commun": "Barbeau fluviatile",
+          "nom_scientifique": "Barbus barbus",
+          "groupe": "riviere",
+          "options": [
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise",
+            "Ombre commun"
+          ],
+          "indice": "Quatre barbillons, lèvres épaisses",
+          "description": "Corps allongé, museau en avant, quatre barbillons et nageoires souvent rosées.",
+          "explication": "Barbeau fluviatile : Corps allongé, museau en avant, quatre barbillons et nageoires souvent rosées. Il fouille le gravier avec la bouche."
+        },
+        {
+          "id": "fi10",
+          "difficulte": "moyen",
+          "nom_commun": "Hotu",
+          "nom_scientifique": "Chondrostoma nasus",
+          "groupe": "riviere",
+          "options": [
+            "Hotu",
+            "Barbeau fluviatile",
+            "Vandoise",
+            "Ombre commun"
+          ],
+          "indice": "Bouche inférieure droite, comme une fente",
+          "description": "Corps gris, bouche en fente transversale sous le museau, adaptée à râper le biofilm.",
+          "explication": "Hotu : Corps gris, bouche en fente transversale sous le museau, adaptée à râper le biofilm. Il se tient en bancs sur les radiers."
+        },
+        {
+          "id": "fi11",
+          "difficulte": "moyen",
+          "nom_commun": "Vandoise",
+          "nom_scientifique": "Leuciscus leuciscus",
+          "groupe": "riviere",
+          "options": [
+            "Vandoise",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Ombre commun"
+          ],
+          "indice": "Argentée, nageoire anale concave",
+          "description": "Corps élancé argenté, nageoires gris-jaune et anale concave. Plus fine que le chevesne.",
+          "explication": "Vandoise : Corps élancé argenté, nageoires gris-jaune et anale concave. Plus fine que le chevesne. Elle vit en bancs dans le courant."
+        },
+        {
+          "id": "fi12",
+          "difficulte": "moyen",
+          "nom_commun": "Ombre commun",
+          "nom_scientifique": "Thymallus thymallus",
+          "groupe": "riviere",
+          "options": [
+            "Ombre commun",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Grande dorsale colorée",
+          "description": "Fuselé, grande nageoire dorsale haute, violette et ponctuée, et petite bouche.",
+          "explication": "Ombre commun : Fuselé, grande nageoire dorsale haute, violette et ponctuée, et petite bouche. Il hume les insectes à la surface des rivières fraîches."
+        },
+        {
+          "id": "fi13",
+          "difficulte": "moyen",
+          "nom_commun": "Chabot",
+          "nom_scientifique": "Cottus gobio",
+          "groupe": "riviere",
+          "options": [
+            "Chabot",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Grosse tête, pas d'écailles",
+          "description": "Petit, tête énorme, corps en massue sans écailles, nageoires pectorales en éventail.",
+          "explication": "Chabot : Petit, tête énorme, corps en massue sans écailles, nageoires pectorales en éventail. Il reste collé aux pierres du fond."
+        },
+        {
+          "id": "fi14",
+          "difficulte": "moyen",
+          "nom_commun": "Loche franche",
+          "nom_scientifique": "Barbatula barbatula",
+          "groupe": "riviere",
+          "options": [
+            "Loche franche",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Corps marbré, barbillons",
+          "description": "Petit poisson de fond, corps cylindrique marbré et plusieurs barbillons autour de la bouche.",
+          "explication": "Loche franche : Petit poisson de fond, corps cylindrique marbré et plusieurs barbillons autour de la bouche. Elle se cache sous les cailloux, le jour."
+        },
+        {
+          "id": "fi15",
+          "difficulte": "moyen",
+          "nom_commun": "Loche de rivière",
+          "nom_scientifique": "Cobitis taenia",
+          "groupe": "riviere",
+          "options": [
+            "Loche de rivière",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Bande de taches, épine sous l'œil",
+          "description": "Corps allongé, rangées de taches brunes et une petite épine mobile sous l'œil.",
+          "explication": "Loche de rivière : Corps allongé, rangées de taches brunes et une petite épine mobile sous l'œil. Elle s'enfouit dans le sable."
+        },
+        {
+          "id": "fi16",
+          "difficulte": "moyen",
+          "nom_commun": "Ablette",
+          "nom_scientifique": "Alburnus alburnus",
+          "groupe": "riviere",
+          "options": [
+            "Ablette",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Très argentée, ventre tranchant",
+          "description": "Petite, flancs miroir, corps comprimé et ventre en carène entre les pelviennes et l'anale.",
+          "explication": "Ablette : Petite, flancs miroir, corps comprimé et ventre en carène entre les pelviennes et l'anale. Elle forme des bancs juste sous la surface."
+        },
+        {
+          "id": "fi17",
+          "difficulte": "moyen",
+          "nom_commun": "Spirlin",
+          "nom_scientifique": "Alburnoides bipunctatus",
+          "groupe": "riviere",
+          "options": [
+            "Spirlin",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Ligne latérale soulignée de points noirs",
+          "description": "Petit, ligne latérale bordée d'un double pointillé noir, et une bande sombre sur le flanc.",
+          "explication": "Spirlin : Petit, ligne latérale bordée d'un double pointillé noir, et une bande sombre sur le flanc. Il vit dans les eaux vives et claires."
+        },
+        {
+          "id": "fi18",
+          "difficulte": "moyen",
+          "nom_commun": "Blageon",
+          "nom_scientifique": "Telestes souffia",
+          "groupe": "riviere",
+          "options": [
+            "Blageon",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Bande latérale sombre violacée",
+          "description": "Petit cyprinidé des rivières du sud, bande longitudinale sombre souvent violacée.",
+          "explication": "Blageon : Petit cyprinidé des rivières du sud, bande longitudinale sombre souvent violacée. Il se tient en bancs dans le courant."
+        },
+        {
+          "id": "fi19",
+          "difficulte": "moyen",
+          "nom_commun": "Bouvière",
+          "nom_scientifique": "Rhodeus amarus",
+          "groupe": "riviere",
+          "options": [
+            "Bouvière",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Petite, bande bleue, le mâle devient irisé",
+          "description": "Toute petite, bande latérale bleu-vert. Le mâle en frai est irisé, la femelle a un tube de ponte.",
+          "explication": "Bouvière : Toute petite, bande latérale bleu-vert. Le mâle en frai est irisé, la femelle a un tube de ponte. Elle pond dans les moules d'eau douce."
+        },
+        {
+          "id": "fi20",
+          "difficulte": "moyen",
+          "nom_commun": "Tanche",
+          "nom_scientifique": "Tinca tinca",
+          "groupe": "riviere",
+          "options": [
+            "Tanche",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Olive, petites écailles, barbillons",
+          "description": "Corps trapu vert olive, toutes petites écailles, nageoires arrondies et deux barbillons.",
+          "explication": "Tanche : Corps trapu vert olive, toutes petites écailles, nageoires arrondies et deux barbillons. Elle fouille la vase des eaux calmes."
+        },
+        {
+          "id": "fi21",
+          "difficulte": "difficile",
+          "nom_commun": "Toxostome",
+          "nom_scientifique": "Parachondrostoma toxostoma",
+          "groupe": "riviere",
+          "options": [
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune",
+            "Brème bordelière"
+          ],
+          "indice": "Bouche arquée en fer à cheval",
+          "description": "Proche du hotu, mais plus petit, bouche inférieure arquée et non en fente droite.",
+          "explication": "Toxostome : Proche du hotu, mais plus petit, bouche inférieure arquée et non en fente droite. Il vit dans les rivières du sud-ouest et du bassin du Rhône."
+        },
+        {
+          "id": "fi22",
+          "difficulte": "difficile",
+          "nom_commun": "Ide mélanote",
+          "nom_scientifique": "Leuciscus idus",
+          "groupe": "riviere",
+          "options": [
+            "Ide mélanote",
+            "Toxostome",
+            "Brème commune",
+            "Brème bordelière"
+          ],
+          "indice": "Dos sombre, nageoires rougeâtres",
+          "description": "Corps assez élevé, dos brun, flancs argent-or et nageoires souvent lavées de rouge.",
+          "explication": "Ide mélanote : Corps assez élevé, dos brun, flancs argent-or et nageoires souvent lavées de rouge. Il fréquente les grands cours d'eau lents."
+        },
+        {
+          "id": "fi23",
+          "difficulte": "difficile",
+          "nom_commun": "Brème commune",
+          "nom_scientifique": "Abramis brama",
+          "groupe": "riviere",
+          "options": [
+            "Brème commune",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème bordelière"
+          ],
+          "indice": "Corps très haut, très comprimé",
+          "description": "Corps en lame, bronze, longue nageoire anale et bouche protractile vers le bas.",
+          "explication": "Brème commune : Corps en lame, bronze, longue nageoire anale et bouche protractile vers le bas. Elle fouille la vase en bancs, souvent la nuit."
+        },
+        {
+          "id": "fi24",
+          "difficulte": "difficile",
+          "nom_commun": "Brème bordelière",
+          "nom_scientifique": "Blicca bjoerkna",
+          "groupe": "riviere",
+          "options": [
+            "Brème bordelière",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Comme une petite brème, œil plus grand",
+          "description": "Plus petite que la brème commune, œil plus grand que la distance entre l'œil et le bout du museau.",
+          "explication": "Brème bordelière : Plus petite que la brème commune, œil plus grand que la distance entre l'œil et le bout du museau. Les nageoires pectorales sont souvent rougeâtres."
+        },
+        {
+          "id": "fi25",
+          "difficulte": "difficile",
+          "nom_commun": "Rotengle",
+          "nom_scientifique": "Scardinius erythrophthalmus",
+          "groupe": "riviere",
+          "options": [
+            "Rotengle",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Nageoires rouge vif, dos élevé",
+          "description": "Corps élevé, nageoires rouge écarlate et œil doré à iris rouge. La bouche est orientée vers le haut.",
+          "explication": "Rotengle : Corps élevé, nageoires rouge écarlate et œil doré à iris rouge. La bouche est orientée vers le haut. Il se distingue du gardon par la bouche supérieure et le rouge des nageoires."
+        },
+        {
+          "id": "fi26",
+          "difficulte": "difficile",
+          "nom_commun": "Carpe commune",
+          "nom_scientifique": "Cyprinus carpio",
+          "groupe": "riviere",
+          "options": [
+            "Carpe commune",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Barbillons, grande dorsale",
+          "description": "Corps massif, deux paires de barbillons, longue nageoire dorsale et grandes écailles.",
+          "explication": "Carpe commune : Corps massif, deux paires de barbillons, longue nageoire dorsale et grandes écailles. La forme miroir a de grandes écailles irrégulières."
+        },
+        {
+          "id": "fi27",
+          "difficulte": "difficile",
+          "nom_commun": "Carassin",
+          "nom_scientifique": "Carassius carassius",
+          "groupe": "riviere",
+          "options": [
+            "Carassin",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Sans barbillons, dos élevé",
+          "description": "Proche d'une petite carpe, sans barbillons, dos très élevé et nageoire caudale peu échancrée.",
+          "explication": "Carassin : Proche d'une petite carpe, sans barbillons, dos très élevé et nageoire caudale peu échancrée. Il survit dans les mares pauvres en oxygène."
+        },
+        {
+          "id": "fi28",
+          "difficulte": "difficile",
+          "nom_commun": "Épinochette",
+          "nom_scientifique": "Pungitius pungitius",
+          "groupe": "riviere",
+          "options": [
+            "Épinochette",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Sept à douze petites épines",
+          "description": "Plus fine que l'épinoche, avec une série de petites épines dorsales, souvent neuf.",
+          "explication": "Épinochette : Plus fine que l'épinoche, avec une série de petites épines dorsales, souvent neuf. Elle vit dans les eaux riches en végétation."
+        },
+        {
+          "id": "fi29",
+          "difficulte": "difficile",
+          "nom_commun": "Apron du Rhône",
+          "nom_scientifique": "Zingel asper",
+          "groupe": "riviere",
+          "options": [
+            "Apron du Rhône",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Corps en fuseau, bandes sombres",
+          "description": "Corps presque cylindrique, tête plate, trois ou quatre bandes sombres et nageoires pectorales larges.",
+          "explication": "Apron du Rhône : Corps presque cylindrique, tête plate, trois ou quatre bandes sombres et nageoires pectorales larges. Il est nocturne, sur le fond des rivières à courant."
+        },
+        {
+          "id": "fi30",
+          "difficulte": "difficile",
+          "nom_commun": "Lamproie de Planer",
+          "nom_scientifique": "Lampetra planeri",
+          "groupe": "riviere",
+          "options": [
+            "Lamproie de Planer",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Corps d'anguille, disque buccal",
+          "description": "Petite, sans mâchoires, sept pores branchiaux de chaque côté et disque buccal rond.",
+          "explication": "Lamproie de Planer : Petite, sans mâchoires, sept pores branchiaux de chaque côté et disque buccal rond. L'adulte ne se nourrit plus. La larve vit enfouie dans le limon."
+        },
+        {
+          "id": "fi31",
+          "difficulte": "difficile",
+          "nom_commun": "Grémille",
+          "nom_scientifique": "Gymnocephalus cernua",
+          "groupe": "riviere",
+          "options": [
+            "Grémille",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Deux dorsales collées, reflets nacrés",
+          "description": "Petite perche, dos élevé, dorsales soudées et reflets nacrés sur les flancs.",
+          "explication": "Grémille : Petite perche, dos élevé, dorsales soudées et reflets nacrés sur les flancs. Elle vit en bancs sur le fond des eaux lentes."
+        },
+        {
+          "id": "fi109",
+          "difficulte": "facile",
+          "nom_commun": "Gambusie",
+          "nom_scientifique": "Gambusia holbrooki",
+          "groupe": "riviere",
+          "options": [
+            "Gambusie",
+            "Truite fario",
+            "Brochet",
+            "Perche"
+          ],
+          "indice": "Minuscule, bouche tournée vers le haut",
+          "description": "Tout petit, dos gris, ventre clair et bouche supérieure. La femelle est bien plus grande que le mâle.",
+          "explication": "Gambusie : Tout petit, dos gris, ventre clair et bouche supérieure. La femelle est bien plus grande que le mâle. Introduite, elle vit dans les eaux lentes et chaudes."
+        },
+        {
+          "id": "fi110",
+          "difficulte": "moyen",
+          "nom_commun": "Barbeau méridional",
+          "nom_scientifique": "Barbus meridionalis",
+          "groupe": "riviere",
+          "options": [
+            "Barbeau méridional",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Petit barbeau tacheté, du Midi",
+          "description": "Plus petit que le barbeau fluviatile, corps taché de sombre et nageoires souvent ponctuées.",
+          "explication": "Barbeau méridional : Plus petit que le barbeau fluviatile, corps taché de sombre et nageoires souvent ponctuées. Il vit dans les rivières fraîches du sud."
+        },
+        {
+          "id": "fi111",
+          "difficulte": "moyen",
+          "nom_commun": "Pseudorasbora",
+          "nom_scientifique": "Pseudorasbora parva",
+          "groupe": "riviere",
+          "options": [
+            "Pseudorasbora",
+            "Barbeau fluviatile",
+            "Hotu",
+            "Vandoise"
+          ],
+          "indice": "Petite bande sombre, bouche supérieure",
+          "description": "Petit cyprinidé introduit, bande latérale sombre et bouche nettement tournée vers le haut.",
+          "explication": "Pseudorasbora : Petit cyprinidé introduit, bande latérale sombre et bouche nettement tournée vers le haut. Il se répand dans les eaux calmes."
+        },
+        {
+          "id": "fi112",
+          "difficulte": "difficile",
+          "nom_commun": "Able de Heckel",
+          "nom_scientifique": "Leucaspius delineatus",
+          "groupe": "riviere",
+          "options": [
+            "Able de Heckel",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Minuscule, bande latérale qui s'efface",
+          "description": "Très petit, bande latérale incomplète qui s'estompe vers la queue, et bouche tournée vers le haut.",
+          "explication": "Able de Heckel : Très petit, bande latérale incomplète qui s'estompe vers la queue, et bouche tournée vers le haut. Il vit en bancs dans les mares et les bras morts."
+        },
+        {
+          "id": "fi113",
+          "difficulte": "difficile",
+          "nom_commun": "Blennie fluviatile",
+          "nom_scientifique": "Salaria fluviatilis",
+          "groupe": "riviere",
+          "options": [
+            "Blennie fluviatile",
+            "Toxostome",
+            "Ide mélanote",
+            "Brème commune"
+          ],
+          "indice": "Petite blennie des rivières du sud",
+          "description": "Corps sans écailles, crête sur la tête du mâle et robe brun-olive marbrée.",
+          "explication": "Blennie fluviatile : Corps sans écailles, crête sur la tête du mâle et robe brun-olive marbrée. C'est l'une des rares blennies d'eau douce, dans les rivières méditerranéennes."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "lac",
+      "label": "Lacs",
+      "questions": [
+        {
+          "id": "fi32",
+          "difficulte": "facile",
+          "nom_commun": "Sandre",
+          "nom_scientifique": "Sander lucioperca",
+          "groupe": "lac",
+          "options": [
+            "Sandre",
+            "Silure glane",
+            "Omble chevalier",
+            "Corégone"
+          ],
+          "indice": "Grand, yeux vitreux, canines",
+          "description": "Grand, fuselé, deux dorsales, grands yeux laiteux et grandes canines à l'avant de la bouche.",
+          "explication": "Sandre : Grand, fuselé, deux dorsales, grands yeux laiteux et grandes canines à l'avant de la bouche. Il chasse surtout au crépuscule."
+        },
+        {
+          "id": "fi33",
+          "difficulte": "facile",
+          "nom_commun": "Silure glane",
+          "nom_scientifique": "Silurus glanis",
+          "groupe": "lac",
+          "options": [
+            "Silure glane",
+            "Sandre",
+            "Omble chevalier",
+            "Corégone"
+          ],
+          "indice": "Très grand, six barbillons",
+          "description": "Corps allongé sans écailles, tête énorme, six barbillons et petite dorsale.",
+          "explication": "Silure glane : Corps allongé sans écailles, tête énorme, six barbillons et petite dorsale. Il peut dépasser deux mètres dans les grands fleuves et les lacs."
+        },
+        {
+          "id": "fi34",
+          "difficulte": "facile",
+          "nom_commun": "Omble chevalier",
+          "nom_scientifique": "Salvelinus alpinus",
+          "groupe": "lac",
+          "options": [
+            "Omble chevalier",
+            "Sandre",
+            "Silure glane",
+            "Corégone"
+          ],
+          "indice": "Points clairs sur fond sombre",
+          "description": "Salmonidé de lac alpin, dos sombre à points clairs, ventre souvent orange en frai, nageoires bordées de blanc.",
+          "explication": "Omble chevalier : Salmonidé de lac alpin, dos sombre à points clairs, ventre souvent orange en frai, nageoires bordées de blanc. Il vit en profondeur et remonte frayer sur les graviers."
+        },
+        {
+          "id": "fi35",
+          "difficulte": "facile",
+          "nom_commun": "Corégone",
+          "nom_scientifique": "Coregonus lavaretus",
+          "groupe": "lac",
+          "options": [
+            "Corégone",
+            "Sandre",
+            "Silure glane",
+            "Omble chevalier"
+          ],
+          "indice": "Argenté, petite bouche, adipeuse",
+          "description": "Corps argenté allongé, petite bouche et nageoire adipeuse. Pas de points colorés comme une truite.",
+          "explication": "Corégone : Corps argenté allongé, petite bouche et nageoire adipeuse. Pas de points colorés comme une truite. On l'appelle aussi féra ou lavaret selon les lacs."
+        },
+        {
+          "id": "fi36",
+          "difficulte": "moyen",
+          "nom_commun": "Cristivomer",
+          "nom_scientifique": "Salvelinus namaycush",
+          "groupe": "lac",
+          "options": [
+            "Cristivomer",
+            "Lotte",
+            "Perche-soleil",
+            "Black-bass"
+          ],
+          "indice": "Points clairs, queue profondément fourchue",
+          "description": "Grand omble introduit, dos sombre couvert de points clairs jaunes, queue très échancrée.",
+          "explication": "Cristivomer : Grand omble introduit, dos sombre couvert de points clairs jaunes, queue très échancrée. Il vit dans les lacs profonds et froids."
+        },
+        {
+          "id": "fi37",
+          "difficulte": "moyen",
+          "nom_commun": "Lotte",
+          "nom_scientifique": "Lota lota",
+          "groupe": "lac",
+          "options": [
+            "Lotte",
+            "Cristivomer",
+            "Perche-soleil",
+            "Black-bass"
+          ],
+          "indice": "Un seul poisson d'eau douce à barbillon sous le menton, marbré",
+          "description": "Corps allongé marbré, un barbillon sous le menton et une longue nageoire dorsale postérieure.",
+          "explication": "Lotte : Corps allongé marbré, un barbillon sous le menton et une longue nageoire dorsale postérieure. Elle est active la nuit, sur le fond."
+        },
+        {
+          "id": "fi38",
+          "difficulte": "moyen",
+          "nom_commun": "Perche-soleil",
+          "nom_scientifique": "Lepomis gibbosus",
+          "groupe": "lac",
+          "options": [
+            "Perche-soleil",
+            "Cristivomer",
+            "Lotte",
+            "Black-bass"
+          ],
+          "indice": "Ovale, opercule à tache rouge et noire",
+          "description": "Petit, corps élevé et coloré, tache rouge et noire au bout de l'opercule.",
+          "explication": "Perche-soleil : Petit, corps élevé et coloré, tache rouge et noire au bout de l'opercule. Introduite, elle garde un nid rond dans le gravier."
+        },
+        {
+          "id": "fi39",
+          "difficulte": "moyen",
+          "nom_commun": "Black-bass",
+          "nom_scientifique": "Micropterus salmoides",
+          "groupe": "lac",
+          "options": [
+            "Black-bass",
+            "Cristivomer",
+            "Lotte",
+            "Perche-soleil"
+          ],
+          "indice": "Grande bouche, bande sombre",
+          "description": "Corps allongé, très grande bouche et bande longitudinale sombre, parfois discontinue.",
+          "explication": "Black-bass : Corps allongé, très grande bouche et bande longitudinale sombre, parfois discontinue. Introduit, il chasse à l'affût près des herbiers."
+        },
+        {
+          "id": "fi40",
+          "difficulte": "moyen",
+          "nom_commun": "Poisson-chat",
+          "nom_scientifique": "Ameiurus melas",
+          "groupe": "lac",
+          "options": [
+            "Poisson-chat",
+            "Cristivomer",
+            "Lotte",
+            "Perche-soleil"
+          ],
+          "indice": "Huit barbillons, adipeuse",
+          "description": "Sans écailles, huit barbillons, nageoire adipeuse et première dorsale épineuse.",
+          "explication": "Poisson-chat : Sans écailles, huit barbillons, nageoire adipeuse et première dorsale épineuse. Introduit, il vit sur le fond des eaux calmes."
+        },
+        {
+          "id": "fi41",
+          "difficulte": "difficile",
+          "nom_commun": "Carpe de roseau",
+          "nom_scientifique": "Ctenopharyngodon idella",
+          "groupe": "lac",
+          "options": [
+            "Carpe de roseau",
+            "Carpe argentée",
+            "Gobie à taches noires",
+            "Aspe"
+          ],
+          "indice": "Allongée, sans barbillons, écailles larges",
+          "description": "Grande, corps presque cylindrique, écailles très grandes et pas de barbillons.",
+          "explication": "Carpe de roseau : Grande, corps presque cylindrique, écailles très grandes et pas de barbillons. Introduite pour limiter les herbiers. On l'appelle aussi amour blanc."
+        },
+        {
+          "id": "fi42",
+          "difficulte": "difficile",
+          "nom_commun": "Carpe argentée",
+          "nom_scientifique": "Hypophthalmichthys molitrix",
+          "groupe": "lac",
+          "options": [
+            "Carpe argentée",
+            "Carpe de roseau",
+            "Gobie à taches noires",
+            "Aspe"
+          ],
+          "indice": "Œil bas, carène ventrale",
+          "description": "Grande, tête large, œil placé bas et carène tranchante sous le ventre.",
+          "explication": "Carpe argentée : Grande, tête large, œil placé bas et carène tranchante sous le ventre. Elle filtre le plancton. Introduite, elle saute hors de l'eau."
+        },
+        {
+          "id": "fi43",
+          "difficulte": "difficile",
+          "nom_commun": "Gobie à taches noires",
+          "nom_scientifique": "Neogobius melanostomus",
+          "groupe": "lac",
+          "options": [
+            "Gobie à taches noires",
+            "Carpe de roseau",
+            "Carpe argentée",
+            "Aspe"
+          ],
+          "indice": "Tache noire sur la première dorsale",
+          "description": "Petit gobie du fond, ventouse pelvienne et tache noire nette à l'arrière de la première dorsale.",
+          "explication": "Gobie à taches noires : Petit gobie du fond, ventouse pelvienne et tache noire nette à l'arrière de la première dorsale. Invasif, il colonise les grands fleuves et les lacs."
+        },
+        {
+          "id": "fi44",
+          "difficulte": "difficile",
+          "nom_commun": "Aspe",
+          "nom_scientifique": "Leuciscus aspius",
+          "groupe": "lac",
+          "options": [
+            "Aspe",
+            "Carpe de roseau",
+            "Carpe argentée",
+            "Gobie à taches noires"
+          ],
+          "indice": "Grande bouche, chasse en surface",
+          "description": "Grand cyprinidé allongé, bouche large orientée vers le haut et nageoires souvent rougeâtres.",
+          "explication": "Aspe : Grand cyprinidé allongé, bouche large orientée vers le haut et nageoires souvent rougeâtres. Il chasse les ablettes en surface."
+        },
+        {
+          "id": "fi45",
+          "difficulte": "difficile",
+          "nom_commun": "Loche d'étang",
+          "nom_scientifique": "Misgurnus fossilis",
+          "groupe": "lac",
+          "options": [
+            "Loche d'étang",
+            "Carpe de roseau",
+            "Carpe argentée",
+            "Gobie à taches noires"
+          ],
+          "indice": "Dix barbillons, bandes longitudinales",
+          "description": "Corps cylindrique, dix barbillons autour de la bouche et des bandes sombres longitudinales.",
+          "explication": "Loche d'étang : Corps cylindrique, dix barbillons autour de la bouche et des bandes sombres longitudinales. Elle vit dans les mares et les fossés riches en vase, et peut respirer de l'air."
+        },
+        {
+          "id": "fi114",
+          "difficulte": "facile",
+          "nom_commun": "Carassin doré",
+          "nom_scientifique": "Carassius auratus",
+          "groupe": "lac",
+          "options": [
+            "Carassin doré",
+            "Sandre",
+            "Silure glane",
+            "Omble chevalier"
+          ],
+          "indice": "Orange, rouge ou bronze, sans barbillons",
+          "description": "Corps élevé, sans barbillons, souvent orange ou rouge dans les formes d'ornement, bronze à l'état sauvage.",
+          "explication": "Carassin doré : Corps élevé, sans barbillons, souvent orange ou rouge dans les formes d'ornement, bronze à l'état sauvage. Relâché, il survit dans les mares et les étangs."
+        }
+      ]
+    },
+    {
+      "id": "mer",
+      "label": "Mer",
+      "questions": [
+        {
+          "id": "fi46",
+          "difficulte": "facile",
+          "nom_commun": "Bar",
+          "nom_scientifique": "Dicentrarchus labrax",
+          "groupe": "mer",
+          "options": [
+            "Bar",
+            "Daurade royale",
+            "Maquereau",
+            "Sardine"
+          ],
+          "indice": "Argenté, deux dorsales, tache noire sur l'opercule",
+          "description": "Fuselé, argenté, deux nageoires dorsales distinctes et tache noire diffuse sur le bord de l'opercule.",
+          "explication": "Bar : Fuselé, argenté, deux nageoires dorsales distinctes et tache noire diffuse sur le bord de l'opercule. Il chasse en bande le long des côtes et dans les estuaires."
+        },
+        {
+          "id": "fi47",
+          "difficulte": "facile",
+          "nom_commun": "Daurade royale",
+          "nom_scientifique": "Sparus aurata",
+          "groupe": "mer",
+          "options": [
+            "Daurade royale",
+            "Bar",
+            "Maquereau",
+            "Sardine"
+          ],
+          "indice": "Bande dorée entre les yeux",
+          "description": "Corps élevé argenté, bande dorée sur le front et tache noire à l'origine de la ligne latérale.",
+          "explication": "Daurade royale : Corps élevé argenté, bande dorée sur le front et tache noire à l'origine de la ligne latérale. Elle croque les coquillages grâce à des dents broyeuses."
+        },
+        {
+          "id": "fi48",
+          "difficulte": "facile",
+          "nom_commun": "Maquereau",
+          "nom_scientifique": "Scomber scombrus",
+          "groupe": "mer",
+          "options": [
+            "Maquereau",
+            "Bar",
+            "Daurade royale",
+            "Sardine"
+          ],
+          "indice": "Dos bleu-vert zébré",
+          "description": "Fuselé, dos bleu-vert à zébrures noires sinueuses, ventre blanc et petites pinnules avant la queue.",
+          "explication": "Maquereau : Fuselé, dos bleu-vert à zébrures noires sinueuses, ventre blanc et petites pinnules avant la queue. Il nage en bancs rapides, près de la surface."
+        },
+        {
+          "id": "fi49",
+          "difficulte": "facile",
+          "nom_commun": "Sardine",
+          "nom_scientifique": "Sardina pilchardus",
+          "groupe": "mer",
+          "options": [
+            "Sardine",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Petite, taches noires sur le flanc",
+          "description": "Petite, ventre argenté, et une rangée de points noirs sur le flanc. L'opercule est strié.",
+          "explication": "Sardine : Petite, ventre argenté, et une rangée de points noirs sur le flanc. L'opercule est strié. Elle forme d'immenses bancs."
+        },
+        {
+          "id": "fi50",
+          "difficulte": "facile",
+          "nom_commun": "Anchois",
+          "nom_scientifique": "Engraulis encrasicolus",
+          "groupe": "mer",
+          "options": [
+            "Anchois",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Très grande bouche, museau qui dépasse",
+          "description": "Petit, museau pointu qui dépasse une grande bouche, et bande latérale argentée.",
+          "explication": "Anchois : Petit, museau pointu qui dépasse une grande bouche, et bande latérale argentée. Il vit en bancs et filtre le plancton."
+        },
+        {
+          "id": "fi51",
+          "difficulte": "facile",
+          "nom_commun": "Rouget de roche",
+          "nom_scientifique": "Mullus surmuletus",
+          "groupe": "mer",
+          "options": [
+            "Rouget de roche",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Rouge, deux longs barbillons",
+          "description": "Rouge ou rose, deux longs barbillons sous le menton et première dorsale colorée.",
+          "explication": "Rouget de roche : Rouge ou rose, deux longs barbillons sous le menton et première dorsale colorée. Il fouille le sable avec ses barbillons."
+        },
+        {
+          "id": "fi52",
+          "difficulte": "facile",
+          "nom_commun": "Sole commune",
+          "nom_scientifique": "Solea solea",
+          "groupe": "mer",
+          "options": [
+            "Sole commune",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Plate, les deux yeux du même côté",
+          "description": "Corps ovale, brun, les deux yeux sur le côté droit, et petite bouche tordue.",
+          "explication": "Sole commune : Corps ovale, brun, les deux yeux sur le côté droit, et petite bouche tordue. Elle s'ensable et ne laisse voir que les yeux."
+        },
+        {
+          "id": "fi53",
+          "difficulte": "facile",
+          "nom_commun": "Thon rouge",
+          "nom_scientifique": "Thunnus thynnus",
+          "groupe": "mer",
+          "options": [
+            "Thon rouge",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Énorme, nageoires pectorales courtes",
+          "description": "Très grand, fuselé, dos bleu sombre, pinnules jaunes et pectorales courtes.",
+          "explication": "Thon rouge : Très grand, fuselé, dos bleu sombre, pinnules jaunes et pectorales courtes. C'est un chasseur de haute mer, qui s'approche aussi des côtes."
+        },
+        {
+          "id": "fi54",
+          "difficulte": "moyen",
+          "nom_commun": "Daurade grise",
+          "nom_scientifique": "Spondyliosoma cantharus",
+          "groupe": "mer",
+          "options": [
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun",
+            "Pagre"
+          ],
+          "indice": "Gris-bleu, bandes dorées verticales",
+          "description": "Corps ovale gris bleuté, souvent des bandes verticales dorées, et chez le mâle en frai une bosse sur le front.",
+          "explication": "Daurade grise : Corps ovale gris bleuté, souvent des bandes verticales dorées, et chez le mâle en frai une bosse sur le front. Elle vit sur les fonds rocheux et les herbiers."
+        },
+        {
+          "id": "fi55",
+          "difficulte": "moyen",
+          "nom_commun": "Sar commun",
+          "nom_scientifique": "Diplodus sargus",
+          "groupe": "mer",
+          "options": [
+            "Sar commun",
+            "Daurade grise",
+            "Pageot commun",
+            "Pagre"
+          ],
+          "indice": "Argenté, bande noire avant la queue",
+          "description": "Ovale, argenté, cinq bandes verticales sombres peu marquées et une tache noire nette sur le pédoncule caudal.",
+          "explication": "Sar commun : Ovale, argenté, cinq bandes verticales sombres peu marquées et une tache noire nette sur le pédoncule caudal. Il croque les oursins et les moules."
+        },
+        {
+          "id": "fi56",
+          "difficulte": "moyen",
+          "nom_commun": "Pageot commun",
+          "nom_scientifique": "Pagellus erythrinus",
+          "groupe": "mer",
+          "options": [
+            "Pageot commun",
+            "Daurade grise",
+            "Sar commun",
+            "Pagre"
+          ],
+          "indice": "Rose, sans bande noire sur la queue",
+          "description": "Corps rosé, sans la tache noire du pédoncule que portent les sars, et nageoires rosées.",
+          "explication": "Pageot commun : Corps rosé, sans la tache noire du pédoncule que portent les sars, et nageoires rosées. Il vit sur les fonds de sable et de roche."
+        },
+        {
+          "id": "fi57",
+          "difficulte": "moyen",
+          "nom_commun": "Pagre",
+          "nom_scientifique": "Pagrus pagrus",
+          "groupe": "mer",
+          "options": [
+            "Pagre",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Rosé, bout de la queue plus sombre",
+          "description": "Tête massive, corps rose argenté, nageoire caudale sombre à l'extrémité et petites taches bleues.",
+          "explication": "Pagre : Tête massive, corps rose argenté, nageoire caudale sombre à l'extrémité et petites taches bleues. Il possède de fortes dents."
+        },
+        {
+          "id": "fi58",
+          "difficulte": "moyen",
+          "nom_commun": "Denté",
+          "nom_scientifique": "Dentex dentex",
+          "groupe": "mer",
+          "options": [
+            "Denté",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Grand, canines visibles",
+          "description": "Grand sparidé argenté, front bombé, joues lisses et grandes canines à l'avant de la bouche.",
+          "explication": "Denté : Grand sparidé argenté, front bombé, joues lisses et grandes canines à l'avant de la bouche. C'est un chasseur solitaire des secs rocheux."
+        },
+        {
+          "id": "fi59",
+          "difficulte": "moyen",
+          "nom_commun": "Merlan",
+          "nom_scientifique": "Merlangius merlangus",
+          "groupe": "mer",
+          "options": [
+            "Merlan",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Tache noire à la base de la pectorale",
+          "description": "Dos gris-beige, ventre blanc, petite bouche et tache noire caractéristique à la base de la pectorale.",
+          "explication": "Merlan : Dos gris-beige, ventre blanc, petite bouche et tache noire caractéristique à la base de la pectorale. Il vit en bancs près du fond."
+        },
+        {
+          "id": "fi60",
+          "difficulte": "moyen",
+          "nom_commun": "Cabillaud",
+          "nom_scientifique": "Gadus morhua",
+          "groupe": "mer",
+          "options": [
+            "Cabillaud",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Barbillon, trois dorsales",
+          "description": "Grand, trois nageoires dorsales, deux anales, barbillon sous le menton et robe marbrée.",
+          "explication": "Cabillaud : Grand, trois nageoires dorsales, deux anales, barbillon sous le menton et robe marbrée. La ligne latérale est claire."
+        },
+        {
+          "id": "fi61",
+          "difficulte": "moyen",
+          "nom_commun": "Lieu jaune",
+          "nom_scientifique": "Pollachius pollachius",
+          "groupe": "mer",
+          "options": [
+            "Lieu jaune",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Sans barbillon, mâchoire inférieure en avant",
+          "description": "Proche du cabillaud, sans barbillon, mâchoire inférieure qui dépasse et ligne latérale sombre arquée.",
+          "explication": "Lieu jaune : Proche du cabillaud, sans barbillon, mâchoire inférieure qui dépasse et ligne latérale sombre arquée. Il chasse au-dessus des fonds rocheux."
+        },
+        {
+          "id": "fi62",
+          "difficulte": "moyen",
+          "nom_commun": "Lieu noir",
+          "nom_scientifique": "Pollachius virens",
+          "groupe": "mer",
+          "options": [
+            "Lieu noir",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Dos très sombre, ligne latérale blanche droite",
+          "description": "Dos presque noir, ventre blanc, ligne latérale blanche bien droite.",
+          "explication": "Lieu noir : Dos presque noir, ventre blanc, ligne latérale blanche bien droite. Il forme des bancs au large et près des côtes rocheuses."
+        },
+        {
+          "id": "fi63",
+          "difficulte": "moyen",
+          "nom_commun": "Chinchard",
+          "nom_scientifique": "Trachurus trachurus",
+          "groupe": "mer",
+          "options": [
+            "Chinchard",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Ligne de grandes écailles cuirassées",
+          "description": "Fuselé, dos bleu-gris, et une ligne de plaques osseuses le long du flanc.",
+          "explication": "Chinchard : Fuselé, dos bleu-gris, et une ligne de plaques osseuses le long du flanc. Il nage en bancs, souvent avec les maquereaux."
+        },
+        {
+          "id": "fi64",
+          "difficulte": "moyen",
+          "nom_commun": "Hareng",
+          "nom_scientifique": "Clupea harengus",
+          "groupe": "mer",
+          "options": [
+            "Hareng",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Argenté, sans les points de la sardine",
+          "description": "Corps comprimé argenté, dorsale au milieu du dos, et opercule lisse sans les rayures de la sardine.",
+          "explication": "Hareng : Corps comprimé argenté, dorsale au milieu du dos, et opercule lisse sans les rayures de la sardine. Il forme des bancs immenses en Atlantique et en Manche."
+        },
+        {
+          "id": "fi65",
+          "difficulte": "difficile",
+          "nom_commun": "Rouget de vase",
+          "nom_scientifique": "Mullus barbatus",
+          "groupe": "mer",
+          "options": [
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud",
+            "Mostelle"
+          ],
+          "indice": "Rouge, profil plus abrupt",
+          "description": "Proche du rouget de roche, tête plus camuse, le profil du front presque vertical, et premiers rayons de la dorsale incolores.",
+          "explication": "Rouget de vase : Proche du rouget de roche, tête plus camuse, le profil du front presque vertical, et premiers rayons de la dorsale incolores. Il préfère les fonds de vase."
+        },
+        {
+          "id": "fi66",
+          "difficulte": "difficile",
+          "nom_commun": "Merlu",
+          "nom_scientifique": "Merluccius merluccius",
+          "groupe": "mer",
+          "options": [
+            "Merlu",
+            "Rouget de vase",
+            "Tacaud",
+            "Mostelle"
+          ],
+          "indice": "Bouche noire, deux dorsales",
+          "description": "Allongé, grande bouche noire à l'intérieur, deux dorsales dont la seconde est longue.",
+          "explication": "Merlu : Allongé, grande bouche noire à l'intérieur, deux dorsales dont la seconde est longue. Il vit près du fond, le jour, et monte la nuit."
+        },
+        {
+          "id": "fi67",
+          "difficulte": "difficile",
+          "nom_commun": "Tacaud",
+          "nom_scientifique": "Trisopterus luscus",
+          "groupe": "mer",
+          "options": [
+            "Tacaud",
+            "Rouget de vase",
+            "Merlu",
+            "Mostelle"
+          ],
+          "indice": "Bandes verticales, barbillon",
+          "description": "Petit gadidé, bandes verticales brunâtres, barbillon mentonnier et une tache noire à la base des pectorales.",
+          "explication": "Tacaud : Petit gadidé, bandes verticales brunâtres, barbillon mentonnier et une tache noire à la base des pectorales. Il est très commun près des ports et des épaves."
+        },
+        {
+          "id": "fi68",
+          "difficulte": "difficile",
+          "nom_commun": "Mostelle",
+          "nom_scientifique": "Phycis phycis",
+          "groupe": "mer",
+          "options": [
+            "Mostelle",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Barbillons sur la nageoire pelvienne",
+          "description": "Corps brun, deux très longs rayons sur les nageoires pelviennes, comme des antennes.",
+          "explication": "Mostelle : Corps brun, deux très longs rayons sur les nageoires pelviennes, comme des antennes. Elle se cache dans les failles, le jour."
+        },
+        {
+          "id": "fi69",
+          "difficulte": "difficile",
+          "nom_commun": "Baudroie",
+          "nom_scientifique": "Lophius piscatorius",
+          "groupe": "mer",
+          "options": [
+            "Baudroie",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Énorme tête, filament pêcheur",
+          "description": "Tête démesurée et aplatie, bouche immense et premier rayon dorsal en canne à pêche au-dessus de la gueule.",
+          "explication": "Baudroie : Tête démesurée et aplatie, bouche immense et premier rayon dorsal en canne à pêche au-dessus de la gueule. Elle attire les proies en agitant son filament."
+        },
+        {
+          "id": "fi70",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Pierre",
+          "nom_scientifique": "Zeus faber",
+          "groupe": "mer",
+          "options": [
+            "Saint-Pierre",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Ovale, tache noire cerclée",
+          "description": "Corps très comprimé, grandes nageoires en filaments et tache noire ronde cerclée de clair sur le flanc.",
+          "explication": "Saint-Pierre : Corps très comprimé, grandes nageoires en filaments et tache noire ronde cerclée de clair sur le flanc. Il chasse à l'affût, souvent tête en haut."
+        },
+        {
+          "id": "fi71",
+          "difficulte": "difficile",
+          "nom_commun": "Plie",
+          "nom_scientifique": "Pleuronectes platessa",
+          "groupe": "mer",
+          "options": [
+            "Plie",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Plate, taches orange",
+          "description": "Poisson plat, côté droit brun taché d'orange vif, et une ligne d'osselets entre les yeux et les branchies.",
+          "explication": "Plie : Poisson plat, côté droit brun taché d'orange vif, et une ligne d'osselets entre les yeux et les branchies. Elle vit sur le sable."
+        },
+        {
+          "id": "fi72",
+          "difficulte": "difficile",
+          "nom_commun": "Limande",
+          "nom_scientifique": "Limanda limanda",
+          "groupe": "mer",
+          "options": [
+            "Limande",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Plate, peau rugueuse",
+          "description": "Plus petite et plus losangique que la plie, peau rugueuse quand on la caresse de la queue vers la tête, sans taches orange.",
+          "explication": "Limande : Plus petite et plus losangique que la plie, peau rugueuse quand on la caresse de la queue vers la tête, sans taches orange. La ligne latérale fait un arc au-dessus de la pectorale."
+        },
+        {
+          "id": "fi73",
+          "difficulte": "difficile",
+          "nom_commun": "Turbot",
+          "nom_scientifique": "Scophthalmus maximus",
+          "groupe": "mer",
+          "options": [
+            "Turbot",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Grand, rond, les yeux à gauche",
+          "description": "Grand poisson plat presque circulaire, yeux sur le côté gauche, peau couverte de tubercules osseux.",
+          "explication": "Turbot : Grand poisson plat presque circulaire, yeux sur le côté gauche, peau couverte de tubercules osseux. Il s'ensable sur le sable et le gravier."
+        },
+        {
+          "id": "fi74",
+          "difficulte": "difficile",
+          "nom_commun": "Barbue",
+          "nom_scientifique": "Scophthalmus rhombus",
+          "groupe": "mer",
+          "options": [
+            "Barbue",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Comme un turbot, peau lisse",
+          "description": "Proche du turbot, plus losangique, premiers rayons de la dorsale libres et peau lisse sans tubercules.",
+          "explication": "Barbue : Proche du turbot, plus losangique, premiers rayons de la dorsale libres et peau lisse sans tubercules. Elle vit sur les fonds meubles."
+        },
+        {
+          "id": "fi75",
+          "difficulte": "difficile",
+          "nom_commun": "Raie bouclée",
+          "nom_scientifique": "Raja clavata",
+          "groupe": "mer",
+          "options": [
+            "Raie bouclée",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Dos épineux, marbrures",
+          "description": "Corps en losange, dos brun marbré couvert de boucles épineuses, et museau un peu court.",
+          "explication": "Raie bouclée : Corps en losange, dos brun marbré couvert de boucles épineuses, et museau un peu court. La femelle porte ses œufs dans une capsule à cornes."
+        },
+        {
+          "id": "fi76",
+          "difficulte": "difficile",
+          "nom_commun": "Petite roussette",
+          "nom_scientifique": "Scyliorhinus canicula",
+          "groupe": "mer",
+          "options": [
+            "Petite roussette",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Petit requin tacheté",
+          "description": "Petit requin élancé, dos crème couvert de petites taches sombres, et nageoires dorsales rejetées en arrière.",
+          "explication": "Petite roussette : Petit requin élancé, dos crème couvert de petites taches sombres, et nageoires dorsales rejetées en arrière. Elle pond des capsules appelées bourses de sirène."
+        },
+        {
+          "id": "fi77",
+          "difficulte": "difficile",
+          "nom_commun": "Congre",
+          "nom_scientifique": "Conger conger",
+          "groupe": "mer",
+          "options": [
+            "Congre",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Grande anguille grise, dorsale qui commence tôt",
+          "description": "Très grand, gris, sans écailles visibles, nageoire dorsale qui commence au-dessus des pectorales et rejoint la queue.",
+          "explication": "Congre : Très grand, gris, sans écailles visibles, nageoire dorsale qui commence au-dessus des pectorales et rejoint la queue. Il vit dans les trous des digues et des secs."
+        },
+        {
+          "id": "fi78",
+          "difficulte": "difficile",
+          "nom_commun": "Orphie",
+          "nom_scientifique": "Belone belone",
+          "groupe": "mer",
+          "options": [
+            "Orphie",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Bec très long, os verts",
+          "description": "Très allongée, les deux mâchoires en long bec, et les os d'un vert caractéristique.",
+          "explication": "Orphie : Très allongée, les deux mâchoires en long bec, et les os d'un vert caractéristique. Elle chasse juste sous la surface."
+        },
+        {
+          "id": "fi115",
+          "difficulte": "facile",
+          "nom_commun": "Bonite à dos rayé",
+          "nom_scientifique": "Sarda sarda",
+          "groupe": "mer",
+          "options": [
+            "Bonite à dos rayé",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Dos bleu à bandes obliques",
+          "description": "Fuselée, dos bleu-noir à bandes obliques noires, ventre argenté et petites dents visibles.",
+          "explication": "Bonite à dos rayé : Fuselée, dos bleu-noir à bandes obliques noires, ventre argenté et petites dents visibles. Elle chasse en bancs près de la surface."
+        },
+        {
+          "id": "fi116",
+          "difficulte": "facile",
+          "nom_commun": "Saupe",
+          "nom_scientifique": "Sarpa salpa",
+          "groupe": "mer",
+          "options": [
+            "Saupe",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Argentée, dix bandes dorées",
+          "description": "Ovale, argentée, une dizaine de bandes longitudinales dorées et un petit œil.",
+          "explication": "Saupe : Ovale, argentée, une dizaine de bandes longitudinales dorées et un petit œil. Elle broute les herbiers en bancs. Sa chair peut être toxique."
+        },
+        {
+          "id": "fi117",
+          "difficulte": "moyen",
+          "nom_commun": "Oblade",
+          "nom_scientifique": "Oblada melanura",
+          "groupe": "mer",
+          "options": [
+            "Oblade",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Argentée, tache noire cerclée de blanc sur la queue",
+          "description": "Corps ovale argenté et grande tache noire bordée de blanc sur le pédoncule caudal.",
+          "explication": "Oblade : Corps ovale argenté et grande tache noire bordée de blanc sur le pédoncule caudal. Elle nage en bancs au-dessus des roches."
+        },
+        {
+          "id": "fi118",
+          "difficulte": "moyen",
+          "nom_commun": "Castagnole",
+          "nom_scientifique": "Chromis chromis",
+          "groupe": "mer",
+          "options": [
+            "Castagnole",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Petite, brun-noir, queue fourchue",
+          "description": "Petite demoiselle brun sombre, queue échancrée, souvent en nuage au-dessus des rochers.",
+          "explication": "Castagnole : Petite demoiselle brun sombre, queue échancrée, souvent en nuage au-dessus des rochers. Les mâles gardent les œufs sur une pierre."
+        },
+        {
+          "id": "fi119",
+          "difficulte": "moyen",
+          "nom_commun": "Serran-chevrette",
+          "nom_scientifique": "Serranus cabrilla",
+          "groupe": "mer",
+          "options": [
+            "Serran-chevrette",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Bandes verticales, joues striées",
+          "description": "Petit, brun-rouge à bandes verticales claires et joues à stries bleues.",
+          "explication": "Serran-chevrette : Petit, brun-rouge à bandes verticales claires et joues à stries bleues. Il se tient près du fond, souvent seul."
+        },
+        {
+          "id": "fi120",
+          "difficulte": "moyen",
+          "nom_commun": "Serran-écriture",
+          "nom_scientifique": "Serranus scriba",
+          "groupe": "mer",
+          "options": [
+            "Serran-écriture",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Tache bleue sur le ventre, dessins sur la tête",
+          "description": "Proche du serran-chevrette, avec une grande tache bleue sur le flanc et des dessins bleus sur la tête.",
+          "explication": "Serran-écriture : Proche du serran-chevrette, avec une grande tache bleue sur le flanc et des dessins bleus sur la tête. Il vit dans les herbiers et les roches peu profondes."
+        },
+        {
+          "id": "fi121",
+          "difficulte": "moyen",
+          "nom_commun": "Sar à tête noire",
+          "nom_scientifique": "Diplodus vulgaris",
+          "groupe": "mer",
+          "options": [
+            "Sar à tête noire",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Deux bandes noires, une sur la nuque",
+          "description": "Argenté, une bande noire sur la nuque et une autre avant la queue, plus marquées que chez le sar commun.",
+          "explication": "Sar à tête noire : Argenté, une bande noire sur la nuque et une autre avant la queue, plus marquées que chez le sar commun. Il vit en petits groupes sur les fonds rocheux."
+        },
+        {
+          "id": "fi122",
+          "difficulte": "moyen",
+          "nom_commun": "Marbré",
+          "nom_scientifique": "Lithognathus mormyrus",
+          "groupe": "mer",
+          "options": [
+            "Marbré",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Argenté, fines bandes verticales",
+          "description": "Corps allongé argenté, museau pointu et nombreuses fines bandes verticales sombres.",
+          "explication": "Marbré : Corps allongé argenté, museau pointu et nombreuses fines bandes verticales sombres. Il fouille le sable en bancs."
+        },
+        {
+          "id": "fi123",
+          "difficulte": "difficile",
+          "nom_commun": "Dorade rose",
+          "nom_scientifique": "Pagellus bogaraveo",
+          "groupe": "mer",
+          "options": [
+            "Dorade rose",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Rosée, tache noire à l'attache de la pectorale",
+          "description": "Corps rose, front bombé chez les grands individus et tache noire à l'aisselle de la pectorale.",
+          "explication": "Dorade rose : Corps rose, front bombé chez les grands individus et tache noire à l'aisselle de la pectorale. Elle vit plus au large que la daurade royale."
+        },
+        {
+          "id": "fi124",
+          "difficulte": "difficile",
+          "nom_commun": "Bogue",
+          "nom_scientifique": "Boops boops",
+          "groupe": "mer",
+          "options": [
+            "Bogue",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Très allongée, bande dorée",
+          "description": "Corps très élancé, yeux grands, bande longitudinale dorée et petites bandes bleues.",
+          "explication": "Bogue : Corps très élancé, yeux grands, bande longitudinale dorée et petites bandes bleues. Elle forme des bancs au-dessus des fonds mixtes."
+        },
+        {
+          "id": "fi125",
+          "difficulte": "difficile",
+          "nom_commun": "Mendole",
+          "nom_scientifique": "Spicara maena",
+          "groupe": "mer",
+          "options": [
+            "Mendole",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Bande rectangulaire sur le flanc",
+          "description": "Petite, souvent une tache rectangulaire sombre sur le flanc, et le mâle en frai est plus coloré.",
+          "explication": "Mendole : Petite, souvent une tache rectangulaire sombre sur le flanc, et le mâle en frai est plus coloré. Elle vit en bancs près du fond."
+        },
+        {
+          "id": "fi126",
+          "difficulte": "difficile",
+          "nom_commun": "Liche",
+          "nom_scientifique": "Lichia amia",
+          "groupe": "mer",
+          "options": [
+            "Liche",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Profil très bombé, ligne latérale sinueuse",
+          "description": "Grande, comprimée, front très bombé, ligne latérale qui fait un S et nageoire anale longue.",
+          "explication": "Liche : Grande, comprimée, front très bombé, ligne latérale qui fait un S et nageoire anale longue. Elle chasse les mulets le long des plages."
+        },
+        {
+          "id": "fi127",
+          "difficulte": "difficile",
+          "nom_commun": "Sériole",
+          "nom_scientifique": "Seriola dumerili",
+          "groupe": "mer",
+          "options": [
+            "Sériole",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Bande sombre de l'œil à la dorsale",
+          "description": "Grande, fuselée, bande sombre oblique à travers l'œil et petites pinnules avant la queue.",
+          "explication": "Sériole : Grande, fuselée, bande sombre oblique à travers l'œil et petites pinnules avant la queue. Les jeunes suivent souvent les méduses et les épaves."
+        },
+        {
+          "id": "fi128",
+          "difficulte": "difficile",
+          "nom_commun": "Maigre",
+          "nom_scientifique": "Argyrosomus regius",
+          "groupe": "mer",
+          "options": [
+            "Maigre",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Grand, reflets dorés, bouche terminale",
+          "description": "Grand poisson argenté à reflets dorés, bouche terminale et nageoire caudale tronquée.",
+          "explication": "Maigre : Grand poisson argenté à reflets dorés, bouche terminale et nageoire caudale tronquée. Il émet un grondement. On le pêche dans les estuaires et le long des côtes."
+        },
+        {
+          "id": "fi129",
+          "difficulte": "difficile",
+          "nom_commun": "Ombrine",
+          "nom_scientifique": "Umbrina cirrosa",
+          "groupe": "mer",
+          "options": [
+            "Ombrine",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Barbillon sous le menton, bandes obliques",
+          "description": "Corps argenté à bandes obliques dorées et un court barbillon sous la mâchoire.",
+          "explication": "Ombrine : Corps argenté à bandes obliques dorées et un court barbillon sous la mâchoire. Elle fouille le sable des plages et des estuaires."
+        },
+        {
+          "id": "fi130",
+          "difficulte": "difficile",
+          "nom_commun": "Lingue",
+          "nom_scientifique": "Molva molva",
+          "groupe": "mer",
+          "options": [
+            "Lingue",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Très longue, un barbillon, dos marbré",
+          "description": "Corps très allongé, un barbillon mentonnier, dos marbré et une longue nageoire anale.",
+          "explication": "Lingue : Corps très allongé, un barbillon mentonnier, dos marbré et une longue nageoire anale. Elle vit sur les fonds rocheux de l'Atlantique et de la Manche."
+        },
+        {
+          "id": "fi131",
+          "difficulte": "difficile",
+          "nom_commun": "Capelan",
+          "nom_scientifique": "Trisopterus minutus",
+          "groupe": "mer",
+          "options": [
+            "Capelan",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Petit gadidé, trois dorsales",
+          "description": "Petit, trois dorsales, barbillon minuscule et pas les bandes verticales marquées du tacaud.",
+          "explication": "Capelan : Petit, trois dorsales, barbillon minuscule et pas les bandes verticales marquées du tacaud. Il vit en bancs près du fond."
+        },
+        {
+          "id": "fi147",
+          "difficulte": "facile",
+          "nom_commun": "Poisson-lune",
+          "nom_scientifique": "Mola mola",
+          "groupe": "mer",
+          "options": [
+            "Poisson-lune",
+            "Bar",
+            "Daurade royale",
+            "Maquereau"
+          ],
+          "indice": "Énorme disque, sans vraie queue",
+          "description": "Très grand, corps en disque, peau rugueuse et une nageoire à l'arrière qui tient lieu de queue.",
+          "explication": "Poisson-lune : Très grand, corps en disque, peau rugueuse et une nageoire à l'arrière qui tient lieu de queue. Il nage souvent près de la surface, couché sur le flanc."
+        },
+        {
+          "id": "fi148",
+          "difficulte": "moyen",
+          "nom_commun": "Sar à museau pointu",
+          "nom_scientifique": "Diplodus puntazzo",
+          "groupe": "mer",
+          "options": [
+            "Sar à museau pointu",
+            "Daurade grise",
+            "Sar commun",
+            "Pageot commun"
+          ],
+          "indice": "Bandes verticales, museau pointu",
+          "description": "Proche du sar commun, avec un museau plus pointu et des bandes verticales sombres plus nombreuses.",
+          "explication": "Sar à museau pointu : Proche du sar commun, avec un museau plus pointu et des bandes verticales sombres plus nombreuses. Il broute les algues et les invertébrés sur les rochers."
+        },
+        {
+          "id": "fi149",
+          "difficulte": "difficile",
+          "nom_commun": "Rouget grondin",
+          "nom_scientifique": "Chelidonichthys cuculus",
+          "groupe": "mer",
+          "options": [
+            "Rouget grondin",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Pectorales colorées, trois doigts",
+          "description": "Grondin au museau court, grandes pectorales rosées et trois rayons libres sous la tête.",
+          "explication": "Rouget grondin : Grondin au museau court, grandes pectorales rosées et trois rayons libres sous la tête. Il vit sur les fonds de sable et de gravier."
+        },
+        {
+          "id": "fi150",
+          "difficulte": "difficile",
+          "nom_commun": "Cardine",
+          "nom_scientifique": "Lepidorhombus whiffiagonis",
+          "groupe": "mer",
+          "options": [
+            "Cardine",
+            "Rouget de vase",
+            "Merlu",
+            "Tacaud"
+          ],
+          "indice": "Plate, ovale, yeux à gauche",
+          "description": "Poisson plat ovale, yeux sur le côté gauche, peau lisse et bouche assez grande.",
+          "explication": "Cardine : Poisson plat ovale, yeux sur le côté gauche, peau lisse et bouche assez grande. Elle vit sur les fonds de vase de l'Atlantique et de la Manche."
+        }
+      ]
+    },
+    {
+      "id": "cote",
+      "label": "Côte",
+      "questions": [
+        {
+          "id": "fi79",
+          "difficulte": "facile",
+          "nom_commun": "Mulet à grosse tête",
+          "nom_scientifique": "Mugil cephalus",
+          "groupe": "cote",
+          "options": [
+            "Mulet à grosse tête",
+            "Girelle",
+            "Rascasse rouge",
+            "Vive"
+          ],
+          "indice": "Argenté, tête large, paupière adipeuse",
+          "description": "Corps cylindrique argenté, tête large et paupière graisseuse sur l'œil.",
+          "explication": "Mulet à grosse tête : Corps cylindrique argenté, tête large et paupière graisseuse sur l'œil. Il broute le biofilm et saute souvent hors de l'eau."
+        },
+        {
+          "id": "fi80",
+          "difficulte": "facile",
+          "nom_commun": "Girelle",
+          "nom_scientifique": "Coris julis",
+          "groupe": "cote",
+          "options": [
+            "Girelle",
+            "Mulet à grosse tête",
+            "Rascasse rouge",
+            "Vive"
+          ],
+          "indice": "Petite, colorée, souvent une bande orange",
+          "description": "Petit labre coloré. Le mâle a une bande orange en zigzag. La femelle est brune à bande claire.",
+          "explication": "Girelle : Petit labre coloré. Le mâle a une bande orange en zigzag. La femelle est brune à bande claire. Elle nage par saccades au-dessus des rochers."
+        },
+        {
+          "id": "fi81",
+          "difficulte": "facile",
+          "nom_commun": "Rascasse rouge",
+          "nom_scientifique": "Scorpaena scrofa",
+          "groupe": "cote",
+          "options": [
+            "Rascasse rouge",
+            "Mulet à grosse tête",
+            "Girelle",
+            "Vive"
+          ],
+          "indice": "Rouge, épines, lambeaux de peau",
+          "description": "Trapue, rouge, tête épineuse avec des lambeaux cutanés et de grandes pectorales.",
+          "explication": "Rascasse rouge : Trapue, rouge, tête épineuse avec des lambeaux cutanés et de grandes pectorales. Les épines de la dorsale sont venimeuses."
+        },
+        {
+          "id": "fi82",
+          "difficulte": "facile",
+          "nom_commun": "Vive",
+          "nom_scientifique": "Trachinus draco",
+          "groupe": "cote",
+          "options": [
+            "Vive",
+            "Mulet à grosse tête",
+            "Girelle",
+            "Rascasse rouge"
+          ],
+          "indice": "Rayure, bouche oblique, épine dorsale",
+          "description": "Allongée, bandes obliques jaunes et bleues, bouche très oblique et première dorsale noire épineuse.",
+          "explication": "Vive : Allongée, bandes obliques jaunes et bleues, bouche très oblique et première dorsale noire épineuse. Elle s'ensable. La piqûre est très douloureuse."
+        },
+        {
+          "id": "fi83",
+          "difficulte": "moyen",
+          "nom_commun": "Vieille commune",
+          "nom_scientifique": "Labrus bergylta",
+          "groupe": "cote",
+          "options": [
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir",
+            "Blennie gattorugine"
+          ],
+          "indice": "Lèvres épaisses, robe variable",
+          "description": "Labre massif, lèvres charnues, robe verte, brune ou rouge très variable, souvent marbrée.",
+          "explication": "Vieille commune : Labre massif, lèvres charnues, robe verte, brune ou rouge très variable, souvent marbrée. Chaque individu a un dessin différent."
+        },
+        {
+          "id": "fi84",
+          "difficulte": "moyen",
+          "nom_commun": "Crénilabre",
+          "nom_scientifique": "Symphodus melops",
+          "groupe": "cote",
+          "options": [
+            "Crénilabre",
+            "Vieille commune",
+            "Gobie noir",
+            "Blennie gattorugine"
+          ],
+          "indice": "Tache noire sur le pédoncule, en croissant",
+          "description": "Petit labre, tache sombre en forme de rein derrière l'œil et tache noire sur le pédoncule caudal.",
+          "explication": "Crénilabre : Petit labre, tache sombre en forme de rein derrière l'œil et tache noire sur le pédoncule caudal. Il vit dans les algues, près du bord."
+        },
+        {
+          "id": "fi85",
+          "difficulte": "moyen",
+          "nom_commun": "Gobie noir",
+          "nom_scientifique": "Gobius niger",
+          "groupe": "cote",
+          "options": [
+            "Gobie noir",
+            "Vieille commune",
+            "Crénilabre",
+            "Blennie gattorugine"
+          ],
+          "indice": "Ventre en ventouse, première dorsale haute",
+          "description": "Petit poisson de fond, nageoires pelviennes soudées en ventouse et première dorsale assez haute.",
+          "explication": "Gobie noir : Petit poisson de fond, nageoires pelviennes soudées en ventouse et première dorsale assez haute. Le mâle garde les œufs sous une pierre."
+        },
+        {
+          "id": "fi86",
+          "difficulte": "moyen",
+          "nom_commun": "Blennie gattorugine",
+          "nom_scientifique": "Parablennius gattorugine",
+          "groupe": "cote",
+          "options": [
+            "Blennie gattorugine",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Sourcils en arbre, posée sur les pectorales",
+          "description": "Corps sans écailles, grands tentacules au-dessus des yeux et posture appuyée sur les nageoires pectorales.",
+          "explication": "Blennie gattorugine : Corps sans écailles, grands tentacules au-dessus des yeux et posture appuyée sur les nageoires pectorales. Elle vit dans les flaques et les anfractuosités."
+        },
+        {
+          "id": "fi87",
+          "difficulte": "moyen",
+          "nom_commun": "Grondin perlon",
+          "nom_scientifique": "Chelidonichthys lucerna",
+          "groupe": "cote",
+          "options": [
+            "Grondin perlon",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Tête cuirassée, pectorales colorées",
+          "description": "Tête osseuse, et grandes nageoires pectorales bleues et rouges, dont trois rayons libres servent à marcher.",
+          "explication": "Grondin perlon : Tête osseuse, et grandes nageoires pectorales bleues et rouges, dont trois rayons libres servent à marcher. Il grogne quand on le sort de l'eau."
+        },
+        {
+          "id": "fi88",
+          "difficulte": "moyen",
+          "nom_commun": "Hippocampe moucheté",
+          "nom_scientifique": "Hippocampus guttulatus",
+          "groupe": "cote",
+          "options": [
+            "Hippocampe moucheté",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Tête de cheval, queue préhensile",
+          "description": "Corps vertical, museau long, crête et filaments sur le dos, queue qui s'enroule aux algues.",
+          "explication": "Hippocampe moucheté : Corps vertical, museau long, crête et filaments sur le dos, queue qui s'enroule aux algues. Le mâle incube les œufs dans une poche."
+        },
+        {
+          "id": "fi89",
+          "difficulte": "moyen",
+          "nom_commun": "Syngnathe aiguille",
+          "nom_scientifique": "Syngnathus acus",
+          "groupe": "cote",
+          "options": [
+            "Syngnathe aiguille",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Mince comme une algue, museau en tube",
+          "description": "Très long et fin, museau tubulaire, corps annelé et petite nageoire dorsale.",
+          "explication": "Syngnathe aiguille : Très long et fin, museau tubulaire, corps annelé et petite nageoire dorsale. Il se confond avec les zostères."
+        },
+        {
+          "id": "fi90",
+          "difficulte": "difficile",
+          "nom_commun": "Rascasse brune",
+          "nom_scientifique": "Scorpaena porcus",
+          "groupe": "cote",
+          "options": [
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen",
+            "Mérou brun"
+          ],
+          "indice": "Plus petite, lambeaux au-dessus des yeux",
+          "description": "Plus sombre et plus petite que la rascasse rouge, avec de grands lambeaux cutanés au-dessus des yeux.",
+          "explication": "Rascasse brune : Plus sombre et plus petite que la rascasse rouge, avec de grands lambeaux cutanés au-dessus des yeux. Elle vit dans les trous, à faible profondeur."
+        },
+        {
+          "id": "fi91",
+          "difficulte": "difficile",
+          "nom_commun": "Murène",
+          "nom_scientifique": "Muraena helena",
+          "groupe": "cote",
+          "options": [
+            "Murène",
+            "Rascasse brune",
+            "Barracuda européen",
+            "Mérou brun"
+          ],
+          "indice": "Serpent de mer, robe marbrée",
+          "description": "Longue, sans pectorales, robe brune marbrée de jaune et mâchoires à dents pointues.",
+          "explication": "Murène : Longue, sans pectorales, robe brune marbrée de jaune et mâchoires à dents pointues. Elle ne sort que la tête de son trou, le jour."
+        },
+        {
+          "id": "fi92",
+          "difficulte": "difficile",
+          "nom_commun": "Barracuda européen",
+          "nom_scientifique": "Sphyraena sphyraena",
+          "groupe": "cote",
+          "options": [
+            "Barracuda européen",
+            "Rascasse brune",
+            "Murène",
+            "Mérou brun"
+          ],
+          "indice": "Long, museau pointu, grandes dents",
+          "description": "Très allongé, argenté, museau en pointe et grandes dents visibles.",
+          "explication": "Barracuda européen : Très allongé, argenté, museau en pointe et grandes dents visibles. Il chasse en petites bandes près de la surface."
+        },
+        {
+          "id": "fi93",
+          "difficulte": "difficile",
+          "nom_commun": "Mérou brun",
+          "nom_scientifique": "Epinephelus marginatus",
+          "groupe": "cote",
+          "options": [
+            "Mérou brun",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Massif, bouche immense",
+          "description": "Grand, brun marbré de clair, dorsale continue épineuse et très grande bouche.",
+          "explication": "Mérou brun : Grand, brun marbré de clair, dorsale continue épineuse et très grande bouche. Il est territorial sur les secs rocheux."
+        },
+        {
+          "id": "fi94",
+          "difficulte": "difficile",
+          "nom_commun": "Corb",
+          "nom_scientifique": "Sciaena umbra",
+          "groupe": "cote",
+          "options": [
+            "Corb",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Sombre, reflets dorés, dorsale épineuse",
+          "description": "Corps élevé brun-doré, nageoires sombres bordées de blanc et barbillon absent.",
+          "explication": "Corb : Corps élevé brun-doré, nageoires sombres bordées de blanc et barbillon absent. Il vit en petits groupes dans les failles ombragées."
+        },
+        {
+          "id": "fi95",
+          "difficulte": "difficile",
+          "nom_commun": "Muge doré",
+          "nom_scientifique": "Chelon auratus",
+          "groupe": "cote",
+          "options": [
+            "Muge doré",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Tache dorée sur l'opercule",
+          "description": "Mulet au corps allongé, tache dorée caractéristique sur l'opercule et pas de paupière adipeuse épaisse.",
+          "explication": "Muge doré : Mulet au corps allongé, tache dorée caractéristique sur l'opercule et pas de paupière adipeuse épaisse. Il entre dans les ports et les lagunes."
+        },
+        {
+          "id": "fi96",
+          "difficulte": "difficile",
+          "nom_commun": "Sprat",
+          "nom_scientifique": "Sprattus sprattus",
+          "groupe": "cote",
+          "options": [
+            "Sprat",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Petite clupée, ventre en scie",
+          "description": "Très petit, argenté, ventre à carène de petites épines tranchantes de la gorge à l'anale.",
+          "explication": "Sprat : Très petit, argenté, ventre à carène de petites épines tranchantes de la gorge à l'anale. Il forme des bancs dont se nourrissent les oiseaux marins."
+        },
+        {
+          "id": "fi97",
+          "difficulte": "difficile",
+          "nom_commun": "Éperlan",
+          "nom_scientifique": "Osmerus eperlanus",
+          "groupe": "cote",
+          "options": [
+            "Éperlan",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Petit, translucide, odeur de concombre",
+          "description": "Petit poisson argenté translucide, grande bouche et nageoire adipeuse. Frais, il sent le concombre.",
+          "explication": "Éperlan : Petit poisson argenté translucide, grande bouche et nageoire adipeuse. Frais, il sent le concombre. Il vit en bancs dans les estuaires et les eaux saumâtres."
+        },
+        {
+          "id": "fi132",
+          "difficulte": "facile",
+          "nom_commun": "Athérine",
+          "nom_scientifique": "Atherina boyeri",
+          "groupe": "cote",
+          "options": [
+            "Athérine",
+            "Mulet à grosse tête",
+            "Girelle",
+            "Rascasse rouge"
+          ],
+          "indice": "Petite, bande argentée brillante",
+          "description": "Petite, translucide, avec une bande latérale argentée très brillante et deux dorsales.",
+          "explication": "Athérine : Petite, translucide, avec une bande latérale argentée très brillante et deux dorsales. Elle forme des bancs dans les ports, les lagunes et les estuaires."
+        },
+        {
+          "id": "fi133",
+          "difficulte": "facile",
+          "nom_commun": "Labre merle",
+          "nom_scientifique": "Labrus merula",
+          "groupe": "cote",
+          "options": [
+            "Labre merle",
+            "Mulet à grosse tête",
+            "Girelle",
+            "Rascasse rouge"
+          ],
+          "indice": "Sombre, lèvres épaisses, liseré bleu",
+          "description": "Labre brun-noir, lèvres charnues et nageoires souvent bordées de bleu chez le mâle.",
+          "explication": "Labre merle : Labre brun-noir, lèvres charnues et nageoires souvent bordées de bleu chez le mâle. Il nage lentement dans les herbiers."
+        },
+        {
+          "id": "fi134",
+          "difficulte": "moyen",
+          "nom_commun": "Gobie paganel",
+          "nom_scientifique": "Gobius paganellus",
+          "groupe": "cote",
+          "options": [
+            "Gobie paganel",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Ventre en ventouse, bande claire sur la dorsale",
+          "description": "Gobie de cuvette, première dorsale avec une bande claire sur le bord supérieur.",
+          "explication": "Gobie paganel : Gobie de cuvette, première dorsale avec une bande claire sur le bord supérieur. Il reste collé aux rochers, même hors de l'eau un instant."
+        },
+        {
+          "id": "fi135",
+          "difficulte": "moyen",
+          "nom_commun": "Petite vive",
+          "nom_scientifique": "Echiichthys vipera",
+          "groupe": "cote",
+          "options": [
+            "Petite vive",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Petite, dorsale noire, première épine venimeuse",
+          "description": "Toute petite vive, bouche oblique et première dorsale noire presque entièrement venimeuse.",
+          "explication": "Petite vive : Toute petite vive, bouche oblique et première dorsale noire presque entièrement venimeuse. Elle s'ensable sur les plages, là où l'on marche."
+        },
+        {
+          "id": "fi136",
+          "difficulte": "moyen",
+          "nom_commun": "Dragonnet",
+          "nom_scientifique": "Callionymus lyra",
+          "groupe": "cote",
+          "options": [
+            "Dragonnet",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Plat, première dorsale très haute chez le mâle",
+          "description": "Corps aplati, yeux sur le dessus et, chez le mâle, une très haute première dorsale colorée.",
+          "explication": "Dragonnet : Corps aplati, yeux sur le dessus et, chez le mâle, une très haute première dorsale colorée. Il vit sur le sable et les graviers."
+        },
+        {
+          "id": "fi137",
+          "difficulte": "moyen",
+          "nom_commun": "Grondin gris",
+          "nom_scientifique": "Eutrigla gurnardus",
+          "groupe": "cote",
+          "options": [
+            "Grondin gris",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Tête cuirassée, pectorales gris-bleu",
+          "description": "Tête osseuse, museau en pente et grandes pectorales gris-bleu, sans le rouge du grondin perlon.",
+          "explication": "Grondin gris : Tête osseuse, museau en pente et grandes pectorales gris-bleu, sans le rouge du grondin perlon. Il marche sur le fond avec trois rayons libres."
+        },
+        {
+          "id": "fi138",
+          "difficulte": "difficile",
+          "nom_commun": "Uranoscope",
+          "nom_scientifique": "Uranoscopus scaber",
+          "groupe": "cote",
+          "options": [
+            "Uranoscope",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Yeux sur le dessus, bouche verticale",
+          "description": "Tête cubique, yeux sur le dessus de la tête et bouche presque verticale.",
+          "explication": "Uranoscope : Tête cubique, yeux sur le dessus de la tête et bouche presque verticale. Il s'ensable et attire les proies avec un filament."
+        },
+        {
+          "id": "fi139",
+          "difficulte": "difficile",
+          "nom_commun": "Apogon",
+          "nom_scientifique": "Apogon imberbis",
+          "groupe": "cote",
+          "options": [
+            "Apogon",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Rouge, grands yeux, deux dorsales",
+          "description": "Petit, rouge-orange, très grands yeux noirs et deux nageoires dorsales séparées.",
+          "explication": "Apogon : Petit, rouge-orange, très grands yeux noirs et deux nageoires dorsales séparées. Il vit dans les trous obscurs, et le mâle incube les œufs dans la bouche."
+        },
+        {
+          "id": "fi140",
+          "difficulte": "difficile",
+          "nom_commun": "Pastenague",
+          "nom_scientifique": "Dasyatis pastinaca",
+          "groupe": "cote",
+          "options": [
+            "Pastenague",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Disque, queue en fouet",
+          "description": "Raie à corps en disque, sans les boucles de la raie bouclée, et longue queue armée d'un aiguillon.",
+          "explication": "Pastenague : Raie à corps en disque, sans les boucles de la raie bouclée, et longue queue armée d'un aiguillon. L'aiguillon est venimeux."
+        },
+        {
+          "id": "fi141",
+          "difficulte": "difficile",
+          "nom_commun": "Torpille marbrée",
+          "nom_scientifique": "Torpedo marmorata",
+          "groupe": "cote",
+          "options": [
+            "Torpille marbrée",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Disque rond, marbrures, organe électrique",
+          "description": "Raie presque circulaire, dos brun marbré de clair, et queue charnue.",
+          "explication": "Torpille marbrée : Raie presque circulaire, dos brun marbré de clair, et queue charnue. Elle peut produire une décharge électrique."
+        },
+        {
+          "id": "fi142",
+          "difficulte": "difficile",
+          "nom_commun": "Aiguillat",
+          "nom_scientifique": "Squalus acanthias",
+          "groupe": "cote",
+          "options": [
+            "Aiguillat",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Petit requin, épine devant chaque dorsale",
+          "description": "Requin élancé, dos gris à points blancs et une épine devant chacune des deux dorsales.",
+          "explication": "Aiguillat : Requin élancé, dos gris à points blancs et une épine devant chacune des deux dorsales. Il forme des bancs au large et près du fond."
+        },
+        {
+          "id": "fi143",
+          "difficulte": "difficile",
+          "nom_commun": "Raie brunette",
+          "nom_scientifique": "Raja undulata",
+          "groupe": "cote",
+          "options": [
+            "Raie brunette",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Bandes ondulées sur le dos",
+          "description": "Raie au dos beige couvert de bandes sombres ondulées, comme des marbrures régulières.",
+          "explication": "Raie brunette : Raie au dos beige couvert de bandes sombres ondulées, comme des marbrures régulières. Elle vit sur le sable et le gravier de l'Atlantique et de la Manche."
+        },
+        {
+          "id": "fi151",
+          "difficulte": "moyen",
+          "nom_commun": "Motelle à trois barbillons",
+          "nom_scientifique": "Gaidropsarus vulgaris",
+          "groupe": "cote",
+          "options": [
+            "Motelle à trois barbillons",
+            "Vieille commune",
+            "Crénilabre",
+            "Gobie noir"
+          ],
+          "indice": "Trois barbillons, robe marbrée",
+          "description": "Corps brun marbré de clair, deux barbillons sur le museau et un sous le menton.",
+          "explication": "Motelle à trois barbillons : Corps brun marbré de clair, deux barbillons sur le museau et un sous le menton. Elle se cache dans les trous, le jour."
+        },
+        {
+          "id": "fi152",
+          "difficulte": "difficile",
+          "nom_commun": "Sébaste chèvre",
+          "nom_scientifique": "Helicolenus dactylopterus",
+          "groupe": "cote",
+          "options": [
+            "Sébaste chèvre",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Rouge, épines, grands yeux",
+          "description": "Rouge-rose, tête épineuse, grands yeux et taches sombres sur les nageoires.",
+          "explication": "Sébaste chèvre : Rouge-rose, tête épineuse, grands yeux et taches sombres sur les nageoires. Il vit sur les fonds rocheux, plus profond que la rascasse."
+        },
+        {
+          "id": "fi153",
+          "difficulte": "difficile",
+          "nom_commun": "Émissole lisse",
+          "nom_scientifique": "Mustelus mustelus",
+          "groupe": "cote",
+          "options": [
+            "Émissole lisse",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Petit requin gris, sans épines",
+          "description": "Requin élancé gris uniforme, sans les épines de l'aiguillat et sans les taches de la roussette.",
+          "explication": "Émissole lisse : Requin élancé gris uniforme, sans les épines de l'aiguillat et sans les taches de la roussette. Elle vit près du fond, le long des côtes."
+        },
+        {
+          "id": "fi154",
+          "difficulte": "difficile",
+          "nom_commun": "Requin peau bleue",
+          "nom_scientifique": "Prionace glauca",
+          "groupe": "cote",
+          "options": [
+            "Requin peau bleue",
+            "Rascasse brune",
+            "Murène",
+            "Barracuda européen"
+          ],
+          "indice": "Long, dos bleu, museau pointu",
+          "description": "Requin élancé, dos bleu vif, ventre blanc, longues pectorales et museau pointu.",
+          "explication": "Requin peau bleue : Requin élancé, dos bleu vif, ventre blanc, longues pectorales et museau pointu. Il vit au large, et s'approche parfois des côtes."
+        }
+      ]
+    },
+    {
+      "id": "migrateurs",
+      "label": "Migrateurs",
+      "questions": [
+        {
+          "id": "fi98",
+          "difficulte": "facile",
+          "nom_commun": "Saumon atlantique",
+          "nom_scientifique": "Salmo salar",
+          "groupe": "migrateurs",
+          "options": [
+            "Saumon atlantique",
+            "Anguille",
+            "Grande alose",
+            "Prunelle de mer"
+          ],
+          "indice": "Argenté en mer, pédoncule étroit",
+          "description": "En mer, argenté, avec des croix noires sur le dos. Le pédoncule caudal est étroit et la bouche ne dépasse pas l'œil.",
+          "explication": "Saumon atlantique : En mer, argenté, avec des croix noires sur le dos. Le pédoncule caudal est étroit et la bouche ne dépasse pas l'œil. Il remonte les rivières pour frayer, après plusieurs années en mer."
+        },
+        {
+          "id": "fi99",
+          "difficulte": "facile",
+          "nom_commun": "Anguille",
+          "nom_scientifique": "Anguilla anguilla",
+          "groupe": "migrateurs",
+          "options": [
+            "Anguille",
+            "Saumon atlantique",
+            "Grande alose",
+            "Prunelle de mer"
+          ],
+          "indice": "Serpent, dorsale continue jusqu'à la queue",
+          "description": "Corps très allongé, nageoire dorsale qui rejoint la caudale et l'anale, peau visqueuse.",
+          "explication": "Anguille : Corps très allongé, nageoire dorsale qui rejoint la caudale et l'anale, peau visqueuse. Elle naît en mer des Sargasses et grandit dans les eaux douces."
+        },
+        {
+          "id": "fi100",
+          "difficulte": "facile",
+          "nom_commun": "Grande alose",
+          "nom_scientifique": "Alosa alosa",
+          "groupe": "migrateurs",
+          "options": [
+            "Grande alose",
+            "Saumon atlantique",
+            "Anguille",
+            "Prunelle de mer"
+          ],
+          "indice": "Grande, tache noire derrière l'opercule",
+          "description": "Grande, comprimée, une seule tache noire nette derrière l'opercule et le ventre en carène.",
+          "explication": "Grande alose : Grande, comprimée, une seule tache noire nette derrière l'opercule et le ventre en carène. Elle remonte les fleuves au printemps pour frayer, la nuit."
+        },
+        {
+          "id": "fi101",
+          "difficulte": "moyen",
+          "nom_commun": "Alose feinte",
+          "nom_scientifique": "Alosa fallax",
+          "groupe": "migrateurs",
+          "options": [
+            "Alose feinte",
+            "Lamproie marine",
+            "Lamproie de rivière",
+            "Esturgeon européen"
+          ],
+          "indice": "Plusieurs taches noires sur le flanc",
+          "description": "Proche de la grande alose, plus petite, avec une rangée de plusieurs taches noires le long du flanc.",
+          "explication": "Alose feinte : Proche de la grande alose, plus petite, avec une rangée de plusieurs taches noires le long du flanc. Elle remonte moins haut dans les rivières."
+        },
+        {
+          "id": "fi102",
+          "difficulte": "moyen",
+          "nom_commun": "Lamproie marine",
+          "nom_scientifique": "Petromyzon marinus",
+          "groupe": "migrateurs",
+          "options": [
+            "Lamproie marine",
+            "Alose feinte",
+            "Lamproie de rivière",
+            "Esturgeon européen"
+          ],
+          "indice": "Grande, marbrée, disque buccal",
+          "description": "Longue, marbrée de noir, sans mâchoires, et un disque buccal rond couvert de dents.",
+          "explication": "Lamproie marine : Longue, marbrée de noir, sans mâchoires, et un disque buccal rond couvert de dents. Elle se fixe aux poissons en mer, puis remonte frayer."
+        },
+        {
+          "id": "fi103",
+          "difficulte": "moyen",
+          "nom_commun": "Lamproie de rivière",
+          "nom_scientifique": "Lampetra fluviatilis",
+          "groupe": "migrateurs",
+          "options": [
+            "Lamproie de rivière",
+            "Alose feinte",
+            "Lamproie marine",
+            "Esturgeon européen"
+          ],
+          "indice": "Deux dorsales séparées, disque buccal",
+          "description": "Plus petite que la marine, dos uni gris-vert, deux dorsales bien séparées.",
+          "explication": "Lamproie de rivière : Plus petite que la marine, dos uni gris-vert, deux dorsales bien séparées. Elle remonte les rivières et ne se nourrit plus au moment du frai."
+        },
+        {
+          "id": "fi104",
+          "difficulte": "moyen",
+          "nom_commun": "Esturgeon européen",
+          "nom_scientifique": "Acipenser sturio",
+          "groupe": "migrateurs",
+          "options": [
+            "Esturgeon européen",
+            "Alose feinte",
+            "Lamproie marine",
+            "Lamproie de rivière"
+          ],
+          "indice": "Museau pointu, plaques osseuses",
+          "description": "Grand, museau allongé, bouche ventrale et cinq rangées de plaques osseuses le long du corps.",
+          "explication": "Esturgeon européen : Grand, museau allongé, bouche ventrale et cinq rangées de plaques osseuses le long du corps. Il est au bord de l'extinction. Les derniers remontent encore la Gironde."
+        },
+        {
+          "id": "fi105",
+          "difficulte": "moyen",
+          "nom_commun": "Flet",
+          "nom_scientifique": "Platichthys flesus",
+          "groupe": "migrateurs",
+          "options": [
+            "Flet",
+            "Alose feinte",
+            "Lamproie marine",
+            "Lamproie de rivière"
+          ],
+          "indice": "Plat, souvent des épines à la base des nageoires",
+          "description": "Poisson plat des estuaires, brun, souvent quelques plaques osseuses à la base des dorsale et anale.",
+          "explication": "Flet : Poisson plat des estuaires, brun, souvent quelques plaques osseuses à la base des dorsale et anale. Il supporte l'eau douce et remonte les fleuves."
+        },
+        {
+          "id": "fi106",
+          "difficulte": "difficile",
+          "nom_commun": "Saumon de fontaine",
+          "nom_scientifique": "Salvelinus fontinalis",
+          "groupe": "migrateurs",
+          "options": [
+            "Saumon de fontaine",
+            "Truite arc-en-ciel",
+            "Mulet porc",
+            "Aphanius de Corse"
+          ],
+          "indice": "Dos marbré, nageoires bordées de blanc",
+          "description": "Dos vert marbré de clair, points rouges et nageoires inférieures bordées de blanc pur.",
+          "explication": "Saumon de fontaine : Dos vert marbré de clair, points rouges et nageoires inférieures bordées de blanc pur. Introduit. Ce n'est pas un saumon mais un omble, qui reste dans les torrents froids."
+        },
+        {
+          "id": "fi107",
+          "difficulte": "difficile",
+          "nom_commun": "Truite arc-en-ciel",
+          "nom_scientifique": "Oncorhynchus mykiss",
+          "groupe": "migrateurs",
+          "options": [
+            "Truite arc-en-ciel",
+            "Saumon de fontaine",
+            "Mulet porc",
+            "Aphanius de Corse"
+          ],
+          "indice": "Bande rose le long du flanc",
+          "description": "Dos ponctué de noir, et une large bande rose-violette irisée sur le flanc.",
+          "explication": "Truite arc-en-ciel : Dos ponctué de noir, et une large bande rose-violette irisée sur le flanc. Introduite. Elle se reproduit rarement en France, mais elle est très répandue."
+        },
+        {
+          "id": "fi108",
+          "difficulte": "difficile",
+          "nom_commun": "Mulet porc",
+          "nom_scientifique": "Chelon ramada",
+          "groupe": "migrateurs",
+          "options": [
+            "Mulet porc",
+            "Saumon de fontaine",
+            "Truite arc-en-ciel",
+            "Aphanius de Corse"
+          ],
+          "indice": "Mulet sans tache dorée, lèvre supérieure fine",
+          "description": "Mulet au corps allongé, tête assez pointue, lèvre supérieure mince et pas de tache dorée sur l'opercule.",
+          "explication": "Mulet porc : Mulet au corps allongé, tête assez pointue, lèvre supérieure mince et pas de tache dorée sur l'opercule. Il entre très haut dans les fleuves."
+        },
+        {
+          "id": "fi144",
+          "difficulte": "facile",
+          "nom_commun": "Prunelle de mer",
+          "nom_scientifique": "Atherina presbyter",
+          "groupe": "migrateurs",
+          "options": [
+            "Prunelle de mer",
+            "Saumon atlantique",
+            "Anguille",
+            "Grande alose"
+          ],
+          "indice": "Petite, bande argentée, le long des plages",
+          "description": "Plus marine que l'athérine des lagunes, deux dorsales et une bande latérale argentée vive.",
+          "explication": "Prunelle de mer : Plus marine que l'athérine des lagunes, deux dorsales et une bande latérale argentée vive. Elle forme des bancs au bord des plages de l'Atlantique et de la Manche."
+        },
+        {
+          "id": "fi145",
+          "difficulte": "moyen",
+          "nom_commun": "Syngnathe de rivière",
+          "nom_scientifique": "Syngnathus abaster",
+          "groupe": "migrateurs",
+          "options": [
+            "Syngnathe de rivière",
+            "Alose feinte",
+            "Lamproie marine",
+            "Lamproie de rivière"
+          ],
+          "indice": "Museau court, dans les lagunes",
+          "description": "Petit syngnathe, museau assez court et corps annelé, dans les herbiers des lagunes et des estuaires.",
+          "explication": "Syngnathe de rivière : Petit syngnathe, museau assez court et corps annelé, dans les herbiers des lagunes et des estuaires. Le mâle porte les œufs sous le ventre."
+        },
+        {
+          "id": "fi146",
+          "difficulte": "difficile",
+          "nom_commun": "Aphanius de Corse",
+          "nom_scientifique": "Aphanius fasciatus",
+          "groupe": "migrateurs",
+          "options": [
+            "Aphanius de Corse",
+            "Saumon de fontaine",
+            "Truite arc-en-ciel",
+            "Mulet porc"
+          ],
+          "indice": "Minuscule, bandes verticales",
+          "description": "Tout petit poisson des lagunes, bandes verticales sombres et nageoire caudale souvent barrée.",
+          "explication": "Aphanius de Corse : Tout petit poisson des lagunes, bandes verticales sombres et nageoire caudale souvent barrée. En France, il vit en Corse, dans les eaux saumâtres."
+        }
+      ]
+    }
+  ]
+}

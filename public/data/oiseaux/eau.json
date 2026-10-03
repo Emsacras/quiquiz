@@ -1,0 +1,503 @@
+{
+  "id": "eau",
+  "label": "Oiseaux d'eau",
+  "defaut": false,
+  "questions": [
+    {
+      "id": "eau-f1",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Canard colvert",
+      "nom_scientifique": "Anas platyrhynchos",
+      "options": [
+        "Canard colvert",
+        "Sarcelle d'hiver",
+        "Foulque macroule",
+        "Ouette d'Égypte"
+      ],
+      "indice": "Le mâle a la tête verte et le bec jaune",
+      "explication": "Le mâle a la tête vert bouteille, un collier blanc et le bec jaune. La femelle est brune et marbrée, avec un miroir alaire bleu.",
+      "description": "Le mâle a la tête vert bouteille, un collier blanc et le bec jaune. La femelle est brune et marbrée, avec un miroir alaire bleu."
+    },
+    {
+      "id": "eau-f2",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Foulque macroule",
+      "nom_scientifique": "Fulica atra",
+      "options": [
+        "Foulque macroule",
+        "Gallinule poule-d'eau",
+        "Grèbe huppé",
+        "Canard colvert"
+      ],
+      "indice": "Entièrement noire, avec le bec et le front blancs",
+      "explication": "La foulque est noire, avec un bec et une plaque frontale blancs. Elle hoche souvent la tête en nageant.",
+      "description": "Entièrement noire, bec et plaque frontale blancs. Hoche souvent la tête en nageant."
+    },
+    {
+      "id": "eau-f3",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Héron cendré",
+      "nom_scientifique": "Ardea cinerea",
+      "options": [
+        "Héron cendré",
+        "Aigrette garzette",
+        "Grand cormoran",
+        "Cygne tuberculé"
+      ],
+      "indice": "Grand échassier gris, au bec en poignard",
+      "explication": "Le héron cendré est grand et gris, avec un long cou replié en vol, un bec jaune en poignard et un sourcil noir.",
+      "description": "Grand échassier gris, long cou replié en vol, bec jaune en poignard et sourcil noir."
+    },
+    {
+      "id": "eau-f4",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Gallinule poule-d'eau",
+      "nom_scientifique": "Gallinula chloropus",
+      "options": [
+        "Gallinule poule-d'eau",
+        "Foulque macroule",
+        "Marouette ponctuée",
+        "Râle d'eau"
+      ],
+      "indice": "Bec rouge à pointe jaune, et une bande blanche sur le flanc",
+      "explication": "La gallinule a le bec rouge à pointe jaune, une plaque frontale rouge et une ligne blanche sur le flanc. Elle nage en hochant la tête.",
+      "description": "Bec rouge à pointe jaune, plaque frontale rouge et ligne blanche sur le flanc. Nage en hochant la tête."
+    },
+    {
+      "id": "eau-f5",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Martin-pêcheur d'Europe",
+      "nom_scientifique": "Alcedo atthis",
+      "options": [
+        "Martin-pêcheur d'Europe",
+        "Guêpier d'Europe",
+        "Bergeronnette des ruisseaux",
+        "Cincle plongeur"
+      ],
+      "indice": "Bleu métallique dessus, orange dessous, bec en dague",
+      "explication": "Le martin-pêcheur est petit, bleu turquoise sur le dessus et orange en dessous, avec un long bec en dague. Il pêche depuis un perchoir bas.",
+      "description": "Petit, bleu turquoise dessus et orange dessous, long bec en dague. Pêche depuis un perchoir bas."
+    },
+    {
+      "id": "eau-m1",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Grèbe huppé",
+      "nom_scientifique": "Podiceps cristatus",
+      "options": [
+        "Grèbe huppé",
+        "Grèbe castagneux",
+        "Grèbe à cou noir",
+        "Harle bièvre"
+      ],
+      "indice": "Deux houppes noires et une collerette rousse",
+      "explication": "Le grèbe huppé a un long cou blanc, un bec rosé et, en plumage nuptial, deux houppes noires avec une collerette rousse et noire.",
+      "description": "Long cou blanc, bec rosé. En plumage nuptial, deux houppes noires et une collerette rousse et noire."
+    },
+    {
+      "id": "eau-m2",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Aigrette garzette",
+      "nom_scientifique": "Egretta garzetta",
+      "options": [
+        "Aigrette garzette",
+        "Héron cendré",
+        "Grande aigrette",
+        "Spatule blanche"
+      ],
+      "indice": "Toute blanche, avec le bec noir et les pieds jaunes",
+      "explication": "L'aigrette garzette est entièrement blanche, au bec noir et aux pieds jaunes. En plumage nuptial, de fines plumes ornent la nuque.",
+      "description": "Entièrement blanche, bec noir et pieds jaunes. En plumage nuptial, de fines plumes ornent la nuque."
+    },
+    {
+      "id": "eau-m3",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Cygne tuberculé",
+      "nom_scientifique": "Cygnus olor",
+      "options": [
+        "Cygne tuberculé",
+        "Cygne chanteur",
+        "Oie cendrée",
+        "Ouette d'Égypte"
+      ],
+      "indice": "Grand oiseau blanc, bec orange avec un tubercule noir",
+      "explication": "Le cygne tuberculé est blanc, avec un long cou en S et un bec orange portant un tubercule noir à la base. Les jeunes sont gris-brun.",
+      "description": "Blanc, long cou en S, bec orange avec une bosse noire à la base. Les jeunes sont gris-brun."
+    },
+    {
+      "id": "eau-m4",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Grand cormoran",
+      "nom_scientifique": "Phalacrocorax carbo",
+      "options": [
+        "Grand cormoran",
+        "Cormoran huppé",
+        "Héron cendré",
+        "Foulque macroule"
+      ],
+      "indice": "Noir, bec crochu, souvent les ailes entrouvertes",
+      "explication": "Le grand cormoran est noir, avec un bec crochu et une gorge jaune. Il se tient souvent les ailes écartées pour les faire sécher.",
+      "description": "Noir, bec crochu, gorge jaune. Se tient souvent les ailes écartées pour les faire sécher."
+    },
+    {
+      "id": "eau-m5",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Ouette d'Égypte",
+      "nom_scientifique": "Alopochen aegyptiaca",
+      "options": [
+        "Ouette d'Égypte",
+        "Bernache du Canada",
+        "Tadorne de Belon",
+        "Canard colvert"
+      ],
+      "indice": "Tache brune autour de l'œil et miroir blanc sur l'aile",
+      "explication": "L'ouette d'Égypte a le corps beige, une tache brun chocolat autour de l'œil et un grand miroir blanc sur l'aile. Elle se tient souvent au sol.",
+      "description": "Corps beige, tache brun chocolat autour de l'œil et grand miroir blanc sur l'aile. Souvent posée au sol."
+    },
+    {
+      "id": "eau-d1",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Sarcelle d'hiver",
+      "nom_scientifique": "Anas crecca",
+      "options": [
+        "Sarcelle d'hiver",
+        "Sarcelle d'été",
+        "Canard colvert",
+        "Canard souchet"
+      ],
+      "indice": "Très petite. Le mâle a la tête rousse et un trait vert",
+      "explication": "La sarcelle d'hiver est le plus petit canard de surface. Le mâle a la tête rousse barrée d'un trait vert métallique, et un rectangle jaune sous la queue.",
+      "description": "Très petit canard. Le mâle a la tête rousse barrée d'un trait vert métallique, et un rectangle jaune sous la queue."
+    },
+    {
+      "id": "eau-d2",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Sarcelle d'été",
+      "nom_scientifique": "Spatula querquedula",
+      "options": [
+        "Sarcelle d'été",
+        "Sarcelle d'hiver",
+        "Canard souchet",
+        "Canard chipeau"
+      ],
+      "indice": "Le mâle porte un large sourcil blanc",
+      "explication": "Le mâle de la sarcelle d'été a un large sourcil blanc qui part de l'œil et s'étire vers la nuque, sur une tête brune. Le bec est assez long.",
+      "description": "Le mâle a un large sourcil blanc de l'œil vers la nuque, sur une tête brune. Bec assez long."
+    },
+    {
+      "id": "eau-d3",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Fuligule milouin",
+      "nom_scientifique": "Aythya ferina",
+      "options": [
+        "Fuligule milouin",
+        "Fuligule morillon",
+        "Nette rousse",
+        "Fuligule milouinan"
+      ],
+      "indice": "Tête rousse, poitrine noire, corps gris",
+      "explication": "Le mâle du milouin a la tête et le cou roux, la poitrine noire et le corps gris pâle. L'œil est rouge.",
+      "description": "Le mâle a la tête et le cou roux, la poitrine noire et le corps gris pâle. L'œil est rouge."
+    },
+    {
+      "id": "eau-d4",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Fuligule morillon",
+      "nom_scientifique": "Aythya fuligula",
+      "options": [
+        "Fuligule morillon",
+        "Fuligule milouin",
+        "Macreuse noire",
+        "Harle huppé"
+      ],
+      "indice": "Noir et blanc, avec une huppe à l'arrière de la tête",
+      "explication": "Le mâle du morillon est noir, avec les flancs blancs et une huppe tombante à l'arrière de la tête. L'œil est jaune.",
+      "description": "Le mâle est noir, flancs blancs, huppe tombante à l'arrière de la tête. L'œil est jaune."
+    },
+    {
+      "id": "eau-d5",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Grèbe castagneux",
+      "nom_scientifique": "Tachybaptus ruficollis",
+      "options": [
+        "Grèbe castagneux",
+        "Grèbe huppé",
+        "Grèbe à cou noir",
+        "Marouette poussin"
+      ],
+      "indice": "Tout petit grèbe, cou roux et coin clair au bec",
+      "explication": "Le grèbe castagneux est petit et rond. En été, le cou et les joues sont roux, avec un coin pâle à la base du bec.",
+      "description": "Petit et rond. En été, cou et joues roux, avec un coin pâle à la base du bec."
+    },
+    {
+      "id": "eau-x01",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Bergeronnette des ruisseaux",
+      "nom_scientifique": "Motacilla cinerea",
+      "options": [
+        "Bergeronnette des ruisseaux",
+        "Bergeronnette grise",
+        "Cincle plongeur",
+        "Martin-pêcheur d'Europe"
+      ],
+      "indice": "Dos gris, dessous jaune, très longue queue, au bord de l'eau vive",
+      "explication": "La bergeronnette des ruisseaux a le dos gris, le dessous jaune et une très longue queue. Elle hoche la queue le long des ruisseaux.",
+      "description": "Dos gris, dessous jaune, très longue queue. Hoche la queue le long de l'eau vive."
+    },
+    {
+      "id": "eau-x02",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Bernache du Canada",
+      "nom_scientifique": "Branta canadensis",
+      "options": [
+        "Bernache du Canada",
+        "Bernache cravant",
+        "Ouette d'Égypte",
+        "Oie cendrée"
+      ],
+      "indice": "Grande oie brune, longue joue blanche sur un cou noir",
+      "explication": "La bernache du Canada est une grande oie brune. La tête et le cou sont noirs, avec une large joue blanche.",
+      "description": "Grande oie brune. Tête et cou noirs, avec une large joue blanche."
+    },
+    {
+      "id": "eau-x03",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Canard chipeau",
+      "nom_scientifique": "Mareca strepera",
+      "options": [
+        "Canard chipeau",
+        "Canard colvert",
+        "Canard souchet",
+        "Sarcelle d'été"
+      ],
+      "indice": "Miroir alaire blanc, corps gris finement barré. Le bec du mâle est noir",
+      "explication": "Le canard chipeau a un miroir alaire blanc bien visible. Le mâle est gris finement barré, avec le bec noir et le croupion noir.",
+      "description": "Miroir alaire blanc. Le mâle est gris finement barré, bec noir, croupion noir."
+    },
+    {
+      "id": "eau-x04",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Canard souchet",
+      "nom_scientifique": "Spatula clypeata",
+      "options": [
+        "Canard souchet",
+        "Canard colvert",
+        "Sarcelle d'hiver",
+        "Canard chipeau"
+      ],
+      "indice": "Bec très large en spatule. Le mâle a la tête verte et le ventre roux",
+      "explication": "Le canard souchet se reconnaît à son bec très large, en spatule. Le mâle a la tête verte, la poitrine blanche et le ventre roux.",
+      "description": "Bec très large, en spatule. Le mâle a la tête verte, la poitrine blanche et le ventre roux."
+    },
+    {
+      "id": "eau-x05",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Cygne chanteur",
+      "nom_scientifique": "Cygnus cygnus",
+      "options": [
+        "Cygne chanteur",
+        "Cygne tuberculé",
+        "Oie cendrée",
+        "Spatule blanche"
+      ],
+      "indice": "Grand cygne, bec jaune à pointe noire, sans bosse à la base",
+      "explication": "Le cygne chanteur a le bec jaune avec la pointe noire, sans bosse à la base. Le cou est souvent tenu plus droit que chez le cygne tuberculé.",
+      "description": "Grand oiseau blanc, bec jaune à pointe noire, sans bosse à la base. Cou souvent tenu plus droit."
+    },
+    {
+      "id": "eau-x06",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Fuligule milouinan",
+      "nom_scientifique": "Aythya marila",
+      "options": [
+        "Fuligule milouinan",
+        "Fuligule milouin",
+        "Fuligule morillon",
+        "Macreuse noire"
+      ],
+      "indice": "Le mâle a la tête verte, le dos gris pâle barré, et le bec sans large bande blanche",
+      "explication": "Le fuligule milouinan mâle a la tête verte, le dos gris pâle finement barré et les flancs blancs. Le bec n'a pas la large bande blanche du morillon.",
+      "description": "Le mâle a la tête verte, le dos gris pâle finement barré et les flancs blancs."
+    },
+    {
+      "id": "eau-x07",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Grande aigrette",
+      "nom_scientifique": "Ardea alba",
+      "options": [
+        "Grande aigrette",
+        "Aigrette garzette",
+        "Héron cendré",
+        "Spatule blanche"
+      ],
+      "indice": "Toute blanche, grande, bec jaune et pattes noires",
+      "explication": "La grande aigrette est entièrement blanche, de la taille d'un héron. Le bec est jaune et les pattes sont noires, sans les pieds jaunes de la garzette.",
+      "description": "Entièrement blanche, taille d'un héron. Bec jaune, pattes noires."
+    },
+    {
+      "id": "eau-x08",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Grèbe à cou noir",
+      "nom_scientifique": "Podiceps nigricollis",
+      "options": [
+        "Grèbe à cou noir",
+        "Grèbe huppé",
+        "Grèbe castagneux",
+        "Harle huppé"
+      ],
+      "indice": "En été, cou noir, touffe d'or derrière l'œil, bec fin relevé",
+      "explication": "Le grèbe à cou noir a, en été, le cou noir et une touffe dorée derrière l'œil rouge. Le bec est fin et légèrement relevé.",
+      "description": "En été, cou noir, touffe dorée derrière l'œil rouge. Bec fin légèrement relevé."
+    },
+    {
+      "id": "eau-x09",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Harle bièvre",
+      "nom_scientifique": "Mergus merganser",
+      "options": [
+        "Harle bièvre",
+        "Harle huppé",
+        "Grèbe huppé",
+        "Grand cormoran"
+      ],
+      "indice": "Bec fin crochu, huppe courte. Le mâle est blanc et noir, la femelle a la tête rousse",
+      "explication": "Le harle bièvre a un bec fin et crochu. Le mâle est blanc et noir, la femelle a la tête rousse et une huppe courte.",
+      "description": "Bec fin et crochu, huppe courte. Le mâle est blanc et noir, la femelle a la tête rousse."
+    },
+    {
+      "id": "eau-x10",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Marouette ponctuée",
+      "nom_scientifique": "Porzana porzana",
+      "options": [
+        "Marouette ponctuée",
+        "Râle d'eau",
+        "Gallinule poule-d'eau",
+        "Marouette poussin"
+      ],
+      "indice": "Petit râle brun, dessous blanc ponctué, bec court jaune à base rouge",
+      "explication": "La marouette ponctuée est un petit râle brun, le dessous blanc ponctué de blanc. Le bec est court, jaune à base rouge.",
+      "description": "Petit râle brun, dessous blanc ponctué. Bec court, jaune à base rouge."
+    },
+    {
+      "id": "eau-x11",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Marouette poussin",
+      "nom_scientifique": "Zapornia parva",
+      "options": [
+        "Marouette poussin",
+        "Marouette ponctuée",
+        "Grèbe castagneux",
+        "Râle d'eau"
+      ],
+      "indice": "Très petite, bec vert sans barre. Le mâle a la face gris-bleu et le dessous barré",
+      "explication": "La marouette poussin est très petite. Le mâle a la face gris-bleu et le dessous barré de blanc et de noir. Le bec est vert, sans barre rouge.",
+      "description": "Très petite. Le mâle a la face gris-bleu et le dessous barré. Bec vert, sans barre rouge."
+    },
+    {
+      "id": "eau-x12",
+      "groupe": "eau",
+      "difficulte": "difficile",
+      "nom_commun": "Nette rousse",
+      "nom_scientifique": "Netta rufina",
+      "options": [
+        "Nette rousse",
+        "Fuligule milouin",
+        "Canard souchet",
+        "Sarcelle d'été"
+      ],
+      "indice": "Le mâle a la tête roux orangé gonflée, le bec rouge et les flancs blancs",
+      "explication": "La nette rousse mâle a une tête roux orangé gonflée, le bec rouge et les flancs blancs. La femelle a une calotte brune et les joues pâles.",
+      "description": "Le mâle a la tête roux orangé gonflée, le bec rouge et les flancs blancs."
+    },
+    {
+      "id": "eau-x13",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Oie cendrée",
+      "nom_scientifique": "Anser anser",
+      "options": [
+        "Oie cendrée",
+        "Cygne tuberculé",
+        "Bernache du Canada",
+        "Ouette d'Égypte"
+      ],
+      "indice": "Grande oie grise, bec orange, pattes roses, avant de l'aile gris pâle",
+      "explication": "L'oie cendrée est une grande oie grise, au bec orange et aux pattes roses. En vol, l'avant de l'aile est gris pâle.",
+      "description": "Grande oie grise, bec orange, pattes roses. En vol, l'avant de l'aile est gris pâle."
+    },
+    {
+      "id": "eau-x14",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Râle d'eau",
+      "nom_scientifique": "Rallus aquaticus",
+      "options": [
+        "Râle d'eau",
+        "Gallinule poule-d'eau",
+        "Marouette ponctuée",
+        "Foulque macroule"
+      ],
+      "indice": "Bec long et rouge, flancs barrés, dessus brun, souvent caché dans les roseaux",
+      "explication": "Le râle d'eau a un long bec rouge, les flancs barrés de noir et de blanc et le dessus brun. Il reste souvent caché dans les roseaux.",
+      "description": "Long bec rouge, flancs barrés de noir et de blanc, dessus brun. Souvent caché dans les roseaux."
+    },
+    {
+      "id": "eau-x15",
+      "groupe": "eau",
+      "difficulte": "moyen",
+      "nom_commun": "Spatule blanche",
+      "nom_scientifique": "Platalea leucorodia",
+      "options": [
+        "Spatule blanche",
+        "Aigrette garzette",
+        "Grande aigrette",
+        "Héron cendré"
+      ],
+      "indice": "Toute blanche, bec long, plat et élargi au bout",
+      "explication": "La spatule blanche est entièrement blanche, avec un long bec plat élargi au bout. Elle balaie l'eau de gauche à droite.",
+      "description": "Entièrement blanche, long bec plat élargi au bout. Balaie l'eau de gauche à droite."
+    },
+    {
+      "id": "eau-x16",
+      "groupe": "eau",
+      "difficulte": "facile",
+      "nom_commun": "Vanneau huppé",
+      "nom_scientifique": "Vanellus vanellus",
+      "options": [
+        "Vanneau huppé",
+        "Huîtrier pie",
+        "Pluvier grand-gravelot",
+        "Avocette élégante"
+      ],
+      "indice": "Longue huppe fine, dessus vert métallique, dessous blanc, large aile arrondie",
+      "explication": "Le vanneau huppé porte une longue huppe fine. Le dessus est vert métallique, le dessous blanc. En vol, les ailes sont larges et arrondies, noires et blanches.",
+      "description": "Longue crête fine, dessus vert métallique, dessous blanc. Ailes larges et arrondies."
+    }
+  ]
+}

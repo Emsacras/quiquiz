@@ -1,0 +1,2710 @@
+{
+  "id": "champignons-france",
+  "categorie": "Champignons de France",
+  "description": "Identifier les champignons de France à partir d'une photo. Coche un ou plusieurs groupes, puis choisis le niveau.",
+  "groupes": [
+    {
+      "id": "bois",
+      "label": "Forêt",
+      "questions": [
+        {
+          "id": "c1",
+          "difficulte": "facile",
+          "nom_commun": "Cèpe de Bordeaux",
+          "nom_scientifique": "Boletus edulis",
+          "groupe": "bois",
+          "options": [
+            "Amanite tue-mouches",
+            "Pied-de-mouton",
+            "Cèpe de Bordeaux",
+            "Girolle"
+          ],
+          "indice": "Chapeau brun, pied blanc réticulé",
+          "description": "Chapeau brun-cannelle, pied massif blanc à mailles blanches, chair ferme blanche.",
+          "explication": "Cèpe de Bordeaux : Chapeau brun-cannelle, pied massif blanc à mailles blanches, chair ferme blanche. Roi des sous-bois feuillus, très recherché à l'automne."
+        },
+        {
+          "id": "c2",
+          "difficulte": "facile",
+          "nom_commun": "Girolle",
+          "nom_scientifique": "Cantharellus cibarius",
+          "groupe": "bois",
+          "options": [
+            "Pied-de-mouton",
+            "Amanite phalloïde",
+            "Amanite tue-mouches",
+            "Girolle"
+          ],
+          "indice": "Corolle jaune d'œuf",
+          "description": "Corolle jaune en entonnoir, bords ondulés, fausses arêtes épaisses sous le chapeau.",
+          "explication": "Girolle : Corolle jaune en entonnoir, bords ondulés, fausses arêtes épaisses sous le chapeau. Odeur fruitée, indissociable des forêts humides."
+        },
+        {
+          "id": "c3",
+          "difficulte": "facile",
+          "nom_commun": "Amanite tue-mouches",
+          "nom_scientifique": "Amanita muscaria",
+          "groupe": "bois",
+          "options": [
+            "Polypore du bouleau",
+            "Morille",
+            "Amanite tue-mouches",
+            "Cèpe de Bordeaux"
+          ],
+          "indice": "Chapeau rouge à plaques blanches",
+          "description": "Chapeau rouge vif parsemé de flocons blancs, lamelles blanches, anneau et volve.",
+          "explication": "Amanite tue-mouches : Chapeau rouge vif parsemé de flocons blancs, lamelles blanches, anneau et volve. Toxique, symbole des forêts de conifères et de bouleaux."
+        },
+        {
+          "id": "c4",
+          "difficulte": "facile",
+          "nom_commun": "Amanite phalloïde",
+          "nom_scientifique": "Amanita phalloides",
+          "groupe": "bois",
+          "options": [
+            "Coprin chevelu",
+            "Morille",
+            "Amanite phalloïde",
+            "Pied-de-mouton"
+          ],
+          "indice": "Amanite verte à volve blanche",
+          "description": "Chapeau vert olive, lamelles blanches, anneau blanc, volve blanche en sac au pied.",
+          "explication": "Amanite phalloïde : Chapeau vert olive, lamelles blanches, anneau blanc, volve blanche en sac au pied. Mortelle, même cuite ; à ne jamais confondre avec un champignon comestible."
+        },
+        {
+          "id": "c5",
+          "difficulte": "facile",
+          "nom_commun": "Coprin chevelu",
+          "nom_scientifique": "Coprinus comatus",
+          "groupe": "bois",
+          "options": [
+            "Coprin chevelu",
+            "Coulemelle",
+            "Cèpe de Bordeaux",
+            "Pleurote en huître"
+          ],
+          "indice": "Chapeau blanc en touffe",
+          "description": "Chapeau blanc cylindrique à écailles, se liquéfie en vieillissant, pied long.",
+          "explication": "Coprin chevelu : Chapeau blanc cylindrique à écailles, se liquéfie en vieillissant, pied long. Pousse sur sols riches en lisière et clairières."
+        },
+        {
+          "id": "c6",
+          "difficulte": "facile",
+          "nom_commun": "Pleurote en huître",
+          "nom_scientifique": "Pleurotus ostreatus",
+          "groupe": "bois",
+          "options": [
+            "Coprin chevelu",
+            "Pleurote en huître",
+            "Girolle",
+            "Pied-de-mouton"
+          ],
+          "indice": "Champignon en console sur bois",
+          "description": "Chapeau en oreille brun-gris, lamelles blanches décurrentes, sur troncs morts.",
+          "explication": "Pleurote en huître : Chapeau en oreille brun-gris, lamelles blanches décurrentes, sur troncs morts. Comestible, cultivé et sauvage sur feuillus."
+        },
+        {
+          "id": "c7",
+          "difficulte": "facile",
+          "nom_commun": "Pied-de-mouton",
+          "nom_scientifique": "Hydnum repandum",
+          "groupe": "bois",
+          "options": [
+            "Pied-de-mouton",
+            "Cèpe de Bordeaux",
+            "Girolle",
+            "Coulemelle"
+          ],
+          "indice": "Aiguillons pendants sous le chapeau",
+          "description": "Chapeau ocre ondulé, hyménium formé d'aiguillons pendants blanc crème.",
+          "explication": "Pied-de-mouton : Chapeau ocre ondulé, hyménium formé d'aiguillons pendants blanc crème. Saveur douce, reconnaissable à ses « dents »."
+        },
+        {
+          "id": "c8",
+          "difficulte": "facile",
+          "nom_commun": "Coulemelle",
+          "nom_scientifique": "Macrolepiota procera",
+          "groupe": "bois",
+          "options": [
+            "Polypore du bouleau",
+            "Coprin chevelu",
+            "Cèpe de Bordeaux",
+            "Coulemelle"
+          ],
+          "indice": "Grand chapeau moka à écailles",
+          "description": "Très grand chapeau brun à écailles, pied mince strié, anneau mobile.",
+          "explication": "Coulemelle : Très grand chapeau brun à écailles, pied mince strié, anneau mobile. Comestible apprécié dans les clairières et lisières."
+        },
+        {
+          "id": "c9",
+          "difficulte": "facile",
+          "nom_commun": "Polypore du bouleau",
+          "nom_scientifique": "Piptoporus betulinus",
+          "groupe": "bois",
+          "options": [
+            "Morille",
+            "Polypore du bouleau",
+            "Pied-de-mouton",
+            "Coprin chevelu"
+          ],
+          "indice": "Plaque blanche sur bouleau",
+          "description": "Console blanchâtre en crème sur bouleau, surface poreuse blanche.",
+          "explication": "Polypore du bouleau : Console blanchâtre en crème sur bouleau, surface poreuse blanche. Champignon du bouleau, dur et persistant."
+        },
+        {
+          "id": "c10",
+          "difficulte": "facile",
+          "nom_commun": "Morille",
+          "nom_scientifique": "Morchella esculenta",
+          "groupe": "bois",
+          "options": [
+            "Cèpe de Bordeaux",
+            "Morille",
+            "Pleurote en huître",
+            "Girolle"
+          ],
+          "indice": "Cône alvéolé brun",
+          "description": "Chapeau conique alvéolé brun sur pied blanc creux.",
+          "explication": "Morille : Chapeau conique alvéolé brun sur pied blanc creux. Très prisée au printemps après les feux ou sur sols calcaires."
+        },
+        {
+          "id": "c11",
+          "difficulte": "moyen",
+          "nom_commun": "Amanite rougissante",
+          "nom_scientifique": "Amanita rubescens",
+          "groupe": "bois",
+          "options": [
+            "Amanite rougissante",
+            "Russule charbonnière",
+            "Hypholome en touffe",
+            "Bolet orange des bouleaux"
+          ],
+          "indice": "Chapeau rosé qui rougit",
+          "description": "Chapeau rosâtre, lamelles blanches rougissant à la pression, volve sur pied.",
+          "explication": "Amanite rougissante : Chapeau rosâtre, lamelles blanches rougissant à la pression, volve sur pied. Comestible bien cuite, proche des amanites toxiques."
+        },
+        {
+          "id": "c12",
+          "difficulte": "moyen",
+          "nom_commun": "Bolet bai",
+          "nom_scientifique": "Boletus badius",
+          "groupe": "bois",
+          "options": [
+            "Amadouvier",
+            "Collybie à pied velouté",
+            "Bolet bai",
+            "Armillaire melleuse"
+          ],
+          "indice": "Bolet brun à tubes jaunes",
+          "description": "Chapeau brun-rouge, tubes et pores jaunes, pied strié brun.",
+          "explication": "Bolet bai : Chapeau brun-rouge, tubes et pores jaunes, pied strié brun. Fréquent sous feuillus, chair jaunissant légèrement."
+        },
+        {
+          "id": "c13",
+          "difficulte": "moyen",
+          "nom_commun": "Bolet orange des bouleaux",
+          "nom_scientifique": "Leccinum scabrum",
+          "groupe": "bois",
+          "options": [
+            "Clitocybe nebuleux",
+            "Bolet orange des bouleaux",
+            "Fausse girolle",
+            "Armillaire melleuse"
+          ],
+          "indice": "Pied noir à écailles",
+          "description": "Chapeau brun, pied blanc à noir orné d'écailles noires, sous bouleaux.",
+          "explication": "Bolet orange des bouleaux : Chapeau brun, pied blanc à noir orné d'écailles noires, sous bouleaux. Association fidèle avec le bouleau."
+        },
+        {
+          "id": "c14",
+          "difficulte": "moyen",
+          "nom_commun": "Armillaire melleuse",
+          "nom_scientifique": "Armillaria mellea",
+          "groupe": "bois",
+          "options": [
+            "Amadouvier",
+            "Armillaire melleuse",
+            "Lactaire des épicéas",
+            "Hypholome en touffe"
+          ],
+          "indice": "Anneau jaune en touffe sur souche",
+          "description": "Chapeau miel, lamelles crème, anneau jaune, touffes sur bois mort.",
+          "explication": "Armillaire melleuse : Chapeau miel, lamelles crème, anneau jaune, touffes sur bois mort. Parasite des arbres, très abondante en automne."
+        },
+        {
+          "id": "c15",
+          "difficulte": "moyen",
+          "nom_commun": "Coprin noir d'encre",
+          "nom_scientifique": "Coprinopsis atramentaria",
+          "groupe": "bois",
+          "options": [
+            "Clitocybe nebuleux",
+            "Russule charbonnière",
+            "Russule comestible",
+            "Coprin noir d'encre"
+          ],
+          "indice": "Coprin gris en touffe",
+          "description": "Chapeau gris-brun en cloche, se transforme en encre noire.",
+          "explication": "Coprin noir d'encre : Chapeau gris-brun en cloche, se transforme en encre noire. Sur souches et bois enterré, comestible jeune."
+        },
+        {
+          "id": "c16",
+          "difficulte": "moyen",
+          "nom_commun": "Polypore soufre",
+          "nom_scientifique": "Laetiporus sulphureus",
+          "groupe": "bois",
+          "options": [
+            "Lactaire des épicéas",
+            "Clitocybe nebuleux",
+            "Coprin noir d'encre",
+            "Polypore soufre"
+          ],
+          "indice": "Console orange en escaliers",
+          "description": "Console soufrée vive en tablettes superposées sur feuillus.",
+          "explication": "Polypore soufre : Console soufrée vive en tablettes superposées sur feuillus. Comestible jeune, surnommé « poulet des bois »."
+        },
+        {
+          "id": "c17",
+          "difficulte": "moyen",
+          "nom_commun": "Amadouvier",
+          "nom_scientifique": "Fomes fomentarius",
+          "groupe": "bois",
+          "options": [
+            "Amadouvier",
+            "Lactaire des épicéas",
+            "Clitocybe nebuleux",
+            "Hypholome en touffe"
+          ],
+          "indice": "Sabot de cheval sur tronc",
+          "description": "Console en sabot brun-gris, surface craquelée, très dure.",
+          "explication": "Amadouvier : Console en sabot brun-gris, surface craquelée, très dure. Servait autrefois à fabriquer l'amadou."
+        },
+        {
+          "id": "c18",
+          "difficulte": "moyen",
+          "nom_commun": "Lactaire des épicéas",
+          "nom_scientifique": "Lactarius deliciosus",
+          "groupe": "bois",
+          "options": [
+            "Lactaire des épicéas",
+            "Bolet orange des bouleaux",
+            "Trompette de la mort",
+            "Coprin noir d'encre"
+          ],
+          "indice": "Lactaire à lait orange",
+          "description": "Chapeau orangé zoné, lamelles orangées, lait orange saignant.",
+          "explication": "Lactaire des épicéas : Chapeau orangé zoné, lamelles orangées, lait orange saignant. Sous conifères, comestible bien cuit."
+        },
+        {
+          "id": "c19",
+          "difficulte": "moyen",
+          "nom_commun": "Hypholome en touffe",
+          "nom_scientifique": "Hypholoma fasciculare",
+          "groupe": "bois",
+          "options": [
+            "Polypore du chêne",
+            "Hypholome en touffe",
+            "Russule charbonnière",
+            "Fausse girolle"
+          ],
+          "indice": "Lamelles verdâtres en touffe",
+          "description": "Chapeau jaune soufre, lamelles verdâtres, touffe sur souche.",
+          "explication": "Hypholome en touffe : Chapeau jaune soufre, lamelles verdâtres, touffe sur souche. Toxique, à ne pas confondre avec le shiitake sauvage."
+        },
+        {
+          "id": "c20",
+          "difficulte": "moyen",
+          "nom_commun": "Pholiote changeante",
+          "nom_scientifique": "Kuehneromyces mutabilis",
+          "groupe": "bois",
+          "options": [
+            "Coprin noir d'encre",
+            "Hypholome en touffe",
+            "Lactaire des épicéas",
+            "Pholiote changeante"
+          ],
+          "indice": "Chapeau hygrophan sur bois",
+          "description": "Petit chapeau brun foncé au centre pâlissant, sur bois humide.",
+          "explication": "Pholiote changeante : Petit chapeau brun foncé au centre pâlissant, sur bois humide. Comestible après cuisson, pied cartilagineux."
+        },
+        {
+          "id": "c21",
+          "difficulte": "moyen",
+          "nom_commun": "Fausse girolle",
+          "nom_scientifique": "Hygrophoropsis aurantiaca",
+          "groupe": "bois",
+          "options": [
+            "Coprin noir d'encre",
+            "Fausse girolle",
+            "Clitocybe nebuleux",
+            "Bolet orange des bouleaux"
+          ],
+          "indice": "Entonnoir orange à lamelles",
+          "description": "Chapeau orange en entonnoir, lamelles fines serrées orange.",
+          "explication": "Fausse girolle : Chapeau orange en entonnoir, lamelles fines serrées orange. Toxique, ressemble de loin à une girolle."
+        },
+        {
+          "id": "c22",
+          "difficulte": "moyen",
+          "nom_commun": "Clitocybe nebuleux",
+          "nom_scientifique": "Clitocybe nebularis",
+          "groupe": "bois",
+          "options": [
+            "Clitocybe nebuleux",
+            "Russule comestible",
+            "Amadouvier",
+            "Pholiote changeante"
+          ],
+          "indice": "Grand entonnoir gris fumée",
+          "description": "Grand chapeau gris-beige en entonnoir, odeur farineuse marquée.",
+          "explication": "Clitocybe nebuleux : Grand chapeau gris-beige en entonnoir, odeur farineuse marquée. Très abondant en forêt, toxique pour certains."
+        },
+        {
+          "id": "c23",
+          "difficulte": "moyen",
+          "nom_commun": "Collybie à pied velouté",
+          "nom_scientifique": "Collybia butyracea",
+          "groupe": "bois",
+          "options": [
+            "Clitocybe nebuleux",
+            "Amanite rougissante",
+            "Fausse girolle",
+            "Collybie à pied velouté"
+          ],
+          "indice": "Pied beurré jaune",
+          "description": "Chapeau brun-fer, pied jaune beurré, lamelles blanches.",
+          "explication": "Collybie à pied velouté : Chapeau brun-fer, pied jaune beurré, lamelles blanches. Petit champignon de litière forestière."
+        },
+        {
+          "id": "c24",
+          "difficulte": "moyen",
+          "nom_commun": "Russule comestible",
+          "nom_scientifique": "Russula virescens",
+          "groupe": "bois",
+          "options": [
+            "Bolet bai",
+            "Fausse girolle",
+            "Russule comestible",
+            "Coprin noir d'encre"
+          ],
+          "indice": "Russule verte écaillée",
+          "description": "Chapeau vert à plaques, lamelles blanches, saveur douce.",
+          "explication": "Russule comestible : Chapeau vert à plaques, lamelles blanches, saveur douce. Russule des feuillus, chapeau craquant."
+        },
+        {
+          "id": "c25",
+          "difficulte": "moyen",
+          "nom_commun": "Russule charbonnière",
+          "nom_scientifique": "Russula cyanoxantha",
+          "groupe": "bois",
+          "options": [
+            "Amanite rougissante",
+            "Russule charbonnière",
+            "Polypore du chêne",
+            "Clitocybe nebuleux"
+          ],
+          "indice": "Lamelles très flexibles",
+          "description": "Chapeau brun-vert, lamelles souples ne se cassant pas, saveur douce.",
+          "explication": "Russule charbonnière : Chapeau brun-vert, lamelles souples ne se cassant pas, saveur douce. Comestible, l'une des russules les plus sûres."
+        },
+        {
+          "id": "c26",
+          "difficulte": "moyen",
+          "nom_commun": "Polypore du chêne",
+          "nom_scientifique": "Polyporus squamosus",
+          "groupe": "bois",
+          "options": [
+            "Armillaire melleuse",
+            "Polypore du chêne",
+            "Fausse girolle",
+            "Russule comestible"
+          ],
+          "indice": "Grand polypore écailleux",
+          "description": "Large chapeau brun à écailles, pied latéral excentré sur chênes.",
+          "explication": "Polypore du chêne : Large chapeau brun à écailles, pied latéral excentré sur chênes. Comestible jeune, imposant au pied des troncs."
+        },
+        {
+          "id": "c27",
+          "difficulte": "moyen",
+          "nom_commun": "Trompette de la mort",
+          "nom_scientifique": "Craterellus cornucopioides",
+          "groupe": "bois",
+          "options": [
+            "Collybie à pied velouté",
+            "Trompette de la mort",
+            "Polypore soufre",
+            "Coprin noir d'encre"
+          ],
+          "indice": "Corne gris-noir",
+          "description": "Corne gris brun à noir, creuse, légèrement parfumée.",
+          "explication": "Trompette de la mort : Corne gris brun à noir, creuse, légèrement parfumée. Comestible recherchée, discrète dans la mousse."
+        },
+        {
+          "id": "c28",
+          "difficulte": "difficile",
+          "nom_commun": "Reishi",
+          "nom_scientifique": "Ganoderma lucidum",
+          "groupe": "bois",
+          "options": [
+            "Tramète versicolore",
+            "Verpe de Bohême",
+            "Gymnopile remarquable",
+            "Reishi"
+          ],
+          "indice": "Polypore verni brun rouge",
+          "description": "Chapeau en éventail brun rouge luisant, bois dur des feuillus.",
+          "explication": "Reishi : Chapeau en éventail brun rouge luisant, bois dur des feuillus. Champignon médicinal, très dur et persistant."
+        },
+        {
+          "id": "c29",
+          "difficulte": "difficile",
+          "nom_commun": "Tramète versicolore",
+          "nom_scientifique": "Trametes versicolor",
+          "groupe": "bois",
+          "options": [
+            "Reishi",
+            "Verpe de Bohême",
+            "Entolome livide",
+            "Tramète versicolore"
+          ],
+          "indice": "Console zébrée mince",
+          "description": "Console mince zone zébrée blanc bleu brun, bord blanchâtre.",
+          "explication": "Tramète versicolore : Console mince zone zébrée blanc bleu brun, bord blanchâtre. Champignon lignicole très commun sur souches."
+        },
+        {
+          "id": "c30",
+          "difficulte": "difficile",
+          "nom_commun": "Chou-fleur des arbres",
+          "nom_scientifique": "Sparassis crispa",
+          "groupe": "bois",
+          "options": [
+            "Plutée couleur de cerf",
+            "Helvelle crépelée",
+            "Chou-fleur des arbres",
+            "Hydne hérisson"
+          ],
+          "indice": "Masse blanche crêpelée",
+          "description": "Massif blanc crêpelé en chou-fleur au pied des conifères.",
+          "explication": "Chou-fleur des arbres : Massif blanc crêpelé en chou-fleur au pied des conifères. Comestible, spectaculaire mais rare."
+        },
+        {
+          "id": "c31",
+          "difficulte": "difficile",
+          "nom_commun": "Hydne hérisson",
+          "nom_scientifique": "Hericium erinaceus",
+          "groupe": "bois",
+          "options": [
+            "Amanite citrine",
+            "Amanite panthère",
+            "Hydne hérisson",
+            "Helvelle crépelée"
+          ],
+          "indice": "Pendilles blanches en touffe",
+          "description": "Masses de pendilles blanches pendantes sur tronc blessé.",
+          "explication": "Hydne hérisson : Masses de pendilles blanches pendantes sur tronc blessé. Comestible, aussi appelé « perruchedes bois »."
+        },
+        {
+          "id": "c32",
+          "difficulte": "difficile",
+          "nom_commun": "Entolome livide",
+          "nom_scientifique": "Entoloma sinuatum",
+          "groupe": "bois",
+          "options": [
+            "Entolome livide",
+            "Gymnopile remarquable",
+            "Pézize couronnée",
+            "Fausse morille"
+          ],
+          "indice": "Grand entolome jaune pâle",
+          "description": "Grand chapeau jaune pâle, lamelles jaunes, odeur farineuse.",
+          "explication": "Entolome livide : Grand chapeau jaune pâle, lamelles jaunes, odeur farineuse. Toxique, provoque de graves troubles digestifs."
+        },
+        {
+          "id": "c33",
+          "difficulte": "difficile",
+          "nom_commun": "Amanite panthère",
+          "nom_scientifique": "Amanita pantherina",
+          "groupe": "bois",
+          "options": [
+            "Pholiote dorée",
+            "Panelle bioluminescente",
+            "Hydne hérisson",
+            "Amanite panthère"
+          ],
+          "indice": "Chapeau brun à flocons blancs",
+          "description": "Chapeau brun foncé, plaques blanches, volve blanche.",
+          "explication": "Amanite panthère : Chapeau brun foncé, plaques blanches, volve blanche. Toxique, contient des substances psychoactives."
+        },
+        {
+          "id": "c34",
+          "difficulte": "difficile",
+          "nom_commun": "Amanite citrine",
+          "nom_scientifique": "Amanita citrina",
+          "groupe": "bois",
+          "options": [
+            "Verpe de Bohême",
+            "Pézize couronnée",
+            "Hydne hérisson",
+            "Amanite citrine"
+          ],
+          "indice": "Amanite jaune citron",
+          "description": "Chapeau jaune citron, lamelles blanches, volve blanche.",
+          "explication": "Amanite citrine : Chapeau jaune citron, lamelles blanches, volve blanche. Toxique, odeur de pomme de terre crue."
+        },
+        {
+          "id": "c35",
+          "difficulte": "difficile",
+          "nom_commun": "Fausse morille",
+          "nom_scientifique": "Gyromitra esculenta",
+          "groupe": "bois",
+          "options": [
+            "Verpe de Bohême",
+            "Reishi",
+            "Fausse morille",
+            "Tramète versicolore"
+          ],
+          "indice": "Lobes en cervelle plissée",
+          "description": "Lobes brun rouge en cerveau plissé sur pied blanc.",
+          "explication": "Fausse morille : Lobes brun rouge en cerveau plissé sur pied blanc. Toxique cru, consommation traditionnelle risquée."
+        },
+        {
+          "id": "c36",
+          "difficulte": "difficile",
+          "nom_commun": "Verpe de Bohême",
+          "nom_scientifique": "Verpa bohemica",
+          "groupe": "bois",
+          "options": [
+            "Fausse morille",
+            "Verpe de Bohême",
+            "Gymnopile remarquable",
+            "Helvelle crépelée"
+          ],
+          "indice": "Capuchon brun sur long pied",
+          "description": "Capuchon brun en thimbre sur long pied blanc.",
+          "explication": "Verpe de Bohême : Capuchon brun en thimbre sur long pied blanc. Proche des morilles, comestible bien cuite."
+        },
+        {
+          "id": "c37",
+          "difficulte": "difficile",
+          "nom_commun": "Helvelle crépelée",
+          "nom_scientifique": "Helvella crispa",
+          "groupe": "bois",
+          "options": [
+            "Hydne hérisson",
+            "Helvelle crépelée",
+            "Pholiote dorée",
+            "Plutée couleur de cerf"
+          ],
+          "indice": "Helvelle blanche lobée",
+          "description": "Chapeau blanc crépelé en oreilles, pied blanc creux.",
+          "explication": "Helvelle crépelée : Chapeau blanc crépelé en oreilles, pied blanc creux. Ascomycète printanier des lisières calcaires."
+        },
+        {
+          "id": "c38",
+          "difficulte": "difficile",
+          "nom_commun": "Pézize couronnée",
+          "nom_scientifique": "Sarcosphaera coronaria",
+          "groupe": "bois",
+          "options": [
+            "Pézize couronnée",
+            "Tramète versicolore",
+            "Hydne hérisson",
+            "Gymnopile remarquable"
+          ],
+          "indice": "Sphère blanche fétide",
+          "description": "Sphère blanche qui s'ouvre en couronne, odeur forte.",
+          "explication": "Pézize couronnée : Sphère blanche qui s'ouvre en couronne, odeur forte. Printemps en forêt humide, à observer sans cueillir."
+        },
+        {
+          "id": "c39",
+          "difficulte": "difficile",
+          "nom_commun": "Gymnopile remarquable",
+          "nom_scientifique": "Gymnopilus spectabilis",
+          "groupe": "bois",
+          "options": [
+            "Mycène à pied rouge",
+            "Pholiote dorée",
+            "Fausse morille",
+            "Gymnopile remarquable"
+          ],
+          "indice": "Grand jaune orangé en touffe",
+          "description": "Très grand chapeau jaune orangé en touffe sur souches.",
+          "explication": "Gymnopile remarquable : Très grand chapeau jaune orangé en touffe sur souches. Lignicole, remarquable par sa taille."
+        },
+        {
+          "id": "c40",
+          "difficulte": "difficile",
+          "nom_commun": "Paxille enroulé",
+          "nom_scientifique": "Paxillus involutus",
+          "groupe": "bois",
+          "options": [
+            "Tramète versicolore",
+            "Gymnopile remarquable",
+            "Paxille enroulé",
+            "Amanite citrine"
+          ],
+          "indice": "Bords du chapeau enroulés",
+          "description": "Chapeau brun-beige à bords enrouvés, lamelles brunes descendantes.",
+          "explication": "Paxille enroulé : Chapeau brun-beige à bords enrouvés, lamelles brunes descendantes. Autrefois consommé, aujourd'hui considéré toxique."
+        },
+        {
+          "id": "c41",
+          "difficulte": "difficile",
+          "nom_commun": "Plutée couleur de cerf",
+          "nom_scientifique": "Pluteus cervinus",
+          "groupe": "bois",
+          "options": [
+            "Hydne hérisson",
+            "Amanite citrine",
+            "Plutée couleur de cerf",
+            "Verpe de Bohême"
+          ],
+          "indice": "Lamelles roses sur bois mort",
+          "description": "Chapeau brun convexe, lamelles roses, sur bois mort.",
+          "explication": "Plutée couleur de cerf : Chapeau brun convexe, lamelles roses, sur bois mort. Comestible, discrète sur bois pourri."
+        },
+        {
+          "id": "c42",
+          "difficulte": "difficile",
+          "nom_commun": "Mycène à pied rouge",
+          "nom_scientifique": "Mycena haematopus",
+          "groupe": "bois",
+          "options": [
+            "Entolome livide",
+            "Fausse morille",
+            "Mycène à pied rouge",
+            "Amanite panthère"
+          ],
+          "indice": "Latex rouge au pied",
+          "description": "Petit chapeau brun, pied rouge qui saigne à la coupure.",
+          "explication": "Mycène à pied rouge : Petit chapeau brun, pied rouge qui saigne à la coupure. Lignicole, saprophyte sur bois humide."
+        },
+        {
+          "id": "c43",
+          "difficulte": "difficile",
+          "nom_commun": "Panelle bioluminescente",
+          "nom_scientifique": "Panellus stipticus",
+          "groupe": "bois",
+          "options": [
+            "Hydne hérisson",
+            "Reishi",
+            "Pézize couronnée",
+            "Panelle bioluminescente"
+          ],
+          "indice": "Petite oreille sur bois",
+          "description": "Petit chapeau en oreille brun, faible bioluminescence nocturne.",
+          "explication": "Panelle bioluminescente : Petit chapeau en oreille brun, faible bioluminescence nocturne. Visible sur bois mort humide."
+        },
+        {
+          "id": "c44",
+          "difficulte": "difficile",
+          "nom_commun": "Pholiote dorée",
+          "nom_scientifique": "Pholiota aurivella",
+          "groupe": "bois",
+          "options": [
+            "Amanite citrine",
+            "Amanite panthère",
+            "Pholiote dorée",
+            "Fausse morille"
+          ],
+          "indice": "Chapeau jaune à écailles",
+          "description": "Chapeau jaune orné d'écailles brunes, touffe sur tronc.",
+          "explication": "Pholiote dorée : Chapeau jaune orné d'écailles brunes, touffe sur tronc. Lignicole des feuillus, non comestible."
+        }
+      ],
+      "defaut": true
+    },
+    {
+      "id": "prairie",
+      "label": "Prairie et lisière",
+      "questions": [
+        {
+          "id": "c45",
+          "difficulte": "facile",
+          "nom_commun": "Marasme des oréades",
+          "nom_scientifique": "Marasmius oreades",
+          "groupe": "prairie",
+          "options": [
+            "Coprin pie",
+            "Agaric jaunissant",
+            "Agaric des jardins",
+            "Marasme des oréades"
+          ],
+          "indice": "Petit blanc en cercle de fée",
+          "description": "Chapeau blanc-beige, pied fin coriace, cercles dans la pelouse.",
+          "explication": "Marasme des oréades : Chapeau blanc-beige, pied fin coriace, cercles dans la pelouse. Comestible, revient après la pluie."
+        },
+        {
+          "id": "c46",
+          "difficulte": "facile",
+          "nom_commun": "Agaric des jardins",
+          "nom_scientifique": "Agaricus campestris",
+          "groupe": "prairie",
+          "options": [
+            "Coprin pie",
+            "Clitocybe lilas des prés",
+            "Agaric des jardins",
+            "Agaric jaunissant"
+          ],
+          "indice": "Agaric blanc des prés",
+          "description": "Chapeau blanc à brun, lamelles roses puis brunes, anneau simple.",
+          "explication": "Agaric des jardins : Chapeau blanc à brun, lamelles roses puis brunes, anneau simple. Comestible classique des prairies et jardins."
+        },
+        {
+          "id": "c47",
+          "difficulte": "facile",
+          "nom_commun": "Agaric jaunissant",
+          "nom_scientifique": "Agaricus xanthodermus",
+          "groupe": "prairie",
+          "options": [
+            "Marasme des oréades",
+            "Clitocybe lilas des prés",
+            "Agaric des jardins",
+            "Agaric jaunissant"
+          ],
+          "indice": "Jaunit fort à la base",
+          "description": "Chapeau blanc, base du pied jaune vif, odeur d'encre.",
+          "explication": "Agaric jaunissant : Chapeau blanc, base du pied jaune vif, odeur d'encre. Toxique, ressemble à l'agaric des jardins."
+        },
+        {
+          "id": "c48",
+          "difficulte": "facile",
+          "nom_commun": "Clitocybe lilas des prés",
+          "nom_scientifique": "Lepista saeva",
+          "groupe": "prairie",
+          "options": [
+            "Marasme des oréades",
+            "Clitocybe lilas des prés",
+            "Vesse-de-loup perlée",
+            "Agaric jaunissant"
+          ],
+          "indice": "Chapeau violacé en entonnoir",
+          "description": "Chapeau violacé, lamelles crèmes, pied bulbeux.",
+          "explication": "Clitocybe lilas des prés : Chapeau violacé, lamelles crèmes, pied bulbeux. Comestible des pâturages, automne."
+        },
+        {
+          "id": "c49",
+          "difficulte": "facile",
+          "nom_commun": "Coprin pie",
+          "nom_scientifique": "Coprinopsis picacea",
+          "groupe": "prairie",
+          "options": [
+            "Marasme des oréades",
+            "Clitocybe lilas des prés",
+            "Vesse-de-loup perlée",
+            "Coprin pie"
+          ],
+          "indice": "Coprin noir à mèches blanches",
+          "description": "Chapeau noir à lamelles blanches à la naissance, très élégant.",
+          "explication": "Coprin pie : Chapeau noir à lamelles blanches à la naissance, très élégant. Sur sol calcaire riche, comestible jeune."
+        },
+        {
+          "id": "c50",
+          "difficulte": "facile",
+          "nom_commun": "Vesse-de-loup perlée",
+          "nom_scientifique": "Lycoperdon perlatum",
+          "groupe": "prairie",
+          "options": [
+            "Marasme des oréades",
+            "Vesse-de-loup perlée",
+            "Clitocybe lilas des prés",
+            "Agaric des jardins"
+          ],
+          "indice": "Globule blanc à mèches",
+          "description": "Petit globule blanc avec mèches blanches au sommet.",
+          "explication": "Vesse-de-loup perlée : Petit globule blanc avec mèches blanches au sommet. Comestible lorsque la chair est blanche."
+        },
+        {
+          "id": "c51",
+          "difficulte": "moyen",
+          "nom_commun": "Agaric des bois",
+          "nom_scientifique": "Agaricus silvaticus",
+          "groupe": "prairie",
+          "options": [
+            "Laccaria améthyste",
+            "Agaric des bois",
+            "Agrocybe des champs",
+            "Laccaria bicolore"
+          ],
+          "indice": "Chapeau brun rouge",
+          "description": "Chapeau brun rouge, lamelles blanches puis brunes, anneau.",
+          "explication": "Agaric des bois : Chapeau brun rouge, lamelles blanches puis brunes, anneau. Comestible en lisière et clairières."
+        },
+        {
+          "id": "c52",
+          "difficulte": "moyen",
+          "nom_commun": "Clitocybe élargi",
+          "nom_scientifique": "Clitocybe geotropa",
+          "groupe": "prairie",
+          "options": [
+            "Entolome soyeux",
+            "Laccaria améthyste",
+            "Clitocybe élargi",
+            "Bolétie à pied rouge"
+          ],
+          "indice": "Grand entonnoir crème",
+          "description": "Grand funnel crème, pied central haut, odeur agréable.",
+          "explication": "Clitocybe élargi : Grand funnel crème, pied central haut, odeur agréable. Comestible, dans les prairies calcaires."
+        },
+        {
+          "id": "c53",
+          "difficulte": "moyen",
+          "nom_commun": "Agrocybe des champs",
+          "nom_scientifique": "Agrocybe pediades",
+          "groupe": "prairie",
+          "options": [
+            "Laccaria améthyste",
+            "Scléroderme vulgaire",
+            "Laccaria bicolore",
+            "Agrocybe des champs"
+          ],
+          "indice": "Jaune ocre sur sol riche",
+          "description": "Chapeau jaune ocre conique, lamelles brunes, sol enrichi.",
+          "explication": "Agrocybe des champs : Chapeau jaune ocre conique, lamelles brunes, sol enrichi. Printemps et été sur compost et fumier."
+        },
+        {
+          "id": "c54",
+          "difficulte": "moyen",
+          "nom_commun": "Bolétie à pied rouge",
+          "nom_scientifique": "Xerocomus rubellus",
+          "groupe": "prairie",
+          "options": [
+            "Bolétie à pied rouge",
+            "Psathyrelle touffue",
+            "Calocybe gambosa",
+            "Clitocybe élargi"
+          ],
+          "indice": "Petit bolet rougeâtre",
+          "description": "Chapeau brun rouge, pied rouge, lamelles roses.",
+          "explication": "Bolétie à pied rouge : Chapeau brun rouge, pied rouge, lamelles roses. Lisière de bois et talus herbeux."
+        },
+        {
+          "id": "c55",
+          "difficulte": "moyen",
+          "nom_commun": "Entolome soyeux",
+          "nom_scientifique": "Entoloma sericeum",
+          "groupe": "prairie",
+          "options": [
+            "Entolome soyeux",
+            "Laccaria améthyste",
+            "Agaric des bois",
+            "Agrocybe des champs"
+          ],
+          "indice": "Chapeau brun satiné",
+          "description": "Chapeau brun soyeux, lamelles gris blanc, pied soyeux.",
+          "explication": "Entolome soyeux : Chapeau brun soyeux, lamelles gris blanc, pied soyeux. Petit champignon des pelouses, toxique."
+        },
+        {
+          "id": "c56",
+          "difficulte": "moyen",
+          "nom_commun": "Psathyrelle touffue",
+          "nom_scientifique": "Psathyrella multipedata",
+          "groupe": "prairie",
+          "options": [
+            "Agrocybe des champs",
+            "Psathyrelle touffue",
+            "Laccaria bicolore",
+            "Scléroderme vulgaire"
+          ],
+          "indice": "Touffe grise sur sol humide",
+          "description": "Chapeau gris brun en touffe, pieds nombreux, sol humide.",
+          "explication": "Psathyrelle touffue : Chapeau gris brun en touffe, pieds nombreux, sol humide. Saprophyte des zones herbeuses humides."
+        },
+        {
+          "id": "c57",
+          "difficulte": "moyen",
+          "nom_commun": "Laccaria améthyste",
+          "nom_scientifique": "Laccaria amethystina",
+          "groupe": "prairie",
+          "options": [
+            "Entolome soyeux",
+            "Calocybe gambosa",
+            "Psathyrelle touffue",
+            "Laccaria améthyste"
+          ],
+          "indice": "Petit violet améthyste",
+          "description": "Chapeau violet améthyste, lamelles violet pâle, pied strié.",
+          "explication": "Laccaria améthyste : Chapeau violet améthyste, lamelles violet pâle, pied strié. Comestible, commun en lisière humide."
+        },
+        {
+          "id": "c58",
+          "difficulte": "moyen",
+          "nom_commun": "Laccaria bicolore",
+          "nom_scientifique": "Laccaria bicolor",
+          "groupe": "prairie",
+          "options": [
+            "Laccaria bicolore",
+            "Calocybe gambosa",
+            "Psathyrelle touffue",
+            "Clitocybe élargi"
+          ],
+          "indice": "Chapeau brun orangé",
+          "description": "Chapeau brun orangé, lamelles blanches, pied strié.",
+          "explication": "Laccaria bicolore : Chapeau brun orangé, lamelles blanches, pied strié. Symbionte des pins, comestible."
+        },
+        {
+          "id": "c59",
+          "difficulte": "moyen",
+          "nom_commun": "Scléroderme vulgaire",
+          "nom_scientifique": "Scleroderma citrinum",
+          "groupe": "prairie",
+          "options": [
+            "Scléroderme vulgaire",
+            "Bolétie à pied rouge",
+            "Clitocybe élargi",
+            "Psathyrelle touffue"
+          ],
+          "indice": "Pomme de terre jaune",
+          "description": "Corps jaune brun en pomme de terre, chair noire à maturité.",
+          "explication": "Scléroderme vulgaire : Corps jaune brun en pomme de terre, chair noire à maturité. Toxique, ressemble aux cèpes jeunes."
+        },
+        {
+          "id": "c60",
+          "difficulte": "moyen",
+          "nom_commun": "Calocybe gambosa",
+          "nom_scientifique": "Calocybe gambosa",
+          "groupe": "prairie",
+          "options": [
+            "Agaric des bois",
+            "Calocybe gambosa",
+            "Entolome soyeux",
+            "Laccaria bicolore"
+          ],
+          "indice": "Chapeau blanc crème",
+          "description": "Chapeau blanc crème, lamelles blanches, odeur farineuse forte.",
+          "explication": "Calocybe gambosa : Chapeau blanc crème, lamelles blanches, odeur farineuse forte. Comestible printanier des lisières."
+        },
+        {
+          "id": "c61",
+          "difficulte": "difficile",
+          "nom_commun": "Stérée hirsute",
+          "nom_scientifique": "Stereum hirsutum",
+          "groupe": "prairie",
+          "options": [
+            "Phallus impudique",
+            "Géastre triqué",
+            "Stérée hirsute",
+            "Polypore du bouleau blanc"
+          ],
+          "indice": "Console orange velue",
+          "description": "Console orange mince velue, non comestible, sur bois mort.",
+          "explication": "Stérée hirsute : Console orange mince velue, non comestible, sur bois mort. Champignon corticoïde des lisières."
+        },
+        {
+          "id": "c62",
+          "difficulte": "difficile",
+          "nom_commun": "Géastre triqué",
+          "nom_scientifique": "Geastrum triplex",
+          "groupe": "prairie",
+          "options": [
+            "Galerina marginata",
+            "Agaric des prés",
+            "Hebeloma mesophaeum",
+            "Géastre triqué"
+          ],
+          "indice": "Étoile terrestre brune",
+          "description": "Corps brun qui s'ouvre en étoile avec boule centrale.",
+          "explication": "Géastre triqué : Corps brun qui s'ouvre en étoile avec boule centrale. Champignon de litière en lisière calcaire."
+        },
+        {
+          "id": "c63",
+          "difficulte": "difficile",
+          "nom_commun": "Clathre rubicond",
+          "nom_scientifique": "Clathrus ruber",
+          "groupe": "prairie",
+          "options": [
+            "Phallus impudique",
+            "Clathre rubicond",
+            "Stérée hirsute",
+            "Galerina marginata"
+          ],
+          "indice": "Clathre rouge en cage",
+          "description": "Structure rouge en clathre, odeur fétide attirant les mouches.",
+          "explication": "Clathre rubicond : Structure rouge en clathre, odeur fétide attirant les mouches. Champignon tropical rare en France méridionale."
+        },
+        {
+          "id": "c64",
+          "difficulte": "difficile",
+          "nom_commun": "Phallus impudique",
+          "nom_scientifique": "Phallus impudicus",
+          "groupe": "prairie",
+          "options": [
+            "Stérée hirsute",
+            "Phallus impudique",
+            "Agaric des prés",
+            "Clathre rubicond"
+          ],
+          "indice": "Phallus blanc à volve",
+          "description": "Tige blanche spongieuse, tête gluante brun olive, volve blanche.",
+          "explication": "Phallus impudique : Tige blanche spongieuse, tête gluante brun olive, volve blanche. Odeur de charogne, très reconnaissable."
+        },
+        {
+          "id": "c65",
+          "difficulte": "difficile",
+          "nom_commun": "Mutinus caninus",
+          "nom_scientifique": "Mutinus caninus",
+          "groupe": "prairie",
+          "options": [
+            "Inocybe patouillardii",
+            "Phallus impudique",
+            "Polypore du bouleau blanc",
+            "Mutinus caninus"
+          ],
+          "indice": "Doigt orange à volve",
+          "description": "Tige orange en doigt, tête gluante verte, volve blanche.",
+          "explication": "Mutinus caninus : Tige orange en doigt, tête gluante verte, volve blanche. Phalloïdée des lisières et jardins humides."
+        },
+        {
+          "id": "c66",
+          "difficulte": "difficile",
+          "nom_commun": "Langue de boeuf",
+          "nom_scientifique": "Fistulina hepatica",
+          "groupe": "prairie",
+          "options": [
+            "Clathre rubicond",
+            "Phallus impudique",
+            "Langue de boeuf",
+            "Inocybe patouillardii"
+          ],
+          "indice": "Console rouge sang",
+          "description": "Console épaisse rouge sang suintante, sur chêne.",
+          "explication": "Langue de boeuf : Console épaisse rouge sang suintante, sur chêne. Comestible jeune, ressemble à un foie."
+        },
+        {
+          "id": "c67",
+          "difficulte": "difficile",
+          "nom_commun": "Polypore du bouleau blanc",
+          "nom_scientifique": "Trametes gibbosa",
+          "groupe": "prairie",
+          "options": [
+            "Stérée hirsute",
+            "Polypore du bouleau blanc",
+            "Clathre rubicond",
+            "Langue de boeuf"
+          ],
+          "indice": "Console blanche bosselée",
+          "description": "Console blanche bosselée, bords arrondis, sur feuillus.",
+          "explication": "Polypore du bouleau blanc : Console blanche bosselée, bords arrondis, sur feuillus. Lignicole des lisières humides."
+        },
+        {
+          "id": "c68",
+          "difficulte": "difficile",
+          "nom_commun": "Agaric des prés",
+          "nom_scientifique": "Agaricus arvensis",
+          "groupe": "prairie",
+          "options": [
+            "Clathre rubicond",
+            "Mutinus caninus",
+            "Agaric des prés",
+            "Géastre triqué"
+          ],
+          "indice": "Grand agaric blanc",
+          "description": "Grand chapeau blanc, anneau double, odeur anisée.",
+          "explication": "Agaric des prés : Grand chapeau blanc, anneau double, odeur anisée. Comestible des prairies et pâturages."
+        },
+        {
+          "id": "c69",
+          "difficulte": "difficile",
+          "nom_commun": "Coprin blanc",
+          "nom_scientifique": "Coprinellus disseminatus",
+          "groupe": "prairie",
+          "options": [
+            "Agaric des prés",
+            "Coprin blanc",
+            "Phallus impudique",
+            "Hebeloma mesophaeum"
+          ],
+          "indice": "Minuscules coprins gris",
+          "description": "Très petits chapeaux gris en touffe, ne se liquéfie pas.",
+          "explication": "Coprin blanc : Très petits chapeaux gris en touffe, ne se liquéfie pas. Sur souches et bois enterrés en lisière."
+        },
+        {
+          "id": "c70",
+          "difficulte": "difficile",
+          "nom_commun": "Galerina marginata",
+          "nom_scientifique": "Galerina marginata",
+          "groupe": "prairie",
+          "options": [
+            "Galerina marginata",
+            "Stérée hirsute",
+            "Phallus impudique",
+            "Hebeloma mesophaeum"
+          ],
+          "indice": "Petit chapeau brun sur mousse",
+          "description": "Petit chapeau brun conique, sur mousse et bois pourri.",
+          "explication": "Galerina marginata : Petit chapeau brun conique, sur mousse et bois pourri. Mortelle, contient les mêmes toxines que l'amanite phalloïde."
+        },
+        {
+          "id": "c71",
+          "difficulte": "difficile",
+          "nom_commun": "Inocybe patouillardii",
+          "nom_scientifique": "Inocybe patouillardii",
+          "groupe": "prairie",
+          "options": [
+            "Inocybe patouillardii",
+            "Géastre triqué",
+            "Mutinus caninus",
+            "Langue de boeuf"
+          ],
+          "indice": "Chapeau brun fibrilleux",
+          "description": "Chapeau brun conique fibrilleux, lamelles brunes.",
+          "explication": "Inocybe patouillardii : Chapeau brun conique fibrilleux, lamelles brunes. Toxique, nombreuses espèces d'inocybes dangereuses."
+        },
+        {
+          "id": "c72",
+          "difficulte": "difficile",
+          "nom_commun": "Hebeloma mesophaeum",
+          "nom_scientifique": "Hebeloma mesophaeum",
+          "groupe": "prairie",
+          "options": [
+            "Hebeloma mesophaeum",
+            "Mutinus caninus",
+            "Géastre triqué",
+            "Stérée hirsute"
+          ],
+          "indice": "Chapeau brun visqueux",
+          "description": "Chapeau brun visqueux, lamelles brunes, odeur radis.",
+          "explication": "Hebeloma mesophaeum : Chapeau brun visqueux, lamelles brunes, odeur radis. Toxique, touffes en lisière de conifères."
+        }
+      ]
+    },
+    {
+      "id": "montagne",
+      "label": "Montagne",
+      "questions": [
+        {
+          "id": "c73",
+          "difficulte": "facile",
+          "nom_commun": "Cèpe des pins",
+          "nom_scientifique": "Boletus pinophilus",
+          "groupe": "montagne",
+          "options": [
+            "Cèpe des pins",
+            "Laccaria laccata montagnard",
+            "Lactaire des sapins",
+            "Morille conique"
+          ],
+          "indice": "Cèpe brun sous pins",
+          "description": "Chapeau brun foncé, pied réticulé brun rouge, sous pins.",
+          "explication": "Cèpe des pins : Chapeau brun foncé, pied réticulé brun rouge, sous pins. Proche du cèpe de Bordeaux, comestible."
+        },
+        {
+          "id": "c74",
+          "difficulte": "facile",
+          "nom_commun": "Lactaire des sapins",
+          "nom_scientifique": "Lactarius deterrimus",
+          "groupe": "montagne",
+          "options": [
+            "Cèpe des pins",
+            "Lactaire des sapins",
+            "Sanguin",
+            "Agaric des montagnes"
+          ],
+          "indice": "Lactaire orange des sapins",
+          "description": "Chapeau orangé zoné, lamelles orangées, lait orange ambré.",
+          "explication": "Lactaire des sapins : Chapeau orangé zoné, lamelles orangées, lait orange ambré. Comestible sous épicéas en montagne."
+        },
+        {
+          "id": "c75",
+          "difficulte": "facile",
+          "nom_commun": "Sanguin",
+          "nom_scientifique": "Hydnellum peckii",
+          "groupe": "montagne",
+          "options": [
+            "Sanguin",
+            "Cèpe des pins",
+            "Morille conique",
+            "Agaric des montagnes"
+          ],
+          "indice": "Console rouge gouttes sang",
+          "description": "Console brune à gouttes rouges à la jeunesse.",
+          "explication": "Sanguin : Console brune à gouttes rouges à la jeunesse. Champignon mycorhizien des pins de montagne."
+        },
+        {
+          "id": "c76",
+          "difficulte": "facile",
+          "nom_commun": "Morille conique",
+          "nom_scientifique": "Morchella conica",
+          "groupe": "montagne",
+          "options": [
+            "Cèpe des pins",
+            "Morille conique",
+            "Agaric des montagnes",
+            "Sanguin"
+          ],
+          "indice": "Morille brune allongée",
+          "description": "Capuchon brun conique allongé sur pied blanc.",
+          "explication": "Morille conique : Capuchon brun conique allongé sur pied blanc. Printemps en montagne sur sols calcaires."
+        },
+        {
+          "id": "c77",
+          "difficulte": "facile",
+          "nom_commun": "Agaric des montagnes",
+          "nom_scientifique": "Agaricus sylvicola",
+          "groupe": "montagne",
+          "options": [
+            "Agaric des montagnes",
+            "Laccaria laccata montagnard",
+            "Sanguin",
+            "Morille conique"
+          ],
+          "indice": "Agaric blanc des bois clairs",
+          "description": "Chapeau blanc à crème, anneau pendante, odeur anisée.",
+          "explication": "Agaric des montagnes : Chapeau blanc à crème, anneau pendante, odeur anisée. Comestible en clairières montagnardes."
+        },
+        {
+          "id": "c78",
+          "difficulte": "moyen",
+          "nom_commun": "Bolet à base rouge",
+          "nom_scientifique": "Suillus grevillei",
+          "groupe": "montagne",
+          "options": [
+            "Bolet à base rouge",
+            "Hydne bleu",
+            "Cortinaire orellanique",
+            "Russule émétique"
+          ],
+          "indice": "Bolet jaune sous mélèze",
+          "description": "Chapeau brun jaune, pied jaune avec zone rouge à la base.",
+          "explication": "Bolet à base rouge : Chapeau brun jaune, pied jaune avec zone rouge à la base. Sous mélèzes, comestible épluché."
+        },
+        {
+          "id": "c79",
+          "difficulte": "moyen",
+          "nom_commun": "Lactaire à milk-cap",
+          "nom_scientifique": "Lactarius scrobiculatus",
+          "groupe": "montagne",
+          "options": [
+            "Leccinum aurantiacum",
+            "Hydne bleu",
+            "Cortinaire orellanique",
+            "Lactaire à milk-cap"
+          ],
+          "indice": "Lactaire blanc à lait blanc",
+          "description": "Chapeau jaune crème, lamelles blanches, lait blanc âcre.",
+          "explication": "Lactaire à milk-cap : Chapeau jaune crème, lamelles blanches, lait blanc âcre. Sous épicéas, toxique."
+        },
+        {
+          "id": "c80",
+          "difficulte": "moyen",
+          "nom_commun": "Russule émétique",
+          "nom_scientifique": "Russula emetica",
+          "groupe": "montagne",
+          "options": [
+            "Russule émétique",
+            "Entolome prunier",
+            "Leccinum aurantiacum",
+            "Clitocybe de l'Arctique"
+          ],
+          "indice": "Russule rouge vif",
+          "description": "Chapeau rouge vif, lamelles blanches, lait blanc, goût très piquant.",
+          "explication": "Russule émétique : Chapeau rouge vif, lamelles blanches, lait blanc, goût très piquant. Toxique, pousse près des sphaignes en montagne."
+        },
+        {
+          "id": "c81",
+          "difficulte": "moyen",
+          "nom_commun": "Cortinaire orellanique",
+          "nom_scientifique": "Cortinarius orellanus",
+          "groupe": "montagne",
+          "options": [
+            "Entolome prunier",
+            "Cortinaire orellanique",
+            "Leccinum aurantiacum",
+            "Hydne bleu"
+          ],
+          "indice": "Cortinaire brun orangé",
+          "description": "Chapeau brun orangé, lamelles ocre, cortine blanche.",
+          "explication": "Cortinaire orellanique : Chapeau brun orangé, lamelles ocre, cortine blanche. Mortel à long terme, rein toxique."
+        },
+        {
+          "id": "c82",
+          "difficulte": "moyen",
+          "nom_commun": "Leccinum aurantiacum",
+          "nom_scientifique": "Leccinum aurantiacum",
+          "groupe": "montagne",
+          "options": [
+            "Lactaire à milk-cap",
+            "Entolome prunier",
+            "Leccinum aurantiacum",
+            "Hydne bleu"
+          ],
+          "indice": "Bolet orange à pied noir",
+          "description": "Chapeau orange, pied avec écailles noires, sous bouleaux montagnards.",
+          "explication": "Leccinum aurantiacum : Chapeau orange, pied avec écailles noires, sous bouleaux montagnards. Comestible bien cuit."
+        },
+        {
+          "id": "c83",
+          "difficulte": "moyen",
+          "nom_commun": "Hydne bleu",
+          "nom_scientifique": "Hydnum caeruleum",
+          "groupe": "montagne",
+          "options": [
+            "Clitocybe de l'Arctique",
+            "Cortinaire orellanique",
+            "Hydne bleu",
+            "Leccinum aurantiacum"
+          ],
+          "indice": "Pied-de-mouton des montagnes",
+          "description": "Chapeau brun, aiguillons blancs, sous conifères subalpins.",
+          "explication": "Hydne bleu : Chapeau brun, aiguillons blancs, sous conifères subalpins. Comestible, proche du pied-de-mouton."
+        },
+        {
+          "id": "c84",
+          "difficulte": "moyen",
+          "nom_commun": "Champignon des neiges",
+          "nom_scientifique": "Melanoleuca cognata",
+          "groupe": "montagne",
+          "options": [
+            "Entolome prunier",
+            "Cortinaire orellanique",
+            "Bolet à base rouge",
+            "Champignon des neiges"
+          ],
+          "indice": "Chapeau brun crème",
+          "description": "Chapeau brun crème, lamelles blanches, pied strié.",
+          "explication": "Champignon des neiges : Chapeau brun crème, lamelles blanches, pied strié. Printemps en prairies montagnardes après la fonte."
+        },
+        {
+          "id": "c85",
+          "difficulte": "moyen",
+          "nom_commun": "Clitocybe de l'Arctique",
+          "nom_scientifique": "Clitocybe rivulosa",
+          "groupe": "montagne",
+          "options": [
+            "Cortinaire orellanique",
+            "Champignon des neiges",
+            "Clitocybe de l'Arctique",
+            "Collybie à pied en velours"
+          ],
+          "indice": "Entonnoir blanc crème",
+          "description": "Chapeau blanc crème en entonnoir, lamelles blanches.",
+          "explication": "Clitocybe de l'Arctique : Chapeau blanc crème en entonnoir, lamelles blanches. Toxique, prairies alpines humides."
+        },
+        {
+          "id": "c86",
+          "difficulte": "moyen",
+          "nom_commun": "Entolome prunier",
+          "nom_scientifique": "Entoloma prunuloides",
+          "groupe": "montagne",
+          "options": [
+            "Bolet à base rouge",
+            "Lactaire à milk-cap",
+            "Entolome prunier",
+            "Champignon des neiges"
+          ],
+          "indice": "Chapeau brun prune",
+          "description": "Chapeau brun prune, lamelles blanches, pied blanc.",
+          "explication": "Entolome prunier : Chapeau brun prune, lamelles blanches, pied blanc. Montagne, comestible selon les auteurs."
+        },
+        {
+          "id": "c87",
+          "difficulte": "difficile",
+          "nom_commun": "Gyromitre infauste",
+          "nom_scientifique": "Gyromitra infula",
+          "groupe": "montagne",
+          "options": [
+            "Helvelle élégante",
+            "Paxillus involutus montagnard",
+            "Gyromitre infauste",
+            "Russule des Hélènes"
+          ],
+          "indice": "Capuchon brun en mitre",
+          "description": "Capuchon brun en mitre sur pied blanc, sur bois.",
+          "explication": "Gyromitre infauste : Capuchon brun en mitre sur pied blanc, sur bois. Toxique, ascomycète montagnard."
+        },
+        {
+          "id": "c88",
+          "difficulte": "difficile",
+          "nom_commun": "Helvelle élégante",
+          "nom_scientifique": "Helvella elegans",
+          "groupe": "montagne",
+          "options": [
+            "Helvelle élégante",
+            "Clavaria vermicularis",
+            "Mycène à odeur de radis",
+            "Bolet des sapins"
+          ],
+          "indice": "Helvelle brune lobée",
+          "description": "Chapeau brun lobé en oreilles, pied blanc creux.",
+          "explication": "Helvelle élégante : Chapeau brun lobé en oreilles, pied blanc creux. Printemps en forêts montagnardes."
+        },
+        {
+          "id": "c89",
+          "difficulte": "difficile",
+          "nom_commun": "Morchella elata",
+          "nom_scientifique": "Morchella elata",
+          "groupe": "montagne",
+          "options": [
+            "Morchella elata",
+            "Tricholome soufré",
+            "Russule des Hélènes",
+            "Baeomyces rose"
+          ],
+          "indice": "Morille noire allongée",
+          "description": "Capuchon brun noir allongé, pied blanc, brûlis alpins.",
+          "explication": "Morchella elata : Capuchon brun noir allongé, pied blanc, brûlis alpins. Comestible, plus sombre que la morille commune."
+        },
+        {
+          "id": "c90",
+          "difficulte": "difficile",
+          "nom_commun": "Baeomyces rose",
+          "nom_scientifique": "Baeomyces roseus",
+          "groupe": "montagne",
+          "options": [
+            "Baeomyces rose",
+            "Clavaria vermicularis",
+            "Inocybe alpine",
+            "Cantharellus cibarius alpin"
+          ],
+          "indice": "Thalle moussu rose",
+          "description": "Thalle moussu avec apothices roses, sols acides de montagne.",
+          "explication": "Baeomyces rose : Thalle moussu avec apothices roses, sols acides de montagne. Lichen champignon des landes alpines."
+        },
+        {
+          "id": "c91",
+          "difficulte": "difficile",
+          "nom_commun": "Cortinarius semisanguineus",
+          "nom_scientifique": "Cortinarius semisanguineus",
+          "groupe": "montagne",
+          "options": [
+            "Tricholome soufré",
+            "Clavaria vermicularis",
+            "Mycène à odeur de radis",
+            "Cortinarius semisanguineus"
+          ],
+          "indice": "Cortinaire à lamelles rouges",
+          "description": "Chapeau brun, lamelles rouge sang, sous conifères.",
+          "explication": "Cortinarius semisanguineus : Chapeau brun, lamelles rouge sang, sous conifères. Toxique, lamelles très colorées."
+        },
+        {
+          "id": "c92",
+          "difficulte": "difficile",
+          "nom_commun": "Mycène à odeur de radis",
+          "nom_scientifique": "Mycena olivaceomarginata",
+          "groupe": "montagne",
+          "options": [
+            "Clavaria vermicularis",
+            "Mycène à odeur de radis",
+            "Lactaire à spores blanches",
+            "Cortinarius semisanguineus"
+          ],
+          "indice": "Petit mycène brun",
+          "description": "Petit chapeau brun, lamelles blanches bordées d'olive.",
+          "explication": "Mycène à odeur de radis : Petit chapeau brun, lamelles blanches bordées d'olive. Litière humide des sapinières montagnardes."
+        },
+        {
+          "id": "c93",
+          "difficulte": "difficile",
+          "nom_commun": "Lactaire à spores blanches",
+          "nom_scientifique": "Lactarius pubescens",
+          "groupe": "montagne",
+          "options": [
+            "Cortinarius semisanguineus",
+            "Lactaire à spores blanches",
+            "Morchella elata",
+            "Baeomyces rose"
+          ],
+          "indice": "Lactaire beige duveteux",
+          "description": "Chapeau beige duveteux, lamelles blanches, lait blanc.",
+          "explication": "Lactaire à spores blanches : Chapeau beige duveteux, lamelles blanches, lait blanc. Sous bouleaux en montagne, toxique."
+        },
+        {
+          "id": "c94",
+          "difficulte": "difficile",
+          "nom_commun": "Ramaria flava",
+          "nom_scientifique": "Ramaria flava",
+          "groupe": "montagne",
+          "options": [
+            "Ramaria flava",
+            "Helvelle élégante",
+            "Lactaire à spores blanches",
+            "Tricholome soufré"
+          ],
+          "indice": "Corail jaune",
+          "description": "Fructification en corail jaune pâle, sous feuillus montagnards.",
+          "explication": "Ramaria flava : Fructification en corail jaune pâle, sous feuillus montagnards. Comestible bien cuite, belle forme coralloïde."
+        },
+        {
+          "id": "c95",
+          "difficulte": "difficile",
+          "nom_commun": "Clavaria vermicularis",
+          "nom_scientifique": "Clavaria vermicularis",
+          "groupe": "montagne",
+          "options": [
+            "Gyromitre infauste",
+            "Clavaria vermicularis",
+            "Cantharellus cibarius alpin",
+            "Baeomyces rose"
+          ],
+          "indice": "Corail blanc",
+          "description": "Tiges blanches dressées en touffe, sol humide alpin.",
+          "explication": "Clavaria vermicularis : Tiges blanches dressées en touffe, sol humide alpin. Champignon coralloïde des pâturages humides."
+        },
+        {
+          "id": "c96",
+          "difficulte": "difficile",
+          "nom_commun": "Paxillus involutus montagnard",
+          "nom_scientifique": "Tapinella atrotomentosa",
+          "groupe": "montagne",
+          "options": [
+            "Paxillus involutus montagnard",
+            "Gyromitre infauste",
+            "Bolet des sapins",
+            "Ramaria flava"
+          ],
+          "indice": "Pied velouté noir",
+          "description": "Chapeau brun, pied noir velouté, sur souches en montagne.",
+          "explication": "Paxillus involutus montagnard : Chapeau brun, pied noir velouté, sur souches en montagne. Non comestible, ressemble au paxille."
+        },
+        {
+          "id": "c97",
+          "difficulte": "difficile",
+          "nom_commun": "Pholiote des montagnes",
+          "nom_scientifique": "Pholiota spumosa",
+          "groupe": "montagne",
+          "options": [
+            "Clavaria vermicularis",
+            "Pholiote des montagnes",
+            "Amanite vaginée",
+            "Cantharellus cibarius alpin"
+          ],
+          "indice": "Pholiote visqueuse brune",
+          "description": "Chapeau brun visqueux, lamelles brunes, sur sol humide alpin.",
+          "explication": "Pholiote des montagnes : Chapeau brun visqueux, lamelles brunes, sur sol humide alpin. Toxique, touffes printanières."
+        },
+        {
+          "id": "c98",
+          "difficulte": "difficile",
+          "nom_commun": "Inocybe alpine",
+          "nom_scientifique": "Inocybe geophylla",
+          "groupe": "montagne",
+          "options": [
+            "Ramaria flava",
+            "Lactaire à spores blanches",
+            "Clavaria vermicularis",
+            "Inocybe alpine"
+          ],
+          "indice": "Inocybe blanc",
+          "description": "Chapeau blanc conique, lamelles blanches, sol calcaire alpin.",
+          "explication": "Inocybe alpine : Chapeau blanc conique, lamelles blanches, sol calcaire alpin. Toxique, ressemble à de jeunes agarics."
+        },
+        {
+          "id": "c99",
+          "difficulte": "difficile",
+          "nom_commun": "Amanite vaginée",
+          "nom_scientifique": "Amanita vaginata",
+          "groupe": "montagne",
+          "options": [
+            "Bolet des sapins",
+            "Inocybe alpine",
+            "Amanite vaginée",
+            "Morchella elata"
+          ],
+          "indice": "Amanite grise sans anneau",
+          "description": "Chapeau gris brun, lamelles blanches, volve blanche, pas d'anneau.",
+          "explication": "Amanite vaginée : Chapeau gris brun, lamelles blanches, volve blanche, pas d'anneau. Comestible mais risque de confusion."
+        },
+        {
+          "id": "c100",
+          "difficulte": "difficile",
+          "nom_commun": "Bolet des sapins",
+          "nom_scientifique": "Suillus viscidus",
+          "groupe": "montagne",
+          "options": [
+            "Paxillus involutus montagnard",
+            "Amanite vaginée",
+            "Russule des Hélènes",
+            "Bolet des sapins"
+          ],
+          "indice": "Bolet visqueux gris",
+          "description": "Chapeau gris visqueux, pied jaune, sous sapins pectinés.",
+          "explication": "Bolet des sapins : Chapeau gris visqueux, pied jaune, sous sapins pectinés. Comestible épluché, montagne."
+        },
+        {
+          "id": "c101",
+          "difficulte": "difficile",
+          "nom_commun": "Cantharellus cibarius alpin",
+          "nom_scientifique": "Cantharellus pallens",
+          "groupe": "montagne",
+          "options": [
+            "Bolet des sapins",
+            "Ramaria flava",
+            "Cantharellus cibarius alpin",
+            "Cortinarius semisanguineus"
+          ],
+          "indice": "Girolle pâle",
+          "description": "Corolle jaune pâle, plus discrète que la girolle.",
+          "explication": "Cantharellus cibarius alpin : Corolle jaune pâle, plus discrète que la girolle. Comestible, lisières alpines."
+        },
+        {
+          "id": "c102",
+          "difficulte": "difficile",
+          "nom_commun": "Russule des Hélènes",
+          "nom_scientifique": "Russula helios",
+          "groupe": "montagne",
+          "options": [
+            "Russule des Hélènes",
+            "Mycène à odeur de radis",
+            "Amanite vaginée",
+            "Baeomyces rose"
+          ],
+          "indice": "Russule jaune vif",
+          "description": "Chapeau jaune vif, lamelles blanches, saveur douce.",
+          "explication": "Russule des Hélènes : Chapeau jaune vif, lamelles blanches, saveur douce. Rare, sous conifères de haute montagne."
+        },
+        {
+          "id": "c103",
+          "difficulte": "facile",
+          "nom_commun": "Laccaria laccata montagnard",
+          "nom_scientifique": "Laccaria laccata",
+          "groupe": "montagne",
+          "options": [
+            "Lactaire des sapins",
+            "Morille conique",
+            "Laccaria laccata montagnard",
+            "Sanguin"
+          ],
+          "indice": "Chapeau brun orangé strié",
+          "description": "Chapeau brun orangé, lamelles espacées, pied strié.",
+          "explication": "Laccaria laccata montagnard : Chapeau brun orangé, lamelles espacées, pied strié. Comestible, très commun sous conifères."
+        },
+        {
+          "id": "c104",
+          "difficulte": "difficile",
+          "nom_commun": "Tricholome soufré",
+          "nom_scientifique": "Tricholoma sulphureum",
+          "groupe": "montagne",
+          "options": [
+            "Inocybe alpine",
+            "Clavaria vermicularis",
+            "Gyromitre infauste",
+            "Tricholome soufré"
+          ],
+          "indice": "Chapeau jaune soufre",
+          "description": "Chapeau jaune soufre, lamelles jaunes, odeur forte.",
+          "explication": "Tricholome soufré : Chapeau jaune soufre, lamelles jaunes, odeur forte. Toxique, sous conifères montagnards."
+        },
+        {
+          "id": "c105",
+          "difficulte": "moyen",
+          "nom_commun": "Collybie à pied en velours",
+          "nom_scientifique": "Gymnopus fusipes",
+          "groupe": "montagne",
+          "options": [
+            "Lactaire à milk-cap",
+            "Bolet à base rouge",
+            "Champignon des neiges",
+            "Collybie à pied en velours"
+          ],
+          "indice": "Pied fusiforme roux",
+          "description": "Chapeau brun rouge, pied fusiforme roux, touffe sur souche.",
+          "explication": "Collybie à pied en velours : Chapeau brun rouge, pied fusiforme roux, touffe sur souche. Comestible avec précaution, odeur forte."
+        }
+      ]
+    },
+    {
+      "id": "pinede",
+      "label": "Pinède et dunes",
+      "questions": [
+        {
+          "id": "c106",
+          "difficulte": "facile",
+          "nom_commun": "Bolet des pins",
+          "nom_scientifique": "Suillus luteus",
+          "groupe": "pinede",
+          "options": [
+            "Lactaire du pin",
+            "Bolet des pins",
+            "Strobileur des pins",
+            "Bolet à chair jaune"
+          ],
+          "indice": "Bolet brun à anneau",
+          "description": "Chapeau brun visqueux, anneau blanc, sous pins.",
+          "explication": "Bolet des pins : Chapeau brun visqueux, anneau blanc, sous pins. Comestible épluché, très commun."
+        },
+        {
+          "id": "c107",
+          "difficulte": "facile",
+          "nom_commun": "Bolet à chair jaune",
+          "nom_scientifique": "Xerocomus chrysenteron",
+          "groupe": "pinede",
+          "options": [
+            "Scléroderme des pins",
+            "Bolet à chair jaune",
+            "Strobileur des pins",
+            "Lactaire du pin"
+          ],
+          "indice": "Chapeau fissuré jaune",
+          "description": "Chapeau brun fissuré révélant jaune, lamelles roses.",
+          "explication": "Bolet à chair jaune : Chapeau brun fissuré révélant jaune, lamelles roses. Comestible, sous pins et feuillus."
+        },
+        {
+          "id": "c108",
+          "difficulte": "facile",
+          "nom_commun": "Lactaire du pin",
+          "nom_scientifique": "Lactarius musteus",
+          "groupe": "pinede",
+          "options": [
+            "Strobileur des pins",
+            "Scléroderme des pins",
+            "Lactaire du pin",
+            "Bolet des pins"
+          ],
+          "indice": "Lactaire gris brun",
+          "description": "Chapeau gris brun, lait blanc, sous pins.",
+          "explication": "Lactaire du pin : Chapeau gris brun, lait blanc, sous pins. Comestible, saveur douce."
+        },
+        {
+          "id": "c109",
+          "difficulte": "facile",
+          "nom_commun": "Amanite des Césars",
+          "nom_scientifique": "Amanita caesarea",
+          "groupe": "pinede",
+          "options": [
+            "Bolet à chair jaune",
+            "Scléroderme des pins",
+            "Amanite des Césars",
+            "Lactaire du pin"
+          ],
+          "indice": "Amanite orange à volve blanche",
+          "description": "Chapeau orange vif, lamelles jaunes, volve blanche.",
+          "explication": "Amanite des Césars : Chapeau orange vif, lamelles jaunes, volve blanche. Comestible recherchée, rare en France."
+        },
+        {
+          "id": "c110",
+          "difficulte": "facile",
+          "nom_commun": "Scléroderme des pins",
+          "nom_scientifique": "Scleroderma areolatum",
+          "groupe": "pinede",
+          "options": [
+            "Bolet des pins",
+            "Amanite des Césars",
+            "Lactaire du pin",
+            "Scléroderme des pins"
+          ],
+          "indice": "Pomme brune areolée",
+          "description": "Corps brun avec aréoles, chair noire, sous pins.",
+          "explication": "Scléroderme des pins : Corps brun avec aréoles, chair noire, sous pins. Toxique, ressemble aux jeunes bolets."
+        },
+        {
+          "id": "c111",
+          "difficulte": "moyen",
+          "nom_commun": "Tricholome de la bête",
+          "nom_scientifique": "Tricholoma terreum",
+          "groupe": "pinede",
+          "options": [
+            "Lactaire pubescent des dunes",
+            "Lactaire sanglant",
+            "Tricholome de la bête",
+            "Russule à pied rouge"
+          ],
+          "indice": "Chapeau gris brun",
+          "description": "Chapeau gris brun, lamelles blanches, sous pins.",
+          "explication": "Tricholome de la bête : Chapeau gris brun, lamelles blanches, sous pins. Comestible traditionnel, identification délicate."
+        },
+        {
+          "id": "c112",
+          "difficulte": "moyen",
+          "nom_commun": "Tricholome équestre",
+          "nom_scientifique": "Tricholoma equestre",
+          "groupe": "pinede",
+          "options": [
+            "Russule à pied rouge",
+            "Tricholome de la bête",
+            "Tricholome équestre",
+            "Hygrophore du pin"
+          ],
+          "indice": "Tricholome jaune vert",
+          "description": "Chapeau jaune vert, lamelles jaunes, sous pins.",
+          "explication": "Tricholome équestre : Chapeau jaune vert, lamelles jaunes, sous pins. Autrefois comestible, aujourd'hui considéré toxique."
+        },
+        {
+          "id": "c113",
+          "difficulte": "moyen",
+          "nom_commun": "Leccinum d'été",
+          "nom_scientifique": "Leccinum lepidum",
+          "groupe": "pinede",
+          "options": [
+            "Hygrophore du pin",
+            "Leccinum d'été",
+            "Lactaire pubescent des dunes",
+            "Lactaire sanglant"
+          ],
+          "indice": "Bolet à écailles claires",
+          "description": "Chapeau brun, pied à écailles claires, sous pins méditerranéens.",
+          "explication": "Leccinum d'été : Chapeau brun, pied à écailles claires, sous pins méditerranéens. Comestible bien cuit."
+        },
+        {
+          "id": "c114",
+          "difficulte": "moyen",
+          "nom_commun": "Suillus bellini",
+          "nom_scientifique": "Suillus bellini",
+          "groupe": "pinede",
+          "options": [
+            "Suillus bellini",
+            "Gomphide réticulé",
+            "Lactaire pubescent des dunes",
+            "Hygrophore du pin"
+          ],
+          "indice": "Bolet brun visqueux",
+          "description": "Chapeau brun visqueux, pores blancs, sous pins.",
+          "explication": "Suillus bellini : Chapeau brun visqueux, pores blancs, sous pins. Comestible épluché."
+        },
+        {
+          "id": "c115",
+          "difficulte": "moyen",
+          "nom_commun": "Chalciporus piperatus",
+          "nom_scientifique": "Chalciporus piperatus",
+          "groupe": "pinede",
+          "options": [
+            "Lactaire sanglant",
+            "Russule à pied rouge",
+            "Chalciporus piperatus",
+            "Gomphide réticulé"
+          ],
+          "indice": "Bolet piquant brun",
+          "description": "Chapeau brun, pores rouges, goût poivré.",
+          "explication": "Chalciporus piperatus : Chapeau brun, pores rouges, goût poivré. Comestible en petite quantité."
+        },
+        {
+          "id": "c116",
+          "difficulte": "moyen",
+          "nom_commun": "Gomphide réticulé",
+          "nom_scientifique": "Gomphidius roseus",
+          "groupe": "pinede",
+          "options": [
+            "Gomphide réticulé",
+            "Hygrophore du pin",
+            "Suillus bellini",
+            "Russule à pied rouge"
+          ],
+          "indice": "Chapeau visqueux rose",
+          "description": "Chapeau rose brun visqueux, lamelles grises, sous pins.",
+          "explication": "Gomphide réticulé : Chapeau rose brun visqueux, lamelles grises, sous pins. Comestible jeune, souvent avec des bolets."
+        },
+        {
+          "id": "c117",
+          "difficulte": "moyen",
+          "nom_commun": "Lactaire sanglant",
+          "nom_scientifique": "Lactarius sanguifluus",
+          "groupe": "pinede",
+          "options": [
+            "Suillus bellini",
+            "Gomphide réticulé",
+            "Lactaire sanglant",
+            "Tricholome de la bête"
+          ],
+          "indice": "Lactaire à lait rouge",
+          "description": "Chapeau orangé, lait rouge, sous pins méditerranéens.",
+          "explication": "Lactaire sanglant : Chapeau orangé, lait rouge, sous pins méditerranéens. Comestible, proche du lactaire délicieux."
+        },
+        {
+          "id": "c118",
+          "difficulte": "moyen",
+          "nom_commun": "Russule à pied rouge",
+          "nom_scientifique": "Russula sardonia",
+          "groupe": "pinede",
+          "options": [
+            "Russule à pied rouge",
+            "Lactaire sanglant",
+            "Suillus bellini",
+            "Gomphide réticulé"
+          ],
+          "indice": "Russule jaune à pied rouge",
+          "description": "Chapeau jaune, pied rouge, goût très piquant.",
+          "explication": "Russule à pied rouge : Chapeau jaune, pied rouge, goût très piquant. Toxique, sous pins sylvestres."
+        },
+        {
+          "id": "c119",
+          "difficulte": "moyen",
+          "nom_commun": "Hygrophore du pin",
+          "nom_scientifique": "Hygrophorus hypothejus",
+          "groupe": "pinede",
+          "options": [
+            "Lactaire pubescent des dunes",
+            "Tricholome de la bête",
+            "Hygrophore du pin",
+            "Chalciporus piperatus"
+          ],
+          "indice": "Hygrophore visqueux brun",
+          "description": "Chapeau brun visqueux, lamelles blanches décurrentes.",
+          "explication": "Hygrophore du pin : Chapeau brun visqueux, lamelles blanches décurrentes. Comestible, sous pins humides."
+        },
+        {
+          "id": "c120",
+          "difficulte": "difficile",
+          "nom_commun": "Cortinaire violet",
+          "nom_scientifique": "Cortinarius violaceus",
+          "groupe": "pinede",
+          "options": [
+            "Cortinaire violet",
+            "Lactaire à cuticule zonnée",
+            "Hebeloma crustuliniforme",
+            "Bolet à pores olivâtres"
+          ],
+          "indice": "Cortinaire violet foncé",
+          "description": "Chapeau violet foncé, lamelles violet, sous feuillus et pins.",
+          "explication": "Cortinaire violet : Chapeau violet foncé, lamelles violet, sous feuillus et pins. Toxique, très remarquable par sa couleur."
+        },
+        {
+          "id": "c121",
+          "difficulte": "difficile",
+          "nom_commun": "Bolet des dunes",
+          "nom_scientifique": "Suillus granulatus",
+          "groupe": "pinede",
+          "options": [
+            "Russule foetente",
+            "Bolet à pores olivâtres",
+            "Bolet des dunes",
+            "Lactaire à cuticule zonnée"
+          ],
+          "indice": "Bolet sans anneau",
+          "description": "Chapeau brun visqueux, pied sans anneau, pores blancs.",
+          "explication": "Bolet des dunes : Chapeau brun visqueux, pied sans anneau, pores blancs. Comestible, pinèdes littorales."
+        },
+        {
+          "id": "c122",
+          "difficulte": "difficile",
+          "nom_commun": "Laccaria trichodermophora",
+          "nom_scientifique": "Laccaria trichodermophora",
+          "groupe": "pinede",
+          "options": [
+            "Laccaria trichodermophora",
+            "Amanita ceciliae",
+            "Hebeloma crustuliniforme",
+            "Ramaria botrytis"
+          ],
+          "indice": "Laccaria brun rouge",
+          "description": "Chapeau brun rouge, lamelles espacées, sous pins dunaires.",
+          "explication": "Laccaria trichodermophora : Chapeau brun rouge, lamelles espacées, sous pins dunaires. Comestible, symbionte des pins maritimes."
+        },
+        {
+          "id": "c123",
+          "difficulte": "difficile",
+          "nom_commun": "Inocybe juratus",
+          "nom_scientifique": "Inocybe juratus",
+          "groupe": "pinede",
+          "options": [
+            "Inocybe juratus",
+            "Tricholome populinum",
+            "Lactaire à cuticule zonnée",
+            "Mycène des pins"
+          ],
+          "indice": "Inocybe brun des pins",
+          "description": "Chapeau brun fibrilleux, sous pins sylvestres.",
+          "explication": "Inocybe juratus : Chapeau brun fibrilleux, sous pins sylvestres. Toxique, sols sableux."
+        },
+        {
+          "id": "c124",
+          "difficulte": "difficile",
+          "nom_commun": "Amanita ceciliae",
+          "nom_scientifique": "Amanita ceciliae",
+          "groupe": "pinede",
+          "options": [
+            "Amanita ceciliae",
+            "Lactaire à cuticule zonnée",
+            "Entolome clypeatum",
+            "Bolet à pores olivâtres"
+          ],
+          "indice": "Amanite grise striée",
+          "description": "Chapeau gris brun strié, volve blanche, pas d'anneau.",
+          "explication": "Amanita ceciliae : Chapeau gris brun strié, volve blanche, pas d'anneau. Comestible avec prudence."
+        },
+        {
+          "id": "c125",
+          "difficulte": "difficile",
+          "nom_commun": "Ramaria botrytis",
+          "nom_scientifique": "Ramaria botrytis",
+          "groupe": "pinede",
+          "options": [
+            "Bolet des dunes",
+            "Ramaria botrytis",
+            "Bolet à pores olivâtres",
+            "Inocybe juratus"
+          ],
+          "indice": "Corail blanc rosé",
+          "description": "Fructification en corail blanc rosé, sous pins.",
+          "explication": "Ramaria botrytis : Fructification en corail blanc rosé, sous pins. Comestible, forme remarquable."
+        },
+        {
+          "id": "c126",
+          "difficulte": "difficile",
+          "nom_commun": "Entolome clypeatum",
+          "nom_scientifique": "Entoloma clypeatum",
+          "groupe": "pinede",
+          "options": [
+            "Pholiote des conifères",
+            "Mycène des pins",
+            "Entolome clypeatum",
+            "Bolet à pores olivâtres"
+          ],
+          "indice": "Entolome brun des pins",
+          "description": "Chapeau brun conique, lamelles brunes, sous pins.",
+          "explication": "Entolome clypeatum : Chapeau brun conique, lamelles brunes, sous pins. Toxique, touffes automnales."
+        },
+        {
+          "id": "c127",
+          "difficulte": "difficile",
+          "nom_commun": "Hebeloma crustuliniforme",
+          "nom_scientifique": "Hebeloma crustuliniforme",
+          "groupe": "pinede",
+          "options": [
+            "Bolet à pores olivâtres",
+            "Amanita ceciliae",
+            "Hebeloma crustuliniforme",
+            "Lactaire à cuticule zonnée"
+          ],
+          "indice": "Hebeloma brun visqueux",
+          "description": "Chapeau brun visqueux, lamelles brunes, odeur farineuse.",
+          "explication": "Hebeloma crustuliniforme : Chapeau brun visqueux, lamelles brunes, odeur farineuse. Toxique, pinèdes sableuses."
+        },
+        {
+          "id": "c128",
+          "difficulte": "difficile",
+          "nom_commun": "Lactaire à cuticule zonnée",
+          "nom_scientifique": "Lactarius zonarius",
+          "groupe": "pinede",
+          "options": [
+            "Inocybe juratus",
+            "Lactaire à cuticule zonnée",
+            "Ramaria botrytis",
+            "Amanita ceciliae"
+          ],
+          "indice": "Lactaire zoné brun",
+          "description": "Chapeau brun zoné, lait blanc, sous pins.",
+          "explication": "Lactaire à cuticule zonnée : Chapeau brun zoné, lait blanc, sous pins. Toxique, lames zonnées."
+        },
+        {
+          "id": "c129",
+          "difficulte": "difficile",
+          "nom_commun": "Mycène des pins",
+          "nom_scientifique": "Mycena galopus",
+          "groupe": "pinede",
+          "options": [
+            "Bolet à pores olivâtres",
+            "Laccaria trichodermophora",
+            "Mycène des pins",
+            "Lactaire à cuticule zonnée"
+          ],
+          "indice": "Mycène blanc laiteux",
+          "description": "Petit chapeau blanc, pied laiteux, litière de pins.",
+          "explication": "Mycène des pins : Petit chapeau blanc, pied laiteux, litière de pins. Saprophyte des aiguilles humides."
+        },
+        {
+          "id": "c130",
+          "difficulte": "difficile",
+          "nom_commun": "Collybie des dunes",
+          "nom_scientifique": "Marasmius bulliardii",
+          "groupe": "pinede",
+          "options": [
+            "Collybie des dunes",
+            "Bolet à pores olivâtres",
+            "Amanita ceciliae",
+            "Lactaire à cuticule zonnée"
+          ],
+          "indice": "Marasme brun des pins",
+          "description": "Petit chapeau brun, pied fin, sur aiguilles sèches.",
+          "explication": "Collybie des dunes : Petit chapeau brun, pied fin, sur aiguilles sèches. Comestible, discret dans les pinèdes."
+        },
+        {
+          "id": "c131",
+          "difficulte": "facile",
+          "nom_commun": "Strobileur des pins",
+          "nom_scientifique": "Strobilurus esculentus",
+          "groupe": "pinede",
+          "options": [
+            "Strobileur des pins",
+            "Lactaire du pin",
+            "Bolet des pins",
+            "Scléroderme des pins"
+          ],
+          "indice": "Sur cônes de pin",
+          "description": "Petit champignon blanc sur cônes de pin enterrés.",
+          "explication": "Strobileur des pins : Petit champignon blanc sur cônes de pin enterrés. Comestible, très spécifique aux cônes."
+        },
+        {
+          "id": "c132",
+          "difficulte": "moyen",
+          "nom_commun": "Lactaire pubescent des dunes",
+          "nom_scientifique": "Lactarius controversus",
+          "groupe": "pinede",
+          "options": [
+            "Tricholome équestre",
+            "Gomphide réticulé",
+            "Russule à pied rouge",
+            "Lactaire pubescent des dunes"
+          ],
+          "indice": "Lactaire blanc des pins",
+          "description": "Chapeau blanc crème, lait blanc, sous pins maritimes.",
+          "explication": "Lactaire pubescent des dunes : Chapeau blanc crème, lait blanc, sous pins maritimes. Toxique, lamelles décurrentes."
+        },
+        {
+          "id": "c133",
+          "difficulte": "difficile",
+          "nom_commun": "Russule foetente",
+          "nom_scientifique": "Russula foetens",
+          "groupe": "pinede",
+          "options": [
+            "Bolet des dunes",
+            "Pholiote des conifères",
+            "Russule foetente",
+            "Entolome clypeatum"
+          ],
+          "indice": "Russule à odeur fétide",
+          "description": "Chapeau blanc crème, odeur de menthe poivrée fétide.",
+          "explication": "Russule foetente : Chapeau blanc crème, odeur de menthe poivrée fétide. Toxique, reconnaissable à l'odeur."
+        },
+        {
+          "id": "c134",
+          "difficulte": "difficile",
+          "nom_commun": "Bolet à pores olivâtres",
+          "nom_scientifique": "Suillus collinitus",
+          "groupe": "pinede",
+          "options": [
+            "Laccaria trichodermophora",
+            "Mycène des pins",
+            "Bolet à pores olivâtres",
+            "Pholiote des conifères"
+          ],
+          "indice": "Bolet visqueux à pores jaunes",
+          "description": "Chapeau brun visqueux, pied jaune, pores olivâtres.",
+          "explication": "Bolet à pores olivâtres : Chapeau brun visqueux, pied jaune, pores olivâtres. Comestible épluché, pinèdes."
+        },
+        {
+          "id": "c135",
+          "difficulte": "difficile",
+          "nom_commun": "Tricholome populinum",
+          "nom_scientifique": "Tricholoma populinum",
+          "groupe": "pinede",
+          "options": [
+            "Tricholome populinum",
+            "Entolome clypeatum",
+            "Lactaire à cuticule zonnée",
+            "Bolet des dunes"
+          ],
+          "indice": "Tricholome gris sous peupliers",
+          "description": "Chapeau gris brun, lamelles blanches, lisière dunaire.",
+          "explication": "Tricholome populinum : Chapeau gris brun, lamelles blanches, lisière dunaire. Comestible, près des peupliers."
+        },
+        {
+          "id": "c136",
+          "difficulte": "difficile",
+          "nom_commun": "Pholiote des conifères",
+          "nom_scientifique": "Hemimycena tortuosa",
+          "groupe": "pinede",
+          "options": [
+            "Tricholome populinum",
+            "Pholiote des conifères",
+            "Hebeloma crustuliniforme",
+            "Amanita ceciliae"
+          ],
+          "indice": "Minuscule blanc sur aiguilles",
+          "description": "Très petit champignon blanc, touffes sur aiguilles.",
+          "explication": "Pholiote des conifères : Très petit champignon blanc, touffes sur aiguilles. Saprophyte discret des pinèdes."
+        }
+      ]
+    },
+    {
+      "id": "divers",
+      "label": "Divers",
+      "questions": [
+        {
+          "id": "c137",
+          "difficulte": "facile",
+          "nom_commun": "Shiitake",
+          "nom_scientifique": "Lentinula edodes",
+          "groupe": "divers",
+          "options": [
+            "Pleurote du panicaut",
+            "Shiitake",
+            "Maïtake",
+            "Coprin comatus variété"
+          ],
+          "indice": "Champignon cultivé brun",
+          "description": "Chapeau brun convexe, lamelles blanches, cultivé sur bois.",
+          "explication": "Shiitake : Chapeau brun convexe, lamelles blanches, cultivé sur bois. Comestible, largement cultivé, parfois naturalisé."
+        },
+        {
+          "id": "c138",
+          "difficulte": "facile",
+          "nom_commun": "Pleurote du panicaut",
+          "nom_scientifique": "Pleurotus eryngii",
+          "groupe": "divers",
+          "options": [
+            "Champignon de Paris",
+            "Coprin comatus variété",
+            "Shiitake",
+            "Pleurote du panicaut"
+          ],
+          "indice": "Pleurote épais du panicaut",
+          "description": "Grand chapeau brun beige, pied épais, près du panicaut.",
+          "explication": "Pleurote du panicaut : Grand chapeau brun beige, pied épais, près du panicaut. Comestible, espèce méditerranéenne des steppes."
+        },
+        {
+          "id": "c139",
+          "difficulte": "facile",
+          "nom_commun": "Champignon de Paris",
+          "nom_scientifique": "Agaricus bisporus",
+          "groupe": "divers",
+          "options": [
+            "Coprin comatus variété",
+            "Champignon de Paris",
+            "Maïtake",
+            "Enoki"
+          ],
+          "indice": "Agaric blanc cultivé",
+          "description": "Chapeau blanc à brun, lamelles roses puis brunes.",
+          "explication": "Champignon de Paris : Chapeau blanc à brun, lamelles roses puis brunes. Champignon cultivé le plus consommé."
+        },
+        {
+          "id": "c140",
+          "difficulte": "facile",
+          "nom_commun": "Enoki",
+          "nom_scientifique": "Flammulina velutipes",
+          "groupe": "divers",
+          "options": [
+            "Enoki",
+            "Pleurote du panicaut",
+            "Maïtake",
+            "Champignon de Paris"
+          ],
+          "indice": "Petit champignon à long pied",
+          "description": "Petit chapeau jaune, long pied velouté, sur bois.",
+          "explication": "Enoki : Petit chapeau jaune, long pied velouté, sur bois. Comestible, cultivé et sauvage en hiver."
+        },
+        {
+          "id": "c141",
+          "difficulte": "facile",
+          "nom_commun": "Maïtake",
+          "nom_scientifique": "Grifola frondosa",
+          "groupe": "divers",
+          "options": [
+            "Pleurote du panicaut",
+            "Maïtake",
+            "Enoki",
+            "Shiitake"
+          ],
+          "indice": "Console grise en rosette",
+          "description": "Rosette grise de consoles superposées au pied des chênes.",
+          "explication": "Maïtake : Rosette grise de consoles superposées au pied des chênes. Comestible, aussi appelée « champignon dansant »."
+        },
+        {
+          "id": "c142",
+          "difficulte": "moyen",
+          "nom_commun": "Shimeji brun",
+          "nom_scientifique": "Hypsizygus tessellatus",
+          "groupe": "divers",
+          "options": [
+            "Strophaire rugueuse",
+            "Volvaire volvacée",
+            "Shimeji brun",
+            "Auricularia auricula-judae"
+          ],
+          "indice": "Chapeau brun marmoré",
+          "description": "Chapeau brun marmoré, lamelles blanches, sur bois.",
+          "explication": "Shimeji brun : Chapeau brun marmoré, lamelles blanches, sur bois. Comestible, cultivé et parfois sauvage."
+        },
+        {
+          "id": "c143",
+          "difficulte": "moyen",
+          "nom_commun": "Agrocybe du peuplier",
+          "nom_scientifique": "Agrocybe aegerita",
+          "groupe": "divers",
+          "options": [
+            "Tricholome des jardins",
+            "Agrocybe du peuplier",
+            "Shimeji brun",
+            "Volvaire volvacée"
+          ],
+          "indice": "Champignon brun sur bois",
+          "description": "Chapeau brun conique, lamelles blanches puis brunes, sur bois.",
+          "explication": "Agrocybe du peuplier : Chapeau brun conique, lamelles blanches puis brunes, sur bois. Comestible, aussi cultivé sous le nom de pioppino."
+        },
+        {
+          "id": "c144",
+          "difficulte": "moyen",
+          "nom_commun": "Volvaire volvacée",
+          "nom_scientifique": "Volvariella volvacea",
+          "groupe": "divers",
+          "options": [
+            "Volvaire volvacée",
+            "Auricularia auricula-judae",
+            "Champignon puffball géant",
+            "Tricholome des jardins"
+          ],
+          "indice": "Agaric brun à volve",
+          "description": "Chapeau brun, lamelles roses, volve brune, paille compostée.",
+          "explication": "Volvaire volvacée : Chapeau brun, lamelles roses, volve brune, paille compostée. Comestible tropical cultivé."
+        },
+        {
+          "id": "c145",
+          "difficulte": "moyen",
+          "nom_commun": "Tricholome des jardins",
+          "nom_scientifique": "Tricholoma saponaceum",
+          "groupe": "divers",
+          "options": [
+            "Psilocybe cyanescens",
+            "Shimeji brun",
+            "Champignon puffball géant",
+            "Tricholome des jardins"
+          ],
+          "indice": "Tricholome gris savonneux",
+          "description": "Chapeau gris, lamelles blanches, odeur de savon.",
+          "explication": "Tricholome des jardins : Chapeau gris, lamelles blanches, odeur de savon. Toxique, jardins et parcs."
+        },
+        {
+          "id": "c146",
+          "difficulte": "moyen",
+          "nom_commun": "Strophaire rugueuse",
+          "nom_scientifique": "Stropharia rugosoannulata",
+          "groupe": "divers",
+          "options": [
+            "Tremelle mesentérique",
+            "Strophaire rugueuse",
+            "Shimeji brun",
+            "Psilocybe cyanescens"
+          ],
+          "indice": "Chapeau brun à anneau rugueux",
+          "description": "Chapeau brun, anneau blanc rugueux, sur compost.",
+          "explication": "Strophaire rugueuse : Chapeau brun, anneau blanc rugueux, sur compost. Comestible, cultivé sur paillis."
+        },
+        {
+          "id": "c147",
+          "difficulte": "moyen",
+          "nom_commun": "Psilocybe cyanescens",
+          "nom_scientifique": "Psilocybe cyanescens",
+          "groupe": "divers",
+          "options": [
+            "Psilocybe cyanescens",
+            "Champignon puffball géant",
+            "Shimeji brun",
+            "Strophaire rugueuse"
+          ],
+          "indice": "Chapeau brun hygrophan",
+          "description": "Chapeau brun hygrophan, bleuissant à la coupure.",
+          "explication": "Psilocybe cyanescens : Chapeau brun hygrophan, bleuissant à la coupure. Toxique psychotrope, bords de jardins."
+        },
+        {
+          "id": "c148",
+          "difficulte": "moyen",
+          "nom_commun": "Auricularia auricula-judae",
+          "nom_scientifique": "Auricularia auricula-judae",
+          "groupe": "divers",
+          "options": [
+            "Auricularia auricula-judae",
+            "Strophaire rugueuse",
+            "Agrocybe du peuplier",
+            "Champignon puffball géant"
+          ],
+          "indice": "Oreille de Judas brune",
+          "description": "Champignon en oreille brun rouge gélatineux sur sureau.",
+          "explication": "Auricularia auricula-judae : Champignon en oreille brun rouge gélatineux sur sureau. Comestible en cuisine asiatique."
+        },
+        {
+          "id": "c149",
+          "difficulte": "moyen",
+          "nom_commun": "Tremelle mesentérique",
+          "nom_scientifique": "Tremella mesenterica",
+          "groupe": "divers",
+          "options": [
+            "Tremelle mesentérique",
+            "Tricholome des jardins",
+            "Agrocybe du peuplier",
+            "Volvaire volvacée"
+          ],
+          "indice": "Tremelle jaune gélatineuse",
+          "description": "Masses jaunes gélatineuses ondulées sur bois mort.",
+          "explication": "Tremelle mesentérique : Masses jaunes gélatineuses ondulées sur bois mort. Comestible, champignon gélatineux."
+        },
+        {
+          "id": "c150",
+          "difficulte": "moyen",
+          "nom_commun": "Champignon puffball géant",
+          "nom_scientifique": "Calvatia gigantea",
+          "groupe": "divers",
+          "options": [
+            "Champignon puffball géant",
+            "Tremelle mesentérique",
+            "Agrocybe du peuplier",
+            "Auricularia auricula-judae"
+          ],
+          "indice": "Vesse-de-loup géante",
+          "description": "Grande sphère blanche, chair blanche ferme.",
+          "explication": "Champignon puffball géant : Grande sphère blanche, chair blanche ferme. Comestible lorsque la chair est blanche."
+        },
+        {
+          "id": "c151",
+          "difficulte": "difficile",
+          "nom_commun": "Morchella steppicola",
+          "nom_scientifique": "Morchella steppicola",
+          "groupe": "divers",
+          "options": [
+            "Champignon bleu des jardins",
+            "Schizophyllum commune",
+            "Hypoxylon fragiforme",
+            "Morchella steppicola"
+          ],
+          "indice": "Morille des steppes",
+          "description": "Capuchon alvéolé brun, steppes et friches.",
+          "explication": "Morchella steppicola : Capuchon alvéolé brun, steppes et friches. Comestible, milieux ouverts divers."
+        },
+        {
+          "id": "c152",
+          "difficulte": "difficile",
+          "nom_commun": "Peziza blanche",
+          "nom_scientifique": "Peziza vesiculosa",
+          "groupe": "divers",
+          "options": [
+            "Hypoxylon fragiforme",
+            "Marasme en roue",
+            "Nectria cinnabarina",
+            "Peziza blanche"
+          ],
+          "indice": "Pézize blanche en coupe",
+          "description": "Apothice blanche en coupe sur fumier.",
+          "explication": "Peziza blanche : Apothice blanche en coupe sur fumier. Saprophyte des zones enrichies."
+        },
+        {
+          "id": "c153",
+          "difficulte": "difficile",
+          "nom_commun": "Peziza aurantia",
+          "nom_scientifique": "Peziza aurantia",
+          "groupe": "divers",
+          "options": [
+            "Bolbitius vitellinus",
+            "Peziza aurantia",
+            "Champignon bleu des jardins",
+            "Daedalea quercina"
+          ],
+          "indice": "Pézize orange en coupe",
+          "description": "Apothice orange en coupe sur bois humide.",
+          "explication": "Peziza aurantia : Apothice orange en coupe sur bois humide. Ascomycète coloré des jardins humides."
+        },
+        {
+          "id": "c154",
+          "difficulte": "difficile",
+          "nom_commun": "Xylaria polymorpha",
+          "nom_scientifique": "Xylaria polymorpha",
+          "groupe": "divers",
+          "options": [
+            "Xylaria polymorpha",
+            "Daldinia concentrica",
+            "Daedalea quercina",
+            "Nectria cinnabarina"
+          ],
+          "indice": "Doigts de mort noirs",
+          "description": "Stromes noirs en doigts dressés sur bois enterré.",
+          "explication": "Xylaria polymorpha : Stromes noirs en doigts dressés sur bois enterré. Champignon lignicole très dur."
+        },
+        {
+          "id": "c155",
+          "difficulte": "difficile",
+          "nom_commun": "Daldinia concentrica",
+          "nom_scientifique": "Daldinia concentrica",
+          "groupe": "divers",
+          "options": [
+            "Macrocystidia cucumis",
+            "Daldinia concentrica",
+            "Xylaria polymorpha",
+            "Morchella steppicola"
+          ],
+          "indice": "Charbon de crin brun",
+          "description": "Masses brunes en forme de charbon sur frêne.",
+          "explication": "Daldinia concentrica : Masses brunes en forme de charbon sur frêne. Champignon du frêne, très dur."
+        },
+        {
+          "id": "c156",
+          "difficulte": "difficile",
+          "nom_commun": "Hypoxylon fragiforme",
+          "nom_scientifique": "Hypoxylon fragiforme",
+          "groupe": "divers",
+          "options": [
+            "Marasme en roue",
+            "Daldinia concentrica",
+            "Hypoxylon fragiforme",
+            "Pycnoporellus fulgens"
+          ],
+          "indice": "Taches rouges sur hêtre",
+          "description": "Stromes rouges en croûte sur hêtre mort.",
+          "explication": "Hypoxylon fragiforme : Stromes rouges en croûte sur hêtre mort. Champignon corticoïde des hêtres."
+        },
+        {
+          "id": "c157",
+          "difficulte": "difficile",
+          "nom_commun": "Nectria cinnabarina",
+          "nom_scientifique": "Nectria cinnabarina",
+          "groupe": "divers",
+          "options": [
+            "Macrocystidia cucumis",
+            "Nectria cinnabarina",
+            "Fomitopsis pinicola",
+            "Champignon bleu des jardins"
+          ],
+          "indice": "Points rouges sur écorce",
+          "description": "Points rouges vifs sur branches mortes.",
+          "explication": "Nectria cinnabarina : Points rouges vifs sur branches mortes. Champignon parasite des arbres affaiblis."
+        },
+        {
+          "id": "c158",
+          "difficulte": "difficile",
+          "nom_commun": "Schizophyllum commune",
+          "nom_scientifique": "Schizophyllum commune",
+          "groupe": "divers",
+          "options": [
+            "Daldinia concentrica",
+            "Daedalea quercina",
+            "Schizophyllum commune",
+            "Morchella steppicola"
+          ],
+          "indice": "Oreille fendue blanche",
+          "description": "Chapeau blanc en oreille à lamelles fendues.",
+          "explication": "Schizophyllum commune : Chapeau blanc en oreille à lamelles fendues. Comestible en zones tropicales, très résistant."
+        },
+        {
+          "id": "c159",
+          "difficulte": "difficile",
+          "nom_commun": "Pycnoporellus fulgens",
+          "nom_scientifique": "Pycnoporellus fulgens",
+          "groupe": "divers",
+          "options": [
+            "Bolbitius vitellinus",
+            "Schizophyllum commune",
+            "Peziza blanche",
+            "Pycnoporellus fulgens"
+          ],
+          "indice": "Polypore orange vif",
+          "description": "Console orange vif poreuse sur bois de conifère.",
+          "explication": "Pycnoporellus fulgens : Console orange vif poreuse sur bois de conifère. Lignicole remarquable par sa couleur."
+        },
+        {
+          "id": "c160",
+          "difficulte": "difficile",
+          "nom_commun": "Daedalea quercina",
+          "nom_scientifique": "Daedalea quercina",
+          "groupe": "divers",
+          "options": [
+            "Daedalea quercina",
+            "Daldinia concentrica",
+            "Schizophyllum commune",
+            "Lepiota brun"
+          ],
+          "indice": "Polypore labyrinthe du chêne",
+          "description": "Console brune à pores labyrinthes sur chêne.",
+          "explication": "Daedalea quercina : Console brune à pores labyrinthes sur chêne. Champignon persistant du chêne."
+        },
+        {
+          "id": "c161",
+          "difficulte": "difficile",
+          "nom_commun": "Fomitopsis pinicola",
+          "nom_scientifique": "Fomitopsis pinicola",
+          "groupe": "divers",
+          "options": [
+            "Xylaria polymorpha",
+            "Fomitopsis pinicola",
+            "Marasme en roue",
+            "Schizophyllum commune"
+          ],
+          "indice": "Polypore du pin brun rouge",
+          "description": "Console brun rouge en forme de sabot sur conifères.",
+          "explication": "Fomitopsis pinicola : Console brun rouge en forme de sabot sur conifères. Champignon de charpente des conifères."
+        },
+        {
+          "id": "c162",
+          "difficulte": "difficile",
+          "nom_commun": "Champignon bleu des jardins",
+          "nom_scientifique": "Chlorophyllum molybdites",
+          "groupe": "divers",
+          "options": [
+            "Daedalea quercina",
+            "Pycnoporellus fulgens",
+            "Champignon bleu des jardins",
+            "Marasme en roue"
+          ],
+          "indice": "Grand agaric à spores vertes",
+          "description": "Grand chapeau blanc, spores vertes, jardins et pelouses.",
+          "explication": "Champignon bleu des jardins : Grand chapeau blanc, spores vertes, jardins et pelouses. Toxique, confusion fréquente avec agarics comestibles."
+        },
+        {
+          "id": "c163",
+          "difficulte": "difficile",
+          "nom_commun": "Lepiota brun",
+          "nom_scientifique": "Chlorophyllum brunneum",
+          "groupe": "divers",
+          "options": [
+            "Lepiota brun",
+            "Macrocystidia cucumis",
+            "Nectria cinnabarina",
+            "Marasme en roue"
+          ],
+          "indice": "Lépiote brune à anneau double",
+          "description": "Chapeau brun, anneau double, pelouses et jardins.",
+          "explication": "Lepiota brun : Chapeau brun, anneau double, pelouses et jardins. Toxique, ressemble aux lépiotes comestibles."
+        },
+        {
+          "id": "c164",
+          "difficulte": "difficile",
+          "nom_commun": "Macrocystidia cucumis",
+          "nom_scientifique": "Macrocystidia cucumis",
+          "groupe": "divers",
+          "options": [
+            "Macrocystidia cucumis",
+            "Bolbitius vitellinus",
+            "Daldinia concentrica",
+            "Morchella steppicola"
+          ],
+          "indice": "Odeur de concombre",
+          "description": "Chapeau brun rouge, odeur de concombre, litière.",
+          "explication": "Macrocystidia cucumis : Chapeau brun rouge, odeur de concombre, litière. Comestible, odeur distinctive."
+        },
+        {
+          "id": "c165",
+          "difficulte": "difficile",
+          "nom_commun": "Bolbitius vitellinus",
+          "nom_scientifique": "Bolbitius vitellinus",
+          "groupe": "divers",
+          "options": [
+            "Bolbitius vitellinus",
+            "Peziza aurantia",
+            "Macrocystidia cucumis",
+            "Schizophyllum commune"
+          ],
+          "indice": "Chapeau jaune vif fragile",
+          "description": "Chapeau jaune vif hygrophan, très fragile, sur fumier.",
+          "explication": "Bolbitius vitellinus : Chapeau jaune vif hygrophan, très fragile, sur fumier. Comestible jeune, très éphémère."
+        },
+        {
+          "id": "c166",
+          "difficulte": "facile",
+          "nom_commun": "Coprin comatus variété",
+          "nom_scientifique": "Parasola plicatilis",
+          "groupe": "divers",
+          "options": [
+            "Maïtake",
+            "Pleurote du panicaut",
+            "Coprin comatus variété",
+            "Enoki"
+          ],
+          "indice": "Coprin gris plissé",
+          "description": "Chapeau gris finement plissé, très mince, sur sol humide.",
+          "explication": "Coprin comatus variété : Chapeau gris finement plissé, très mince, sur sol humide. Comestible jeune, très frêle."
+        },
+        {
+          "id": "c167",
+          "difficulte": "difficile",
+          "nom_commun": "Marasme en roue",
+          "nom_scientifique": "Marasmius rotula",
+          "groupe": "divers",
+          "options": [
+            "Nectria cinnabarina",
+            "Daedalea quercina",
+            "Marasme en roue",
+            "Xylaria polymorpha"
+          ],
+          "indice": "Petit marasme en roue",
+          "description": "Petit chapeau blanc, pied long, ressemble à une roue.",
+          "explication": "Marasme en roue : Petit chapeau blanc, pied long, ressemble à une roue. Sur petites branches mortes, comestible."
+        }
+      ]
+    }
+  ]
+}

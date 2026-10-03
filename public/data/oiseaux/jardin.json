@@ -1,0 +1,711 @@
+{
+  "id": "jardin",
+  "label": "Jardin et ville",
+  "defaut": true,
+  "questions": [
+    {
+      "id": "f1",
+      "difficulte": "facile",
+      "nom_commun": "Rougegorge familier",
+      "nom_scientifique": "Erithacus rubecula",
+      "options": [
+        "Rougegorge familier",
+        "Mésange bleue",
+        "Troglodyte mignon",
+        "Bouvreuil pivoine"
+      ],
+      "indice": "Regarde la couleur de sa gorge",
+      "explication": "Le rougegorge a la gorge et la poitrine orange vif, le dessus brun olive, le ventre gris-blanc et de grands yeux noirs.",
+      "groupe": "jardin",
+      "description": "Gorge et poitrine orange vif, dessus brun olive, ventre gris-blanc et grands yeux noirs."
+    },
+    {
+      "id": "f2",
+      "difficulte": "facile",
+      "nom_commun": "Mésange bleue",
+      "nom_scientifique": "Cyanistes caeruleus",
+      "options": [
+        "Mésange bleue",
+        "Mésange charbonnière",
+        "Rougegorge familier",
+        "Bergeronnette grise"
+      ],
+      "indice": "Calotte bleue, joues blanches et ventre jaune",
+      "explication": "La mésange bleue a une calotte bleu cobalt, des joues blanches bordées de noir, un dessous jaune et une barre alaire bleue.",
+      "groupe": "jardin",
+      "description": "Calotte bleu cobalt, joues blanches bordées de noir, dessous jaune et barre alaire du même bleu."
+    },
+    {
+      "id": "f3",
+      "difficulte": "facile",
+      "nom_commun": "Merle noir",
+      "nom_scientifique": "Turdus merula",
+      "options": [
+        "Merle noir",
+        "Étourneau sansonnet",
+        "Grive musicienne",
+        "Corneille noire"
+      ],
+      "indice": "Cherche un bec jaune sur un plumage très sombre",
+      "explication": "Le mâle est entièrement noir avec le bec et le cercle oculaire jaunes. La femelle est brune, avec la gorge plus claire et un bec plus terne.",
+      "groupe": "jardin",
+      "description": "Le mâle est entièrement noir, avec le bec et le cercle oculaire jaunes. La femelle est brune, gorge plus claire."
+    },
+    {
+      "id": "f4",
+      "difficulte": "facile",
+      "nom_commun": "Moineau domestique",
+      "nom_scientifique": "Passer domesticus",
+      "options": [
+        "Moineau domestique",
+        "Accenteur mouchet",
+        "Pinson des arbres",
+        "Moineau friquet"
+      ],
+      "indice": "Oiseau trapu : le mâle porte une bavette noire",
+      "explication": "Le mâle a une calotte grise, des joues blanches et une bavette noire. La femelle est brun-gris, discrète, avec un sourcil clair. Le bec est conique.",
+      "groupe": "jardin",
+      "description": "Oiseau trapu au bec conique. Le mâle a une calotte grise, des joues blanches et une bavette noire. La femelle est brun-gris, avec un sourcil clair."
+    },
+    {
+      "id": "f5",
+      "difficulte": "facile",
+      "nom_commun": "Pigeon ramier",
+      "nom_scientifique": "Columba palumbus",
+      "options": [
+        "Pigeon ramier",
+        "Pigeon biset",
+        "Tourterelle turque",
+        "Pigeon colombin"
+      ],
+      "indice": "Tache blanche au cou et barre blanche sur l'aile",
+      "explication": "Le pigeon ramier est un grand pigeon à poitrine rosée. L'adulte montre une tache blanche de chaque côté du cou et une large bande blanche sur l'aile.",
+      "groupe": "jardin",
+      "description": "Grande silhouette à poitrine rosée. L'adulte a une tache blanche de chaque côté du cou et une large bande blanche sur l'aile."
+    },
+    {
+      "id": "m1",
+      "difficulte": "moyen",
+      "nom_commun": "Chardonneret élégant",
+      "nom_scientifique": "Carduelis carduelis",
+      "options": [
+        "Chardonneret élégant",
+        "Verdier d'Europe",
+        "Linotte mélodieuse",
+        "Tarin des aulnes"
+      ],
+      "indice": "Un masque rouge et une large barre jaune sur l'aile",
+      "explication": "Le chardonneret a un masque rouge, blanc et noir, un dos brun et une large bande jaune vif sur l'aile noire.",
+      "groupe": "jardin",
+      "description": "Masque rouge, blanc et noir, dos brun et large bande jaune vif sur l'aile noire."
+    },
+    {
+      "id": "m2",
+      "difficulte": "moyen",
+      "nom_commun": "Pic épeiche",
+      "nom_scientifique": "Dendrocopos major",
+      "options": [
+        "Pic épeiche",
+        "Pic vert",
+        "Pic épeichette",
+        "Pic mar"
+      ],
+      "indice": "Noir et blanc, avec du rouge sous la queue",
+      "explication": "Le pic épeiche est noir et blanc, avec les sous-caudales rouges. Le mâle a une tache rouge sur la nuque ; la femelle n'a pas de rouge sur la tête.",
+      "groupe": "jardin",
+      "description": "Noir et blanc, sous-caudales rouges. Le mâle a une tache rouge sur la nuque, pas la femelle."
+    },
+    {
+      "id": "m3",
+      "difficulte": "moyen",
+      "nom_commun": "Pinson des arbres",
+      "nom_scientifique": "Fringilla coelebs",
+      "options": [
+        "Pinson des arbres",
+        "Moineau domestique",
+        "Bruant jaune",
+        "Verdier d'Europe"
+      ],
+      "indice": "Deux barres blanches sur l'aile et un croupion vert",
+      "explication": "Le pinson montre une double barre alaire blanche et un croupion vert olive. Le mâle a la poitrine rose vineux et la calotte bleu-gris.",
+      "groupe": "jardin",
+      "description": "Double barre alaire blanche et croupion vert olive. Le mâle a la poitrine rose vineux et la calotte bleu-gris."
+    },
+    {
+      "id": "m4",
+      "difficulte": "moyen",
+      "nom_commun": "Verdier d'Europe",
+      "nom_scientifique": "Chloris chloris",
+      "options": [
+        "Verdier d'Europe",
+        "Chardonneret élégant",
+        "Serin cini",
+        "Tarin des aulnes"
+      ],
+      "indice": "Du jaune vif sur les ailes, et un bec assez fort",
+      "explication": "Le verdier est vert olive, avec un bec fort et pâle. Le jaune vif des ailes et des côtés de la queue est visible surtout en vol ou posé de profil.",
+      "groupe": "jardin",
+      "description": "Vert olive, bec fort et pâle. Jaune vif sur les ailes et les côtés de la queue."
+    },
+    {
+      "id": "m5",
+      "difficulte": "moyen",
+      "nom_commun": "Sittelle torchepot",
+      "nom_scientifique": "Sitta europaea",
+      "options": [
+        "Sittelle torchepot",
+        "Grimpereau des jardins",
+        "Pic épeiche",
+        "Mésange charbonnière"
+      ],
+      "indice": "Elle grimpe souvent la tête en bas",
+      "explication": "La sittelle a le dessus bleu-gris, le dessous orange, un bandeau noir sur l'œil et une queue très courte. Elle descend les troncs la tête en bas.",
+      "groupe": "jardin",
+      "description": "Dessus bleu-gris, dessous orange, bandeau noir sur l'œil, queue très courte. Descend souvent les troncs la tête en bas."
+    },
+    {
+      "id": "d1",
+      "difficulte": "difficile",
+      "nom_commun": "Fauvette à tête noire",
+      "nom_scientifique": "Sylvia atricapilla",
+      "options": [
+        "Fauvette à tête noire",
+        "Pouillot véloce",
+        "Fauvette des jardins",
+        "Roitelet huppé"
+      ],
+      "indice": "Regarde bien le sommet de la tête",
+      "explication": "Le mâle porte une calotte noire nette, la femelle une calotte brun roux. Le dessous est gris, sans sourcil marqué, ce qui la distingue du pouillot.",
+      "groupe": "jardin",
+      "description": "Le mâle a une calotte noire nette, la femelle une calotte brun roux. Dessous gris, sans sourcil marqué."
+    },
+    {
+      "id": "d2",
+      "difficulte": "difficile",
+      "nom_commun": "Pouillot véloce",
+      "nom_scientifique": "Phylloscopus collybita",
+      "options": [
+        "Pouillot véloce",
+        "Fauvette à tête noire",
+        "Pouillot fitis",
+        "Roitelet triple-bandeau"
+      ],
+      "indice": "Petit, olive, avec un sourcil clair",
+      "explication": "Le pouillot véloce est petit, dessus vert-olive et dessous jaunâtre, avec un sourcil clair et des pattes en général sombres. Il n'a pas de calotte contrastée.",
+      "groupe": "jardin",
+      "description": "Petit oiseau, dessus vert-olive, dessous jaunâtre, sourcil clair et pattes en général sombres. Pas de calotte contrastée."
+    },
+    {
+      "id": "d3",
+      "difficulte": "difficile",
+      "nom_commun": "Corneille noire",
+      "nom_scientifique": "Corvus corone",
+      "options": [
+        "Corneille noire",
+        "Corbeau freux",
+        "Choucas des tours",
+        "Grand corbeau"
+      ],
+      "indice": "Entièrement noire, bec fort, sans peau nue à la base",
+      "explication": "La corneille noire est entièrement noire, y compris la base du bec, qui est emplumée. La queue est plutôt carrée. L'adulte n'a pas la face pâle du freux.",
+      "groupe": "jardin",
+      "description": "Entièrement noire, y compris la base du bec, qui est emplumée. Queue plutôt carrée, sans face pâle."
+    },
+    {
+      "id": "d4",
+      "difficulte": "difficile",
+      "nom_commun": "Corbeau freux",
+      "nom_scientifique": "Corvus frugilegus",
+      "options": [
+        "Corbeau freux",
+        "Corneille noire",
+        "Choucas des tours",
+        "Grand corbeau"
+      ],
+      "indice": "Chez l'adulte, la base du bec est pâle et nue",
+      "explication": "L'adulte a la base du bec gris-blanc et nue, un front fuyant et souvent un plumage plus lâche sur les cuisses. Le jeune, encore emplumé à la base du bec, ressemble davantage à une corneille.",
+      "groupe": "jardin",
+      "description": "Adulte à base du bec gris-blanc et nue, front fuyant, plumage souvent lâche sur les cuisses."
+    },
+    {
+      "id": "d5",
+      "difficulte": "difficile",
+      "nom_commun": "Choucas des tours",
+      "nom_scientifique": "Corvus monedula",
+      "options": [
+        "Choucas des tours",
+        "Corneille noire",
+        "Corbeau freux",
+        "Chocard à bec jaune"
+      ],
+      "indice": "Plus petit que les autres corvidés : nuque grise, œil clair",
+      "explication": "Le choucas est plus petit, avec la nuque et les côtés de la tête gris clair, un œil pâle et un bec court. Le reste du corps est noir.",
+      "groupe": "jardin",
+      "description": "Plus petit, nuque et côtés de la tête gris clair, œil pâle, bec court. Le reste du corps est noir."
+    },
+    {
+      "id": "d6",
+      "difficulte": "difficile",
+      "nom_commun": "Buse variable",
+      "nom_scientifique": "Buteo buteo",
+      "options": [
+        "Buse variable",
+        "Milan noir",
+        "Faucon crécerelle",
+        "Épervier d'Europe"
+      ],
+      "indice": "Silhouette large, queue courte et arrondie",
+      "explication": "La buse variable a des ailes larges et une queue courte, souvent barrée. Le plumage brun est très variable, du très clair au très sombre.",
+      "groupe": "jardin",
+      "description": "Ailes larges, queue courte souvent barrée. Plumage brun, du très clair au très sombre."
+    },
+    {
+      "id": "d7",
+      "difficulte": "difficile",
+      "nom_commun": "Milan noir",
+      "nom_scientifique": "Milvus migrans",
+      "options": [
+        "Milan noir",
+        "Buse variable",
+        "Milan royal",
+        "Faucon crécerelle"
+      ],
+      "indice": "Queue légèrement échancrée, ailes longues",
+      "explication": "Le milan noir est brun sombre, avec de longues ailes coudées. Sa queue est peu échancrée, moins fourchue que celle du milan royal.",
+      "groupe": "jardin",
+      "description": "Brun sombre, longues ailes coudées. Queue peu échancrée, moins fourchue que chez son proche parent roux."
+    },
+    {
+      "id": "d8",
+      "difficulte": "difficile",
+      "nom_commun": "Faucon crécerelle",
+      "nom_scientifique": "Falco tinnunculus",
+      "options": [
+        "Faucon crécerelle",
+        "Épervier d'Europe",
+        "Buse variable",
+        "Milan noir"
+      ],
+      "indice": "Dos roux tacheté et ailes pointues",
+      "explication": "Le faucon crécerelle a le dos roux tacheté de noir et des ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout de la queue.",
+      "groupe": "jardin",
+      "description": "Dos roux tacheté de noir, ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout."
+    },
+    {
+      "id": "jardin-x01",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Accenteur mouchet",
+      "nom_scientifique": "Prunella modularis",
+      "options": [
+        "Accenteur mouchet",
+        "Moineau domestique",
+        "Troglodyte mignon",
+        "Rougegorge familier"
+      ],
+      "indice": "Dessus brun strié, tête et poitrine grises, bec fin",
+      "explication": "L'accenteur mouchet a le dessus brun strié, la tête et la poitrine grises, et un bec fin d'insectivore. Il gratte souvent le sol sous les buissons.",
+      "description": "Dessus brun strié, tête et poitrine grises, bec fin. Gratte souvent le sol sous les buissons."
+    },
+    {
+      "id": "jardin-x02",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Alouette des champs",
+      "nom_scientifique": "Alauda arvensis",
+      "options": [
+        "Alouette des champs",
+        "Pipit farlouse",
+        "Pipit des arbres",
+        "Bruant jaune"
+      ],
+      "indice": "Petite crête, dessus brun strié, chant en vol au-dessus des champs",
+      "explication": "L'alouette des champs a une petite crête, le dessus brun strié et le dessous clair. Elle chante longtemps en vol, au-dessus des champs.",
+      "description": "Petite crête, dessus brun strié, dessous clair. Chante longtemps en vol au-dessus des cultures."
+    },
+    {
+      "id": "jardin-x03",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Bergeronnette grise",
+      "nom_scientifique": "Motacilla alba",
+      "options": [
+        "Bergeronnette grise",
+        "Bergeronnette des ruisseaux",
+        "Mésange charbonnière",
+        "Traquet motteux"
+      ],
+      "indice": "Gris, noir et blanc, longue queue sans cesse agitée",
+      "explication": "La bergeronnette grise est grise, noire et blanche, avec une longue queue qu'elle agite sans cesse. Elle court au sol plus qu'elle ne sautille.",
+      "description": "Gris, noir et blanc, longue queue agitée sans cesse. Court au sol plus qu'elle ne sautille."
+    },
+    {
+      "id": "jardin-x04",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Bouvreuil pivoine",
+      "nom_scientifique": "Pyrrhula pyrrhula",
+      "options": [
+        "Bouvreuil pivoine",
+        "Rougegorge familier",
+        "Pinson des arbres",
+        "Chardonneret élégant"
+      ],
+      "indice": "Gros bec noir, calotte noire, croupion blanc. Le mâle a la poitrine rose",
+      "explication": "Le bouvreuil a un gros bec noir, une calotte noire et un croupion blanc. Le mâle a la poitrine rose, la femelle la poitrine beige.",
+      "description": "Gros bec noir, calotte noire, croupion blanc. Le mâle a la poitrine rose, la femelle beige."
+    },
+    {
+      "id": "jardin-x05",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Bruant jaune",
+      "nom_scientifique": "Emberiza citrinella",
+      "options": [
+        "Bruant jaune",
+        "Pinson des arbres",
+        "Serin cini",
+        "Bruant des neiges"
+      ],
+      "indice": "Tête et ventre jaunes, croupion roux, dos brun strié",
+      "explication": "Le bruant jaune a la tête et le ventre jaunes, le croupion roux et le dos brun strié. Il chante souvent du haut d'un buisson.",
+      "description": "Tête et ventre dorés, croupion roux, dos brun strié. Chante souvent du haut d'un buisson."
+    },
+    {
+      "id": "jardin-x06",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Fauvette des jardins",
+      "nom_scientifique": "Sylvia borin",
+      "options": [
+        "Fauvette des jardins",
+        "Fauvette à tête noire",
+        "Pouillot véloce",
+        "Fauvette grisette"
+      ],
+      "indice": "Brun-olive uniforme, sans calotte ni marque forte sur la tête",
+      "explication": "La fauvette des jardins est brun-olive, uniforme, sans calotte ni bandeau. Le dessous est gris-beige, et le bec est assez fort.",
+      "description": "Brun-olive uniforme, sans calotte ni bandeau. Dessous gris-beige, bec assez fort."
+    },
+    {
+      "id": "jardin-x07",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Geai des chênes",
+      "nom_scientifique": "Garrulus glandarius",
+      "options": [
+        "Geai des chênes",
+        "Rollier d'Europe",
+        "Loriot d'Europe",
+        "Corneille noire"
+      ],
+      "indice": "Rose-brun, moustache noire, miroir alaire bleu barré de noir",
+      "explication": "Le geai des chênes est rose-brun, avec une moustache noire et un miroir alaire bleu barré de noir. Il pousse un cri rauque.",
+      "description": "Rose-brun, moustache noire, miroir alaire bleu barré de noir. Cri rauque."
+    },
+    {
+      "id": "jardin-x08",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Grimpereau des jardins",
+      "nom_scientifique": "Certhia brachydactyla",
+      "options": [
+        "Grimpereau des jardins",
+        "Sittelle torchepot",
+        "Pic épeiche",
+        "Mésange nonnette"
+      ],
+      "indice": "Brun strié, bec fin arqué, grimpe en spirale le long des troncs",
+      "explication": "Le grimpereau des jardins est brun strié, avec un bec fin et arqué. Il grimpe en spirale le long des troncs, du bas vers le haut.",
+      "description": "Brun strié, bec fin et arqué. Grimpe en spirale le long des troncs, du bas vers le haut."
+    },
+    {
+      "id": "jardin-x09",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Grive musicienne",
+      "nom_scientifique": "Turdus philomelos",
+      "options": [
+        "Grive musicienne",
+        "Merle noir",
+        "Grive litorne",
+        "Étourneau sansonnet"
+      ],
+      "indice": "Dessus brun, poitrine crème couverte de taches en forme de pointes",
+      "explication": "La grive musicienne a le dessus brun et la poitrine crème couverte de taches en forme de pointes. Elle casse les escargots sur une pierre.",
+      "description": "Dessus brun, poitrine crème couverte de taches en forme de pointes."
+    },
+    {
+      "id": "jardin-x10",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Linotte mélodieuse",
+      "nom_scientifique": "Linaria cannabina",
+      "options": [
+        "Linotte mélodieuse",
+        "Chardonneret élégant",
+        "Tarin des aulnes",
+        "Bruant jaune"
+      ],
+      "indice": "Dos brun, bec gris. Le mâle a le front et la poitrine rouge carmin",
+      "explication": "La linotte mélodieuse a le dos brun et le bec gris. Le mâle a le front et la poitrine rouge carmin, plus ternes en hiver.",
+      "description": "Dos brun, bec gris. Le mâle a le front et la poitrine rouge carmin."
+    },
+    {
+      "id": "jardin-x11",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Loriot d'Europe",
+      "nom_scientifique": "Oriolus oriolus",
+      "options": [
+        "Loriot d'Europe",
+        "Guêpier d'Europe",
+        "Verdier d'Europe",
+        "Geai des chênes"
+      ],
+      "indice": "Le mâle est jaune d'or et noir, la femelle verdâtre. Bec rouge",
+      "explication": "Le loriot d'Europe mâle est jaune d'or et noir, la femelle verdâtre et striée. Le bec est rouge. Il reste souvent caché dans le feuillage.",
+      "description": "Le mâle est jaune d'or et noir, la femelle verdâtre et striée. Bec rouge, souvent caché dans le feuillage."
+    },
+    {
+      "id": "jardin-x12",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Moineau friquet",
+      "nom_scientifique": "Passer montanus",
+      "options": [
+        "Moineau friquet",
+        "Moineau domestique",
+        "Mésange charbonnière",
+        "Accenteur mouchet"
+      ],
+      "indice": "Calotte marron, tache noire sur la joue blanche, petit bavoir noir",
+      "explication": "Le moineau friquet a une calotte marron, une tache noire sur la joue blanche et un petit bavoir noir. Mâle et femelle se ressemblent.",
+      "description": "Calotte marron, tache noire sur la joue blanche, petit bavoir noir. Mâle et femelle se ressemblent."
+    },
+    {
+      "id": "jardin-x13",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Mésange charbonnière",
+      "nom_scientifique": "Parus major",
+      "options": [
+        "Mésange charbonnière",
+        "Mésange bleue",
+        "Mésange noire",
+        "Moineau domestique"
+      ],
+      "indice": "Tête noire, joues blanches, cravate noire sur le ventre jaune",
+      "explication": "La mésange charbonnière a la tête noire, les joues blanches et une cravate noire sur le ventre jaune. Elle est plus grande que la mésange bleue.",
+      "description": "Tête noire, joues blanches, cravate noire sur le ventre jaune."
+    },
+    {
+      "id": "jardin-x14",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Pic mar",
+      "nom_scientifique": "Dendrocoptes medius",
+      "options": [
+        "Pic mar",
+        "Pic épeiche",
+        "Pic épeichette",
+        "Pic vert"
+      ],
+      "indice": "Calotte entièrement rouge, joues blanches sans grosse moustache, sous-caudales roses",
+      "explication": "Le pic mar a la calotte entièrement rouge, chez le mâle comme chez la femelle. Les joues sont blanches, sans la grosse moustache noire de l'épeiche.",
+      "description": "Calotte entièrement rouge, joues blanches sans grosse moustache noire. Sous-caudales roses."
+    },
+    {
+      "id": "jardin-x15",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Pic vert",
+      "nom_scientifique": "Picus viridis",
+      "options": [
+        "Pic vert",
+        "Pic épeiche",
+        "Pic mar",
+        "Rollier d'Europe"
+      ],
+      "indice": "Grand, dessus olive, croupion jaune, moustache. Rie souvent",
+      "explication": "Le pic vert est grand, le dessus olive et le croupion jaune vif. Une moustache noire, rouge chez le mâle, barre la face. Son cri est un rire.",
+      "description": "Grand, dessus olive, croupion jaune vif. Moustache noire, rouge chez le mâle. Cri en rire."
+    },
+    {
+      "id": "jardin-x16",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Pic épeichette",
+      "nom_scientifique": "Dryobates minor",
+      "options": [
+        "Pic épeichette",
+        "Pic épeiche",
+        "Pic mar",
+        "Grimpereau des jardins"
+      ],
+      "indice": "Très petit, dos barré de blanc, pas de rouge sous la queue",
+      "explication": "Le pic épeichette est très petit, avec le dos barré de blanc. Il n'a pas de rouge sous la queue. Le mâle a une calotte rouge.",
+      "description": "Très petit, dos barré de blanc, pas de rouge sous la queue. Le mâle a une calotte rouge."
+    },
+    {
+      "id": "jardin-x17",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Pigeon biset",
+      "nom_scientifique": "Columba livia",
+      "options": [
+        "Pigeon biset",
+        "Pigeon ramier",
+        "Pigeon colombin",
+        "Tourterelle turque"
+      ],
+      "indice": "Gris, deux barres noires sur l'aile, croupion blanc. Souvent en ville",
+      "explication": "Le pigeon biset est gris, avec deux barres noires sur l'aile et le croupion blanc. Les oiseaux des villes montrent souvent des plumages mélangés.",
+      "description": "Gris, deux barres noires sur l'aile, croupion blanc. Les oiseaux des villes ont souvent un plumage mélangé."
+    },
+    {
+      "id": "jardin-x18",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Pigeon colombin",
+      "nom_scientifique": "Columba oenas",
+      "options": [
+        "Pigeon colombin",
+        "Pigeon ramier",
+        "Pigeon biset",
+        "Tourterelle turque"
+      ],
+      "indice": "Plus petit, gris-bleu, sans barre blanche sur l'aile ni tache blanche au cou",
+      "explication": "Le pigeon colombin est plus petit et plus uniforme, gris-bleu. Il n'a ni barre blanche sur l'aile ni tache blanche au cou.",
+      "description": "Plus petit, gris-bleu uniforme. Ni barre blanche sur l'aile, ni tache blanche au cou."
+    },
+    {
+      "id": "jardin-x19",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Pouillot fitis",
+      "nom_scientifique": "Phylloscopus trochilus",
+      "options": [
+        "Pouillot fitis",
+        "Pouillot véloce",
+        "Roitelet huppé",
+        "Fauvette des jardins"
+      ],
+      "indice": "Dessus vert-olive, dessous jaune pâle, sourcil jaune, pattes claires",
+      "explication": "Le pouillot fitis a le dessus vert-olive, le dessous jaune pâle, un long sourcil jaune et des pattes claires. Son chant est une phrase descendante.",
+      "description": "Dessus vert-olive, dessous jaune pâle, long sourcil jaune, pattes claires."
+    },
+    {
+      "id": "jardin-x20",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Roitelet huppé",
+      "nom_scientifique": "Regulus regulus",
+      "options": [
+        "Roitelet huppé",
+        "Roitelet triple-bandeau",
+        "Pouillot véloce",
+        "Mésange noire"
+      ],
+      "indice": "Tout petit, raie jaune sur la calotte, pas de sourcil blanc marqué",
+      "explication": "Le roitelet huppé est tout petit, avec une raie jaune sur la calotte, bordée de noir. Il n'a pas le sourcil blanc bien marqué de son cousin.",
+      "description": "Tout petit, raie jaune sur la calotte, bordée de noir. Pas de sourcil blanc bien marqué."
+    },
+    {
+      "id": "jardin-x21",
+      "groupe": "jardin",
+      "difficulte": "difficile",
+      "nom_commun": "Roitelet triple-bandeau",
+      "nom_scientifique": "Regulus ignicapilla",
+      "options": [
+        "Roitelet triple-bandeau",
+        "Roitelet huppé",
+        "Pouillot véloce",
+        "Mésange huppée"
+      ],
+      "indice": "Tout petit, raie orange ou jaune sur la calotte, sourcil blanc et trait noir dans l'œil",
+      "explication": "Le roitelet à triple bandeau est tout petit. Une raie orange ou jaune orne la calotte, avec un sourcil blanc et un trait noir à travers l'œil.",
+      "description": "Tout petit, raie orange ou jaune sur la calotte, sourcil blanc et trait noir à travers l'œil."
+    },
+    {
+      "id": "jardin-x22",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Serin cini",
+      "nom_scientifique": "Serinus serinus",
+      "options": [
+        "Serin cini",
+        "Verdier d'Europe",
+        "Tarin des aulnes",
+        "Chardonneret élégant"
+      ],
+      "indice": "Très petit, bec court. Le mâle a la tête et la poitrine jaunes, le croupion jaune",
+      "explication": "Le serin cini est très petit, avec un bec court. Le mâle a la tête et la poitrine jaunes et le croupion jaune. Son chant est un grésillement rapide.",
+      "description": "Très petit, bec court. Le mâle a la tête, la poitrine et le croupion jaunes."
+    },
+    {
+      "id": "jardin-x23",
+      "groupe": "jardin",
+      "difficulte": "moyen",
+      "nom_commun": "Tarin des aulnes",
+      "nom_scientifique": "Spinus spinus",
+      "options": [
+        "Tarin des aulnes",
+        "Chardonneret élégant",
+        "Serin cini",
+        "Venturon montagnard"
+      ],
+      "indice": "Petit, jaune et vert, barres alaires jaunes. Le mâle a la calotte et la bavette noires",
+      "explication": "Le tarin des aulnes est petit, jaune et vert, avec des barres alaires jaunes. Le mâle a la calotte et la bavette noires.",
+      "description": "Petit, jaune et vert, barres alaires jaunes. Le mâle a la calotte et la bavette noires."
+    },
+    {
+      "id": "jardin-x24",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Tourterelle turque",
+      "nom_scientifique": "Streptopelia decaocto",
+      "options": [
+        "Tourterelle turque",
+        "Pigeon ramier",
+        "Pigeon biset",
+        "Pigeon colombin"
+      ],
+      "indice": "Beige uniforme, demi-collier noir sur la nuque, bout de la queue blanc",
+      "explication": "La tourterelle turque est beige uniforme, avec un demi-collier noir sur la nuque. Le bout de la queue est blanc, bien visible à l'envol.",
+      "description": "Beige uniforme, demi-collier noir sur la nuque. Bout de la queue blanc, visible à l'envol."
+    },
+    {
+      "id": "jardin-x25",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Troglodyte mignon",
+      "nom_scientifique": "Troglodytes troglodytes",
+      "options": [
+        "Troglodyte mignon",
+        "Rougegorge familier",
+        "Accenteur mouchet",
+        "Roitelet huppé"
+      ],
+      "indice": "Tout petit, brun, queue souvent dressée, bec fin",
+      "explication": "Le troglodyte mignon est tout petit et brun, avec la queue souvent dressée à la verticale et un bec fin. Il se faufile dans les tas de bois.",
+      "description": "Tout petit, brun, queue souvent dressée à la verticale, bec fin."
+    },
+    {
+      "id": "jardin-x26",
+      "groupe": "jardin",
+      "difficulte": "facile",
+      "nom_commun": "Étourneau sansonnet",
+      "nom_scientifique": "Sturnus vulgaris",
+      "options": [
+        "Étourneau sansonnet",
+        "Merle noir",
+        "Grive musicienne",
+        "Choucas des tours"
+      ],
+      "indice": "Sombre à reflets verts et violets, bec jaune en été, plumage tacheté en hiver",
+      "explication": "L'étourneau sansonnet est sombre, avec des reflets verts et violets. Le bec est jaune en été. En hiver, le plumage est fortement tacheté de clair.",
+      "description": "Sombre à reflets verts et violets, bec jaune en été. En hiver, plumage fortement tacheté de clair."
+    }
+  ]
+}

@@ -1,0 +1,455 @@
+{
+  "id": "montagne",
+  "label": "Montagne et sud",
+  "defaut": false,
+  "questions": [
+    {
+      "id": "mon-f1",
+      "groupe": "montagne",
+      "difficulte": "facile",
+      "nom_commun": "Huppe fasciée",
+      "nom_scientifique": "Upupa epops",
+      "options": [
+        "Huppe fasciée",
+        "Guêpier d'Europe",
+        "Pic épeiche",
+        "Geai des chênes"
+      ],
+      "indice": "Huppe en éventail, corps rose orangé, ailes barrées",
+      "explication": "La huppe a une longue huppe érectile, un corps rose orangé et des ailes noires barrées de blanc. Son bec est long et arqué.",
+      "description": "Longue crête érectile, corps rose orangé, ailes noires barrées de blanc. Bec long et arqué."
+    },
+    {
+      "id": "mon-f2",
+      "groupe": "montagne",
+      "difficulte": "facile",
+      "nom_commun": "Guêpier d'Europe",
+      "nom_scientifique": "Merops apiaster",
+      "options": [
+        "Guêpier d'Europe",
+        "Rollier d'Europe",
+        "Martin-pêcheur d'Europe",
+        "Loriot d'Europe"
+      ],
+      "indice": "Gorge jaune, ventre turquoise, bec fin",
+      "explication": "Le guêpier a la gorge jaune, le ventre turquoise, le dos roux et un fin bec noir légèrement arqué. Il capture les insectes en vol.",
+      "description": "Gorge jaune, ventre turquoise, dos roux, fin bec noir légèrement arqué. Capture les insectes en vol."
+    },
+    {
+      "id": "mon-f3",
+      "groupe": "montagne",
+      "difficulte": "facile",
+      "nom_commun": "Rollier d'Europe",
+      "nom_scientifique": "Coracias garrulus",
+      "options": [
+        "Rollier d'Europe",
+        "Guêpier d'Europe",
+        "Geai des chênes",
+        "Martin-pêcheur d'Europe"
+      ],
+      "indice": "Entièrement bleu turquoise, avec le dos roux",
+      "explication": "Le rollier est bleu turquoise, avec le dos brun roux. En vol, les ailes montrent un fort contraste de bleus.",
+      "description": "Bleu turquoise, dos brun roux. En vol, les ailes montrent un fort contraste de bleus."
+    },
+    {
+      "id": "mon-f4",
+      "groupe": "montagne",
+      "difficulte": "facile",
+      "nom_commun": "Chocard à bec jaune",
+      "nom_scientifique": "Pyrrhocorax graculus",
+      "options": [
+        "Chocard à bec jaune",
+        "Crave à bec rouge",
+        "Choucas des tours",
+        "Grand corbeau"
+      ],
+      "indice": "Noir, bec jaune et pattes rouges",
+      "explication": "Le chocard est noir, avec un bec jaune assez court et des pattes rouges. Il vole en groupes acrobatiques au-dessus des falaises.",
+      "description": "Noir, bec assez court et clair, pattes rouges. Vol acrobatique en groupes au-dessus des falaises."
+    },
+    {
+      "id": "mon-f5",
+      "groupe": "montagne",
+      "difficulte": "facile",
+      "nom_commun": "Cincle plongeur",
+      "nom_scientifique": "Cinclus cinclus",
+      "options": [
+        "Cincle plongeur",
+        "Merle noir",
+        "Martin-pêcheur d'Europe",
+        "Bergeronnette des ruisseaux"
+      ],
+      "indice": "Rond et sombre, avec une grande bavette blanche",
+      "explication": "Le cincle est trapu, brun-noir, avec une large bavette blanche. Il marche sous l'eau des torrents pour chercher sa nourriture.",
+      "description": "Trapu, brun-noir, large bavette blanche. Marche sous l'eau des torrents."
+    },
+    {
+      "id": "mon-m1",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Tichodrome échelette",
+      "nom_scientifique": "Tichodroma muraria",
+      "options": [
+        "Tichodrome échelette",
+        "Sittelle torchepot",
+        "Grimpereau des jardins",
+        "Rougequeue noir"
+      ],
+      "indice": "Gris, avec de larges ailes cramoisies",
+      "explication": "Le tichodrome est gris, au long bec fin. Quand il ouvre les ailes sur une paroi, de grandes taches cramoisies apparaissent.",
+      "description": "Gris, long bec fin. Quand il ouvre les ailes sur une paroi, de grandes taches cramoisies apparaissent."
+    },
+    {
+      "id": "mon-m2",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Venturon montagnard",
+      "nom_scientifique": "Carduelis citrinella",
+      "options": [
+        "Venturon montagnard",
+        "Tarin des aulnes",
+        "Serin cini",
+        "Verdier d'Europe"
+      ],
+      "indice": "Vert et jaune, nuque grise, sans masque noir",
+      "explication": "Le venturon a le corps jaune-vert, la nuque et les côtés de la tête gris, et deux barres alaires. Il n'a pas le masque noir du tarin.",
+      "description": "Corps jaune-vert, nuque et côtés de la tête gris, deux barres alaires. Pas de masque noir."
+    },
+    {
+      "id": "mon-m3",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Niverolle alpine",
+      "nom_scientifique": "Montifringilla nivalis",
+      "options": [
+        "Niverolle alpine",
+        "Bruant des neiges",
+        "Moineau domestique",
+        "Accenteur alpin"
+      ],
+      "indice": "Brune, avec de grandes plages blanches sur les ailes",
+      "explication": "La niverolle est brune et blanche. En vol, les ailes montrent de grands panneaux blancs et le bout est noir. Elle vit près des névés.",
+      "description": "Brune et blanche. En vol, grands panneaux blancs sur les ailes, bout noir. Près des névés."
+    },
+    {
+      "id": "mon-m4",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Merle à plastron",
+      "nom_scientifique": "Turdus torquatus",
+      "options": [
+        "Merle à plastron",
+        "Merle noir",
+        "Grive litorne",
+        "Étourneau sansonnet"
+      ],
+      "indice": "Noir, avec un croissant blanc sur la poitrine",
+      "explication": "Le mâle est noir, avec un large croissant blanc sur la poitrine et des liserés clairs sur les ailes. La femelle est plus brune, au croissant moins net.",
+      "description": "Le mâle est noir, avec un large croissant blanc sur la poitrine et des liserés clairs sur les ailes."
+    },
+    {
+      "id": "mon-m5",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Traquet motteux",
+      "nom_scientifique": "Oenanthe oenanthe",
+      "options": [
+        "Traquet motteux",
+        "Rougequeue noir",
+        "Tarier des prés",
+        "Traquet oreillard"
+      ],
+      "indice": "Croupion blanc, masque noir chez le mâle",
+      "explication": "Le traquet motteux a le croupion et la base de la queue blancs, avec un T noir au bout de la queue. Le mâle porte un masque noir et le dessus gris.",
+      "description": "Croupion et base de la queue blancs, T noir au bout de la queue. Le mâle a un masque noir et le dessus gris."
+    },
+    {
+      "id": "mon-d1",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Pipit spioncelle",
+      "nom_scientifique": "Anthus spinoletta",
+      "options": [
+        "Pipit spioncelle",
+        "Pipit farlouse",
+        "Pipit des arbres",
+        "Accenteur alpin"
+      ],
+      "indice": "Dessus gris, dessous rosâtre peu strié en été",
+      "explication": "En été, le spioncelle a le dessus gris, le sourcil blanc et le dessous rosâtre presque sans stries. Il fréquente les pelouses d'altitude.",
+      "description": "En été, dessus gris, sourcil blanc, dessous rosâtre presque sans stries. Pelouses d'altitude."
+    },
+    {
+      "id": "mon-d2",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Pipit farlouse",
+      "nom_scientifique": "Anthus pratensis",
+      "options": [
+        "Pipit farlouse",
+        "Pipit spioncelle",
+        "Pipit des arbres",
+        "Alouette des champs"
+      ],
+      "indice": "Petit, brun, fortement strié, souvent au sol",
+      "explication": "Le farlouse est petit et brun olive, fortement strié sur la poitrine. Le bec est fin. Il se pose souvent sur un piquet avant de redescendre au sol.",
+      "description": "Petit, brun olive, fortement strié sur la poitrine, bec fin. Se pose souvent sur un piquet."
+    },
+    {
+      "id": "mon-d3",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Mésange boréale",
+      "nom_scientifique": "Poecile montanus",
+      "options": [
+        "Mésange boréale",
+        "Mésange nonnette",
+        "Mésange noire",
+        "Mésange huppée"
+      ],
+      "indice": "Calotte noire mate, grande bavette, joues blanches",
+      "explication": "La boréale a une calotte noire mate, une grande bavette noire et les joues blanches. Elle est très proche de la nonnette : la bavette est en général plus étendue.",
+      "description": "Calotte noire mate, grande bavette noire, joues blanches. La bavette est en général étendue."
+    },
+    {
+      "id": "mon-d4",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Mésange nonnette",
+      "nom_scientifique": "Poecile palustris",
+      "options": [
+        "Mésange nonnette",
+        "Mésange boréale",
+        "Mésange noire",
+        "Mésange charbonnière"
+      ],
+      "indice": "Calotte noire brillante, petite bavette nette",
+      "explication": "La nonnette a une calotte noire luisante, une petite bavette bien délimitée et pas de barre alaire blanche. Elle ressemble beaucoup à la boréale.",
+      "description": "Calotte noire luisante, petite bavette bien délimitée, pas de barre alaire blanche."
+    },
+    {
+      "id": "mon-d5",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Fauvette pitchou",
+      "nom_scientifique": "Curruca undata",
+      "options": [
+        "Fauvette pitchou",
+        "Fauvette à tête noire",
+        "Fauvette mélanocéphale",
+        "Fauvette grisette"
+      ],
+      "indice": "Petite, sombre, gorge ponctuée, longue queue souvent relevée",
+      "explication": "La pitchou est petite et sombre, à longue queue souvent relevée. La gorge est finement ponctuée de blanc et le cercle oculaire est rouge.",
+      "description": "Petite et sombre, longue queue souvent relevée. Gorge finement ponctuée de blanc, cercle oculaire rouge."
+    },
+    {
+      "id": "montagne-x01",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Accenteur alpin",
+      "nom_scientifique": "Prunella collaris",
+      "options": [
+        "Accenteur alpin",
+        "Niverolle alpine",
+        "Bruant des neiges",
+        "Pipit spioncelle"
+      ],
+      "indice": "Gris, gorge tachetée, flancs roux, sur les rochers d'altitude",
+      "explication": "L'accenteur alpin est gris, avec la gorge finement tachetée et les flancs roux. Il se tient sur les rochers et les pelouses d'altitude.",
+      "description": "Gris, gorge finement tachetée, flancs roux. Se tient sur les rochers et les pelouses d'altitude."
+    },
+    {
+      "id": "montagne-x02",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Bruant des neiges",
+      "nom_scientifique": "Plectrophenax nivalis",
+      "options": [
+        "Bruant des neiges",
+        "Niverolle alpine",
+        "Accenteur alpin",
+        "Bruant jaune"
+      ],
+      "indice": "En hiver, beaucoup de blanc sur les ailes et le corps, dos brun",
+      "explication": "Le bruant des neiges montre beaucoup de blanc sur les ailes et le corps, avec le dos brun. En hiver, on le voit sur les côtes et les labours.",
+      "description": "Beaucoup de blanc sur les ailes et le corps, dos brun. En hiver, côtes et labours."
+    },
+    {
+      "id": "montagne-x03",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Crave à bec rouge",
+      "nom_scientifique": "Pyrrhocorax pyrrhocorax",
+      "options": [
+        "Crave à bec rouge",
+        "Chocard à bec jaune",
+        "Grand corbeau",
+        "Choucas des tours"
+      ],
+      "indice": "Noir, bec long, arqué et rouge, pattes rouges",
+      "explication": "Le crave à bec rouge est noir, avec un long bec arqué rouge et des pattes rouges. Il fréquente les falaises et les pelouses.",
+      "description": "Entièrement noir, long bec arqué carmin, pattes carmin. Falaises et pelouses."
+    },
+    {
+      "id": "montagne-x04",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Fauvette grisette",
+      "nom_scientifique": "Curruca communis",
+      "options": [
+        "Fauvette grisette",
+        "Fauvette pitchou",
+        "Fauvette mélanocéphale",
+        "Fauvette des jardins"
+      ],
+      "indice": "Gorge blanche, tête grise, ailes rousses, souvent la queue relevée",
+      "explication": "La fauvette grisette a la gorge blanche, la tête grise et les ailes rousses. Elle relève souvent la queue dans les buissons.",
+      "description": "Gorge blanche, tête grise, ailes rousses. Relève souvent la queue dans les buissons."
+    },
+    {
+      "id": "montagne-x05",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Fauvette mélanocéphale",
+      "nom_scientifique": "Curruca melanocephala",
+      "options": [
+        "Fauvette mélanocéphale",
+        "Fauvette pitchou",
+        "Fauvette grisette",
+        "Fauvette à tête noire"
+      ],
+      "indice": "Calotte noire qui descend sous l'œil, gorge blanche, œil à cercle rouge",
+      "explication": "La fauvette mélanocéphale a une calotte noire qui descend sous l'œil, la gorge blanche et un cercle oculaire rouge. La queue est souvent relevée.",
+      "description": "Calotte noire qui descend sous l'œil, gorge blanche, cercle oculaire rouge. Queue souvent relevée."
+    },
+    {
+      "id": "montagne-x06",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Grand corbeau",
+      "nom_scientifique": "Corvus corax",
+      "options": [
+        "Grand corbeau",
+        "Corneille noire",
+        "Corbeau freux",
+        "Chocard à bec jaune"
+      ],
+      "indice": "Très grand, bec fort, queue en losange, cri grave",
+      "explication": "Le grand corbeau est très grand, avec un bec fort et une queue en losange. Son cri est un croassement grave. Il plane souvent.",
+      "description": "Très grand, bec fort, queue en losange. Cri grave, plane souvent."
+    },
+    {
+      "id": "montagne-x07",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Grive litorne",
+      "nom_scientifique": "Turdus pilaris",
+      "options": [
+        "Grive litorne",
+        "Merle à plastron",
+        "Grive musicienne",
+        "Étourneau sansonnet"
+      ],
+      "indice": "Tête et croupion gris, dos marron, poitrine ocre tachetée",
+      "explication": "La grive litorne a la tête et le croupion gris, le dos marron et la poitrine ocre fortement tachetée. Elle se déplace souvent en bandes.",
+      "description": "Tête et croupion gris, dos marron, poitrine ocre fortement tachetée. Souvent en bandes."
+    },
+    {
+      "id": "montagne-x08",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Mésange huppée",
+      "nom_scientifique": "Lophophanes cristatus",
+      "options": [
+        "Mésange huppée",
+        "Mésange boréale",
+        "Mésange noire",
+        "Mésange charbonnière"
+      ],
+      "indice": "Crête noire et blanche pointue, bavette noire, joues blanches",
+      "explication": "La mésange huppée porte une crête noire et blanche pointue, une bavette noire et des joues blanches. Elle vit surtout dans les pins.",
+      "description": "Crête pointue, noire et blanche, bavette noire, joues blanches. Surtout dans les pins."
+    },
+    {
+      "id": "montagne-x09",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Mésange noire",
+      "nom_scientifique": "Periparus ater",
+      "options": [
+        "Mésange noire",
+        "Mésange boréale",
+        "Mésange huppée",
+        "Mésange charbonnière"
+      ],
+      "indice": "Tête noire, grande tache blanche sur la nuque, deux barres alaires blanches",
+      "explication": "La mésange noire a la tête noire, une grande tache blanche sur la nuque et deux barres alaires blanches. Elle est petite et fréquente les conifères.",
+      "description": "Petite, tête noire, grande tache blanche sur la nuque, deux barres alaires blanches. Conifères."
+    },
+    {
+      "id": "montagne-x10",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Pipit des arbres",
+      "nom_scientifique": "Anthus trivialis",
+      "options": [
+        "Pipit des arbres",
+        "Pipit farlouse",
+        "Pipit spioncelle",
+        "Alouette des champs"
+      ],
+      "indice": "Dessus brun strié, bec fin, sourcil clair. Chante en parachute depuis un arbre",
+      "explication": "Le pipit des arbres a le dessus brun strié, un bec fin et un sourcil clair. Il lance son chant en descendant en parachute depuis un arbre.",
+      "description": "Dessus brun strié, bec fin, sourcil clair. Chant lancé en descendant depuis un arbre."
+    },
+    {
+      "id": "montagne-x11",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Rougequeue noir",
+      "nom_scientifique": "Phoenicurus ochruros",
+      "options": [
+        "Rougequeue noir",
+        "Traquet motteux",
+        "Merle noir",
+        "Tarier des prés"
+      ],
+      "indice": "Sombre, queue roux orangé sans cesse agitée. Le mâle a une tache blanche sur l'aile",
+      "explication": "Le rougequeue noir est sombre, avec la queue roux orangé qu'il agite sans cesse. Le mâle a une tache blanche sur l'aile.",
+      "description": "Sombre, queue roux orangé agitée sans cesse. Le mâle a une tache blanche sur l'aile."
+    },
+    {
+      "id": "montagne-x12",
+      "groupe": "montagne",
+      "difficulte": "moyen",
+      "nom_commun": "Tarier des prés",
+      "nom_scientifique": "Saxicola rubetra",
+      "options": [
+        "Tarier des prés",
+        "Traquet motteux",
+        "Rougequeue noir",
+        "Pipit farlouse"
+      ],
+      "indice": "Sourcil blanc très marqué, gorge ocre, souvent au sommet d'une tige",
+      "explication": "Le tarier des prés a un sourcil blanc très marqué et la gorge ocre. Il se pose souvent au sommet d'une tige, dans les prairies.",
+      "description": "Sourcil blanc très marqué, gorge ocre. Souvent au sommet d'une tige, dans les prairies."
+    },
+    {
+      "id": "montagne-x13",
+      "groupe": "montagne",
+      "difficulte": "difficile",
+      "nom_commun": "Traquet oreillard",
+      "nom_scientifique": "Oenanthe hispanica",
+      "options": [
+        "Traquet oreillard",
+        "Traquet motteux",
+        "Tarier des prés",
+        "Rougequeue noir"
+      ],
+      "indice": "Masque noir, gorge noire ou claire selon la forme, croupion et queue blancs à T noir",
+      "explication": "Le traquet oreillard a un masque noir. La gorge est noire ou claire selon la forme. Le croupion et la queue sont blancs, avec un T noir au bout.",
+      "description": "Masque noir, gorge noire ou claire. Croupion et queue blancs, avec un T noir au bout."
+    }
+  ]
+}
