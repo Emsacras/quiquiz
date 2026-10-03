@@ -27,6 +27,21 @@ import {
   seededShuffle,
 } from "./progress.js";
 import { onHashChange, parseHash, setHashRoute } from "./router.js";
+import {
+  collectLeaves,
+  findNodeById,
+  findNodeByPath,
+  flattenCatalogLeaves,
+  isFolder,
+  isLeaf,
+  leafDisplayLabel,
+  leavesForRegion,
+  listRegions,
+  normalizeCatalog,
+  parseRegionSessionId,
+  playableLeaves,
+  regionSessionId,
+} from "./catalog-nav.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
@@ -173,25 +188,116 @@ function syncRouteFromScreen() {
   }
 }
 
+function catalogDomains() {
+  return Array.isArray(state.catalog?.domains) ? state.catalog.domains : [];
+}
+
+function rememberCategory(category) {
+  if (!category?.id) return category;
+  const index = state.categories.findIndex((item) => item.id === category.id);
+  if (index >= 0) state.categories[index] = category;
+  else state.categories.push(category);
+  return category;
+}
+
+async function buildMergedCategory(sessionId, sessionLabel, leaves, description = "") {
+  const playable = playableLeaves(leaves);
+  if (!playable.length) return null;
+  if (playable.length === 1) {
+    const single = await loadCategory(playable[0].fichier);
+    return single || null;
+  }
+
+  const groupes = [];
+  const questions = [];
+  for (const leaf of playable) {
+    const loaded = await loadCategory(leaf.fichier);
+    if (!loaded?.questions?.length) continue;
+    const groupId = leaf.id;
+    const tagged = loaded.questions.map((question) => ({
+      ...question,
+      groupe: groupId,
+    }));
+    groupes.push({
+      id: groupId,
+      label: leafDisplayLabel(leaf),
+      defaut: true,
+      questions: tagged,
+    });
+    questions.push(...tagged);
+  }
+  if (!questions.length) return null;
+  return {
+    id: sessionId,
+    categorie: sessionLabel,
+    description: description || "",
+    groupes,
+    questions,
+    _merged: true,
+  };
+}
+
+async function openMergedLeaves(sessionId, sessionLabel, leaves, description = "") {
+  try {
+    const playable = playableLeaves(leaves);
+    if (!playable.length) {
+      state.notice = "Aucun quiz jouable ici pour le moment.";
+      mount();
+      return;
+    }
+    if (playable.length === 1) {
+      await openQuizFile(playable[0].fichier);
+      return;
+    }
+    const merged = await buildMergedCategory(sessionId, sessionLabel, leaves, description);
+    if (!merged) {
+      state.notice = "Impossible de fusionner ces quiz.";
+      mount();
+      return;
+    }
+    rememberCategory(merged);
+    openCategory(merged);
+  } catch {
+    state.notice = "Impossible de charger ces quiz.";
+    mount();
+  }
+}
+
 async function ensureCategoryById(categoryId) {
   if (!categoryId) return null;
   let category = state.categories.find((item) => item.id === categoryId);
   if (category) return category;
-  const entries = [];
-  const walk = (nodes) => {
-    for (const node of nodes || []) {
-      if (node.fichier) entries.push(node);
-      if (node.branches) walk(node.branches);
-      if (node.lieux) walk(node.lieux);
-    }
-  };
-  walk(state.catalog?.themes || []);
-  for (const entry of entries) {
+
+  const regionId = parseRegionSessionId(categoryId);
+  if (regionId) {
+    const leaves = leavesForRegion(catalogDomains(), regionId);
+    const meta = listRegions(catalogDomains()).find((item) => item.id === regionId);
+    const merged = await buildMergedCategory(
+      categoryId,
+      meta?.nom || regionId,
+      leaves,
+      meta?.description || ""
+    );
+    if (merged?._merged) return rememberCategory(merged);
+    if (merged) return rememberCategory(merged);
+  }
+
+  const folder = findNodeById(catalogDomains(), categoryId);
+  if (folder && isFolder(folder)) {
+    const leaves = collectLeaves(folder);
+    const merged = await buildMergedCategory(
+      folder.id,
+      folder.nom,
+      leaves,
+      folder.description || ""
+    );
+    if (merged?._merged) return rememberCategory(merged);
+    if (merged) return rememberCategory(merged);
+  }
+
+  for (const entry of flattenCatalogLeaves(state.catalog)) {
     const loaded = await loadCategory(entry.fichier);
-    if (loaded?.id === categoryId) {
-      if (!state.categories.some((item) => item.id === loaded.id)) state.categories.push(loaded);
-      return loaded;
-    }
+    if (loaded?.id === categoryId) return rememberCategory(loaded);
   }
   return null;
 }
@@ -686,7 +792,7 @@ const state = {
   fiche: null,
   referenceGroup: "",
   catalog: null,
-  nav: { themeId: "", branchId: "" },
+  nav: { axis: "", path: [], regionId: "" },
   safeFish: loadSafeFish(),
   isDaily: false,
   reviseQueue: [],
@@ -885,7 +991,7 @@ function goHome() {
   state.difficulty = null;
   state.questions = [];
   state.notice = "";
-  state.nav = { themeId: "", branchId: "" };
+  state.nav = { axis: "", path: [], regionId: "" };
   syncImagePolicy();
   updateFooter(null);
   setScreen("home");
@@ -1610,10 +1716,6 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
   if (title) top.append(h("h1", { text: title }));
 }
 
-function catalogThemes() {
-  return Array.isArray(state.catalog?.themes) ? state.catalog.themes : [];
-}
-
 async function openQuizFile(file) {
   try {
     const category = await loadCategory(file);
@@ -1622,7 +1724,7 @@ async function openQuizFile(file) {
       mount();
       return;
     }
-    if (!state.categories.some((item) => item.id === category.id)) state.categories.push(category);
+    rememberCategory(category);
     openCategory(category);
   } catch {
     state.notice = "Impossible de charger ce quiz.";
@@ -1630,141 +1732,268 @@ async function openQuizFile(file) {
   }
 }
 
-function homeCard(entry, onClick) {
+function homeCard(entry, onClick, kicker = "") {
+  const disabled = Boolean(entry.aVenir);
   return h(
     "button",
     {
       class: "card",
       type: "button",
-      disabled: entry.aVenir ? true : undefined,
-      onClick: entry.aVenir ? undefined : onClick,
+      disabled: disabled ? true : undefined,
+      onClick: disabled ? undefined : onClick,
     },
-    h("span", { class: "card-kicker", text: entry.aVenir ? "À venir" : "Ouvrir" }),
+    h("span", { class: "card-kicker", text: entry.aVenir ? "À venir" : kicker || "Ouvrir" }),
     h("strong", { text: entry.nom }),
     h("span", { text: entry.description || (entry.aVenir ? "Pas encore de partie." : "") }),
   );
 }
 
-function mountHome() {
-  document.title = "QuiQuiz";
-  const themes = catalogThemes();
-  if (!themes.length) {
-    renderTop({ title: "Choisis une catégorie" });
-    view.replaceChildren(
-      ...[
-      h("p", { class: "lede", text: "Un quiz en images avec Cui-Cui — joué entièrement dans le navigateur." }),
+function homeSection(title, children) {
+  return h(
+    "section",
+    { class: "home-section" },
+    h("h2", { class: "home-section-title", text: title }),
+    h("div", { class: "cards" }, ...children),
+  );
+}
+
+function mountHomeRoot(domains) {
+  const regions = listRegions(domains);
+  renderTop({ title: "Choisis un parcours" });
+  view.replaceChildren(
+    ...[
+      h("p", {
+        class: "lede",
+        text: "Par thème (biologie, géographie…) ou par pays — puis zoome ou joue tout le dossier.",
+      }),
+      badgesStrip(),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
+      homeSection(
+        "Par thème",
+        domains.map((domain) =>
+          homeCard(domain, () => {
+            state.nav = { axis: "theme", path: [domain.id], regionId: "" };
+            state.notice = "";
+            mount();
+          }, "Domaine"),
+        ),
+      ),
+      regions.length
+        ? homeSection(
+            "Par pays / région",
+            regions.map((region) =>
+              homeCard(
+                {
+                  nom: region.nom,
+                  description: `${region.count} quiz · ${region.description}`,
+                },
+                () => {
+                  state.nav = { axis: "region", path: [], regionId: region.id };
+                  state.notice = "";
+                  mount();
+                },
+                "Région",
+              ),
+            ),
+          )
+        : null,
+    ].filter((node) => node instanceof Node),
+  );
+}
+
+function mountHomeRegion(domains) {
+  const regionId = state.nav.regionId;
+  const regions = listRegions(domains);
+  const meta = regions.find((item) => item.id === regionId) || {
+    id: regionId,
+    nom: regionId,
+    description: "",
+  };
+  const leaves = leavesForRegion(domains, regionId);
+  const playable = playableLeaves(leaves);
+
+  renderTop({
+    kicker: "Par pays / région",
+    title: meta.nom,
+    onBack: () => {
+      state.nav = { axis: "", path: [], regionId: "" };
+      state.notice = "";
+      mount();
+    },
+    backLabel: "Retour",
+  });
+
+  view.replaceChildren(
+    ...[
+      h("p", {
+        class: "lede",
+        text: meta.description || "Choisis un quiz, ou joue tous ceux de cette région.",
+      }),
+      state.notice ? h("p", { class: "note", text: state.notice }) : null,
+      playable.length > 1
+        ? h("button", {
+            class: "btn home-play-all",
+            type: "button",
+            text: `Jouer tout · ${meta.nom}`,
+            onClick: () =>
+              void openMergedLeaves(
+                regionSessionId(regionId),
+                meta.nom,
+                leaves,
+                meta.description || ""
+              ),
+          })
+        : null,
       h(
         "div",
         { class: "cards" },
-        state.categories.map((category) =>
-          h(
-            "button",
-            { class: "card", type: "button", onClick: () => openCategory(category) },
-            h("span", { class: "card-kicker", text: "Catégorie" }),
-            h("strong", { text: category.categorie }),
-            h("span", { text: category.description || "" }),
-            h("span", {
-              class: "meta",
-              text: (() => {
-                const copy = quizCopy(category);
-                const n = category.questions.length;
-                return `${category.groupes?.length || 0} ${copy.kind === "pays" ? "continents" : "groupes"} · ${n} ${n > 1 ? copy.units : copy.unit}`;
-              })(),
-            }),
+        leaves.length
+          ? leaves.map((leaf) =>
+              homeCard(
+                {
+                  nom: leafDisplayLabel(leaf),
+                  description: leaf.description,
+                  aVenir: leaf.aVenir,
+                },
+                () => void openQuizFile(leaf.fichier),
+                leaf.aVenir ? "À venir" : "Quiz",
+              ),
+            )
+          : [h("p", { class: "note", text: "Aucun quiz pour cette région." })],
+      ),
+    ].filter((node) => node instanceof Node),
+  );
+}
+
+function mountHomeTheme(domains) {
+  const path = Array.isArray(state.nav.path) ? state.nav.path : [];
+  const node = findNodeByPath(domains, path);
+  if (!node) {
+    state.nav = { axis: "", path: [], regionId: "" };
+    mountHomeRoot(domains);
+    return;
+  }
+
+  const parentPath = path.slice(0, -1);
+  const crumbs = [];
+  for (let i = 0; i < path.length; i += 1) {
+    const part = findNodeByPath(domains, path.slice(0, i + 1));
+    if (part) crumbs.push(part.nom);
+  }
+
+  renderTop({
+    kicker: crumbs.slice(0, -1).join(" · ") || "Par thème",
+    title: node.nom,
+    onBack: () => {
+      if (!parentPath.length) state.nav = { axis: "", path: [], regionId: "" };
+      else state.nav = { axis: "theme", path: parentPath, regionId: "" };
+      state.notice = "";
+      mount();
+    },
+    backLabel: "Retour",
+  });
+
+  if (isLeaf(node)) {
+    view.replaceChildren(
+      ...[
+        h("p", { class: "lede", text: node.description || "Ouvre ce quiz." }),
+        state.notice ? h("p", { class: "note", text: state.notice }) : null,
+        h(
+          "div",
+          { class: "cards" },
+          homeCard(node, () => void openQuizFile(node.fichier), "Quiz"),
+        ),
+      ].filter((nodeEl) => nodeEl instanceof Node),
+    );
+    return;
+  }
+
+  const children = Array.isArray(node.children) ? node.children : [];
+  const leaves = collectLeaves(node);
+  const playable = playableLeaves(leaves);
+
+  view.replaceChildren(
+    ...[
+      h("p", {
+        class: "lede",
+        text: node.description || "Entre dans une sous-catégorie, ou joue tout ce dossier.",
+      }),
+      state.notice ? h("p", { class: "note", text: state.notice }) : null,
+      playable.length > 1
+        ? h("button", {
+            class: "btn home-play-all",
+            type: "button",
+            text: `Jouer tout · ${node.nom}`,
+            onClick: () =>
+              void openMergedLeaves(node.id, node.nom, leaves, node.description || ""),
+          })
+        : null,
+      h(
+        "div",
+        { class: "cards" },
+        children.map((child) =>
+          homeCard(
+            child,
+            () => {
+              if (isFolder(child)) {
+                state.nav = {
+                  axis: "theme",
+                  path: [...path, child.id],
+                  regionId: "",
+                };
+                state.notice = "";
+                mount();
+                return;
+              }
+              if (child.fichier) void openQuizFile(child.fichier);
+            },
+            isFolder(child) ? "Dossier" : child.aVenir ? "À venir" : "Quiz",
           ),
         ),
       ),
-      ].filter((node) => node instanceof Node),
-    );
-    return;
-  }
-
-  const theme = themes.find((item) => item.id === state.nav.themeId);
-  const branch = theme?.branches?.find((item) => item.id === state.nav.branchId);
-
-  if (theme && branch?.lieux) {
-    renderTop({
-      kicker: theme.nom,
-      title: branch.nom,
-      onBack: () => {
-        state.nav.branchId = "";
-        state.notice = "";
-        mount();
-      },
-      backLabel: "Retour",
-    });
-    view.replaceChildren(
-      ...[
-      h("p", { class: "lede", text: "Choisis un lieu." }),
-      state.notice ? h("p", { class: "note", text: state.notice }) : null,
-      h(
-        "div",
-        { class: "cards" },
-        branch.lieux.map((lieu) => homeCard(lieu, () => openQuizFile(lieu.fichier))),
-      ),
-      ].filter((node) => node instanceof Node),
-    );
-    return;
-  }
-
-  if (theme?.branches) {
-    renderTop({
-      title: theme.nom,
-      onBack: () => {
-        state.nav = { themeId: "", branchId: "" };
-        state.notice = "";
-        mount();
-      },
-      backLabel: "Retour",
-    });
-    view.replaceChildren(
-      ...[
-      h("p", { class: "lede", text: "Choisis une branche." }),
-      state.notice ? h("p", { class: "note", text: state.notice }) : null,
-      h(
-        "div",
-        { class: "cards" },
-        theme.branches.map((item) =>
-          homeCard(item, () => {
-            if (item.lieux) {
-              state.nav.branchId = item.id;
-              state.notice = "";
-              mount();
-              return;
-            }
-            if (item.fichier) openQuizFile(item.fichier);
-          }),
-        ),
-      ),
-      ].filter((node) => node instanceof Node),
-    );
-    return;
-  }
-
-  renderTop({ title: "Choisis un thème" });
-  view.replaceChildren(
-    ...[
-    h("p", { class: "lede", text: "Avec Cui-Cui : choisis un thème, puis un lieu." }),
-    badgesStrip(),
-    state.notice ? h("p", { class: "note", text: state.notice }) : null,
-    h(
-      "div",
-      { class: "cards" },
-      themes.map((item) =>
-        homeCard(item, () => {
-          if (item.branches) {
-            state.nav = { themeId: item.id, branchId: "" };
-            state.notice = "";
-            mount();
-            return;
-          }
-          if (item.fichier) openQuizFile(item.fichier);
-        }),
-      ),
-    ),
-    ].filter((node) => node instanceof Node),
+    ].filter((nodeEl) => nodeEl instanceof Node),
   );
+}
+
+function mountHome() {
+  document.title = "QuiQuiz";
+  const domains = catalogDomains();
+  if (!domains.length) {
+    renderTop({ title: "Choisis une catégorie" });
+    view.replaceChildren(
+      ...[
+        h("p", {
+          class: "lede",
+          text: "Un quiz en images avec Cui-Cui — joué entièrement dans le navigateur.",
+        }),
+        state.notice ? h("p", { class: "note", text: state.notice }) : null,
+        h(
+          "div",
+          { class: "cards" },
+          state.categories.map((category) =>
+            h(
+              "button",
+              { class: "card", type: "button", onClick: () => openCategory(category) },
+              h("span", { class: "card-kicker", text: "Catégorie" }),
+              h("strong", { text: category.categorie }),
+              h("span", { text: category.description || "" }),
+            ),
+          ),
+        ),
+      ].filter((node) => node instanceof Node),
+    );
+    return;
+  }
+
+  if (state.nav.axis === "region" && state.nav.regionId) {
+    mountHomeRegion(domains);
+    return;
+  }
+  if (state.nav.axis === "theme" && state.nav.path?.length) {
+    mountHomeTheme(domains);
+    return;
+  }
+  mountHomeRoot(domains);
 }
 
 function mountLevels() {
@@ -4488,7 +4717,7 @@ async function boot() {
       if (!categories.length) throw new Error("empty");
       state.categories = categories;
     } else {
-      state.catalog = catalog;
+      state.catalog = normalizeCatalog(catalog);
       const france = await loadCategory("data/oiseaux-francais.json");
       state.categories = france ? [france] : [];
       if (!state.categories.length) throw new Error("empty");

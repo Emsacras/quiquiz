@@ -124,6 +124,27 @@ h1 {
   margin: 10px 0 18px;
 }
 
+.home-section {
+  margin-top: 28px;
+}
+
+.home-section:first-of-type {
+  margin-top: 18px;
+}
+
+.home-section-title {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+.home-section .cards {
+  margin-top: 0;
+}
+
+.home-play-all {
+  margin: 0 0 16px;
+}
+
 .cards {
   display: grid;
   gap: 12px;

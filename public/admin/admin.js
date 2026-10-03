@@ -4,6 +4,7 @@ import {
   setOutlineMaps,
   setSafeFish,
 } from "../js/images.js";
+import { flattenCatalogLeaves, normalizeCatalog } from "../js/catalog-nav.js";
 
 const QUIZ_BASE = "/";
 const PLACEHOLDER =
@@ -98,42 +99,7 @@ function quizUrl(file) {
 }
 
 function flattenCatalogEntries(catalog) {
-  const out = [];
-  for (const theme of catalog?.themes || []) {
-    if (theme.fichier) {
-      out.push({
-        id: theme.id,
-        nom: theme.nom,
-        description: theme.description || "",
-        fichier: theme.fichier,
-        kicker: theme.nom,
-      });
-      continue;
-    }
-    for (const branch of theme.branches || []) {
-      if (branch.fichier) {
-        out.push({
-          id: branch.id,
-          nom: branch.nom,
-          description: branch.description || "",
-          fichier: branch.fichier,
-          kicker: theme.nom,
-        });
-        continue;
-      }
-      for (const lieu of branch.lieux || []) {
-        if (!lieu.fichier) continue;
-        out.push({
-          id: `${branch.id}-${lieu.id}`,
-          nom: `${branch.nom} · ${lieu.nom}`,
-          description: lieu.description || branch.description || "",
-          fichier: lieu.fichier,
-          kicker: theme.nom,
-        });
-      }
-    }
-  }
-  return out;
+  return flattenCatalogLeaves(normalizeCatalog(catalog));
 }
 
 function normalizeSpeciesKey(name) {
