@@ -609,16 +609,40 @@ html.is-admin .admin-mod {
   color: var(--accent-ink);
 }
 
+.theme-cuicui .chip {
+  border-radius: var(--radius-btn);
+  font-family: var(--font-display);
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.theme-cuicui .chip:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.theme-cuicui .chip.is-picked {
+  background: color-mix(in srgb, var(--accent) 22%, var(--surface));
+  border-color: var(--accent);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
 .theme-cuicui .chip.is-correct,
 .theme-cuicui .link-bird.is-correct,
 .theme-cuicui .link-name.is-correct {
+  background: var(--ok-bg);
   border-color: var(--ok);
+  color: var(--ok);
 }
 
 .theme-cuicui .chip.is-wrong,
 .theme-cuicui .link-bird.is-wrong,
 .theme-cuicui .link-name.is-wrong {
+  background: var(--bad-bg);
   border-color: var(--bad);
+  color: var(--bad);
 }
 
 .theme-cuicui .results-hero {
