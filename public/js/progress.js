@@ -100,13 +100,44 @@ export function getDailyResult(categoryId, date = utcDateKey()) {
   return readJson(`${DAILY_PREFIX}${date}:${categoryId}`, null);
 }
 
+/** Réserve la tentative du jour (une seule, même en cas d’abandon). */
+export function claimDailyAttempt(categoryId, total, date = utcDateKey()) {
+  if (getDailyResult(categoryId, date)) return false;
+  const n = Math.max(0, Number(total) || 0);
+  writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, {
+    score: 0,
+    total: n,
+    at: Date.now(),
+    status: "started",
+  });
+  return true;
+}
+
 export function saveDailyResult(categoryId, score, total, date = utcDateKey()) {
-  const payload = { score, total, at: Date.now() };
+  const payload = {
+    score: Math.max(0, Number(score) || 0),
+    total: Math.max(0, Number(total) || 0),
+    at: Date.now(),
+    status: "done",
+  };
   writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, payload);
-  if (total > 0 && score / total >= 0.7) {
+  if (payload.total > 0 && payload.score / payload.total >= 0.7) {
     return unlockBadge("daily_ok");
   }
   return null;
+}
+
+/** Si une partie a été interrompue (rechargement), clôture la tentative. */
+export function finalizeStaleDailyAttempt(categoryId, date = utcDateKey()) {
+  const current = getDailyResult(categoryId, date);
+  if (!current || current.status !== "started") return current;
+  writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, {
+    score: Math.max(0, Number(current.score) || 0),
+    total: Math.max(0, Number(current.total) || 0),
+    at: Date.now(),
+    status: "done",
+  });
+  return getDailyResult(categoryId, date);
 }
 
 export function onQuizFinished({ mode, score, total, isDaily }) {

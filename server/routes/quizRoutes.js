@@ -6,6 +6,7 @@ const {
     getPool,
     listCandidates,
     validatePhoto,
+    confirmImage,
     blacklistPhoto,
     restoreValidatedFromBlacklist,
     listValidated,
@@ -35,6 +36,26 @@ function createQuizRoutes() {
             return;
         }
         res.json({ ok: true, duplicate: Boolean(result.duplicate) });
+    });
+
+    /** Auto-validation après une bonne réponse (image non signalée). */
+    router.post("/confirm-image", async (req, res) => {
+        try {
+            const result = await confirmImage({
+                name: req.body?.name,
+                title: req.body?.title,
+                url: req.body?.url,
+                ip: req.ip || req.headers["x-forwarded-for"] || ""
+            });
+            if (!result.ok) {
+                res.status(result.error === "rate" ? 429 : 400).json({ error: result.error || "confirm" });
+                return;
+            }
+            res.json({ ok: true, duplicate: Boolean(result.duplicate), item: result.item || null });
+        } catch (error) {
+            console.error("[confirm-image]", error);
+            res.status(502).json({ error: "confirm" });
+        }
     });
 
     router.get("/pool", async (req, res) => {

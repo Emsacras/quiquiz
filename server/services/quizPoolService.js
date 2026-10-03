@@ -130,10 +130,12 @@ function serveCapForKind(kind) {
 function extForTitle(title, contentType, sourceUrl) {
     const type = String(contentType || "").toLowerCase();
     const src = String(sourceUrl || "");
+    if (type.includes("svg") || /\.svg(\?|$)/i.test(src) || /\.svg$/i.test(String(title || ""))) {
+        return "svg";
+    }
     if (type.includes("png") || /\.png(\?|$)/i.test(src)) return "png";
     if (type.includes("jpeg") || type.includes("jpg") || /\.jpe?g(\?|$)/i.test(src)) return "jpg";
     if (/\.png$/i.test(String(title || ""))) return "png";
-    if (/\.svg$/i.test(String(title || ""))) return "png";
     return "jpg";
 }
 
@@ -602,15 +604,30 @@ async function fetchCreditForTitle(title) {
     }
 }
 
-async function validatePhoto({ name, title, url }) {
+function preferredDownloadUrl(title, url) {
+    const cleanTitle = normalizeFileTitle(title);
+    const flagIso = cleanTitle.match(/^Flag:([a-z]{2})$/i);
+    if (flagIso) return `https://flagcdn.com/w1280/${flagIso[1].toLowerCase()}.png`;
+    let sourceUrl = String(url || "").trim();
+    if (sourceUrl.startsWith("/api/flag/")) {
+        const iso = sourceUrl.split("/").pop();
+        if (/^[a-z]{2}$/i.test(iso || "")) return `https://flagcdn.com/w1280/${iso.toLowerCase()}.png`;
+    }
+    if (sourceUrl.startsWith("/api/media/")) return "";
+    return isHttps(sourceUrl) ? sourceUrl : "";
+}
+
+async function validatePhoto({ name, title, url, auto = false }) {
     const species = normalizeName(name);
     const cleanTitle = normalizeFileTitle(title);
-    const sourceUrl = String(url || "").trim();
+    let sourceUrl = preferredDownloadUrl(cleanTitle, url);
+    if (!sourceUrl && isHttps(String(url || "").trim())) sourceUrl = String(url).trim();
     if (!species || species.length > 120) return { ok: false, error: "name" };
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
     if (!isHttps(sourceUrl)) return { ok: false, error: "url" };
+    if (auto && blacklistTitleSet().has(cleanTitle)) return { ok: false, error: "blacklisted" };
 
-    removeFromBlacklist(cleanTitle);
+    if (!auto) removeFromBlacklist(cleanTitle);
     removeValidatedByTitle(cleanTitle);
     removeTitleFromPool(species, cleanTitle);
 
@@ -618,8 +635,25 @@ async function validatePhoto({ name, title, url }) {
     try {
         local = await downloadLocalImage(species, cleanTitle, sourceUrl);
     } catch (error) {
-        console.warn("[quiz-validate]", error && error.message ? error.message : error);
-        return { ok: false, error: "download" };
+        // Drapeau Flag:xx : si flagcdn échoue côté serveur, tenter le SVG Commons.
+        if (auto && /^Flag:[a-z]{2}$/i.test(cleanTitle) && isHttps(String(url || ""))) {
+            try {
+                local = await downloadLocalImage(species, cleanTitle, String(url).trim());
+                sourceUrl = String(url).trim();
+            } catch (retryError) {
+                console.warn("[quiz-validate]", error && error.message ? error.message : error);
+                return { ok: false, error: "download" };
+            }
+        } else {
+            console.warn("[quiz-validate]", error && error.message ? error.message : error);
+            return { ok: false, error: "download" };
+        }
+    }
+
+    // Un signalement peut arriver pendant le téléchargement.
+    if (auto && (blacklistTitleSet().has(cleanTitle) || isReportedTitle(cleanTitle))) {
+        if (local) deleteLocalFile(local);
+        return { ok: false, error: blacklistTitleSet().has(cleanTitle) ? "blacklisted" : "reported" };
     }
 
     const credit = await fetchCreditForTitle(cleanTitle);
@@ -630,6 +664,7 @@ async function validatePhoto({ name, title, url }) {
         sourceUrl,
         local,
         savedAt: Date.now(),
+        auto: Boolean(auto),
         ...credit
     });
     store[species] = list;
@@ -647,6 +682,37 @@ async function validatePhoto({ name, title, url }) {
             ...credit
         }
     };
+}
+
+const confirmHits = new Map();
+
+function allowConfirm(ip, title) {
+    const key = `${ip || "anon"}|${title}`;
+    const now = Date.now();
+    const prev = confirmHits.get(key) || 0;
+    if (now - prev < 8_000) return false;
+    confirmHits.set(key, now);
+    if (confirmHits.size > 3000) {
+        for (const [k, t] of confirmHits) {
+            if (now - t > 60_000) confirmHits.delete(k);
+        }
+    }
+    return true;
+}
+
+/** Auto-validation : bonne réponse joueur + image non signalée. */
+async function confirmImage({ name, title, url, ip }) {
+    const species = normalizeName(name);
+    const cleanTitle = normalizeFileTitle(title);
+    if (!species || species.length > 120) return { ok: false, error: "name" };
+    if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
+    if (!allowConfirm(ip, cleanTitle)) return { ok: false, error: "rate" };
+    if (blacklistTitleSet().has(cleanTitle)) return { ok: false, error: "blacklisted" };
+    if (isReportedTitle(cleanTitle)) return { ok: false, error: "reported" };
+    if (validatedEntriesFor(species).some((entry) => normalizeFileTitle(entry.title) === cleanTitle)) {
+        return { ok: true, duplicate: true };
+    }
+    return validatePhoto({ name: species, title: cleanTitle, url, auto: true });
 }
 
 function blacklistPhoto({ name, title, url }) {
@@ -739,7 +805,7 @@ function resolveMediaFile(speciesDir, filename) {
     const dir = String(speciesDir || "");
     const file = String(filename || "");
     if (!/^[a-z0-9-]{1,80}$/.test(dir)) return null;
-    if (!/^[a-f0-9]{8,40}\.(jpe?g|png)$/i.test(file)) return null;
+    if (!/^[a-f0-9]{8,40}\.(jpe?g|png|svg)$/i.test(file)) return null;
     const root = path.resolve(imagesRoot());
     const abs = path.resolve(root, dir, file);
     if (!abs.startsWith(root + path.sep)) return null;
@@ -775,6 +841,12 @@ function readReports() {
     return Array.isArray(data.items) ? data.items : [];
 }
 
+function isReportedTitle(title) {
+    const clean = normalizeFileTitle(title);
+    if (!clean) return false;
+    return readReports().some((item) => normalizeFileTitle(item?.title) === clean);
+}
+
 function writeReports(items) {
     writeJson(reportsFile(), { items, savedAt: Date.now() });
 }
@@ -801,14 +873,20 @@ function addReport({ name, title, url, categoryId, ip }) {
         return { ok: false, error: "title" };
     }
     if (!allowReport(ip, cleanTitle)) return { ok: false, error: "rate" };
+    // Un signalement retire l’auto-validation ; l’admin pourra blacklist ensuite.
+    removeValidatedByTitle(cleanTitle);
+    const species = normalizeName(name || "");
+    if (species) removeTitleFromPool(species, cleanTitle);
     const items = readReports();
     if (items.some((item) => normalizeFileTitle(item.title) === cleanTitle)) {
         return { ok: true, duplicate: true };
     }
     items.unshift({
-        name: normalizeName(name || ""),
+        name: species,
         title: cleanTitle,
-        url: isHttps(url) || String(url || "").startsWith("/api/media/") ? String(url).trim() : "",
+        url: isHttps(url) || String(url || "").startsWith("/api/media/") || String(url || "").startsWith("/api/flag/")
+            ? String(url).trim()
+            : "",
         categoryId: String(categoryId || "").slice(0, 80),
         savedAt: Date.now()
     });
@@ -834,6 +912,7 @@ module.exports = {
     getCandidatePool,
     listCandidates,
     validatePhoto,
+    confirmImage,
     blacklistPhoto,
     restoreValidatedFromBlacklist,
     listValidated,

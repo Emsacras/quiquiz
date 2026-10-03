@@ -20,10 +20,12 @@ import {
 import { getBest, recordScore } from "./scores.js";
 import { startOnboarding } from "./onboarding.js";
 import { loadAdminSession, syncPhotoModFromImg } from "./admin-mod.js";
-import { attachReportControl, hydrateReportedTitles } from "./report.js";
+import { attachReportControl, confirmGoodImage, hydrateReportedTitles } from "./report.js";
 import { dueCards, dueCount, markCardAgain, markCardOk, upsertMissedCards } from "./learning.js";
 import {
+  claimDailyAttempt,
   dailySeed,
+  finalizeStaleDailyAttempt,
   getDailyResult,
   getStreak,
   listBadges,
@@ -129,6 +131,21 @@ function attachPlayerMediaTools(frame, img, scientificName, onSkip) {
     onReported: () => onSkip?.(),
   });
   updateShownCredit(url);
+}
+
+/** Bonne réponse + pas de signalement local → propose l’image au pool validé. */
+function confirmImageIfGood(img, scientificName) {
+  if (!img || !scientificName) return;
+  const url = img.currentSrc || img.src || "";
+  if (!url || url.includes("placeholder")) return;
+  const meta = metaForUrl(url);
+  const title = img.dataset.photoTitle || meta.title || "";
+  if (!title) return;
+  confirmGoodImage({
+    name: scientificName,
+    title,
+    url: meta.sourceUrl || url,
+  });
 }
 
 function showBadgeToasts(badges) {
@@ -1511,6 +1528,11 @@ function restartQuiz() {
 }
 
 function backToMenu() {
+  if (state.isDaily && state.category) {
+    // Abandon = tentative consommée (score partiel / total du défi).
+    saveDailyResult(state.category.id, state.score, scoreTotal());
+    state.isDaily = false;
+  }
   state.prepToken += 1;
   state.questions = [];
   state.index = 0;
@@ -1603,9 +1625,12 @@ function replayMissed() {
 function startDailyChallenge() {
   const category = state.category;
   if (!category) return;
-  const already = getDailyResult(category.id);
+  const already = finalizeStaleDailyAttempt(category.id) || getDailyResult(category.id);
   if (already) {
-    state.notice = `Défi du jour déjà joué : ${already.score}/${already.total}.`;
+    state.notice =
+      already.status === "done"
+        ? `Défi du jour déjà joué : ${already.score}/${already.total}.`
+        : "Défi du jour déjà tenté aujourd’hui.";
     setScreen("levels");
     return;
   }
@@ -1625,6 +1650,11 @@ function startDailyChallenge() {
   }
   const seed = dailySeed(category.id);
   const picked = seededShuffle(source, seed).slice(0, Math.min(10, source.length));
+  if (!claimDailyAttempt(category.id, picked.length)) {
+    state.notice = "Défi du jour déjà tenté aujourd’hui.";
+    setScreen("levels");
+    return;
+  }
   state.isDaily = true;
   state.mode = "qcm";
   state.difficulty = "melange";
@@ -1779,6 +1809,9 @@ function validateSort() {
     }
     const photo = card.querySelector("[data-photo]");
     if (photo) photo.alt = question.nom_commun;
+    if (correct && photo) {
+      confirmImageIfGood(photo, imageSearchName(question));
+    }
     card.append(
       h("p", { class: "caption", text: `Bon ${quizCopy().groupWord} : ${groupLabel(question.groupe)}` }),
       h("p", { class: "latin", text: question.nom_commun }),
@@ -1863,6 +1896,9 @@ function paintReveal(selected, correct) {
   const photo = document.querySelector("[data-photo]");
   if (photo && photo.dataset.final !== "1") {
     photo.alt = question.nom_commun;
+  }
+  if (correct && photo) {
+    confirmImageIfGood(photo, imageSearchName(question));
   }
 
   if (!correct && selected && selected !== question.nom_commun) {
@@ -2417,19 +2453,20 @@ function mountLevels() {
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
-  const daily = getDailyResult(category.id);
+  const daily = finalizeStaleDailyAttempt(category.id) || getDailyResult(category.id);
   const reviseN = dueCount(category.id);
+  const dailyBlurb = !daily
+    ? "10 questions mélangées · même série pour tout le monde."
+    : `Terminé · ${daily.score}/${daily.total}`;
   const challengePanel = h(
     "section",
     { class: daily ? "challenge-panel is-done" : "challenge-panel" },
     h("div", { class: "challenge-panel-copy" },
-      h("p", { class: "challenge-kicker", text: "Une fois par jour" }),
+      h("p", { class: "challenge-kicker", text: "Une seule tentative" }),
       h("h2", { class: "challenge-title", text: "Défi du jour" }),
       h("p", {
         class: "challenge-blurb",
-        text: daily
-          ? `Terminé · ${daily.score}/${daily.total}`
-          : "10 questions mélangées · même série pour tout le monde.",
+        text: dailyBlurb,
       }),
     ),
     h("button", {
@@ -3267,6 +3304,13 @@ function paintPairReveal(answer, correct) {
   const rightPhoto = frames[1]?.querySelector("[data-photo]");
   if (leftPhoto) leftPhoto.alt = question.left.nom_commun;
   if (rightPhoto) rightPhoto.alt = question.right.nom_commun;
+  if (correct) {
+    confirmImageIfGood(leftPhoto, imageSearchName(question.left));
+    confirmImageIfGood(
+      rightPhoto,
+      imageSearchName(question.same ? question.left : question.right),
+    );
+  }
   attachImageSearch(frames[0], question.left.nom_commun, question.left.nom_scientifique);
   const rightBird = question.same ? question.left : question.right;
   attachImageSearch(frames[1], rightBird.nom_commun, rightBird.nom_scientifique);

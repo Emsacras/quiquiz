@@ -35,6 +35,12 @@ export function rememberReportedLocally(title) {
   }
 }
 
+export function wasReportedLocally(title) {
+  const clean = String(title || "").trim();
+  if (!clean) return false;
+  return loadReported().includes(clean);
+}
+
 async function postReport(body) {
   try {
     const res = await fetch("/api/reports", {
@@ -46,6 +52,30 @@ async function postReport(body) {
   } catch {
     return false;
   }
+}
+
+/**
+ * Auto-validation : bonne réponse + image non signalée (localement).
+ * Les autres joueurs peuvent encore signaler ensuite.
+ */
+export function confirmGoodImage({ name, title, url } = {}) {
+  const cleanName = String(name || "").trim();
+  const cleanTitle = String(title || "").trim();
+  const source = String(url || "").trim();
+  if (!cleanName || !cleanTitle || !source) return;
+  if (source.includes("placeholder")) return;
+  if (source.startsWith("/api/media/")) return;
+  if (wasReportedLocally(cleanTitle)) return;
+  const meta = metaForUrl(source);
+  void fetch("/api/confirm-image", {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: cleanName,
+      title: cleanTitle,
+      url: meta.sourceUrl || source,
+    }),
+  }).catch(() => {});
 }
 
 export function attachReportControl(host, options = {}) {
