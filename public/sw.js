@@ -1,4 +1,4 @@
-const CACHE = "quiquiz-shell-v1";
+const CACHE = "quiquiz-shell-v5";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -41,6 +41,21 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/data/") || url.pathname.startsWith("/auth/")) {
     event.respondWith(fetch(req).catch(() => caches.match(req)));
+    return;
+  }
+  // JS/CSS : réseau d’abord pour ne jamais rester coincé sur un ancien app.js.
+  if (url.pathname.startsWith("/js/") || url.pathname.startsWith("/css/")) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res && res.ok && url.origin === self.location.origin) {
+            const copy = res.clone();
+            caches.open(CACHE).then((cache) => cache.put(req, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(req)),
+    );
     return;
   }
   event.respondWith(

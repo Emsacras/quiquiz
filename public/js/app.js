@@ -3,6 +3,7 @@ import {
   creditLabel,
   getSexImages,
   getSpeciesAudio,
+  flagCdnUrl,
   getSpeciesImages,
   getVernacularImage,
   metaForUrl,
@@ -92,7 +93,11 @@ function updateShownCredit(url) {
   const credit = document.querySelector("[data-credit]");
   if (!credit || !url) return;
   const meta = metaForUrl(url);
-  const label = creditLabel(meta, quizCopy().media === "carte" ? "carte" : "photo");
+  const media = quizCopy().media;
+  const label = creditLabel(
+    meta,
+    media === "carte" ? "carte" : media === "drapeau" ? "drapeau" : "photo",
+  );
   const href = creditHref(meta);
   credit.replaceChildren();
   if (href) {
@@ -403,7 +408,12 @@ const CATALOG_ID_ALIASES = {
 };
 
 function mediaKindForQuizId(quizId) {
-  switch (String(quizId || "")) {
+  const id = String(quizId || "").trim();
+  // Chaîne vide si inconnu : NE PAS renvoyer "species" (truthy), sinon
+  // `mediaKindForQuizId(undefined) || mediaKindForQuizId(category.id)`
+  // court-circuite toujours vers espèces — drapeaux/cartes jamais utilisés.
+  if (!id) return "";
+  switch (id) {
     case "pays-monde":
       return "map";
     case "drapeaux-monde":
@@ -415,7 +425,7 @@ function mediaKindForQuizId(quizId) {
     case "fruits-legumes":
       return "fruit";
     default:
-      return "species";
+      return "";
   }
 }
 
@@ -459,26 +469,49 @@ function modesForKind(kind) {
   return MODES_BY_KIND[kind] || CORE_MODES;
 }
 
+function flagUrlForQuestion(question) {
+  return flagCdnUrl(question?.iso2 || "", 1280);
+}
+
 function imageOptionsForQuestion(question, category = state.category) {
+  const iso2 = String(question?.iso2 || "").trim().toLowerCase();
+  // Drapeaux : forcer flag+iso2 (ignore mediaKind/sourceQuizId pourris).
+  if (
+    category?.id === "drapeaux-monde" ||
+    quizKind(category) === "drapeaux" ||
+    question?.mediaKind === "flag" ||
+    mediaKindForQuizId(question?.sourceQuizId) === "flag"
+  ) {
+    return {
+      kind: "flag",
+      country: question?.paysEn || question?.pays || "",
+      commonName: question?.nom_commun || "",
+      commonsFile: question?.commonsFile || "",
+      iso2,
+    };
+  }
+  const fromQuizKind =
+    quizKind(category) === "capitales"
+      ? "capital"
+      : quizKind(category) === "pays"
+        ? "map"
+        : quizKind(category) === "mineraux"
+          ? "mineral"
+          : quizKind(category) === "fruits"
+            ? "fruit"
+            : "";
   const kind =
     question?.mediaKind ||
     mediaKindForQuizId(question?.sourceQuizId) ||
     mediaKindForQuizId(category?.id) ||
-    (quizKind(category) === "capitales"
-      ? "capital"
-      : quizKind(category) === "drapeaux"
-        ? "flag"
-        : quizKind(category) === "pays"
-          ? "map"
-          : quizKind(category) === "mineraux"
-            ? "mineral"
-            : quizKind(category) === "fruits"
-              ? "fruit"
-              : "species");
+    fromQuizKind ||
+    "species";
   return {
     kind,
     country: question?.paysEn || question?.pays || "",
     commonName: question?.nom_commun || "",
+    commonsFile: question?.commonsFile || "",
+    iso2,
   };
 }
 
@@ -492,9 +525,19 @@ function preloadQuizQuestions(questions, priorityQuestion = null) {
     list.sort((a, b) => (a === priorityQuestion ? -1 : b === priorityQuestion ? 1 : 0));
   }
   for (const question of list) {
+    const opts = imageOptionsForQuestion(question);
+    if (opts.kind === "flag") {
+      const url = flagUrlForQuestion(question);
+      if (url) {
+        const warm = new Image();
+        warm.decoding = "async";
+        warm.src = url;
+      }
+      continue;
+    }
     const name = imageSearchName(question);
     if (!name) continue;
-    getSpeciesImages(name, imageOptionsForQuestion(question)).catch(() => {});
+    getSpeciesImages(name, opts).catch(() => {});
   }
 }
 
@@ -661,9 +704,9 @@ function quizCopy(category = state.category) {
       mediaSignaled: "Drapeau signalé",
       noMedia: "Pas de drapeau pour ce pays.",
       unavailable: "Image indisponible",
-      creditCommons: "Drapeau : Wikimedia Commons",
+      creditCommons: "Drapeau : flagcdn.com",
       creditWiki: "Drapeau : Wikipédia",
-      creditList: "Drapeaux : Wikimedia Commons",
+      creditList: "Drapeaux : flagcdn.com",
       otherMedia: "Autres drapeaux",
       nameField: "Nom du pays",
       sameItemPrompt: "Ces deux drapeaux montrent-ils le même pays ?",
@@ -4313,9 +4356,11 @@ function mountLinkQuiz() {
 
   const upcoming = state.questions[state.index + 1];
   if (upcoming) {
+    const member = upcoming.members[0];
     preloadSpecies(
-      upcoming.members.map((member) => member.nom_scientifique),
-      upcoming.members[0]?.nom_scientifique,
+      upcoming.members.map((m) => m.nom_scientifique),
+      member?.nom_scientifique,
+      imageOptionsForQuestion(member || upcoming),
     );
   }
 }
@@ -4351,36 +4396,110 @@ function mountPreparing() {
   );
 }
 
+function fillFlagFrame(frame, question, stillHere, onReady) {
+  const img = frame.querySelector("[data-photo]");
+  const spinner = frame.querySelector("[data-spinner]");
+  const status = frame.querySelector("[data-status]");
+  if (!img) return;
+  const url = flagUrlForQuestion(question);
+  const name = imageSearchName(question);
+  img.dataset.species = name;
+  const fail = () => {
+    if (!stillHere()) return;
+    img.dataset.final = "1";
+    img.hidden = false;
+    img.alt = "Image indisponible";
+    img.src = PLACEHOLDER;
+    if (spinner) spinner.hidden = true;
+    frame.classList.remove("is-loading");
+    if (status) status.textContent = "Image indisponible.";
+    onReady?.({ failed: true, source: "none" });
+  };
+  if (!url) {
+    fail();
+    return;
+  }
+  img.hidden = true;
+  img.alt = quizCopy().alt;
+  img.dataset.photoTitle = `Flag:${String(question.iso2 || "").trim().toLowerCase()}`;
+  img.dataset.sourceUrl = url;
+  const onError = () => {
+    img.removeEventListener("error", onError);
+    img.removeEventListener("load", onLoad);
+    fail();
+  };
+  const onLoad = () => {
+    img.removeEventListener("error", onError);
+    img.removeEventListener("load", onLoad);
+    if (!stillHere()) return;
+    if (img.naturalWidth === 0) {
+      fail();
+      return;
+    }
+    img.hidden = false;
+    if (spinner) spinner.hidden = true;
+    frame.classList.remove("is-loading");
+    if (status) status.textContent = "";
+    const credit = document.querySelector("[data-credit]");
+    if (credit) credit.textContent = quizCopy().creditCommons || "Drapeau : flagcdn.com";
+    attachPlayerMediaTools(frame, img, name, () => fail());
+    onReady?.({ failed: false, source: "flagcdn" });
+  };
+  img.addEventListener("error", onError);
+  img.addEventListener("load", onLoad);
+  img.src = url;
+}
+
 async function loadPhoto(question, position) {
   const frame = document.querySelector("[data-frame]");
   if (!frame) return;
   const stillHere = () => screen === "quiz" && state.index + 1 === position && frame.isConnected;
+  const onReady = ({ failed, source }) => {
+    if (!stillHere()) return;
+    const credit = document.querySelector("[data-credit]");
+    const status = frame.querySelector("[data-status]");
+    if (failed) {
+      if (status) {
+        status.textContent = "Image indisponible. Tu peux répondre quand même, ou passer.";
+      }
+      const pass = document.querySelector("[data-pass]");
+      if (pass && !state.revealed) pass.hidden = false;
+      return;
+    }
+    if (credit) {
+      const copy = quizCopy();
+      credit.textContent =
+        source === "wikipedia"
+          ? copy.creditWiki
+          : source === "flagcdn"
+            ? copy.creditCommons
+            : copy.creditCommons;
+    }
+  };
+
+  // QCM / texte drapeaux : flagcdn direct, jamais le pipeline espèces.
+  const opts = imageOptionsForQuestion(question);
+  if (opts.kind === "flag" && flagUrlForQuestion(question)) {
+    fillFlagFrame(frame, question, stillHere, onReady);
+    return;
+  }
+
   await fillSpeciesFrame(
     frame,
     imageSearchName(question),
     stillHere,
-    ({ failed, source }) => {
-      if (!stillHere()) return;
-      const credit = document.querySelector("[data-credit]");
-      const status = frame.querySelector("[data-status]");
-      if (failed) {
-        if (status) {
-          status.textContent = "Image indisponible. Tu peux répondre quand même, ou passer.";
-        }
-        const pass = document.querySelector("[data-pass]");
-        if (pass && !state.revealed) pass.hidden = false;
-        return;
-      }
-      if (credit) {
-        const copy = quizCopy();
-        credit.textContent = source === "wikipedia" ? copy.creditWiki : copy.creditCommons;
-      }
-    },
-    imageOptionsForQuestion(question),
+    onReady,
+    opts,
   );
 }
 
 async function fillSpeciesFrame(frame, scientificName, stillHere, onReady, imageOptions = {}) {
+  // Raccourci drapeau si iso2 fourni (sort / revise / etc.).
+  if (imageOptions?.kind === "flag" && imageOptions?.iso2) {
+    fillFlagFrame(frame, { nom_scientifique: scientificName, iso2: imageOptions.iso2 }, stillHere, onReady);
+    return;
+  }
+
   let result = { urls: [], source: "none" };
   try {
     result = await getSpeciesImages(scientificName, imageOptions);
@@ -4646,10 +4765,10 @@ function backToReference() {
   setScreen("reference");
 }
 
-async function loadThumb(img, scientificName, still) {
+async function loadThumb(img, scientificName, still, imageOptions = {}) {
   let result = { urls: [] };
   try {
-    result = await getSpeciesImages(scientificName);
+    result = await getSpeciesImages(scientificName, imageOptions);
   } catch {
     result = { urls: [] };
   }
@@ -4682,16 +4801,17 @@ function referenceCard(question) {
     h("span", { class: "latin", text: question.nom_scientifique }),
   );
   const still = () => screen === "reference" && img.isConnected;
+  const imageOptions = imageOptionsForQuestion(question);
   const observe = () => {
     if (!("IntersectionObserver" in window)) {
-      loadThumb(img, question.nom_scientifique, still);
+      loadThumb(img, question.nom_scientifique, still, imageOptions);
       return;
     }
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
         io.disconnect();
-        loadThumb(img, question.nom_scientifique, still);
+        loadThumb(img, question.nom_scientifique, still, imageOptions);
       },
       { rootMargin: "200px 0px" },
     );

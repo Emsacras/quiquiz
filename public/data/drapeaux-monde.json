@@ -21,7 +21,8 @@
           ],
           "indice": "Drapeau · Hexagone large, côte atlantique et méditerranéenne",
           "description": "Drapeau de France.",
-          "explication": "France : reconnaissable à son drapeau national."
+          "explication": "France : reconnaissable à son drapeau national.",
+          "iso2": "fr"
         },
         {
           "id": "ed2",
@@ -37,7 +38,8 @@
           ],
           "indice": "Drapeau · Botte allongée en mer",
           "description": "Drapeau de Italie.",
-          "explication": "Italie : reconnaissable à son drapeau national."
+          "explication": "Italie : reconnaissable à son drapeau national.",
+          "iso2": "it"
         },
         {
           "id": "ed3",
@@ -53,7 +55,8 @@
           ],
           "indice": "Drapeau · Grand rectangle péninsulaire",
           "description": "Drapeau de Espagne.",
-          "explication": "Espagne : reconnaissable à son drapeau national."
+          "explication": "Espagne : reconnaissable à son drapeau national.",
+          "iso2": "es"
         },
         {
           "id": "ed4",
@@ -69,7 +72,8 @@
           ],
           "indice": "Drapeau · Archipel au nord-ouest",
           "description": "Drapeau de Royaume-Uni.",
-          "explication": "Royaume-Uni : reconnaissable à son drapeau national."
+          "explication": "Royaume-Uni : reconnaissable à son drapeau national.",
+          "iso2": "gb"
         },
         {
           "id": "ed5",
@@ -85,7 +89,8 @@
           ],
           "indice": "Drapeau · Bloc central très large",
           "description": "Drapeau de Allemagne.",
-          "explication": "Allemagne : reconnaissable à son drapeau national."
+          "explication": "Allemagne : reconnaissable à son drapeau national.",
+          "iso2": "de"
         },
         {
           "id": "ed6",
@@ -101,7 +106,8 @@
           ],
           "indice": "Drapeau · Grand rectangle à l'est",
           "description": "Drapeau de Pologne.",
-          "explication": "Pologne : reconnaissable à son drapeau national."
+          "explication": "Pologne : reconnaissable à son drapeau national.",
+          "iso2": "pl"
         },
         {
           "id": "ed7",
@@ -117,7 +123,8 @@
           ],
           "indice": "Drapeau · Péninsule et innombrables îles",
           "description": "Drapeau de Grèce.",
-          "explication": "Grèce : reconnaissable à son drapeau national."
+          "explication": "Grèce : reconnaissable à son drapeau national.",
+          "iso2": "gr"
         },
         {
           "id": "ed8",
@@ -133,7 +140,8 @@
           ],
           "indice": "Drapeau · Longue bande nordique",
           "description": "Drapeau de Suède.",
-          "explication": "Suède : reconnaissable à son drapeau national."
+          "explication": "Suède : reconnaissable à son drapeau national.",
+          "iso2": "se"
         },
         {
           "id": "ed9",
@@ -149,7 +157,8 @@
           ],
           "indice": "Drapeau · Bande côtière très dentelée",
           "description": "Drapeau de Norvège.",
-          "explication": "Norvège : reconnaissable à son drapeau national."
+          "explication": "Norvège : reconnaissable à son drapeau national.",
+          "iso2": "no"
         },
         {
           "id": "ed10",
@@ -165,7 +174,8 @@
           ],
           "indice": "Drapeau · Bloc nord-est arrondi",
           "description": "Drapeau de Finlande.",
-          "explication": "Finlande : reconnaissable à son drapeau national."
+          "explication": "Finlande : reconnaissable à son drapeau national.",
+          "iso2": "fi"
         },
         {
           "id": "ed11",
@@ -181,7 +191,8 @@
           ],
           "indice": "Drapeau · Bande étroite à l'ouest",
           "description": "Drapeau de Portugal.",
-          "explication": "Portugal : reconnaissable à son drapeau national."
+          "explication": "Portugal : reconnaissable à son drapeau national.",
+          "iso2": "pt"
         },
         {
           "id": "ed12",
@@ -197,7 +208,8 @@
           ],
           "indice": "Drapeau · Grande île ovale",
           "description": "Drapeau de Irlande.",
-          "explication": "Irlande : reconnaissable à son drapeau national."
+          "explication": "Irlande : reconnaissable à son drapeau national.",
+          "iso2": "ie"
         },
         {
           "id": "ed13",
@@ -213,7 +225,8 @@
           ],
           "indice": "Drapeau · Île volcanique arrondie",
           "description": "Drapeau de Islande.",
-          "explication": "Islande : reconnaissable à son drapeau national."
+          "explication": "Islande : reconnaissable à son drapeau national.",
+          "iso2": "is"
         },
         {
           "id": "ed14",
@@ -229,7 +242,8 @@
           ],
           "indice": "Drapeau · Petit pays côtier plat",
           "description": "Drapeau de Pays-Bas.",
-          "explication": "Pays-Bas : reconnaissable à son drapeau national."
+          "explication": "Pays-Bas : reconnaissable à son drapeau national.",
+          "iso2": "nl"
         },
         {
           "id": "ed15",
@@ -245,7 +259,8 @@
           ],
           "indice": "Drapeau · Petit pays entre France et Allemagne",
           "description": "Drapeau de Belgique.",
-          "explication": "Belgique : reconnaissable à son drapeau national."
+          "explication": "Belgique : reconnaissable à son drapeau national.",
+          "iso2": "be"
         },
         {
           "id": "ed16",
@@ -261,7 +276,8 @@
           ],
           "indice": "Drapeau · Péninsule et îles",
           "description": "Drapeau de Danemark.",
-          "explication": "Danemark : reconnaissable à son drapeau national."
+          "explication": "Danemark : reconnaissable à son drapeau national.",
+          "iso2": "dk"
         },
         {
           "id": "ed17",
@@ -277,7 +293,8 @@
           ],
           "indice": "Drapeau · Pays alpin sans littoral",
           "description": "Drapeau de Autriche.",
-          "explication": "Autriche : reconnaissable à son drapeau national."
+          "explication": "Autriche : reconnaissable à son drapeau national.",
+          "iso2": "at"
         },
         {
           "id": "ed18",
@@ -293,7 +310,8 @@
           ],
           "indice": "Drapeau · Petit carré alpin",
           "description": "Drapeau de Suisse.",
-          "explication": "Suisse : reconnaissable à son drapeau national."
+          "explication": "Suisse : reconnaissable à son drapeau national.",
+          "iso2": "ch"
         },
         {
           "id": "ed19",
@@ -309,7 +327,8 @@
           ],
           "indice": "Drapeau · Bloc bohmien arrondi",
           "description": "Drapeau de République tchèque.",
-          "explication": "République tchèque : reconnaissable à son drapeau national."
+          "explication": "République tchèque : reconnaissable à son drapeau national.",
+          "iso2": "cz"
         },
         {
           "id": "ed20",
@@ -325,7 +344,8 @@
           ],
           "indice": "Drapeau · Grand pays en arc de cercle",
           "description": "Drapeau de Roumanie.",
-          "explication": "Roumanie : reconnaissable à son drapeau national."
+          "explication": "Roumanie : reconnaissable à son drapeau national.",
+          "iso2": "ro"
         },
         {
           "id": "ed21",
@@ -341,7 +361,8 @@
           ],
           "indice": "Drapeau · Rectangle côtier mer Noire",
           "description": "Drapeau de Bulgarie.",
-          "explication": "Bulgarie : reconnaissable à son drapeau national."
+          "explication": "Bulgarie : reconnaissable à son drapeau national.",
+          "iso2": "bg"
         },
         {
           "id": "ed22",
@@ -357,7 +378,8 @@
           ],
           "indice": "Drapeau · Bloc danubien",
           "description": "Drapeau de Hongrie.",
-          "explication": "Hongrie : reconnaissable à son drapeau national."
+          "explication": "Hongrie : reconnaissable à son drapeau national.",
+          "iso2": "hu"
         },
         {
           "id": "ed23",
@@ -373,7 +395,8 @@
           ],
           "indice": "Drapeau · Très grand bloc est",
           "description": "Drapeau de Ukraine.",
-          "explication": "Ukraine : reconnaissable à son drapeau national."
+          "explication": "Ukraine : reconnaissable à son drapeau national.",
+          "iso2": "ua"
         },
         {
           "id": "ed24",
@@ -389,7 +412,8 @@
           ],
           "indice": "Drapeau · Côte adriatique en croissant",
           "description": "Drapeau de Croatie.",
-          "explication": "Croatie : reconnaissable à son drapeau national."
+          "explication": "Croatie : reconnaissable à son drapeau national.",
+          "iso2": "hr"
         },
         {
           "id": "ed25",
@@ -405,7 +429,8 @@
           ],
           "indice": "Drapeau · Bloc des Balkans",
           "description": "Drapeau de Serbie.",
-          "explication": "Serbie : reconnaissable à son drapeau national."
+          "explication": "Serbie : reconnaissable à son drapeau national.",
+          "iso2": "rs"
         },
         {
           "id": "ed26",
@@ -421,7 +446,8 @@
           ],
           "indice": "Drapeau · Petit bloc montagneux",
           "description": "Drapeau de Slovaquie.",
-          "explication": "Slovaquie : reconnaissable à son drapeau national."
+          "explication": "Slovaquie : reconnaissable à son drapeau national.",
+          "iso2": "sk"
         },
         {
           "id": "ed27",
@@ -437,7 +463,8 @@
           ],
           "indice": "Drapeau · Petit triangle adriatique",
           "description": "Drapeau de Slovénie.",
-          "explication": "Slovénie : reconnaissable à son drapeau national."
+          "explication": "Slovénie : reconnaissable à son drapeau national.",
+          "iso2": "si"
         },
         {
           "id": "ed28",
@@ -453,7 +480,8 @@
           ],
           "indice": "Drapeau · Forme de triangle adriatique",
           "description": "Drapeau de Bosnie-Herzégovine.",
-          "explication": "Bosnie-Herzégovine : reconnaissable à son drapeau national."
+          "explication": "Bosnie-Herzégovine : reconnaissable à son drapeau national.",
+          "iso2": "ba"
         },
         {
           "id": "ed29",
@@ -469,7 +497,8 @@
           ],
           "indice": "Drapeau · Bande balte",
           "description": "Drapeau de Lituanie.",
-          "explication": "Lituanie : reconnaissable à son drapeau national."
+          "explication": "Lituanie : reconnaissable à son drapeau national.",
+          "iso2": "lt"
         },
         {
           "id": "ed30",
@@ -485,7 +514,8 @@
           ],
           "indice": "Drapeau · Bande balte intermédiaire",
           "description": "Drapeau de Lettonie.",
-          "explication": "Lettonie : reconnaissable à son drapeau national."
+          "explication": "Lettonie : reconnaissable à son drapeau national.",
+          "iso2": "lv"
         },
         {
           "id": "ed31",
@@ -501,7 +531,8 @@
           ],
           "indice": "Drapeau · Bande nordique baltique",
           "description": "Drapeau de Estonie.",
-          "explication": "Estonie : reconnaissable à son drapeau national."
+          "explication": "Estonie : reconnaissable à son drapeau national.",
+          "iso2": "ee"
         },
         {
           "id": "ed32",
@@ -517,7 +548,8 @@
           ],
           "indice": "Drapeau · Bloc forestier rectangulaire",
           "description": "Drapeau de Biélorussie.",
-          "explication": "Biélorussie : reconnaissable à son drapeau national."
+          "explication": "Biélorussie : reconnaissable à son drapeau national.",
+          "iso2": "by"
         },
         {
           "id": "ed33",
@@ -533,7 +565,8 @@
           ],
           "indice": "Drapeau · Petit bloc entre Roumanie et Ukraine",
           "description": "Drapeau de Moldavie.",
-          "explication": "Moldavie : reconnaissable à son drapeau national."
+          "explication": "Moldavie : reconnaissable à son drapeau national.",
+          "iso2": "md"
         },
         {
           "id": "ed34",
@@ -549,7 +582,8 @@
           ],
           "indice": "Drapeau · Très petit triangle",
           "description": "Drapeau de Luxembourg.",
-          "explication": "Luxembourg : reconnaissable à son drapeau national."
+          "explication": "Luxembourg : reconnaissable à son drapeau national.",
+          "iso2": "lu"
         },
         {
           "id": "ed35",
@@ -565,7 +599,8 @@
           ],
           "indice": "Drapeau · Micro-État pyrénéen",
           "description": "Drapeau de Andorre.",
-          "explication": "Andorre : reconnaissable à son drapeau national."
+          "explication": "Andorre : reconnaissable à son drapeau national.",
+          "iso2": "ad"
         },
         {
           "id": "ed36",
@@ -581,7 +616,8 @@
           ],
           "indice": "Drapeau · Point côtier méditerranéen",
           "description": "Drapeau de Monaco.",
-          "explication": "Monaco : reconnaissable à son drapeau national."
+          "explication": "Monaco : reconnaissable à son drapeau national.",
+          "iso2": "mc"
         },
         {
           "id": "ed37",
@@ -597,7 +633,8 @@
           ],
           "indice": "Drapeau · Enclavé dans l'Italie",
           "description": "Drapeau de Saint-Marin.",
-          "explication": "Saint-Marin : reconnaissable à son drapeau national."
+          "explication": "Saint-Marin : reconnaissable à son drapeau national.",
+          "iso2": "sm"
         },
         {
           "id": "ed38",
@@ -613,7 +650,8 @@
           ],
           "indice": "Drapeau · Petite bande adriatique",
           "description": "Drapeau de Monténégro.",
-          "explication": "Monténégro : reconnaissable à son drapeau national."
+          "explication": "Monténégro : reconnaissable à son drapeau national.",
+          "iso2": "me"
         },
         {
           "id": "ed39",
@@ -629,7 +667,8 @@
           ],
           "indice": "Drapeau · Bloc central des Balkans",
           "description": "Drapeau de Macédoine du Nord.",
-          "explication": "Macédoine du Nord : reconnaissable à son drapeau national."
+          "explication": "Macédoine du Nord : reconnaissable à son drapeau national.",
+          "iso2": "mk"
         },
         {
           "id": "ed40",
@@ -645,7 +684,8 @@
           ],
           "indice": "Drapeau · Bande adriatique étroite",
           "description": "Drapeau de Albanie.",
-          "explication": "Albanie : reconnaissable à son drapeau national."
+          "explication": "Albanie : reconnaissable à son drapeau national.",
+          "iso2": "al"
         },
         {
           "id": "ed41",
@@ -661,7 +701,8 @@
           ],
           "indice": "Drapeau · Archipel minuscule",
           "description": "Drapeau de Malte.",
-          "explication": "Malte : reconnaissable à son drapeau national."
+          "explication": "Malte : reconnaissable à son drapeau national.",
+          "iso2": "mt"
         },
         {
           "id": "ed42",
@@ -677,7 +718,8 @@
           ],
           "indice": "Drapeau · Île méditerranéenne allongée",
           "description": "Drapeau de Chypre.",
-          "explication": "Chypre : reconnaissable à son drapeau national."
+          "explication": "Chypre : reconnaissable à son drapeau national.",
+          "iso2": "cy"
         },
         {
           "id": "ed43",
@@ -693,7 +735,8 @@
           ],
           "indice": "Drapeau · Micro-État alpin",
           "description": "Drapeau de Liechtenstein.",
-          "explication": "Liechtenstein : reconnaissable à son drapeau national."
+          "explication": "Liechtenstein : reconnaissable à son drapeau national.",
+          "iso2": "li"
         }
       ]
     },
@@ -715,7 +758,8 @@
           ],
           "indice": "Drapeau · Bande du Nil en forme de Y",
           "description": "Drapeau de Égypte.",
-          "explication": "Égypte : reconnaissable à son drapeau national."
+          "explication": "Égypte : reconnaissable à son drapeau national.",
+          "iso2": "eg"
         },
         {
           "id": "ad2",
@@ -731,7 +775,8 @@
           ],
           "indice": "Drapeau · Pointe sud du continent",
           "description": "Drapeau de Afrique du Sud.",
-          "explication": "Afrique du Sud : reconnaissable à son drapeau national."
+          "explication": "Afrique du Sud : reconnaissable à son drapeau national.",
+          "iso2": "za"
         },
         {
           "id": "ad3",
@@ -747,7 +792,8 @@
           ],
           "indice": "Drapeau · Immense rectangle nord",
           "description": "Drapeau de Algérie.",
-          "explication": "Algérie : reconnaissable à son drapeau national."
+          "explication": "Algérie : reconnaissable à son drapeau national.",
+          "iso2": "dz"
         },
         {
           "id": "ad4",
@@ -763,7 +809,8 @@
           ],
           "indice": "Drapeau · Coin nord-ouest arrondi",
           "description": "Drapeau de Maroc.",
-          "explication": "Maroc : reconnaissable à son drapeau national."
+          "explication": "Maroc : reconnaissable à son drapeau national.",
+          "iso2": "ma"
         },
         {
           "id": "ad5",
@@ -779,7 +826,8 @@
           ],
           "indice": "Drapeau · Grand bloc du golfe de Guinée",
           "description": "Drapeau de Nigeria.",
-          "explication": "Nigeria : reconnaissable à son drapeau national."
+          "explication": "Nigeria : reconnaissable à son drapeau national.",
+          "iso2": "ng"
         },
         {
           "id": "ad6",
@@ -795,7 +843,8 @@
           ],
           "indice": "Drapeau · Bloc est en forme de goutte",
           "description": "Drapeau de Éthiopie.",
-          "explication": "Éthiopie : reconnaissable à son drapeau national."
+          "explication": "Éthiopie : reconnaissable à son drapeau national.",
+          "iso2": "et"
         },
         {
           "id": "ad7",
@@ -811,7 +860,8 @@
           ],
           "indice": "Drapeau · Vaste désert méditerranéen",
           "description": "Drapeau de Libye.",
-          "explication": "Libye : reconnaissable à son drapeau national."
+          "explication": "Libye : reconnaissable à son drapeau national.",
+          "iso2": "ly"
         },
         {
           "id": "ad8",
@@ -827,7 +877,8 @@
           ],
           "indice": "Drapeau · Bande méditerranéenne",
           "description": "Drapeau de Tunisie.",
-          "explication": "Tunisie : reconnaissable à son drapeau national."
+          "explication": "Tunisie : reconnaissable à son drapeau national.",
+          "iso2": "tn"
         },
         {
           "id": "ad9",
@@ -843,7 +894,8 @@
           ],
           "indice": "Drapeau · Bloc est côtier",
           "description": "Drapeau de Kenya.",
-          "explication": "Kenya : reconnaissable à son drapeau national."
+          "explication": "Kenya : reconnaissable à son drapeau national.",
+          "iso2": "ke"
         },
         {
           "id": "ad10",
@@ -859,7 +911,8 @@
           ],
           "indice": "Drapeau · Grande île est allongée",
           "description": "Drapeau de Madagascar.",
-          "explication": "Madagascar : reconnaissable à son drapeau national."
+          "explication": "Madagascar : reconnaissable à son drapeau national.",
+          "iso2": "mg"
         },
         {
           "id": "ad11",
@@ -875,7 +928,8 @@
           ],
           "indice": "Drapeau · Vaste bloc du Nil",
           "description": "Drapeau de Soudan.",
-          "explication": "Soudan : reconnaissable à son drapeau national."
+          "explication": "Soudan : reconnaissable à son drapeau national.",
+          "iso2": "sd"
         },
         {
           "id": "ad12",
@@ -891,7 +945,8 @@
           ],
           "indice": "Drapeau · Bloc atlantique sud",
           "description": "Drapeau de Angola.",
-          "explication": "Angola : reconnaissable à son drapeau national."
+          "explication": "Angola : reconnaissable à son drapeau national.",
+          "iso2": "ao"
         },
         {
           "id": "ad13",
@@ -907,7 +962,8 @@
           ],
           "indice": "Drapeau · Bande côtière indienne",
           "description": "Drapeau de Mozambique.",
-          "explication": "Mozambique : reconnaissable à son drapeau national."
+          "explication": "Mozambique : reconnaissable à son drapeau national.",
+          "iso2": "mz"
         },
         {
           "id": "ad14",
@@ -923,7 +979,8 @@
           ],
           "indice": "Drapeau · Bloc est large",
           "description": "Drapeau de Tanzanie.",
-          "explication": "Tanzanie : reconnaissable à son drapeau national."
+          "explication": "Tanzanie : reconnaissable à son drapeau national.",
+          "iso2": "tz"
         },
         {
           "id": "ad15",
@@ -939,7 +996,8 @@
           ],
           "indice": "Drapeau · Petit bloc des Grands Lacs",
           "description": "Drapeau de Ouganda.",
-          "explication": "Ouganda : reconnaissable à son drapeau national."
+          "explication": "Ouganda : reconnaissable à son drapeau national.",
+          "iso2": "ug"
         },
         {
           "id": "ad16",
@@ -955,7 +1013,8 @@
           ],
           "indice": "Drapeau · Bande côtière convexe",
           "description": "Drapeau de Ghana.",
-          "explication": "Ghana : reconnaissable à son drapeau national."
+          "explication": "Ghana : reconnaissable à son drapeau national.",
+          "iso2": "gh"
         },
         {
           "id": "ad17",
@@ -971,7 +1030,8 @@
           ],
           "indice": "Drapeau · Bloc côtier ouest",
           "description": "Drapeau de Côte d'Ivoire.",
-          "explication": "Côte d'Ivoire : reconnaissable à son drapeau national."
+          "explication": "Côte d'Ivoire : reconnaissable à son drapeau national.",
+          "iso2": "ci"
         },
         {
           "id": "ad18",
@@ -987,7 +1047,8 @@
           ],
           "indice": "Drapeau · Triangle du golfe",
           "description": "Drapeau de Cameroun.",
-          "explication": "Cameroun : reconnaissable à son drapeau national."
+          "explication": "Cameroun : reconnaissable à son drapeau national.",
+          "iso2": "cm"
         },
         {
           "id": "ad19",
@@ -1003,7 +1064,8 @@
           ],
           "indice": "Drapeau · Bande atlantique ouest",
           "description": "Drapeau de Sénégal.",
-          "explication": "Sénégal : reconnaissable à son drapeau national."
+          "explication": "Sénégal : reconnaissable à son drapeau national.",
+          "iso2": "sn"
         },
         {
           "id": "ad20",
@@ -1019,7 +1081,8 @@
           ],
           "indice": "Drapeau · Immense bloc sahélien",
           "description": "Drapeau de Mali.",
-          "explication": "Mali : reconnaissable à son drapeau national."
+          "explication": "Mali : reconnaissable à son drapeau national.",
+          "iso2": "ml"
         },
         {
           "id": "ad21",
@@ -1035,7 +1098,8 @@
           ],
           "indice": "Drapeau · Bloc central désertique",
           "description": "Drapeau de Niger.",
-          "explication": "Niger : reconnaissable à son drapeau national."
+          "explication": "Niger : reconnaissable à son drapeau national.",
+          "iso2": "ne"
         },
         {
           "id": "ad22",
@@ -1051,7 +1115,8 @@
           ],
           "indice": "Drapeau · Bloc central en forme de triangle",
           "description": "Drapeau de Tchad.",
-          "explication": "Tchad : reconnaissable à son drapeau national."
+          "explication": "Tchad : reconnaissable à son drapeau national.",
+          "iso2": "td"
         },
         {
           "id": "ad23",
@@ -1067,7 +1132,8 @@
           ],
           "indice": "Drapeau · Bloc équatorial",
           "description": "Drapeau de République centrafricaine.",
-          "explication": "République centrafricaine : reconnaissable à son drapeau national."
+          "explication": "République centrafricaine : reconnaissable à son drapeau national.",
+          "iso2": "cf"
         },
         {
           "id": "ad24",
@@ -1083,7 +1149,8 @@
           ],
           "indice": "Drapeau · Cœur du continent",
           "description": "Drapeau de République démocratique du Congo.",
-          "explication": "République démocratique du Congo : reconnaissable à son drapeau national."
+          "explication": "République démocratique du Congo : reconnaissable à son drapeau national.",
+          "iso2": "cd"
         },
         {
           "id": "ad25",
@@ -1099,7 +1166,8 @@
           ],
           "indice": "Drapeau · Bande équatoriale",
           "description": "Drapeau de Gabon.",
-          "explication": "Gabon : reconnaissable à son drapeau national."
+          "explication": "Gabon : reconnaissable à son drapeau national.",
+          "iso2": "ga"
         },
         {
           "id": "ad26",
@@ -1115,7 +1183,8 @@
           ],
           "indice": "Drapeau · Bloc sans littoral sud",
           "description": "Drapeau de Zambie.",
-          "explication": "Zambie : reconnaissable à son drapeau national."
+          "explication": "Zambie : reconnaissable à son drapeau national.",
+          "iso2": "zm"
         },
         {
           "id": "ad27",
@@ -1131,7 +1200,8 @@
           ],
           "indice": "Drapeau · Bloc sud compact",
           "description": "Drapeau de Zimbabwe.",
-          "explication": "Zimbabwe : reconnaissable à son drapeau national."
+          "explication": "Zimbabwe : reconnaissable à son drapeau national.",
+          "iso2": "zw"
         },
         {
           "id": "ad28",
@@ -1147,7 +1217,8 @@
           ],
           "indice": "Drapeau · Bande verticale étroite",
           "description": "Drapeau de Bénin.",
-          "explication": "Bénin : reconnaissable à son drapeau national."
+          "explication": "Bénin : reconnaissable à son drapeau national.",
+          "iso2": "bj"
         },
         {
           "id": "ad29",
@@ -1163,7 +1234,8 @@
           ],
           "indice": "Drapeau · Très étroite bande côtière",
           "description": "Drapeau de Togo.",
-          "explication": "Togo : reconnaissable à son drapeau national."
+          "explication": "Togo : reconnaissable à son drapeau national.",
+          "iso2": "tg"
         },
         {
           "id": "ad30",
@@ -1179,7 +1251,8 @@
           ],
           "indice": "Drapeau · Bloc sahélien compact",
           "description": "Drapeau de Burkina Faso.",
-          "explication": "Burkina Faso : reconnaissable à son drapeau national."
+          "explication": "Burkina Faso : reconnaissable à son drapeau national.",
+          "iso2": "bf"
         },
         {
           "id": "ad31",
@@ -1195,7 +1268,8 @@
           ],
           "indice": "Drapeau · Bloc atlantique ouest",
           "description": "Drapeau de Guinée.",
-          "explication": "Guinée : reconnaissable à son drapeau national."
+          "explication": "Guinée : reconnaissable à son drapeau national.",
+          "iso2": "gn"
         },
         {
           "id": "ad32",
@@ -1211,7 +1285,8 @@
           ],
           "indice": "Drapeau · Petit triangle côtier",
           "description": "Drapeau de Sierra Leone.",
-          "explication": "Sierra Leone : reconnaissable à son drapeau national."
+          "explication": "Sierra Leone : reconnaissable à son drapeau national.",
+          "iso2": "sl"
         },
         {
           "id": "ad33",
@@ -1227,7 +1302,8 @@
           ],
           "indice": "Drapeau · Bande côtière ouest",
           "description": "Drapeau de Libéria.",
-          "explication": "Libéria : reconnaissable à son drapeau national."
+          "explication": "Libéria : reconnaissable à son drapeau national.",
+          "iso2": "lr"
         },
         {
           "id": "ad34",
@@ -1243,7 +1319,8 @@
           ],
           "indice": "Drapeau · Bande enclavée dans le Sénégal",
           "description": "Drapeau de Gambie.",
-          "explication": "Gambie : reconnaissable à son drapeau national."
+          "explication": "Gambie : reconnaissable à son drapeau national.",
+          "iso2": "gm"
         },
         {
           "id": "ad35",
@@ -1259,7 +1336,8 @@
           ],
           "indice": "Drapeau · Petit bloc atlantique",
           "description": "Drapeau de Guinée-Bissau.",
-          "explication": "Guinée-Bissau : reconnaissable à son drapeau national."
+          "explication": "Guinée-Bissau : reconnaissable à son drapeau national.",
+          "iso2": "gw"
         },
         {
           "id": "ad36",
@@ -1275,7 +1353,8 @@
           ],
           "indice": "Drapeau · Petit bloc côtier",
           "description": "Drapeau de Guinée équatoriale.",
-          "explication": "Guinée équatoriale : reconnaissable à son drapeau national."
+          "explication": "Guinée équatoriale : reconnaissable à son drapeau national.",
+          "iso2": "gq"
         },
         {
           "id": "ad37",
@@ -1291,7 +1370,8 @@
           ],
           "indice": "Drapeau · Petit triangle de la Corne",
           "description": "Drapeau de Djibouti.",
-          "explication": "Djibouti : reconnaissable à son drapeau national."
+          "explication": "Djibouti : reconnaissable à son drapeau national.",
+          "iso2": "dj"
         },
         {
           "id": "ad38",
@@ -1307,7 +1387,8 @@
           ],
           "indice": "Drapeau · Bande de la mer Rouge",
           "description": "Drapeau de Érythrée.",
-          "explication": "Érythrée : reconnaissable à son drapeau national."
+          "explication": "Érythrée : reconnaissable à son drapeau national.",
+          "iso2": "er"
         },
         {
           "id": "ad39",
@@ -1323,7 +1404,8 @@
           ],
           "indice": "Drapeau · Corne allongée",
           "description": "Drapeau de Somalie.",
-          "explication": "Somalie : reconnaissable à son drapeau national."
+          "explication": "Somalie : reconnaissable à son drapeau national.",
+          "iso2": "so"
         },
         {
           "id": "ad40",
@@ -1339,7 +1421,8 @@
           ],
           "indice": "Drapeau · Petit bloc des Grands Lacs",
           "description": "Drapeau de Burundi.",
-          "explication": "Burundi : reconnaissable à son drapeau national."
+          "explication": "Burundi : reconnaissable à son drapeau national.",
+          "iso2": "bi"
         },
         {
           "id": "ad41",
@@ -1355,7 +1438,8 @@
           ],
           "indice": "Drapeau · Petit bloc montagneux",
           "description": "Drapeau de Rwanda.",
-          "explication": "Rwanda : reconnaissable à son drapeau national."
+          "explication": "Rwanda : reconnaissable à son drapeau national.",
+          "iso2": "rw"
         },
         {
           "id": "ad42",
@@ -1371,7 +1455,8 @@
           ],
           "indice": "Drapeau · Enclavé dans l'Afrique du Sud",
           "description": "Drapeau de Lesotho.",
-          "explication": "Lesotho : reconnaissable à son drapeau national."
+          "explication": "Lesotho : reconnaissable à son drapeau national.",
+          "iso2": "ls"
         },
         {
           "id": "ad43",
@@ -1387,7 +1472,8 @@
           ],
           "indice": "Drapeau · Petit bloc sud-est",
           "description": "Drapeau de Eswatini.",
-          "explication": "Eswatini : reconnaissable à son drapeau national."
+          "explication": "Eswatini : reconnaissable à son drapeau national.",
+          "iso2": "sz"
         },
         {
           "id": "ad44",
@@ -1403,7 +1489,8 @@
           ],
           "indice": "Drapeau · Point dans l'océan Indien",
           "description": "Drapeau de Maurice.",
-          "explication": "Maurice : reconnaissable à son drapeau national."
+          "explication": "Maurice : reconnaissable à son drapeau national.",
+          "iso2": "mu"
         },
         {
           "id": "ad45",
@@ -1419,7 +1506,8 @@
           ],
           "indice": "Drapeau · Archipel dispersé",
           "description": "Drapeau de Seychelles.",
-          "explication": "Seychelles : reconnaissable à son drapeau national."
+          "explication": "Seychelles : reconnaissable à son drapeau national.",
+          "iso2": "sc"
         },
         {
           "id": "ad46",
@@ -1435,7 +1523,8 @@
           ],
           "indice": "Drapeau · Archipel entre Afrique et Madagascar",
           "description": "Drapeau de Comores.",
-          "explication": "Comores : reconnaissable à son drapeau national."
+          "explication": "Comores : reconnaissable à son drapeau national.",
+          "iso2": "km"
         },
         {
           "id": "ad47",
@@ -1451,7 +1540,8 @@
           ],
           "indice": "Drapeau · Deux îles au golfe de Guinée",
           "description": "Drapeau de São Tomé-et-Principe.",
-          "explication": "São Tomé-et-Principe : reconnaissable à son drapeau national."
+          "explication": "São Tomé-et-Principe : reconnaissable à son drapeau national.",
+          "iso2": "st"
         },
         {
           "id": "ad48",
@@ -1467,7 +1557,8 @@
           ],
           "indice": "Drapeau · Archipel atlantique",
           "description": "Drapeau de Cap-Vert.",
-          "explication": "Cap-Vert : reconnaissable à son drapeau national."
+          "explication": "Cap-Vert : reconnaissable à son drapeau national.",
+          "iso2": "cv"
         }
       ]
     },
@@ -1489,7 +1580,8 @@
           ],
           "indice": "Drapeau · Immense bloc eurasien",
           "description": "Drapeau de Russie.",
-          "explication": "Russie : reconnaissable à son drapeau national."
+          "explication": "Russie : reconnaissable à son drapeau national.",
+          "iso2": "ru"
         },
         {
           "id": "ad2",
@@ -1505,7 +1597,8 @@
           ],
           "indice": "Drapeau · Grand bloc est asiatique",
           "description": "Drapeau de Chine.",
-          "explication": "Chine : reconnaissable à son drapeau national."
+          "explication": "Chine : reconnaissable à son drapeau national.",
+          "iso2": "cn"
         },
         {
           "id": "ad3",
@@ -1521,7 +1614,8 @@
           ],
           "indice": "Drapeau · Triangle pointant au sud",
           "description": "Drapeau de Inde.",
-          "explication": "Inde : reconnaissable à son drapeau national."
+          "explication": "Inde : reconnaissable à son drapeau national.",
+          "iso2": "in"
         },
         {
           "id": "ad4",
@@ -1537,7 +1631,8 @@
           ],
           "indice": "Drapeau · Archipel en arc",
           "description": "Drapeau de Japon.",
-          "explication": "Japon : reconnaissable à son drapeau national."
+          "explication": "Japon : reconnaissable à son drapeau national.",
+          "iso2": "jp"
         },
         {
           "id": "ad5",
@@ -1553,7 +1648,8 @@
           ],
           "indice": "Drapeau · Vaste rectangle péninsulaire",
           "description": "Drapeau de Arabie saoudite.",
-          "explication": "Arabie saoudite : reconnaissable à son drapeau national."
+          "explication": "Arabie saoudite : reconnaissable à son drapeau national.",
+          "iso2": "sa"
         },
         {
           "id": "ad6",
@@ -1569,7 +1665,8 @@
           ],
           "indice": "Drapeau · Pont entre Europe et Asie",
           "description": "Drapeau de Turquie.",
-          "explication": "Turquie : reconnaissable à son drapeau national."
+          "explication": "Turquie : reconnaissable à son drapeau national.",
+          "iso2": "tr"
         },
         {
           "id": "ad7",
@@ -1585,7 +1682,8 @@
           ],
           "indice": "Drapeau · Bloc en forme de chat",
           "description": "Drapeau de Iran.",
-          "explication": "Iran : reconnaissable à son drapeau national."
+          "explication": "Iran : reconnaissable à son drapeau national.",
+          "iso2": "ir"
         },
         {
           "id": "ad8",
@@ -1601,7 +1699,8 @@
           ],
           "indice": "Drapeau · Archipel équatorial immense",
           "description": "Drapeau de Indonésie.",
-          "explication": "Indonésie : reconnaissable à son drapeau national."
+          "explication": "Indonésie : reconnaissable à son drapeau national.",
+          "iso2": "id"
         },
         {
           "id": "ad9",
@@ -1617,7 +1716,8 @@
           ],
           "indice": "Drapeau · Bande ouest de l'Inde",
           "description": "Drapeau de Pakistan.",
-          "explication": "Pakistan : reconnaissable à son drapeau national."
+          "explication": "Pakistan : reconnaissable à son drapeau national.",
+          "iso2": "pk"
         },
         {
           "id": "ad10",
@@ -1633,7 +1733,8 @@
           ],
           "indice": "Drapeau · Vaste bloc central",
           "description": "Drapeau de Kazakhstan.",
-          "explication": "Kazakhstan : reconnaissable à son drapeau national."
+          "explication": "Kazakhstan : reconnaissable à son drapeau national.",
+          "iso2": "kz"
         },
         {
           "id": "ad11",
@@ -1649,7 +1750,8 @@
           ],
           "indice": "Drapeau · Bande côtière en S",
           "description": "Drapeau de Viêt Nam.",
-          "explication": "Viêt Nam : reconnaissable à son drapeau national."
+          "explication": "Viêt Nam : reconnaissable à son drapeau national.",
+          "iso2": "vn"
         },
         {
           "id": "ad12",
@@ -1665,7 +1767,8 @@
           ],
           "indice": "Drapeau · Bloc en forme de tête d'éléphant",
           "description": "Drapeau de Thaïlande.",
-          "explication": "Thaïlande : reconnaissable à son drapeau national."
+          "explication": "Thaïlande : reconnaissable à son drapeau national.",
+          "iso2": "th"
         },
         {
           "id": "ad13",
@@ -1681,7 +1784,8 @@
           ],
           "indice": "Drapeau · Bloc est allongé",
           "description": "Drapeau de Myanmar.",
-          "explication": "Myanmar : reconnaissable à son drapeau national."
+          "explication": "Myanmar : reconnaissable à son drapeau national.",
+          "iso2": "mm"
         },
         {
           "id": "ad14",
@@ -1697,7 +1801,8 @@
           ],
           "indice": "Drapeau · Péninsule compacte",
           "description": "Drapeau de Corée du Sud.",
-          "explication": "Corée du Sud : reconnaissable à son drapeau national."
+          "explication": "Corée du Sud : reconnaissable à son drapeau national.",
+          "iso2": "kr"
         },
         {
           "id": "ad15",
@@ -1713,7 +1818,8 @@
           ],
           "indice": "Drapeau · Bande nord de la péninsule",
           "description": "Drapeau de Corée du Nord.",
-          "explication": "Corée du Nord : reconnaissable à son drapeau national."
+          "explication": "Corée du Nord : reconnaissable à son drapeau national.",
+          "iso2": "kp"
         },
         {
           "id": "ad16",
@@ -1729,7 +1835,8 @@
           ],
           "indice": "Drapeau · Deux blocs séparés",
           "description": "Drapeau de Malaisie.",
-          "explication": "Malaisie : reconnaissable à son drapeau national."
+          "explication": "Malaisie : reconnaissable à son drapeau national.",
+          "iso2": "my"
         },
         {
           "id": "ad17",
@@ -1745,7 +1852,8 @@
           ],
           "indice": "Drapeau · Archipel en triangle",
           "description": "Drapeau de Philippines.",
-          "explication": "Philippines : reconnaissable à son drapeau national."
+          "explication": "Philippines : reconnaissable à son drapeau national.",
+          "iso2": "ph"
         },
         {
           "id": "ad18",
@@ -1761,7 +1869,8 @@
           ],
           "indice": "Drapeau · Bloc double enclavé",
           "description": "Drapeau de Ouzbékistan.",
-          "explication": "Ouzbékistan : reconnaissable à son drapeau national."
+          "explication": "Ouzbékistan : reconnaissable à son drapeau national.",
+          "iso2": "uz"
         },
         {
           "id": "ad19",
@@ -1777,7 +1886,8 @@
           ],
           "indice": "Drapeau · Bloc montagneux enclavé",
           "description": "Drapeau de Afghanistan.",
-          "explication": "Afghanistan : reconnaissable à son drapeau national."
+          "explication": "Afghanistan : reconnaissable à son drapeau national.",
+          "iso2": "af"
         },
         {
           "id": "ad20",
@@ -1793,7 +1903,8 @@
           ],
           "indice": "Drapeau · Triangle entre deux fleuves",
           "description": "Drapeau de Irak.",
-          "explication": "Irak : reconnaissable à son drapeau national."
+          "explication": "Irak : reconnaissable à son drapeau national.",
+          "iso2": "iq"
         },
         {
           "id": "ad21",
@@ -1809,7 +1920,8 @@
           ],
           "indice": "Drapeau · Bloc du Levant",
           "description": "Drapeau de Syrie.",
-          "explication": "Syrie : reconnaissable à son drapeau national."
+          "explication": "Syrie : reconnaissable à son drapeau national.",
+          "iso2": "sy"
         },
         {
           "id": "ad22",
@@ -1825,7 +1937,8 @@
           ],
           "indice": "Drapeau · Bande méditerranéenne étroite",
           "description": "Drapeau de Israël.",
-          "explication": "Israël : reconnaissable à son drapeau national."
+          "explication": "Israël : reconnaissable à son drapeau national.",
+          "iso2": "il"
         },
         {
           "id": "ad23",
@@ -1841,7 +1954,8 @@
           ],
           "indice": "Drapeau · Bloc désertique enclavé",
           "description": "Drapeau de Jordanie.",
-          "explication": "Jordanie : reconnaissable à son drapeau national."
+          "explication": "Jordanie : reconnaissable à son drapeau national.",
+          "iso2": "jo"
         },
         {
           "id": "ad24",
@@ -1857,7 +1971,8 @@
           ],
           "indice": "Drapeau · Bande côtière étroite",
           "description": "Drapeau de Liban.",
-          "explication": "Liban : reconnaissable à son drapeau national."
+          "explication": "Liban : reconnaissable à son drapeau national.",
+          "iso2": "lb"
         },
         {
           "id": "ad25",
@@ -1873,7 +1988,8 @@
           ],
           "indice": "Drapeau · Coin sud de la péninsule",
           "description": "Drapeau de Yémen.",
-          "explication": "Yémen : reconnaissable à son drapeau national."
+          "explication": "Yémen : reconnaissable à son drapeau national.",
+          "iso2": "ye"
         },
         {
           "id": "ad26",
@@ -1889,7 +2005,8 @@
           ],
           "indice": "Drapeau · Bloc péninsulaire sud-est",
           "description": "Drapeau de Oman.",
-          "explication": "Oman : reconnaissable à son drapeau national."
+          "explication": "Oman : reconnaissable à son drapeau national.",
+          "iso2": "om"
         },
         {
           "id": "ad27",
@@ -1905,7 +2022,8 @@
           ],
           "indice": "Drapeau · Petit bloc du golfe Persique",
           "description": "Drapeau de Émirats arabes unis.",
-          "explication": "Émirats arabes unis : reconnaissable à son drapeau national."
+          "explication": "Émirats arabes unis : reconnaissable à son drapeau national.",
+          "iso2": "ae"
         },
         {
           "id": "ad28",
@@ -1921,7 +2039,8 @@
           ],
           "indice": "Drapeau · Bande du delta du Gange",
           "description": "Drapeau de Bangladesh.",
-          "explication": "Bangladesh : reconnaissable à son drapeau national."
+          "explication": "Bangladesh : reconnaissable à son drapeau national.",
+          "iso2": "bd"
         },
         {
           "id": "ad29",
@@ -1937,7 +2056,8 @@
           ],
           "indice": "Drapeau · Goutte au sud de l'Inde",
           "description": "Drapeau de Sri Lanka.",
-          "explication": "Sri Lanka : reconnaissable à son drapeau national."
+          "explication": "Sri Lanka : reconnaissable à son drapeau national.",
+          "iso2": "lk"
         },
         {
           "id": "ad30",
@@ -1953,13 +2073,14 @@
           ],
           "indice": "Drapeau · Bande himalayenne",
           "description": "Drapeau de Népal.",
-          "explication": "Népal : reconnaissable à son drapeau national."
+          "explication": "Népal : reconnaissable à son drapeau national.",
+          "iso2": "np"
         },
         {
           "id": "ad31",
           "difficulte": "difficile",
           "nom_commun": "Bhoutan",
-          "nom_scientifique": "Bhoutan",
+          "nom_scientifique": "Bhutan",
           "groupe": "asie",
           "options": [
             "Viêt Nam",
@@ -1969,7 +2090,8 @@
           ],
           "indice": "Drapeau · Petit bloc himalayen",
           "description": "Drapeau de Bhoutan.",
-          "explication": "Bhoutan : reconnaissable à son drapeau national."
+          "explication": "Bhoutan : reconnaissable à son drapeau national.",
+          "iso2": "bt"
         },
         {
           "id": "ad32",
@@ -1985,7 +2107,8 @@
           ],
           "indice": "Drapeau · Bloc du Mekong",
           "description": "Drapeau de Cambodge.",
-          "explication": "Cambodge : reconnaissable à son drapeau national."
+          "explication": "Cambodge : reconnaissable à son drapeau national.",
+          "iso2": "kh"
         },
         {
           "id": "ad33",
@@ -2001,7 +2124,8 @@
           ],
           "indice": "Drapeau · Bloc enclavé",
           "description": "Drapeau de Laos.",
-          "explication": "Laos : reconnaissable à son drapeau national."
+          "explication": "Laos : reconnaissable à son drapeau national.",
+          "iso2": "la"
         },
         {
           "id": "ad34",
@@ -2017,7 +2141,8 @@
           ],
           "indice": "Drapeau · Vaste bloc sans littoral",
           "description": "Drapeau de Mongolie.",
-          "explication": "Mongolie : reconnaissable à son drapeau national."
+          "explication": "Mongolie : reconnaissable à son drapeau national.",
+          "iso2": "mn"
         },
         {
           "id": "ad35",
@@ -2033,7 +2158,8 @@
           ],
           "indice": "Drapeau · Île est allongée",
           "description": "Drapeau de Taïwan.",
-          "explication": "Taïwan : reconnaissable à son drapeau national."
+          "explication": "Taïwan : reconnaissable à son drapeau national.",
+          "iso2": "tw"
         },
         {
           "id": "ad36",
@@ -2049,7 +2175,8 @@
           ],
           "indice": "Drapeau · Point à la pointe malaise",
           "description": "Drapeau de Singapour.",
-          "explication": "Singapour : reconnaissable à son drapeau national."
+          "explication": "Singapour : reconnaissable à son drapeau national.",
+          "iso2": "sg"
         },
         {
           "id": "ad37",
@@ -2065,7 +2192,8 @@
           ],
           "indice": "Drapeau · Petit bloc sur Bornéo",
           "description": "Drapeau de Brunei.",
-          "explication": "Brunei : reconnaissable à son drapeau national."
+          "explication": "Brunei : reconnaissable à son drapeau national.",
+          "iso2": "bn"
         },
         {
           "id": "ad38",
@@ -2081,7 +2209,8 @@
           ],
           "indice": "Drapeau · Moitié est de Timor",
           "description": "Drapeau de Timor oriental.",
-          "explication": "Timor oriental : reconnaissable à son drapeau national."
+          "explication": "Timor oriental : reconnaissable à son drapeau national.",
+          "iso2": "tl"
         },
         {
           "id": "ad39",
@@ -2097,7 +2226,8 @@
           ],
           "indice": "Drapeau · Petit bloc du Caucase",
           "description": "Drapeau de Arménie.",
-          "explication": "Arménie : reconnaissable à son drapeau national."
+          "explication": "Arménie : reconnaissable à son drapeau national.",
+          "iso2": "am"
         },
         {
           "id": "ad40",
@@ -2113,7 +2243,8 @@
           ],
           "indice": "Drapeau · Bande côtière du Caucase",
           "description": "Drapeau de Géorgie.",
-          "explication": "Géorgie : reconnaissable à son drapeau national."
+          "explication": "Géorgie : reconnaissable à son drapeau national.",
+          "iso2": "ge"
         },
         {
           "id": "ad41",
@@ -2129,7 +2260,8 @@
           ],
           "indice": "Drapeau · Bande caspienne",
           "description": "Drapeau de Azerbaïdjan.",
-          "explication": "Azerbaïdjan : reconnaissable à son drapeau national."
+          "explication": "Azerbaïdjan : reconnaissable à son drapeau national.",
+          "iso2": "az"
         },
         {
           "id": "ad42",
@@ -2145,7 +2277,8 @@
           ],
           "indice": "Drapeau · Bloc montagneux central",
           "description": "Drapeau de Kirghizistan.",
-          "explication": "Kirghizistan : reconnaissable à son drapeau national."
+          "explication": "Kirghizistan : reconnaissable à son drapeau national.",
+          "iso2": "kg"
         },
         {
           "id": "ad43",
@@ -2161,7 +2294,8 @@
           ],
           "indice": "Drapeau · Bloc est enclavé",
           "description": "Drapeau de Tadjikistan.",
-          "explication": "Tadjikistan : reconnaissable à son drapeau national."
+          "explication": "Tadjikistan : reconnaissable à son drapeau national.",
+          "iso2": "tj"
         },
         {
           "id": "ad44",
@@ -2177,7 +2311,8 @@
           ],
           "indice": "Drapeau · Bloc désert caspien",
           "description": "Drapeau de Turkménistan.",
-          "explication": "Turkménistan : reconnaissable à son drapeau national."
+          "explication": "Turkménistan : reconnaissable à son drapeau national.",
+          "iso2": "tm"
         },
         {
           "id": "ad45",
@@ -2193,7 +2328,8 @@
           ],
           "indice": "Drapeau · Péninsule du golfe Persique",
           "description": "Drapeau de Qatar.",
-          "explication": "Qatar : reconnaissable à son drapeau national."
+          "explication": "Qatar : reconnaissable à son drapeau national.",
+          "iso2": "qa"
         },
         {
           "id": "ad46",
@@ -2209,7 +2345,8 @@
           ],
           "indice": "Drapeau · Archipel du golfe",
           "description": "Drapeau de Bahreïn.",
-          "explication": "Bahreïn : reconnaissable à son drapeau national."
+          "explication": "Bahreïn : reconnaissable à son drapeau national.",
+          "iso2": "bh"
         },
         {
           "id": "ad47",
@@ -2225,7 +2362,8 @@
           ],
           "indice": "Drapeau · Petit triangle du golfe",
           "description": "Drapeau de Koweït.",
-          "explication": "Koweït : reconnaissable à son drapeau national."
+          "explication": "Koweït : reconnaissable à son drapeau national.",
+          "iso2": "kw"
         },
         {
           "id": "ad48",
@@ -2241,7 +2379,8 @@
           ],
           "indice": "Drapeau · Deux blocs séparés",
           "description": "Drapeau de Palestine.",
-          "explication": "Palestine : reconnaissable à son drapeau national."
+          "explication": "Palestine : reconnaissable à son drapeau national.",
+          "iso2": "ps"
         }
       ]
     },
@@ -2263,7 +2402,8 @@
           ],
           "indice": "Drapeau · Grand bloc nord-américain",
           "description": "Drapeau de États-Unis.",
-          "explication": "États-Unis : reconnaissable à son drapeau national."
+          "explication": "États-Unis : reconnaissable à son drapeau national.",
+          "iso2": "us"
         },
         {
           "id": "ad2",
@@ -2279,7 +2419,8 @@
           ],
           "indice": "Drapeau · Immense bloc nord",
           "description": "Drapeau de Canada.",
-          "explication": "Canada : reconnaissable à son drapeau national."
+          "explication": "Canada : reconnaissable à son drapeau national.",
+          "iso2": "ca"
         },
         {
           "id": "ad3",
@@ -2295,7 +2436,8 @@
           ],
           "indice": "Drapeau · Cœur convexe de l'Amérique du Sud",
           "description": "Drapeau de Brésil.",
-          "explication": "Brésil : reconnaissable à son drapeau national."
+          "explication": "Brésil : reconnaissable à son drapeau national.",
+          "iso2": "br"
         },
         {
           "id": "ad4",
@@ -2311,7 +2453,8 @@
           ],
           "indice": "Drapeau · Bande nord-sud large",
           "description": "Drapeau de Mexique.",
-          "explication": "Mexique : reconnaissable à son drapeau national."
+          "explication": "Mexique : reconnaissable à son drapeau national.",
+          "iso2": "mx"
         },
         {
           "id": "ad5",
@@ -2327,7 +2470,8 @@
           ],
           "indice": "Drapeau · Triangle pointant au sud",
           "description": "Drapeau de Argentine.",
-          "explication": "Argentine : reconnaissable à son drapeau national."
+          "explication": "Argentine : reconnaissable à son drapeau national.",
+          "iso2": "ar"
         },
         {
           "id": "ad6",
@@ -2343,7 +2487,8 @@
           ],
           "indice": "Drapeau · Bloc nord-ouest convexe",
           "description": "Drapeau de Colombie.",
-          "explication": "Colombie : reconnaissable à son drapeau national."
+          "explication": "Colombie : reconnaissable à son drapeau national.",
+          "iso2": "co"
         },
         {
           "id": "ad7",
@@ -2359,7 +2504,8 @@
           ],
           "indice": "Drapeau · Bande verticale pacifique",
           "description": "Drapeau de Pérou.",
-          "explication": "Pérou : reconnaissable à son drapeau national."
+          "explication": "Pérou : reconnaissable à son drapeau national.",
+          "iso2": "pe"
         },
         {
           "id": "ad8",
@@ -2375,7 +2521,8 @@
           ],
           "indice": "Drapeau · Bande verticale très étroite",
           "description": "Drapeau de Chili.",
-          "explication": "Chili : reconnaissable à son drapeau national."
+          "explication": "Chili : reconnaissable à son drapeau national.",
+          "iso2": "cl"
         },
         {
           "id": "ad9",
@@ -2391,7 +2538,8 @@
           ],
           "indice": "Drapeau · Bloc caraïbe nord",
           "description": "Drapeau de Venezuela.",
-          "explication": "Venezuela : reconnaissable à son drapeau national."
+          "explication": "Venezuela : reconnaissable à son drapeau national.",
+          "iso2": "ve"
         },
         {
           "id": "ad10",
@@ -2407,7 +2555,8 @@
           ],
           "indice": "Drapeau · Longue île caraïbe",
           "description": "Drapeau de Cuba.",
-          "explication": "Cuba : reconnaissable à son drapeau national."
+          "explication": "Cuba : reconnaissable à son drapeau national.",
+          "iso2": "cu"
         },
         {
           "id": "ad11",
@@ -2423,7 +2572,8 @@
           ],
           "indice": "Drapeau · Bande équatoriale compacte",
           "description": "Drapeau de Équateur.",
-          "explication": "Équateur : reconnaissable à son drapeau national."
+          "explication": "Équateur : reconnaissable à son drapeau national.",
+          "iso2": "ec"
         },
         {
           "id": "ad12",
@@ -2439,7 +2589,8 @@
           ],
           "indice": "Drapeau · Bloc enclavé central",
           "description": "Drapeau de Bolivie.",
-          "explication": "Bolivie : reconnaissable à son drapeau national."
+          "explication": "Bolivie : reconnaissable à son drapeau national.",
+          "iso2": "bo"
         },
         {
           "id": "ad13",
@@ -2455,7 +2606,8 @@
           ],
           "indice": "Drapeau · Bloc enclavé compact",
           "description": "Drapeau de Paraguay.",
-          "explication": "Paraguay : reconnaissable à son drapeau national."
+          "explication": "Paraguay : reconnaissable à son drapeau national.",
+          "iso2": "py"
         },
         {
           "id": "ad14",
@@ -2471,7 +2623,8 @@
           ],
           "indice": "Drapeau · Bande atlantique sud",
           "description": "Drapeau de Uruguay.",
-          "explication": "Uruguay : reconnaissable à son drapeau national."
+          "explication": "Uruguay : reconnaissable à son drapeau national.",
+          "iso2": "uy"
         },
         {
           "id": "ad15",
@@ -2487,7 +2640,8 @@
           ],
           "indice": "Drapeau · Bloc atlantique nord-est",
           "description": "Drapeau de Guyana.",
-          "explication": "Guyana : reconnaissable à son drapeau national."
+          "explication": "Guyana : reconnaissable à son drapeau national.",
+          "iso2": "gy"
         },
         {
           "id": "ad16",
@@ -2503,7 +2657,8 @@
           ],
           "indice": "Drapeau · Bande côtière compacte",
           "description": "Drapeau de Suriname.",
-          "explication": "Suriname : reconnaissable à son drapeau national."
+          "explication": "Suriname : reconnaissable à son drapeau national.",
+          "iso2": "sr"
         },
         {
           "id": "ad17",
@@ -2519,7 +2674,8 @@
           ],
           "indice": "Drapeau · Bande côtière française",
           "description": "Drapeau de Guyane française.",
-          "explication": "Guyane française : reconnaissable à son drapeau national."
+          "explication": "Guyane française : reconnaissable à son drapeau national.",
+          "iso2": "gf"
         },
         {
           "id": "ad18",
@@ -2535,7 +2691,8 @@
           ],
           "indice": "Drapeau · Isthme en S",
           "description": "Drapeau de Panama.",
-          "explication": "Panama : reconnaissable à son drapeau national."
+          "explication": "Panama : reconnaissable à son drapeau national.",
+          "iso2": "pa"
         },
         {
           "id": "ad19",
@@ -2551,7 +2708,8 @@
           ],
           "indice": "Drapeau · Bande centrale étroite",
           "description": "Drapeau de Costa Rica.",
-          "explication": "Costa Rica : reconnaissable à son drapeau national."
+          "explication": "Costa Rica : reconnaissable à son drapeau national.",
+          "iso2": "cr"
         },
         {
           "id": "ad20",
@@ -2567,7 +2725,8 @@
           ],
           "indice": "Drapeau · Bloc central large",
           "description": "Drapeau de Nicaragua.",
-          "explication": "Nicaragua : reconnaissable à son drapeau national."
+          "explication": "Nicaragua : reconnaissable à son drapeau national.",
+          "iso2": "ni"
         },
         {
           "id": "ad21",
@@ -2583,7 +2742,8 @@
           ],
           "indice": "Drapeau · Triangle côtier",
           "description": "Drapeau de Honduras.",
-          "explication": "Honduras : reconnaissable à son drapeau national."
+          "explication": "Honduras : reconnaissable à son drapeau national.",
+          "iso2": "hn"
         },
         {
           "id": "ad22",
@@ -2599,7 +2759,8 @@
           ],
           "indice": "Drapeau · Bloc nord-ouest",
           "description": "Drapeau de Guatemala.",
-          "explication": "Guatemala : reconnaissable à son drapeau national."
+          "explication": "Guatemala : reconnaissable à son drapeau national.",
+          "iso2": "gt"
         },
         {
           "id": "ad23",
@@ -2615,7 +2776,8 @@
           ],
           "indice": "Drapeau · Moitié est d'Hispaniola",
           "description": "Drapeau de République dominicaine.",
-          "explication": "République dominicaine : reconnaissable à son drapeau national."
+          "explication": "République dominicaine : reconnaissable à son drapeau national.",
+          "iso2": "do"
         },
         {
           "id": "ad24",
@@ -2631,7 +2793,8 @@
           ],
           "indice": "Drapeau · Moitié ouest d'Hispaniola",
           "description": "Drapeau de Haïti.",
-          "explication": "Haïti : reconnaissable à son drapeau national."
+          "explication": "Haïti : reconnaissable à son drapeau national.",
+          "iso2": "ht"
         },
         {
           "id": "ad25",
@@ -2647,7 +2810,8 @@
           ],
           "indice": "Drapeau · Île caraïbe ovale",
           "description": "Drapeau de Jamaïque.",
-          "explication": "Jamaïque : reconnaissable à son drapeau national."
+          "explication": "Jamaïque : reconnaissable à son drapeau national.",
+          "iso2": "jm"
         },
         {
           "id": "ad26",
@@ -2663,7 +2827,8 @@
           ],
           "indice": "Drapeau · Petit coin caraïbe",
           "description": "Drapeau de Belize.",
-          "explication": "Belize : reconnaissable à son drapeau national."
+          "explication": "Belize : reconnaissable à son drapeau national.",
+          "iso2": "bz"
         },
         {
           "id": "ad27",
@@ -2679,7 +2844,8 @@
           ],
           "indice": "Drapeau · Petit triangle pacifique",
           "description": "Drapeau de Salvador.",
-          "explication": "Salvador : reconnaissable à son drapeau national."
+          "explication": "Salvador : reconnaissable à son drapeau national.",
+          "iso2": "sv"
         },
         {
           "id": "ad28",
@@ -2695,13 +2861,14 @@
           ],
           "indice": "Drapeau · Deux îles au large du Venezuela",
           "description": "Drapeau de Trinité-et-Tobago.",
-          "explication": "Trinité-et-Tobago : reconnaissable à son drapeau national."
+          "explication": "Trinité-et-Tobago : reconnaissable à son drapeau national.",
+          "iso2": "tt"
         },
         {
           "id": "ad29",
           "difficulte": "difficile",
           "nom_commun": "Barbade",
-          "nom_scientifique": "Barbade",
+          "nom_scientifique": "Barbados",
           "groupe": "ameriques",
           "options": [
             "Barbade",
@@ -2711,7 +2878,8 @@
           ],
           "indice": "Drapeau · Petite île caraïbe",
           "description": "Drapeau de Barbade.",
-          "explication": "Barbade : reconnaissable à son drapeau national."
+          "explication": "Barbade : reconnaissable à son drapeau national.",
+          "iso2": "bb"
         },
         {
           "id": "ad30",
@@ -2727,7 +2895,8 @@
           ],
           "indice": "Drapeau · Archipel au nord des Caraïbes",
           "description": "Drapeau de Bahamas.",
-          "explication": "Bahamas : reconnaissable à son drapeau national."
+          "explication": "Bahamas : reconnaissable à son drapeau national.",
+          "iso2": "bs"
         },
         {
           "id": "ad31",
@@ -2743,7 +2912,8 @@
           ],
           "indice": "Drapeau · Petite île sud des Antilles",
           "description": "Drapeau de Grenade.",
-          "explication": "Grenade : reconnaissable à son drapeau national."
+          "explication": "Grenade : reconnaissable à son drapeau national.",
+          "iso2": "gd"
         },
         {
           "id": "ad32",
@@ -2759,7 +2929,8 @@
           ],
           "indice": "Drapeau · Chaîne d'îles",
           "description": "Drapeau de Saint-Vincent-et-les-Grenadines.",
-          "explication": "Saint-Vincent-et-les-Grenadines : reconnaissable à son drapeau national."
+          "explication": "Saint-Vincent-et-les-Grenadines : reconnaissable à son drapeau national.",
+          "iso2": "vc"
         },
         {
           "id": "ad33",
@@ -2775,7 +2946,8 @@
           ],
           "indice": "Drapeau · Île volcanique compacte",
           "description": "Drapeau de Sainte-Lucie.",
-          "explication": "Sainte-Lucie : reconnaissable à son drapeau national."
+          "explication": "Sainte-Lucie : reconnaissable à son drapeau national.",
+          "iso2": "lc"
         },
         {
           "id": "ad34",
@@ -2791,7 +2963,8 @@
           ],
           "indice": "Drapeau · Île centrale des Antilles",
           "description": "Drapeau de Dominique.",
-          "explication": "Dominique : reconnaissable à son drapeau national."
+          "explication": "Dominique : reconnaissable à son drapeau national.",
+          "iso2": "dm"
         },
         {
           "id": "ad35",
@@ -2807,7 +2980,8 @@
           ],
           "indice": "Drapeau · Deux îles des Antilles",
           "description": "Drapeau de Antigua-et-Barbuda.",
-          "explication": "Antigua-et-Barbuda : reconnaissable à son drapeau national."
+          "explication": "Antigua-et-Barbuda : reconnaissable à son drapeau national.",
+          "iso2": "ag"
         },
         {
           "id": "ad36",
@@ -2823,7 +2997,8 @@
           ],
           "indice": "Drapeau · Deux petites îles",
           "description": "Drapeau de Saint-Kitts-et-Nevis.",
-          "explication": "Saint-Kitts-et-Nevis : reconnaissable à son drapeau national."
+          "explication": "Saint-Kitts-et-Nevis : reconnaissable à son drapeau national.",
+          "iso2": "kn"
         },
         {
           "id": "ad37",
@@ -2839,7 +3014,8 @@
           ],
           "indice": "Drapeau · Île rectangulaire des Caraïbes",
           "description": "Drapeau de Porto Rico.",
-          "explication": "Porto Rico : reconnaissable à son drapeau national."
+          "explication": "Porto Rico : reconnaissable à son drapeau national.",
+          "iso2": "pr"
         },
         {
           "id": "ad38",
@@ -2855,7 +3031,8 @@
           ],
           "indice": "Drapeau · Immense île arctique",
           "description": "Drapeau de Groenland.",
-          "explication": "Groenland : reconnaissable à son drapeau national."
+          "explication": "Groenland : reconnaissable à son drapeau national.",
+          "iso2": "gl"
         }
       ]
     },
@@ -2877,7 +3054,8 @@
           ],
           "indice": "Drapeau · Grand bloc continental",
           "description": "Drapeau de Australie.",
-          "explication": "Australie : reconnaissable à son drapeau national."
+          "explication": "Australie : reconnaissable à son drapeau national.",
+          "iso2": "au"
         },
         {
           "id": "od2",
@@ -2893,7 +3071,8 @@
           ],
           "indice": "Drapeau · Deux îles verticales",
           "description": "Drapeau de Nouvelle-Zélande.",
-          "explication": "Nouvelle-Zélande : reconnaissable à son drapeau national."
+          "explication": "Nouvelle-Zélande : reconnaissable à son drapeau national.",
+          "iso2": "nz"
         },
         {
           "id": "od3",
@@ -2909,7 +3088,8 @@
           ],
           "indice": "Drapeau · Moitié est de la Nouvelle-Guinée",
           "description": "Drapeau de Papouasie-Nouvelle-Guinée.",
-          "explication": "Papouasie-Nouvelle-Guinée : reconnaissable à son drapeau national."
+          "explication": "Papouasie-Nouvelle-Guinée : reconnaissable à son drapeau national.",
+          "iso2": "pg"
         },
         {
           "id": "od4",
@@ -2925,7 +3105,8 @@
           ],
           "indice": "Drapeau · Archipel en arc",
           "description": "Drapeau de Fidji.",
-          "explication": "Fidji : reconnaissable à son drapeau national."
+          "explication": "Fidji : reconnaissable à son drapeau national.",
+          "iso2": "fj"
         },
         {
           "id": "od5",
@@ -2941,7 +3122,8 @@
           ],
           "indice": "Drapeau · Archipel allongé",
           "description": "Drapeau de Nouvelle-Calédonie.",
-          "explication": "Nouvelle-Calédonie : reconnaissable à son drapeau national."
+          "explication": "Nouvelle-Calédonie : reconnaissable à son drapeau national.",
+          "iso2": "nc"
         },
         {
           "id": "od6",
@@ -2957,7 +3139,8 @@
           ],
           "indice": "Drapeau · Chaîne d'îles en Y",
           "description": "Drapeau de Vanuatu.",
-          "explication": "Vanuatu : reconnaissable à son drapeau national."
+          "explication": "Vanuatu : reconnaissable à son drapeau national.",
+          "iso2": "vu"
         },
         {
           "id": "od7",
@@ -2973,7 +3156,8 @@
           ],
           "indice": "Drapeau · Deux îles principales",
           "description": "Drapeau de Samoa.",
-          "explication": "Samoa : reconnaissable à son drapeau national."
+          "explication": "Samoa : reconnaissable à son drapeau national.",
+          "iso2": "ws"
         },
         {
           "id": "od8",
@@ -2989,7 +3173,8 @@
           ],
           "indice": "Drapeau · Archipel dispersé",
           "description": "Drapeau de Tonga.",
-          "explication": "Tonga : reconnaissable à son drapeau national."
+          "explication": "Tonga : reconnaissable à son drapeau national.",
+          "iso2": "to"
         },
         {
           "id": "od9",
@@ -3005,7 +3190,8 @@
           ],
           "indice": "Drapeau · Archipel en double chaîne",
           "description": "Drapeau de Îles Salomon.",
-          "explication": "Îles Salomon : reconnaissable à son drapeau national."
+          "explication": "Îles Salomon : reconnaissable à son drapeau national.",
+          "iso2": "sb"
         },
         {
           "id": "od10",
@@ -3021,7 +3207,8 @@
           ],
           "indice": "Drapeau · Archipel du nord du Pacifique",
           "description": "Drapeau de Micronésie.",
-          "explication": "Micronésie : reconnaissable à son drapeau national."
+          "explication": "Micronésie : reconnaissable à son drapeau national.",
+          "iso2": "fm"
         },
         {
           "id": "od11",
@@ -3037,7 +3224,8 @@
           ],
           "indice": "Drapeau · Archipel ouest du Pacifique",
           "description": "Drapeau de Palaos.",
-          "explication": "Palaos : reconnaissable à son drapeau national."
+          "explication": "Palaos : reconnaissable à son drapeau national.",
+          "iso2": "pw"
         },
         {
           "id": "od12",
@@ -3053,7 +3241,8 @@
           ],
           "indice": "Drapeau · Atolls dispersés",
           "description": "Drapeau de Îles Marshall.",
-          "explication": "Îles Marshall : reconnaissable à son drapeau national."
+          "explication": "Îles Marshall : reconnaissable à son drapeau national.",
+          "iso2": "mh"
         },
         {
           "id": "od13",
@@ -3069,7 +3258,8 @@
           ],
           "indice": "Drapeau · Atolls sur l'équateur",
           "description": "Drapeau de Kiribati.",
-          "explication": "Kiribati : reconnaissable à son drapeau national."
+          "explication": "Kiribati : reconnaissable à son drapeau national.",
+          "iso2": "ki"
         },
         {
           "id": "od14",
@@ -3085,7 +3275,8 @@
           ],
           "indice": "Drapeau · Petits atolls",
           "description": "Drapeau de Tuvalu.",
-          "explication": "Tuvalu : reconnaissable à son drapeau national."
+          "explication": "Tuvalu : reconnaissable à son drapeau national.",
+          "iso2": "tv"
         },
         {
           "id": "od15",
@@ -3101,7 +3292,8 @@
           ],
           "indice": "Drapeau · Point dans le Pacifique",
           "description": "Drapeau de Nauru.",
-          "explication": "Nauru : reconnaissable à son drapeau national."
+          "explication": "Nauru : reconnaissable à son drapeau national.",
+          "iso2": "nr"
         },
         {
           "id": "od16",
@@ -3117,7 +3309,8 @@
           ],
           "indice": "Drapeau · Vaste archipel du Pacifique",
           "description": "Drapeau de Polynésie française.",
-          "explication": "Polynésie française : reconnaissable à son drapeau national."
+          "explication": "Polynésie française : reconnaissable à son drapeau national.",
+          "iso2": "pf"
         },
         {
           "id": "od17",
@@ -3133,7 +3326,8 @@
           ],
           "indice": "Drapeau · Île du Pacifique nord",
           "description": "Drapeau de Guam.",
-          "explication": "Guam : reconnaissable à son drapeau national."
+          "explication": "Guam : reconnaissable à son drapeau national.",
+          "iso2": "gu"
         },
         {
           "id": "od18",
@@ -3149,7 +3343,8 @@
           ],
           "indice": "Drapeau · Archipel associé à la Nouvelle-Zélande",
           "description": "Drapeau de Îles Cook.",
-          "explication": "Îles Cook : reconnaissable à son drapeau national."
+          "explication": "Îles Cook : reconnaissable à son drapeau national.",
+          "iso2": "ck"
         },
         {
           "id": "od19",
@@ -3165,7 +3360,8 @@
           ],
           "indice": "Drapeau · Petit archipel oriental",
           "description": "Drapeau de Samoa américaines.",
-          "explication": "Samoa américaines : reconnaissable à son drapeau national."
+          "explication": "Samoa américaines : reconnaissable à son drapeau national.",
+          "iso2": "as"
         },
         {
           "id": "od20",
@@ -3181,7 +3377,8 @@
           ],
           "indice": "Drapeau · Deux archipels du Pacifique",
           "description": "Drapeau de Wallis-et-Futuna.",
-          "explication": "Wallis-et-Futuna : reconnaissable à son drapeau national."
+          "explication": "Wallis-et-Futuna : reconnaissable à son drapeau national.",
+          "iso2": "wf"
         }
       ]
     }

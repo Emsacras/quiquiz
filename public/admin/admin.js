@@ -303,19 +303,41 @@ function applyImagePolicy(category) {
   setSafeFish(false);
 }
 
-async function loadThumb(img, scientificName) {
+function adminImageOptions(questionOrName) {
+  const id = state.category?.id || "";
+  const kind =
+    id === "drapeaux-monde"
+      ? "flag"
+      : id === "pays-monde"
+        ? "map"
+        : id === "capitales-monde"
+          ? "capital"
+          : id === "rochers-mineraux"
+            ? "mineral"
+            : id === "fruits-legumes"
+              ? "fruit"
+              : "species";
+  const q = typeof questionOrName === "object" && questionOrName ? questionOrName : null;
+  return {
+    kind,
+    commonsFile: q ? String(q.commonsFile || "").trim() : "",
+    iso2: q ? String(q.iso2 || "").trim() : "",
+  };
+}
+
+async function loadThumb(img, scientificName, question = null) {
   try {
     applyImagePolicy(state.category);
-    const result = await getSpeciesImages(scientificName);
+    const result = await getSpeciesImages(scientificName, adminImageOptions(question));
     img.src = pickRandomImage(result.urls || [], result.items || []) || PLACEHOLDER;
   } catch {
     img.src = PLACEHOLDER;
   }
 }
 
-async function loadGameCandidates(scientificName) {
+async function loadGameCandidates(scientificName, question = null) {
   applyImagePolicy(state.category);
-  const result = await getSpeciesImages(scientificName);
+  const result = await getSpeciesImages(scientificName, adminImageOptions(question));
   return (result.items || [])
     .filter((item) => item?.url && item?.title)
     .map((item) => ({
@@ -502,7 +524,7 @@ function renderCategory() {
       );
       card.addEventListener("click", () => void openSpecies(question));
       grid.appendChild(card);
-      void loadThumb(img, question.nom_scientifique);
+      void loadThumb(img, question.nom_scientifique, question);
     }
     section.appendChild(grid);
     panel.appendChild(section);
@@ -556,15 +578,16 @@ async function renderSpecies() {
 
   try {
     applyImagePolicy(state.category);
-    const isMaps = state.category?.id === "pays-monde";
+    const categoryId = state.category?.id || "";
+    const useGamePipeline = categoryId === "pays-monde" || categoryId === "drapeaux-monde";
     let validated = [];
     let candidates = [];
 
-    if (isMaps) {
-      // Même recherche contours que le mode de jeu (pas le bassin photo espèces).
+    if (useGamePipeline) {
+      // Contours / drapeaux : même résolution que le jeu (pas le bassin photo espèces).
       const [valRes, gameItems, bl] = await Promise.all([
         api(`/api/admin/photos/validated`),
-        loadGameCandidates(name),
+        loadGameCandidates(name, question),
         api("/api/admin/photos/blacklist"),
       ]);
       validated = (valRes.data.items || []).filter(
@@ -575,7 +598,9 @@ async function renderSpecies() {
       candidates = gameItems.filter(
         (item) => !item.validated && !validatedTitles.has(item.title) && !blocked.has(item.title)
       );
-      status.textContent = `${validated.length} validée(s) · ${candidates.length} candidate(s) · recherche contours (jeu)`;
+      const modeLabel =
+        categoryId === "drapeaux-monde" ? "drapeau (jeu)" : "recherche contours (jeu)";
+      status.textContent = `${validated.length} validée(s) · ${candidates.length} candidate(s) · ${modeLabel}`;
     } else {
       const { res, data } = await api(
         `/api/admin/photos/candidates?name=${encodeURIComponent(name)}`

@@ -11,7 +11,8 @@
  * Les chants suivent le même chemin Commons, dans les catégories audio de l'espèce.
  *
  * La liste d'URL est mise en cache 30 jours. Le choix affiché reste aléatoire.
- * Sur QuiQuiz, le bassin serveur (jusqu'à 10 photos) est lu en premier.
+ * Sur QuiQuiz, le bassin serveur (jusqu'à 10 photos pour les espèces) est lu en premier.
+ * Les drapeaux sont un singleton : flagcdn (iso2) ou 1 validée admin — pas Commons.
  * Les photos validées (locales) y sont prioritaires. Ce cache ne remplace pas le bassin.
  */
 
@@ -86,7 +87,8 @@ function resolveMediaKind(explicit) {
 
 function poolKey(scientificName, kind = "species") {
   const name = String(scientificName || "").trim();
-  if (kind === "flag") return `flag:${name}`;
+  // flag3: source flagcdn (plus de search / Commons photos).
+  if (kind === "flag") return `flag3:${name}`;
   if (kind === "map") return `map:${name}`;
   if (kind === "safe") return `safe:${name}`;
   if (kind === "capital") return `capital:${name}`;
@@ -151,7 +153,7 @@ function commonsTitleFromUrl(url) {
     const thumb = path.match(/\/wikipedia\/commons\/thumb\/[^/]+\/[^/]+\/([^/]+)\//);
     const plain = path.match(/\/wikipedia\/commons\/[^/]+\/[^/]+\/([^/]+)$/);
     const file = decodeURIComponent((thumb || plain)?.[1] || "").replace(/_/g, " ");
-    if (!file || !/\.(jpe?g|png)$/i.test(file)) return "";
+    if (!file || !/\.(jpe?g|png|svg)$/i.test(file)) return "";
     return `File:${file}`;
   } catch {
     return "";
@@ -210,8 +212,11 @@ export function invalidateSpeciesImages(scientificName) {
 }
 
 export function creditLabel(meta, kind = "photo") {
-  const prefix = kind === "carte" ? "Carte" : "Photo";
+  const prefix = kind === "carte" ? "Carte" : kind === "drapeau" ? "Drapeau" : "Photo";
   if (!meta) return `${prefix} : Wikimedia Commons`;
+  if (/^Flag:[a-z]{2}$/i.test(meta.title || "") || /flagcdn\.com/i.test(meta.url || meta.sourceUrl || "")) {
+    return "Drapeau : flagcdn.com";
+  }
   const bits = [];
   if (meta.artist) bits.push(meta.artist);
   if (meta.license) bits.push(meta.license);
@@ -302,6 +307,7 @@ async function ensureBlockedTitles(force = false) {
 async function fetchServerPool(scientificName, options = {}) {
   const params = new URLSearchParams({ name: scientificName });
   if (options.validatedOnly) params.set("validatedOnly", "1");
+  if (options.kind) params.set("kind", String(options.kind));
   const response = await fetch(`/api/pool?${params}`);
   if (!response.ok) throw new Error("pool");
   const data = await response.json();
@@ -774,7 +780,7 @@ async function collectMapTitles(countryName) {
   return (named.length ? named : ranked).slice(0, MAX_IMAGES);
 }
 
-async function resolveMapItems(fileTitles) {
+async function resolveFileItems(fileTitles, { requireMapTitle = false } = {}) {
   const items = [];
   for (let index = 0; index < fileTitles.length; index += 8) {
     const batch = fileTitles.slice(index, index + 8);
@@ -795,7 +801,10 @@ async function resolveMapItems(fileTitles) {
     }
     const pages = Object.values(data?.query?.pages ?? {});
     for (const page of pages) {
-      if (!isMapTitle(page?.title || "")) continue;
+      if (!page?.title || page.missing !== undefined) continue;
+      if (requireMapTitle && !isMapTitle(page.title)) continue;
+      if (!requireMapTitle && !/^File:/i.test(page.title)) continue;
+      if (!requireMapTitle && !/\.(jpe?g|png|svg)$/i.test(page.title.replace(/^File:/i, ""))) continue;
       const info = page?.imageinfo?.[0];
       if (!info) continue;
       const mimeOk = !info.mime || /^image\/(jpeg|png|svg\+xml)$/i.test(info.mime);
@@ -813,6 +822,10 @@ async function resolveMapItems(fileTitles) {
   return items;
 }
 
+async function resolveMapItems(fileTitles) {
+  return resolveFileItems(fileTitles, { requireMapTitle: true });
+}
+
 async function fetchOutlineMapImages(countryName) {
   try {
     const titles = await collectMapTitles(countryName);
@@ -824,66 +837,43 @@ async function fetchOutlineMapImages(countryName) {
   }
 }
 
-async function searchFlagTitles(countryName) {
-  const name = String(countryName || "").trim();
-  if (!name) return [];
-  const queries = [
-    `Flag of ${name}`,
-    `Flag of the ${name}`,
-    `${name} flag`,
-  ];
-  const found = [];
-  const seen = new Set();
-  for (const query of queries) {
-    let data;
-    try {
-      data = await throttledJson(
-        apiUrl(COMMONS, {
-          action: "query",
-          list: "search",
-          srsearch: `${query} filetype:bitmap|drawing`,
-          srnamespace: "6",
-          srlimit: "10",
-        }),
-      );
-    } catch {
-      continue;
-    }
-    for (const hit of data?.query?.search ?? []) {
-      const title = hit.title || "";
-      const blob = title.replace(/^File:/i, "").toLowerCase().replace(/_/g, " ");
-      if (seen.has(title)) continue;
-      if (!/\bflag\b/.test(blob)) continue;
-      if (/\b(map|naval|army|air force|civil ensign|proposed|historical|empire)\b/.test(blob)) continue;
-      seen.add(title);
-      found.push(title);
-    }
-    if (found.length >= 8) break;
-  }
-  // Priorité au SVG « Flag of X »
-  found.sort((a, b) => {
-    const score = (t) => {
-      const blob = t.replace(/^File:/i, "").toLowerCase().replace(/_/g, " ");
-      let s = 0;
-      if (blob.startsWith(`flag of ${name.toLowerCase()}`)) s += 5;
-      if (blob.startsWith(`flag of the ${name.toLowerCase()}`)) s += 4;
-      if (/\.svg$/i.test(t)) s += 2;
-      return -s;
-    };
-    return score(a) - score(b);
-  });
-  return found;
+/** Drapeaux via flagcdn (ISO2) — toujours un vrai drapeau, jamais une photo Commons. */
+function normalizeIso2(value) {
+  const iso = String(value || "")
+    .trim()
+    .toLowerCase();
+  return /^[a-z]{2}$/.test(iso) ? iso : "";
 }
 
-async function fetchFlagImages(countryName) {
-  try {
-    const titles = await searchFlagTitles(countryName);
-    if (!titles.length) return { urls: [], items: [], source: "none" };
-    const items = await resolveMapItems(titles);
-    return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
-  } catch {
-    return { urls: [], items: [], source: "none" };
-  }
+function isFlagPoolTitle(title) {
+  const clean = normalizeFileTitle(title);
+  return /^Flag:[a-z]{2}$/i.test(clean) || /^File:Flag of /i.test(clean);
+}
+
+export function flagCdnUrl(iso2, width = 1280) {
+  const iso = normalizeIso2(iso2);
+  if (!iso) return "";
+  const w = Number(width) || 1280;
+  return `https://flagcdn.com/w${w}/${iso}.png`;
+}
+
+async function fetchFlagImages(countryName, options = {}) {
+  const iso2 = normalizeIso2(options.iso2);
+  if (!iso2) return { urls: [], items: [], source: "none" };
+  const url = flagCdnUrl(iso2, 1280);
+  const title = `Flag:${iso2}`;
+  const item = {
+    title,
+    url,
+    validated: false,
+    sourceUrl: url,
+    artist: "flagcdn.com",
+    license: "Public domain / country flag",
+    licenseUrl: "https://flagcdn.com/",
+    commonsPage: "",
+  };
+  rememberItems([item]);
+  return applyRejections({ urls: [url], items: [item], source: "flagcdn" });
 }
 
 const CAPITAL_TITLE_REJECT =
@@ -950,7 +940,7 @@ async function fetchCapitalImages(cityName, country = "") {
       }
       return { urls: [], items: [], source: "none" };
     }
-    const items = await resolveMapItems(titles);
+    const items = await resolveFileItems(titles, { requireMapTitle: false });
     return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
   } catch {
     return { urls: [], items: [], source: "none" };
@@ -972,7 +962,7 @@ async function fetchMineralImages(mineralName) {
       const fallback = await fetchSpeciesImages(name);
       return fallback;
     }
-    const items = await resolveMapItems(titles);
+    const items = await resolveFileItems(titles, { requireMapTitle: false });
     return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
   } catch {
     return { urls: [], items: [], source: "none" };
@@ -991,7 +981,7 @@ async function fetchFruitImages(scientificName, commonName = "") {
       }
     );
     if (titles.length) {
-      const items = await resolveMapItems(titles);
+      const items = await resolveFileItems(titles, { requireMapTitle: false });
       const result = applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
       if (result.urls?.length || result.items?.length) return result;
     }
@@ -1122,6 +1112,8 @@ function enqueueSpecies(scientificName, options = {}) {
   const kind = resolveMediaKind(options.kind);
   const country = String(options.country || "").trim();
   const commonName = String(options.commonName || "").trim();
+  const commonsFile = String(options.commonsFile || "").trim();
+  const iso2 = normalizeIso2(options.iso2);
   const key = poolKey(name, kind);
   if (!name) return Promise.resolve({ urls: [], source: "none" });
   const remembered = memoryPools.get(key);
@@ -1147,7 +1139,7 @@ function enqueueSpecies(scientificName, options = {}) {
   if (pending.has(key)) return pending.get(key);
 
   const promise = new Promise((resolve, reject) => {
-    speciesQueue.push({ name, key, kind, country, commonName, resolve, reject });
+    speciesQueue.push({ name, key, kind, country, commonName, commonsFile, iso2, resolve, reject });
     pumpSpecies();
   });
   pending.set(key, promise);
@@ -1165,8 +1157,37 @@ async function pumpSpecies() {
       if (job.kind === "safe") {
         result = await fetchSafeFishImages(job.name);
       } else if (job.kind === "flag") {
-        await ensureBlockedTitles();
-        result = await fetchFlagImages(job.name);
+        // Jamais de fallback species : sans iso2 → vide (placeholder côté UI).
+        if (!normalizeIso2(job.iso2)) {
+          result = { urls: [], items: [], source: "none" };
+        } else {
+          await ensureBlockedTitles();
+          if (servedFromQuizApi()) {
+            try {
+              const pooled = await fetchServerPool(job.name, {
+                validatedOnly: true,
+                kind: "flag",
+              });
+              // Ignorer d’anciennes « validées » tourisme (Category:France, etc.).
+              const flagItems = (pooled.items || []).filter((item) => isFlagPoolTitle(item.title));
+              if (flagItems.length) {
+                const only = applyRejections({
+                  urls: [],
+                  items: flagItems.slice(0, 1),
+                  source: "pool",
+                });
+                if (only.urls.length) {
+                  memoryPools.set(job.key, only);
+                  job.resolve(only);
+                  continue;
+                }
+              }
+            } catch {
+              /* repli flagcdn */
+            }
+          }
+          result = await fetchFlagImages(job.name, { iso2: job.iso2 });
+        }
       } else if (job.kind === "capital") {
         await ensureBlockedTitles();
         result = await fetchCapitalImages(job.name, job.country);

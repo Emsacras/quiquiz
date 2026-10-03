@@ -10,6 +10,8 @@ const { config } = require("../config");
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
 const WIKIDATA = "https://www.wikidata.org/w/api.php";
 const SERVE_CAP = 10;
+/** Un drapeau national = une image ; pas de bassin multi-photos. */
+const FLAG_SERVE_CAP = 1;
 const CANDIDATE_CAP = 40;
 const POOL_TTL_MS = 14 * 24 * 60 * 60 * 1000;
 const USER_AGENT = "QuiQuiz/1.0 (educational species quiz; https://quiquiz.fr)";
@@ -107,8 +109,22 @@ function isMapTitle(title) {
     return !MAP_FILE_REJECT.test(file);
 }
 
+function isFlagTitle(title) {
+    const clean = normalizeFileTitle(title);
+    // flagcdn : Flag:fr
+    if (/^Flag:[a-z]{2}$/i.test(clean)) return true;
+    if (!clean.startsWith("File:")) return false;
+    const file = clean.slice(5).replace(/_/g, " ");
+    if (!/\.(svg|png|jpe?g)$/i.test(file)) return false;
+    return /^Flag of /i.test(file);
+}
+
 function isModerationTitle(title) {
-    return isPhotoTitle(title) || isMapTitle(title);
+    return isPhotoTitle(title) || isMapTitle(title) || isFlagTitle(title);
+}
+
+function serveCapForKind(kind) {
+    return kind === "flag" ? FLAG_SERVE_CAP : SERVE_CAP;
 }
 
 function extForTitle(title, contentType, sourceUrl) {
@@ -479,15 +495,21 @@ function getCandidatePool(scientificName) {
 async function getPool(scientificName, options = {}) {
     const name = normalizeName(scientificName);
     if (!name || name.length > 120) return [];
+    const kind = String(options.kind || "").trim().toLowerCase();
+    const cap = serveCapForKind(kind);
 
     const validated = validatedEntriesFor(name)
         .map(toValidatedPublic)
         .filter((item) => item.url);
-    if (options && options.validatedOnly) {
-        return shuffle(validated).slice(0, SERVE_CAP);
+    // Drapeaux : uniquement l’image validée (sinon le client résout le SVG Commons).
+    if (kind === "flag") {
+        return shuffle(validated).slice(0, cap);
     }
-    if (validated.length >= SERVE_CAP) {
-        return shuffle(validated).slice(0, SERVE_CAP);
+    if (options && options.validatedOnly) {
+        return shuffle(validated).slice(0, cap);
+    }
+    if (validated.length >= cap) {
+        return shuffle(validated).slice(0, cap);
     }
 
     const blocked = blacklistTitleSet();
@@ -498,7 +520,7 @@ async function getPool(scientificName, options = {}) {
             const title = normalizeFileTitle(item.title);
             return title && !validatedTitles.has(title) && !blocked.has(title);
         })
-    ).slice(0, SERVE_CAP - validated.length);
+    ).slice(0, cap - validated.length);
 
     return [
         ...shuffle(validated),

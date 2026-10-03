@@ -47,7 +47,8 @@ function createQuizRoutes() {
             const validatedOnly =
                 String(req.query.validatedOnly || "") === "1" ||
                 String(req.query.validatedOnly || "").toLowerCase() === "true";
-            const items = await getPool(name, { validatedOnly });
+            const kind = String(req.query.kind || "").trim().toLowerCase();
+            const items = await getPool(name, { validatedOnly, kind });
             res.set("Cache-Control", "no-store");
             res.json({ name, items });
         } catch (error) {
