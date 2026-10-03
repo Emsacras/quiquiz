@@ -63,6 +63,14 @@ function normalizeName(scientificName) {
         .replace(/\s+/g, " ");
 }
 
+/** Titres File: comparables (espaces, underscores, préfixe). */
+function normalizeFileTitle(title) {
+    let value = String(title || "").trim().replace(/_/g, " ");
+    if (!value) return "";
+    if (/^file:/i.test(value)) value = `File:${value.slice(5).trim()}`;
+    return value.replace(/\s+/g, " ");
+}
+
 function readJson(file, fallback) {
     try {
         return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -132,9 +140,9 @@ function readBlacklistEntries() {
         let name = "";
         let savedAt = 0;
         if (typeof entry === "string") {
-            title = entry.trim();
+            title = normalizeFileTitle(entry);
         } else if (entry && typeof entry === "object") {
-            title = String(entry.title || "").trim();
+            title = normalizeFileTitle(entry.title || "");
             url = isHttps(entry.url) ? entry.url : "";
             name = normalizeName(entry.name || "");
             savedAt = Number(entry.savedAt) || 0;
@@ -159,7 +167,38 @@ function writeBlacklistEntries(entries) {
 }
 
 function blacklistTitleSet() {
-    return new Set(readBlacklistEntries().map((entry) => entry.title));
+    return new Set(readBlacklistEntries().map((entry) => normalizeFileTitle(entry.title)));
+}
+
+function removeTitleFromPool(scientificName, title) {
+    const name = normalizeName(scientificName);
+    const clean = normalizeFileTitle(title);
+    if (!name || !clean) return;
+    const stored = readPool(name);
+    if (!stored?.items?.length) return;
+    const next = stored.items.filter((item) => normalizeFileTitle(item.title) !== clean);
+    if (next.length !== stored.items.length) writePool(name, next);
+}
+
+function purgeTitleFromAllPools(title) {
+    const clean = normalizeFileTitle(title);
+    if (!clean) return;
+    const root = path.join(runtimeDir(), "quiz-pools");
+    let files = [];
+    try {
+        files = fs.readdirSync(root).filter((file) => file.endsWith(".json"));
+    } catch {
+        return;
+    }
+    for (const file of files) {
+        const abs = path.join(root, file);
+        const data = readJson(abs, null);
+        if (!data || !Array.isArray(data.items)) continue;
+        const next = data.items.filter((item) => normalizeFileTitle(item?.title) !== clean);
+        if (next.length !== data.items.length) {
+            writeJson(abs, { ...data, items: next, savedAt: Date.now() });
+        }
+    }
 }
 
 function readValidatedStore() {
@@ -178,7 +217,7 @@ function validatedEntriesFor(name) {
     return list.filter(
         (entry) =>
             entry &&
-            isModerationTitle(entry.title) &&
+            isModerationTitle(normalizeFileTitle(entry.title)) &&
             typeof entry.local === "string" &&
             entry.local.includes("/")
     );
@@ -205,8 +244,9 @@ function deleteLocalFile(localRel) {
 }
 
 function toValidatedPublic(entry) {
+    const title = normalizeFileTitle(entry.title);
     return {
-        title: entry.title,
+        title,
         url: mediaPublicUrl(entry.local),
         validated: true,
         sourceUrl: isHttps(entry.sourceUrl) ? entry.sourceUrl : "",
@@ -232,10 +272,18 @@ function filterItems(items, blacklist) {
     const seen = new Set();
     const out = [];
     for (const item of items || []) {
-        if (!item || !isPhotoTitle(item.title) || !isHttps(item.url)) continue;
-        if (blocked.has(item.title) || seen.has(item.title)) continue;
-        seen.add(item.title);
-        out.push({ title: item.title, url: item.url });
+        const title = normalizeFileTitle(item?.title);
+        if (!item || !isPhotoTitle(title) || !isHttps(item.url)) continue;
+        if (blocked.has(title) || seen.has(title)) continue;
+        seen.add(title);
+        out.push({
+            title,
+            url: item.url,
+            artist: item.artist || "",
+            license: item.license || "",
+            licenseUrl: item.licenseUrl || "",
+            commonsPage: item.commonsPage || "",
+        });
     }
     return out.slice(0, CANDIDATE_CAP);
 }
@@ -244,9 +292,17 @@ function mergeItems(previous, incoming) {
     const seen = new Set();
     const out = [];
     for (const item of [...(incoming || []), ...(previous || [])]) {
-        if (!item || !isPhotoTitle(item.title) || !isHttps(item.url) || seen.has(item.title)) continue;
-        seen.add(item.title);
-        out.push({ title: item.title, url: item.url });
+        const title = normalizeFileTitle(item?.title);
+        if (!item || !isPhotoTitle(title) || !isHttps(item.url) || seen.has(title)) continue;
+        seen.add(title);
+        out.push({
+            title,
+            url: item.url,
+            artist: item.artist || "",
+            license: item.license || "",
+            licenseUrl: item.licenseUrl || "",
+            commonsPage: item.commonsPage || "",
+        });
         if (out.length >= CANDIDATE_CAP) break;
     }
     return out;
@@ -435,15 +491,26 @@ async function getPool(scientificName, options = {}) {
     }
 
     const blocked = blacklistTitleSet();
-    const validatedTitles = new Set(validated.map((item) => item.title));
+    const validatedTitles = new Set(validated.map((item) => normalizeFileTitle(item.title)));
     const candidates = await getCandidatePool(name);
     const fillers = shuffle(
-        candidates.filter((item) => !validatedTitles.has(item.title) && !blocked.has(item.title))
+        candidates.filter((item) => {
+            const title = normalizeFileTitle(item.title);
+            return title && !validatedTitles.has(title) && !blocked.has(title);
+        })
     ).slice(0, SERVE_CAP - validated.length);
 
     return [
         ...shuffle(validated),
-        ...fillers.map((item) => ({ title: item.title, url: item.url, validated: false }))
+        ...fillers.map((item) => ({
+            title: normalizeFileTitle(item.title),
+            url: item.url,
+            validated: false,
+            artist: item.artist || "",
+            license: item.license || "",
+            licenseUrl: item.licenseUrl || "",
+            commonsPage: item.commonsPage || "",
+        })),
     ];
 }
 
@@ -470,18 +537,18 @@ async function downloadLocalImage(name, title, sourceUrl) {
 }
 
 function removeFromBlacklist(title) {
-    const clean = String(title || "").trim();
-    const next = readBlacklistEntries().filter((entry) => entry.title !== clean);
+    const clean = normalizeFileTitle(title);
+    const next = readBlacklistEntries().filter((entry) => normalizeFileTitle(entry.title) !== clean);
     writeBlacklistEntries(next);
 }
 
 function removeValidatedByTitle(title) {
-    const clean = String(title || "").trim();
+    const clean = normalizeFileTitle(title);
     const store = readValidatedStore();
     let removed = null;
     for (const [name, list] of Object.entries(store)) {
         if (!Array.isArray(list)) continue;
-        const idx = list.findIndex((entry) => entry && entry.title === clean);
+        const idx = list.findIndex((entry) => entry && normalizeFileTitle(entry.title) === clean);
         if (idx < 0) continue;
         removed = { name, entry: list[idx] };
         list.splice(idx, 1);
@@ -515,7 +582,7 @@ async function fetchCreditForTitle(title) {
 
 async function validatePhoto({ name, title, url }) {
     const species = normalizeName(name);
-    const cleanTitle = String(title || "").trim();
+    const cleanTitle = normalizeFileTitle(title);
     const sourceUrl = String(url || "").trim();
     if (!species || species.length > 120) return { ok: false, error: "name" };
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
@@ -523,6 +590,7 @@ async function validatePhoto({ name, title, url }) {
 
     removeFromBlacklist(cleanTitle);
     removeValidatedByTitle(cleanTitle);
+    removeTitleFromPool(species, cleanTitle);
 
     let local;
     try {
@@ -560,15 +628,18 @@ async function validatePhoto({ name, title, url }) {
 }
 
 function blacklistPhoto({ name, title, url }) {
-    const cleanTitle = String(title || "").trim();
+    const cleanTitle = normalizeFileTitle(title);
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
     removeValidatedByTitle(cleanTitle);
+    purgeTitleFromAllPools(cleanTitle);
+    const species = normalizeName(name || "");
+    if (species) removeTitleFromPool(species, cleanTitle);
     const list = readBlacklistEntries();
-    if (!list.some((entry) => entry.title === cleanTitle)) {
+    if (!list.some((entry) => normalizeFileTitle(entry.title) === cleanTitle)) {
         list.push({
             title: cleanTitle,
             url: isHttps(url) ? String(url).trim() : "",
-            name: normalizeName(name || ""),
+            name: species,
             savedAt: Date.now()
         });
         writeBlacklistEntries(list);
@@ -621,15 +692,24 @@ async function listCandidates(scientificName) {
     if (!name || name.length > 120) return { name: "", validated: [], candidates: [] };
     const validated = validatedEntriesFor(name).map((entry) => ({
         ...toValidatedPublic(entry),
+        title: normalizeFileTitle(entry.title),
         name,
         savedAt: Number(entry.savedAt) || 0
     }));
-    const validatedTitles = new Set(validated.map((item) => item.title));
+    const validatedTitles = new Set(validated.map((item) => normalizeFileTitle(item.title)));
     const blocked = blacklistTitleSet();
     const pool = await getCandidatePool(name);
     const candidates = pool
-        .filter((item) => !validatedTitles.has(item.title) && !blocked.has(item.title))
-        .map((item) => ({ title: item.title, url: item.url, validated: false, name }));
+        .filter((item) => {
+            const title = normalizeFileTitle(item.title);
+            return title && !validatedTitles.has(title) && !blocked.has(title);
+        })
+        .map((item) => ({
+            title: normalizeFileTitle(item.title),
+            url: item.url,
+            validated: false,
+            name,
+        }));
     return { name, validated, candidates };
 }
 
@@ -694,13 +774,13 @@ function allowReport(ip, title) {
 }
 
 function addReport({ name, title, url, categoryId, ip }) {
-    const cleanTitle = String(title || "").trim();
+    const cleanTitle = normalizeFileTitle(title);
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) {
         return { ok: false, error: "title" };
     }
     if (!allowReport(ip, cleanTitle)) return { ok: false, error: "rate" };
     const items = readReports();
-    if (items.some((item) => item.title === cleanTitle)) {
+    if (items.some((item) => normalizeFileTitle(item.title) === cleanTitle)) {
         return { ok: true, duplicate: true };
     }
     items.unshift({
@@ -719,9 +799,9 @@ function listReports() {
 }
 
 function dismissReport(title) {
-    const clean = String(title || "").trim();
+    const clean = normalizeFileTitle(title);
     if (!clean) return { ok: false, error: "title" };
-    const next = readReports().filter((item) => item.title !== clean);
+    const next = readReports().filter((item) => normalizeFileTitle(item.title) !== clean);
     writeReports(next);
     return { ok: true };
 }

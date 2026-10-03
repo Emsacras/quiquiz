@@ -143,9 +143,34 @@ export function metaForUrl(url) {
   };
 }
 
+function normalizeFileTitle(title) {
+  let value = String(title || "").trim().replace(/_/g, " ");
+  if (!value) return "";
+  if (/^file:/i.test(value)) value = `File:${value.slice(5).trim()}`;
+  return value.replace(/\s+/g, " ");
+}
+
 export function markTitleRejected(title) {
-  const clean = String(title || "").trim();
+  const clean = normalizeFileTitle(title);
   if (clean) rejectedTitles.add(clean);
+  // Invalide le cache mémoire pour ne plus resservir l’image blacklistée.
+  for (const [key, pool] of memoryPools) {
+    const filtered = applyRejections(pool);
+    if (filtered.urls?.length) memoryPools.set(key, filtered);
+    else memoryPools.delete(key);
+  }
+}
+
+export function invalidateSpeciesImages(scientificName) {
+  const name = String(scientificName || "").trim();
+  if (!name) {
+    memoryPools.clear();
+    return;
+  }
+  memoryPools.delete(poolKey(name));
+  // variantes de clé safe/map
+  memoryPools.delete(`safe:${name}`);
+  memoryPools.delete(`map:${name}`);
 }
 
 export function creditLabel(meta, kind = "photo") {
@@ -172,9 +197,19 @@ function isPoolImageUrl(url) {
 
 function applyRejections(result) {
   const items = (result.items || [])
-    .filter((item) => item?.url && isPoolImageUrl(item.url) && !rejectedTitles.has(item.title))
     .map((item) => ({
-      title: item.title || titleForUrl(item.url),
+      ...item,
+      title: normalizeFileTitle(item.title || titleForUrl(item.url)),
+    }))
+    .filter(
+      (item) =>
+        item?.url &&
+        isPoolImageUrl(item.url) &&
+        item.title &&
+        !rejectedTitles.has(item.title),
+    )
+    .map((item) => ({
+      title: item.title,
       url: item.url,
       validated: Boolean(item.validated),
       sourceUrl: item.sourceUrl || "",
@@ -185,12 +220,16 @@ function applyRejections(result) {
     }));
   const urls = (result.urls || []).filter((url) => {
     if (!isPoolImageUrl(url)) return false;
-    const title = titleForUrl(url);
-    return !title || !rejectedTitles.has(title);
+    const title = normalizeFileTitle(titleForUrl(url));
+    // Sans titre résolvable, on ne ressert pas (évite de contourner la blacklist).
+    if (!title) return false;
+    return !rejectedTitles.has(title);
   });
   const known = new Set(items.map((item) => item.url));
   for (const url of urls) {
-    if (!known.has(url)) items.push({ title: titleForUrl(url), url, validated: false });
+    if (!known.has(url)) {
+      items.push({ title: normalizeFileTitle(titleForUrl(url)), url, validated: false });
+    }
   }
   rememberItems(items);
   return { urls: items.map((item) => item.url), items, source: result.source || "commons" };
@@ -198,22 +237,26 @@ function applyRejections(result) {
 
 let blockedTitlesLoaded = false;
 let blockedTitlesPromise = null;
+let blockedTitlesAt = 0;
 
-async function ensureBlockedTitles() {
-  if (blockedTitlesLoaded || !servedFromQuizApi()) return;
+async function ensureBlockedTitles(force = false) {
+  if (!servedFromQuizApi()) return;
+  if (!force && blockedTitlesLoaded && Date.now() - blockedTitlesAt < 30_000) return;
   if (blockedTitlesPromise) return blockedTitlesPromise;
   blockedTitlesPromise = (async () => {
     try {
-      const response = await fetch("/api/blocked-titles");
+      const response = await fetch("/api/blocked-titles", { cache: "no-store" });
       if (!response.ok) return;
       const data = await response.json();
       for (const title of data.titles || []) {
-        if (typeof title === "string" && title.startsWith("File:")) rejectedTitles.add(title);
+        const clean = normalizeFileTitle(title);
+        if (clean.startsWith("File:")) rejectedTitles.add(clean);
       }
+      blockedTitlesAt = Date.now();
+      blockedTitlesLoaded = true;
     } catch {
       /* blacklist serveur facultative */
     } finally {
-      blockedTitlesLoaded = true;
       blockedTitlesPromise = null;
     }
   })();
@@ -859,7 +902,15 @@ function enqueueSpecies(scientificName) {
   const maps = outlineMaps;
   if (!name) return Promise.resolve({ urls: [], source: "none" });
   const remembered = memoryPools.get(key);
-  if (remembered?.urls?.length) return Promise.resolve(remembered);
+  if (remembered?.urls?.length) {
+    // Toujours refiltrer : une blacklist/validation peut être intervenue depuis.
+    const filtered = applyRejections(remembered);
+    if (filtered.urls?.length) {
+      memoryPools.set(key, filtered);
+      return Promise.resolve(filtered);
+    }
+    memoryPools.delete(key);
+  }
 
   if (!safe && !maps && !servedFromQuizApi()) {
     const cached = readCache(name);

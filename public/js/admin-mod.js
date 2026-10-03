@@ -1,4 +1,4 @@
-import { markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
+import { invalidateSpeciesImages, markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
 
 let adminReady = false;
 let isAdminUser = false;
@@ -108,6 +108,7 @@ export function attachPhotoMod(host, options = {}) {
         setBusy(false);
         return;
       }
+      invalidateSpeciesImages(name);
       attachPhotoMod(host, {
         name,
         url: data.item?.url || url,
@@ -141,6 +142,7 @@ export function attachPhotoMod(host, options = {}) {
       return;
     }
     markTitleRejected(meta.title);
+    invalidateSpeciesImages(name);
     bar.remove();
     onDone?.({ action: "blacklist", name, title: meta.title, host });
   });
