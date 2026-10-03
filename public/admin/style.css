@@ -351,3 +351,81 @@ h2 {
   margin: 18px 0 8px;
   font-size: 1rem;
 }
+
+.list-section {
+  margin-top: 8px;
+}
+
+.list-section + .list-section {
+  margin-top: 28px;
+}
+
+.folder {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #161a15;
+  overflow: hidden;
+}
+
+.folder-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.folder-summary::-webkit-details-marker {
+  display: none;
+}
+
+.folder-summary::marker {
+  content: "";
+}
+
+.folder-summary::before {
+  content: "▸";
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+
+.folder[open] > .folder-summary::before {
+  transform: rotate(90deg);
+}
+
+.folder-summary:hover {
+  background: rgba(215, 196, 163, 0.06);
+}
+
+.folder-labels {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.folder-kicker {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.folder-label {
+  font-weight: 600;
+}
+
+.folder-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.folder-body {
+  margin-top: 0;
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--line);
+}

@@ -25,6 +25,8 @@ const state = {
   category: null,
   species: null,
   validatedByName: new Map(),
+  categoryByFile: new Map(),
+  nameToCategoryIds: null,
   scrollGroupId: "",
 };
 
@@ -134,7 +136,16 @@ function flattenCatalogEntries(catalog) {
   return out;
 }
 
+function normalizeSpeciesKey(name) {
+  return String(name || "")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
 async function loadCategory(file) {
+  const key = String(file || "");
+  if (state.categoryByFile.has(key)) return state.categoryByFile.get(key);
+
   const response = await fetch(quizUrl(file));
   if (!response.ok) throw new Error(file);
   const category = await response.json();
@@ -171,8 +182,100 @@ async function loadCategory(file) {
     }
     category.questions = questions;
   }
-  if (!category.questions?.length) return null;
-  return category;
+  const result = category.questions?.length ? category : null;
+  state.categoryByFile.set(key, result);
+  return result;
+}
+
+async function ensureSpeciesCategoryIndex() {
+  if (state.nameToCategoryIds) return state.nameToCategoryIds;
+  const map = new Map();
+  await Promise.all(
+    state.quizEntries.map(async (entry) => {
+      try {
+        const category = await loadCategory(entry.fichier);
+        if (!category) return;
+        for (const question of category.questions || []) {
+          const name = normalizeSpeciesKey(question.nom_scientifique);
+          if (!name) continue;
+          const list = map.get(name) || [];
+          if (!list.includes(entry.id)) list.push(entry.id);
+          map.set(name, list);
+        }
+      } catch (error) {
+        console.warn(error);
+      }
+    })
+  );
+  state.nameToCategoryIds = map;
+  return map;
+}
+
+function groupItemsByCategory(items) {
+  const index = state.nameToCategoryIds || new Map();
+  const buckets = new Map();
+  for (const entry of state.quizEntries) {
+    buckets.set(entry.id, {
+      id: entry.id,
+      label: entry.nom,
+      kicker: entry.kicker || "",
+      items: [],
+    });
+  }
+  const other = {
+    id: "__other__",
+    label: "Sans catégorie",
+    kicker: "",
+    items: [],
+  };
+
+  const sortedItems = [...items].sort(
+    (a, b) =>
+      normalizeSpeciesKey(a.name).localeCompare(normalizeSpeciesKey(b.name), "fr") ||
+      String(a.title || "").localeCompare(String(b.title || ""), "fr")
+  );
+
+  for (const item of sortedItems) {
+    const name = normalizeSpeciesKey(item.name);
+    const catIds = index.get(name) || [];
+    const catId = catIds.find((id) => buckets.has(id));
+    if (catId) buckets.get(catId).items.push(item);
+    else other.items.push(item);
+  }
+
+  const groups = state.quizEntries
+    .map((entry) => buckets.get(entry.id))
+    .filter((group) => group?.items?.length);
+  if (other.items.length) groups.push(other);
+  return groups;
+}
+
+function renderCategoryFolders(title, items, renderRow) {
+  const section = el("section", "list-section");
+  section.appendChild(el("h2", "list-title", `${title} (${items.length})`));
+  if (!items.length) {
+    section.appendChild(
+      el("p", "empty", title === "Validées" ? "Aucune photo validée." : "Aucune photo blacklistée.")
+    );
+    return section;
+  }
+
+  const groups = groupItemsByCategory(items);
+  for (const group of groups) {
+    const details = el("details", "folder");
+    const summary = el("summary", "folder-summary");
+    const labels = el("span", "folder-labels");
+    if (group.kicker) labels.appendChild(el("span", "folder-kicker", group.kicker));
+    labels.appendChild(el("span", "folder-label", group.label));
+    summary.appendChild(labels);
+    summary.appendChild(el("span", "folder-count", String(group.items.length)));
+    details.appendChild(summary);
+    const queue = el("div", "queue folder-body");
+    for (const item of group.items) queue.appendChild(renderRow(item));
+    details.appendChild(queue);
+    section.appendChild(details);
+  }
+  return section;
 }
 
 async function refreshValidatedIndex() {
@@ -618,6 +721,7 @@ async function renderLists() {
     const [val, bl] = await Promise.all([
       api("/api/admin/photos/validated"),
       api("/api/admin/photos/blacklist"),
+      ensureSpeciesCategoryIndex(),
     ]);
     if (!val.res.ok || !bl.res.ok) {
       panel.replaceChildren(
@@ -628,13 +732,16 @@ async function renderLists() {
     const validated = Array.isArray(val.data.items) ? val.data.items : [];
     const blocked = Array.isArray(bl.data.items) ? bl.data.items : [];
     panel.replaceChildren();
+    panel.appendChild(
+      el(
+        "p",
+        "hint",
+        "Photos regroupées par quiz. Clique un dossier pour le déplier ou le replier."
+      )
+    );
 
-    panel.appendChild(el("h2", "list-title", `Validées (${validated.length})`));
-    const valQueue = el("div", "queue");
-    if (!validated.length) {
-      valQueue.appendChild(el("p", "empty", "Aucune photo validée."));
-    } else {
-      validated.forEach((item) => {
+    panel.appendChild(
+      renderCategoryFolders("Validées", validated, (item) => {
         const blacklistBtn = el("button", "btn danger", "Blacklist");
         blacklistBtn.type = "button";
         blacklistBtn.addEventListener("click", async () => {
@@ -646,17 +753,12 @@ async function renderLists() {
           if (r.res.ok) void renderLists();
           else window.alert(r.data.error || `Erreur ${r.res.status}`);
         });
-        valQueue.appendChild(listPhotoRow(item, [blacklistBtn]));
-      });
-    }
-    panel.appendChild(valQueue);
+        return listPhotoRow(item, [blacklistBtn]);
+      })
+    );
 
-    panel.appendChild(el("h2", "list-title", `Blacklist (${blocked.length})`));
-    const blQueue = el("div", "queue");
-    if (!blocked.length) {
-      blQueue.appendChild(el("p", "empty", "Aucune photo blacklistée."));
-    } else {
-      blocked.forEach((item) => {
+    panel.appendChild(
+      renderCategoryFolders("Blacklist", blocked, (item) => {
         const restoreBtn = el("button", "btn primary", "Valider");
         restoreBtn.type = "button";
         restoreBtn.disabled = !(item.name && item.url);
@@ -676,10 +778,9 @@ async function renderLists() {
           if (r.res.ok) void renderLists();
           else window.alert(r.data.error || `Erreur ${r.res.status}`);
         });
-        blQueue.appendChild(listPhotoRow(item, [restoreBtn, dropBtn]));
-      });
-    }
-    panel.appendChild(blQueue);
+        return listPhotoRow(item, [restoreBtn, dropBtn]);
+      })
+    );
   } catch (error) {
     console.warn(error);
     panel.replaceChildren(el("p", "empty", "Impossible de charger les listes."));
