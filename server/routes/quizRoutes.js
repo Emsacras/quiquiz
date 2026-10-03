@@ -11,13 +11,31 @@ const {
     listValidated,
     listBlacklist,
     removeFromBlacklist,
-    resolveMediaFile
+    resolveMediaFile,
+    addReport,
+    listReports,
+    dismissReport
 } = require("../services/quizPoolService");
 const { requireAdminSteam } = require("../middleware/requireAdminSteam");
 
 function createQuizRoutes() {
     const router = express.Router();
     router.use(express.json({ limit: "8kb" }));
+
+    router.post("/reports", (req, res) => {
+        const result = addReport({
+            name: req.body?.name,
+            title: req.body?.title,
+            url: req.body?.url,
+            categoryId: req.body?.categoryId,
+            ip: req.ip || req.headers["x-forwarded-for"] || ""
+        });
+        if (!result.ok) {
+            res.status(result.error === "rate" ? 429 : 400).json({ error: result.error || "report" });
+            return;
+        }
+        res.json({ ok: true, duplicate: Boolean(result.duplicate) });
+    });
 
     router.get("/pool", async (req, res) => {
         const name = String(req.query.name || "").trim().replace(/\s+/g, " ");
@@ -129,6 +147,20 @@ function createQuizAdminRoutes() {
             return;
         }
         removeFromBlacklist(title);
+        res.json({ ok: true });
+    });
+
+    router.get("/reports", (req, res) => {
+        res.set("Cache-Control", "no-store");
+        res.json({ items: listReports() });
+    });
+
+    router.post("/reports/dismiss", (req, res) => {
+        const result = dismissReport(req.body?.title);
+        if (!result.ok) {
+            res.status(400).json({ error: result.error || "dismiss" });
+            return;
+        }
         res.json({ ok: true });
     });
 

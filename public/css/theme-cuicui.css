@@ -395,6 +395,110 @@ html.is-admin .admin-mod {
   color: #fff;
 }
 
+.report-mod {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+}
+
+.report-btn {
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+}
+
+.credit-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.daily-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.badges-strip {
+  margin: 0 0 14px;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  padding: 4px 10px;
+  border: 2px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--muted);
+  opacity: 0.55;
+}
+
+.badge-pill.is-on {
+  opacity: 1;
+  color: var(--ink);
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--tassel) 35%, var(--surface));
+}
+
+.badge-toasts {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 50;
+  display: grid;
+  gap: 8px;
+  width: min(320px, calc(100vw - 24px));
+  pointer-events: none;
+}
+
+.badge-toast {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-hard);
+  animation: onboard-in 0.28s ease;
+}
+
+.badge-toast-mascot {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.badge-toast p {
+  margin: 2px 0 0;
+}
+
+.revise-answer {
+  margin: 12px 0;
+}
+
+.link-board:not(.is-revealed) .link-lines {
+  display: none;
+}
+
 .theme-cuicui .options {
   gap: 12px;
 }
@@ -568,6 +672,17 @@ html.is-admin .admin-mod {
 .theme-cuicui .site-footer {
   border-top: 3px dashed color-mix(in srgb, var(--ink) 25%, transparent);
   padding-top: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.theme-cuicui a.btn.fiche-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 8px;
 }
 
 /* —— Onboarding —— */

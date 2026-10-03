@@ -551,6 +551,66 @@ function listPhotoRow(item, buttons) {
   return row;
 }
 
+async function renderReports() {
+  setNav([{ label: "Signalements joueurs" }]);
+  panel.replaceChildren(el("p", "status", "Chargement des signalements…"));
+  try {
+    const { res, data } = await api("/api/admin/photos/reports");
+    if (!res.ok) {
+      panel.replaceChildren(el("p", "empty", `Erreur signalements (${res.status})`));
+      return;
+    }
+    const items = Array.isArray(data.items) ? data.items : [];
+    panel.replaceChildren();
+    panel.appendChild(
+      el(
+        "p",
+        "hint",
+        "Photos signalées par les joueurs. Blacklist pour tous, ou Ignorer pour retirer de la file."
+      )
+    );
+    panel.appendChild(el("h2", "list-title", `File (${items.length})`));
+    const queue = el("div", "queue");
+    if (!items.length) {
+      queue.appendChild(el("p", "empty", "Aucun signalement en attente."));
+    } else {
+      for (const item of items) {
+        const blacklistBtn = el("button", "btn danger", "Blacklist");
+        blacklistBtn.type = "button";
+        blacklistBtn.addEventListener("click", async () => {
+          const r = await post("blacklist", {
+            name: item.name,
+            title: item.title,
+            url: item.url || "",
+          });
+          if (r.res.ok) {
+            await api("/api/admin/photos/reports/dismiss", {
+              method: "POST",
+              body: JSON.stringify({ title: item.title }),
+            });
+            void renderReports();
+          } else window.alert(r.data.error || `Erreur ${r.res.status}`);
+        });
+        const dismissBtn = el("button", "btn", "Ignorer");
+        dismissBtn.type = "button";
+        dismissBtn.addEventListener("click", async () => {
+          const r = await api("/api/admin/photos/reports/dismiss", {
+            method: "POST",
+            body: JSON.stringify({ title: item.title }),
+          });
+          if (r.res.ok) void renderReports();
+          else window.alert(r.data.error || `Erreur ${r.res.status}`);
+        });
+        queue.appendChild(listPhotoRow(item, [blacklistBtn, dismissBtn]));
+      }
+    }
+    panel.appendChild(queue);
+  } catch (error) {
+    console.warn(error);
+    panel.replaceChildren(el("p", "empty", "Impossible de charger les signalements."));
+  }
+}
+
 async function renderLists() {
   setNav([{ label: "Listes globales" }]);
   panel.replaceChildren(el("p", "status", "Chargement des listes…"));
@@ -633,6 +693,10 @@ function setTab(which) {
   });
   if (which === "lists") {
     void renderLists();
+    return;
+  }
+  if (which === "reports") {
+    void renderReports();
     return;
   }
   if (state.view === "species" && state.species) void renderSpecies();

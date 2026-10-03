@@ -34,6 +34,10 @@ function validatedFile() {
     return path.join(runtimeDir(), "quiz-validated.json");
 }
 
+function reportsFile() {
+    return path.join(runtimeDir(), "quiz-reports.json");
+}
+
 function imagesRoot() {
     return path.join(runtimeDir(), "quiz-images");
 }
@@ -205,7 +209,11 @@ function toValidatedPublic(entry) {
         title: entry.title,
         url: mediaPublicUrl(entry.local),
         validated: true,
-        sourceUrl: isHttps(entry.sourceUrl) ? entry.sourceUrl : ""
+        sourceUrl: isHttps(entry.sourceUrl) ? entry.sourceUrl : "",
+        artist: entry.artist || "",
+        license: entry.license || "",
+        licenseUrl: entry.licenseUrl || "",
+        commonsPage: entry.commonsPage || ""
     };
 }
 
@@ -296,7 +304,8 @@ async function resolveItems(fileTitles) {
                 action: "query",
                 titles: batch.join("|"),
                 prop: "imageinfo",
-                iiprop: "url|mime|size"
+                iiprop: "url|mime|size|extmetadata",
+                iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl"
             });
         } catch {
             continue;
@@ -308,7 +317,8 @@ async function resolveItems(fileTitles) {
             if (info.mime && !/^image\/(jpeg|png)$/i.test(info.mime)) continue;
             const chosen = isHttps(info.url) ? info.url : info.thumburl;
             if (!isHttps(chosen)) continue;
-            items.push({ title, url: chosen });
+            const credit = creditFromExtmetadata(info.extmetadata, title);
+            items.push({ title, url: chosen, ...credit });
         }
     }
     return items;
@@ -486,6 +496,23 @@ function removeValidatedByTitle(title) {
     return removed;
 }
 
+async function fetchCreditForTitle(title) {
+    try {
+        const data = await commonsJson({
+            action: "query",
+            titles: title,
+            prop: "imageinfo",
+            iiprop: "extmetadata",
+            iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl"
+        });
+        const page = Object.values(data?.query?.pages || {})[0];
+        const info = page?.imageinfo?.[0];
+        return creditFromExtmetadata(info?.extmetadata, title);
+    } catch {
+        return creditFromExtmetadata(null, title);
+    }
+}
+
 async function validatePhoto({ name, title, url }) {
     const species = normalizeName(name);
     const cleanTitle = String(title || "").trim();
@@ -505,13 +532,15 @@ async function validatePhoto({ name, title, url }) {
         return { ok: false, error: "download" };
     }
 
+    const credit = await fetchCreditForTitle(cleanTitle);
     const store = readValidatedStore();
     const list = Array.isArray(store[species]) ? store[species] : [];
     list.push({
         title: cleanTitle,
         sourceUrl,
         local,
-        savedAt: Date.now()
+        savedAt: Date.now(),
+        ...credit
     });
     store[species] = list;
     writeValidatedStore(store);
@@ -524,7 +553,8 @@ async function validatePhoto({ name, title, url }) {
             url: mediaPublicUrl(local),
             sourceUrl,
             validated: true,
-            savedAt: Date.now()
+            savedAt: Date.now(),
+            ...credit
         }
     };
 }
@@ -615,6 +645,87 @@ function resolveMediaFile(speciesDir, filename) {
     return abs;
 }
 
+function stripHtml(value) {
+    return String(value || "")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function creditFromExtmetadata(extmetadata, title) {
+    const meta = extmetadata || {};
+    const license = stripHtml(meta.LicenseShortName?.value || "");
+    const artist = stripHtml(meta.Artist?.value || meta.Credit?.value || "");
+    const licenseUrl = String(meta.LicenseUrl?.value || "").trim();
+    const commonsPage = title
+        ? `https://commons.wikimedia.org/wiki/${encodeURIComponent(String(title).replace(/\s+/g, "_"))}`
+        : "";
+    return {
+        artist: artist.slice(0, 200),
+        license: license.slice(0, 80),
+        licenseUrl: isHttps(licenseUrl) ? licenseUrl : "",
+        commonsPage
+    };
+}
+
+function readReports() {
+    const data = readJson(reportsFile(), { items: [] });
+    return Array.isArray(data.items) ? data.items : [];
+}
+
+function writeReports(items) {
+    writeJson(reportsFile(), { items, savedAt: Date.now() });
+}
+
+const reportHits = new Map();
+
+function allowReport(ip, title) {
+    const key = `${ip || "anon"}|${title}`;
+    const now = Date.now();
+    const prev = reportHits.get(key) || 0;
+    if (now - prev < 15_000) return false;
+    reportHits.set(key, now);
+    if (reportHits.size > 2000) {
+        for (const [k, t] of reportHits) {
+            if (now - t > 60_000) reportHits.delete(k);
+        }
+    }
+    return true;
+}
+
+function addReport({ name, title, url, categoryId, ip }) {
+    const cleanTitle = String(title || "").trim();
+    if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) {
+        return { ok: false, error: "title" };
+    }
+    if (!allowReport(ip, cleanTitle)) return { ok: false, error: "rate" };
+    const items = readReports();
+    if (items.some((item) => item.title === cleanTitle)) {
+        return { ok: true, duplicate: true };
+    }
+    items.unshift({
+        name: normalizeName(name || ""),
+        title: cleanTitle,
+        url: isHttps(url) || String(url || "").startsWith("/api/media/") ? String(url).trim() : "",
+        categoryId: String(categoryId || "").slice(0, 80),
+        savedAt: Date.now()
+    });
+    writeReports(items.slice(0, 500));
+    return { ok: true };
+}
+
+function listReports() {
+    return readReports().sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
+}
+
+function dismissReport(title) {
+    const clean = String(title || "").trim();
+    if (!clean) return { ok: false, error: "title" };
+    const next = readReports().filter((item) => item.title !== clean);
+    writeReports(next);
+    return { ok: true };
+}
+
 module.exports = {
     SERVE_CAP,
     getPool,
@@ -626,6 +737,9 @@ module.exports = {
     listValidated,
     listBlacklist,
     removeFromBlacklist,
-    resolveMediaFile
+    resolveMediaFile,
+    addReport,
+    listReports,
+    dismissReport
 };
 

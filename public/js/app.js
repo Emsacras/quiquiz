@@ -1,4 +1,6 @@
 import {
+  creditHref,
+  creditLabel,
   getSexImages,
   getSpeciesAudio,
   getSpeciesImages,
@@ -13,6 +15,18 @@ import {
 import { getBest, recordScore } from "./scores.js";
 import { startOnboarding } from "./onboarding.js";
 import { loadAdminSession, syncPhotoModFromImg } from "./admin-mod.js";
+import { attachReportControl, hydrateReportedTitles } from "./report.js";
+import { dueCards, dueCount, markCardAgain, markCardOk, upsertMissedCards } from "./learning.js";
+import {
+  dailySeed,
+  getDailyResult,
+  getStreak,
+  listBadges,
+  onQuizFinished,
+  saveDailyResult,
+  seededShuffle,
+} from "./progress.js";
+import { onHashChange, parseHash, setHashRoute } from "./router.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
@@ -53,6 +67,133 @@ function feedbackHead(correct) {
     mascotImg(correct ? MASCOT.victory : MASCOT.fail, "feedback-mascot", "56"),
     h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
   );
+}
+
+function updateShownCredit(url) {
+  const credit = document.querySelector("[data-credit]");
+  if (!credit || !url) return;
+  const meta = metaForUrl(url);
+  const label = creditLabel(meta, quizCopy().media === "carte" ? "carte" : "photo");
+  const href = creditHref(meta);
+  credit.replaceChildren();
+  if (href) {
+    credit.append(
+      h("a", {
+        class: "credit-link",
+        href,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        text: label,
+      }),
+    );
+  } else {
+    credit.textContent = label;
+  }
+}
+
+function attachPlayerMediaTools(frame, img, scientificName, onSkip) {
+  if (!frame || !img || !scientificName) return;
+  const url = img.currentSrc || img.src;
+  syncPhotoModFromImg(frame, img, scientificName, ({ action }) => {
+    if (action === "blacklist") onSkip?.();
+  });
+  attachReportControl(frame, {
+    name: scientificName,
+    url,
+    title: img.dataset.photoTitle || metaForUrl(url).title,
+    categoryId: state.category?.id || "",
+    onReported: () => onSkip?.(),
+  });
+  updateShownCredit(url);
+}
+
+function showBadgeToasts(badges) {
+  if (!badges?.length) return;
+  const host = document.getElementById("badge-toasts") || (() => {
+    const node = h("div", { id: "badge-toasts", class: "badge-toasts", "aria-live": "polite" });
+    document.body.append(node);
+    return node;
+  })();
+  for (const badge of badges) {
+    const toast = h(
+      "div",
+      { class: "badge-toast" },
+      mascotImg(badge.pose || MASCOT.victory, "badge-toast-mascot", "48"),
+      h("div", null, h("strong", { text: "Badge débloqué" }), h("p", { text: badge.label })),
+    );
+    host.append(toast);
+    setTimeout(() => toast.remove(), 4200);
+  }
+}
+
+function badgesStrip() {
+  const badges = listBadges();
+  const streak = getStreak();
+  return h(
+    "section",
+    { class: "badges-strip" },
+    h("p", { class: "meta", text: streak ? `Série : ${streak} jour${streak > 1 ? "s" : ""}` : "Série : 0 jour" }),
+    h(
+      "div",
+      { class: "badge-list" },
+      badges.map((badge) =>
+        h("span", {
+          class: badge.unlocked ? "badge-pill is-on" : "badge-pill",
+          text: badge.label,
+          title: badge.unlocked ? "Débloqué" : "Verrouillé",
+        }),
+      ),
+    ),
+  );
+}
+
+function syncRouteFromScreen() {
+  if (!state.category) {
+    setHashRoute({ name: "home" });
+    return;
+  }
+  if (screen === "levels" || screen === "preparing" || screen === "quiz" || screen === "results") {
+    setHashRoute({ name: "levels", categoryId: state.category.id });
+    return;
+  }
+  if (screen === "reference") {
+    setHashRoute({ name: "reference", categoryId: state.category.id });
+    return;
+  }
+  if (screen === "fiche" && state.fiche) {
+    setHashRoute({
+      name: "fiche",
+      categoryId: state.category.id,
+      scientificName: state.fiche.nom_scientifique,
+    });
+    return;
+  }
+  if (screen === "revise") {
+    setHashRoute({ name: "revise", categoryId: state.category.id });
+  }
+}
+
+async function ensureCategoryById(categoryId) {
+  if (!categoryId) return null;
+  let category = state.categories.find((item) => item.id === categoryId);
+  if (category) return category;
+  const entries = [];
+  const walk = (nodes) => {
+    for (const node of nodes || []) {
+      if (node.fichier) entries.push(node);
+      if (node.branches) walk(node.branches);
+      if (node.lieux) walk(node.lieux);
+    }
+  };
+  walk(state.catalog?.themes || []);
+  for (const entry of entries) {
+    const loaded = await loadCategory(entry.fichier);
+    if (loaded?.id === categoryId) {
+      if (!state.categories.some((item) => item.id === loaded.id)) state.categories.push(loaded);
+      return loaded;
+    }
+  }
+  return null;
 }
 
 function optionButtons(options, onPick) {
@@ -184,7 +325,7 @@ function quizCopy(category = state.category) {
       ficheNoMedia: "Pas de carte pour ce pays.",
       groupWord: "continent",
       linkLede: "Clique une carte : elle s'affiche en grand, puis tu choisis son nom.",
-      footer: "Cartes chargées depuis Wikimedia Commons. Aucune image n'est stockée dans le projet.",
+      footer: "© 2026 Emsacras",
     };
   }
   if (kind === "champignons") {
@@ -248,7 +389,7 @@ function quizCopy(category = state.category) {
       ficheNoMedia: "Pas de photo pour cette espèce.",
       groupWord: "groupe",
       linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
-      footer: "Photos chargées depuis Wikimedia Commons, avec repli sur Wikipédia. Aucune image n'est stockée dans le projet.",
+      footer: "© 2026 Emsacras",
     };
   }
 
@@ -350,7 +491,7 @@ function quizCopy(category = state.category) {
     ficheNoMedia: "Pas de photo pour cette espèce.",
     groupWord: "groupe",
     linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
-    footer: "Photos chargées depuis Wikimedia Commons, avec repli sur Wikipédia. Aucune image n'est stockée dans le projet.",
+    footer: "© 2026 Emsacras",
   };
 }
 
@@ -367,10 +508,32 @@ function availableModes(category = state.category) {
   }));
 }
 
-function updateFooter(category = state.category) {
+const SITE_FOOTER = "© 2026 Emsacras";
+
+function updateFooter() {
   const node = document.querySelector(".site-footer p");
   if (!node) return;
-  node.textContent = category ? quizCopy(category).footer : quizCopy({ id: "oiseaux-francais" }).footer;
+  node.textContent = SITE_FOOTER;
+}
+
+function ficheHref(question) {
+  const categoryId = state.category?.id;
+  const scientificName = question?.nom_scientifique;
+  if (!categoryId || !scientificName) return "";
+  const hash = `#/fiche/${categoryId}/${encodeURIComponent(scientificName)}`;
+  return `${location.origin}${location.pathname}${location.search}${hash}`;
+}
+
+function ficheLinkButton(question, label = "Voir la fiche") {
+  const href = ficheHref(question);
+  if (!href) return null;
+  return h("a", {
+    class: "btn secondary fiche-link",
+    href,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    text: label,
+  });
 }
 
 const VOLUME_KEY = "birdquiz:volume";
@@ -525,6 +688,11 @@ const state = {
   catalog: null,
   nav: { themeId: "", branchId: "" },
   safeFish: loadSafeFish(),
+  isDaily: false,
+  reviseQueue: [],
+  reviseIndex: 0,
+  reviseRevealed: false,
+  pendingBadges: [],
 };
 
 let screen = "loading";
@@ -706,6 +874,7 @@ function setScreen(next) {
   const screenChanged = screen !== next;
   screen = next;
   mount();
+  syncRouteFromScreen();
   // Ne pas remonter en haut entre deux questions du même quiz.
   if (screenChanged) window.scrollTo(0, 0);
 }
@@ -768,6 +937,7 @@ function startQuiz(difficulty) {
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
   const source = questionsFor(state.category, difficulty).map(normalizeQuestion);
   if (!source.length || groupsBlocked) return;
+  state.isDaily = false;
   state.difficulty = difficulty;
   resetRound();
 
@@ -865,14 +1035,118 @@ function backToMenu() {
 }
 
 function finishQuiz() {
+  const total = scoreTotal();
   state.outcome = recordScore(
     state.category.id,
     state.difficulty,
     state.score,
-    scoreTotal(),
+    total,
     state.mode,
   );
+  upsertMissedCards(state.category.id, state.missed);
+  const unlocked = onQuizFinished({
+    mode: state.mode,
+    score: state.score,
+    total,
+    isDaily: state.isDaily,
+  });
+  if (state.isDaily) {
+    const dailyBadge = saveDailyResult(state.category.id, state.score, total);
+    if (dailyBadge) unlocked.push(dailyBadge);
+  }
+  state.pendingBadges = unlocked.filter(Boolean);
   setScreen("results");
+}
+
+function replayMissed() {
+  if (!state.category || !state.missed.length) return;
+  const names = [...new Set(state.missed.map((item) => item.nom_commun))];
+  const pool = state.category.questions || [];
+  const questions = names
+    .map((name) => pool.find((q) => fold(q.nom_commun) === fold(name)))
+    .filter(Boolean)
+    .map((question) => {
+      const distractors = shuffle(
+        pool.filter((q) => fold(q.nom_commun) !== fold(question.nom_commun)).map((q) => q.nom_commun),
+      ).slice(0, 3);
+      return normalizeQuestion({
+        ...question,
+        options: shuffle([question.nom_commun, ...distractors]).slice(0, 4),
+      });
+    });
+  if (!questions.length) {
+    state.notice = "Pas assez d’espèces pour rejouer les erreurs.";
+    setScreen("levels");
+    return;
+  }
+  state.isDaily = false;
+  state.mode = "qcm";
+  state.difficulty = "melange";
+  state.questions = shuffle(questions).map((question) => ({
+    ...question,
+    options: shuffle(question.options),
+  }));
+  state.index = 0;
+  state.score = 0;
+  state.missed = [];
+  state.revealed = false;
+  state.outcome = null;
+  setScreen("quiz");
+}
+
+function startDailyChallenge() {
+  const category = state.category;
+  if (!category) return;
+  const already = getDailyResult(category.id);
+  if (already) {
+    state.notice = `Défi du jour déjà joué : ${already.score}/${already.total}.`;
+    setScreen("levels");
+    return;
+  }
+  // Même série pour tous : pool complet du thème (pas les groupes cochés), ordre stable, seed date UTC + categoryId.
+  const source = [...(category.questions || [])]
+    .map(normalizeQuestion)
+    .sort((a, b) =>
+      String(a.nom_scientifique || a.nom_commun).localeCompare(
+        String(b.nom_scientifique || b.nom_commun),
+        "en",
+      ),
+    );
+  if (source.length < 4) {
+    state.notice = "Pas assez de questions pour le défi du jour.";
+    setScreen("levels");
+    return;
+  }
+  const seed = dailySeed(category.id);
+  const picked = seededShuffle(source, seed).slice(0, Math.min(10, source.length));
+  state.isDaily = true;
+  state.mode = "qcm";
+  state.difficulty = "melange";
+  state.questions = picked.map((question, index) => ({
+    ...question,
+    options: seededShuffle(question.options || [question.nom_commun], `${seed}:opt:${index}`),
+  }));
+  state.index = 0;
+  state.score = 0;
+  state.missed = [];
+  state.revealed = false;
+  state.outcome = null;
+  state.notice = "";
+  setScreen("quiz");
+}
+
+function startRevise() {
+  if (!state.category) return;
+  const queue = dueCards(state.category.id, 20);
+  if (!queue.length) {
+    state.notice = "Rien à réviser pour le moment.";
+    setScreen("levels");
+    return;
+  }
+  state.reviseQueue = queue;
+  state.reviseIndex = 0;
+  state.reviseRevealed = false;
+  setScreen("revise");
 }
 
 function goNext() {
@@ -1068,13 +1342,16 @@ function paintReveal(selected, correct) {
   const feedback = document.querySelector("[data-feedback]");
   feedback.className = correct ? "feedback is-correct" : "feedback is-wrong";
   feedback.replaceChildren(
-    feedbackHead(correct),
-    h("p", {
-      text: correct
-        ? question.explication
-        : `La bonne réponse est ${question.nom_commun}. ${question.explication}`,
-    }),
-    latinWithWiki(question.nom_commun, question.nom_scientifique),
+    ...[
+      feedbackHead(correct),
+      h("p", {
+        text: correct
+          ? question.explication
+          : `La bonne réponse est ${question.nom_commun}. ${question.explication}`,
+      }),
+      latinWithWiki(question.nom_commun, question.nom_scientifique),
+      !correct ? ficheLinkButton(question) : null,
+    ].filter((node) => node instanceof Node),
   );
 
   const photo = document.querySelector("[data-photo]");
@@ -1469,6 +1746,7 @@ function mountHome() {
   view.replaceChildren(
     ...[
     h("p", { class: "lede", text: "Avec Cui-Cui : choisis un thème, puis un lieu." }),
+    badgesStrip(),
     state.notice ? h("p", { class: "note", text: state.notice }) : null,
     h(
       "div",
@@ -1498,12 +1776,33 @@ function mountLevels() {
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
+  const daily = getDailyResult(category.id);
+  const reviseN = dueCount(category.id);
   show(
     view,
     h("p", {
       class: "lede",
       text: copy.levelsHelp,
     }),
+    badgesStrip(),
+    h(
+      "div",
+      { class: "daily-row" },
+      h("button", {
+        class: "btn",
+        type: "button",
+        text: daily ? `Défi du jour : ${daily.score}/${daily.total}` : "Défi du jour",
+        disabled: Boolean(daily),
+        onClick: () => startDailyChallenge(),
+      }),
+      h("button", {
+        class: "btn secondary",
+        type: "button",
+        text: reviseN ? `Réviser (${reviseN})` : "Réviser",
+        disabled: !reviseN,
+        onClick: () => startRevise(),
+      }),
+    ),
     h(
       "div",
       { class: "modes", role: "group", "aria-label": "Mode de jeu" },
@@ -2259,9 +2558,15 @@ function paintPairReveal(answer, correct) {
         wikipediaLink(question.right.nom_commun, question.right.nom_scientifique),
       );
   feedback.replaceChildren(
-    feedbackHead(correct),
-    h("p", { text: detail }),
-    latinLine,
+    ...[
+      feedbackHead(correct),
+      h("p", { text: detail }),
+      latinLine,
+      !correct
+        ? ficheLinkButton(question.same ? question.left : question.left, "Voir la fiche (gauche)")
+        : null,
+      !correct && !question.same ? ficheLinkButton(question.right, "Voir la fiche (droite)") : null,
+    ].filter((node) => node instanceof Node),
   );
 
   const frames = document.querySelectorAll(".pair [data-frame]");
@@ -2614,9 +2919,12 @@ function paintSexReveal(correct, correctCount) {
   const feedback = document.querySelector("[data-feedback]");
   feedback.className = correct ? "feedback is-correct" : "feedback is-wrong";
   feedback.replaceChildren(
-    feedbackHead(correct),
-    h("p", { text: question.explication }),
-    latinWithWiki(question.nom_commun, question.nom_scientifique),
+    ...[
+      feedbackHead(correct),
+      h("p", { text: question.explication }),
+      latinWithWiki(question.nom_commun, question.nom_scientifique),
+      !correct ? ficheLinkButton(question) : null,
+    ].filter((node) => node instanceof Node),
   );
   const score = document.querySelector("[data-score]");
   if (score) score.textContent = String(state.score);
@@ -2952,8 +3260,13 @@ function paintLink() {
   }
   const validate = document.querySelector("[data-validate]");
   if (validate) validate.disabled = question.members.some((member) => !member.chosen);
+  document.querySelector(".link-board")?.classList.toggle("is-revealed", Boolean(state.revealed));
   syncLinkPointer();
-  drawLinkLines();
+  if (state.revealed) drawLinkLines();
+  else {
+    const svg = document.querySelector(".link-board .link-lines");
+    if (svg) svg.replaceChildren();
+  }
 }
 
 function usableLinkPhoto(img) {
@@ -3335,7 +3648,7 @@ function mountLinkQuiz() {
     progressBar(position, total),
     h("p", {
       class: "lede",
-      text: quizCopy().linkLede,
+      text: "Touche une photo : elle s’ouvre en grand, puis choisis son nom. Valide quand tout est relié.",
     }),
     board,
     h("p", { class: "credit", text: quizCopy().creditList }),
@@ -3355,7 +3668,7 @@ function mountLinkQuiz() {
   );
 
   linkResizeObserver = new ResizeObserver(() => {
-    drawLinkLines();
+    if (state.revealed) drawLinkLines();
     drawFocusLines();
   });
   linkResizeObserver.observe(board);
@@ -3489,11 +3802,7 @@ async function fillSpeciesFrame(frame, scientificName, stillHere, onReady) {
     img.dataset.photoTitle = meta.title || "";
     img.dataset.validated = meta.validated ? "1" : "";
     if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
-    syncPhotoModFromImg(frame, img, scientificName, ({ action, host }) => {
-      if (action === "blacklist" && host) {
-        tryNext();
-      }
-    });
+    attachPlayerMediaTools(frame, img, scientificName, () => tryNext());
     onReady?.({ failed: false, source: result.source });
   });
 
@@ -3538,11 +3847,9 @@ function fillKnownFrame(frame, url, stillHere, scientificName = "") {
     img.dataset.photoTitle = meta.title || "";
     img.dataset.validated = meta.validated ? "1" : "";
     if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
-    syncPhotoModFromImg(frame, img, scientificName || img.dataset.species || "", ({ action, host }) => {
-      if (action === "blacklist" && host) {
-        fail();
-        if (status) status.textContent = "Photo blacklistée.";
-      }
+    attachPlayerMediaTools(frame, img, scientificName || img.dataset.species || "", () => {
+      fail();
+      if (status) status.textContent = quizCopy().mediaSignaled;
     });
   });
 
@@ -3583,6 +3890,7 @@ function mountResults() {
               text: item.given ? `Ta réponse : ${item.given}` : "Question passée, sans réponse.",
             }),
             h("p", { text: item.explication }),
+            ficheLinkButton(item),
           ),
         ),
       )
@@ -3614,13 +3922,28 @@ function mountResults() {
         h("p", { class: "score-xl", text: `${state.score}/${total}` }),
         h("p", { class: "percent", text: `${percent} %` }),
         recordLine ? h("p", { class: "record", text: recordLine }) : null,
+        state.isDaily ? h("p", { class: "record", text: "Défi du jour" }) : null,
       ),
     ),
     missed,
     h(
       "div",
       { class: "actions" },
-      h("button", { class: "btn", type: "button", text: "Recommencer", onClick: restartQuiz }),
+      state.missed.length
+        ? h("button", {
+            class: "btn",
+            type: "button",
+            text: "Rejouer mes erreurs",
+            onClick: replayMissed,
+          })
+        : null,
+      h("button", { class: "btn secondary", type: "button", text: "Recommencer", onClick: restartQuiz }),
+      h("button", {
+        class: "btn secondary",
+        type: "button",
+        text: "Menu du thème",
+        onClick: backToMenu,
+      }),
       h("button", {
         class: "btn secondary",
         type: "button",
@@ -3629,6 +3952,10 @@ function mountResults() {
       }),
     ),
   );
+  if (state.pendingBadges?.length) {
+    showBadgeToasts(state.pendingBadges);
+    state.pendingBadges = [];
+  }
 }
 
 function referenceCategory() {
@@ -3697,6 +4024,7 @@ function referenceCard(question) {
     alt: question.nom_commun,
     hidden: true,
     decoding: "async",
+    loading: "lazy",
   });
   const card = h(
     "button",
@@ -3706,7 +4034,22 @@ function referenceCard(question) {
     h("span", { class: "latin", text: question.nom_scientifique }),
   );
   const still = () => screen === "reference" && img.isConnected;
-  loadThumb(img, question.nom_scientifique, still);
+  const observe = () => {
+    if (!("IntersectionObserver" in window)) {
+      loadThumb(img, question.nom_scientifique, still);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        io.disconnect();
+        loadThumb(img, question.nom_scientifique, still);
+      },
+      { rootMargin: "200px 0px" },
+    );
+    io.observe(card);
+  };
+  requestAnimationFrame(observe);
   return card;
 }
 
@@ -3846,23 +4189,92 @@ async function loadFicheGallery(gallery, question, still) {
         },
         { once: true },
       );
-      img.addEventListener(
-        "load",
-        () => {
-          if (!still()) return;
-          syncPhotoModFromImg(frame, img, question.nom_scientifique, ({ action }) => {
-            if (action === "blacklist") shot.remove();
-          });
-        },
-        { once: true },
-      );
-      if (img.complete && img.naturalWidth) {
-        syncPhotoModFromImg(frame, img, question.nom_scientifique, ({ action }) => {
-          if (action === "blacklist") shot.remove();
-        });
-      }
+      const wire = () => {
+        if (!still()) return;
+        attachPlayerMediaTools(frame, img, question.nom_scientifique, () => shot.remove());
+      };
+      img.addEventListener("load", wire, { once: true });
+      if (img.complete && img.naturalWidth) wire();
       return shot;
     }),
+  );
+}
+
+function mountRevise() {
+  const category = state.category;
+  const card = state.reviseQueue[state.reviseIndex];
+  document.title = "Réviser — QuiQuiz";
+  renderTop({
+    kicker: category?.categorie || "Révision",
+    title: "Réviser",
+    onBack: backToMenu,
+  });
+  if (!card) {
+    show(
+      view,
+      h("p", { class: "lede", text: "Session de révision terminée." }),
+      h("button", { class: "btn", type: "button", text: "Retour aux niveaux", onClick: backToMenu }),
+    );
+    return;
+  }
+
+  const frame = photoFrame();
+  const answer = h("div", { class: "revise-answer", hidden: !state.reviseRevealed },
+    h("h2", { text: card.commonName }),
+    h("p", { class: "latin", text: card.scientificName }),
+  );
+  const actions = state.reviseRevealed
+    ? h(
+        "div",
+        { class: "actions" },
+        h("button", {
+          class: "btn secondary",
+          type: "button",
+          text: "Encore",
+          onClick: () => {
+            markCardAgain(category.id, card.scientificName);
+            state.reviseIndex += 1;
+            state.reviseRevealed = false;
+            mountRevise();
+          },
+        }),
+        h("button", {
+          class: "btn",
+          type: "button",
+          text: "OK",
+          onClick: () => {
+            markCardOk(category.id, card.scientificName);
+            state.reviseIndex += 1;
+            state.reviseRevealed = false;
+            mountRevise();
+          },
+        }),
+      )
+    : h("button", {
+        class: "btn",
+        type: "button",
+        text: "Voir la réponse",
+        onClick: () => {
+          state.reviseRevealed = true;
+          mountRevise();
+        },
+      });
+
+  show(
+    view,
+    h("p", {
+      class: "lede",
+      text: `Carte ${state.reviseIndex + 1} / ${state.reviseQueue.length}`,
+    }),
+    frame,
+    h("p", { class: "credit", "data-credit": "true" }),
+    answer,
+    actions,
+  );
+  fillSpeciesFrame(
+    frame,
+    card.scientificName,
+    () => screen === "revise" && state.reviseQueue[state.reviseIndex]?.scientificName === card.scientificName,
   );
 }
 
@@ -3880,10 +4292,47 @@ function mount() {
   else if (screen === "results") mountResults();
   else if (screen === "reference") mountReference();
   else if (screen === "fiche") mountFiche();
+  else if (screen === "revise") mountRevise();
   else if (screen === "error") mountError();
   else {
     renderTop({ title: "QuiQuiz" });
     view.replaceChildren(h("p", { class: "lede", text: "Chargement…" }));
+  }
+}
+
+async function applyRoute(route) {
+  if (!route || route.name === "home") {
+    if (screen !== "home") goHome();
+    return;
+  }
+  const category = await ensureCategoryById(route.categoryId);
+  if (!category) {
+    goHome();
+    return;
+  }
+  state.category = category;
+  state.selectedGroups = loadSelectedGroups(category);
+  state.mode = loadMode(category);
+  syncImagePolicy();
+  updateFooter(category);
+  if (route.name === "levels" || route.name === "quiz-entry") {
+    setScreen("levels");
+    return;
+  }
+  if (route.name === "reference") {
+    setScreen("reference");
+    return;
+  }
+  if (route.name === "revise") {
+    startRevise();
+    return;
+  }
+  if (route.name === "fiche") {
+    const species = category.questions?.find(
+      (q) => fold(q.nom_scientifique) === fold(route.scientificName),
+    );
+    if (species) openFiche(species);
+    else setScreen("reference");
   }
 }
 
@@ -4023,6 +4472,8 @@ async function loadCategory(file) {
 }
 
 async function boot() {
+  updateFooter();
+  hydrateReportedTitles();
   await loadAdminSession();
   try {
     const catalogResponse = await fetch("data/catalog.json");
@@ -4048,8 +4499,28 @@ async function boot() {
       "Impossible de charger les quiz. Ouvre ce dossier avec un serveur local, par exemple python -m http.server, puis recharge la page.";
     screen = "error";
   }
-  mount();
-  if (screen === "home") startOnboarding();
+
+  const initial = parseHash();
+  if (initial.name !== "home" && screen !== "error") {
+    await applyRoute(initial);
+  } else {
+    mount();
+    if (screen === "home") startOnboarding();
+  }
+
+  onHashChange((route) => {
+    void applyRoute(route);
+  });
+
+  if ("serviceWorker" in navigator) {
+    const ok =
+      location.protocol === "https:" ||
+      location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1";
+    if (ok) {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    }
+  }
 }
 
 boot();

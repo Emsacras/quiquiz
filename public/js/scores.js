@@ -1,14 +1,15 @@
-const PREFIX = "birdquiz:score:";
+const PREFIX = "quiquiz:score:";
+const LEGACY_PREFIX = "birdquiz:score:";
 
-function storageKey(categoryId, difficulty, mode) {
-  const base = `${PREFIX}${categoryId}:${difficulty}`;
+function storageKey(categoryId, difficulty, mode, prefix = PREFIX) {
+  const base = `${prefix}${categoryId}:${difficulty}`;
   if (!mode || mode === "qcm") return base;
   return `${base}:${mode}`;
 }
 
-export function getBest(categoryId, difficulty, mode) {
+function readBest(key) {
   try {
-    const raw = localStorage.getItem(storageKey(categoryId, difficulty, mode));
+    const raw = localStorage.getItem(key);
     if (!raw) return null;
     const data = JSON.parse(raw);
     if (!Number.isInteger(data?.score) || !Number.isInteger(data?.total) || data.total <= 0) {
@@ -18,6 +19,20 @@ export function getBest(categoryId, difficulty, mode) {
   } catch {
     return null;
   }
+}
+
+export function getBest(categoryId, difficulty, mode) {
+  const current = readBest(storageKey(categoryId, difficulty, mode, PREFIX));
+  if (current) return current;
+  const legacy = readBest(storageKey(categoryId, difficulty, mode, LEGACY_PREFIX));
+  if (legacy) {
+    try {
+      localStorage.setItem(storageKey(categoryId, difficulty, mode, PREFIX), JSON.stringify(legacy));
+    } catch {
+      /* ignore */
+    }
+  }
+  return legacy;
 }
 
 export function recordScore(categoryId, difficulty, score, total, mode) {
@@ -30,7 +45,7 @@ export function recordScore(categoryId, difficulty, score, total, mode) {
 
   if (improved) {
     try {
-      localStorage.setItem(storageKey(categoryId, difficulty, mode), JSON.stringify(best));
+      localStorage.setItem(storageKey(categoryId, difficulty, mode, PREFIX), JSON.stringify(best));
     } catch {
       // Le quiz reste jouable si le navigateur bloque le stockage.
     }

@@ -67,15 +67,43 @@ function servedFromQuizApi() {
   return typeof location !== "undefined" && !location.protocol.startsWith("file");
 }
 
+function stripHtml(value) {
+  return String(value || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function creditFromExtmetadata(extmetadata, title) {
+  const meta = extmetadata || {};
+  const license = stripHtml(meta.LicenseShortName?.value || "");
+  const artist = stripHtml(meta.Artist?.value || meta.Credit?.value || "");
+  const licenseUrl = String(meta.LicenseUrl?.value || "").trim();
+  const commonsPage = title
+    ? `https://commons.wikimedia.org/wiki/${encodeURIComponent(String(title).replace(/\s+/g, "_"))}`
+    : "";
+  return {
+    artist: artist.slice(0, 200),
+    license: license.slice(0, 80),
+    licenseUrl: licenseUrl.startsWith("https://") ? licenseUrl : "",
+    commonsPage,
+  };
+}
+
 function rememberItems(items) {
   for (const item of items || []) {
     if (!item?.url) continue;
     if (item.title) titleByUrl.set(item.url, item.title);
+    const prev = metaByUrl.get(item.url) || {};
     metaByUrl.set(item.url, {
-      title: item.title || titleForUrl(item.url),
+      title: item.title || prev.title || titleForUrl(item.url),
       url: item.url,
-      validated: Boolean(item.validated),
-      sourceUrl: item.sourceUrl || "",
+      validated: Boolean(item.validated ?? prev.validated),
+      sourceUrl: item.sourceUrl || prev.sourceUrl || "",
+      artist: item.artist || prev.artist || "",
+      license: item.license || prev.license || "",
+      licenseUrl: item.licenseUrl || prev.licenseUrl || "",
+      commonsPage: item.commonsPage || prev.commonsPage || "",
     });
   }
 }
@@ -101,12 +129,38 @@ export function titleForUrl(url) {
 export function metaForUrl(url) {
   if (metaByUrl.has(url)) return metaByUrl.get(url);
   const title = titleForUrl(url);
-  return { title, url, validated: Boolean(url && String(url).startsWith("/api/media/")), sourceUrl: "" };
+  return {
+    title,
+    url,
+    validated: Boolean(url && String(url).startsWith("/api/media/")),
+    sourceUrl: "",
+    artist: "",
+    license: "",
+    licenseUrl: "",
+    commonsPage: title
+      ? `https://commons.wikimedia.org/wiki/${encodeURIComponent(title.replace(/\s+/g, "_"))}`
+      : "",
+  };
 }
 
 export function markTitleRejected(title) {
   const clean = String(title || "").trim();
   if (clean) rejectedTitles.add(clean);
+}
+
+export function creditLabel(meta, kind = "photo") {
+  const prefix = kind === "carte" ? "Carte" : "Photo";
+  if (!meta) return `${prefix} : Wikimedia Commons`;
+  const bits = [];
+  if (meta.artist) bits.push(meta.artist);
+  if (meta.license) bits.push(meta.license);
+  if (bits.length) return `${prefix} : ${bits.join(" · ")}`;
+  return `${prefix} : Wikimedia Commons`;
+}
+
+export function creditHref(meta) {
+  if (!meta) return "";
+  return meta.commonsPage || meta.licenseUrl || meta.sourceUrl || "";
 }
 
 function isPoolImageUrl(url) {
@@ -123,6 +177,11 @@ function applyRejections(result) {
       title: item.title || titleForUrl(item.url),
       url: item.url,
       validated: Boolean(item.validated),
+      sourceUrl: item.sourceUrl || "",
+      artist: item.artist || "",
+      license: item.license || "",
+      licenseUrl: item.licenseUrl || "",
+      commonsPage: item.commonsPage || "",
     }));
   const urls = (result.urls || []).filter((url) => {
     if (!isPoolImageUrl(url)) return false;
@@ -339,7 +398,8 @@ async function resolveUrls(fileTitles) {
           action: "query",
           titles: batch.join("|"),
           prop: "imageinfo",
-          iiprop: "url|mime|size",
+          iiprop: "url|mime|size|extmetadata",
+          iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl",
           iiurlwidth: "1400",
         }),
       );
@@ -357,7 +417,15 @@ async function resolveUrls(fileTitles) {
       const originalOk = isHttps(info.url) && /\.(jpe?g|png)(\?|$)/i.test(info.url);
       const tooHeavy = typeof info.size === "number" && info.size > 1_800_000;
       const chosen = originalOk && !tooHeavy ? info.url : info.thumburl || info.url;
-      if (isHttps(chosen)) urls.push(chosen);
+      if (!isHttps(chosen)) continue;
+      urls.push(chosen);
+      rememberItems([
+        {
+          title: page.title,
+          url: chosen,
+          ...creditFromExtmetadata(info.extmetadata, page.title),
+        },
+      ]);
     }
   }
 
@@ -432,7 +500,8 @@ async function resolveSafeItems(fileTitles) {
           action: "query",
           titles: batch.join("|"),
           prop: "imageinfo|categories",
-          iiprop: "url|mime|size",
+          iiprop: "url|mime|size|extmetadata",
+          iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl",
           iiurlwidth: "1400",
           cllimit: "500",
         }),
@@ -458,7 +527,7 @@ async function resolveSafeItems(fileTitles) {
       const tooHeavy = typeof info.size === "number" && info.size > 1_800_000;
       const chosen = originalOk && !tooHeavy ? info.url : info.thumburl || info.url;
       if (!isHttps(chosen) || !page.title) continue;
-      items.push({ title: page.title, url: chosen });
+      items.push({ title: page.title, url: chosen, ...creditFromExtmetadata(info.extmetadata, page.title) });
     }
   }
 
@@ -637,7 +706,8 @@ async function resolveMapItems(fileTitles) {
           action: "query",
           titles: batch.join("|"),
           prop: "imageinfo",
-          iiprop: "url|mime|size",
+          iiprop: "url|mime|size|extmetadata",
+          iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl",
           iiurlwidth: "1400",
         }),
       );
@@ -658,7 +728,7 @@ async function resolveMapItems(fileTitles) {
       const tooHeavy = typeof info.size === "number" && info.size > 2_500_000;
       const chosen = isSvg || !originalOk || tooHeavy ? info.thumburl || info.url : info.url;
       if (!isHttps(chosen) || !page.title) continue;
-      items.push({ title: page.title, url: chosen });
+      items.push({ title: page.title, url: chosen, ...creditFromExtmetadata(info.extmetadata, page.title) });
     }
   }
   return items;
@@ -1060,7 +1130,8 @@ async function resolveAudioUrls(fileTitles) {
           action: "query",
           titles: batch.join("|"),
           prop: "imageinfo",
-          iiprop: "url|mime|size",
+          iiprop: "url|mime|size|extmetadata",
+          iiextmetadatafilter: "LicenseShortName|Artist|Credit|LicenseUrl",
         }),
       );
     } catch {
