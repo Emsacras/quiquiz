@@ -58,6 +58,7 @@ function poolKey(scientificName) {
   return scientificName;
 }
 const titleByUrl = new Map();
+const metaByUrl = new Map();
 const rejectedTitles = new Set();
 let pumping = false;
 let lastRequestAt = 0;
@@ -68,7 +69,14 @@ function servedFromQuizApi() {
 
 function rememberItems(items) {
   for (const item of items || []) {
-    if (item?.url && item?.title) titleByUrl.set(item.url, item.title);
+    if (!item?.url) continue;
+    if (item.title) titleByUrl.set(item.url, item.title);
+    metaByUrl.set(item.url, {
+      title: item.title || titleForUrl(item.url),
+      url: item.url,
+      validated: Boolean(item.validated),
+      sourceUrl: item.sourceUrl || "",
+    });
   }
 }
 
@@ -88,6 +96,17 @@ function commonsTitleFromUrl(url) {
 export function titleForUrl(url) {
   if (titleByUrl.has(url)) return titleByUrl.get(url);
   return commonsTitleFromUrl(url);
+}
+
+export function metaForUrl(url) {
+  if (metaByUrl.has(url)) return metaByUrl.get(url);
+  const title = titleForUrl(url);
+  return { title, url, validated: Boolean(url && String(url).startsWith("/api/media/")), sourceUrl: "" };
+}
+
+export function markTitleRejected(title) {
+  const clean = String(title || "").trim();
+  if (clean) rejectedTitles.add(clean);
 }
 
 function isPoolImageUrl(url) {

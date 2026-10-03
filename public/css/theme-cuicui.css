@@ -113,6 +113,51 @@ body.theme-cuicui::after {
   padding: 22px 0 56px;
 }
 
+.side-fillers {
+  display: none;
+}
+
+.side-filler {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  width: max(320px, calc((100vw - 740px) / 2));
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.3;
+}
+
+.side-filler--left {
+  left: 0;
+  object-position: center center;
+}
+
+.side-filler--right {
+  right: 0;
+  /* décale le contenu du bandeau vers le bord droit */
+  object-position: 72% center;
+  transform: translateX(8%);
+}
+
+@media (min-width: 1100px) {
+  .side-fillers {
+    display: block;
+  }
+
+  body.theme-cuicui::before,
+  body.theme-cuicui::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1099px) {
+  .side-fillers {
+    display: none !important;
+  }
+}
+
 .theme-cuicui :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
@@ -139,15 +184,16 @@ body.theme-cuicui::after {
 .theme-cuicui .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   color: var(--accent);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.65rem;
+  line-height: 1;
 }
 
 .theme-cuicui .brand-mark {
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   flex: none;
 }
@@ -277,10 +323,76 @@ body.theme-cuicui::after {
 }
 
 .theme-cuicui .frame {
+  position: relative;
   border: 3px solid var(--ink);
   border-radius: var(--radius-card);
   background: var(--frame);
   box-shadow: var(--shadow-hard);
+}
+
+.admin-mod {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  z-index: 3;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+html.is-admin .admin-mod {
+  display: flex;
+}
+
+.admin-mod-badge {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-right: auto;
+}
+
+.admin-mod-badge.is-ok {
+  color: var(--ok);
+}
+
+.admin-mod-btn {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.admin-mod-btn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.admin-mod-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-mod-btn--ok {
+  background: var(--ok);
+  color: #fff;
+}
+
+.admin-mod-btn--bad {
+  background: var(--bad);
+  color: #fff;
 }
 
 .theme-cuicui .options {
@@ -641,12 +753,12 @@ body.theme-cuicui::after {
   }
 
   .theme-cuicui .brand {
-    font-size: 1.05rem;
+    font-size: 1.4rem;
   }
 
   .theme-cuicui .brand-mark {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   .theme-cuicui .option {

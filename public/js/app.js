@@ -3,6 +3,7 @@ import {
   getSpeciesAudio,
   getSpeciesImages,
   getVernacularImage,
+  metaForUrl,
   pickRandomImage,
   preloadSpecies,
   preloadSpeciesAudio,
@@ -11,6 +12,7 @@ import {
 } from "./images.js";
 import { getBest, recordScore } from "./scores.js";
 import { startOnboarding } from "./onboarding.js";
+import { loadAdminSession, syncPhotoModFromImg } from "./admin-mod.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
@@ -1263,7 +1265,8 @@ async function fillVernacularFrame(frame, commonName, stillHere) {
     if (status) status.textContent = quizCopy().noMedia;
     return;
   }
-  fillKnownFrame(frame, url, stillHere);
+  const known = findSpecies(commonName);
+  fillKnownFrame(frame, url, stillHere, known?.nom_scientifique || "");
   const img = frame.querySelector("[data-photo]");
   if (img) img.alt = commonName;
 }
@@ -1278,7 +1281,7 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
     h(
       "button",
       { class: "brand", type: "button", onClick: goHome, "aria-label": "QuiQuiz — accueil" },
-      mascotImg(MASCOT.idle, "brand-mark", "36"),
+      mascotImg(MASCOT.idle, "brand-mark", "56"),
       h("span", { text: "QuiQuiz" }),
     ),
   );
@@ -2210,8 +2213,8 @@ function mountPairQuiz() {
   );
 
   const still = () => screen === "quiz" && state.index + 1 === position;
-  fillKnownFrame(left, question.left.url, still);
-  fillKnownFrame(right, question.right.url, still);
+  fillKnownFrame(left, question.left.url, still, question.left.nom_scientifique);
+  fillKnownFrame(right, question.right.url, still, question.right.nom_scientifique);
 }
 
 function paintPairReveal(answer, correct) {
@@ -2497,7 +2500,12 @@ function mountVariantQuiz() {
         ),
       ),
     );
-    fillKnownFrame(frame, member.url, () => screen === "quiz" && state.index + 1 === position && frame.isConnected);
+    fillKnownFrame(
+      frame,
+      member.url,
+      () => screen === "quiz" && state.index + 1 === position && frame.isConnected,
+      member.nom_scientifique,
+    );
     return card;
   });
 
@@ -2648,7 +2656,12 @@ function sexColumn(side, bird, position) {
       }),
     ),
   );
-  fillKnownFrame(frame, bird.url, () => screen === "quiz" && state.index + 1 === position && frame.isConnected);
+  fillKnownFrame(
+    frame,
+    bird.url,
+    () => screen === "quiz" && state.index + 1 === position && frame.isConnected,
+    bird.nom_scientifique,
+  );
   return column;
 }
 
@@ -3464,17 +3477,28 @@ async function fillSpeciesFrame(frame, scientificName, stillHere, onReady) {
     if (spinner) spinner.hidden = true;
     frame.classList.remove("is-loading");
     if (status) status.textContent = "";
+    const shownUrl = img.currentSrc || img.src;
+    const meta = metaForUrl(shownUrl);
+    img.dataset.photoTitle = meta.title || "";
+    img.dataset.validated = meta.validated ? "1" : "";
+    if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
+    syncPhotoModFromImg(frame, img, scientificName, ({ action, host }) => {
+      if (action === "blacklist" && host) {
+        tryNext();
+      }
+    });
     onReady?.({ failed: false, source: result.source });
   });
 
   tryNext();
 }
 
-function fillKnownFrame(frame, url, stillHere) {
+function fillKnownFrame(frame, url, stillHere, scientificName = "") {
   const img = frame.querySelector("[data-photo]");
   const spinner = frame.querySelector("[data-spinner]");
   const status = frame.querySelector("[data-status]");
   if (!img) return;
+  if (scientificName) img.dataset.species = scientificName;
 
   const fail = () => {
     if (!stillHere()) return;
@@ -3485,6 +3509,7 @@ function fillKnownFrame(frame, url, stillHere) {
     if (spinner) spinner.hidden = true;
     frame.classList.remove("is-loading");
     if (status) status.textContent = "Image indisponible.";
+    frame.querySelector("[data-admin-mod]")?.remove();
   };
 
   img.addEventListener("error", () => {
@@ -3501,6 +3526,17 @@ function fillKnownFrame(frame, url, stillHere) {
     if (spinner) spinner.hidden = true;
     frame.classList.remove("is-loading");
     if (status) status.textContent = "";
+    const shownUrl = img.currentSrc || img.src;
+    const meta = metaForUrl(shownUrl);
+    img.dataset.photoTitle = meta.title || "";
+    img.dataset.validated = meta.validated ? "1" : "";
+    if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
+    syncPhotoModFromImg(frame, img, scientificName || img.dataset.species || "", ({ action, host }) => {
+      if (action === "blacklist" && host) {
+        fail();
+        if (status) status.textContent = "Photo blacklistée.";
+      }
+    });
   });
 
   img.alt = quizCopy().compareAlt;
@@ -3776,12 +3812,16 @@ async function loadFicheGallery(gallery, question, still) {
   }
   gallery.replaceChildren(
     ...urls.map((url) => {
+      const meta = metaForUrl(url);
       const frame = h(
         "div",
         { class: "frame" },
         h("img", {
           "data-photo": "true",
           "data-species": question.nom_scientifique,
+          "data-photo-title": meta.title || "",
+          "data-validated": meta.validated ? "1" : "",
+          "data-source-url": meta.sourceUrl || "",
           alt: question.nom_commun,
           decoding: "async",
           src: url,
@@ -3795,9 +3835,25 @@ async function loadFicheGallery(gallery, question, still) {
           img.src = PLACEHOLDER;
           img.alt = "Image indisponible";
           img.removeAttribute("data-photo");
+          frame.querySelector("[data-admin-mod]")?.remove();
         },
         { once: true },
       );
+      img.addEventListener(
+        "load",
+        () => {
+          if (!still()) return;
+          syncPhotoModFromImg(frame, img, question.nom_scientifique, ({ action }) => {
+            if (action === "blacklist") shot.remove();
+          });
+        },
+        { once: true },
+      );
+      if (img.complete && img.naturalWidth) {
+        syncPhotoModFromImg(frame, img, question.nom_scientifique, ({ action }) => {
+          if (action === "blacklist") shot.remove();
+        });
+      }
       return shot;
     }),
   );
@@ -3960,6 +4016,7 @@ async function loadCategory(file) {
 }
 
 async function boot() {
+  await loadAdminSession();
   try {
     const catalogResponse = await fetch("data/catalog.json");
     if (!catalogResponse.ok) throw new Error("catalog");
