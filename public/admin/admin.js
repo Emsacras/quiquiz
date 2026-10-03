@@ -237,10 +237,12 @@ function groupItemsByCategory(items) {
 
   for (const item of sortedItems) {
     const name = normalizeSpeciesKey(item.name);
-    const catIds = index.get(name) || [];
-    const catId = catIds.find((id) => buckets.has(id));
-    if (catId) buckets.get(catId).items.push(item);
-    else other.items.push(item);
+    const catIds = (index.get(name) || []).filter((id) => buckets.has(id));
+    if (!catIds.length) {
+      other.items.push(item);
+      continue;
+    }
+    for (const catId of catIds) buckets.get(catId).items.push(item);
   }
 
   const groups = state.quizEntries
