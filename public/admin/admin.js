@@ -1,6 +1,10 @@
 import {
   getSpeciesImages,
   pickRandomImage,
+  setCapitalImages,
+  setFlagImages,
+  setFruitImages,
+  setMineralImages,
   setOutlineMaps,
   setSafeFish,
 } from "../js/images.js";
@@ -290,8 +294,12 @@ function sortedGroupBirds(group) {
 
 function applyImagePolicy(category) {
   const id = category?.id || category?._entry?.id || "";
-  // Même politique que le jeu : contours pour les pays, photos classiques sinon.
+  // Même politique que le jeu : contours / drapeaux / capitales / minéraux / fruits.
   setOutlineMaps(id === "pays-monde");
+  setFlagImages(id === "drapeaux-monde");
+  setCapitalImages(id === "capitales-monde");
+  setMineralImages(id === "rochers-mineraux");
+  setFruitImages(id === "fruits-legumes");
   setSafeFish(false);
 }
 

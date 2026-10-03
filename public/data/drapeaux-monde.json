@@ -1,0 +1,3189 @@
+{
+  "id": "drapeaux-monde",
+  "categorie": "Drapeaux du monde",
+  "description": "Reconnaître un pays à son drapeau. Coche les continents, puis un niveau.",
+  "groupes": [
+    {
+      "id": "europe",
+      "label": "Europe",
+      "questions": [
+        {
+          "id": "ed1",
+          "difficulte": "facile",
+          "nom_commun": "France",
+          "nom_scientifique": "France",
+          "groupe": "europe",
+          "options": [
+            "Lettonie",
+            "Liechtenstein",
+            "Portugal",
+            "France"
+          ],
+          "indice": "Drapeau · Hexagone large, côte atlantique et méditerranéenne",
+          "description": "Drapeau de France.",
+          "explication": "France : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed2",
+          "difficulte": "facile",
+          "nom_commun": "Italie",
+          "nom_scientifique": "Italy",
+          "groupe": "europe",
+          "options": [
+            "Italie",
+            "Belgique",
+            "Irlande",
+            "Royaume-Uni"
+          ],
+          "indice": "Drapeau · Botte allongée en mer",
+          "description": "Drapeau de Italie.",
+          "explication": "Italie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed3",
+          "difficulte": "facile",
+          "nom_commun": "Espagne",
+          "nom_scientifique": "Spain",
+          "groupe": "europe",
+          "options": [
+            "Espagne",
+            "Irlande",
+            "Bulgarie",
+            "Belgique"
+          ],
+          "indice": "Drapeau · Grand rectangle péninsulaire",
+          "description": "Drapeau de Espagne.",
+          "explication": "Espagne : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed4",
+          "difficulte": "facile",
+          "nom_commun": "Royaume-Uni",
+          "nom_scientifique": "United Kingdom",
+          "groupe": "europe",
+          "options": [
+            "Finlande",
+            "Royaume-Uni",
+            "Luxembourg",
+            "Moldavie"
+          ],
+          "indice": "Drapeau · Archipel au nord-ouest",
+          "description": "Drapeau de Royaume-Uni.",
+          "explication": "Royaume-Uni : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed5",
+          "difficulte": "facile",
+          "nom_commun": "Allemagne",
+          "nom_scientifique": "Germany",
+          "groupe": "europe",
+          "options": [
+            "Andorre",
+            "Allemagne",
+            "Ukraine",
+            "Chypre"
+          ],
+          "indice": "Drapeau · Bloc central très large",
+          "description": "Drapeau de Allemagne.",
+          "explication": "Allemagne : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed6",
+          "difficulte": "facile",
+          "nom_commun": "Pologne",
+          "nom_scientifique": "Poland",
+          "groupe": "europe",
+          "options": [
+            "Pays-Bas",
+            "France",
+            "Moldavie",
+            "Pologne"
+          ],
+          "indice": "Drapeau · Grand rectangle à l'est",
+          "description": "Drapeau de Pologne.",
+          "explication": "Pologne : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed7",
+          "difficulte": "facile",
+          "nom_commun": "Grèce",
+          "nom_scientifique": "Greece",
+          "groupe": "europe",
+          "options": [
+            "Grèce",
+            "Macédoine du Nord",
+            "Croatie",
+            "Belgique"
+          ],
+          "indice": "Drapeau · Péninsule et innombrables îles",
+          "description": "Drapeau de Grèce.",
+          "explication": "Grèce : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed8",
+          "difficulte": "facile",
+          "nom_commun": "Suède",
+          "nom_scientifique": "Sweden",
+          "groupe": "europe",
+          "options": [
+            "Portugal",
+            "Suède",
+            "Norvège",
+            "Islande"
+          ],
+          "indice": "Drapeau · Longue bande nordique",
+          "description": "Drapeau de Suède.",
+          "explication": "Suède : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed9",
+          "difficulte": "facile",
+          "nom_commun": "Norvège",
+          "nom_scientifique": "Norway",
+          "groupe": "europe",
+          "options": [
+            "Finlande",
+            "Macédoine du Nord",
+            "Suisse",
+            "Norvège"
+          ],
+          "indice": "Drapeau · Bande côtière très dentelée",
+          "description": "Drapeau de Norvège.",
+          "explication": "Norvège : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed10",
+          "difficulte": "facile",
+          "nom_commun": "Finlande",
+          "nom_scientifique": "Finland",
+          "groupe": "europe",
+          "options": [
+            "Royaume-Uni",
+            "Finlande",
+            "Pologne",
+            "Norvège"
+          ],
+          "indice": "Drapeau · Bloc nord-est arrondi",
+          "description": "Drapeau de Finlande.",
+          "explication": "Finlande : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed11",
+          "difficulte": "facile",
+          "nom_commun": "Portugal",
+          "nom_scientifique": "Portugal",
+          "groupe": "europe",
+          "options": [
+            "Slovénie",
+            "Portugal",
+            "Moldavie",
+            "France"
+          ],
+          "indice": "Drapeau · Bande étroite à l'ouest",
+          "description": "Drapeau de Portugal.",
+          "explication": "Portugal : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed12",
+          "difficulte": "facile",
+          "nom_commun": "Irlande",
+          "nom_scientifique": "Ireland",
+          "groupe": "europe",
+          "options": [
+            "Allemagne",
+            "Irlande",
+            "Albanie",
+            "Croatie"
+          ],
+          "indice": "Drapeau · Grande île ovale",
+          "description": "Drapeau de Irlande.",
+          "explication": "Irlande : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed13",
+          "difficulte": "facile",
+          "nom_commun": "Islande",
+          "nom_scientifique": "Iceland",
+          "groupe": "europe",
+          "options": [
+            "France",
+            "Espagne",
+            "Croatie",
+            "Islande"
+          ],
+          "indice": "Drapeau · Île volcanique arrondie",
+          "description": "Drapeau de Islande.",
+          "explication": "Islande : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed14",
+          "difficulte": "moyen",
+          "nom_commun": "Pays-Bas",
+          "nom_scientifique": "Netherlands",
+          "groupe": "europe",
+          "options": [
+            "Suisse",
+            "Estonie",
+            "Pays-Bas",
+            "Saint-Marin"
+          ],
+          "indice": "Drapeau · Petit pays côtier plat",
+          "description": "Drapeau de Pays-Bas.",
+          "explication": "Pays-Bas : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed15",
+          "difficulte": "moyen",
+          "nom_commun": "Belgique",
+          "nom_scientifique": "Belgium",
+          "groupe": "europe",
+          "options": [
+            "Belgique",
+            "Slovaquie",
+            "Andorre",
+            "République tchèque"
+          ],
+          "indice": "Drapeau · Petit pays entre France et Allemagne",
+          "description": "Drapeau de Belgique.",
+          "explication": "Belgique : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed16",
+          "difficulte": "moyen",
+          "nom_commun": "Danemark",
+          "nom_scientifique": "Denmark",
+          "groupe": "europe",
+          "options": [
+            "Danemark",
+            "Pologne",
+            "Islande",
+            "Royaume-Uni"
+          ],
+          "indice": "Drapeau · Péninsule et îles",
+          "description": "Drapeau de Danemark.",
+          "explication": "Danemark : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed17",
+          "difficulte": "moyen",
+          "nom_commun": "Autriche",
+          "nom_scientifique": "Austria",
+          "groupe": "europe",
+          "options": [
+            "Autriche",
+            "Pologne",
+            "Macédoine du Nord",
+            "Roumanie"
+          ],
+          "indice": "Drapeau · Pays alpin sans littoral",
+          "description": "Drapeau de Autriche.",
+          "explication": "Autriche : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed18",
+          "difficulte": "moyen",
+          "nom_commun": "Suisse",
+          "nom_scientifique": "Switzerland",
+          "groupe": "europe",
+          "options": [
+            "Suisse",
+            "France",
+            "Hongrie",
+            "Lettonie"
+          ],
+          "indice": "Drapeau · Petit carré alpin",
+          "description": "Drapeau de Suisse.",
+          "explication": "Suisse : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed19",
+          "difficulte": "moyen",
+          "nom_commun": "République tchèque",
+          "nom_scientifique": "Czech Republic",
+          "groupe": "europe",
+          "options": [
+            "France",
+            "Biélorussie",
+            "Royaume-Uni",
+            "République tchèque"
+          ],
+          "indice": "Drapeau · Bloc bohmien arrondi",
+          "description": "Drapeau de République tchèque.",
+          "explication": "République tchèque : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed20",
+          "difficulte": "moyen",
+          "nom_commun": "Roumanie",
+          "nom_scientifique": "Romania",
+          "groupe": "europe",
+          "options": [
+            "Danemark",
+            "Roumanie",
+            "Lettonie",
+            "Albanie"
+          ],
+          "indice": "Drapeau · Grand pays en arc de cercle",
+          "description": "Drapeau de Roumanie.",
+          "explication": "Roumanie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed21",
+          "difficulte": "moyen",
+          "nom_commun": "Bulgarie",
+          "nom_scientifique": "Bulgaria",
+          "groupe": "europe",
+          "options": [
+            "Grèce",
+            "Bulgarie",
+            "Estonie",
+            "Pologne"
+          ],
+          "indice": "Drapeau · Rectangle côtier mer Noire",
+          "description": "Drapeau de Bulgarie.",
+          "explication": "Bulgarie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed22",
+          "difficulte": "moyen",
+          "nom_commun": "Hongrie",
+          "nom_scientifique": "Hungary",
+          "groupe": "europe",
+          "options": [
+            "Hongrie",
+            "Irlande",
+            "Islande",
+            "Allemagne"
+          ],
+          "indice": "Drapeau · Bloc danubien",
+          "description": "Drapeau de Hongrie.",
+          "explication": "Hongrie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed23",
+          "difficulte": "moyen",
+          "nom_commun": "Ukraine",
+          "nom_scientifique": "Ukraine",
+          "groupe": "europe",
+          "options": [
+            "Moldavie",
+            "Italie",
+            "Ukraine",
+            "Albanie"
+          ],
+          "indice": "Drapeau · Très grand bloc est",
+          "description": "Drapeau de Ukraine.",
+          "explication": "Ukraine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed24",
+          "difficulte": "moyen",
+          "nom_commun": "Croatie",
+          "nom_scientifique": "Croatia",
+          "groupe": "europe",
+          "options": [
+            "Liechtenstein",
+            "Croatie",
+            "Pays-Bas",
+            "Portugal"
+          ],
+          "indice": "Drapeau · Côte adriatique en croissant",
+          "description": "Drapeau de Croatie.",
+          "explication": "Croatie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed25",
+          "difficulte": "moyen",
+          "nom_commun": "Serbie",
+          "nom_scientifique": "Serbia",
+          "groupe": "europe",
+          "options": [
+            "Norvège",
+            "Monaco",
+            "Ukraine",
+            "Serbie"
+          ],
+          "indice": "Drapeau · Bloc des Balkans",
+          "description": "Drapeau de Serbie.",
+          "explication": "Serbie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed26",
+          "difficulte": "moyen",
+          "nom_commun": "Slovaquie",
+          "nom_scientifique": "Slovakia",
+          "groupe": "europe",
+          "options": [
+            "Slovénie",
+            "Macédoine du Nord",
+            "Slovaquie",
+            "Croatie"
+          ],
+          "indice": "Drapeau · Petit bloc montagneux",
+          "description": "Drapeau de Slovaquie.",
+          "explication": "Slovaquie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed27",
+          "difficulte": "moyen",
+          "nom_commun": "Slovénie",
+          "nom_scientifique": "Slovenia",
+          "groupe": "europe",
+          "options": [
+            "Italie",
+            "Slovénie",
+            "Bulgarie",
+            "Hongrie"
+          ],
+          "indice": "Drapeau · Petit triangle adriatique",
+          "description": "Drapeau de Slovénie.",
+          "explication": "Slovénie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed28",
+          "difficulte": "moyen",
+          "nom_commun": "Bosnie-Herzégovine",
+          "nom_scientifique": "Bosnia and Herzegovina",
+          "groupe": "europe",
+          "options": [
+            "Bosnie-Herzégovine",
+            "Norvège",
+            "Allemagne",
+            "Pologne"
+          ],
+          "indice": "Drapeau · Forme de triangle adriatique",
+          "description": "Drapeau de Bosnie-Herzégovine.",
+          "explication": "Bosnie-Herzégovine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed29",
+          "difficulte": "moyen",
+          "nom_commun": "Lituanie",
+          "nom_scientifique": "Lithuania",
+          "groupe": "europe",
+          "options": [
+            "Lituanie",
+            "Monténégro",
+            "Grèce",
+            "Portugal"
+          ],
+          "indice": "Drapeau · Bande balte",
+          "description": "Drapeau de Lituanie.",
+          "explication": "Lituanie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed30",
+          "difficulte": "moyen",
+          "nom_commun": "Lettonie",
+          "nom_scientifique": "Latvia",
+          "groupe": "europe",
+          "options": [
+            "Autriche",
+            "Lettonie",
+            "Estonie",
+            "Italie"
+          ],
+          "indice": "Drapeau · Bande balte intermédiaire",
+          "description": "Drapeau de Lettonie.",
+          "explication": "Lettonie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed31",
+          "difficulte": "moyen",
+          "nom_commun": "Estonie",
+          "nom_scientifique": "Estonia",
+          "groupe": "europe",
+          "options": [
+            "Grèce",
+            "Portugal",
+            "Estonie",
+            "Moldavie"
+          ],
+          "indice": "Drapeau · Bande nordique baltique",
+          "description": "Drapeau de Estonie.",
+          "explication": "Estonie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed32",
+          "difficulte": "difficile",
+          "nom_commun": "Biélorussie",
+          "nom_scientifique": "Belarus",
+          "groupe": "europe",
+          "options": [
+            "Lettonie",
+            "Biélorussie",
+            "Monténégro",
+            "Belgique"
+          ],
+          "indice": "Drapeau · Bloc forestier rectangulaire",
+          "description": "Drapeau de Biélorussie.",
+          "explication": "Biélorussie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed33",
+          "difficulte": "difficile",
+          "nom_commun": "Moldavie",
+          "nom_scientifique": "Moldova",
+          "groupe": "europe",
+          "options": [
+            "Lettonie",
+            "Andorre",
+            "Moldavie",
+            "Monaco"
+          ],
+          "indice": "Drapeau · Petit bloc entre Roumanie et Ukraine",
+          "description": "Drapeau de Moldavie.",
+          "explication": "Moldavie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed34",
+          "difficulte": "difficile",
+          "nom_commun": "Luxembourg",
+          "nom_scientifique": "Luxembourg",
+          "groupe": "europe",
+          "options": [
+            "Bulgarie",
+            "Luxembourg",
+            "Italie",
+            "Autriche"
+          ],
+          "indice": "Drapeau · Très petit triangle",
+          "description": "Drapeau de Luxembourg.",
+          "explication": "Luxembourg : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed35",
+          "difficulte": "difficile",
+          "nom_commun": "Andorre",
+          "nom_scientifique": "Andorra",
+          "groupe": "europe",
+          "options": [
+            "Slovaquie",
+            "Lettonie",
+            "Roumanie",
+            "Andorre"
+          ],
+          "indice": "Drapeau · Micro-État pyrénéen",
+          "description": "Drapeau de Andorre.",
+          "explication": "Andorre : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed36",
+          "difficulte": "difficile",
+          "nom_commun": "Monaco",
+          "nom_scientifique": "Monaco",
+          "groupe": "europe",
+          "options": [
+            "Italie",
+            "Norvège",
+            "Monaco",
+            "Autriche"
+          ],
+          "indice": "Drapeau · Point côtier méditerranéen",
+          "description": "Drapeau de Monaco.",
+          "explication": "Monaco : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed37",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Marin",
+          "nom_scientifique": "San Marino",
+          "groupe": "europe",
+          "options": [
+            "Albanie",
+            "Croatie",
+            "Saint-Marin",
+            "Bulgarie"
+          ],
+          "indice": "Drapeau · Enclavé dans l'Italie",
+          "description": "Drapeau de Saint-Marin.",
+          "explication": "Saint-Marin : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed38",
+          "difficulte": "difficile",
+          "nom_commun": "Monténégro",
+          "nom_scientifique": "Montenegro",
+          "groupe": "europe",
+          "options": [
+            "Monténégro",
+            "Malte",
+            "Norvège",
+            "Portugal"
+          ],
+          "indice": "Drapeau · Petite bande adriatique",
+          "description": "Drapeau de Monténégro.",
+          "explication": "Monténégro : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed39",
+          "difficulte": "difficile",
+          "nom_commun": "Macédoine du Nord",
+          "nom_scientifique": "North Macedonia",
+          "groupe": "europe",
+          "options": [
+            "Macédoine du Nord",
+            "Roumanie",
+            "Norvège",
+            "France"
+          ],
+          "indice": "Drapeau · Bloc central des Balkans",
+          "description": "Drapeau de Macédoine du Nord.",
+          "explication": "Macédoine du Nord : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed40",
+          "difficulte": "difficile",
+          "nom_commun": "Albanie",
+          "nom_scientifique": "Albania",
+          "groupe": "europe",
+          "options": [
+            "Albanie",
+            "Espagne",
+            "Biélorussie",
+            "Macédoine du Nord"
+          ],
+          "indice": "Drapeau · Bande adriatique étroite",
+          "description": "Drapeau de Albanie.",
+          "explication": "Albanie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed41",
+          "difficulte": "difficile",
+          "nom_commun": "Malte",
+          "nom_scientifique": "Malta",
+          "groupe": "europe",
+          "options": [
+            "Pologne",
+            "Portugal",
+            "Grèce",
+            "Malte"
+          ],
+          "indice": "Drapeau · Archipel minuscule",
+          "description": "Drapeau de Malte.",
+          "explication": "Malte : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed42",
+          "difficulte": "difficile",
+          "nom_commun": "Chypre",
+          "nom_scientifique": "Cyprus",
+          "groupe": "europe",
+          "options": [
+            "Chypre",
+            "Finlande",
+            "Pologne",
+            "Suisse"
+          ],
+          "indice": "Drapeau · Île méditerranéenne allongée",
+          "description": "Drapeau de Chypre.",
+          "explication": "Chypre : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ed43",
+          "difficulte": "difficile",
+          "nom_commun": "Liechtenstein",
+          "nom_scientifique": "Liechtenstein",
+          "groupe": "europe",
+          "options": [
+            "Liechtenstein",
+            "Belgique",
+            "Saint-Marin",
+            "Pays-Bas"
+          ],
+          "indice": "Drapeau · Micro-État alpin",
+          "description": "Drapeau de Liechtenstein.",
+          "explication": "Liechtenstein : reconnaissable à son drapeau national."
+        }
+      ]
+    },
+    {
+      "id": "afrique",
+      "label": "Afrique",
+      "questions": [
+        {
+          "id": "ad1",
+          "difficulte": "facile",
+          "nom_commun": "Égypte",
+          "nom_scientifique": "Egypt",
+          "groupe": "afrique",
+          "options": [
+            "Niger",
+            "Somalie",
+            "République centrafricaine",
+            "Égypte"
+          ],
+          "indice": "Drapeau · Bande du Nil en forme de Y",
+          "description": "Drapeau de Égypte.",
+          "explication": "Égypte : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad2",
+          "difficulte": "facile",
+          "nom_commun": "Afrique du Sud",
+          "nom_scientifique": "South Africa",
+          "groupe": "afrique",
+          "options": [
+            "Guinée-Bissau",
+            "Djibouti",
+            "Afrique du Sud",
+            "Mozambique"
+          ],
+          "indice": "Drapeau · Pointe sud du continent",
+          "description": "Drapeau de Afrique du Sud.",
+          "explication": "Afrique du Sud : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad3",
+          "difficulte": "facile",
+          "nom_commun": "Algérie",
+          "nom_scientifique": "Algeria",
+          "groupe": "afrique",
+          "options": [
+            "Nigeria",
+            "Libéria",
+            "Algérie",
+            "Eswatini"
+          ],
+          "indice": "Drapeau · Immense rectangle nord",
+          "description": "Drapeau de Algérie.",
+          "explication": "Algérie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad4",
+          "difficulte": "facile",
+          "nom_commun": "Maroc",
+          "nom_scientifique": "Morocco",
+          "groupe": "afrique",
+          "options": [
+            "Cameroun",
+            "Maroc",
+            "Djibouti",
+            "Cap-Vert"
+          ],
+          "indice": "Drapeau · Coin nord-ouest arrondi",
+          "description": "Drapeau de Maroc.",
+          "explication": "Maroc : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad5",
+          "difficulte": "facile",
+          "nom_commun": "Nigeria",
+          "nom_scientifique": "Nigeria",
+          "groupe": "afrique",
+          "options": [
+            "Zambie",
+            "Comores",
+            "Ouganda",
+            "Nigeria"
+          ],
+          "indice": "Drapeau · Grand bloc du golfe de Guinée",
+          "description": "Drapeau de Nigeria.",
+          "explication": "Nigeria : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad6",
+          "difficulte": "facile",
+          "nom_commun": "Éthiopie",
+          "nom_scientifique": "Ethiopia",
+          "groupe": "afrique",
+          "options": [
+            "Maroc",
+            "Sénégal",
+            "Éthiopie",
+            "São Tomé-et-Principe"
+          ],
+          "indice": "Drapeau · Bloc est en forme de goutte",
+          "description": "Drapeau de Éthiopie.",
+          "explication": "Éthiopie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad7",
+          "difficulte": "facile",
+          "nom_commun": "Libye",
+          "nom_scientifique": "Libya",
+          "groupe": "afrique",
+          "options": [
+            "Burundi",
+            "Libye",
+            "São Tomé-et-Principe",
+            "Libéria"
+          ],
+          "indice": "Drapeau · Vaste désert méditerranéen",
+          "description": "Drapeau de Libye.",
+          "explication": "Libye : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad8",
+          "difficulte": "facile",
+          "nom_commun": "Tunisie",
+          "nom_scientifique": "Tunisia",
+          "groupe": "afrique",
+          "options": [
+            "Mali",
+            "Tunisie",
+            "Érythrée",
+            "Guinée-Bissau"
+          ],
+          "indice": "Drapeau · Bande méditerranéenne",
+          "description": "Drapeau de Tunisie.",
+          "explication": "Tunisie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad9",
+          "difficulte": "facile",
+          "nom_commun": "Kenya",
+          "nom_scientifique": "Kenya",
+          "groupe": "afrique",
+          "options": [
+            "Djibouti",
+            "Kenya",
+            "Mali",
+            "Rwanda"
+          ],
+          "indice": "Drapeau · Bloc est côtier",
+          "description": "Drapeau de Kenya.",
+          "explication": "Kenya : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad10",
+          "difficulte": "facile",
+          "nom_commun": "Madagascar",
+          "nom_scientifique": "Madagascar",
+          "groupe": "afrique",
+          "options": [
+            "Kenya",
+            "Madagascar",
+            "Libéria",
+            "Niger"
+          ],
+          "indice": "Drapeau · Grande île est allongée",
+          "description": "Drapeau de Madagascar.",
+          "explication": "Madagascar : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad11",
+          "difficulte": "facile",
+          "nom_commun": "Soudan",
+          "nom_scientifique": "Sudan",
+          "groupe": "afrique",
+          "options": [
+            "Comores",
+            "Soudan",
+            "Égypte",
+            "Rwanda"
+          ],
+          "indice": "Drapeau · Vaste bloc du Nil",
+          "description": "Drapeau de Soudan.",
+          "explication": "Soudan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad12",
+          "difficulte": "moyen",
+          "nom_commun": "Angola",
+          "nom_scientifique": "Angola",
+          "groupe": "afrique",
+          "options": [
+            "Burundi",
+            "République centrafricaine",
+            "Guinée-Bissau",
+            "Angola"
+          ],
+          "indice": "Drapeau · Bloc atlantique sud",
+          "description": "Drapeau de Angola.",
+          "explication": "Angola : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad13",
+          "difficulte": "moyen",
+          "nom_commun": "Mozambique",
+          "nom_scientifique": "Mozambique",
+          "groupe": "afrique",
+          "options": [
+            "Tunisie",
+            "Lesotho",
+            "Mozambique",
+            "Zambie"
+          ],
+          "indice": "Drapeau · Bande côtière indienne",
+          "description": "Drapeau de Mozambique.",
+          "explication": "Mozambique : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad14",
+          "difficulte": "moyen",
+          "nom_commun": "Tanzanie",
+          "nom_scientifique": "Tanzania",
+          "groupe": "afrique",
+          "options": [
+            "Angola",
+            "Nigeria",
+            "Guinée-Bissau",
+            "Tanzanie"
+          ],
+          "indice": "Drapeau · Bloc est large",
+          "description": "Drapeau de Tanzanie.",
+          "explication": "Tanzanie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad15",
+          "difficulte": "moyen",
+          "nom_commun": "Ouganda",
+          "nom_scientifique": "Uganda",
+          "groupe": "afrique",
+          "options": [
+            "Zimbabwe",
+            "Algérie",
+            "Eswatini",
+            "Ouganda"
+          ],
+          "indice": "Drapeau · Petit bloc des Grands Lacs",
+          "description": "Drapeau de Ouganda.",
+          "explication": "Ouganda : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad16",
+          "difficulte": "moyen",
+          "nom_commun": "Ghana",
+          "nom_scientifique": "Ghana",
+          "groupe": "afrique",
+          "options": [
+            "Burkina Faso",
+            "Tchad",
+            "Nigeria",
+            "Ghana"
+          ],
+          "indice": "Drapeau · Bande côtière convexe",
+          "description": "Drapeau de Ghana.",
+          "explication": "Ghana : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad17",
+          "difficulte": "moyen",
+          "nom_commun": "Côte d'Ivoire",
+          "nom_scientifique": "Ivory Coast",
+          "groupe": "afrique",
+          "options": [
+            "Érythrée",
+            "Mozambique",
+            "Zimbabwe",
+            "Côte d'Ivoire"
+          ],
+          "indice": "Drapeau · Bloc côtier ouest",
+          "description": "Drapeau de Côte d'Ivoire.",
+          "explication": "Côte d'Ivoire : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad18",
+          "difficulte": "moyen",
+          "nom_commun": "Cameroun",
+          "nom_scientifique": "Cameroon",
+          "groupe": "afrique",
+          "options": [
+            "Cameroun",
+            "Rwanda",
+            "Bénin",
+            "Tchad"
+          ],
+          "indice": "Drapeau · Triangle du golfe",
+          "description": "Drapeau de Cameroun.",
+          "explication": "Cameroun : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad19",
+          "difficulte": "moyen",
+          "nom_commun": "Sénégal",
+          "nom_scientifique": "Senegal",
+          "groupe": "afrique",
+          "options": [
+            "Égypte",
+            "Mali",
+            "Sénégal",
+            "Rwanda"
+          ],
+          "indice": "Drapeau · Bande atlantique ouest",
+          "description": "Drapeau de Sénégal.",
+          "explication": "Sénégal : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad20",
+          "difficulte": "moyen",
+          "nom_commun": "Mali",
+          "nom_scientifique": "Mali",
+          "groupe": "afrique",
+          "options": [
+            "République démocratique du Congo",
+            "Mali",
+            "Kenya",
+            "Algérie"
+          ],
+          "indice": "Drapeau · Immense bloc sahélien",
+          "description": "Drapeau de Mali.",
+          "explication": "Mali : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad21",
+          "difficulte": "moyen",
+          "nom_commun": "Niger",
+          "nom_scientifique": "Niger",
+          "groupe": "afrique",
+          "options": [
+            "Zimbabwe",
+            "Kenya",
+            "Niger",
+            "Guinée"
+          ],
+          "indice": "Drapeau · Bloc central désertique",
+          "description": "Drapeau de Niger.",
+          "explication": "Niger : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad22",
+          "difficulte": "moyen",
+          "nom_commun": "Tchad",
+          "nom_scientifique": "Chad",
+          "groupe": "afrique",
+          "options": [
+            "Sénégal",
+            "Niger",
+            "Nigeria",
+            "Tchad"
+          ],
+          "indice": "Drapeau · Bloc central en forme de triangle",
+          "description": "Drapeau de Tchad.",
+          "explication": "Tchad : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad23",
+          "difficulte": "moyen",
+          "nom_commun": "République centrafricaine",
+          "nom_scientifique": "Central African Republic",
+          "groupe": "afrique",
+          "options": [
+            "Afrique du Sud",
+            "São Tomé-et-Principe",
+            "Burundi",
+            "République centrafricaine"
+          ],
+          "indice": "Drapeau · Bloc équatorial",
+          "description": "Drapeau de République centrafricaine.",
+          "explication": "République centrafricaine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad24",
+          "difficulte": "moyen",
+          "nom_commun": "République démocratique du Congo",
+          "nom_scientifique": "Democratic Republic of the Congo",
+          "groupe": "afrique",
+          "options": [
+            "République démocratique du Congo",
+            "Côte d'Ivoire",
+            "São Tomé-et-Principe",
+            "Guinée-Bissau"
+          ],
+          "indice": "Drapeau · Cœur du continent",
+          "description": "Drapeau de République démocratique du Congo.",
+          "explication": "République démocratique du Congo : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad25",
+          "difficulte": "moyen",
+          "nom_commun": "Gabon",
+          "nom_scientifique": "Gabon",
+          "groupe": "afrique",
+          "options": [
+            "Seychelles",
+            "Gabon",
+            "Burundi",
+            "Côte d'Ivoire"
+          ],
+          "indice": "Drapeau · Bande équatoriale",
+          "description": "Drapeau de Gabon.",
+          "explication": "Gabon : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad26",
+          "difficulte": "moyen",
+          "nom_commun": "Zambie",
+          "nom_scientifique": "Zambia",
+          "groupe": "afrique",
+          "options": [
+            "Zambie",
+            "République centrafricaine",
+            "Gambie",
+            "Ghana"
+          ],
+          "indice": "Drapeau · Bloc sans littoral sud",
+          "description": "Drapeau de Zambie.",
+          "explication": "Zambie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad27",
+          "difficulte": "moyen",
+          "nom_commun": "Zimbabwe",
+          "nom_scientifique": "Zimbabwe",
+          "groupe": "afrique",
+          "options": [
+            "Zimbabwe",
+            "Nigeria",
+            "République centrafricaine",
+            "Togo"
+          ],
+          "indice": "Drapeau · Bloc sud compact",
+          "description": "Drapeau de Zimbabwe.",
+          "explication": "Zimbabwe : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad28",
+          "difficulte": "difficile",
+          "nom_commun": "Bénin",
+          "nom_scientifique": "Benin",
+          "groupe": "afrique",
+          "options": [
+            "Mali",
+            "Afrique du Sud",
+            "Guinée-Bissau",
+            "Bénin"
+          ],
+          "indice": "Drapeau · Bande verticale étroite",
+          "description": "Drapeau de Bénin.",
+          "explication": "Bénin : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad29",
+          "difficulte": "difficile",
+          "nom_commun": "Togo",
+          "nom_scientifique": "Togo",
+          "groupe": "afrique",
+          "options": [
+            "Gabon",
+            "Togo",
+            "Mozambique",
+            "Angola"
+          ],
+          "indice": "Drapeau · Très étroite bande côtière",
+          "description": "Drapeau de Togo.",
+          "explication": "Togo : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad30",
+          "difficulte": "difficile",
+          "nom_commun": "Burkina Faso",
+          "nom_scientifique": "Burkina Faso",
+          "groupe": "afrique",
+          "options": [
+            "Ghana",
+            "Lesotho",
+            "Gambie",
+            "Burkina Faso"
+          ],
+          "indice": "Drapeau · Bloc sahélien compact",
+          "description": "Drapeau de Burkina Faso.",
+          "explication": "Burkina Faso : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad31",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée",
+          "nom_scientifique": "Guinea",
+          "groupe": "afrique",
+          "options": [
+            "Kenya",
+            "Guinée",
+            "Tchad",
+            "Guinée-Bissau"
+          ],
+          "indice": "Drapeau · Bloc atlantique ouest",
+          "description": "Drapeau de Guinée.",
+          "explication": "Guinée : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad32",
+          "difficulte": "difficile",
+          "nom_commun": "Sierra Leone",
+          "nom_scientifique": "Sierra Leone",
+          "groupe": "afrique",
+          "options": [
+            "Guinée",
+            "Sierra Leone",
+            "Égypte",
+            "Éthiopie"
+          ],
+          "indice": "Drapeau · Petit triangle côtier",
+          "description": "Drapeau de Sierra Leone.",
+          "explication": "Sierra Leone : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad33",
+          "difficulte": "difficile",
+          "nom_commun": "Libéria",
+          "nom_scientifique": "Liberia",
+          "groupe": "afrique",
+          "options": [
+            "Tchad",
+            "Libéria",
+            "Mali",
+            "Guinée équatoriale"
+          ],
+          "indice": "Drapeau · Bande côtière ouest",
+          "description": "Drapeau de Libéria.",
+          "explication": "Libéria : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad34",
+          "difficulte": "difficile",
+          "nom_commun": "Gambie",
+          "nom_scientifique": "Gambia",
+          "groupe": "afrique",
+          "options": [
+            "Gambie",
+            "Djibouti",
+            "Guinée-Bissau",
+            "Nigeria"
+          ],
+          "indice": "Drapeau · Bande enclavée dans le Sénégal",
+          "description": "Drapeau de Gambie.",
+          "explication": "Gambie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad35",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée-Bissau",
+          "nom_scientifique": "Guinea-Bissau",
+          "groupe": "afrique",
+          "options": [
+            "République centrafricaine",
+            "Sierra Leone",
+            "Guinée-Bissau",
+            "Comores"
+          ],
+          "indice": "Drapeau · Petit bloc atlantique",
+          "description": "Drapeau de Guinée-Bissau.",
+          "explication": "Guinée-Bissau : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad36",
+          "difficulte": "difficile",
+          "nom_commun": "Guinée équatoriale",
+          "nom_scientifique": "Equatorial Guinea",
+          "groupe": "afrique",
+          "options": [
+            "Guinée",
+            "Tanzanie",
+            "Gambie",
+            "Guinée équatoriale"
+          ],
+          "indice": "Drapeau · Petit bloc côtier",
+          "description": "Drapeau de Guinée équatoriale.",
+          "explication": "Guinée équatoriale : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad37",
+          "difficulte": "difficile",
+          "nom_commun": "Djibouti",
+          "nom_scientifique": "Djibouti",
+          "groupe": "afrique",
+          "options": [
+            "São Tomé-et-Principe",
+            "Kenya",
+            "Djibouti",
+            "Niger"
+          ],
+          "indice": "Drapeau · Petit triangle de la Corne",
+          "description": "Drapeau de Djibouti.",
+          "explication": "Djibouti : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad38",
+          "difficulte": "difficile",
+          "nom_commun": "Érythrée",
+          "nom_scientifique": "Eritrea",
+          "groupe": "afrique",
+          "options": [
+            "Côte d'Ivoire",
+            "Érythrée",
+            "Guinée équatoriale",
+            "Maroc"
+          ],
+          "indice": "Drapeau · Bande de la mer Rouge",
+          "description": "Drapeau de Érythrée.",
+          "explication": "Érythrée : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad39",
+          "difficulte": "difficile",
+          "nom_commun": "Somalie",
+          "nom_scientifique": "Somalia",
+          "groupe": "afrique",
+          "options": [
+            "Ouganda",
+            "Algérie",
+            "Somalie",
+            "Libye"
+          ],
+          "indice": "Drapeau · Corne allongée",
+          "description": "Drapeau de Somalie.",
+          "explication": "Somalie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad40",
+          "difficulte": "difficile",
+          "nom_commun": "Burundi",
+          "nom_scientifique": "Burundi",
+          "groupe": "afrique",
+          "options": [
+            "Bénin",
+            "Guinée équatoriale",
+            "Somalie",
+            "Burundi"
+          ],
+          "indice": "Drapeau · Petit bloc des Grands Lacs",
+          "description": "Drapeau de Burundi.",
+          "explication": "Burundi : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad41",
+          "difficulte": "difficile",
+          "nom_commun": "Rwanda",
+          "nom_scientifique": "Rwanda",
+          "groupe": "afrique",
+          "options": [
+            "Tanzanie",
+            "Burkina Faso",
+            "Libye",
+            "Rwanda"
+          ],
+          "indice": "Drapeau · Petit bloc montagneux",
+          "description": "Drapeau de Rwanda.",
+          "explication": "Rwanda : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad42",
+          "difficulte": "difficile",
+          "nom_commun": "Lesotho",
+          "nom_scientifique": "Lesotho",
+          "groupe": "afrique",
+          "options": [
+            "Zambie",
+            "Mozambique",
+            "Zimbabwe",
+            "Lesotho"
+          ],
+          "indice": "Drapeau · Enclavé dans l'Afrique du Sud",
+          "description": "Drapeau de Lesotho.",
+          "explication": "Lesotho : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad43",
+          "difficulte": "difficile",
+          "nom_commun": "Eswatini",
+          "nom_scientifique": "Eswatini",
+          "groupe": "afrique",
+          "options": [
+            "Eswatini",
+            "Djibouti",
+            "Ghana",
+            "Guinée équatoriale"
+          ],
+          "indice": "Drapeau · Petit bloc sud-est",
+          "description": "Drapeau de Eswatini.",
+          "explication": "Eswatini : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad44",
+          "difficulte": "difficile",
+          "nom_commun": "Maurice",
+          "nom_scientifique": "Mauritius",
+          "groupe": "afrique",
+          "options": [
+            "Guinée équatoriale",
+            "Maurice",
+            "Kenya",
+            "Soudan"
+          ],
+          "indice": "Drapeau · Point dans l'océan Indien",
+          "description": "Drapeau de Maurice.",
+          "explication": "Maurice : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad45",
+          "difficulte": "difficile",
+          "nom_commun": "Seychelles",
+          "nom_scientifique": "Seychelles",
+          "groupe": "afrique",
+          "options": [
+            "Ghana",
+            "Nigeria",
+            "Rwanda",
+            "Seychelles"
+          ],
+          "indice": "Drapeau · Archipel dispersé",
+          "description": "Drapeau de Seychelles.",
+          "explication": "Seychelles : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad46",
+          "difficulte": "difficile",
+          "nom_commun": "Comores",
+          "nom_scientifique": "Comoros",
+          "groupe": "afrique",
+          "options": [
+            "Maroc",
+            "Comores",
+            "Angola",
+            "Nigeria"
+          ],
+          "indice": "Drapeau · Archipel entre Afrique et Madagascar",
+          "description": "Drapeau de Comores.",
+          "explication": "Comores : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad47",
+          "difficulte": "difficile",
+          "nom_commun": "São Tomé-et-Principe",
+          "nom_scientifique": "Sao Tome and Principe",
+          "groupe": "afrique",
+          "options": [
+            "Angola",
+            "São Tomé-et-Principe",
+            "Togo",
+            "Comores"
+          ],
+          "indice": "Drapeau · Deux îles au golfe de Guinée",
+          "description": "Drapeau de São Tomé-et-Principe.",
+          "explication": "São Tomé-et-Principe : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad48",
+          "difficulte": "difficile",
+          "nom_commun": "Cap-Vert",
+          "nom_scientifique": "Cape Verde",
+          "groupe": "afrique",
+          "options": [
+            "Égypte",
+            "Côte d'Ivoire",
+            "Kenya",
+            "Cap-Vert"
+          ],
+          "indice": "Drapeau · Archipel atlantique",
+          "description": "Drapeau de Cap-Vert.",
+          "explication": "Cap-Vert : reconnaissable à son drapeau national."
+        }
+      ]
+    },
+    {
+      "id": "asie",
+      "label": "Asie",
+      "questions": [
+        {
+          "id": "ad1",
+          "difficulte": "facile",
+          "nom_commun": "Russie",
+          "nom_scientifique": "Russia",
+          "groupe": "asie",
+          "options": [
+            "Indonésie",
+            "Cambodge",
+            "Russie",
+            "Chine"
+          ],
+          "indice": "Drapeau · Immense bloc eurasien",
+          "description": "Drapeau de Russie.",
+          "explication": "Russie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad2",
+          "difficulte": "facile",
+          "nom_commun": "Chine",
+          "nom_scientifique": "China",
+          "groupe": "asie",
+          "options": [
+            "Indonésie",
+            "Bhoutan",
+            "Chine",
+            "Iran"
+          ],
+          "indice": "Drapeau · Grand bloc est asiatique",
+          "description": "Drapeau de Chine.",
+          "explication": "Chine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad3",
+          "difficulte": "facile",
+          "nom_commun": "Inde",
+          "nom_scientifique": "India",
+          "groupe": "asie",
+          "options": [
+            "Géorgie",
+            "Ouzbékistan",
+            "Inde",
+            "Arménie"
+          ],
+          "indice": "Drapeau · Triangle pointant au sud",
+          "description": "Drapeau de Inde.",
+          "explication": "Inde : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad4",
+          "difficulte": "facile",
+          "nom_commun": "Japon",
+          "nom_scientifique": "Japan",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Jordanie",
+            "Japon",
+            "Bangladesh"
+          ],
+          "indice": "Drapeau · Archipel en arc",
+          "description": "Drapeau de Japon.",
+          "explication": "Japon : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad5",
+          "difficulte": "facile",
+          "nom_commun": "Arabie saoudite",
+          "nom_scientifique": "Saudi Arabia",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Arabie saoudite",
+            "Laos",
+            "Russie"
+          ],
+          "indice": "Drapeau · Vaste rectangle péninsulaire",
+          "description": "Drapeau de Arabie saoudite.",
+          "explication": "Arabie saoudite : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad6",
+          "difficulte": "facile",
+          "nom_commun": "Turquie",
+          "nom_scientifique": "Turkey",
+          "groupe": "asie",
+          "options": [
+            "Tadjikistan",
+            "Turquie",
+            "Indonésie",
+            "Liban"
+          ],
+          "indice": "Drapeau · Pont entre Europe et Asie",
+          "description": "Drapeau de Turquie.",
+          "explication": "Turquie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad7",
+          "difficulte": "facile",
+          "nom_commun": "Iran",
+          "nom_scientifique": "Iran",
+          "groupe": "asie",
+          "options": [
+            "Timor oriental",
+            "Laos",
+            "Liban",
+            "Iran"
+          ],
+          "indice": "Drapeau · Bloc en forme de chat",
+          "description": "Drapeau de Iran.",
+          "explication": "Iran : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad8",
+          "difficulte": "facile",
+          "nom_commun": "Indonésie",
+          "nom_scientifique": "Indonesia",
+          "groupe": "asie",
+          "options": [
+            "Émirats arabes unis",
+            "Myanmar",
+            "Indonésie",
+            "Ouzbékistan"
+          ],
+          "indice": "Drapeau · Archipel équatorial immense",
+          "description": "Drapeau de Indonésie.",
+          "explication": "Indonésie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad9",
+          "difficulte": "facile",
+          "nom_commun": "Pakistan",
+          "nom_scientifique": "Pakistan",
+          "groupe": "asie",
+          "options": [
+            "Myanmar",
+            "Irak",
+            "Pakistan",
+            "Népal"
+          ],
+          "indice": "Drapeau · Bande ouest de l'Inde",
+          "description": "Drapeau de Pakistan.",
+          "explication": "Pakistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad10",
+          "difficulte": "facile",
+          "nom_commun": "Kazakhstan",
+          "nom_scientifique": "Kazakhstan",
+          "groupe": "asie",
+          "options": [
+            "Palestine",
+            "Timor oriental",
+            "Kazakhstan",
+            "Yémen"
+          ],
+          "indice": "Drapeau · Vaste bloc central",
+          "description": "Drapeau de Kazakhstan.",
+          "explication": "Kazakhstan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad11",
+          "difficulte": "moyen",
+          "nom_commun": "Viêt Nam",
+          "nom_scientifique": "Vietnam",
+          "groupe": "asie",
+          "options": [
+            "Bahreïn",
+            "Géorgie",
+            "Viêt Nam",
+            "Turkménistan"
+          ],
+          "indice": "Drapeau · Bande côtière en S",
+          "description": "Drapeau de Viêt Nam.",
+          "explication": "Viêt Nam : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad12",
+          "difficulte": "moyen",
+          "nom_commun": "Thaïlande",
+          "nom_scientifique": "Thailand",
+          "groupe": "asie",
+          "options": [
+            "Thaïlande",
+            "Arménie",
+            "Iran",
+            "Irak"
+          ],
+          "indice": "Drapeau · Bloc en forme de tête d'éléphant",
+          "description": "Drapeau de Thaïlande.",
+          "explication": "Thaïlande : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad13",
+          "difficulte": "moyen",
+          "nom_commun": "Myanmar",
+          "nom_scientifique": "Myanmar",
+          "groupe": "asie",
+          "options": [
+            "Pakistan",
+            "Myanmar",
+            "Turquie",
+            "Timor oriental"
+          ],
+          "indice": "Drapeau · Bloc est allongé",
+          "description": "Drapeau de Myanmar.",
+          "explication": "Myanmar : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad14",
+          "difficulte": "moyen",
+          "nom_commun": "Corée du Sud",
+          "nom_scientifique": "South Korea",
+          "groupe": "asie",
+          "options": [
+            "Kirghizistan",
+            "Corée du Sud",
+            "Bahreïn",
+            "Ouzbékistan"
+          ],
+          "indice": "Drapeau · Péninsule compacte",
+          "description": "Drapeau de Corée du Sud.",
+          "explication": "Corée du Sud : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad15",
+          "difficulte": "moyen",
+          "nom_commun": "Corée du Nord",
+          "nom_scientifique": "North Korea",
+          "groupe": "asie",
+          "options": [
+            "Israël",
+            "Azerbaïdjan",
+            "Corée du Nord",
+            "Jordanie"
+          ],
+          "indice": "Drapeau · Bande nord de la péninsule",
+          "description": "Drapeau de Corée du Nord.",
+          "explication": "Corée du Nord : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad16",
+          "difficulte": "moyen",
+          "nom_commun": "Malaisie",
+          "nom_scientifique": "Malaysia",
+          "groupe": "asie",
+          "options": [
+            "Arménie",
+            "Malaisie",
+            "Philippines",
+            "Russie"
+          ],
+          "indice": "Drapeau · Deux blocs séparés",
+          "description": "Drapeau de Malaisie.",
+          "explication": "Malaisie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad17",
+          "difficulte": "moyen",
+          "nom_commun": "Philippines",
+          "nom_scientifique": "Philippines",
+          "groupe": "asie",
+          "options": [
+            "Turquie",
+            "Philippines",
+            "Malaisie",
+            "Israël"
+          ],
+          "indice": "Drapeau · Archipel en triangle",
+          "description": "Drapeau de Philippines.",
+          "explication": "Philippines : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad18",
+          "difficulte": "moyen",
+          "nom_commun": "Ouzbékistan",
+          "nom_scientifique": "Uzbekistan",
+          "groupe": "asie",
+          "options": [
+            "Sri Lanka",
+            "Ouzbékistan",
+            "Philippines",
+            "Qatar"
+          ],
+          "indice": "Drapeau · Bloc double enclavé",
+          "description": "Drapeau de Ouzbékistan.",
+          "explication": "Ouzbékistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad19",
+          "difficulte": "moyen",
+          "nom_commun": "Afghanistan",
+          "nom_scientifique": "Afghanistan",
+          "groupe": "asie",
+          "options": [
+            "Corée du Nord",
+            "Afghanistan",
+            "Taïwan",
+            "Koweït"
+          ],
+          "indice": "Drapeau · Bloc montagneux enclavé",
+          "description": "Drapeau de Afghanistan.",
+          "explication": "Afghanistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad20",
+          "difficulte": "moyen",
+          "nom_commun": "Irak",
+          "nom_scientifique": "Iraq",
+          "groupe": "asie",
+          "options": [
+            "Irak",
+            "Mongolie",
+            "Sri Lanka",
+            "Jordanie"
+          ],
+          "indice": "Drapeau · Triangle entre deux fleuves",
+          "description": "Drapeau de Irak.",
+          "explication": "Irak : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad21",
+          "difficulte": "moyen",
+          "nom_commun": "Syrie",
+          "nom_scientifique": "Syria",
+          "groupe": "asie",
+          "options": [
+            "Turkménistan",
+            "Syrie",
+            "Thaïlande",
+            "Oman"
+          ],
+          "indice": "Drapeau · Bloc du Levant",
+          "description": "Drapeau de Syrie.",
+          "explication": "Syrie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad22",
+          "difficulte": "moyen",
+          "nom_commun": "Israël",
+          "nom_scientifique": "Israel",
+          "groupe": "asie",
+          "options": [
+            "Israël",
+            "Thaïlande",
+            "Indonésie",
+            "Turkménistan"
+          ],
+          "indice": "Drapeau · Bande méditerranéenne étroite",
+          "description": "Drapeau de Israël.",
+          "explication": "Israël : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad23",
+          "difficulte": "moyen",
+          "nom_commun": "Jordanie",
+          "nom_scientifique": "Jordan",
+          "groupe": "asie",
+          "options": [
+            "Yémen",
+            "Bahreïn",
+            "Brunei",
+            "Jordanie"
+          ],
+          "indice": "Drapeau · Bloc désertique enclavé",
+          "description": "Drapeau de Jordanie.",
+          "explication": "Jordanie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad24",
+          "difficulte": "moyen",
+          "nom_commun": "Liban",
+          "nom_scientifique": "Lebanon",
+          "groupe": "asie",
+          "options": [
+            "Liban",
+            "Thaïlande",
+            "Palestine",
+            "Géorgie"
+          ],
+          "indice": "Drapeau · Bande côtière étroite",
+          "description": "Drapeau de Liban.",
+          "explication": "Liban : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad25",
+          "difficulte": "moyen",
+          "nom_commun": "Yémen",
+          "nom_scientifique": "Yemen",
+          "groupe": "asie",
+          "options": [
+            "Bahreïn",
+            "Koweït",
+            "Bhoutan",
+            "Yémen"
+          ],
+          "indice": "Drapeau · Coin sud de la péninsule",
+          "description": "Drapeau de Yémen.",
+          "explication": "Yémen : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad26",
+          "difficulte": "moyen",
+          "nom_commun": "Oman",
+          "nom_scientifique": "Oman",
+          "groupe": "asie",
+          "options": [
+            "Bhoutan",
+            "Oman",
+            "Émirats arabes unis",
+            "Sri Lanka"
+          ],
+          "indice": "Drapeau · Bloc péninsulaire sud-est",
+          "description": "Drapeau de Oman.",
+          "explication": "Oman : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad27",
+          "difficulte": "moyen",
+          "nom_commun": "Émirats arabes unis",
+          "nom_scientifique": "United Arab Emirates",
+          "groupe": "asie",
+          "options": [
+            "Sri Lanka",
+            "Palestine",
+            "Émirats arabes unis",
+            "Philippines"
+          ],
+          "indice": "Drapeau · Petit bloc du golfe Persique",
+          "description": "Drapeau de Émirats arabes unis.",
+          "explication": "Émirats arabes unis : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad28",
+          "difficulte": "difficile",
+          "nom_commun": "Bangladesh",
+          "nom_scientifique": "Bangladesh",
+          "groupe": "asie",
+          "options": [
+            "Cambodge",
+            "Bangladesh",
+            "Philippines",
+            "Singapour"
+          ],
+          "indice": "Drapeau · Bande du delta du Gange",
+          "description": "Drapeau de Bangladesh.",
+          "explication": "Bangladesh : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad29",
+          "difficulte": "difficile",
+          "nom_commun": "Sri Lanka",
+          "nom_scientifique": "Sri Lanka",
+          "groupe": "asie",
+          "options": [
+            "Émirats arabes unis",
+            "Sri Lanka",
+            "Russie",
+            "Tadjikistan"
+          ],
+          "indice": "Drapeau · Goutte au sud de l'Inde",
+          "description": "Drapeau de Sri Lanka.",
+          "explication": "Sri Lanka : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad30",
+          "difficulte": "difficile",
+          "nom_commun": "Népal",
+          "nom_scientifique": "Nepal",
+          "groupe": "asie",
+          "options": [
+            "Chine",
+            "Taïwan",
+            "Iran",
+            "Népal"
+          ],
+          "indice": "Drapeau · Bande himalayenne",
+          "description": "Drapeau de Népal.",
+          "explication": "Népal : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad31",
+          "difficulte": "difficile",
+          "nom_commun": "Bhoutan",
+          "nom_scientifique": "Bhoutan",
+          "groupe": "asie",
+          "options": [
+            "Viêt Nam",
+            "Tadjikistan",
+            "Bhoutan",
+            "Cambodge"
+          ],
+          "indice": "Drapeau · Petit bloc himalayen",
+          "description": "Drapeau de Bhoutan.",
+          "explication": "Bhoutan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad32",
+          "difficulte": "difficile",
+          "nom_commun": "Cambodge",
+          "nom_scientifique": "Cambodia",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Corée du Sud",
+            "Cambodge",
+            "Yémen"
+          ],
+          "indice": "Drapeau · Bloc du Mekong",
+          "description": "Drapeau de Cambodge.",
+          "explication": "Cambodge : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad33",
+          "difficulte": "difficile",
+          "nom_commun": "Laos",
+          "nom_scientifique": "Laos",
+          "groupe": "asie",
+          "options": [
+            "Japon",
+            "Azerbaïdjan",
+            "Bhoutan",
+            "Laos"
+          ],
+          "indice": "Drapeau · Bloc enclavé",
+          "description": "Drapeau de Laos.",
+          "explication": "Laos : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad34",
+          "difficulte": "difficile",
+          "nom_commun": "Mongolie",
+          "nom_scientifique": "Mongolia",
+          "groupe": "asie",
+          "options": [
+            "Afghanistan",
+            "Malaisie",
+            "Ouzbékistan",
+            "Mongolie"
+          ],
+          "indice": "Drapeau · Vaste bloc sans littoral",
+          "description": "Drapeau de Mongolie.",
+          "explication": "Mongolie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad35",
+          "difficulte": "difficile",
+          "nom_commun": "Taïwan",
+          "nom_scientifique": "Taiwan",
+          "groupe": "asie",
+          "options": [
+            "Chine",
+            "Taïwan",
+            "Qatar",
+            "Pakistan"
+          ],
+          "indice": "Drapeau · Île est allongée",
+          "description": "Drapeau de Taïwan.",
+          "explication": "Taïwan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad36",
+          "difficulte": "difficile",
+          "nom_commun": "Singapour",
+          "nom_scientifique": "Singapore",
+          "groupe": "asie",
+          "options": [
+            "Afghanistan",
+            "Philippines",
+            "Koweït",
+            "Singapour"
+          ],
+          "indice": "Drapeau · Point à la pointe malaise",
+          "description": "Drapeau de Singapour.",
+          "explication": "Singapour : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad37",
+          "difficulte": "difficile",
+          "nom_commun": "Brunei",
+          "nom_scientifique": "Brunei",
+          "groupe": "asie",
+          "options": [
+            "Indonésie",
+            "Malaisie",
+            "Émirats arabes unis",
+            "Brunei"
+          ],
+          "indice": "Drapeau · Petit bloc sur Bornéo",
+          "description": "Drapeau de Brunei.",
+          "explication": "Brunei : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad38",
+          "difficulte": "difficile",
+          "nom_commun": "Timor oriental",
+          "nom_scientifique": "East Timor",
+          "groupe": "asie",
+          "options": [
+            "Népal",
+            "Arménie",
+            "Timor oriental",
+            "Myanmar"
+          ],
+          "indice": "Drapeau · Moitié est de Timor",
+          "description": "Drapeau de Timor oriental.",
+          "explication": "Timor oriental : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad39",
+          "difficulte": "difficile",
+          "nom_commun": "Arménie",
+          "nom_scientifique": "Armenia",
+          "groupe": "asie",
+          "options": [
+            "Liban",
+            "Arménie",
+            "Viêt Nam",
+            "Chine"
+          ],
+          "indice": "Drapeau · Petit bloc du Caucase",
+          "description": "Drapeau de Arménie.",
+          "explication": "Arménie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad40",
+          "difficulte": "difficile",
+          "nom_commun": "Géorgie",
+          "nom_scientifique": "Georgia",
+          "groupe": "asie",
+          "options": [
+            "Russie",
+            "Japon",
+            "Azerbaïdjan",
+            "Géorgie"
+          ],
+          "indice": "Drapeau · Bande côtière du Caucase",
+          "description": "Drapeau de Géorgie.",
+          "explication": "Géorgie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad41",
+          "difficulte": "difficile",
+          "nom_commun": "Azerbaïdjan",
+          "nom_scientifique": "Azerbaijan",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Malaisie",
+            "Liban",
+            "Jordanie"
+          ],
+          "indice": "Drapeau · Bande caspienne",
+          "description": "Drapeau de Azerbaïdjan.",
+          "explication": "Azerbaïdjan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad42",
+          "difficulte": "difficile",
+          "nom_commun": "Kirghizistan",
+          "nom_scientifique": "Kyrgyzstan",
+          "groupe": "asie",
+          "options": [
+            "Palestine",
+            "Kirghizistan",
+            "Azerbaïdjan",
+            "Oman"
+          ],
+          "indice": "Drapeau · Bloc montagneux central",
+          "description": "Drapeau de Kirghizistan.",
+          "explication": "Kirghizistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad43",
+          "difficulte": "difficile",
+          "nom_commun": "Tadjikistan",
+          "nom_scientifique": "Tajikistan",
+          "groupe": "asie",
+          "options": [
+            "Viêt Nam",
+            "Corée du Nord",
+            "Tadjikistan",
+            "Pakistan"
+          ],
+          "indice": "Drapeau · Bloc est enclavé",
+          "description": "Drapeau de Tadjikistan.",
+          "explication": "Tadjikistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad44",
+          "difficulte": "difficile",
+          "nom_commun": "Turkménistan",
+          "nom_scientifique": "Turkmenistan",
+          "groupe": "asie",
+          "options": [
+            "Chine",
+            "Laos",
+            "Turkménistan",
+            "Philippines"
+          ],
+          "indice": "Drapeau · Bloc désert caspien",
+          "description": "Drapeau de Turkménistan.",
+          "explication": "Turkménistan : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad45",
+          "difficulte": "difficile",
+          "nom_commun": "Qatar",
+          "nom_scientifique": "Qatar",
+          "groupe": "asie",
+          "options": [
+            "Iran",
+            "Cambodge",
+            "Qatar",
+            "Irak"
+          ],
+          "indice": "Drapeau · Péninsule du golfe Persique",
+          "description": "Drapeau de Qatar.",
+          "explication": "Qatar : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad46",
+          "difficulte": "difficile",
+          "nom_commun": "Bahreïn",
+          "nom_scientifique": "Bahrain",
+          "groupe": "asie",
+          "options": [
+            "Azerbaïdjan",
+            "Bahreïn",
+            "Thaïlande",
+            "Israël"
+          ],
+          "indice": "Drapeau · Archipel du golfe",
+          "description": "Drapeau de Bahreïn.",
+          "explication": "Bahreïn : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad47",
+          "difficulte": "difficile",
+          "nom_commun": "Koweït",
+          "nom_scientifique": "Kuwait",
+          "groupe": "asie",
+          "options": [
+            "Koweït",
+            "Russie",
+            "Pakistan",
+            "Corée du Nord"
+          ],
+          "indice": "Drapeau · Petit triangle du golfe",
+          "description": "Drapeau de Koweït.",
+          "explication": "Koweït : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad48",
+          "difficulte": "difficile",
+          "nom_commun": "Palestine",
+          "nom_scientifique": "Palestine",
+          "groupe": "asie",
+          "options": [
+            "Corée du Nord",
+            "Cambodge",
+            "Palestine",
+            "Inde"
+          ],
+          "indice": "Drapeau · Deux blocs séparés",
+          "description": "Drapeau de Palestine.",
+          "explication": "Palestine : reconnaissable à son drapeau national."
+        }
+      ]
+    },
+    {
+      "id": "ameriques",
+      "label": "Amériques",
+      "questions": [
+        {
+          "id": "ad1",
+          "difficulte": "facile",
+          "nom_commun": "États-Unis",
+          "nom_scientifique": "United States",
+          "groupe": "ameriques",
+          "options": [
+            "États-Unis",
+            "Nicaragua",
+            "Barbade",
+            "Canada"
+          ],
+          "indice": "Drapeau · Grand bloc nord-américain",
+          "description": "Drapeau de États-Unis.",
+          "explication": "États-Unis : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad2",
+          "difficulte": "facile",
+          "nom_commun": "Canada",
+          "nom_scientifique": "Canada",
+          "groupe": "ameriques",
+          "options": [
+            "Nicaragua",
+            "République dominicaine",
+            "Canada",
+            "Mexique"
+          ],
+          "indice": "Drapeau · Immense bloc nord",
+          "description": "Drapeau de Canada.",
+          "explication": "Canada : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad3",
+          "difficulte": "facile",
+          "nom_commun": "Brésil",
+          "nom_scientifique": "Brazil",
+          "groupe": "ameriques",
+          "options": [
+            "Guyana",
+            "Brésil",
+            "Barbade",
+            "Salvador"
+          ],
+          "indice": "Drapeau · Cœur convexe de l'Amérique du Sud",
+          "description": "Drapeau de Brésil.",
+          "explication": "Brésil : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad4",
+          "difficulte": "facile",
+          "nom_commun": "Mexique",
+          "nom_scientifique": "Mexico",
+          "groupe": "ameriques",
+          "options": [
+            "Équateur",
+            "Saint-Kitts-et-Nevis",
+            "Mexique",
+            "Nicaragua"
+          ],
+          "indice": "Drapeau · Bande nord-sud large",
+          "description": "Drapeau de Mexique.",
+          "explication": "Mexique : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad5",
+          "difficulte": "facile",
+          "nom_commun": "Argentine",
+          "nom_scientifique": "Argentina",
+          "groupe": "ameriques",
+          "options": [
+            "Sainte-Lucie",
+            "Argentine",
+            "Guyana",
+            "Panama"
+          ],
+          "indice": "Drapeau · Triangle pointant au sud",
+          "description": "Drapeau de Argentine.",
+          "explication": "Argentine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad6",
+          "difficulte": "facile",
+          "nom_commun": "Colombie",
+          "nom_scientifique": "Colombia",
+          "groupe": "ameriques",
+          "options": [
+            "Dominique",
+            "États-Unis",
+            "Colombie",
+            "Canada"
+          ],
+          "indice": "Drapeau · Bloc nord-ouest convexe",
+          "description": "Drapeau de Colombie.",
+          "explication": "Colombie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad7",
+          "difficulte": "facile",
+          "nom_commun": "Pérou",
+          "nom_scientifique": "Peru",
+          "groupe": "ameriques",
+          "options": [
+            "Colombie",
+            "Pérou",
+            "Uruguay",
+            "Canada"
+          ],
+          "indice": "Drapeau · Bande verticale pacifique",
+          "description": "Drapeau de Pérou.",
+          "explication": "Pérou : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad8",
+          "difficulte": "facile",
+          "nom_commun": "Chili",
+          "nom_scientifique": "Chile",
+          "groupe": "ameriques",
+          "options": [
+            "Brésil",
+            "Saint-Kitts-et-Nevis",
+            "Chili",
+            "Guyane française"
+          ],
+          "indice": "Drapeau · Bande verticale très étroite",
+          "description": "Drapeau de Chili.",
+          "explication": "Chili : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad9",
+          "difficulte": "facile",
+          "nom_commun": "Venezuela",
+          "nom_scientifique": "Venezuela",
+          "groupe": "ameriques",
+          "options": [
+            "Venezuela",
+            "Panama",
+            "Guatemala",
+            "États-Unis"
+          ],
+          "indice": "Drapeau · Bloc caraïbe nord",
+          "description": "Drapeau de Venezuela.",
+          "explication": "Venezuela : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad10",
+          "difficulte": "facile",
+          "nom_commun": "Cuba",
+          "nom_scientifique": "Cuba",
+          "groupe": "ameriques",
+          "options": [
+            "Cuba",
+            "Saint-Vincent-et-les-Grenadines",
+            "Argentine",
+            "Uruguay"
+          ],
+          "indice": "Drapeau · Longue île caraïbe",
+          "description": "Drapeau de Cuba.",
+          "explication": "Cuba : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad11",
+          "difficulte": "moyen",
+          "nom_commun": "Équateur",
+          "nom_scientifique": "Ecuador",
+          "groupe": "ameriques",
+          "options": [
+            "Équateur",
+            "Trinité-et-Tobago",
+            "Venezuela",
+            "Paraguay"
+          ],
+          "indice": "Drapeau · Bande équatoriale compacte",
+          "description": "Drapeau de Équateur.",
+          "explication": "Équateur : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad12",
+          "difficulte": "moyen",
+          "nom_commun": "Bolivie",
+          "nom_scientifique": "Bolivia",
+          "groupe": "ameriques",
+          "options": [
+            "Honduras",
+            "Paraguay",
+            "Salvador",
+            "Bolivie"
+          ],
+          "indice": "Drapeau · Bloc enclavé central",
+          "description": "Drapeau de Bolivie.",
+          "explication": "Bolivie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad13",
+          "difficulte": "moyen",
+          "nom_commun": "Paraguay",
+          "nom_scientifique": "Paraguay",
+          "groupe": "ameriques",
+          "options": [
+            "Canada",
+            "Paraguay",
+            "Guatemala",
+            "Costa Rica"
+          ],
+          "indice": "Drapeau · Bloc enclavé compact",
+          "description": "Drapeau de Paraguay.",
+          "explication": "Paraguay : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad14",
+          "difficulte": "moyen",
+          "nom_commun": "Uruguay",
+          "nom_scientifique": "Uruguay",
+          "groupe": "ameriques",
+          "options": [
+            "Uruguay",
+            "Jamaïque",
+            "Haïti",
+            "Mexique"
+          ],
+          "indice": "Drapeau · Bande atlantique sud",
+          "description": "Drapeau de Uruguay.",
+          "explication": "Uruguay : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad15",
+          "difficulte": "moyen",
+          "nom_commun": "Guyana",
+          "nom_scientifique": "Guyana",
+          "groupe": "ameriques",
+          "options": [
+            "Nicaragua",
+            "Dominique",
+            "Guyana",
+            "Haïti"
+          ],
+          "indice": "Drapeau · Bloc atlantique nord-est",
+          "description": "Drapeau de Guyana.",
+          "explication": "Guyana : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad16",
+          "difficulte": "moyen",
+          "nom_commun": "Suriname",
+          "nom_scientifique": "Suriname",
+          "groupe": "ameriques",
+          "options": [
+            "Guyana",
+            "Suriname",
+            "Honduras",
+            "Venezuela"
+          ],
+          "indice": "Drapeau · Bande côtière compacte",
+          "description": "Drapeau de Suriname.",
+          "explication": "Suriname : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad17",
+          "difficulte": "moyen",
+          "nom_commun": "Guyane française",
+          "nom_scientifique": "French Guiana",
+          "groupe": "ameriques",
+          "options": [
+            "Guyane française",
+            "Bahamas",
+            "Saint-Vincent-et-les-Grenadines",
+            "Salvador"
+          ],
+          "indice": "Drapeau · Bande côtière française",
+          "description": "Drapeau de Guyane française.",
+          "explication": "Guyane française : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad18",
+          "difficulte": "moyen",
+          "nom_commun": "Panama",
+          "nom_scientifique": "Panama",
+          "groupe": "ameriques",
+          "options": [
+            "Bahamas",
+            "Paraguay",
+            "Guatemala",
+            "Panama"
+          ],
+          "indice": "Drapeau · Isthme en S",
+          "description": "Drapeau de Panama.",
+          "explication": "Panama : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad19",
+          "difficulte": "moyen",
+          "nom_commun": "Costa Rica",
+          "nom_scientifique": "Costa Rica",
+          "groupe": "ameriques",
+          "options": [
+            "Uruguay",
+            "Bahamas",
+            "Costa Rica",
+            "Jamaïque"
+          ],
+          "indice": "Drapeau · Bande centrale étroite",
+          "description": "Drapeau de Costa Rica.",
+          "explication": "Costa Rica : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad20",
+          "difficulte": "moyen",
+          "nom_commun": "Nicaragua",
+          "nom_scientifique": "Nicaragua",
+          "groupe": "ameriques",
+          "options": [
+            "Mexique",
+            "Sainte-Lucie",
+            "Nicaragua",
+            "Saint-Vincent-et-les-Grenadines"
+          ],
+          "indice": "Drapeau · Bloc central large",
+          "description": "Drapeau de Nicaragua.",
+          "explication": "Nicaragua : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad21",
+          "difficulte": "moyen",
+          "nom_commun": "Honduras",
+          "nom_scientifique": "Honduras",
+          "groupe": "ameriques",
+          "options": [
+            "Brésil",
+            "Panama",
+            "Honduras",
+            "Sainte-Lucie"
+          ],
+          "indice": "Drapeau · Triangle côtier",
+          "description": "Drapeau de Honduras.",
+          "explication": "Honduras : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad22",
+          "difficulte": "moyen",
+          "nom_commun": "Guatemala",
+          "nom_scientifique": "Guatemala",
+          "groupe": "ameriques",
+          "options": [
+            "Pérou",
+            "Nicaragua",
+            "Guatemala",
+            "Mexique"
+          ],
+          "indice": "Drapeau · Bloc nord-ouest",
+          "description": "Drapeau de Guatemala.",
+          "explication": "Guatemala : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad23",
+          "difficulte": "moyen",
+          "nom_commun": "République dominicaine",
+          "nom_scientifique": "Dominican Republic",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Vincent-et-les-Grenadines",
+            "Belize",
+            "République dominicaine",
+            "Bolivie"
+          ],
+          "indice": "Drapeau · Moitié est d'Hispaniola",
+          "description": "Drapeau de République dominicaine.",
+          "explication": "République dominicaine : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad24",
+          "difficulte": "moyen",
+          "nom_commun": "Haïti",
+          "nom_scientifique": "Haiti",
+          "groupe": "ameriques",
+          "options": [
+            "Colombie",
+            "États-Unis",
+            "Uruguay",
+            "Haïti"
+          ],
+          "indice": "Drapeau · Moitié ouest d'Hispaniola",
+          "description": "Drapeau de Haïti.",
+          "explication": "Haïti : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad25",
+          "difficulte": "moyen",
+          "nom_commun": "Jamaïque",
+          "nom_scientifique": "Jamaica",
+          "groupe": "ameriques",
+          "options": [
+            "Jamaïque",
+            "Venezuela",
+            "Saint-Vincent-et-les-Grenadines",
+            "Grenade"
+          ],
+          "indice": "Drapeau · Île caraïbe ovale",
+          "description": "Drapeau de Jamaïque.",
+          "explication": "Jamaïque : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad26",
+          "difficulte": "difficile",
+          "nom_commun": "Belize",
+          "nom_scientifique": "Belize",
+          "groupe": "ameriques",
+          "options": [
+            "Sainte-Lucie",
+            "Belize",
+            "Argentine",
+            "Panama"
+          ],
+          "indice": "Drapeau · Petit coin caraïbe",
+          "description": "Drapeau de Belize.",
+          "explication": "Belize : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad27",
+          "difficulte": "difficile",
+          "nom_commun": "Salvador",
+          "nom_scientifique": "El Salvador",
+          "groupe": "ameriques",
+          "options": [
+            "Guatemala",
+            "Antigua-et-Barbuda",
+            "Salvador",
+            "Bahamas"
+          ],
+          "indice": "Drapeau · Petit triangle pacifique",
+          "description": "Drapeau de Salvador.",
+          "explication": "Salvador : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad28",
+          "difficulte": "difficile",
+          "nom_commun": "Trinité-et-Tobago",
+          "nom_scientifique": "Trinidad and Tobago",
+          "groupe": "ameriques",
+          "options": [
+            "Trinité-et-Tobago",
+            "Saint-Kitts-et-Nevis",
+            "Jamaïque",
+            "Guatemala"
+          ],
+          "indice": "Drapeau · Deux îles au large du Venezuela",
+          "description": "Drapeau de Trinité-et-Tobago.",
+          "explication": "Trinité-et-Tobago : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad29",
+          "difficulte": "difficile",
+          "nom_commun": "Barbade",
+          "nom_scientifique": "Barbade",
+          "groupe": "ameriques",
+          "options": [
+            "Barbade",
+            "Panama",
+            "Sainte-Lucie",
+            "Haïti"
+          ],
+          "indice": "Drapeau · Petite île caraïbe",
+          "description": "Drapeau de Barbade.",
+          "explication": "Barbade : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad30",
+          "difficulte": "difficile",
+          "nom_commun": "Bahamas",
+          "nom_scientifique": "Bahamas",
+          "groupe": "ameriques",
+          "options": [
+            "Costa Rica",
+            "Bahamas",
+            "Saint-Vincent-et-les-Grenadines",
+            "Chili"
+          ],
+          "indice": "Drapeau · Archipel au nord des Caraïbes",
+          "description": "Drapeau de Bahamas.",
+          "explication": "Bahamas : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad31",
+          "difficulte": "difficile",
+          "nom_commun": "Grenade",
+          "nom_scientifique": "Grenada",
+          "groupe": "ameriques",
+          "options": [
+            "Grenade",
+            "Mexique",
+            "Colombie",
+            "Porto Rico"
+          ],
+          "indice": "Drapeau · Petite île sud des Antilles",
+          "description": "Drapeau de Grenade.",
+          "explication": "Grenade : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad32",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Vincent-et-les-Grenadines",
+          "nom_scientifique": "Saint Vincent and the Grenadines",
+          "groupe": "ameriques",
+          "options": [
+            "Chili",
+            "Saint-Vincent-et-les-Grenadines",
+            "Guyane française",
+            "Honduras"
+          ],
+          "indice": "Drapeau · Chaîne d'îles",
+          "description": "Drapeau de Saint-Vincent-et-les-Grenadines.",
+          "explication": "Saint-Vincent-et-les-Grenadines : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad33",
+          "difficulte": "difficile",
+          "nom_commun": "Sainte-Lucie",
+          "nom_scientifique": "Saint Lucia",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Kitts-et-Nevis",
+            "Bahamas",
+            "Sainte-Lucie",
+            "Brésil"
+          ],
+          "indice": "Drapeau · Île volcanique compacte",
+          "description": "Drapeau de Sainte-Lucie.",
+          "explication": "Sainte-Lucie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad34",
+          "difficulte": "difficile",
+          "nom_commun": "Dominique",
+          "nom_scientifique": "Dominica",
+          "groupe": "ameriques",
+          "options": [
+            "Canada",
+            "Dominique",
+            "Paraguay",
+            "Colombie"
+          ],
+          "indice": "Drapeau · Île centrale des Antilles",
+          "description": "Drapeau de Dominique.",
+          "explication": "Dominique : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad35",
+          "difficulte": "difficile",
+          "nom_commun": "Antigua-et-Barbuda",
+          "nom_scientifique": "Antigua and Barbuda",
+          "groupe": "ameriques",
+          "options": [
+            "Pérou",
+            "Trinité-et-Tobago",
+            "Antigua-et-Barbuda",
+            "Uruguay"
+          ],
+          "indice": "Drapeau · Deux îles des Antilles",
+          "description": "Drapeau de Antigua-et-Barbuda.",
+          "explication": "Antigua-et-Barbuda : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad36",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Kitts-et-Nevis",
+          "nom_scientifique": "Saint Kitts and Nevis",
+          "groupe": "ameriques",
+          "options": [
+            "Suriname",
+            "Sainte-Lucie",
+            "Bolivie",
+            "Saint-Kitts-et-Nevis"
+          ],
+          "indice": "Drapeau · Deux petites îles",
+          "description": "Drapeau de Saint-Kitts-et-Nevis.",
+          "explication": "Saint-Kitts-et-Nevis : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad37",
+          "difficulte": "difficile",
+          "nom_commun": "Porto Rico",
+          "nom_scientifique": "Puerto Rico",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Kitts-et-Nevis",
+            "Paraguay",
+            "Panama",
+            "Porto Rico"
+          ],
+          "indice": "Drapeau · Île rectangulaire des Caraïbes",
+          "description": "Drapeau de Porto Rico.",
+          "explication": "Porto Rico : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "ad38",
+          "difficulte": "difficile",
+          "nom_commun": "Groenland",
+          "nom_scientifique": "Greenland",
+          "groupe": "ameriques",
+          "options": [
+            "Pérou",
+            "Cuba",
+            "Groenland",
+            "Mexique"
+          ],
+          "indice": "Drapeau · Immense île arctique",
+          "description": "Drapeau de Groenland.",
+          "explication": "Groenland : reconnaissable à son drapeau national."
+        }
+      ]
+    },
+    {
+      "id": "oceanie",
+      "label": "Océanie",
+      "questions": [
+        {
+          "id": "od1",
+          "difficulte": "facile",
+          "nom_commun": "Australie",
+          "nom_scientifique": "Australia",
+          "groupe": "oceanie",
+          "options": [
+            "Australie",
+            "Vanuatu",
+            "Micronésie",
+            "Îles Marshall"
+          ],
+          "indice": "Drapeau · Grand bloc continental",
+          "description": "Drapeau de Australie.",
+          "explication": "Australie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od2",
+          "difficulte": "facile",
+          "nom_commun": "Nouvelle-Zélande",
+          "nom_scientifique": "New Zealand",
+          "groupe": "oceanie",
+          "options": [
+            "Fidji",
+            "Tuvalu",
+            "Papouasie-Nouvelle-Guinée",
+            "Nouvelle-Zélande"
+          ],
+          "indice": "Drapeau · Deux îles verticales",
+          "description": "Drapeau de Nouvelle-Zélande.",
+          "explication": "Nouvelle-Zélande : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od3",
+          "difficulte": "facile",
+          "nom_commun": "Papouasie-Nouvelle-Guinée",
+          "nom_scientifique": "Papua New Guinea",
+          "groupe": "oceanie",
+          "options": [
+            "Samoa",
+            "Kiribati",
+            "Vanuatu",
+            "Papouasie-Nouvelle-Guinée"
+          ],
+          "indice": "Drapeau · Moitié est de la Nouvelle-Guinée",
+          "description": "Drapeau de Papouasie-Nouvelle-Guinée.",
+          "explication": "Papouasie-Nouvelle-Guinée : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od4",
+          "difficulte": "facile",
+          "nom_commun": "Fidji",
+          "nom_scientifique": "Fiji",
+          "groupe": "oceanie",
+          "options": [
+            "Palaos",
+            "Fidji",
+            "Samoa",
+            "Kiribati"
+          ],
+          "indice": "Drapeau · Archipel en arc",
+          "description": "Drapeau de Fidji.",
+          "explication": "Fidji : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od5",
+          "difficulte": "moyen",
+          "nom_commun": "Nouvelle-Calédonie",
+          "nom_scientifique": "New Caledonia",
+          "groupe": "oceanie",
+          "options": [
+            "Micronésie",
+            "Wallis-et-Futuna",
+            "Nouvelle-Calédonie",
+            "Îles Salomon"
+          ],
+          "indice": "Drapeau · Archipel allongé",
+          "description": "Drapeau de Nouvelle-Calédonie.",
+          "explication": "Nouvelle-Calédonie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od6",
+          "difficulte": "moyen",
+          "nom_commun": "Vanuatu",
+          "nom_scientifique": "Vanuatu",
+          "groupe": "oceanie",
+          "options": [
+            "Vanuatu",
+            "Australie",
+            "Palaos",
+            "Îles Salomon"
+          ],
+          "indice": "Drapeau · Chaîne d'îles en Y",
+          "description": "Drapeau de Vanuatu.",
+          "explication": "Vanuatu : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od7",
+          "difficulte": "moyen",
+          "nom_commun": "Samoa",
+          "nom_scientifique": "Samoa",
+          "groupe": "oceanie",
+          "options": [
+            "Palaos",
+            "Nouvelle-Calédonie",
+            "Samoa",
+            "Îles Cook"
+          ],
+          "indice": "Drapeau · Deux îles principales",
+          "description": "Drapeau de Samoa.",
+          "explication": "Samoa : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od8",
+          "difficulte": "moyen",
+          "nom_commun": "Tonga",
+          "nom_scientifique": "Tonga",
+          "groupe": "oceanie",
+          "options": [
+            "Tonga",
+            "Wallis-et-Futuna",
+            "Polynésie française",
+            "Kiribati"
+          ],
+          "indice": "Drapeau · Archipel dispersé",
+          "description": "Drapeau de Tonga.",
+          "explication": "Tonga : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od9",
+          "difficulte": "moyen",
+          "nom_commun": "Îles Salomon",
+          "nom_scientifique": "Solomon Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Wallis-et-Futuna",
+            "Îles Salomon",
+            "Nouvelle-Calédonie",
+            "Samoa américaines"
+          ],
+          "indice": "Drapeau · Archipel en double chaîne",
+          "description": "Drapeau de Îles Salomon.",
+          "explication": "Îles Salomon : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od10",
+          "difficulte": "difficile",
+          "nom_commun": "Micronésie",
+          "nom_scientifique": "Federated States of Micronesia",
+          "groupe": "oceanie",
+          "options": [
+            "Nouvelle-Calédonie",
+            "Australie",
+            "Micronésie",
+            "Nauru"
+          ],
+          "indice": "Drapeau · Archipel du nord du Pacifique",
+          "description": "Drapeau de Micronésie.",
+          "explication": "Micronésie : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od11",
+          "difficulte": "difficile",
+          "nom_commun": "Palaos",
+          "nom_scientifique": "Palau",
+          "groupe": "oceanie",
+          "options": [
+            "Wallis-et-Futuna",
+            "Îles Cook",
+            "Palaos",
+            "Samoa"
+          ],
+          "indice": "Drapeau · Archipel ouest du Pacifique",
+          "description": "Drapeau de Palaos.",
+          "explication": "Palaos : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od12",
+          "difficulte": "difficile",
+          "nom_commun": "Îles Marshall",
+          "nom_scientifique": "Marshall Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Îles Marshall",
+            "Australie",
+            "Samoa",
+            "Wallis-et-Futuna"
+          ],
+          "indice": "Drapeau · Atolls dispersés",
+          "description": "Drapeau de Îles Marshall.",
+          "explication": "Îles Marshall : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od13",
+          "difficulte": "difficile",
+          "nom_commun": "Kiribati",
+          "nom_scientifique": "Kiribati",
+          "groupe": "oceanie",
+          "options": [
+            "Nouvelle-Calédonie",
+            "Kiribati",
+            "Îles Marshall",
+            "Nouvelle-Zélande"
+          ],
+          "indice": "Drapeau · Atolls sur l'équateur",
+          "description": "Drapeau de Kiribati.",
+          "explication": "Kiribati : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od14",
+          "difficulte": "difficile",
+          "nom_commun": "Tuvalu",
+          "nom_scientifique": "Tuvalu",
+          "groupe": "oceanie",
+          "options": [
+            "Nouvelle-Zélande",
+            "Tonga",
+            "Tuvalu",
+            "Îles Marshall"
+          ],
+          "indice": "Drapeau · Petits atolls",
+          "description": "Drapeau de Tuvalu.",
+          "explication": "Tuvalu : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od15",
+          "difficulte": "difficile",
+          "nom_commun": "Nauru",
+          "nom_scientifique": "Nauru",
+          "groupe": "oceanie",
+          "options": [
+            "Nauru",
+            "Samoa américaines",
+            "Kiribati",
+            "Tonga"
+          ],
+          "indice": "Drapeau · Point dans le Pacifique",
+          "description": "Drapeau de Nauru.",
+          "explication": "Nauru : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od16",
+          "difficulte": "difficile",
+          "nom_commun": "Polynésie française",
+          "nom_scientifique": "French Polynesia",
+          "groupe": "oceanie",
+          "options": [
+            "Tuvalu",
+            "Polynésie française",
+            "Îles Salomon",
+            "Samoa américaines"
+          ],
+          "indice": "Drapeau · Vaste archipel du Pacifique",
+          "description": "Drapeau de Polynésie française.",
+          "explication": "Polynésie française : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od17",
+          "difficulte": "difficile",
+          "nom_commun": "Guam",
+          "nom_scientifique": "Guam",
+          "groupe": "oceanie",
+          "options": [
+            "Tonga",
+            "Samoa",
+            "Vanuatu",
+            "Guam"
+          ],
+          "indice": "Drapeau · Île du Pacifique nord",
+          "description": "Drapeau de Guam.",
+          "explication": "Guam : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od18",
+          "difficulte": "difficile",
+          "nom_commun": "Îles Cook",
+          "nom_scientifique": "Cook Islands",
+          "groupe": "oceanie",
+          "options": [
+            "Samoa",
+            "Îles Cook",
+            "Îles Salomon",
+            "Wallis-et-Futuna"
+          ],
+          "indice": "Drapeau · Archipel associé à la Nouvelle-Zélande",
+          "description": "Drapeau de Îles Cook.",
+          "explication": "Îles Cook : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od19",
+          "difficulte": "difficile",
+          "nom_commun": "Samoa américaines",
+          "nom_scientifique": "American Samoa",
+          "groupe": "oceanie",
+          "options": [
+            "Vanuatu",
+            "Palaos",
+            "Guam",
+            "Samoa américaines"
+          ],
+          "indice": "Drapeau · Petit archipel oriental",
+          "description": "Drapeau de Samoa américaines.",
+          "explication": "Samoa américaines : reconnaissable à son drapeau national."
+        },
+        {
+          "id": "od20",
+          "difficulte": "difficile",
+          "nom_commun": "Wallis-et-Futuna",
+          "nom_scientifique": "Wallis and Futuna",
+          "groupe": "oceanie",
+          "options": [
+            "Wallis-et-Futuna",
+            "Îles Salomon",
+            "Îles Marshall",
+            "Tuvalu"
+          ],
+          "indice": "Drapeau · Deux archipels du Pacifique",
+          "description": "Drapeau de Wallis-et-Futuna.",
+          "explication": "Wallis-et-Futuna : reconnaissable à son drapeau national."
+        }
+      ]
+    }
+  ]
+}

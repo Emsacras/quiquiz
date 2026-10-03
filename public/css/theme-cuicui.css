@@ -430,6 +430,127 @@ html.is-admin .admin-mod {
   margin: 0 0 14px;
 }
 
+.theme-cuicui .challenge-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 18px;
+  margin: 0 0 18px;
+  padding: 16px 18px;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-card);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tassel) 42%, var(--surface)) 0%,
+      var(--surface) 55%
+    );
+  box-shadow: var(--shadow-hard);
+}
+
+.theme-cuicui .challenge-panel.is-done {
+  background: var(--surface);
+  opacity: 0.92;
+}
+
+.theme-cuicui .challenge-kicker {
+  margin: 0 0 2px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.theme-cuicui .challenge-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.theme-cuicui .challenge-blurb {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.theme-cuicui .challenge-cta {
+  appearance: none;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-btn);
+  padding: 10px 18px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .challenge-cta:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.theme-cuicui .challenge-cta:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.theme-cuicui .revise-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin: 22px 0 0;
+  padding: 14px 16px;
+  border: 2px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent-soft) 35%, var(--surface));
+}
+
+.theme-cuicui .revise-panel.is-empty {
+  background: var(--surface);
+}
+
+.theme-cuicui .revise-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.theme-cuicui .revise-blurb {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.theme-cuicui .revise-cta {
+  appearance: none;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-btn);
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-cuicui .revise-cta:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+}
+
+.theme-cuicui .revise-cta:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .badges-strip {
   margin: 0 0 14px;
 }

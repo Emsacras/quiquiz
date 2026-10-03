@@ -1,0 +1,693 @@
+{
+  "id": "mammiferes-france",
+  "categorie": "Mammifères de France",
+  "description": "Carnivores, ongulés, rongeurs, chauves-souris et mammifères marins de France.",
+  "groupes": [
+    {
+      "id": "carnivores",
+      "label": "Carnivores",
+      "questions": [
+        {
+          "id": "carnivores1",
+          "difficulte": "facile",
+          "nom_commun": "Renard roux",
+          "nom_scientifique": "Vulpes vulpes",
+          "groupe": "carnivores",
+          "options": [
+            "Renard roux",
+            "Belette",
+            "Martre des pins",
+            "Lynx boréal"
+          ],
+          "indice": "Queue touffue, robe rousse",
+          "description": "Canidé roux à queue touffue souvent tipée de blanc, très adaptable.",
+          "explication": "Renard roux : Carnivore opportuniste des campagnes et périurbains."
+        },
+        {
+          "id": "carnivores2",
+          "difficulte": "facile",
+          "nom_commun": "Blaireau européen",
+          "nom_scientifique": "Meles meles",
+          "groupe": "carnivores",
+          "options": [
+            "Lynx boréal",
+            "Blaireau européen",
+            "Fouine",
+            "Renard roux"
+          ],
+          "indice": "Masque noir et blanc",
+          "description": "Mustélidé trapu, tête blanche à bandes noires, vie en clans.",
+          "explication": "Blaireau européen : Fouisseur nocturne ; terriers complexes (blaireautières)."
+        },
+        {
+          "id": "carnivores3",
+          "difficulte": "facile",
+          "nom_commun": "Loutre d'Europe",
+          "nom_scientifique": "Lutra lutra",
+          "groupe": "carnivores",
+          "options": [
+            "Belette",
+            "Blaireau européen",
+            "Hermine",
+            "Loutre d'Europe"
+          ],
+          "indice": "Aquatique, queue épaisse",
+          "description": "Mustélidé aquatique au pelage brun, queue épaisse, nage fluide.",
+          "explication": "Loutre d'Europe : Indicateur de rivières riches en poissons ; en reprise."
+        },
+        {
+          "id": "carnivores4",
+          "difficulte": "moyen",
+          "nom_commun": "Martre des pins",
+          "nom_scientifique": "Martes martes",
+          "groupe": "carnivores",
+          "options": [
+            "Lynx boréal",
+            "Martre des pins",
+            "Hermine",
+            "Renard roux"
+          ],
+          "indice": "Bavette jaune, forestière",
+          "description": "Mustélidé arboricole, gorge jaune crème, queue longue et touffue.",
+          "explication": "Martre des pins : Agile grimpeuse des forêts de conifères et mixtes."
+        },
+        {
+          "id": "carnivores5",
+          "difficulte": "moyen",
+          "nom_commun": "Fouine",
+          "nom_scientifique": "Martes foina",
+          "groupe": "carnivores",
+          "options": [
+            "Fouine",
+            "Belette",
+            "Blaireau européen",
+            "Loutre d'Europe"
+          ],
+          "indice": "Bavette blanche, près des maisons",
+          "description": "Proche de la martre mais bavette blanche bifide, plus anthropophile.",
+          "explication": "Fouine : Fréquente combles et hangars ; se distingue par la gorge blanche."
+        },
+        {
+          "id": "carnivores6",
+          "difficulte": "moyen",
+          "nom_commun": "Chat forestier",
+          "nom_scientifique": "Felis silvestris",
+          "groupe": "carnivores",
+          "options": [
+            "Fouine",
+            "Loutre d'Europe",
+            "Renard roux",
+            "Chat forestier"
+          ],
+          "indice": "Queue annelée épaisse",
+          "description": "Félin sauvage gris-brun, queue touffue annelée à bout noir arrondi.",
+          "explication": "Chat forestier : Plus massif que le chat haret ; queue caractéristique."
+        },
+        {
+          "id": "carnivores7",
+          "difficulte": "difficile",
+          "nom_commun": "Lynx boréal",
+          "nom_scientifique": "Lynx lynx",
+          "groupe": "carnivores",
+          "options": [
+            "Martre des pins",
+            "Lynx boréal",
+            "Hermine",
+            "Vison d'Europe"
+          ],
+          "indice": "Pinceaux d’oreilles, courte queue",
+          "description": "Grand félin tacheté, oreilles à pinceaux, queue courte tipée de noir.",
+          "explication": "Lynx boréal : Réintroduit dans l’est ; discret et surtout nocturne."
+        },
+        {
+          "id": "carnivores8",
+          "difficulte": "difficile",
+          "nom_commun": "Vison d'Europe",
+          "nom_scientifique": "Mustela lutreola",
+          "groupe": "carnivores",
+          "options": [
+            "Vison d'Europe",
+            "Martre des pins",
+            "Hermine",
+            "Renard roux"
+          ],
+          "indice": "Mustélidé rare des zones humides",
+          "description": "Petit mustélidé brun sombre, lèvre supérieure blanche, très menacé.",
+          "explication": "Vison d'Europe : Parmi les mammifères les plus menacés d’Europe."
+        },
+        {
+          "id": "carnivores9",
+          "difficulte": "moyen",
+          "nom_commun": "Hermine",
+          "nom_scientifique": "Mustela erminea",
+          "groupe": "carnivores",
+          "options": [
+            "Martre des pins",
+            "Hermine",
+            "Belette",
+            "Blaireau européen"
+          ],
+          "indice": "Noir au bout de la queue",
+          "description": "Petit mustélidé ; en hiver robe blanche avec bout de queue toujours noir.",
+          "explication": "Hermine : Chasse campagnols ; queue noire même en livrée blanche."
+        },
+        {
+          "id": "carnivores10",
+          "difficulte": "facile",
+          "nom_commun": "Belette",
+          "nom_scientifique": "Mustela nivalis",
+          "groupe": "carnivores",
+          "options": [
+            "Belette",
+            "Lynx boréal",
+            "Loutre d'Europe",
+            "Vison d'Europe"
+          ],
+          "indice": "Plus petite, pas de noir en queue",
+          "description": "Plus petit carnivore d’Europe, corps très allongé, queue courte sans noir.",
+          "explication": "Belette : Minuscule et nerveuse ; se faufile dans les galeries de rongeurs."
+        }
+      ]
+    },
+    {
+      "id": "ongules",
+      "label": "Ongulés",
+      "questions": [
+        {
+          "id": "ongules1",
+          "difficulte": "facile",
+          "nom_commun": "Chevreuil",
+          "nom_scientifique": "Capreolus capreolus",
+          "groupe": "ongules",
+          "options": [
+            "Chevreuil",
+            "Chamois",
+            "Sanglier",
+            "Daim"
+          ],
+          "indice": "Petit cervidé, miroir blanc",
+          "description": "Petit cervidé élégant, croupe blanche (« miroir »), bois courts chez le mâle.",
+          "explication": "Chevreuil : Très abondant ; aboiement sec en alerte."
+        },
+        {
+          "id": "ongules2",
+          "difficulte": "facile",
+          "nom_commun": "Cerf élaphe",
+          "nom_scientifique": "Cervus elaphus",
+          "groupe": "ongules",
+          "options": [
+            "Cerf élaphe",
+            "Daim",
+            "Chamois",
+            "Chevreuil"
+          ],
+          "indice": "Grands bois, brame d’automne",
+          "description": "Grand cervidé ; mâle porte des bois ramifiés et brame à l’automne.",
+          "explication": "Cerf élaphe : Plus grand cervidé de France métropolitaine."
+        },
+        {
+          "id": "ongules3",
+          "difficulte": "facile",
+          "nom_commun": "Sanglier",
+          "nom_scientifique": "Sus scrofa",
+          "groupe": "ongules",
+          "options": [
+            "Mouflon méditerranéen",
+            "Sanglier",
+            "Bouquetin des Alpes",
+            "Chamois"
+          ],
+          "indice": "Corps massif, soies sombres",
+          "description": "Suidé massif au groin discöïde, soies sombres, vie en compagnies.",
+          "explication": "Sanglier : Omnivore ; labours de sol typiques (boutis)."
+        },
+        {
+          "id": "ongules4",
+          "difficulte": "moyen",
+          "nom_commun": "Chamois",
+          "nom_scientifique": "Rupicapra rupicapra",
+          "groupe": "ongules",
+          "options": [
+            "Chamois",
+            "Isard",
+            "Cerf élaphe",
+            "Sanglier"
+          ],
+          "indice": "Crochets, bandeau facial",
+          "description": "Bovidé de montagne, cornes en crochet, bandeau noir sur le visage.",
+          "explication": "Chamois : Agile sur les pentes ; Alpes et massifs élevés."
+        },
+        {
+          "id": "ongules5",
+          "difficulte": "moyen",
+          "nom_commun": "Bouquetin des Alpes",
+          "nom_scientifique": "Capra ibex",
+          "groupe": "ongules",
+          "options": [
+            "Sanglier",
+            "Cerf élaphe",
+            "Daim",
+            "Bouquetin des Alpes"
+          ],
+          "indice": "Cornes en sabre annelées",
+          "description": "Caprin de falaise, mâles aux très longues cornes annelées arquées.",
+          "explication": "Bouquetin des Alpes : Sauvé de l’extinction ; falaises alpines."
+        },
+        {
+          "id": "ongules6",
+          "difficulte": "moyen",
+          "nom_commun": "Mouflon méditerranéen",
+          "nom_scientifique": "Ovis aries musimon",
+          "groupe": "ongules",
+          "options": [
+            "Cerf élaphe",
+            "Bouquetin des Alpes",
+            "Mouflon méditerranéen",
+            "Daim"
+          ],
+          "indice": "Cornes en spirale, selle claire",
+          "description": "Ovin sauvage introduit, mâles à cornes spiralées et selle claire.",
+          "explication": "Mouflon méditerranéen : Présent en Corse et massifs continentaux."
+        },
+        {
+          "id": "ongules7",
+          "difficulte": "difficile",
+          "nom_commun": "Daim",
+          "nom_scientifique": "Dama dama",
+          "groupe": "ongules",
+          "options": [
+            "Chevreuil",
+            "Daim",
+            "Isard",
+            "Mouflon méditerranéen"
+          ],
+          "indice": "Bois aplatis en palette",
+          "description": "Cervidé tacheté, mâles aux bois palmés en forme de palette.",
+          "explication": "Daim : Souvent en parcs ; taches claires plus marquées l’été."
+        },
+        {
+          "id": "ongules8",
+          "difficulte": "difficile",
+          "nom_commun": "Isard",
+          "nom_scientifique": "Rupicapra pyrenaica",
+          "groupe": "ongules",
+          "options": [
+            "Chevreuil",
+            "Bouquetin des Alpes",
+            "Isard",
+            "Chamois"
+          ],
+          "indice": "Chamois des Pyrénées",
+          "description": "Proche du chamois, endémique pyrénéen, robe plus claire en hiver.",
+          "explication": "Isard : Emblème des Pyrénées, cousin du chamois alpin."
+        }
+      ]
+    },
+    {
+      "id": "rongeurs",
+      "label": "Rongeurs et insectivores",
+      "questions": [
+        {
+          "id": "rongeurs1",
+          "difficulte": "facile",
+          "nom_commun": "Écureuil roux",
+          "nom_scientifique": "Sciurus vulgaris",
+          "groupe": "rongeurs",
+          "options": [
+            "Lièvre d'Europe",
+            "Écureuil roux",
+            "Campagnol amphibie",
+            "Crocidure musette"
+          ],
+          "indice": "Queue en panache, arboricole",
+          "description": "Rongeur arboricole roux à noir, grandes oreilles, queue touffue.",
+          "explication": "Écureuil roux : Diurne ; cache des noisettes pour l’hiver."
+        },
+        {
+          "id": "rongeurs2",
+          "difficulte": "facile",
+          "nom_commun": "Hérisson d'Europe",
+          "nom_scientifique": "Erinaceus europaeus",
+          "groupe": "rongeurs",
+          "options": [
+            "Muscardin",
+            "Crocidure musette",
+            "Taupe d'Europe",
+            "Hérisson d'Europe"
+          ],
+          "indice": "Dos de piquants",
+          "description": "Insectivore au dos couvert de piquants, se roule en boule.",
+          "explication": "Hérisson d'Europe : Allié du jardin ; mange limaces et insectes."
+        },
+        {
+          "id": "rongeurs3",
+          "difficulte": "facile",
+          "nom_commun": "Lapin de garenne",
+          "nom_scientifique": "Oryctolagus cuniculus",
+          "groupe": "rongeurs",
+          "options": [
+            "Loir gris",
+            "Lapin de garenne",
+            "Campagnol amphibie",
+            "Castor d'Europe"
+          ],
+          "indice": "Oreilles moyennes, vie en terrier",
+          "description": "Léporidé social fouisseur, oreilles plus courtes que le lièvre.",
+          "explication": "Lapin de garenne : Vit en colonies ; oreilles sans bout noir marqué."
+        },
+        {
+          "id": "rongeurs4",
+          "difficulte": "moyen",
+          "nom_commun": "Lièvre d'Europe",
+          "nom_scientifique": "Lepus europaeus",
+          "groupe": "rongeurs",
+          "options": [
+            "Lapin de garenne",
+            "Castor d'Europe",
+            "Muscardin",
+            "Lièvre d'Europe"
+          ],
+          "indice": "Oreilles longues tipées de noir",
+          "description": "Plus grand que le lapin, oreilles longues à bout noir, gîte au sol.",
+          "explication": "Lièvre d'Europe : Solitaire, course rapide en terrain ouvert."
+        },
+        {
+          "id": "rongeurs5",
+          "difficulte": "moyen",
+          "nom_commun": "Castor d'Europe",
+          "nom_scientifique": "Castor fiber",
+          "groupe": "rongeurs",
+          "options": [
+            "Castor d'Europe",
+            "Hérisson d'Europe",
+            "Muscardin",
+            "Écureuil roux"
+          ],
+          "indice": "Queue plate, barrages",
+          "description": "Grand rongeur aquatique, queue plate écailleuse, ingénieur des cours d’eau.",
+          "explication": "Castor d'Europe : Abat des arbres et crée des zones humides."
+        },
+        {
+          "id": "rongeurs6",
+          "difficulte": "moyen",
+          "nom_commun": "Muscardin",
+          "nom_scientifique": "Muscardinus avellanarius",
+          "groupe": "rongeurs",
+          "options": [
+            "Muscardin",
+            "Loir gris",
+            "Écureuil roux",
+            "Lapin de garenne"
+          ],
+          "indice": "Petit, roux, queue touffue",
+          "description": "Petit gliridé roux orangé, queue touffue, niche dans les fourrés.",
+          "explication": "Muscardin : Hibernant discret des haies et lisières."
+        },
+        {
+          "id": "rongeurs7",
+          "difficulte": "difficile",
+          "nom_commun": "Campagnol amphibie",
+          "nom_scientifique": "Arvicola sapidus",
+          "groupe": "rongeurs",
+          "options": [
+            "Loir gris",
+            "Hérisson d'Europe",
+            "Campagnol amphibie",
+            "Taupe d'Europe"
+          ],
+          "indice": "Gros campagnol des berges",
+          "description": "Campagnol de grande taille lié aux berges, nageur habile.",
+          "explication": "Campagnol amphibie : Menacé ; dépend de rivières bien végétalisées."
+        },
+        {
+          "id": "rongeurs8",
+          "difficulte": "difficile",
+          "nom_commun": "Crocidure musette",
+          "nom_scientifique": "Crocidura russula",
+          "groupe": "rongeurs",
+          "options": [
+            "Taupe d'Europe",
+            "Écureuil roux",
+            "Crocidure musette",
+            "Lièvre d'Europe"
+          ],
+          "indice": "Musaraigne à dents blanches",
+          "description": "Petite musaraigne à dents blanches, museau pointu, très active.",
+          "explication": "Crocidure musette : Insectivore ; dents blanches contrairement aux musaraignes rousses."
+        },
+        {
+          "id": "rongeurs9",
+          "difficulte": "moyen",
+          "nom_commun": "Loir gris",
+          "nom_scientifique": "Glis glis",
+          "groupe": "rongeurs",
+          "options": [
+            "Loir gris",
+            "Castor d'Europe",
+            "Lapin de garenne",
+            "Hérisson d'Europe"
+          ],
+          "indice": "Gris, queue longue touffue",
+          "description": "Gliridé gris argenté, grands yeux, queue touffue, nocturne.",
+          "explication": "Loir gris : Fréquente les combles ; hibernation longue."
+        },
+        {
+          "id": "rongeurs10",
+          "difficulte": "facile",
+          "nom_commun": "Taupe d'Europe",
+          "nom_scientifique": "Talpa europaea",
+          "groupe": "rongeurs",
+          "options": [
+            "Castor d'Europe",
+            "Taupe d'Europe",
+            "Lièvre d'Europe",
+            "Lapin de garenne"
+          ],
+          "indice": "Velours noir, taupinières",
+          "description": "Insectivore fouisseur au pelage noir velouté, pattes antérieures élargies.",
+          "explication": "Taupe d'Europe : Galeries et taupinières dans les prairies humides."
+        }
+      ]
+    },
+    {
+      "id": "chiropteres",
+      "label": "Chiroptères",
+      "questions": [
+        {
+          "id": "chiropteres1",
+          "difficulte": "facile",
+          "nom_commun": "Pipistrelle commune",
+          "nom_scientifique": "Pipistrellus pipistrellus",
+          "groupe": "chiropteres",
+          "options": [
+            "Grand murin",
+            "Molosse de Cestoni",
+            "Grand rhinolophe",
+            "Pipistrelle commune"
+          ],
+          "indice": "Petite, chasse près des lampadaires",
+          "description": "Très petite chauve-souris brune, fréquente villages et lisières.",
+          "explication": "Pipistrelle commune : La plus abondante ; chasse petits insectes en vol."
+        },
+        {
+          "id": "chiropteres2",
+          "difficulte": "moyen",
+          "nom_commun": "Grand rhinolophe",
+          "nom_scientifique": "Rhinolophus ferrumequinum",
+          "groupe": "chiropteres",
+          "options": [
+            "Sérotine commune",
+            "Pipistrelle commune",
+            "Molosse de Cestoni",
+            "Grand rhinolophe"
+          ],
+          "indice": "Nez en fer à cheval",
+          "description": "Chauve-souris au nez en fer à cheval, oreilles sans tragus libre.",
+          "explication": "Grand rhinolophe : Sensible au dérangement ; hiverne en grottes."
+        },
+        {
+          "id": "chiropteres3",
+          "difficulte": "moyen",
+          "nom_commun": "Oreillard roux",
+          "nom_scientifique": "Plecotus auritus",
+          "groupe": "chiropteres",
+          "options": [
+            "Pipistrelle commune",
+            "Molosse de Cestoni",
+            "Oreillard roux",
+            "Sérotine commune"
+          ],
+          "indice": "Oreilles énormes",
+          "description": "Chauve-souris aux oreilles très longues, presque jointes à la base.",
+          "explication": "Oreillard roux : Cueille les insectes posés sur le feuillage (gleaning)."
+        },
+        {
+          "id": "chiropteres4",
+          "difficulte": "difficile",
+          "nom_commun": "Grand murin",
+          "nom_scientifique": "Myotis myotis",
+          "groupe": "chiropteres",
+          "options": [
+            "Sérotine commune",
+            "Grand murin",
+            "Molosse de Cestoni",
+            "Grand rhinolophe"
+          ],
+          "indice": "Grande, museau clair",
+          "description": "Grande Myotis au museau rose, oreilles longues, chasse au sol.",
+          "explication": "Grand murin : Colonies en combles ; capture des coléoptères au sol."
+        },
+        {
+          "id": "chiropteres5",
+          "difficulte": "difficile",
+          "nom_commun": "Molosse de Cestoni",
+          "nom_scientifique": "Tadarida teniotis",
+          "groupe": "chiropteres",
+          "options": [
+            "Pipistrelle commune",
+            "Grand murin",
+            "Grand rhinolophe",
+            "Molosse de Cestoni"
+          ],
+          "indice": "Queue libre hors membrane",
+          "description": "Grande chauve-souris aux oreilles larges, queue dépassant la membrane.",
+          "explication": "Molosse de Cestoni : Espèce méditerranéenne, vol rapide en altitude."
+        },
+        {
+          "id": "chiropteres6",
+          "difficulte": "moyen",
+          "nom_commun": "Sérotine commune",
+          "nom_scientifique": "Eptesicus serotinus",
+          "groupe": "chiropteres",
+          "options": [
+            "Pipistrelle commune",
+            "Grand rhinolophe",
+            "Oreillard roux",
+            "Sérotine commune"
+          ],
+          "indice": "Robuste, brune, urbaine",
+          "description": "Chauve-souris robuste brun sombre, fréquente les bâtiments.",
+          "explication": "Sérotine commune : Chasse hannetons et papillons de nuit près des villages."
+        }
+      ]
+    },
+    {
+      "id": "marins",
+      "label": "Marins et autres",
+      "questions": [
+        {
+          "id": "marins1",
+          "difficulte": "facile",
+          "nom_commun": "Grand dauphin",
+          "nom_scientifique": "Tursiops truncatus",
+          "groupe": "marins",
+          "options": [
+            "Genette commune",
+            "Marsouin commun",
+            "Grand dauphin",
+            "Dauphin commun"
+          ],
+          "indice": "Bec court, gris, côtier",
+          "description": "Dauphin robuste au bec court, gris, fréquent près des côtes.",
+          "explication": "Grand dauphin : Observé sur les façades atlantique et méditerranéenne."
+        },
+        {
+          "id": "marins2",
+          "difficulte": "moyen",
+          "nom_commun": "Marsouin commun",
+          "nom_scientifique": "Phocoena phocoena",
+          "groupe": "marins",
+          "options": [
+            "Grand dauphin",
+            "Phoque gris",
+            "Marsouin commun",
+            "Genette commune"
+          ],
+          "indice": "Petit, sans bec marqué",
+          "description": "Petit cétacé sans bec proéminent, nageoire triangulaire.",
+          "explication": "Marsouin commun : Discret ; Manche et Atlantique nord."
+        },
+        {
+          "id": "marins3",
+          "difficulte": "moyen",
+          "nom_commun": "Phoque veau-marin",
+          "nom_scientifique": "Phoca vitulina",
+          "groupe": "marins",
+          "options": [
+            "Phoque veau-marin",
+            "Ragondin",
+            "Marsouin commun",
+            "Phoque gris"
+          ],
+          "indice": "Tête de chien, baies du nord",
+          "description": "Phoque aux narines en V, face « de chien », repos sur bancs de sable.",
+          "explication": "Phoque veau-marin : Colonies en baie de Somme et Manche."
+        },
+        {
+          "id": "marins4",
+          "difficulte": "difficile",
+          "nom_commun": "Phoque gris",
+          "nom_scientifique": "Halichoerus grypus",
+          "groupe": "marins",
+          "options": [
+            "Genette commune",
+            "Phoque gris",
+            "Dauphin commun",
+            "Ragondin"
+          ],
+          "indice": "Profil romain, plus grand",
+          "description": "Phoque plus grand, profil convexe (« nez romain »), taches irrégulières.",
+          "explication": "Phoque gris : Bretagne et Manche ; se distingue du veau-marin au profil."
+        },
+        {
+          "id": "marins5",
+          "difficulte": "facile",
+          "nom_commun": "Dauphin commun",
+          "nom_scientifique": "Delphinus delphis",
+          "groupe": "marins",
+          "options": [
+            "Phoque gris",
+            "Ragondin",
+            "Dauphin commun",
+            "Genette commune"
+          ],
+          "indice": "Sablier jaune sur le flanc",
+          "description": "Dauphin élancé au motif en sablier beige-jaune sur les flancs.",
+          "explication": "Dauphin commun : Bancs rapides au large des façades maritimes."
+        },
+        {
+          "id": "marins6",
+          "difficulte": "moyen",
+          "nom_commun": "Ragondin",
+          "nom_scientifique": "Myocastor coypus",
+          "groupe": "marins",
+          "options": [
+            "Ragondin",
+            "Dauphin commun",
+            "Genette commune",
+            "Marsouin commun"
+          ],
+          "indice": "Gros rongeur aquatique introduit",
+          "description": "Gros rongeur semi-aquatique, moustaches blanches, queue ronde.",
+          "explication": "Ragondin : Introduit d’Amérique ; souvent confondu avec le castor (queue différente)."
+        },
+        {
+          "id": "marins7",
+          "difficulte": "difficile",
+          "nom_commun": "Genette commune",
+          "nom_scientifique": "Genetta genetta",
+          "groupe": "marins",
+          "options": [
+            "Phoque veau-marin",
+            "Dauphin commun",
+            "Phoque gris",
+            "Genette commune"
+          ],
+          "indice": "Queue annelée, tachetée",
+          "description": "Viverridé tacheté à longue queue annelée, surtout dans le sud-ouest.",
+          "explication": "Genette commune : Nocturne et arboricole ; silhouette de « petit félin tacheté »."
+        }
+      ]
+    }
+  ]
+}

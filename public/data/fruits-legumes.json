@@ -1,0 +1,703 @@
+{
+  "id": "fruits-legumes",
+  "categorie": "Fruits et légumes",
+  "description": "Fruits, légumes-feuilles, racines et légumineuses du quotidien à reconnaître.",
+  "groupes": [
+    {
+      "id": "fruits",
+      "label": "Fruits",
+      "questions": [
+        {
+          "id": "fruits1",
+          "difficulte": "facile",
+          "nom_commun": "Pomme",
+          "nom_scientifique": "Malus domestica",
+          "groupe": "fruits",
+          "options": [
+            "Mangue",
+            "Pomme",
+            "Goyave",
+            "Fraise"
+          ],
+          "indice": "Fruit à pépins du verger",
+          "description": "Fruit charnu à pépins, peau colorée variable, chair croquante.",
+          "explication": "Pomme : Fruit le plus cultivé des climats tempérés."
+        },
+        {
+          "id": "fruits2",
+          "difficulte": "facile",
+          "nom_commun": "Banane",
+          "nom_scientifique": "Musa acuminata",
+          "groupe": "fruits",
+          "options": [
+            "Banane",
+            "Grenade",
+            "Kiwi",
+            "Mangue"
+          ],
+          "indice": "Doigt jaune courbé",
+          "description": "Fruit allongé jaune à maturité, chair fondante sans pépins visibles.",
+          "explication": "Banane : Baie tropicale consommée non climactérique en magasin."
+        },
+        {
+          "id": "fruits3",
+          "difficulte": "facile",
+          "nom_commun": "Orange",
+          "nom_scientifique": "Citrus × sinensis",
+          "groupe": "fruits",
+          "options": [
+            "Orange",
+            "Mangue",
+            "Ananas",
+            "Fraise"
+          ],
+          "indice": "Agrume orange rond",
+          "description": "Agrume sphérique à peau orange, quartiers juteux.",
+          "explication": "Orange : Agrume de table et de jus le plus courant."
+        },
+        {
+          "id": "fruits4",
+          "difficulte": "moyen",
+          "nom_commun": "Kiwi",
+          "nom_scientifique": "Actinidia deliciosa",
+          "groupe": "fruits",
+          "options": [
+            "Ananas",
+            "Orange",
+            "Kiwi",
+            "Mangue"
+          ],
+          "indice": "Peau duveteuse brune",
+          "description": "Baie ovale à peau brune duveteuse, chair verte à petites graines.",
+          "explication": "Kiwi : Cultivé aussi en France ; riche en vitamine C."
+        },
+        {
+          "id": "fruits5",
+          "difficulte": "moyen",
+          "nom_commun": "Grenade",
+          "nom_scientifique": "Punica granatum",
+          "groupe": "fruits",
+          "options": [
+            "Ananas",
+            "Pomme",
+            "Grenade",
+            "Kaki"
+          ],
+          "indice": "Couronne, grains rouges",
+          "description": "Fruit couronné, peau coriace, graines juteuses rouge rubis.",
+          "explication": "Grenade : Grains (arilles) comestibles ; symbole méditerranéen."
+        },
+        {
+          "id": "fruits6",
+          "difficulte": "moyen",
+          "nom_commun": "Mangue",
+          "nom_scientifique": "Mangifera indica",
+          "groupe": "fruits",
+          "options": [
+            "Pomme",
+            "Mangue",
+            "Goyave",
+            "Banane"
+          ],
+          "indice": "Fruit tropical à gros noyau",
+          "description": "Fruit ovoïde à peau colorée, chair orange autour d’un gros noyau plat.",
+          "explication": "Mangue : Fruit tropical à la chair parfumée."
+        },
+        {
+          "id": "fruits7",
+          "difficulte": "difficile",
+          "nom_commun": "Goyave",
+          "nom_scientifique": "Psidium guajava",
+          "groupe": "fruits",
+          "options": [
+            "Grenade",
+            "Fruit de la passion",
+            "Goyave",
+            "Banane"
+          ],
+          "indice": "Peau fine, graines centrales",
+          "description": "Baie ronde à ovale, chair rose ou blanche remplie de graines dures.",
+          "explication": "Goyave : Parfum intense ; peau souvent consommée."
+        },
+        {
+          "id": "fruits8",
+          "difficulte": "difficile",
+          "nom_commun": "Fruit de la passion",
+          "nom_scientifique": "Passiflora edulis",
+          "groupe": "fruits",
+          "options": [
+            "Fraise",
+            "Fruit de la passion",
+            "Goyave",
+            "Grenade"
+          ],
+          "indice": "Coque ridée, pulpe acidulée",
+          "description": "Baie à coque pourpre ou jaune, pulpe gélatineuse autour des graines.",
+          "explication": "Fruit de la passion : Pulpe acidulée très aromatique."
+        },
+        {
+          "id": "fruits9",
+          "difficulte": "moyen",
+          "nom_commun": "Figue",
+          "nom_scientifique": "Ficus carica",
+          "groupe": "fruits",
+          "options": [
+            "Ananas",
+            "Figue",
+            "Kaki",
+            "Fruit de la passion"
+          ],
+          "indice": "Sycone doux pourpre ou vert",
+          "description": "« Fruit » charnu (sycone) à peau fine, chair rose sucrée.",
+          "explication": "Figue : En réalité une inflorescence charnue."
+        },
+        {
+          "id": "fruits10",
+          "difficulte": "facile",
+          "nom_commun": "Fraise",
+          "nom_scientifique": "Fragaria × ananassa",
+          "groupe": "fruits",
+          "options": [
+            "Orange",
+            "Fraise",
+            "Grenade",
+            "Mangue"
+          ],
+          "indice": "Rouge, akènes en surface",
+          "description": "Faux-fruit rouge parsemé d’akènes, chair juteuse.",
+          "explication": "Fraise : Les « graines » sont les vrais fruits (akènes)."
+        },
+        {
+          "id": "fruits11",
+          "difficulte": "difficile",
+          "nom_commun": "Kaki",
+          "nom_scientifique": "Diospyros kaki",
+          "groupe": "fruits",
+          "options": [
+            "Figue",
+            "Mangue",
+            "Kaki",
+            "Fruit de la passion"
+          ],
+          "indice": "Orange, astringent si vert",
+          "description": "Baie orange lisse, très astringente avant pleine maturité.",
+          "explication": "Kaki : Se mange blet ou en variétés non astringentes."
+        },
+        {
+          "id": "fruits12",
+          "difficulte": "moyen",
+          "nom_commun": "Ananas",
+          "nom_scientifique": "Ananas comosus",
+          "groupe": "fruits",
+          "options": [
+            "Goyave",
+            "Ananas",
+            "Mangue",
+            "Figue"
+          ],
+          "indice": "Couronne de feuilles, œil",
+          "description": "Syncarpe écailleux surmonté d’une couronne de feuilles.",
+          "explication": "Ananas : Fruit composé tropical ; couronne plantable."
+        }
+      ]
+    },
+    {
+      "id": "feuilles",
+      "label": "Légumes-feuilles",
+      "questions": [
+        {
+          "id": "feuilles1",
+          "difficulte": "facile",
+          "nom_commun": "Laitue",
+          "nom_scientifique": "Lactuca sativa",
+          "groupe": "feuilles",
+          "options": [
+            "Laitue",
+            "Épinard",
+            "Basilic",
+            "Blette"
+          ],
+          "indice": "Pomme ou feuilles tendres",
+          "description": "Légume-feuille en pomme ou à feuilles lâches, saveur douce.",
+          "explication": "Laitue : Base des salades ; nombreuses formes (batavia, romaine…)."
+        },
+        {
+          "id": "feuilles2",
+          "difficulte": "facile",
+          "nom_commun": "Épinard",
+          "nom_scientifique": "Spinacia oleracea",
+          "groupe": "feuilles",
+          "options": [
+            "Laitue",
+            "Pourpier",
+            "Persil",
+            "Épinard"
+          ],
+          "indice": "Feuilles vert foncé tendres",
+          "description": "Feuilles vert foncé, lisses ou cloquées, riches en fer perçu.",
+          "explication": "Épinard : Cuisiné chaud ou cru ; ne pas confondre avec la tétragone."
+        },
+        {
+          "id": "feuilles3",
+          "difficulte": "facile",
+          "nom_commun": "Chou cabus",
+          "nom_scientifique": "Brassica oleracea var. capitata",
+          "groupe": "feuilles",
+          "options": [
+            "Chou kale",
+            "Roquette",
+            "Blette",
+            "Chou cabus"
+          ],
+          "indice": "Pomme dense de feuilles",
+          "description": "Chou à pomme compacte de feuilles lisses ou cloquées.",
+          "explication": "Chou cabus : Pomme ronde classique du potager."
+        },
+        {
+          "id": "feuilles4",
+          "difficulte": "moyen",
+          "nom_commun": "Blette",
+          "nom_scientifique": "Beta vulgaris var. cicla",
+          "groupe": "feuilles",
+          "options": [
+            "Pourpier",
+            "Laitue",
+            "Roquette",
+            "Blette"
+          ],
+          "indice": "Côtes blanches ou colorées",
+          "description": "Grandes feuilles à côtes charnues blanches, jaunes ou rouges.",
+          "explication": "Blette : On mange côtes et limbes ; cousine de la betterave."
+        },
+        {
+          "id": "feuilles5",
+          "difficulte": "moyen",
+          "nom_commun": "Roquette",
+          "nom_scientifique": "Eruca vesicaria",
+          "groupe": "feuilles",
+          "options": [
+            "Laitue",
+            "Roquette",
+            "Blette",
+            "Pourpier"
+          ],
+          "indice": "Goût poivré, feuilles découpées",
+          "description": "Feuilles allongées découpées, saveur piquante.",
+          "explication": "Roquette : Salade poivrée ; floraison à 4 pétales jaunes."
+        },
+        {
+          "id": "feuilles6",
+          "difficulte": "difficile",
+          "nom_commun": "Mâche",
+          "nom_scientifique": "Valerianella locusta",
+          "groupe": "feuilles",
+          "options": [
+            "Mâche",
+            "Pourpier",
+            "Blette",
+            "Épinard"
+          ],
+          "indice": "Petites rosettes d’hiver",
+          "description": "Petites feuilles en rosette tendre, culture d’automne-hiver.",
+          "explication": "Mâche : Salade d’hiver douce, aussi appelée doucette."
+        },
+        {
+          "id": "feuilles7",
+          "difficulte": "difficile",
+          "nom_commun": "Pourpier",
+          "nom_scientifique": "Portulaca oleracea",
+          "groupe": "feuilles",
+          "options": [
+            "Pourpier",
+            "Blette",
+            "Roquette",
+            "Basilic"
+          ],
+          "indice": "Feuilles charnues rampantes",
+          "description": "Plante rampante aux feuilles charnues ovales, légèrement acidulée.",
+          "explication": "Pourpier : Adventice comestible, riche en oméga-3."
+        },
+        {
+          "id": "feuilles8",
+          "difficulte": "moyen",
+          "nom_commun": "Chou kale",
+          "nom_scientifique": "Brassica oleracea var. sabellica",
+          "groupe": "feuilles",
+          "options": [
+            "Roquette",
+            "Chou kale",
+            "Épinard",
+            "Pourpier"
+          ],
+          "indice": "Feuilles frisées non pommées",
+          "description": "Chou non pommé aux feuilles très frisées, vertes ou pourpres.",
+          "explication": "Chou kale : Résistant au froid ; mode « santé » récente."
+        },
+        {
+          "id": "feuilles9",
+          "difficulte": "facile",
+          "nom_commun": "Persil",
+          "nom_scientifique": "Petroselinum crispum",
+          "groupe": "feuilles",
+          "options": [
+            "Persil",
+            "Pourpier",
+            "Roquette",
+            "Blette"
+          ],
+          "indice": "Aromate frisé ou plat",
+          "description": "Aromate en feuilles frisées ou plates, parfum caractéristique.",
+          "explication": "Persil : Condiment universel du potager."
+        },
+        {
+          "id": "feuilles10",
+          "difficulte": "moyen",
+          "nom_commun": "Basilic",
+          "nom_scientifique": "Ocimum basilicum",
+          "groupe": "feuilles",
+          "options": [
+            "Épinard",
+            "Roquette",
+            "Pourpier",
+            "Basilic"
+          ],
+          "indice": "Feuilles tendres parfumées",
+          "description": "Aromate annuel aux feuilles tendres très parfumées.",
+          "explication": "Basilic : Allié de la tomate ; craint le froid."
+        }
+      ]
+    },
+    {
+      "id": "racines",
+      "label": "Racines et tubercules",
+      "questions": [
+        {
+          "id": "racines1",
+          "difficulte": "facile",
+          "nom_commun": "Carotte",
+          "nom_scientifique": "Daucus carota",
+          "groupe": "racines",
+          "options": [
+            "Betterave",
+            "Carotte",
+            "Radis",
+            "Panais"
+          ],
+          "indice": "Racine orange allongée",
+          "description": "Racine pivotante orange (souvent), feuillage fin découpé.",
+          "explication": "Carotte : Racine sucrée ; sauvage blanche et fibreuse."
+        },
+        {
+          "id": "racines2",
+          "difficulte": "facile",
+          "nom_commun": "Pomme de terre",
+          "nom_scientifique": "Solanum tuberosum",
+          "groupe": "racines",
+          "options": [
+            "Ail",
+            "Topinambour",
+            "Pomme de terre",
+            "Oignon"
+          ],
+          "indice": "Tubercule amidonné",
+          "description": "Tubercule souterrain à « yeux », chair blanche à jaune.",
+          "explication": "Pomme de terre : Tubercule, pas une racine ; base alimentaire."
+        },
+        {
+          "id": "racines3",
+          "difficulte": "facile",
+          "nom_commun": "Oignon",
+          "nom_scientifique": "Allium cepa",
+          "groupe": "racines",
+          "options": [
+            "Panais",
+            "Oignon",
+            "Patate douce",
+            "Ail"
+          ],
+          "indice": "Bulbe tuniqué pungent",
+          "description": "Bulbe formé de tuniques, odeur sulfurée au tranchage.",
+          "explication": "Oignon : Bulbe de base en cuisine ; vert ou sec."
+        },
+        {
+          "id": "racines4",
+          "difficulte": "moyen",
+          "nom_commun": "Betterave",
+          "nom_scientifique": "Beta vulgaris",
+          "groupe": "racines",
+          "options": [
+            "Carotte",
+            "Oignon",
+            "Betterave",
+            "Pomme de terre"
+          ],
+          "indice": "Racine rouge sang",
+          "description": "Racine charnue rouge intense, feuilles aussi comestibles.",
+          "explication": "Betterave : Sucrière ou potagère ; couleur due aux bétalaïnes."
+        },
+        {
+          "id": "racines5",
+          "difficulte": "moyen",
+          "nom_commun": "Navet",
+          "nom_scientifique": "Brassica rapa",
+          "groupe": "racines",
+          "options": [
+            "Oignon",
+            "Navet",
+            "Patate douce",
+            "Betterave"
+          ],
+          "indice": "Racine blanche à collet violet",
+          "description": "Racine globuleuse blanche souvent lavée de violet au collet.",
+          "explication": "Navet : Légume d’hiver doux à légèrement piquant."
+        },
+        {
+          "id": "racines6",
+          "difficulte": "moyen",
+          "nom_commun": "Radis",
+          "nom_scientifique": "Raphanus sativus",
+          "groupe": "racines",
+          "options": [
+            "Radis",
+            "Navet",
+            "Patate douce",
+            "Topinambour"
+          ],
+          "indice": "Petit, croquant, piquant",
+          "description": "Petite racine croquante rose à rouge, goût piquant.",
+          "explication": "Radis : Culture rapide ; nombreuses formes allongées ou rondes."
+        },
+        {
+          "id": "racines7",
+          "difficulte": "difficile",
+          "nom_commun": "Panais",
+          "nom_scientifique": "Pastinaca sativa",
+          "groupe": "racines",
+          "options": [
+            "Panais",
+            "Navet",
+            "Betterave",
+            "Carotte"
+          ],
+          "indice": "Racine crème, goût sucré",
+          "description": "Racine pivotante crème, plus sucrée que la carotte après le froid.",
+          "explication": "Panais : Cousin de la carotte ; parfum de noisette."
+        },
+        {
+          "id": "racines8",
+          "difficulte": "difficile",
+          "nom_commun": "Topinambour",
+          "nom_scientifique": "Helianthus tuberosus",
+          "groupe": "racines",
+          "options": [
+            "Patate douce",
+            "Topinambour",
+            "Navet",
+            "Oignon"
+          ],
+          "indice": "Tubercule bosselé du soleil",
+          "description": "Tubercule irrégulier du tournesol vivace, goût d’artichaut.",
+          "explication": "Topinambour : Vivace envahissant ; riche en inuline."
+        },
+        {
+          "id": "racines9",
+          "difficulte": "moyen",
+          "nom_commun": "Ail",
+          "nom_scientifique": "Allium sativum",
+          "groupe": "racines",
+          "options": [
+            "Ail",
+            "Panais",
+            "Patate douce",
+            "Radis"
+          ],
+          "indice": "Bulbe en caïeux",
+          "description": "Bulbe composé de gousses (caïeux) très odorantes.",
+          "explication": "Ail : Condiment majeur ; caïeux plantés un à un."
+        },
+        {
+          "id": "racines10",
+          "difficulte": "facile",
+          "nom_commun": "Patate douce",
+          "nom_scientifique": "Ipomoea batatas",
+          "groupe": "racines",
+          "options": [
+            "Topinambour",
+            "Ail",
+            "Patate douce",
+            "Carotte"
+          ],
+          "indice": "Tubercule orangé sucré",
+          "description": "Tubercule souvent orange, peau rose à cuivre, chair sucrée.",
+          "explication": "Patate douce : Convolvulacée tropicale, ≠ pomme de terre."
+        }
+      ]
+    },
+    {
+      "id": "legumineuses",
+      "label": "Légumineuses et autres",
+      "questions": [
+        {
+          "id": "legumineuses1",
+          "difficulte": "facile",
+          "nom_commun": "Haricot vert",
+          "nom_scientifique": "Phaseolus vulgaris",
+          "groupe": "legumineuses",
+          "options": [
+            "Tomate",
+            "Haricot vert",
+            "Aubergine",
+            "Lentille"
+          ],
+          "indice": "Gousse longue tendre",
+          "description": "Gousse allongée consommée immature, graines encore petites.",
+          "explication": "Haricot vert : Gousse mangée entière avant maturité des graines."
+        },
+        {
+          "id": "legumineuses2",
+          "difficulte": "facile",
+          "nom_commun": "Petit pois",
+          "nom_scientifique": "Pisum sativum",
+          "groupe": "legumineuses",
+          "options": [
+            "Okra",
+            "Tomate",
+            "Haricot vert",
+            "Petit pois"
+          ],
+          "indice": "Graines rondes en gousse",
+          "description": "Gousse contenant des graines sphériques sucrées.",
+          "explication": "Petit pois : Graines mangées fraîches ou sèches (pois cassés)."
+        },
+        {
+          "id": "legumineuses3",
+          "difficulte": "moyen",
+          "nom_commun": "Lentille",
+          "nom_scientifique": "Lens culinaris",
+          "groupe": "legumineuses",
+          "options": [
+            "Courgette",
+            "Fève",
+            "Haricot vert",
+            "Lentille"
+          ],
+          "indice": "Petites graines lenticulaires",
+          "description": "Petites graines plates en forme de lentille, diverses couleurs.",
+          "explication": "Lentille : Légumineuse sèche à cuisson rapide."
+        },
+        {
+          "id": "legumineuses4",
+          "difficulte": "moyen",
+          "nom_commun": "Pois chiche",
+          "nom_scientifique": "Cicer arietinum",
+          "groupe": "legumineuses",
+          "options": [
+            "Courgette",
+            "Haricot vert",
+            "Pois chiche",
+            "Petit pois"
+          ],
+          "indice": "Graine bosselée beige",
+          "description": "Graine beige irrégulière, base du houmous et des falafels.",
+          "explication": "Pois chiche : Légumineuse méditerranéenne et asiatique."
+        },
+        {
+          "id": "legumineuses5",
+          "difficulte": "difficile",
+          "nom_commun": "Fève",
+          "nom_scientifique": "Vicia faba",
+          "groupe": "legumineuses",
+          "options": [
+            "Fève",
+            "Pois chiche",
+            "Petit pois",
+            "Tomate"
+          ],
+          "indice": "Grosses graines aplaties",
+          "description": "Grosses graines aplaties dans une gousse épaisse, vertes ou sèches.",
+          "explication": "Fève : Légumineuse ancienne ; se mange fraîche ou sèche."
+        },
+        {
+          "id": "legumineuses6",
+          "difficulte": "difficile",
+          "nom_commun": "Fenouil bulbeux",
+          "nom_scientifique": "Foeniculum vulgare",
+          "groupe": "legumineuses",
+          "options": [
+            "Aubergine",
+            "Fenouil bulbeux",
+            "Petit pois",
+            "Okra"
+          ],
+          "indice": "Bulbe anisé blanc",
+          "description": "« Bulbe » blanc croquant au goût d’anis, feuillage plumeux.",
+          "explication": "Fenouil bulbeux : Base charnue des feuilles ; parfum anisé."
+        },
+        {
+          "id": "legumineuses7",
+          "difficulte": "moyen",
+          "nom_commun": "Courgette",
+          "nom_scientifique": "Cucurbita pepo",
+          "groupe": "legumineuses",
+          "options": [
+            "Lentille",
+            "Petit pois",
+            "Pois chiche",
+            "Courgette"
+          ],
+          "indice": "Fruit allongé vert tendre",
+          "description": "Fruit allongé à peau tendre, fleur jaune comestible.",
+          "explication": "Courgette : Cucurbitacée récoltée immature."
+        },
+        {
+          "id": "legumineuses8",
+          "difficulte": "facile",
+          "nom_commun": "Tomate",
+          "nom_scientifique": "Solanum lycopersicum",
+          "groupe": "legumineuses",
+          "options": [
+            "Okra",
+            "Haricot vert",
+            "Tomate",
+            "Fève"
+          ],
+          "indice": "Baie rouge (souvent) du potager",
+          "description": "Baie charnue rouge, jaune ou noire, intérieur à loges et graines.",
+          "explication": "Tomate : Botaniquement un fruit, culinairement un légume."
+        },
+        {
+          "id": "legumineuses9",
+          "difficulte": "moyen",
+          "nom_commun": "Aubergine",
+          "nom_scientifique": "Solanum melongena",
+          "groupe": "legumineuses",
+          "options": [
+            "Aubergine",
+            "Pois chiche",
+            "Lentille",
+            "Haricot vert"
+          ],
+          "indice": "Fruit violet brillant",
+          "description": "Baie allongée ou ronde à peau violet sombre luisante.",
+          "explication": "Aubergine : Solanée du soleil ; chair spongieuse."
+        },
+        {
+          "id": "legumineuses10",
+          "difficulte": "difficile",
+          "nom_commun": "Okra",
+          "nom_scientifique": "Abelmoschus esculentus",
+          "groupe": "legumineuses",
+          "options": [
+            "Fève",
+            "Okra",
+            "Pois chiche",
+            "Tomate"
+          ],
+          "indice": "Gousse cannelée mucilagineuse",
+          "description": "Gousse verte cannelée, mucilagineuse à la cuisson.",
+          "explication": "Okra : Aussi appelé gombo ; cuisine créole et africaine."
+        }
+      ]
+    }
+  ]
+}

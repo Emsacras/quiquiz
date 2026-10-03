@@ -1,0 +1,3097 @@
+{
+  "id": "capitales-monde",
+  "categorie": "Capitales du monde",
+  "description": "Retrouve la capitale à partir du pays. Coche les continents, puis un niveau.",
+  "groupes": [
+    {
+      "id": "europe",
+      "label": "Europe",
+      "questions": [
+        {
+          "id": "ec1",
+          "difficulte": "facile",
+          "nom_commun": "Paris",
+          "nom_scientifique": "Paris",
+          "groupe": "europe",
+          "options": [
+            "Budapest",
+            "Londres",
+            "Andorre-la-Vieille",
+            "Paris"
+          ],
+          "indice": "Capitale · France",
+          "description": "Capitale de France.",
+          "explication": "Paris : capitale de France.",
+          "pays": "France",
+          "paysEn": "France"
+        },
+        {
+          "id": "ec2",
+          "difficulte": "facile",
+          "nom_commun": "Rome",
+          "nom_scientifique": "Rome",
+          "groupe": "europe",
+          "options": [
+            "Oslo",
+            "Rome",
+            "Vienne",
+            "Skopje"
+          ],
+          "indice": "Capitale · Italie",
+          "description": "Capitale de Italie.",
+          "explication": "Rome : capitale de Italie.",
+          "pays": "Italie",
+          "paysEn": "Italy"
+        },
+        {
+          "id": "ec3",
+          "difficulte": "facile",
+          "nom_commun": "Madrid",
+          "nom_scientifique": "Madrid",
+          "groupe": "europe",
+          "options": [
+            "Madrid",
+            "Belgrade",
+            "Helsinki",
+            "Berne"
+          ],
+          "indice": "Capitale · Espagne",
+          "description": "Capitale de Espagne.",
+          "explication": "Madrid : capitale de Espagne.",
+          "pays": "Espagne",
+          "paysEn": "Spain"
+        },
+        {
+          "id": "ec4",
+          "difficulte": "facile",
+          "nom_commun": "Londres",
+          "nom_scientifique": "London",
+          "groupe": "europe",
+          "options": [
+            "Londres",
+            "Riga",
+            "Varsovie",
+            "Monaco"
+          ],
+          "indice": "Capitale · Royaume-Uni",
+          "description": "Capitale de Royaume-Uni.",
+          "explication": "Londres : capitale de Royaume-Uni.",
+          "pays": "Royaume-Uni",
+          "paysEn": "United Kingdom"
+        },
+        {
+          "id": "ec5",
+          "difficulte": "facile",
+          "nom_commun": "Berlin",
+          "nom_scientifique": "Berlin",
+          "groupe": "europe",
+          "options": [
+            "Stockholm",
+            "Vienne",
+            "Berne",
+            "Berlin"
+          ],
+          "indice": "Capitale · Allemagne",
+          "description": "Capitale de Allemagne.",
+          "explication": "Berlin : capitale de Allemagne.",
+          "pays": "Allemagne",
+          "paysEn": "Germany"
+        },
+        {
+          "id": "ec6",
+          "difficulte": "facile",
+          "nom_commun": "Varsovie",
+          "nom_scientifique": "Warsaw",
+          "groupe": "europe",
+          "options": [
+            "Reykjavik",
+            "Copenhague",
+            "Minsk",
+            "Varsovie"
+          ],
+          "indice": "Capitale · Pologne",
+          "description": "Capitale de Pologne.",
+          "explication": "Varsovie : capitale de Pologne.",
+          "pays": "Pologne",
+          "paysEn": "Poland"
+        },
+        {
+          "id": "ec7",
+          "difficulte": "facile",
+          "nom_commun": "Athènes",
+          "nom_scientifique": "Athens",
+          "groupe": "europe",
+          "options": [
+            "Bucarest",
+            "Ljubljana",
+            "Bratislava",
+            "Athènes"
+          ],
+          "indice": "Capitale · Grèce",
+          "description": "Capitale de Grèce.",
+          "explication": "Athènes : capitale de Grèce.",
+          "pays": "Grèce",
+          "paysEn": "Greece"
+        },
+        {
+          "id": "ec8",
+          "difficulte": "facile",
+          "nom_commun": "Stockholm",
+          "nom_scientifique": "Stockholm",
+          "groupe": "europe",
+          "options": [
+            "Bucarest",
+            "Vaduz",
+            "Stockholm",
+            "Paris"
+          ],
+          "indice": "Capitale · Suède",
+          "description": "Capitale de Suède.",
+          "explication": "Stockholm : capitale de Suède.",
+          "pays": "Suède",
+          "paysEn": "Sweden"
+        },
+        {
+          "id": "ec9",
+          "difficulte": "facile",
+          "nom_commun": "Oslo",
+          "nom_scientifique": "Oslo",
+          "groupe": "europe",
+          "options": [
+            "Monaco",
+            "Oslo",
+            "Saint-Marin",
+            "Lisbonne"
+          ],
+          "indice": "Capitale · Norvège",
+          "description": "Capitale de Norvège.",
+          "explication": "Oslo : capitale de Norvège.",
+          "pays": "Norvège",
+          "paysEn": "Norway"
+        },
+        {
+          "id": "ec10",
+          "difficulte": "facile",
+          "nom_commun": "Helsinki",
+          "nom_scientifique": "Helsinki",
+          "groupe": "europe",
+          "options": [
+            "Zagreb",
+            "Berne",
+            "Helsinki",
+            "Paris"
+          ],
+          "indice": "Capitale · Finlande",
+          "description": "Capitale de Finlande.",
+          "explication": "Helsinki : capitale de Finlande.",
+          "pays": "Finlande",
+          "paysEn": "Finland"
+        },
+        {
+          "id": "ec11",
+          "difficulte": "facile",
+          "nom_commun": "Lisbonne",
+          "nom_scientifique": "Lisbon",
+          "groupe": "europe",
+          "options": [
+            "La Valette",
+            "Lisbonne",
+            "Tirana",
+            "Minsk"
+          ],
+          "indice": "Capitale · Portugal",
+          "description": "Capitale de Portugal.",
+          "explication": "Lisbonne : capitale de Portugal.",
+          "pays": "Portugal",
+          "paysEn": "Portugal"
+        },
+        {
+          "id": "ec12",
+          "difficulte": "facile",
+          "nom_commun": "Dublin",
+          "nom_scientifique": "Dublin",
+          "groupe": "europe",
+          "options": [
+            "Zagreb",
+            "Dublin",
+            "Chișinău",
+            "Podgorica"
+          ],
+          "indice": "Capitale · Irlande",
+          "description": "Capitale de Irlande.",
+          "explication": "Dublin : capitale de Irlande.",
+          "pays": "Irlande",
+          "paysEn": "Ireland"
+        },
+        {
+          "id": "ec13",
+          "difficulte": "facile",
+          "nom_commun": "Reykjavik",
+          "nom_scientifique": "Reykjavik",
+          "groupe": "europe",
+          "options": [
+            "Reykjavik",
+            "Tirana",
+            "Paris",
+            "Bruxelles"
+          ],
+          "indice": "Capitale · Islande",
+          "description": "Capitale de Islande.",
+          "explication": "Reykjavik : capitale de Islande.",
+          "pays": "Islande",
+          "paysEn": "Iceland"
+        },
+        {
+          "id": "ec14",
+          "difficulte": "moyen",
+          "nom_commun": "Amsterdam",
+          "nom_scientifique": "Amsterdam",
+          "groupe": "europe",
+          "options": [
+            "Madrid",
+            "Podgorica",
+            "Amsterdam",
+            "Belgrade"
+          ],
+          "indice": "Capitale · Pays-Bas",
+          "description": "Capitale de Pays-Bas.",
+          "explication": "Amsterdam : capitale de Pays-Bas.",
+          "pays": "Pays-Bas",
+          "paysEn": "Netherlands"
+        },
+        {
+          "id": "ec15",
+          "difficulte": "moyen",
+          "nom_commun": "Bruxelles",
+          "nom_scientifique": "Brussels",
+          "groupe": "europe",
+          "options": [
+            "Bruxelles",
+            "Paris",
+            "Chișinău",
+            "Ljubljana"
+          ],
+          "indice": "Capitale · Belgique",
+          "description": "Capitale de Belgique.",
+          "explication": "Bruxelles : capitale de Belgique.",
+          "pays": "Belgique",
+          "paysEn": "Belgium"
+        },
+        {
+          "id": "ec16",
+          "difficulte": "moyen",
+          "nom_commun": "Copenhague",
+          "nom_scientifique": "Copenhagen",
+          "groupe": "europe",
+          "options": [
+            "Copenhague",
+            "Stockholm",
+            "Riga",
+            "Belgrade"
+          ],
+          "indice": "Capitale · Danemark",
+          "description": "Capitale de Danemark.",
+          "explication": "Copenhague : capitale de Danemark.",
+          "pays": "Danemark",
+          "paysEn": "Denmark"
+        },
+        {
+          "id": "ec17",
+          "difficulte": "moyen",
+          "nom_commun": "Vienne",
+          "nom_scientifique": "Vienna",
+          "groupe": "europe",
+          "options": [
+            "Minsk",
+            "Saint-Marin",
+            "Sarajevo",
+            "Vienne"
+          ],
+          "indice": "Capitale · Autriche",
+          "description": "Capitale de Autriche.",
+          "explication": "Vienne : capitale de Autriche.",
+          "pays": "Autriche",
+          "paysEn": "Austria"
+        },
+        {
+          "id": "ec18",
+          "difficulte": "moyen",
+          "nom_commun": "Berne",
+          "nom_scientifique": "Bern",
+          "groupe": "europe",
+          "options": [
+            "Bruxelles",
+            "Berne",
+            "Minsk",
+            "Athènes"
+          ],
+          "indice": "Capitale · Suisse",
+          "description": "Capitale de Suisse.",
+          "explication": "Berne : capitale de Suisse.",
+          "pays": "Suisse",
+          "paysEn": "Switzerland"
+        },
+        {
+          "id": "ec19",
+          "difficulte": "moyen",
+          "nom_commun": "Prague",
+          "nom_scientifique": "Prague",
+          "groupe": "europe",
+          "options": [
+            "Prague",
+            "Bucarest",
+            "Belgrade",
+            "Londres"
+          ],
+          "indice": "Capitale · République tchèque",
+          "description": "Capitale de République tchèque.",
+          "explication": "Prague : capitale de République tchèque.",
+          "pays": "République tchèque",
+          "paysEn": "Czech Republic"
+        },
+        {
+          "id": "ec20",
+          "difficulte": "moyen",
+          "nom_commun": "Bucarest",
+          "nom_scientifique": "Bucharest",
+          "groupe": "europe",
+          "options": [
+            "Berlin",
+            "Berne",
+            "Bucarest",
+            "Londres"
+          ],
+          "indice": "Capitale · Roumanie",
+          "description": "Capitale de Roumanie.",
+          "explication": "Bucarest : capitale de Roumanie.",
+          "pays": "Roumanie",
+          "paysEn": "Romania"
+        },
+        {
+          "id": "ec21",
+          "difficulte": "moyen",
+          "nom_commun": "Sofia",
+          "nom_scientifique": "Sofia",
+          "groupe": "europe",
+          "options": [
+            "Budapest",
+            "Amsterdam",
+            "Vaduz",
+            "Sofia"
+          ],
+          "indice": "Capitale · Bulgarie",
+          "description": "Capitale de Bulgarie.",
+          "explication": "Sofia : capitale de Bulgarie.",
+          "pays": "Bulgarie",
+          "paysEn": "Bulgaria"
+        },
+        {
+          "id": "ec22",
+          "difficulte": "moyen",
+          "nom_commun": "Budapest",
+          "nom_scientifique": "Budapest",
+          "groupe": "europe",
+          "options": [
+            "Kiev",
+            "Budapest",
+            "Skopje",
+            "Oslo"
+          ],
+          "indice": "Capitale · Hongrie",
+          "description": "Capitale de Hongrie.",
+          "explication": "Budapest : capitale de Hongrie.",
+          "pays": "Hongrie",
+          "paysEn": "Hungary"
+        },
+        {
+          "id": "ec23",
+          "difficulte": "moyen",
+          "nom_commun": "Kiev",
+          "nom_scientifique": "Kyiv",
+          "groupe": "europe",
+          "options": [
+            "Belgrade",
+            "Kiev",
+            "Luxembourg",
+            "Berne"
+          ],
+          "indice": "Capitale · Ukraine",
+          "description": "Capitale de Ukraine.",
+          "explication": "Kiev : capitale de Ukraine.",
+          "pays": "Ukraine",
+          "paysEn": "Ukraine"
+        },
+        {
+          "id": "ec24",
+          "difficulte": "moyen",
+          "nom_commun": "Zagreb",
+          "nom_scientifique": "Zagreb",
+          "groupe": "europe",
+          "options": [
+            "Sofia",
+            "Monaco",
+            "Vilnius",
+            "Zagreb"
+          ],
+          "indice": "Capitale · Croatie",
+          "description": "Capitale de Croatie.",
+          "explication": "Zagreb : capitale de Croatie.",
+          "pays": "Croatie",
+          "paysEn": "Croatia"
+        },
+        {
+          "id": "ec25",
+          "difficulte": "moyen",
+          "nom_commun": "Belgrade",
+          "nom_scientifique": "Belgrade",
+          "groupe": "europe",
+          "options": [
+            "Belgrade",
+            "Madrid",
+            "Skopje",
+            "Lisbonne"
+          ],
+          "indice": "Capitale · Serbie",
+          "description": "Capitale de Serbie.",
+          "explication": "Belgrade : capitale de Serbie.",
+          "pays": "Serbie",
+          "paysEn": "Serbia"
+        },
+        {
+          "id": "ec26",
+          "difficulte": "moyen",
+          "nom_commun": "Bratislava",
+          "nom_scientifique": "Bratislava",
+          "groupe": "europe",
+          "options": [
+            "Vilnius",
+            "Andorre-la-Vieille",
+            "Dublin",
+            "Bratislava"
+          ],
+          "indice": "Capitale · Slovaquie",
+          "description": "Capitale de Slovaquie.",
+          "explication": "Bratislava : capitale de Slovaquie.",
+          "pays": "Slovaquie",
+          "paysEn": "Slovakia"
+        },
+        {
+          "id": "ec27",
+          "difficulte": "moyen",
+          "nom_commun": "Ljubljana",
+          "nom_scientifique": "Ljubljana",
+          "groupe": "europe",
+          "options": [
+            "Rome",
+            "Sofia",
+            "Ljubljana",
+            "La Valette"
+          ],
+          "indice": "Capitale · Slovénie",
+          "description": "Capitale de Slovénie.",
+          "explication": "Ljubljana : capitale de Slovénie.",
+          "pays": "Slovénie",
+          "paysEn": "Slovenia"
+        },
+        {
+          "id": "ec28",
+          "difficulte": "moyen",
+          "nom_commun": "Sarajevo",
+          "nom_scientifique": "Sarajevo",
+          "groupe": "europe",
+          "options": [
+            "Podgorica",
+            "Stockholm",
+            "Madrid",
+            "Sarajevo"
+          ],
+          "indice": "Capitale · Bosnie-Herzégovine",
+          "description": "Capitale de Bosnie-Herzégovine.",
+          "explication": "Sarajevo : capitale de Bosnie-Herzégovine.",
+          "pays": "Bosnie-Herzégovine",
+          "paysEn": "Bosnia and Herzegovina"
+        },
+        {
+          "id": "ec29",
+          "difficulte": "moyen",
+          "nom_commun": "Vilnius",
+          "nom_scientifique": "Vilnius",
+          "groupe": "europe",
+          "options": [
+            "Vilnius",
+            "Berne",
+            "Ljubljana",
+            "Bruxelles"
+          ],
+          "indice": "Capitale · Lituanie",
+          "description": "Capitale de Lituanie.",
+          "explication": "Vilnius : capitale de Lituanie.",
+          "pays": "Lituanie",
+          "paysEn": "Lithuania"
+        },
+        {
+          "id": "ec30",
+          "difficulte": "moyen",
+          "nom_commun": "Riga",
+          "nom_scientifique": "Riga",
+          "groupe": "europe",
+          "options": [
+            "Dublin",
+            "Riga",
+            "La Valette",
+            "Paris"
+          ],
+          "indice": "Capitale · Lettonie",
+          "description": "Capitale de Lettonie.",
+          "explication": "Riga : capitale de Lettonie.",
+          "pays": "Lettonie",
+          "paysEn": "Latvia"
+        },
+        {
+          "id": "ec31",
+          "difficulte": "moyen",
+          "nom_commun": "Tallinn",
+          "nom_scientifique": "Tallinn",
+          "groupe": "europe",
+          "options": [
+            "Tallinn",
+            "Nicosie",
+            "La Valette",
+            "Berlin"
+          ],
+          "indice": "Capitale · Estonie",
+          "description": "Capitale de Estonie.",
+          "explication": "Tallinn : capitale de Estonie.",
+          "pays": "Estonie",
+          "paysEn": "Estonia"
+        },
+        {
+          "id": "ec32",
+          "difficulte": "difficile",
+          "nom_commun": "Minsk",
+          "nom_scientifique": "Minsk",
+          "groupe": "europe",
+          "options": [
+            "Skopje",
+            "Minsk",
+            "Luxembourg",
+            "Monaco"
+          ],
+          "indice": "Capitale · Biélorussie",
+          "description": "Capitale de Biélorussie.",
+          "explication": "Minsk : capitale de Biélorussie.",
+          "pays": "Biélorussie",
+          "paysEn": "Belarus"
+        },
+        {
+          "id": "ec33",
+          "difficulte": "difficile",
+          "nom_commun": "Chișinău",
+          "nom_scientifique": "Chisinau",
+          "groupe": "europe",
+          "options": [
+            "Tirana",
+            "Vilnius",
+            "Sarajevo",
+            "Chișinău"
+          ],
+          "indice": "Capitale · Moldavie",
+          "description": "Capitale de Moldavie.",
+          "explication": "Chișinău : capitale de Moldavie.",
+          "pays": "Moldavie",
+          "paysEn": "Moldova"
+        },
+        {
+          "id": "ec34",
+          "difficulte": "difficile",
+          "nom_commun": "Luxembourg",
+          "nom_scientifique": "Luxembourg",
+          "groupe": "europe",
+          "options": [
+            "Andorre-la-Vieille",
+            "Luxembourg",
+            "Sofia",
+            "Bratislava"
+          ],
+          "indice": "Capitale · Luxembourg",
+          "description": "Capitale de Luxembourg.",
+          "explication": "Luxembourg : capitale de Luxembourg.",
+          "pays": "Luxembourg",
+          "paysEn": "Luxembourg"
+        },
+        {
+          "id": "ec35",
+          "difficulte": "difficile",
+          "nom_commun": "Andorre-la-Vieille",
+          "nom_scientifique": "Andorra la Vella",
+          "groupe": "europe",
+          "options": [
+            "Podgorica",
+            "Rome",
+            "Andorre-la-Vieille",
+            "Helsinki"
+          ],
+          "indice": "Capitale · Andorre",
+          "description": "Capitale de Andorre.",
+          "explication": "Andorre-la-Vieille : capitale de Andorre.",
+          "pays": "Andorre",
+          "paysEn": "Andorra"
+        },
+        {
+          "id": "ec36",
+          "difficulte": "difficile",
+          "nom_commun": "Monaco",
+          "nom_scientifique": "Monaco",
+          "groupe": "europe",
+          "options": [
+            "Bruxelles",
+            "Monaco",
+            "Podgorica",
+            "Berne"
+          ],
+          "indice": "Capitale · Monaco",
+          "description": "Capitale de Monaco.",
+          "explication": "Monaco : capitale de Monaco.",
+          "pays": "Monaco",
+          "paysEn": "Monaco"
+        },
+        {
+          "id": "ec37",
+          "difficulte": "difficile",
+          "nom_commun": "Saint-Marin",
+          "nom_scientifique": "San Marino",
+          "groupe": "europe",
+          "options": [
+            "Saint-Marin",
+            "Tirana",
+            "Vilnius",
+            "Prague"
+          ],
+          "indice": "Capitale · Saint-Marin",
+          "description": "Capitale de Saint-Marin.",
+          "explication": "Saint-Marin : capitale de Saint-Marin.",
+          "pays": "Saint-Marin",
+          "paysEn": "San Marino"
+        },
+        {
+          "id": "ec38",
+          "difficulte": "difficile",
+          "nom_commun": "Podgorica",
+          "nom_scientifique": "Podgorica",
+          "groupe": "europe",
+          "options": [
+            "Oslo",
+            "Vaduz",
+            "La Valette",
+            "Podgorica"
+          ],
+          "indice": "Capitale · Monténégro",
+          "description": "Capitale de Monténégro.",
+          "explication": "Podgorica : capitale de Monténégro.",
+          "pays": "Monténégro",
+          "paysEn": "Montenegro"
+        },
+        {
+          "id": "ec39",
+          "difficulte": "difficile",
+          "nom_commun": "Skopje",
+          "nom_scientifique": "Skopje",
+          "groupe": "europe",
+          "options": [
+            "Sarajevo",
+            "Skopje",
+            "Varsovie",
+            "Tallinn"
+          ],
+          "indice": "Capitale · Macédoine du Nord",
+          "description": "Capitale de Macédoine du Nord.",
+          "explication": "Skopje : capitale de Macédoine du Nord.",
+          "pays": "Macédoine du Nord",
+          "paysEn": "North Macedonia"
+        },
+        {
+          "id": "ec40",
+          "difficulte": "difficile",
+          "nom_commun": "Tirana",
+          "nom_scientifique": "Tirana",
+          "groupe": "europe",
+          "options": [
+            "Tirana",
+            "Londres",
+            "Oslo",
+            "Madrid"
+          ],
+          "indice": "Capitale · Albanie",
+          "description": "Capitale de Albanie.",
+          "explication": "Tirana : capitale de Albanie.",
+          "pays": "Albanie",
+          "paysEn": "Albania"
+        },
+        {
+          "id": "ec41",
+          "difficulte": "difficile",
+          "nom_commun": "La Valette",
+          "nom_scientifique": "Valletta",
+          "groupe": "europe",
+          "options": [
+            "Berlin",
+            "Athènes",
+            "Ljubljana",
+            "La Valette"
+          ],
+          "indice": "Capitale · Malte",
+          "description": "Capitale de Malte.",
+          "explication": "La Valette : capitale de Malte.",
+          "pays": "Malte",
+          "paysEn": "Malta"
+        },
+        {
+          "id": "ec42",
+          "difficulte": "difficile",
+          "nom_commun": "Nicosie",
+          "nom_scientifique": "Nicosia",
+          "groupe": "europe",
+          "options": [
+            "Madrid",
+            "Amsterdam",
+            "Nicosie",
+            "La Valette"
+          ],
+          "indice": "Capitale · Chypre",
+          "description": "Capitale de Chypre.",
+          "explication": "Nicosie : capitale de Chypre.",
+          "pays": "Chypre",
+          "paysEn": "Cyprus"
+        },
+        {
+          "id": "ec43",
+          "difficulte": "difficile",
+          "nom_commun": "Vaduz",
+          "nom_scientifique": "Vaduz",
+          "groupe": "europe",
+          "options": [
+            "Vaduz",
+            "Tallinn",
+            "Nicosie",
+            "Stockholm"
+          ],
+          "indice": "Capitale · Liechtenstein",
+          "description": "Capitale de Liechtenstein.",
+          "explication": "Vaduz : capitale de Liechtenstein.",
+          "pays": "Liechtenstein",
+          "paysEn": "Liechtenstein"
+        }
+      ]
+    },
+    {
+      "id": "afrique",
+      "label": "Afrique",
+      "questions": [
+        {
+          "id": "ac1",
+          "difficulte": "facile",
+          "nom_commun": "Le Caire",
+          "nom_scientifique": "Cairo",
+          "groupe": "afrique",
+          "options": [
+            "Le Caire",
+            "Victoria",
+            "Moroni",
+            "Pretoria"
+          ],
+          "indice": "Capitale · Égypte",
+          "description": "Capitale de Égypte.",
+          "explication": "Le Caire : capitale de Égypte.",
+          "pays": "Égypte",
+          "paysEn": "Egypt"
+        },
+        {
+          "id": "ac2",
+          "difficulte": "facile",
+          "nom_commun": "Pretoria",
+          "nom_scientifique": "Pretoria",
+          "groupe": "afrique",
+          "options": [
+            "Libreville",
+            "Maputo",
+            "Pretoria",
+            "Nairobi"
+          ],
+          "indice": "Capitale · Afrique du Sud",
+          "description": "Capitale de Afrique du Sud.",
+          "explication": "Pretoria : capitale de Afrique du Sud.",
+          "pays": "Afrique du Sud",
+          "paysEn": "South Africa"
+        },
+        {
+          "id": "ac3",
+          "difficulte": "facile",
+          "nom_commun": "Alger",
+          "nom_scientifique": "Algiers",
+          "groupe": "afrique",
+          "options": [
+            "Dodoma",
+            "Mogadiscio",
+            "Asmara",
+            "Alger"
+          ],
+          "indice": "Capitale · Algérie",
+          "description": "Capitale de Algérie.",
+          "explication": "Alger : capitale de Algérie.",
+          "pays": "Algérie",
+          "paysEn": "Algeria"
+        },
+        {
+          "id": "ac4",
+          "difficulte": "facile",
+          "nom_commun": "Rabat",
+          "nom_scientifique": "Rabat",
+          "groupe": "afrique",
+          "options": [
+            "Freetown",
+            "Bamako",
+            "Rabat",
+            "Monrovia"
+          ],
+          "indice": "Capitale · Maroc",
+          "description": "Capitale de Maroc.",
+          "explication": "Rabat : capitale de Maroc.",
+          "pays": "Maroc",
+          "paysEn": "Morocco"
+        },
+        {
+          "id": "ac5",
+          "difficulte": "facile",
+          "nom_commun": "Abuja",
+          "nom_scientifique": "Abuja",
+          "groupe": "afrique",
+          "options": [
+            "Bissau",
+            "Moroni",
+            "Abuja",
+            "Libreville"
+          ],
+          "indice": "Capitale · Nigeria",
+          "description": "Capitale de Nigeria.",
+          "explication": "Abuja : capitale de Nigeria.",
+          "pays": "Nigeria",
+          "paysEn": "Nigeria"
+        },
+        {
+          "id": "ac6",
+          "difficulte": "facile",
+          "nom_commun": "Addis-Abeba",
+          "nom_scientifique": "Addis Ababa",
+          "groupe": "afrique",
+          "options": [
+            "N'Djaména",
+            "Monrovia",
+            "Addis-Abeba",
+            "Niamey"
+          ],
+          "indice": "Capitale · Éthiopie",
+          "description": "Capitale de Éthiopie.",
+          "explication": "Addis-Abeba : capitale de Éthiopie.",
+          "pays": "Éthiopie",
+          "paysEn": "Ethiopia"
+        },
+        {
+          "id": "ac7",
+          "difficulte": "facile",
+          "nom_commun": "Tripoli",
+          "nom_scientifique": "Tripoli",
+          "groupe": "afrique",
+          "options": [
+            "Moroni",
+            "Kampala",
+            "Monrovia",
+            "Tripoli"
+          ],
+          "indice": "Capitale · Libye",
+          "description": "Capitale de Libye.",
+          "explication": "Tripoli : capitale de Libye.",
+          "pays": "Libye",
+          "paysEn": "Libya"
+        },
+        {
+          "id": "ac8",
+          "difficulte": "facile",
+          "nom_commun": "Tunis",
+          "nom_scientifique": "Tunis",
+          "groupe": "afrique",
+          "options": [
+            "Tripoli",
+            "Djibouti",
+            "Nairobi",
+            "Tunis"
+          ],
+          "indice": "Capitale · Tunisie",
+          "description": "Capitale de Tunisie.",
+          "explication": "Tunis : capitale de Tunisie.",
+          "pays": "Tunisie",
+          "paysEn": "Tunisia"
+        },
+        {
+          "id": "ac9",
+          "difficulte": "facile",
+          "nom_commun": "Nairobi",
+          "nom_scientifique": "Nairobi",
+          "groupe": "afrique",
+          "options": [
+            "Asmara",
+            "Libreville",
+            "Victoria",
+            "Nairobi"
+          ],
+          "indice": "Capitale · Kenya",
+          "description": "Capitale de Kenya.",
+          "explication": "Nairobi : capitale de Kenya.",
+          "pays": "Kenya",
+          "paysEn": "Kenya"
+        },
+        {
+          "id": "ac10",
+          "difficulte": "facile",
+          "nom_commun": "Antananarivo",
+          "nom_scientifique": "Antananarivo",
+          "groupe": "afrique",
+          "options": [
+            "Le Caire",
+            "Bamako",
+            "Accra",
+            "Antananarivo"
+          ],
+          "indice": "Capitale · Madagascar",
+          "description": "Capitale de Madagascar.",
+          "explication": "Antananarivo : capitale de Madagascar.",
+          "pays": "Madagascar",
+          "paysEn": "Madagascar"
+        },
+        {
+          "id": "ac11",
+          "difficulte": "facile",
+          "nom_commun": "Khartoum",
+          "nom_scientifique": "Khartoum",
+          "groupe": "afrique",
+          "options": [
+            "Khartoum",
+            "Port-Louis",
+            "Maputo",
+            "Dakar"
+          ],
+          "indice": "Capitale · Soudan",
+          "description": "Capitale de Soudan.",
+          "explication": "Khartoum : capitale de Soudan.",
+          "pays": "Soudan",
+          "paysEn": "Sudan"
+        },
+        {
+          "id": "ac12",
+          "difficulte": "moyen",
+          "nom_commun": "Luanda",
+          "nom_scientifique": "Luanda",
+          "groupe": "afrique",
+          "options": [
+            "Tripoli",
+            "Dodoma",
+            "Nairobi",
+            "Luanda"
+          ],
+          "indice": "Capitale · Angola",
+          "description": "Capitale de Angola.",
+          "explication": "Luanda : capitale de Angola.",
+          "pays": "Angola",
+          "paysEn": "Angola"
+        },
+        {
+          "id": "ac13",
+          "difficulte": "moyen",
+          "nom_commun": "Maputo",
+          "nom_scientifique": "Maputo",
+          "groupe": "afrique",
+          "options": [
+            "Rabat",
+            "Mogadiscio",
+            "Porto-Novo",
+            "Maputo"
+          ],
+          "indice": "Capitale · Mozambique",
+          "description": "Capitale de Mozambique.",
+          "explication": "Maputo : capitale de Mozambique.",
+          "pays": "Mozambique",
+          "paysEn": "Mozambique"
+        },
+        {
+          "id": "ac14",
+          "difficulte": "moyen",
+          "nom_commun": "Dodoma",
+          "nom_scientifique": "Dodoma",
+          "groupe": "afrique",
+          "options": [
+            "Lomé",
+            "Tunis",
+            "Dodoma",
+            "Mogadiscio"
+          ],
+          "indice": "Capitale · Tanzanie",
+          "description": "Capitale de Tanzanie.",
+          "explication": "Dodoma : capitale de Tanzanie.",
+          "pays": "Tanzanie",
+          "paysEn": "Tanzania"
+        },
+        {
+          "id": "ac15",
+          "difficulte": "moyen",
+          "nom_commun": "Kampala",
+          "nom_scientifique": "Kampala",
+          "groupe": "afrique",
+          "options": [
+            "Harare",
+            "Asmara",
+            "Kampala",
+            "Monrovia"
+          ],
+          "indice": "Capitale · Ouganda",
+          "description": "Capitale de Ouganda.",
+          "explication": "Kampala : capitale de Ouganda.",
+          "pays": "Ouganda",
+          "paysEn": "Uganda"
+        },
+        {
+          "id": "ac16",
+          "difficulte": "moyen",
+          "nom_commun": "Accra",
+          "nom_scientifique": "Accra",
+          "groupe": "afrique",
+          "options": [
+            "Accra",
+            "Alger",
+            "Monrovia",
+            "Banjul"
+          ],
+          "indice": "Capitale · Ghana",
+          "description": "Capitale de Ghana.",
+          "explication": "Accra : capitale de Ghana.",
+          "pays": "Ghana",
+          "paysEn": "Ghana"
+        },
+        {
+          "id": "ac17",
+          "difficulte": "moyen",
+          "nom_commun": "Yamoussoukro",
+          "nom_scientifique": "Yamoussoukro",
+          "groupe": "afrique",
+          "options": [
+            "Conakry",
+            "Tunis",
+            "Freetown",
+            "Yamoussoukro"
+          ],
+          "indice": "Capitale · Côte d'Ivoire",
+          "description": "Capitale de Côte d'Ivoire.",
+          "explication": "Yamoussoukro : capitale de Côte d'Ivoire.",
+          "pays": "Côte d'Ivoire",
+          "paysEn": "Ivory Coast"
+        },
+        {
+          "id": "ac18",
+          "difficulte": "moyen",
+          "nom_commun": "Yaoundé",
+          "nom_scientifique": "Yaounde",
+          "groupe": "afrique",
+          "options": [
+            "Lomé",
+            "Libreville",
+            "Mogadiscio",
+            "Yaoundé"
+          ],
+          "indice": "Capitale · Cameroun",
+          "description": "Capitale de Cameroun.",
+          "explication": "Yaoundé : capitale de Cameroun.",
+          "pays": "Cameroun",
+          "paysEn": "Cameroon"
+        },
+        {
+          "id": "ac19",
+          "difficulte": "moyen",
+          "nom_commun": "Dakar",
+          "nom_scientifique": "Dakar",
+          "groupe": "afrique",
+          "options": [
+            "Accra",
+            "Dakar",
+            "Victoria",
+            "Addis-Abeba"
+          ],
+          "indice": "Capitale · Sénégal",
+          "description": "Capitale de Sénégal.",
+          "explication": "Dakar : capitale de Sénégal.",
+          "pays": "Sénégal",
+          "paysEn": "Senegal"
+        },
+        {
+          "id": "ac20",
+          "difficulte": "moyen",
+          "nom_commun": "Bamako",
+          "nom_scientifique": "Bamako",
+          "groupe": "afrique",
+          "options": [
+            "Kampala",
+            "Bamako",
+            "Dodoma",
+            "Monrovia"
+          ],
+          "indice": "Capitale · Mali",
+          "description": "Capitale de Mali.",
+          "explication": "Bamako : capitale de Mali.",
+          "pays": "Mali",
+          "paysEn": "Mali"
+        },
+        {
+          "id": "ac21",
+          "difficulte": "moyen",
+          "nom_commun": "Niamey",
+          "nom_scientifique": "Niamey",
+          "groupe": "afrique",
+          "options": [
+            "Nairobi",
+            "Abuja",
+            "Conakry",
+            "Niamey"
+          ],
+          "indice": "Capitale · Niger",
+          "description": "Capitale de Niger.",
+          "explication": "Niamey : capitale de Niger.",
+          "pays": "Niger",
+          "paysEn": "Niger"
+        },
+        {
+          "id": "ac22",
+          "difficulte": "moyen",
+          "nom_commun": "N'Djaména",
+          "nom_scientifique": "N'Djamena",
+          "groupe": "afrique",
+          "options": [
+            "Libreville",
+            "Malabo",
+            "Addis-Abeba",
+            "N'Djaména"
+          ],
+          "indice": "Capitale · Tchad",
+          "description": "Capitale de Tchad.",
+          "explication": "N'Djaména : capitale de Tchad.",
+          "pays": "Tchad",
+          "paysEn": "Chad"
+        },
+        {
+          "id": "ac23",
+          "difficulte": "moyen",
+          "nom_commun": "Kinshasa",
+          "nom_scientifique": "Kinshasa",
+          "groupe": "afrique",
+          "options": [
+            "Kinshasa",
+            "Kigali",
+            "Le Caire",
+            "Dakar"
+          ],
+          "indice": "Capitale · République démocratique du Congo",
+          "description": "Capitale de République démocratique du Congo.",
+          "explication": "Kinshasa : capitale de République démocratique du Congo.",
+          "pays": "République démocratique du Congo",
+          "paysEn": "Democratic Republic of the Congo"
+        },
+        {
+          "id": "ac24",
+          "difficulte": "moyen",
+          "nom_commun": "Libreville",
+          "nom_scientifique": "Libreville",
+          "groupe": "afrique",
+          "options": [
+            "Pretoria",
+            "Alger",
+            "Libreville",
+            "Djibouti"
+          ],
+          "indice": "Capitale · Gabon",
+          "description": "Capitale de Gabon.",
+          "explication": "Libreville : capitale de Gabon.",
+          "pays": "Gabon",
+          "paysEn": "Gabon"
+        },
+        {
+          "id": "ac25",
+          "difficulte": "moyen",
+          "nom_commun": "Lusaka",
+          "nom_scientifique": "Lusaka",
+          "groupe": "afrique",
+          "options": [
+            "Lusaka",
+            "N'Djaména",
+            "Nairobi",
+            "Dakar"
+          ],
+          "indice": "Capitale · Zambie",
+          "description": "Capitale de Zambie.",
+          "explication": "Lusaka : capitale de Zambie.",
+          "pays": "Zambie",
+          "paysEn": "Zambia"
+        },
+        {
+          "id": "ac26",
+          "difficulte": "moyen",
+          "nom_commun": "Harare",
+          "nom_scientifique": "Harare",
+          "groupe": "afrique",
+          "options": [
+            "Harare",
+            "Yaoundé",
+            "Tripoli",
+            "Moroni"
+          ],
+          "indice": "Capitale · Zimbabwe",
+          "description": "Capitale de Zimbabwe.",
+          "explication": "Harare : capitale de Zimbabwe.",
+          "pays": "Zimbabwe",
+          "paysEn": "Zimbabwe"
+        },
+        {
+          "id": "ac27",
+          "difficulte": "difficile",
+          "nom_commun": "Porto-Novo",
+          "nom_scientifique": "Porto-Novo",
+          "groupe": "afrique",
+          "options": [
+            "Ouagadougou",
+            "Freetown",
+            "Port-Louis",
+            "Porto-Novo"
+          ],
+          "indice": "Capitale · Bénin",
+          "description": "Capitale de Bénin.",
+          "explication": "Porto-Novo : capitale de Bénin.",
+          "pays": "Bénin",
+          "paysEn": "Benin"
+        },
+        {
+          "id": "ac28",
+          "difficulte": "difficile",
+          "nom_commun": "Lomé",
+          "nom_scientifique": "Lome",
+          "groupe": "afrique",
+          "options": [
+            "Abuja",
+            "Asmara",
+            "Lomé",
+            "Antananarivo"
+          ],
+          "indice": "Capitale · Togo",
+          "description": "Capitale de Togo.",
+          "explication": "Lomé : capitale de Togo.",
+          "pays": "Togo",
+          "paysEn": "Togo"
+        },
+        {
+          "id": "ac29",
+          "difficulte": "difficile",
+          "nom_commun": "Ouagadougou",
+          "nom_scientifique": "Ouagadougou",
+          "groupe": "afrique",
+          "options": [
+            "Dodoma",
+            "Khartoum",
+            "Asmara",
+            "Ouagadougou"
+          ],
+          "indice": "Capitale · Burkina Faso",
+          "description": "Capitale de Burkina Faso.",
+          "explication": "Ouagadougou : capitale de Burkina Faso.",
+          "pays": "Burkina Faso",
+          "paysEn": "Burkina Faso"
+        },
+        {
+          "id": "ac30",
+          "difficulte": "difficile",
+          "nom_commun": "Conakry",
+          "nom_scientifique": "Conakry",
+          "groupe": "afrique",
+          "options": [
+            "Luanda",
+            "Tripoli",
+            "Bamako",
+            "Conakry"
+          ],
+          "indice": "Capitale · Guinée",
+          "description": "Capitale de Guinée.",
+          "explication": "Conakry : capitale de Guinée.",
+          "pays": "Guinée",
+          "paysEn": "Guinea"
+        },
+        {
+          "id": "ac31",
+          "difficulte": "difficile",
+          "nom_commun": "Freetown",
+          "nom_scientifique": "Freetown",
+          "groupe": "afrique",
+          "options": [
+            "Freetown",
+            "Conakry",
+            "Moroni",
+            "Pretoria"
+          ],
+          "indice": "Capitale · Sierra Leone",
+          "description": "Capitale de Sierra Leone.",
+          "explication": "Freetown : capitale de Sierra Leone.",
+          "pays": "Sierra Leone",
+          "paysEn": "Sierra Leone"
+        },
+        {
+          "id": "ac32",
+          "difficulte": "difficile",
+          "nom_commun": "Monrovia",
+          "nom_scientifique": "Monrovia",
+          "groupe": "afrique",
+          "options": [
+            "Monrovia",
+            "Asmara",
+            "Djibouti",
+            "Khartoum"
+          ],
+          "indice": "Capitale · Libéria",
+          "description": "Capitale de Libéria.",
+          "explication": "Monrovia : capitale de Libéria.",
+          "pays": "Libéria",
+          "paysEn": "Liberia"
+        },
+        {
+          "id": "ac33",
+          "difficulte": "difficile",
+          "nom_commun": "Banjul",
+          "nom_scientifique": "Banjul",
+          "groupe": "afrique",
+          "options": [
+            "Rabat",
+            "Banjul",
+            "Harare",
+            "Nairobi"
+          ],
+          "indice": "Capitale · Gambie",
+          "description": "Capitale de Gambie.",
+          "explication": "Banjul : capitale de Gambie.",
+          "pays": "Gambie",
+          "paysEn": "Gambia"
+        },
+        {
+          "id": "ac34",
+          "difficulte": "difficile",
+          "nom_commun": "Bissau",
+          "nom_scientifique": "Bissau",
+          "groupe": "afrique",
+          "options": [
+            "Bissau",
+            "Victoria",
+            "N'Djaména",
+            "Abuja"
+          ],
+          "indice": "Capitale · Guinée-Bissau",
+          "description": "Capitale de Guinée-Bissau.",
+          "explication": "Bissau : capitale de Guinée-Bissau.",
+          "pays": "Guinée-Bissau",
+          "paysEn": "Guinea-Bissau"
+        },
+        {
+          "id": "ac35",
+          "difficulte": "difficile",
+          "nom_commun": "Malabo",
+          "nom_scientifique": "Malabo",
+          "groupe": "afrique",
+          "options": [
+            "Malabo",
+            "Ouagadougou",
+            "Khartoum",
+            "Victoria"
+          ],
+          "indice": "Capitale · Guinée équatoriale",
+          "description": "Capitale de Guinée équatoriale.",
+          "explication": "Malabo : capitale de Guinée équatoriale.",
+          "pays": "Guinée équatoriale",
+          "paysEn": "Equatorial Guinea"
+        },
+        {
+          "id": "ac36",
+          "difficulte": "difficile",
+          "nom_commun": "Djibouti",
+          "nom_scientifique": "Djibouti",
+          "groupe": "afrique",
+          "options": [
+            "Pretoria",
+            "Djibouti",
+            "Dakar",
+            "Victoria"
+          ],
+          "indice": "Capitale · Djibouti",
+          "description": "Capitale de Djibouti.",
+          "explication": "Djibouti : capitale de Djibouti.",
+          "pays": "Djibouti",
+          "paysEn": "Djibouti"
+        },
+        {
+          "id": "ac37",
+          "difficulte": "difficile",
+          "nom_commun": "Asmara",
+          "nom_scientifique": "Asmara",
+          "groupe": "afrique",
+          "options": [
+            "Asmara",
+            "Lomé",
+            "Victoria",
+            "Abuja"
+          ],
+          "indice": "Capitale · Érythrée",
+          "description": "Capitale de Érythrée.",
+          "explication": "Asmara : capitale de Érythrée.",
+          "pays": "Érythrée",
+          "paysEn": "Eritrea"
+        },
+        {
+          "id": "ac38",
+          "difficulte": "difficile",
+          "nom_commun": "Mogadiscio",
+          "nom_scientifique": "Mogadishu",
+          "groupe": "afrique",
+          "options": [
+            "Mogadiscio",
+            "Abuja",
+            "Gitega",
+            "Bissau"
+          ],
+          "indice": "Capitale · Somalie",
+          "description": "Capitale de Somalie.",
+          "explication": "Mogadiscio : capitale de Somalie.",
+          "pays": "Somalie",
+          "paysEn": "Somalia"
+        },
+        {
+          "id": "ac39",
+          "difficulte": "difficile",
+          "nom_commun": "Gitega",
+          "nom_scientifique": "Gitega",
+          "groupe": "afrique",
+          "options": [
+            "Ouagadougou",
+            "Gitega",
+            "N'Djaména",
+            "Malabo"
+          ],
+          "indice": "Capitale · Burundi",
+          "description": "Capitale de Burundi.",
+          "explication": "Gitega : capitale de Burundi.",
+          "pays": "Burundi",
+          "paysEn": "Burundi"
+        },
+        {
+          "id": "ac40",
+          "difficulte": "difficile",
+          "nom_commun": "Kigali",
+          "nom_scientifique": "Kigali",
+          "groupe": "afrique",
+          "options": [
+            "Yaoundé",
+            "Asmara",
+            "Kigali",
+            "Mogadiscio"
+          ],
+          "indice": "Capitale · Rwanda",
+          "description": "Capitale de Rwanda.",
+          "explication": "Kigali : capitale de Rwanda.",
+          "pays": "Rwanda",
+          "paysEn": "Rwanda"
+        },
+        {
+          "id": "ac41",
+          "difficulte": "difficile",
+          "nom_commun": "Port-Louis",
+          "nom_scientifique": "Port Louis",
+          "groupe": "afrique",
+          "options": [
+            "Port-Louis",
+            "Mogadiscio",
+            "Alger",
+            "Conakry"
+          ],
+          "indice": "Capitale · Maurice",
+          "description": "Capitale de Maurice.",
+          "explication": "Port-Louis : capitale de Maurice.",
+          "pays": "Maurice",
+          "paysEn": "Mauritius"
+        },
+        {
+          "id": "ac42",
+          "difficulte": "difficile",
+          "nom_commun": "Victoria",
+          "nom_scientifique": "Victoria",
+          "groupe": "afrique",
+          "options": [
+            "Dodoma",
+            "Kigali",
+            "Niamey",
+            "Victoria"
+          ],
+          "indice": "Capitale · Seychelles",
+          "description": "Capitale de Seychelles.",
+          "explication": "Victoria : capitale de Seychelles.",
+          "pays": "Seychelles",
+          "paysEn": "Seychelles"
+        },
+        {
+          "id": "ac43",
+          "difficulte": "difficile",
+          "nom_commun": "Moroni",
+          "nom_scientifique": "Moroni",
+          "groupe": "afrique",
+          "options": [
+            "Kigali",
+            "Victoria",
+            "Bamako",
+            "Moroni"
+          ],
+          "indice": "Capitale · Comores",
+          "description": "Capitale de Comores.",
+          "explication": "Moroni : capitale de Comores.",
+          "pays": "Comores",
+          "paysEn": "Comoros"
+        },
+        {
+          "id": "ac44",
+          "difficulte": "difficile",
+          "nom_commun": "Praia",
+          "nom_scientifique": "Praia",
+          "groupe": "afrique",
+          "options": [
+            "Harare",
+            "Bissau",
+            "Praia",
+            "Kampala"
+          ],
+          "indice": "Capitale · Cap-Vert",
+          "description": "Capitale de Cap-Vert.",
+          "explication": "Praia : capitale de Cap-Vert.",
+          "pays": "Cap-Vert",
+          "paysEn": "Cape Verde"
+        }
+      ]
+    },
+    {
+      "id": "asie",
+      "label": "Asie",
+      "questions": [
+        {
+          "id": "ac1",
+          "difficulte": "facile",
+          "nom_commun": "Moscou",
+          "nom_scientifique": "Moscow",
+          "groupe": "asie",
+          "options": [
+            "Kaboul",
+            "Islamabad",
+            "Astana",
+            "Moscou"
+          ],
+          "indice": "Capitale · Russie",
+          "description": "Capitale de Russie.",
+          "explication": "Moscou : capitale de Russie.",
+          "pays": "Russie",
+          "paysEn": "Russia"
+        },
+        {
+          "id": "ac2",
+          "difficulte": "facile",
+          "nom_commun": "Pékin",
+          "nom_scientifique": "Beijing",
+          "groupe": "asie",
+          "options": [
+            "Ramallah",
+            "Pékin",
+            "Erevan",
+            "Tachkent"
+          ],
+          "indice": "Capitale · Chine",
+          "description": "Capitale de Chine.",
+          "explication": "Pékin : capitale de Chine.",
+          "pays": "Chine",
+          "paysEn": "China"
+        },
+        {
+          "id": "ac3",
+          "difficulte": "facile",
+          "nom_commun": "New Delhi",
+          "nom_scientifique": "New Delhi",
+          "groupe": "asie",
+          "options": [
+            "Tachkent",
+            "Islamabad",
+            "Tokyo",
+            "New Delhi"
+          ],
+          "indice": "Capitale · Inde",
+          "description": "Capitale de Inde.",
+          "explication": "New Delhi : capitale de Inde.",
+          "pays": "Inde",
+          "paysEn": "India"
+        },
+        {
+          "id": "ac4",
+          "difficulte": "facile",
+          "nom_commun": "Tokyo",
+          "nom_scientifique": "Tokyo",
+          "groupe": "asie",
+          "options": [
+            "Naypyidaw",
+            "Abou Dabi",
+            "Tokyo",
+            "Moscou"
+          ],
+          "indice": "Capitale · Japon",
+          "description": "Capitale de Japon.",
+          "explication": "Tokyo : capitale de Japon.",
+          "pays": "Japon",
+          "paysEn": "Japan"
+        },
+        {
+          "id": "ac5",
+          "difficulte": "facile",
+          "nom_commun": "Riyad",
+          "nom_scientifique": "Riyadh",
+          "groupe": "asie",
+          "options": [
+            "Riyad",
+            "Pékin",
+            "Bandar Seri Begawan",
+            "Pyongyang"
+          ],
+          "indice": "Capitale · Arabie saoudite",
+          "description": "Capitale de Arabie saoudite.",
+          "explication": "Riyad : capitale de Arabie saoudite.",
+          "pays": "Arabie saoudite",
+          "paysEn": "Saudi Arabia"
+        },
+        {
+          "id": "ac6",
+          "difficulte": "facile",
+          "nom_commun": "Ankara",
+          "nom_scientifique": "Ankara",
+          "groupe": "asie",
+          "options": [
+            "Bangkok",
+            "Ankara",
+            "New Delhi",
+            "Pékin"
+          ],
+          "indice": "Capitale · Turquie",
+          "description": "Capitale de Turquie.",
+          "explication": "Ankara : capitale de Turquie.",
+          "pays": "Turquie",
+          "paysEn": "Turkey"
+        },
+        {
+          "id": "ac7",
+          "difficulte": "facile",
+          "nom_commun": "Téhéran",
+          "nom_scientifique": "Tehran",
+          "groupe": "asie",
+          "options": [
+            "Doha",
+            "Damas",
+            "Téhéran",
+            "Séoul"
+          ],
+          "indice": "Capitale · Iran",
+          "description": "Capitale de Iran.",
+          "explication": "Téhéran : capitale de Iran.",
+          "pays": "Iran",
+          "paysEn": "Iran"
+        },
+        {
+          "id": "ac8",
+          "difficulte": "facile",
+          "nom_commun": "Jakarta",
+          "nom_scientifique": "Jakarta",
+          "groupe": "asie",
+          "options": [
+            "Jakarta",
+            "Riyad",
+            "Séoul",
+            "New Delhi"
+          ],
+          "indice": "Capitale · Indonésie",
+          "description": "Capitale de Indonésie.",
+          "explication": "Jakarta : capitale de Indonésie.",
+          "pays": "Indonésie",
+          "paysEn": "Indonesia"
+        },
+        {
+          "id": "ac9",
+          "difficulte": "facile",
+          "nom_commun": "Islamabad",
+          "nom_scientifique": "Islamabad",
+          "groupe": "asie",
+          "options": [
+            "Tbilissi",
+            "Doha",
+            "Vientiane",
+            "Islamabad"
+          ],
+          "indice": "Capitale · Pakistan",
+          "description": "Capitale de Pakistan.",
+          "explication": "Islamabad : capitale de Pakistan.",
+          "pays": "Pakistan",
+          "paysEn": "Pakistan"
+        },
+        {
+          "id": "ac10",
+          "difficulte": "facile",
+          "nom_commun": "Astana",
+          "nom_scientifique": "Astana",
+          "groupe": "asie",
+          "options": [
+            "Dacca",
+            "Astana",
+            "Ankara",
+            "Mascate"
+          ],
+          "indice": "Capitale · Kazakhstan",
+          "description": "Capitale de Kazakhstan.",
+          "explication": "Astana : capitale de Kazakhstan.",
+          "pays": "Kazakhstan",
+          "paysEn": "Kazakhstan"
+        },
+        {
+          "id": "ac11",
+          "difficulte": "moyen",
+          "nom_commun": "Bangkok",
+          "nom_scientifique": "Bangkok",
+          "groupe": "asie",
+          "options": [
+            "Bangkok",
+            "Astana",
+            "Phnom Penh",
+            "Jérusalem"
+          ],
+          "indice": "Capitale · Thaïlande",
+          "description": "Capitale de Thaïlande.",
+          "explication": "Bangkok : capitale de Thaïlande.",
+          "pays": "Thaïlande",
+          "paysEn": "Thailand"
+        },
+        {
+          "id": "ac12",
+          "difficulte": "moyen",
+          "nom_commun": "Naypyidaw",
+          "nom_scientifique": "Naypyidaw",
+          "groupe": "asie",
+          "options": [
+            "Naypyidaw",
+            "Bakou",
+            "Beyrouth",
+            "Tbilissi"
+          ],
+          "indice": "Capitale · Myanmar",
+          "description": "Capitale de Myanmar.",
+          "explication": "Naypyidaw : capitale de Myanmar.",
+          "pays": "Myanmar",
+          "paysEn": "Myanmar"
+        },
+        {
+          "id": "ac13",
+          "difficulte": "moyen",
+          "nom_commun": "Séoul",
+          "nom_scientifique": "Seoul",
+          "groupe": "asie",
+          "options": [
+            "Séoul",
+            "Islamabad",
+            "Amman",
+            "Bakou"
+          ],
+          "indice": "Capitale · Corée du Sud",
+          "description": "Capitale de Corée du Sud.",
+          "explication": "Séoul : capitale de Corée du Sud.",
+          "pays": "Corée du Sud",
+          "paysEn": "South Korea"
+        },
+        {
+          "id": "ac14",
+          "difficulte": "moyen",
+          "nom_commun": "Pyongyang",
+          "nom_scientifique": "Pyongyang",
+          "groupe": "asie",
+          "options": [
+            "Kaboul",
+            "Dili",
+            "Pyongyang",
+            "Ankara"
+          ],
+          "indice": "Capitale · Corée du Nord",
+          "description": "Capitale de Corée du Nord.",
+          "explication": "Pyongyang : capitale de Corée du Nord.",
+          "pays": "Corée du Nord",
+          "paysEn": "North Korea"
+        },
+        {
+          "id": "ac15",
+          "difficulte": "moyen",
+          "nom_commun": "Kuala Lumpur",
+          "nom_scientifique": "Kuala Lumpur",
+          "groupe": "asie",
+          "options": [
+            "Manille",
+            "Tachkent",
+            "Tbilissi",
+            "Kuala Lumpur"
+          ],
+          "indice": "Capitale · Malaisie",
+          "description": "Capitale de Malaisie.",
+          "explication": "Kuala Lumpur : capitale de Malaisie.",
+          "pays": "Malaisie",
+          "paysEn": "Malaysia"
+        },
+        {
+          "id": "ac16",
+          "difficulte": "moyen",
+          "nom_commun": "Manille",
+          "nom_scientifique": "Manila",
+          "groupe": "asie",
+          "options": [
+            "Vientiane",
+            "Naypyidaw",
+            "Damas",
+            "Manille"
+          ],
+          "indice": "Capitale · Philippines",
+          "description": "Capitale de Philippines.",
+          "explication": "Manille : capitale de Philippines.",
+          "pays": "Philippines",
+          "paysEn": "Philippines"
+        },
+        {
+          "id": "ac17",
+          "difficulte": "moyen",
+          "nom_commun": "Tachkent",
+          "nom_scientifique": "Tashkent",
+          "groupe": "asie",
+          "options": [
+            "Phnom Penh",
+            "Tachkent",
+            "Bandar Seri Begawan",
+            "Erevan"
+          ],
+          "indice": "Capitale · Ouzbékistan",
+          "description": "Capitale de Ouzbékistan.",
+          "explication": "Tachkent : capitale de Ouzbékistan.",
+          "pays": "Ouzbékistan",
+          "paysEn": "Uzbekistan"
+        },
+        {
+          "id": "ac18",
+          "difficulte": "moyen",
+          "nom_commun": "Kaboul",
+          "nom_scientifique": "Kabul",
+          "groupe": "asie",
+          "options": [
+            "Beyrouth",
+            "Séoul",
+            "Bakou",
+            "Kaboul"
+          ],
+          "indice": "Capitale · Afghanistan",
+          "description": "Capitale de Afghanistan.",
+          "explication": "Kaboul : capitale de Afghanistan.",
+          "pays": "Afghanistan",
+          "paysEn": "Afghanistan"
+        },
+        {
+          "id": "ac19",
+          "difficulte": "moyen",
+          "nom_commun": "Bagdad",
+          "nom_scientifique": "Baghdad",
+          "groupe": "asie",
+          "options": [
+            "Oulan-Bator",
+            "Bandar Seri Begawan",
+            "Tachkent",
+            "Bagdad"
+          ],
+          "indice": "Capitale · Irak",
+          "description": "Capitale de Irak.",
+          "explication": "Bagdad : capitale de Irak.",
+          "pays": "Irak",
+          "paysEn": "Iraq"
+        },
+        {
+          "id": "ac20",
+          "difficulte": "moyen",
+          "nom_commun": "Damas",
+          "nom_scientifique": "Damascus",
+          "groupe": "asie",
+          "options": [
+            "Kuala Lumpur",
+            "Damas",
+            "Sanaa",
+            "Vientiane"
+          ],
+          "indice": "Capitale · Syrie",
+          "description": "Capitale de Syrie.",
+          "explication": "Damas : capitale de Syrie.",
+          "pays": "Syrie",
+          "paysEn": "Syria"
+        },
+        {
+          "id": "ac21",
+          "difficulte": "moyen",
+          "nom_commun": "Jérusalem",
+          "nom_scientifique": "Jerusalem",
+          "groupe": "asie",
+          "options": [
+            "Abou Dabi",
+            "Riyad",
+            "Phnom Penh",
+            "Jérusalem"
+          ],
+          "indice": "Capitale · Israël",
+          "description": "Capitale de Israël.",
+          "explication": "Jérusalem : capitale de Israël.",
+          "pays": "Israël",
+          "paysEn": "Israel"
+        },
+        {
+          "id": "ac22",
+          "difficulte": "moyen",
+          "nom_commun": "Amman",
+          "nom_scientifique": "Amman",
+          "groupe": "asie",
+          "options": [
+            "Pékin",
+            "Beyrouth",
+            "Amman",
+            "Pyongyang"
+          ],
+          "indice": "Capitale · Jordanie",
+          "description": "Capitale de Jordanie.",
+          "explication": "Amman : capitale de Jordanie.",
+          "pays": "Jordanie",
+          "paysEn": "Jordan"
+        },
+        {
+          "id": "ac23",
+          "difficulte": "moyen",
+          "nom_commun": "Beyrouth",
+          "nom_scientifique": "Beirut",
+          "groupe": "asie",
+          "options": [
+            "Beyrouth",
+            "Manille",
+            "Sri Jayawardenapura Kotte",
+            "Amman"
+          ],
+          "indice": "Capitale · Liban",
+          "description": "Capitale de Liban.",
+          "explication": "Beyrouth : capitale de Liban.",
+          "pays": "Liban",
+          "paysEn": "Lebanon"
+        },
+        {
+          "id": "ac24",
+          "difficulte": "moyen",
+          "nom_commun": "Sanaa",
+          "nom_scientifique": "Sanaa",
+          "groupe": "asie",
+          "options": [
+            "Pyongyang",
+            "Koweït",
+            "Bagdad",
+            "Sanaa"
+          ],
+          "indice": "Capitale · Yémen",
+          "description": "Capitale de Yémen.",
+          "explication": "Sanaa : capitale de Yémen.",
+          "pays": "Yémen",
+          "paysEn": "Yemen"
+        },
+        {
+          "id": "ac25",
+          "difficulte": "moyen",
+          "nom_commun": "Mascate",
+          "nom_scientifique": "Muscat",
+          "groupe": "asie",
+          "options": [
+            "Kaboul",
+            "Koweït",
+            "Mascate",
+            "Riyad"
+          ],
+          "indice": "Capitale · Oman",
+          "description": "Capitale de Oman.",
+          "explication": "Mascate : capitale de Oman.",
+          "pays": "Oman",
+          "paysEn": "Oman"
+        },
+        {
+          "id": "ac26",
+          "difficulte": "moyen",
+          "nom_commun": "Abou Dabi",
+          "nom_scientifique": "Abu Dhabi",
+          "groupe": "asie",
+          "options": [
+            "Kuala Lumpur",
+            "Riyad",
+            "Koweït",
+            "Abou Dabi"
+          ],
+          "indice": "Capitale · Émirats arabes unis",
+          "description": "Capitale de Émirats arabes unis.",
+          "explication": "Abou Dabi : capitale de Émirats arabes unis.",
+          "pays": "Émirats arabes unis",
+          "paysEn": "United Arab Emirates"
+        },
+        {
+          "id": "ac27",
+          "difficulte": "difficile",
+          "nom_commun": "Dacca",
+          "nom_scientifique": "Dhaka",
+          "groupe": "asie",
+          "options": [
+            "Bandar Seri Begawan",
+            "Damas",
+            "Bangkok",
+            "Dacca"
+          ],
+          "indice": "Capitale · Bangladesh",
+          "description": "Capitale de Bangladesh.",
+          "explication": "Dacca : capitale de Bangladesh.",
+          "pays": "Bangladesh",
+          "paysEn": "Bangladesh"
+        },
+        {
+          "id": "ac28",
+          "difficulte": "difficile",
+          "nom_commun": "Sri Jayawardenapura Kotte",
+          "nom_scientifique": "Sri Jayawardenapura Kotte",
+          "groupe": "asie",
+          "options": [
+            "Tachkent",
+            "Sri Jayawardenapura Kotte",
+            "Doha",
+            "Bangkok"
+          ],
+          "indice": "Capitale · Sri Lanka",
+          "description": "Capitale de Sri Lanka.",
+          "explication": "Sri Jayawardenapura Kotte : capitale de Sri Lanka.",
+          "pays": "Sri Lanka",
+          "paysEn": "Sri Lanka"
+        },
+        {
+          "id": "ac29",
+          "difficulte": "difficile",
+          "nom_commun": "Katmandou",
+          "nom_scientifique": "Kathmandu",
+          "groupe": "asie",
+          "options": [
+            "Katmandou",
+            "Jakarta",
+            "Erevan",
+            "Séoul"
+          ],
+          "indice": "Capitale · Népal",
+          "description": "Capitale de Népal.",
+          "explication": "Katmandou : capitale de Népal.",
+          "pays": "Népal",
+          "paysEn": "Nepal"
+        },
+        {
+          "id": "ac30",
+          "difficulte": "difficile",
+          "nom_commun": "Phnom Penh",
+          "nom_scientifique": "Phnom Penh",
+          "groupe": "asie",
+          "options": [
+            "Oulan-Bator",
+            "Erevan",
+            "Phnom Penh",
+            "Moscou"
+          ],
+          "indice": "Capitale · Cambodge",
+          "description": "Capitale de Cambodge.",
+          "explication": "Phnom Penh : capitale de Cambodge.",
+          "pays": "Cambodge",
+          "paysEn": "Cambodia"
+        },
+        {
+          "id": "ac31",
+          "difficulte": "difficile",
+          "nom_commun": "Vientiane",
+          "nom_scientifique": "Vientiane",
+          "groupe": "asie",
+          "options": [
+            "Kuala Lumpur",
+            "Sanaa",
+            "Erevan",
+            "Vientiane"
+          ],
+          "indice": "Capitale · Laos",
+          "description": "Capitale de Laos.",
+          "explication": "Vientiane : capitale de Laos.",
+          "pays": "Laos",
+          "paysEn": "Laos"
+        },
+        {
+          "id": "ac32",
+          "difficulte": "difficile",
+          "nom_commun": "Oulan-Bator",
+          "nom_scientifique": "Ulaanbaatar",
+          "groupe": "asie",
+          "options": [
+            "Phnom Penh",
+            "Abou Dabi",
+            "Oulan-Bator",
+            "Ankara"
+          ],
+          "indice": "Capitale · Mongolie",
+          "description": "Capitale de Mongolie.",
+          "explication": "Oulan-Bator : capitale de Mongolie.",
+          "pays": "Mongolie",
+          "paysEn": "Mongolia"
+        },
+        {
+          "id": "ac33",
+          "difficulte": "difficile",
+          "nom_commun": "Singapour",
+          "nom_scientifique": "Singapore",
+          "groupe": "asie",
+          "options": [
+            "Phnom Penh",
+            "Islamabad",
+            "Singapour",
+            "Sri Jayawardenapura Kotte"
+          ],
+          "indice": "Capitale · Singapour",
+          "description": "Capitale de Singapour.",
+          "explication": "Singapour : capitale de Singapour.",
+          "pays": "Singapour",
+          "paysEn": "Singapore"
+        },
+        {
+          "id": "ac34",
+          "difficulte": "difficile",
+          "nom_commun": "Bandar Seri Begawan",
+          "nom_scientifique": "Bandar Seri Begawan",
+          "groupe": "asie",
+          "options": [
+            "Sri Jayawardenapura Kotte",
+            "Bagdad",
+            "Dili",
+            "Bandar Seri Begawan"
+          ],
+          "indice": "Capitale · Brunei",
+          "description": "Capitale de Brunei.",
+          "explication": "Bandar Seri Begawan : capitale de Brunei.",
+          "pays": "Brunei",
+          "paysEn": "Brunei"
+        },
+        {
+          "id": "ac35",
+          "difficulte": "difficile",
+          "nom_commun": "Dili",
+          "nom_scientifique": "Dili",
+          "groupe": "asie",
+          "options": [
+            "Damas",
+            "Dili",
+            "Singapour",
+            "Manille"
+          ],
+          "indice": "Capitale · Timor oriental",
+          "description": "Capitale de Timor oriental.",
+          "explication": "Dili : capitale de Timor oriental.",
+          "pays": "Timor oriental",
+          "paysEn": "East Timor"
+        },
+        {
+          "id": "ac36",
+          "difficulte": "difficile",
+          "nom_commun": "Erevan",
+          "nom_scientifique": "Yerevan",
+          "groupe": "asie",
+          "options": [
+            "Erevan",
+            "Bangkok",
+            "Abou Dabi",
+            "Séoul"
+          ],
+          "indice": "Capitale · Arménie",
+          "description": "Capitale de Arménie.",
+          "explication": "Erevan : capitale de Arménie.",
+          "pays": "Arménie",
+          "paysEn": "Armenia"
+        },
+        {
+          "id": "ac37",
+          "difficulte": "difficile",
+          "nom_commun": "Tbilissi",
+          "nom_scientifique": "Tbilisi",
+          "groupe": "asie",
+          "options": [
+            "Tbilissi",
+            "Tokyo",
+            "Doha",
+            "Mascate"
+          ],
+          "indice": "Capitale · Géorgie",
+          "description": "Capitale de Géorgie.",
+          "explication": "Tbilissi : capitale de Géorgie.",
+          "pays": "Géorgie",
+          "paysEn": "Georgia"
+        },
+        {
+          "id": "ac38",
+          "difficulte": "difficile",
+          "nom_commun": "Bakou",
+          "nom_scientifique": "Baku",
+          "groupe": "asie",
+          "options": [
+            "Phnom Penh",
+            "Kaboul",
+            "Bakou",
+            "Riyad"
+          ],
+          "indice": "Capitale · Azerbaïdjan",
+          "description": "Capitale de Azerbaïdjan.",
+          "explication": "Bakou : capitale de Azerbaïdjan.",
+          "pays": "Azerbaïdjan",
+          "paysEn": "Azerbaijan"
+        },
+        {
+          "id": "ac39",
+          "difficulte": "difficile",
+          "nom_commun": "Doha",
+          "nom_scientifique": "Doha",
+          "groupe": "asie",
+          "options": [
+            "Doha",
+            "Tachkent",
+            "Kuala Lumpur",
+            "New Delhi"
+          ],
+          "indice": "Capitale · Qatar",
+          "description": "Capitale de Qatar.",
+          "explication": "Doha : capitale de Qatar.",
+          "pays": "Qatar",
+          "paysEn": "Qatar"
+        },
+        {
+          "id": "ac40",
+          "difficulte": "difficile",
+          "nom_commun": "Manama",
+          "nom_scientifique": "Manama",
+          "groupe": "asie",
+          "options": [
+            "Manama",
+            "Bagdad",
+            "Koweït",
+            "Téhéran"
+          ],
+          "indice": "Capitale · Bahreïn",
+          "description": "Capitale de Bahreïn.",
+          "explication": "Manama : capitale de Bahreïn.",
+          "pays": "Bahreïn",
+          "paysEn": "Bahrain"
+        },
+        {
+          "id": "ac41",
+          "difficulte": "difficile",
+          "nom_commun": "Koweït",
+          "nom_scientifique": "Kuwait City",
+          "groupe": "asie",
+          "options": [
+            "Dili",
+            "Bagdad",
+            "Bangkok",
+            "Koweït"
+          ],
+          "indice": "Capitale · Koweït",
+          "description": "Capitale de Koweït.",
+          "explication": "Koweït : capitale de Koweït.",
+          "pays": "Koweït",
+          "paysEn": "Kuwait"
+        },
+        {
+          "id": "ac42",
+          "difficulte": "difficile",
+          "nom_commun": "Ramallah",
+          "nom_scientifique": "Ramallah",
+          "groupe": "asie",
+          "options": [
+            "Koweït",
+            "Ramallah",
+            "Moscou",
+            "Sanaa"
+          ],
+          "indice": "Capitale · Palestine",
+          "description": "Capitale de Palestine.",
+          "explication": "Ramallah : capitale de Palestine.",
+          "pays": "Palestine",
+          "paysEn": "Palestine"
+        }
+      ]
+    },
+    {
+      "id": "ameriques",
+      "label": "Amériques",
+      "questions": [
+        {
+          "id": "ac1",
+          "difficulte": "facile",
+          "nom_commun": "Washington",
+          "nom_scientifique": "Washington, D.C.",
+          "groupe": "ameriques",
+          "options": [
+            "Caracas",
+            "Guatemala",
+            "Brasília",
+            "Washington"
+          ],
+          "indice": "Capitale · États-Unis",
+          "description": "Capitale de États-Unis.",
+          "explication": "Washington : capitale de États-Unis.",
+          "pays": "États-Unis",
+          "paysEn": "United States"
+        },
+        {
+          "id": "ac2",
+          "difficulte": "facile",
+          "nom_commun": "Ottawa",
+          "nom_scientifique": "Ottawa",
+          "groupe": "ameriques",
+          "options": [
+            "Ottawa",
+            "Belmopan",
+            "Kingston",
+            "Guatemala"
+          ],
+          "indice": "Capitale · Canada",
+          "description": "Capitale de Canada.",
+          "explication": "Ottawa : capitale de Canada.",
+          "pays": "Canada",
+          "paysEn": "Canada"
+        },
+        {
+          "id": "ac3",
+          "difficulte": "facile",
+          "nom_commun": "Brasília",
+          "nom_scientifique": "Brasilia",
+          "groupe": "ameriques",
+          "options": [
+            "Guatemala",
+            "Brasília",
+            "Paramaribo",
+            "Bridgetown"
+          ],
+          "indice": "Capitale · Brésil",
+          "description": "Capitale de Brésil.",
+          "explication": "Brasília : capitale de Brésil.",
+          "pays": "Brésil",
+          "paysEn": "Brazil"
+        },
+        {
+          "id": "ac4",
+          "difficulte": "facile",
+          "nom_commun": "Mexico",
+          "nom_scientifique": "Mexico City",
+          "groupe": "ameriques",
+          "options": [
+            "Mexico",
+            "San José",
+            "Caracas",
+            "Belmopan"
+          ],
+          "indice": "Capitale · Mexique",
+          "description": "Capitale de Mexique.",
+          "explication": "Mexico : capitale de Mexique.",
+          "pays": "Mexique",
+          "paysEn": "Mexico"
+        },
+        {
+          "id": "ac5",
+          "difficulte": "facile",
+          "nom_commun": "Buenos Aires",
+          "nom_scientifique": "Buenos Aires",
+          "groupe": "ameriques",
+          "options": [
+            "Montevideo",
+            "Kingston",
+            "San José",
+            "Buenos Aires"
+          ],
+          "indice": "Capitale · Argentine",
+          "description": "Capitale de Argentine.",
+          "explication": "Buenos Aires : capitale de Argentine.",
+          "pays": "Argentine",
+          "paysEn": "Argentina"
+        },
+        {
+          "id": "ac6",
+          "difficulte": "facile",
+          "nom_commun": "Bogota",
+          "nom_scientifique": "Bogota",
+          "groupe": "ameriques",
+          "options": [
+            "Belmopan",
+            "Paramaribo",
+            "Guatemala",
+            "Bogota"
+          ],
+          "indice": "Capitale · Colombie",
+          "description": "Capitale de Colombie.",
+          "explication": "Bogota : capitale de Colombie.",
+          "pays": "Colombie",
+          "paysEn": "Colombia"
+        },
+        {
+          "id": "ac7",
+          "difficulte": "facile",
+          "nom_commun": "Lima",
+          "nom_scientifique": "Lima",
+          "groupe": "ameriques",
+          "options": [
+            "Panama",
+            "Lima",
+            "Managua",
+            "Ottawa"
+          ],
+          "indice": "Capitale · Pérou",
+          "description": "Capitale de Pérou.",
+          "explication": "Lima : capitale de Pérou.",
+          "pays": "Pérou",
+          "paysEn": "Peru"
+        },
+        {
+          "id": "ac8",
+          "difficulte": "facile",
+          "nom_commun": "Santiago",
+          "nom_scientifique": "Santiago",
+          "groupe": "ameriques",
+          "options": [
+            "Quito",
+            "Belmopan",
+            "Santiago",
+            "Bridgetown"
+          ],
+          "indice": "Capitale · Chili",
+          "description": "Capitale de Chili.",
+          "explication": "Santiago : capitale de Chili.",
+          "pays": "Chili",
+          "paysEn": "Chile"
+        },
+        {
+          "id": "ac9",
+          "difficulte": "facile",
+          "nom_commun": "Caracas",
+          "nom_scientifique": "Caracas",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Domingue",
+            "Bridgetown",
+            "Tegucigalpa",
+            "Caracas"
+          ],
+          "indice": "Capitale · Venezuela",
+          "description": "Capitale de Venezuela.",
+          "explication": "Caracas : capitale de Venezuela.",
+          "pays": "Venezuela",
+          "paysEn": "Venezuela"
+        },
+        {
+          "id": "ac10",
+          "difficulte": "facile",
+          "nom_commun": "La Havane",
+          "nom_scientifique": "Havana",
+          "groupe": "ameriques",
+          "options": [
+            "Kingston",
+            "Buenos Aires",
+            "La Havane",
+            "Port-d'Espagne"
+          ],
+          "indice": "Capitale · Cuba",
+          "description": "Capitale de Cuba.",
+          "explication": "La Havane : capitale de Cuba.",
+          "pays": "Cuba",
+          "paysEn": "Cuba"
+        },
+        {
+          "id": "ac11",
+          "difficulte": "moyen",
+          "nom_commun": "Quito",
+          "nom_scientifique": "Quito",
+          "groupe": "ameriques",
+          "options": [
+            "Mexico",
+            "Quito",
+            "Buenos Aires",
+            "Ottawa"
+          ],
+          "indice": "Capitale · Équateur",
+          "description": "Capitale de Équateur.",
+          "explication": "Quito : capitale de Équateur.",
+          "pays": "Équateur",
+          "paysEn": "Ecuador"
+        },
+        {
+          "id": "ac12",
+          "difficulte": "moyen",
+          "nom_commun": "Sucre",
+          "nom_scientifique": "Sucre",
+          "groupe": "ameriques",
+          "options": [
+            "Sucre",
+            "San José",
+            "Asuncion",
+            "Guatemala"
+          ],
+          "indice": "Capitale · Bolivie",
+          "description": "Capitale de Bolivie.",
+          "explication": "Sucre : capitale de Bolivie.",
+          "pays": "Bolivie",
+          "paysEn": "Bolivia"
+        },
+        {
+          "id": "ac13",
+          "difficulte": "moyen",
+          "nom_commun": "Asuncion",
+          "nom_scientifique": "Asuncion",
+          "groupe": "ameriques",
+          "options": [
+            "Buenos Aires",
+            "Paramaribo",
+            "Saint-Domingue",
+            "Asuncion"
+          ],
+          "indice": "Capitale · Paraguay",
+          "description": "Capitale de Paraguay.",
+          "explication": "Asuncion : capitale de Paraguay.",
+          "pays": "Paraguay",
+          "paysEn": "Paraguay"
+        },
+        {
+          "id": "ac14",
+          "difficulte": "moyen",
+          "nom_commun": "Montevideo",
+          "nom_scientifique": "Montevideo",
+          "groupe": "ameriques",
+          "options": [
+            "Bridgetown",
+            "Port-d'Espagne",
+            "Montevideo",
+            "Lima"
+          ],
+          "indice": "Capitale · Uruguay",
+          "description": "Capitale de Uruguay.",
+          "explication": "Montevideo : capitale de Uruguay.",
+          "pays": "Uruguay",
+          "paysEn": "Uruguay"
+        },
+        {
+          "id": "ac15",
+          "difficulte": "moyen",
+          "nom_commun": "Georgetown",
+          "nom_scientifique": "Georgetown",
+          "groupe": "ameriques",
+          "options": [
+            "Sucre",
+            "Panama",
+            "Saint-Domingue",
+            "Georgetown"
+          ],
+          "indice": "Capitale · Guyana",
+          "description": "Capitale de Guyana.",
+          "explication": "Georgetown : capitale de Guyana.",
+          "pays": "Guyana",
+          "paysEn": "Guyana"
+        },
+        {
+          "id": "ac16",
+          "difficulte": "moyen",
+          "nom_commun": "Paramaribo",
+          "nom_scientifique": "Paramaribo",
+          "groupe": "ameriques",
+          "options": [
+            "Bridgetown",
+            "Bogota",
+            "Sucre",
+            "Paramaribo"
+          ],
+          "indice": "Capitale · Suriname",
+          "description": "Capitale de Suriname.",
+          "explication": "Paramaribo : capitale de Suriname.",
+          "pays": "Suriname",
+          "paysEn": "Suriname"
+        },
+        {
+          "id": "ac17",
+          "difficulte": "moyen",
+          "nom_commun": "Panama",
+          "nom_scientifique": "Panama City",
+          "groupe": "ameriques",
+          "options": [
+            "Sucre",
+            "Tegucigalpa",
+            "Port-d'Espagne",
+            "Panama"
+          ],
+          "indice": "Capitale · Panama",
+          "description": "Capitale de Panama.",
+          "explication": "Panama : capitale de Panama.",
+          "pays": "Panama",
+          "paysEn": "Panama"
+        },
+        {
+          "id": "ac18",
+          "difficulte": "moyen",
+          "nom_commun": "San José",
+          "nom_scientifique": "San Jose",
+          "groupe": "ameriques",
+          "options": [
+            "Tegucigalpa",
+            "San José",
+            "Port-au-Prince",
+            "Montevideo"
+          ],
+          "indice": "Capitale · Costa Rica",
+          "description": "Capitale de Costa Rica.",
+          "explication": "San José : capitale de Costa Rica.",
+          "pays": "Costa Rica",
+          "paysEn": "Costa Rica"
+        },
+        {
+          "id": "ac19",
+          "difficulte": "moyen",
+          "nom_commun": "Managua",
+          "nom_scientifique": "Managua",
+          "groupe": "ameriques",
+          "options": [
+            "Saint-Domingue",
+            "Managua",
+            "Port-au-Prince",
+            "Buenos Aires"
+          ],
+          "indice": "Capitale · Nicaragua",
+          "description": "Capitale de Nicaragua.",
+          "explication": "Managua : capitale de Nicaragua.",
+          "pays": "Nicaragua",
+          "paysEn": "Nicaragua"
+        },
+        {
+          "id": "ac20",
+          "difficulte": "moyen",
+          "nom_commun": "Tegucigalpa",
+          "nom_scientifique": "Tegucigalpa",
+          "groupe": "ameriques",
+          "options": [
+            "Nassau",
+            "Mexico",
+            "Belmopan",
+            "Tegucigalpa"
+          ],
+          "indice": "Capitale · Honduras",
+          "description": "Capitale de Honduras.",
+          "explication": "Tegucigalpa : capitale de Honduras.",
+          "pays": "Honduras",
+          "paysEn": "Honduras"
+        },
+        {
+          "id": "ac21",
+          "difficulte": "moyen",
+          "nom_commun": "Guatemala",
+          "nom_scientifique": "Guatemala City",
+          "groupe": "ameriques",
+          "options": [
+            "Belmopan",
+            "Ottawa",
+            "Guatemala",
+            "Buenos Aires"
+          ],
+          "indice": "Capitale · Guatemala",
+          "description": "Capitale de Guatemala.",
+          "explication": "Guatemala : capitale de Guatemala.",
+          "pays": "Guatemala",
+          "paysEn": "Guatemala"
+        },
+        {
+          "id": "ac22",
+          "difficulte": "moyen",
+          "nom_commun": "Saint-Domingue",
+          "nom_scientifique": "Santo Domingo",
+          "groupe": "ameriques",
+          "options": [
+            "Paramaribo",
+            "Bogota",
+            "Buenos Aires",
+            "Saint-Domingue"
+          ],
+          "indice": "Capitale · République dominicaine",
+          "description": "Capitale de République dominicaine.",
+          "explication": "Saint-Domingue : capitale de République dominicaine.",
+          "pays": "République dominicaine",
+          "paysEn": "Dominican Republic"
+        },
+        {
+          "id": "ac23",
+          "difficulte": "moyen",
+          "nom_commun": "Port-au-Prince",
+          "nom_scientifique": "Port-au-Prince",
+          "groupe": "ameriques",
+          "options": [
+            "Caracas",
+            "Georgetown",
+            "Panama",
+            "Port-au-Prince"
+          ],
+          "indice": "Capitale · Haïti",
+          "description": "Capitale de Haïti.",
+          "explication": "Port-au-Prince : capitale de Haïti.",
+          "pays": "Haïti",
+          "paysEn": "Haiti"
+        },
+        {
+          "id": "ac24",
+          "difficulte": "moyen",
+          "nom_commun": "Kingston",
+          "nom_scientifique": "Kingston",
+          "groupe": "ameriques",
+          "options": [
+            "Kingston",
+            "Saint-Domingue",
+            "Bridgetown",
+            "Port-au-Prince"
+          ],
+          "indice": "Capitale · Jamaïque",
+          "description": "Capitale de Jamaïque.",
+          "explication": "Kingston : capitale de Jamaïque.",
+          "pays": "Jamaïque",
+          "paysEn": "Jamaica"
+        },
+        {
+          "id": "ac25",
+          "difficulte": "difficile",
+          "nom_commun": "Belmopan",
+          "nom_scientifique": "Belmopan",
+          "groupe": "ameriques",
+          "options": [
+            "Belmopan",
+            "Kingston",
+            "Ottawa",
+            "Bridgetown"
+          ],
+          "indice": "Capitale · Belize",
+          "description": "Capitale de Belize.",
+          "explication": "Belmopan : capitale de Belize.",
+          "pays": "Belize",
+          "paysEn": "Belize"
+        },
+        {
+          "id": "ac26",
+          "difficulte": "difficile",
+          "nom_commun": "Port-d'Espagne",
+          "nom_scientifique": "Port of Spain",
+          "groupe": "ameriques",
+          "options": [
+            "Paramaribo",
+            "Caracas",
+            "Port-d'Espagne",
+            "La Havane"
+          ],
+          "indice": "Capitale · Trinité-et-Tobago",
+          "description": "Capitale de Trinité-et-Tobago.",
+          "explication": "Port-d'Espagne : capitale de Trinité-et-Tobago.",
+          "pays": "Trinité-et-Tobago",
+          "paysEn": "Trinidad and Tobago"
+        },
+        {
+          "id": "ac27",
+          "difficulte": "difficile",
+          "nom_commun": "Bridgetown",
+          "nom_scientifique": "Bridgetown",
+          "groupe": "ameriques",
+          "options": [
+            "Port-d'Espagne",
+            "Bridgetown",
+            "Belmopan",
+            "Managua"
+          ],
+          "indice": "Capitale · Barbade",
+          "description": "Capitale de Barbade.",
+          "explication": "Bridgetown : capitale de Barbade.",
+          "pays": "Barbade",
+          "paysEn": "Barbade"
+        },
+        {
+          "id": "ac28",
+          "difficulte": "difficile",
+          "nom_commun": "Nassau",
+          "nom_scientifique": "Nassau",
+          "groupe": "ameriques",
+          "options": [
+            "Nassau",
+            "Saint-Domingue",
+            "La Havane",
+            "Panama"
+          ],
+          "indice": "Capitale · Bahamas",
+          "description": "Capitale de Bahamas.",
+          "explication": "Nassau : capitale de Bahamas.",
+          "pays": "Bahamas",
+          "paysEn": "Bahamas"
+        }
+      ]
+    },
+    {
+      "id": "oceanie",
+      "label": "Océanie",
+      "questions": [
+        {
+          "id": "oc1",
+          "difficulte": "facile",
+          "nom_commun": "Canberra",
+          "nom_scientifique": "Canberra",
+          "groupe": "oceanie",
+          "options": [
+            "Wellington",
+            "Yaren",
+            "Canberra",
+            "Suva"
+          ],
+          "indice": "Capitale · Australie",
+          "description": "Capitale de Australie.",
+          "explication": "Canberra : capitale de Australie.",
+          "pays": "Australie",
+          "paysEn": "Australia"
+        },
+        {
+          "id": "oc2",
+          "difficulte": "facile",
+          "nom_commun": "Wellington",
+          "nom_scientifique": "Wellington",
+          "groupe": "oceanie",
+          "options": [
+            "Port-Vila",
+            "Wellington",
+            "Nukuʻalofa",
+            "Yaren"
+          ],
+          "indice": "Capitale · Nouvelle-Zélande",
+          "description": "Capitale de Nouvelle-Zélande.",
+          "explication": "Wellington : capitale de Nouvelle-Zélande.",
+          "pays": "Nouvelle-Zélande",
+          "paysEn": "New Zealand"
+        },
+        {
+          "id": "oc3",
+          "difficulte": "facile",
+          "nom_commun": "Port Moresby",
+          "nom_scientifique": "Port Moresby",
+          "groupe": "oceanie",
+          "options": [
+            "Port Moresby",
+            "Tarawa-Sud",
+            "Ngerulmud",
+            "Honiara"
+          ],
+          "indice": "Capitale · Papouasie-Nouvelle-Guinée",
+          "description": "Capitale de Papouasie-Nouvelle-Guinée.",
+          "explication": "Port Moresby : capitale de Papouasie-Nouvelle-Guinée.",
+          "pays": "Papouasie-Nouvelle-Guinée",
+          "paysEn": "Papua New Guinea"
+        },
+        {
+          "id": "oc4",
+          "difficulte": "facile",
+          "nom_commun": "Suva",
+          "nom_scientifique": "Suva",
+          "groupe": "oceanie",
+          "options": [
+            "Port-Vila",
+            "Funafuti",
+            "Suva",
+            "Yaren"
+          ],
+          "indice": "Capitale · Fidji",
+          "description": "Capitale de Fidji.",
+          "explication": "Suva : capitale de Fidji.",
+          "pays": "Fidji",
+          "paysEn": "Fiji"
+        },
+        {
+          "id": "oc5",
+          "difficulte": "moyen",
+          "nom_commun": "Port-Vila",
+          "nom_scientifique": "Port Vila",
+          "groupe": "oceanie",
+          "options": [
+            "Canberra",
+            "Wellington",
+            "Suva",
+            "Port-Vila"
+          ],
+          "indice": "Capitale · Vanuatu",
+          "description": "Capitale de Vanuatu.",
+          "explication": "Port-Vila : capitale de Vanuatu.",
+          "pays": "Vanuatu",
+          "paysEn": "Vanuatu"
+        },
+        {
+          "id": "oc6",
+          "difficulte": "moyen",
+          "nom_commun": "Apia",
+          "nom_scientifique": "Apia",
+          "groupe": "oceanie",
+          "options": [
+            "Yaren",
+            "Apia",
+            "Majuro",
+            "Tarawa-Sud"
+          ],
+          "indice": "Capitale · Samoa",
+          "description": "Capitale de Samoa.",
+          "explication": "Apia : capitale de Samoa.",
+          "pays": "Samoa",
+          "paysEn": "Samoa"
+        },
+        {
+          "id": "oc7",
+          "difficulte": "moyen",
+          "nom_commun": "Nukuʻalofa",
+          "nom_scientifique": "Nuku'alofa",
+          "groupe": "oceanie",
+          "options": [
+            "Ngerulmud",
+            "Canberra",
+            "Suva",
+            "Nukuʻalofa"
+          ],
+          "indice": "Capitale · Tonga",
+          "description": "Capitale de Tonga.",
+          "explication": "Nukuʻalofa : capitale de Tonga.",
+          "pays": "Tonga",
+          "paysEn": "Tonga"
+        },
+        {
+          "id": "oc8",
+          "difficulte": "moyen",
+          "nom_commun": "Honiara",
+          "nom_scientifique": "Honiara",
+          "groupe": "oceanie",
+          "options": [
+            "Suva",
+            "Funafuti",
+            "Honiara",
+            "Majuro"
+          ],
+          "indice": "Capitale · Îles Salomon",
+          "description": "Capitale de Îles Salomon.",
+          "explication": "Honiara : capitale de Îles Salomon.",
+          "pays": "Îles Salomon",
+          "paysEn": "Solomon Islands"
+        },
+        {
+          "id": "oc9",
+          "difficulte": "difficile",
+          "nom_commun": "Ngerulmud",
+          "nom_scientifique": "Ngerulmud",
+          "groupe": "oceanie",
+          "options": [
+            "Funafuti",
+            "Ngerulmud",
+            "Honiara",
+            "Majuro"
+          ],
+          "indice": "Capitale · Palaos",
+          "description": "Capitale de Palaos.",
+          "explication": "Ngerulmud : capitale de Palaos.",
+          "pays": "Palaos",
+          "paysEn": "Palau"
+        },
+        {
+          "id": "oc10",
+          "difficulte": "difficile",
+          "nom_commun": "Majuro",
+          "nom_scientifique": "Majuro",
+          "groupe": "oceanie",
+          "options": [
+            "Wellington",
+            "Suva",
+            "Ngerulmud",
+            "Majuro"
+          ],
+          "indice": "Capitale · Îles Marshall",
+          "description": "Capitale de Îles Marshall.",
+          "explication": "Majuro : capitale de Îles Marshall.",
+          "pays": "Îles Marshall",
+          "paysEn": "Marshall Islands"
+        },
+        {
+          "id": "oc11",
+          "difficulte": "difficile",
+          "nom_commun": "Tarawa-Sud",
+          "nom_scientifique": "South Tarawa",
+          "groupe": "oceanie",
+          "options": [
+            "Suva",
+            "Ngerulmud",
+            "Tarawa-Sud",
+            "Canberra"
+          ],
+          "indice": "Capitale · Kiribati",
+          "description": "Capitale de Kiribati.",
+          "explication": "Tarawa-Sud : capitale de Kiribati.",
+          "pays": "Kiribati",
+          "paysEn": "Kiribati"
+        },
+        {
+          "id": "oc12",
+          "difficulte": "difficile",
+          "nom_commun": "Funafuti",
+          "nom_scientifique": "Funafuti",
+          "groupe": "oceanie",
+          "options": [
+            "Funafuti",
+            "Tarawa-Sud",
+            "Port Moresby",
+            "Honiara"
+          ],
+          "indice": "Capitale · Tuvalu",
+          "description": "Capitale de Tuvalu.",
+          "explication": "Funafuti : capitale de Tuvalu.",
+          "pays": "Tuvalu",
+          "paysEn": "Tuvalu"
+        },
+        {
+          "id": "oc13",
+          "difficulte": "difficile",
+          "nom_commun": "Yaren",
+          "nom_scientifique": "Yaren",
+          "groupe": "oceanie",
+          "options": [
+            "Suva",
+            "Ngerulmud",
+            "Apia",
+            "Yaren"
+          ],
+          "indice": "Capitale · Nauru",
+          "description": "Capitale de Nauru.",
+          "explication": "Yaren : capitale de Nauru.",
+          "pays": "Nauru",
+          "paysEn": "Nauru"
+        }
+      ]
+    }
+  ]
+}

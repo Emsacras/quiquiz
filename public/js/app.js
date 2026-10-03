@@ -9,6 +9,10 @@ import {
   pickRandomImage,
   preloadSpecies,
   preloadSpeciesAudio,
+  setCapitalImages,
+  setFlagImages,
+  setFruitImages,
+  setMineralImages,
   setOutlineMaps,
   setSafeFish,
 } from "./images.js";
@@ -214,9 +218,12 @@ async function buildMergedCategory(sessionId, sessionLabel, leaves, description 
     const loaded = await loadCategory(leaf.fichier);
     if (!loaded?.questions?.length) continue;
     const groupId = leaf.id;
+    const mediaKind = mediaKindForQuizId(loaded.id);
     const tagged = loaded.questions.map((question) => ({
       ...question,
       groupe: groupId,
+      sourceQuizId: loaded.id,
+      mediaKind,
     }));
     groupes.push({
       id: groupId,
@@ -265,7 +272,10 @@ async function openMergedLeaves(sessionId, sessionLabel, leaves, description = "
 
 async function ensureCategoryById(categoryId) {
   if (!categoryId) return null;
-  let category = state.categories.find((item) => item.id === categoryId);
+  const resolvedId = CATALOG_ID_ALIASES[categoryId] || categoryId;
+  let category = state.categories.find(
+    (item) => item.id === categoryId || item.id === resolvedId
+  );
   if (category) return category;
 
   const regionId = parseRegionSessionId(categoryId);
@@ -297,7 +307,12 @@ async function ensureCategoryById(categoryId) {
 
   for (const entry of flattenCatalogLeaves(state.catalog)) {
     const loaded = await loadCategory(entry.fichier);
-    if (loaded?.id === categoryId) return rememberCategory(loaded);
+    if (loaded?.id === categoryId || loaded?.id === resolvedId) {
+      return rememberCategory(loaded);
+    }
+    if (entry.id === categoryId || CATALOG_ID_ALIASES[entry.id] === loaded?.id) {
+      return rememberCategory(loaded);
+    }
   }
   return null;
 }
@@ -330,6 +345,8 @@ const LEVELS = [
   { id: "melange", label: "Mélange" },
 ];
 
+const LEVEL_QCM_CAP = 16;
+
 const LEVEL_LABEL = {
   facile: "Facile",
   moyen: "Moyen",
@@ -349,24 +366,144 @@ const MODES = [
   { id: "relier", label: "Relier" },
 ];
 
-const BIRD_ONLY_MODES = new Set(["variantes", "sexes", "chant"]);
+const CORE_MODES = ["qcm", "texte", "description", "groupes", "relier"];
+const BIO_MODES = [...CORE_MODES, "paire"];
+const BIRD_MODES = [...BIO_MODES, "variantes", "sexes", "chant"];
+
+/** Modes autorisés par kind (allowlist). */
+const MODES_BY_KIND = {
+  oiseaux: BIRD_MODES,
+  reptiles: BIO_MODES,
+  poissons: BIO_MODES,
+  insectes: BIO_MODES,
+  mammiferes: BIO_MODES,
+  plantes: BIO_MODES,
+  champignons: BIO_MODES,
+  fruits: BIO_MODES,
+  mineraux: BIO_MODES,
+  capitales: BIO_MODES,
+  pays: CORE_MODES,
+  drapeaux: CORE_MODES,
+  mixed: CORE_MODES,
+};
+
+const CATALOG_ID_ALIASES = {
+  capitales: "capitales-monde",
+  drapeaux: "drapeaux-monde",
+  insectes: "insectes-france",
+  mammiferes: "mammiferes-france",
+  arbres: "arbres-france",
+  "fruits-legumes": "fruits-legumes",
+  "rochers-mineraux": "rochers-mineraux",
+  "pays-monde-quiz": "pays-monde",
+  plantes: "plantes-france",
+  champignons: "champignons-france",
+  reptiles: "reptiles-france",
+  poissons: "poissons-france",
+};
+
+function mediaKindForQuizId(quizId) {
+  switch (String(quizId || "")) {
+    case "pays-monde":
+      return "map";
+    case "drapeaux-monde":
+      return "flag";
+    case "capitales-monde":
+      return "capital";
+    case "rochers-mineraux":
+      return "mineral";
+    case "fruits-legumes":
+      return "fruit";
+    default:
+      return "species";
+  }
+}
 
 function quizKind(category = state.category) {
+  if (category?._merged || String(category?.id || "").startsWith("region-")) {
+    return "mixed";
+  }
   switch (category?.id) {
     case "pays-monde":
       return "pays";
+    case "capitales-monde":
+      return "capitales";
+    case "drapeaux-monde":
+      return "drapeaux";
     case "champignons-france":
       return "champignons";
     case "plantes-france":
+    case "arbres-france":
       return "plantes";
+    case "fruits-legumes":
+      return "fruits";
     case "poissons-france":
       return "poissons";
     case "reptiles-france":
       return "reptiles";
+    case "insectes-france":
+      return "insectes";
+    case "mammiferes-france":
+      return "mammiferes";
+    case "rochers-mineraux":
+      return "mineraux";
+    case "oiseaux-francais":
+    case "oiseaux-royaume-uni":
+      return "oiseaux";
     default:
       return "oiseaux";
   }
 }
+
+function modesForKind(kind) {
+  return MODES_BY_KIND[kind] || CORE_MODES;
+}
+
+function imageOptionsForQuestion(question, category = state.category) {
+  const kind =
+    question?.mediaKind ||
+    mediaKindForQuizId(question?.sourceQuizId) ||
+    mediaKindForQuizId(category?.id) ||
+    (quizKind(category) === "capitales"
+      ? "capital"
+      : quizKind(category) === "drapeaux"
+        ? "flag"
+        : quizKind(category) === "pays"
+          ? "map"
+          : quizKind(category) === "mineraux"
+            ? "mineral"
+            : quizKind(category) === "fruits"
+              ? "fruit"
+              : "species");
+  return {
+    kind,
+    country: question?.paysEn || question?.pays || "",
+    commonName: question?.nom_commun || "",
+  };
+}
+
+function imageSearchName(question) {
+  return String(question?.nom_scientifique || question?.nom_commun || "").trim();
+}
+
+function preloadQuizQuestions(questions, priorityQuestion = null) {
+  const list = [...(questions || [])].filter(Boolean);
+  if (priorityQuestion) {
+    list.sort((a, b) => (a === priorityQuestion ? -1 : b === priorityQuestion ? 1 : 0));
+  }
+  for (const question of list) {
+    const name = imageSearchName(question);
+    if (!name) continue;
+    getSpeciesImages(name, imageOptionsForQuestion(question)).catch(() => {});
+  }
+}
+
+const LEVEL_COPY = {
+  facile: "Jusqu’à 16 questions · les plus reconnaissables.",
+  moyen: "Jusqu’à 16 questions · il faut y regarder de plus près.",
+  difficile: "Jusqu’à 16 questions · espèces ou formes proches.",
+  melange: "Toutes les entrées du pool · une seule fois chacune · arrêt possible.",
+};
 
 function quizCopy(category = state.category) {
   const kind = quizKind(category);
@@ -377,13 +514,8 @@ function quizCopy(category = state.category) {
       units: "pays",
       groupLegend: "Continents",
       groupsHelp: "La difficulté ne change pas. Seuls les continents cochés entrent dans la partie.",
-      levelsHelp: "Choisis un mode, coche les continents, puis un niveau. La difficulté ne change pas.",
-      levels: {
-        facile: "Pays très reconnaissables à leur silhouette.",
-        moyen: "Il faut regarder la forme, les détroits et les voisins.",
-        difficile: "Petits pays ou contours proches les uns des autres.",
-        melange: "Tous les niveaux, dans un ordre aléatoire.",
-      },
+      levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
+      levels: { ...LEVEL_COPY },
       modes: {
         qcm: { label: "Choix multiple", blurb: "Une carte, quatre pays." },
         texte: {
@@ -434,6 +566,124 @@ function quizCopy(category = state.category) {
       footer: "© 2026 Emsacras",
     };
   }
+  if (kind === "capitales") {
+    return {
+      kind,
+      unit: "capitale",
+      units: "capitales",
+      groupLegend: "Continents",
+      groupsHelp: "Seuls les continents cochés entrent dans la partie.",
+      levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
+      levels: { ...LEVEL_COPY },
+      modes: {
+        qcm: { label: "Choix multiple", blurb: "Une photo de ville, quatre capitales." },
+        texte: {
+          label: "Texte libre",
+          blurb: "Une photo, tu écris le nom de la capitale.",
+        },
+        description: {
+          label: "Description",
+          blurb: "Un texte indique le pays, puis quatre capitales.",
+        },
+        groupes: {
+          label: "Ranger par continent",
+          blurb: "Jusqu'à six photos à classer dans les continents cochés.",
+        },
+        paire: { label: "Même capitale", blurb: "Deux photos : est-ce la même capitale ?" },
+        relier: {
+          label: "Relier",
+          blurb: "Clique une photo : elle s'affiche en grand, puis tu choisis la capitale.",
+        },
+      },
+      media: "photo",
+      loading: "Chargement de la photo…",
+      alt: "Capitale à identifier",
+      badMedia: "Mauvaise photo",
+      mediaSignaled: "Photo signalée",
+      noMedia: "Pas de photo pour cette capitale.",
+      unavailable: "Image indisponible",
+      creditCommons: "Photo : Wikimedia Commons",
+      creditWiki: "Photo : Wikipédia",
+      creditList: "Photos : Wikimedia Commons",
+      otherMedia: "Autres photos",
+      nameField: "Nom de la capitale",
+      sameItemPrompt: "Ces deux photos montrent-elles la même capitale ?",
+      sortLede: "Choisis le continent de chaque photo, puis valide.",
+      pairAria: "Même capitale",
+      compareAlt: "Capitale à comparer",
+      preparingTitle: "Préparation des photos",
+      preparingPair: "On tire des photos pour comparer les capitales.",
+      preparingDefault: "On prépare les photos de la partie.",
+      pairFail: "Pas assez de photos différentes pour ce mode.",
+      resultsPerfectGroupes: "Toutes les photos sont dans le bon continent.",
+      resultsPerfect: "Toutes les capitales ont été reconnues.",
+      referenceEmpty: "Aucune capitale à afficher.",
+      referenceLede: "Les capitales par continent. Ouvre une fiche pour la photo.",
+      ficheNoMedia: "Pas de photo pour cette capitale.",
+      groupWord: "continent",
+      linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis la capitale.",
+      footer: "© 2026 Emsacras",
+    };
+  }
+  if (kind === "drapeaux") {
+    return {
+      kind,
+      unit: "pays",
+      units: "pays",
+      groupLegend: "Continents",
+      groupsHelp: "Seuls les continents cochés entrent dans la partie.",
+      levelsHelp: "Choisis un mode, coche les continents, puis un niveau.",
+      levels: { ...LEVEL_COPY },
+      modes: {
+        qcm: { label: "Choix multiple", blurb: "Un drapeau, quatre pays." },
+        texte: {
+          label: "Texte libre",
+          blurb: "Un drapeau, tu écris le nom du pays.",
+        },
+        description: {
+          label: "Description",
+          blurb: "Un texte décrit le drapeau, puis quatre pays.",
+        },
+        groupes: {
+          label: "Ranger par continent",
+          blurb: "Jusqu'à six drapeaux à classer dans les continents cochés.",
+        },
+        paire: { label: "Même pays", blurb: "Deux drapeaux : est-ce le même pays ?" },
+        relier: {
+          label: "Relier",
+          blurb: "Clique un drapeau : il s'affiche en grand, puis tu choisis le pays.",
+        },
+      },
+      media: "drapeau",
+      loading: "Chargement du drapeau…",
+      alt: "Drapeau à identifier",
+      badMedia: "Mauvais drapeau",
+      mediaSignaled: "Drapeau signalé",
+      noMedia: "Pas de drapeau pour ce pays.",
+      unavailable: "Image indisponible",
+      creditCommons: "Drapeau : Wikimedia Commons",
+      creditWiki: "Drapeau : Wikipédia",
+      creditList: "Drapeaux : Wikimedia Commons",
+      otherMedia: "Autres drapeaux",
+      nameField: "Nom du pays",
+      sameItemPrompt: "Ces deux drapeaux montrent-ils le même pays ?",
+      sortLede: "Choisis le continent de chaque drapeau, puis valide.",
+      pairAria: "Même pays",
+      compareAlt: "Drapeau à comparer",
+      preparingTitle: "Préparation des drapeaux",
+      preparingPair: "On tire des drapeaux pour comparer les pays.",
+      preparingDefault: "On prépare les drapeaux de la partie.",
+      pairFail: "Pas assez de drapeaux différents pour ce mode.",
+      resultsPerfectGroupes: "Tous les drapeaux sont dans le bon continent.",
+      resultsPerfect: "Tous les drapeaux ont été reconnus.",
+      referenceEmpty: "Aucun drapeau à afficher.",
+      referenceLede: "Les drapeaux par continent. Ouvre une fiche pour le drapeau.",
+      ficheNoMedia: "Pas de drapeau pour ce pays.",
+      groupWord: "continent",
+      linkLede: "Clique un drapeau : il s'affiche en grand, puis tu choisis le pays.",
+      footer: "© 2026 Emsacras",
+    };
+  }
   if (kind === "champignons") {
     return {
       kind,
@@ -441,13 +691,8 @@ function quizCopy(category = state.category) {
       units: "espèces",
       groupLegend: "Groupes",
       groupsHelp: "La difficulté ne change pas. Seules les espèces cochées entrent dans la partie.",
-      levelsHelp: "Choisis un mode, coche les groupes, puis un niveau. La difficulté ne change pas.",
-      levels: {
-        facile: "Champignons courants, reconnaissables au premier coup d'œil.",
-        moyen: "Il faut regarder le chapeau, les lames et le pied.",
-        difficile: "Des espèces proches, souvent confondues entre elles.",
-        melange: "Tous les niveaux, dans un ordre aléatoire.",
-      },
+      levelsHelp: "Choisis un mode, coche les groupes, puis un niveau.",
+      levels: { ...LEVEL_COPY },
       modes: {
         qcm: { label: "Choix multiple", blurb: "Une photo, quatre noms." },
         texte: {
@@ -502,45 +747,84 @@ function quizCopy(category = state.category) {
   const subject =
     kind === "plantes"
       ? {
-          facile: "Plantes communes, reconnaissables au premier coup d'œil.",
-          moyen: "Il faut regarder les fleurs, les feuilles et la silhouette.",
           description: "Pas de photo : un texte décrit la plante, puis quatre choix.",
           alt: "Plante à identifier",
+          unit: "espèce",
+          units: "espèces",
+          nameField: "Nom de l'espèce",
         }
-      : kind === "poissons"
+      : kind === "fruits"
         ? {
-            facile: "Poissons courants, reconnaissables au premier coup d'œil.",
-            moyen: "Il faut regarder la silhouette, les nageoires et les motifs.",
-            description: "Pas de photo : un texte décrit le poisson, puis quatre choix.",
-            alt: "Poisson à identifier",
+            description: "Pas de photo : un texte décrit le fruit ou légume, puis quatre choix.",
+            alt: "Fruit ou légume à identifier",
+            unit: "aliment",
+            units: "aliments",
+            nameField: "Nom de l'aliment",
           }
-        : kind === "reptiles"
+        : kind === "poissons"
           ? {
-              facile: "Reptiles courants, reconnaissables au premier coup d'œil.",
-              moyen: "Il faut regarder les écailles, la tête et les motifs.",
-              description: "Pas de photo : un texte décrit le reptile, puis quatre choix.",
-              alt: "Reptile à identifier",
+              description: "Pas de photo : un texte décrit le poisson, puis quatre choix.",
+              alt: "Poisson à identifier",
+              unit: "espèce",
+              units: "espèces",
+              nameField: "Nom de l'espèce",
             }
-          : {
-              facile: "Espèces communes, reconnaissables au premier coup d'œil.",
-              moyen: "Il faut regarder les barres alaires, le bec et la silhouette.",
-              description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
-              alt: "Oiseau à identifier",
-            };
+          : kind === "reptiles"
+            ? {
+                description: "Pas de photo : un texte décrit le reptile, puis quatre choix.",
+                alt: "Reptile à identifier",
+                unit: "espèce",
+                units: "espèces",
+                nameField: "Nom de l'espèce",
+              }
+            : kind === "insectes"
+              ? {
+                  description: "Pas de photo : un texte décrit l'insecte, puis quatre choix.",
+                  alt: "Insecte à identifier",
+                  unit: "espèce",
+                  units: "espèces",
+                  nameField: "Nom de l'espèce",
+                }
+              : kind === "mammiferes"
+                ? {
+                    description: "Pas de photo : un texte décrit le mammifère, puis quatre choix.",
+                    alt: "Mammifère à identifier",
+                    unit: "espèce",
+                    units: "espèces",
+                    nameField: "Nom de l'espèce",
+                  }
+                : kind === "mineraux"
+                  ? {
+                      description: "Pas de photo : un texte décrit le minéral, puis quatre choix.",
+                      alt: "Minéral à identifier",
+                      unit: "espèce",
+                      units: "espèces",
+                      nameField: "Nom du minéral",
+                    }
+                  : kind === "mixed"
+                    ? {
+                        description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
+                        alt: "Élément à identifier",
+                        unit: "entrée",
+                        units: "entrées",
+                        nameField: "Nom",
+                      }
+                    : {
+                        description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
+                        alt: "Oiseau à identifier",
+                        unit: "espèce",
+                        units: "espèces",
+                        nameField: "Nom de l'espèce",
+                      };
 
   return {
     kind,
-    unit: "espèce",
-    units: "espèces",
+    unit: subject.unit,
+    units: subject.units,
     groupLegend: "Groupes",
-    groupsHelp: "La difficulté ne change pas. Seules les espèces cochées entrent dans la partie.",
-    levelsHelp: "Choisis un mode, coche les groupes, puis un niveau. La difficulté ne change pas.",
-    levels: {
-      facile: subject.facile,
-      moyen: subject.moyen,
-      difficile: "Des espèces proches, souvent confondues entre elles.",
-      melange: "Tous les niveaux, dans un ordre aléatoire.",
-    },
+    groupsHelp: "Seules les entrées des groupes cochés entrent dans la partie.",
+    levelsHelp: "Choisis un mode, coche les groupes, puis un niveau.",
+    levels: { ...LEVEL_COPY },
     modes: {
       qcm: { label: "Choix multiple", blurb: "Une photo, quatre noms." },
       texte: {
@@ -552,7 +836,7 @@ function quizCopy(category = state.category) {
         label: "Ranger par groupe",
         blurb: "Jusqu'à six photos à classer dans les groupes cochés.",
       },
-      paire: { label: "Même espèce", blurb: "Deux photos : est-ce la même espèce ?" },
+      paire: { label: "Même espèce", blurb: "Deux photos : est-ce la même entrée ?" },
       variantes: {
         label: "Variantes",
         blurb: "Deux photos d'espèces proches, tirées chacune au hasard. Le même nom peut revenir deux fois.",
@@ -581,11 +865,11 @@ function quizCopy(category = state.category) {
     creditWiki: "Photo : Wikipédia",
     creditList: "Photos : Wikimedia Commons",
     otherMedia: "Autres photos",
-    nameField: "Nom de l'espèce",
-    sameItemPrompt: "Ces deux photos montrent-elles la même espèce ?",
+    nameField: subject.nameField,
+    sameItemPrompt: "Ces deux photos montrent-elles la même entrée ?",
     sortLede: "Choisis le groupe de chaque photo, puis valide.",
-    pairAria: "Même espèce",
-    compareAlt: kind === "plantes" ? "Plante à comparer" : kind === "poissons" ? "Poisson à comparer" : kind === "reptiles" ? "Reptile à comparer" : "Oiseau à comparer",
+    pairAria: "Même entrée",
+    compareAlt: subject.alt.replace("à identifier", "à comparer"),
     preparingTitle: "Préparation des photos",
     preparingPair: "On tire des photos pour comparer les espèces.",
     preparingDefault: "On prépare les photos de la partie.",
@@ -603,14 +887,11 @@ function quizCopy(category = state.category) {
 
 function availableModes(category = state.category) {
   const copy = quizCopy(category);
-  const ids =
-    quizKind(category) === "oiseaux"
-      ? MODES.map((mode) => mode.id)
-      : MODES.map((mode) => mode.id).filter((id) => !BIRD_ONLY_MODES.has(id));
-  return ids.map((id) => ({
-    id,
-    label: copy.modes[id]?.label || MODES.find((mode) => mode.id === id)?.label || id,
-    blurb: copy.modes[id]?.blurb || "",
+  const allowed = new Set(modesForKind(quizKind(category)));
+  return MODES.filter((mode) => allowed.has(mode.id)).map((mode) => ({
+    id: mode.id,
+    label: copy.modes[mode.id]?.label || mode.label || mode.id,
+    blurb: copy.modes[mode.id]?.blurb || "",
   }));
 }
 
@@ -758,9 +1039,29 @@ function syncOutlineMaps() {
   setOutlineMaps(state.category?.id === "pays-monde");
 }
 
+function syncFlagImages() {
+  setFlagImages(state.category?.id === "drapeaux-monde");
+}
+
+function syncCapitalImages() {
+  setCapitalImages(state.category?.id === "capitales-monde");
+}
+
+function syncMineralImages() {
+  setMineralImages(state.category?.id === "rochers-mineraux");
+}
+
+function syncFruitImages() {
+  setFruitImages(state.category?.id === "fruits-legumes");
+}
+
 function syncImagePolicy() {
   syncSafeFish();
   syncOutlineMaps();
+  syncFlagImages();
+  syncCapitalImages();
+  syncMineralImages();
+  syncFruitImages();
 }
 
 function saveSafeFish(enabled) {
@@ -902,6 +1203,20 @@ function questionsFor(category, levelId) {
   return pool.filter((question) => question.difficulte === levelId);
 }
 
+/** Compteur affiché sur les cartes niveau (plafond 16 sauf mélange). */
+function levelDisplayCount(rawCount, levelId) {
+  const n = Number(rawCount) || 0;
+  if (levelId === "melange") return n;
+  return Math.min(n, LEVEL_QCM_CAP);
+}
+
+/** Pool jouable : mélange = tout ; sinon max 16 après mélange. */
+function pickLevelQuestions(source, difficulty) {
+  const shuffled = shuffle(source);
+  if (difficulty === "melange") return shuffled;
+  return shuffled.slice(0, LEVEL_QCM_CAP);
+}
+
 function variantRounds(category, levelId) {
   const selected = new Set(state.selectedGroups || []);
   const known = category.questions.filter((question) => !question.groupe || selected.has(question.groupe));
@@ -1001,6 +1316,10 @@ function openCategory(category) {
   state.category = category;
   state.selectedGroups = loadSelectedGroups(category);
   state.mode = loadMode(category);
+  if (!availableModes(category).some((mode) => mode.id === state.mode)) {
+    state.mode = "qcm";
+    saveMode(category, "qcm");
+  }
   state.notice = "";
   syncImagePolicy();
   updateFooter(category);
@@ -1045,6 +1364,7 @@ function startQuiz(difficulty) {
   if (!source.length || groupsBlocked) return;
   state.isDaily = false;
   state.difficulty = difficulty;
+  state.resultTotal = null;
   resetRound();
 
   if (state.mode === "groupes") {
@@ -1052,12 +1372,11 @@ function startQuiz(difficulty) {
       .slice(0, 6)
       .map((question) => ({ ...question, chosenGroup: "" }));
     setScreen("quiz");
-    preloadSpecies(
-      state.questions.map((question) => question.nom_scientifique),
-      state.questions[0]?.nom_scientifique,
-    );
+    preloadQuizQuestions(state.questions, state.questions[0]);
     return;
   }
+
+  const capped = pickLevelQuestions(source, difficulty);
 
   if (state.mode === "paire") {
     state.questions = [];
@@ -1065,13 +1384,14 @@ function startQuiz(difficulty) {
     state.prepToken += 1;
     const token = state.prepToken;
     setScreen("preparing");
-    buildPairs(source, token);
+    buildPairs(capped, token);
     return;
   }
 
   if (state.mode === "variantes") {
-    const rounds = variantRounds(state.category, difficulty);
+    let rounds = variantRounds(state.category, difficulty);
     if (!rounds.length) return;
+    if (difficulty !== "melange") rounds = shuffle(rounds).slice(0, LEVEL_QCM_CAP);
     state.questions = [];
     state.pointTotal = 0;
     state.prepToken += 1;
@@ -1082,7 +1402,10 @@ function startQuiz(difficulty) {
   }
 
   if (state.mode === "sexes") {
-    const candidates = sexCandidates(state.category, difficulty);
+    const candidates = pickLevelQuestions(
+      sexCandidates(state.category, difficulty),
+      difficulty
+    );
     if (!candidates.length) return;
     state.questions = [];
     state.pointTotal = 0;
@@ -1094,28 +1417,22 @@ function startQuiz(difficulty) {
   }
 
   if (state.mode === "relier") {
-    const boards = buildLinkBoards(source);
+    const boards = buildLinkBoards(capped);
     if (!boards.length) return;
     state.questions = boards;
     state.pointTotal = boards.reduce((sum, board) => sum + board.members.length, 0);
     setScreen("quiz");
-    preloadSpecies(
-      boards[0].members.map((member) => member.nom_scientifique),
-      boards[0].members[0]?.nom_scientifique,
-    );
+    preloadQuizQuestions(boards[0].members, boards[0].members[0]);
     return;
   }
 
-  state.questions = shuffle(source).map((question) => ({
+  state.questions = capped.map((question) => ({
     ...question,
     options: shuffle(question.options),
   }));
   setScreen("quiz");
   if (state.mode !== "description") {
-    preloadSpecies(
-      state.questions.map((question) => question.nom_scientifique),
-      state.questions[0]?.nom_scientifique,
-    );
+    preloadQuizQuestions(state.questions, state.questions[0]);
   }
   if (state.mode === "chant") {
     preloadSpeciesAudio(
@@ -1140,8 +1457,21 @@ function backToMenu() {
   setScreen("levels");
 }
 
-function finishQuiz() {
-  const total = scoreTotal();
+function answeredCount() {
+  if (state.revealed) return state.index + 1;
+  return state.index;
+}
+
+function finishQuiz(options = {}) {
+  const early = Boolean(options.early);
+  let total = scoreTotal();
+  if (early) {
+    total = answeredCount();
+    if (total <= 0) {
+      backToMenu();
+      return;
+    }
+  }
   state.outcome = recordScore(
     state.category.id,
     state.difficulty,
@@ -1161,7 +1491,13 @@ function finishQuiz() {
     if (dailyBadge) unlocked.push(dailyBadge);
   }
   state.pendingBadges = unlocked.filter(Boolean);
+  state.resultTotal = total;
   setScreen("results");
+}
+
+function stopMelangeQuiz() {
+  if (state.difficulty !== "melange" || state.isDaily) return;
+  finishQuiz({ early: true });
 }
 
 function replayMissed() {
@@ -1620,19 +1956,31 @@ function showChoicePhoto(selected, question) {
     if (description) description.after(compare);
     else document.querySelector("[data-feedback]")?.before(compare);
     const stillCorrect = () => screen === "quiz" && state.index + 1 === position && correctFrame.isConnected;
-    fillSpeciesFrame(correctFrame, question.nom_scientifique, stillCorrect, () => {
-      const img = correctFrame.querySelector("[data-photo]");
-      if (img && stillCorrect()) img.alt = question.nom_commun;
-    });
+    fillSpeciesFrame(
+      correctFrame,
+      imageSearchName(question),
+      stillCorrect,
+      () => {
+        const img = correctFrame.querySelector("[data-photo]");
+        if (img && stillCorrect()) img.alt = question.nom_commun;
+      },
+      imageOptionsForQuestion(question),
+    );
   }
 
   const known = findSpecies(selected);
   const stillChosen = () => screen === "quiz" && state.index + 1 === position && chosenFrame.isConnected;
   if (known) {
-    fillSpeciesFrame(chosenFrame, known.nom_scientifique, stillChosen, () => {
-      const img = chosenFrame.querySelector("[data-photo]");
-      if (img && stillChosen()) img.alt = known.nom_commun;
-    });
+    fillSpeciesFrame(
+      chosenFrame,
+      imageSearchName(known),
+      stillChosen,
+      () => {
+        const img = chosenFrame.querySelector("[data-photo]");
+        if (img && stillChosen()) img.alt = known.nom_commun;
+      },
+      imageOptionsForQuestion(known),
+    );
     return;
   }
 
@@ -2007,6 +2355,28 @@ function mountLevels() {
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
   const daily = getDailyResult(category.id);
   const reviseN = dueCount(category.id);
+  const challengePanel = h(
+    "section",
+    { class: daily ? "challenge-panel is-done" : "challenge-panel" },
+    h("div", { class: "challenge-panel-copy" },
+      h("p", { class: "challenge-kicker", text: "Une fois par jour" }),
+      h("h2", { class: "challenge-title", text: "Défi du jour" }),
+      h("p", {
+        class: "challenge-blurb",
+        text: daily
+          ? `Terminé · ${daily.score}/${daily.total}`
+          : "10 questions mélangées · même série pour tout le monde.",
+      }),
+    ),
+    h("button", {
+      class: "challenge-cta",
+      type: "button",
+      text: daily ? "Déjà joué" : "Lancer le défi",
+      disabled: Boolean(daily),
+      onClick: () => startDailyChallenge(),
+    }),
+  );
+
   show(
     view,
     h("p", {
@@ -2014,24 +2384,7 @@ function mountLevels() {
       text: copy.levelsHelp,
     }),
     badgesStrip(),
-    h(
-      "div",
-      { class: "daily-row" },
-      h("button", {
-        class: "btn",
-        type: "button",
-        text: daily ? `Défi du jour : ${daily.score}/${daily.total}` : "Défi du jour",
-        disabled: Boolean(daily),
-        onClick: () => startDailyChallenge(),
-      }),
-      h("button", {
-        class: "btn secondary",
-        type: "button",
-        text: reviseN ? `Réviser (${reviseN})` : "Réviser",
-        disabled: !reviseN,
-        onClick: () => startRevise(),
-      }),
-    ),
+    challengePanel,
     h(
       "div",
       { class: "modes", role: "group", "aria-label": "Mode de jeu" },
@@ -2050,7 +2403,7 @@ function mountLevels() {
       ? h("p", {
           class: "note",
           text:
-            copy.kind === "pays"
+            copy.kind === "pays" || copy.kind === "capitales" || copy.kind === "drapeaux"
               ? "Ranger par continent est indisponible tant qu'un seul continent est coché."
               : "Ranger par groupe est indisponible tant qu'un seul groupe est coché.",
         })
@@ -2060,20 +2413,28 @@ function mountLevels() {
       "div",
       { class: "cards" },
       LEVELS.map((level) => {
-        const count =
+        const rawCount =
           state.mode === "variantes"
             ? variantRounds(category, level.id).length
             : state.mode === "sexes"
               ? sexCandidates(category, level.id).length
               : state.mode === "relier"
-                ? linkBoardSizes(questionsFor(category, level.id).length).length
+                ? linkBoardSizes(
+                    levelDisplayCount(questionsFor(category, level.id).length, level.id)
+                  ).length
                 : questionsFor(category, level.id).length;
+        const count =
+          state.mode === "groupes"
+            ? rawCount
+            : state.mode === "relier"
+              ? rawCount
+              : levelDisplayCount(rawCount, level.id);
         const best = getBest(category.id, level.id, state.mode);
         const questionLabel =
           state.mode === "groupes"
-            ? count === 0
+            ? rawCount === 0
               ? `Aucune ${copy.media}`
-              : `${Math.min(count, 6)} ${copy.media}${Math.min(count, 6) > 1 ? "s" : ""}`
+              : `${Math.min(rawCount, 6)} ${copy.media}${Math.min(rawCount, 6) > 1 ? "s" : ""}`
             : state.mode === "variantes"
               ? count === 0
                 ? "Aucune série"
@@ -2094,7 +2455,7 @@ function mountLevels() {
           {
             class: "level",
             type: "button",
-            disabled: count === 0 || groupsBlocked,
+            disabled: (state.mode === "groupes" ? rawCount : count) === 0 || groupsBlocked,
             onClick: () => startQuiz(level.id),
           },
           h("strong", { text: level.label }),
@@ -2160,6 +2521,28 @@ function mountLevels() {
           }),
         )
       : null,
+    h(
+      "section",
+      { class: reviseN ? "revise-panel" : "revise-panel is-empty" },
+      h(
+        "div",
+        { class: "revise-panel-copy" },
+        h("h2", { class: "revise-title", text: "Réviser" }),
+        h("p", {
+          class: "revise-blurb",
+          text: reviseN
+            ? `${reviseN} carte${reviseN > 1 ? "s" : ""} à revoir (erreurs et révisions dues).`
+            : "Rien à réviser pour l’instant — joue une partie pour alimenter ta file.",
+        }),
+      ),
+      h("button", {
+        class: "revise-cta",
+        type: "button",
+        text: reviseN ? `Réviser (${reviseN})` : "Réviser",
+        disabled: !reviseN,
+        onClick: () => startRevise(),
+      }),
+    ),
   );
 }
 
@@ -2407,7 +2790,7 @@ async function loadChant(question, position) {
   try {
     [audioUrls, imageResult] = await Promise.all([
       getSpeciesAudio(question.nom_scientifique),
-      getSpeciesImages(question.nom_scientifique),
+      getSpeciesImages(imageSearchName(question), imageOptionsForQuestion(question)),
     ]);
   } catch {
     audioUrls = [];
@@ -2594,6 +2977,17 @@ function mountClassicQuiz() {
       onClick: showHint,
     }),
   );
+  if (state.difficulty === "melange" && !state.isDaily && !state.revealed) {
+    actions.append(
+      h("button", {
+        class: "btn secondary",
+        type: "button",
+        text: "Arrêter",
+        title: "Sauvegarde le score actuel et termine la partie",
+        onClick: stopMelangeQuiz,
+      }),
+    );
+  }
 
   const answer =
     state.mode === "texte"
@@ -2678,7 +3072,13 @@ function mountSortQuiz() {
         ),
       ),
     );
-    fillSpeciesFrame(frame, question.nom_scientifique, () => screen === "quiz" && frame.isConnected);
+    fillSpeciesFrame(
+      frame,
+      imageSearchName(question),
+      () => screen === "quiz" && frame.isConnected,
+      undefined,
+      imageOptionsForQuestion(question),
+    );
     return card;
   });
 
@@ -2908,7 +3308,10 @@ async function buildPairs(source, token) {
   for (const question of source) {
     let result = { urls: [] };
     try {
-      result = await getSpeciesImages(question.nom_scientifique);
+      result = await getSpeciesImages(
+        imageSearchName(question),
+        imageOptionsForQuestion(question)
+      );
     } catch {
       result = { urls: [] };
     }
@@ -3281,7 +3684,10 @@ async function buildVariants(rounds, token) {
     for (const member of members) {
       let result = { urls: [] };
       try {
-        result = await getSpeciesImages(member.nom_scientifique);
+        result = await getSpeciesImages(
+          imageSearchName(member),
+          imageOptionsForQuestion(member)
+        );
       } catch {
         result = { urls: [] };
       }
@@ -3851,8 +4257,10 @@ function mountLinkQuiz() {
     );
     fillSpeciesFrame(
       frame,
-      member.nom_scientifique,
+      imageSearchName(member),
       () => screen === "quiz" && state.index + 1 === position && frame.isConnected,
+      undefined,
+      imageOptionsForQuestion(member),
     );
   });
   question.names.forEach((name, index) => {
@@ -3947,27 +4355,35 @@ async function loadPhoto(question, position) {
   const frame = document.querySelector("[data-frame]");
   if (!frame) return;
   const stillHere = () => screen === "quiz" && state.index + 1 === position && frame.isConnected;
-  await fillSpeciesFrame(frame, question.nom_scientifique, stillHere, ({ failed, source }) => {
-    if (!stillHere()) return;
-    const credit = document.querySelector("[data-credit]");
-    const status = frame.querySelector("[data-status]");
-    if (failed) {
-      if (status) status.textContent = "Image indisponible. Tu peux répondre quand même, ou passer.";
-      const pass = document.querySelector("[data-pass]");
-      if (pass && !state.revealed) pass.hidden = false;
-      return;
-    }
-    if (credit) {
-      const copy = quizCopy();
-      credit.textContent = source === "wikipedia" ? copy.creditWiki : copy.creditCommons;
-    }
-  });
+  await fillSpeciesFrame(
+    frame,
+    imageSearchName(question),
+    stillHere,
+    ({ failed, source }) => {
+      if (!stillHere()) return;
+      const credit = document.querySelector("[data-credit]");
+      const status = frame.querySelector("[data-status]");
+      if (failed) {
+        if (status) {
+          status.textContent = "Image indisponible. Tu peux répondre quand même, ou passer.";
+        }
+        const pass = document.querySelector("[data-pass]");
+        if (pass && !state.revealed) pass.hidden = false;
+        return;
+      }
+      if (credit) {
+        const copy = quizCopy();
+        credit.textContent = source === "wikipedia" ? copy.creditWiki : copy.creditCommons;
+      }
+    },
+    imageOptionsForQuestion(question),
+  );
 }
 
-async function fillSpeciesFrame(frame, scientificName, stillHere, onReady) {
+async function fillSpeciesFrame(frame, scientificName, stillHere, onReady, imageOptions = {}) {
   let result = { urls: [], source: "none" };
   try {
-    result = await getSpeciesImages(scientificName);
+    result = await getSpeciesImages(scientificName, imageOptions);
   } catch {
     result = { urls: [], source: "none" };
   }
@@ -4087,7 +4503,10 @@ function fillKnownFrame(frame, url, stillHere, scientificName = "") {
 }
 
 function mountResults() {
-  const total = scoreTotal();
+  const total =
+    Number.isInteger(state.resultTotal) && state.resultTotal > 0
+      ? state.resultTotal
+      : scoreTotal();
   const outcome = state.outcome;
   document.title = "Résultat — QuiQuiz";
   renderTop({
@@ -4379,7 +4798,10 @@ function mountFiche() {
 async function loadFicheGallery(gallery, question, still) {
   let result = { urls: [] };
   try {
-    result = await getSpeciesImages(question.nom_scientifique);
+    result = await getSpeciesImages(
+      imageSearchName(question),
+      imageOptionsForQuestion(question)
+    );
   } catch {
     result = { urls: [] };
   }
@@ -4500,10 +4922,16 @@ function mountRevise() {
     answer,
     actions,
   );
+  const reviseQuestion = {
+    nom_scientifique: card.scientificName,
+    nom_commun: card.commonName || card.scientificName,
+  };
   fillSpeciesFrame(
     frame,
-    card.scientificName,
+    imageSearchName(reviseQuestion),
     () => screen === "revise" && state.reviseQueue[state.reviseIndex]?.scientificName === card.scientificName,
+    undefined,
+    imageOptionsForQuestion(reviseQuestion),
   );
 }
 

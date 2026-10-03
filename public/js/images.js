@@ -37,6 +37,10 @@ const pending = new Map();
 const memoryPools = new Map();
 let safeFish = false;
 let outlineMaps = false;
+let flagImages = false;
+let capitalImages = false;
+let mineralImages = false;
+let fruitImages = false;
 
 const MAP_FILE_REJECT =
   /province|department|d[ée]partement|arrondissement|municip|communes?\b|county|oblast|canton|district|electoral|election|[ée]lection|population|language|religion|climate|satellite|relief|orthophoto|historical|history|histoire|flag map|locator map of|highlighted|globe scheme|subdivisions?|\bregions?\b|r[ée]gions?\b|states of|borders of (states|provinces|regions|departments|communes)|gemeinden|kommunen|prefectur|\badm\b|overseas territories|maploc|basemap|physical map|topograph/i;
@@ -52,10 +56,43 @@ export function setOutlineMaps(enabled) {
   outlineMaps = Boolean(enabled);
 }
 
-function poolKey(scientificName) {
-  if (outlineMaps) return `map:${scientificName}`;
-  if (safeFish) return `safe:${scientificName}`;
-  return scientificName;
+export function setFlagImages(enabled) {
+  flagImages = Boolean(enabled);
+}
+
+export function setCapitalImages(enabled) {
+  capitalImages = Boolean(enabled);
+}
+
+export function setMineralImages(enabled) {
+  mineralImages = Boolean(enabled);
+}
+
+export function setFruitImages(enabled) {
+  fruitImages = Boolean(enabled);
+}
+
+/** kind: species | flag | map | safe | capital | mineral | fruit */
+function resolveMediaKind(explicit) {
+  if (explicit) return explicit;
+  if (flagImages) return "flag";
+  if (outlineMaps) return "map";
+  if (safeFish) return "safe";
+  if (capitalImages) return "capital";
+  if (mineralImages) return "mineral";
+  if (fruitImages) return "fruit";
+  return "species";
+}
+
+function poolKey(scientificName, kind = "species") {
+  const name = String(scientificName || "").trim();
+  if (kind === "flag") return `flag:${name}`;
+  if (kind === "map") return `map:${name}`;
+  if (kind === "safe") return `safe:${name}`;
+  if (kind === "capital") return `capital:${name}`;
+  if (kind === "mineral") return `mineral:${name}`;
+  if (kind === "fruit") return `fruit:${name}`;
+  return name;
 }
 const titleByUrl = new Map();
 const metaByUrl = new Map();
@@ -167,10 +204,9 @@ export function invalidateSpeciesImages(scientificName) {
     memoryPools.clear();
     return;
   }
-  memoryPools.delete(poolKey(name));
-  // variantes de clé safe/map
-  memoryPools.delete(`safe:${name}`);
-  memoryPools.delete(`map:${name}`);
+  for (const kind of ["species", "flag", "map", "safe", "capital", "mineral", "fruit"]) {
+    memoryPools.delete(poolKey(name, kind));
+  }
 }
 
 export function creditLabel(meta, kind = "photo") {
@@ -788,6 +824,192 @@ async function fetchOutlineMapImages(countryName) {
   }
 }
 
+async function searchFlagTitles(countryName) {
+  const name = String(countryName || "").trim();
+  if (!name) return [];
+  const queries = [
+    `Flag of ${name}`,
+    `Flag of the ${name}`,
+    `${name} flag`,
+  ];
+  const found = [];
+  const seen = new Set();
+  for (const query of queries) {
+    let data;
+    try {
+      data = await throttledJson(
+        apiUrl(COMMONS, {
+          action: "query",
+          list: "search",
+          srsearch: `${query} filetype:bitmap|drawing`,
+          srnamespace: "6",
+          srlimit: "10",
+        }),
+      );
+    } catch {
+      continue;
+    }
+    for (const hit of data?.query?.search ?? []) {
+      const title = hit.title || "";
+      const blob = title.replace(/^File:/i, "").toLowerCase().replace(/_/g, " ");
+      if (seen.has(title)) continue;
+      if (!/\bflag\b/.test(blob)) continue;
+      if (/\b(map|naval|army|air force|civil ensign|proposed|historical|empire)\b/.test(blob)) continue;
+      seen.add(title);
+      found.push(title);
+    }
+    if (found.length >= 8) break;
+  }
+  // Priorité au SVG « Flag of X »
+  found.sort((a, b) => {
+    const score = (t) => {
+      const blob = t.replace(/^File:/i, "").toLowerCase().replace(/_/g, " ");
+      let s = 0;
+      if (blob.startsWith(`flag of ${name.toLowerCase()}`)) s += 5;
+      if (blob.startsWith(`flag of the ${name.toLowerCase()}`)) s += 4;
+      if (/\.svg$/i.test(t)) s += 2;
+      return -s;
+    };
+    return score(a) - score(b);
+  });
+  return found;
+}
+
+async function fetchFlagImages(countryName) {
+  try {
+    const titles = await searchFlagTitles(countryName);
+    if (!titles.length) return { urls: [], items: [], source: "none" };
+    const items = await resolveMapItems(titles);
+    return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
+  } catch {
+    return { urls: [], items: [], source: "none" };
+  }
+}
+
+const CAPITAL_TITLE_REJECT =
+  /\b(flag|map|locator|blank map|coa|coat of arms|person|portrait|football|soccer|metro line|road|highway|svg diagram)\b/i;
+
+async function searchThemedTitles(queries, { rejectRe = null, limit = 12 } = {}) {
+  const found = [];
+  const seen = new Set();
+  for (const query of queries) {
+    if (!query) continue;
+    let data;
+    try {
+      data = await throttledJson(
+        apiUrl(COMMONS, {
+          action: "query",
+          list: "search",
+          srsearch: `${query} filetype:bitmap|drawing`,
+          srnamespace: "6",
+          srlimit: "12",
+        }),
+      );
+    } catch {
+      continue;
+    }
+    for (const hit of data?.query?.search ?? []) {
+      const title = hit.title || "";
+      if (!title || seen.has(title)) continue;
+      if (rejectRe && rejectRe.test(title)) continue;
+      seen.add(title);
+      found.push(title);
+      if (found.length >= limit) return found;
+    }
+  }
+  return found;
+}
+
+async function fetchCapitalImages(cityName, country = "") {
+  try {
+    const city = String(cityName || "").trim();
+    const land = String(country || "").trim();
+    if (!city) return { urls: [], items: [], source: "none" };
+    const titles = await searchThemedTitles(
+      [
+        `${city} skyline`,
+        `${city} cityscape`,
+        land ? `${city} ${land}` : "",
+        `${city} city`,
+        city,
+      ],
+      { rejectRe: CAPITAL_TITLE_REJECT, limit: 14 }
+    );
+    if (!titles.length) {
+      for (const lang of ["en", "fr"]) {
+        const url = await wikipediaImage(lang, city);
+        if (url) {
+          const item = {
+            title: `File:${city} (Wikipedia).jpg`,
+            url,
+            validated: false,
+          };
+          rememberItems([item]);
+          return { urls: [url], items: [item], source: "wikipedia" };
+        }
+      }
+      return { urls: [], items: [], source: "none" };
+    }
+    const items = await resolveMapItems(titles);
+    return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
+  } catch {
+    return { urls: [], items: [], source: "none" };
+  }
+}
+
+const MINERAL_TITLE_REJECT =
+  /\b(jewelry|jewellery|necklace|ring|bracelet|person|portrait|logo|flag|map|coin|banknote)\b/i;
+
+async function fetchMineralImages(mineralName) {
+  try {
+    const name = String(mineralName || "").trim();
+    if (!name) return { urls: [], items: [], source: "none" };
+    const titles = await searchThemedTitles(
+      [`${name} mineral`, `${name} crystal`, `${name} gemstone`, name],
+      { rejectRe: MINERAL_TITLE_REJECT, limit: 14 }
+    );
+    if (!titles.length) {
+      const fallback = await fetchSpeciesImages(name);
+      return fallback;
+    }
+    const items = await resolveMapItems(titles);
+    return applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
+  } catch {
+    return { urls: [], items: [], source: "none" };
+  }
+}
+
+async function fetchFruitImages(scientificName, commonName = "") {
+  const scientific = String(scientificName || "").trim();
+  const common = String(commonName || "").trim();
+  if (common) {
+    const titles = await searchThemedTitles(
+      [`${common} fruit`, `${common} vegetable`, `${common} légume`, common],
+      {
+        rejectRe: /\b(flag|map|person|portrait|logo|dish|recipe|cooked|plate)\b/i,
+        limit: 10,
+      }
+    );
+    if (titles.length) {
+      const items = await resolveMapItems(titles);
+      const result = applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
+      if (result.urls?.length || result.items?.length) return result;
+    }
+    const wiki = await wikipediaImage("fr", common);
+    if (wiki) {
+      const item = {
+        title: `File:${common} (Wikipedia).jpg`,
+        url: wiki,
+        validated: false,
+      };
+      rememberItems([item]);
+      return { urls: [wiki], items: [item], source: "wikipedia" };
+    }
+  }
+  if (scientific) return fetchSpeciesImages(scientific);
+  return { urls: [], items: [], source: "none" };
+}
+
 async function urlsFromCommons(scientificName) {
   try {
     const titles = await collectTitles(scientificName);
@@ -886,8 +1108,8 @@ async function fetchSpeciesImages(scientificName) {
   return { urls: [], source: "none" };
 }
 
-function boostSpecies(scientificName) {
-  const key = poolKey(scientificName);
+function boostSpecies(scientificName, kind = "species") {
+  const key = poolKey(scientificName, kind);
   const index = speciesQueue.findIndex((item) => item.key === key);
   if (index > 0) {
     const [item] = speciesQueue.splice(index, 1);
@@ -895,11 +1117,12 @@ function boostSpecies(scientificName) {
   }
 }
 
-function enqueueSpecies(scientificName) {
-  const name = scientificName.trim();
-  const key = poolKey(name);
-  const safe = safeFish;
-  const maps = outlineMaps;
+function enqueueSpecies(scientificName, options = {}) {
+  const name = String(scientificName || "").trim();
+  const kind = resolveMediaKind(options.kind);
+  const country = String(options.country || "").trim();
+  const commonName = String(options.commonName || "").trim();
+  const key = poolKey(name, kind);
   if (!name) return Promise.resolve({ urls: [], source: "none" });
   const remembered = memoryPools.get(key);
   if (remembered?.urls?.length) {
@@ -912,7 +1135,8 @@ function enqueueSpecies(scientificName) {
     memoryPools.delete(key);
   }
 
-  if (!safe && !maps && !servedFromQuizApi()) {
+  const specialized = kind !== "species";
+  if (!specialized && !servedFromQuizApi()) {
     const cached = readCache(name);
     if (cached?.fresh) {
       const result = applyRejections({ urls: cached.urls, source: cached.source });
@@ -923,7 +1147,7 @@ function enqueueSpecies(scientificName) {
   if (pending.has(key)) return pending.get(key);
 
   const promise = new Promise((resolve, reject) => {
-    speciesQueue.push({ name, key, safe, maps, resolve, reject });
+    speciesQueue.push({ name, key, kind, country, commonName, resolve, reject });
     pumpSpecies();
   });
   pending.set(key, promise);
@@ -937,14 +1161,22 @@ async function pumpSpecies() {
   while (speciesQueue.length) {
     const job = speciesQueue.shift();
     try {
-      if (job.safe) {
-        const result = await fetchSafeFishImages(job.name);
-        if (result.urls?.length) memoryPools.set(job.key, result);
-        else memoryPools.delete(job.key);
-        job.resolve(result);
-        continue;
-      }
-      if (job.maps) {
+      let result;
+      if (job.kind === "safe") {
+        result = await fetchSafeFishImages(job.name);
+      } else if (job.kind === "flag") {
+        await ensureBlockedTitles();
+        result = await fetchFlagImages(job.name);
+      } else if (job.kind === "capital") {
+        await ensureBlockedTitles();
+        result = await fetchCapitalImages(job.name, job.country);
+      } else if (job.kind === "mineral") {
+        await ensureBlockedTitles();
+        result = await fetchMineralImages(job.name);
+      } else if (job.kind === "fruit") {
+        await ensureBlockedTitles();
+        result = await fetchFruitImages(job.name, job.commonName);
+      } else if (job.kind === "map") {
         await ensureBlockedTitles();
         if (servedFromQuizApi()) {
           try {
@@ -958,40 +1190,36 @@ async function pumpSpecies() {
             /* repli contours Commons */
           }
         }
-        const result = await fetchOutlineMapImages(job.name);
-        if (result.urls?.length) memoryPools.set(job.key, result);
-        else memoryPools.delete(job.key);
-        job.resolve(result);
-        continue;
-      }
-      if (servedFromQuizApi()) {
-        try {
-          await ensureBlockedTitles();
-          const pooled = await fetchServerPool(job.name);
-          if (pooled.urls.length) {
-            memoryPools.set(job.key, pooled);
-            job.resolve(pooled);
-            continue;
-          }
-        } catch {
-          // Repli sur Commons si l'API est injoignable.
-        }
-      }
-      const fresh = readCache(job.name);
-      let result;
-      if (fresh?.fresh) {
-        result = { urls: fresh.urls, source: fresh.source };
+        result = await fetchOutlineMapImages(job.name);
       } else {
-        result = await fetchSpeciesImages(job.name);
-        if (result.urls.length) writeCache(job.name, result);
-        else if (fresh?.urls?.length) result = { urls: fresh.urls, source: fresh.source };
+        if (servedFromQuizApi()) {
+          try {
+            await ensureBlockedTitles();
+            const pooled = await fetchServerPool(job.name);
+            if (pooled.urls.length) {
+              memoryPools.set(job.key, pooled);
+              job.resolve(pooled);
+              continue;
+            }
+          } catch {
+            // Repli sur Commons si l'API est injoignable.
+          }
+        }
+        const fresh = readCache(job.name);
+        if (fresh?.fresh) {
+          result = { urls: fresh.urls, source: fresh.source };
+        } else {
+          result = await fetchSpeciesImages(job.name);
+          if (result.urls.length) writeCache(job.name, result);
+          else if (fresh?.urls?.length) result = { urls: fresh.urls, source: fresh.source };
+        }
+        result = applyRejections(result);
       }
-      result = applyRejections(result);
-      if (result.urls?.length) memoryPools.set(job.key, result);
+      if (result.urls?.length || result.items?.length) memoryPools.set(job.key, result);
       else memoryPools.delete(job.key);
       job.resolve(result);
     } catch (error) {
-      if (job.safe || job.maps) {
+      if (job.kind && job.kind !== "species") {
         job.reject(error);
         continue;
       }
@@ -1260,21 +1488,24 @@ export async function getVernacularImage(commonName) {
   return url;
 }
 
-export function getSpeciesImages(scientificName) {
-  const promise = enqueueSpecies(scientificName);
-  boostSpecies(scientificName.trim());
+export function getSpeciesImages(scientificName, options = {}) {
+  const name = String(scientificName || "").trim();
+  const kind = resolveMediaKind(options.kind);
+  const promise = enqueueSpecies(name, { ...options, kind });
+  boostSpecies(name, kind);
   return promise;
 }
 
-export function preloadSpecies(names, priorityName) {
+export function preloadSpecies(names, priorityName, options = {}) {
   const unique = [...new Set(names.map((name) => String(name || "").trim()).filter(Boolean))];
   const ordered = priorityName
     ? [priorityName, ...unique.filter((name) => name !== priorityName)]
     : unique;
+  const kind = resolveMediaKind(options.kind);
 
   for (const name of ordered) {
-    const task = enqueueSpecies(name);
-    if (name === priorityName) boostSpecies(name);
+    const task = enqueueSpecies(name, { ...options, kind });
+    if (name === priorityName) boostSpecies(name, kind);
     task.catch(() => {});
   }
 }

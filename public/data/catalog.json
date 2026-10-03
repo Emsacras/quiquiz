@@ -8,7 +8,7 @@
         {
           "id": "animaux",
           "nom": "Animaux",
-          "description": "Oiseaux, reptiles, poissons et bientôt plus.",
+          "description": "Oiseaux, reptiles, poissons, insectes, mammifères…",
           "children": [
             {
               "id": "oiseaux",
@@ -48,14 +48,16 @@
             {
               "id": "insectes",
               "nom": "Insectes",
-              "description": "À venir.",
-              "aVenir": true
+              "fichier": "data/insectes-france.json",
+              "description": "Coléoptères, papillons, abeilles et autres insectes de France.",
+              "regions": ["france"]
             },
             {
               "id": "mammiferes",
               "nom": "Mammifères",
-              "description": "À venir.",
-              "aVenir": true
+              "fichier": "data/mammiferes-france.json",
+              "description": "Carnivores, ongulés, rongeurs, chauves-souris et marins de France.",
+              "regions": ["france"]
             }
           ]
         },
@@ -74,14 +76,16 @@
             {
               "id": "arbres",
               "nom": "Arbres",
-              "description": "À venir.",
-              "aVenir": true
+              "fichier": "data/arbres-france.json",
+              "description": "Feuillus, conifères, méditerranéens et fruitiers de France.",
+              "regions": ["france"]
             },
             {
               "id": "fruits-legumes",
               "nom": "Fruits et légumes",
-              "description": "À venir.",
-              "aVenir": true
+              "fichier": "data/fruits-legumes.json",
+              "description": "Fruits, légumes-feuilles, racines et légumineuses du quotidien.",
+              "regions": ["monde"]
             }
           ]
         },
@@ -109,14 +113,16 @@
         {
           "id": "capitales",
           "nom": "Capitales",
-          "description": "À venir.",
-          "aVenir": true
+          "fichier": "data/capitales-monde.json",
+          "description": "Capitales du monde, classées par continent.",
+          "regions": ["monde"]
         },
         {
           "id": "drapeaux",
           "nom": "Drapeaux",
-          "description": "À venir.",
-          "aVenir": true
+          "fichier": "data/drapeaux-monde.json",
+          "description": "Drapeaux du monde à reconnaître.",
+          "regions": ["monde"]
         }
       ]
     },
@@ -128,8 +134,9 @@
         {
           "id": "rochers-mineraux",
           "nom": "Rochers et minéraux",
-          "description": "À venir.",
-          "aVenir": true
+          "fichier": "data/rochers-mineraux.json",
+          "description": "Silicates, carbonates, oxydes, gemmes et métaux.",
+          "regions": ["monde"]
         }
       ]
     }
