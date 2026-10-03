@@ -25,6 +25,7 @@ const MASCOT = {
   victory: "assets/mascot/victory.png",
   cool: "assets/mascot/flexing-cool.png",
   sleepy: "assets/mascot/sleepy.png",
+  fail: "assets/mascot/fail.png",
 };
 
 function mascotImg(src, className = "results-mascot", width = "120") {
@@ -43,6 +44,15 @@ function resultsMascot(percent, perfect) {
   if (percent >= 80) return MASCOT.victory;
   if (percent >= 50) return MASCOT.cool;
   return MASCOT.sleepy;
+}
+
+function feedbackHead(correct) {
+  return h(
+    "div",
+    { class: "feedback-head" },
+    mascotImg(correct ? MASCOT.victory : MASCOT.fail, "feedback-mascot", "56"),
+    h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
+  );
 }
 
 function optionButtons(options, onPick) {
@@ -693,9 +703,11 @@ function show(parent, ...nodes) {
 function setScreen(next) {
   closePhoto();
   releaseLinkBoard();
+  const screenChanged = screen !== next;
   screen = next;
   mount();
-  window.scrollTo(0, 0);
+  // Ne pas remonter en haut entre deux questions du même quiz.
+  if (screenChanged) window.scrollTo(0, 0);
 }
 
 function goHome() {
@@ -1056,12 +1068,7 @@ function paintReveal(selected, correct) {
   const feedback = document.querySelector("[data-feedback]");
   feedback.className = correct ? "feedback is-correct" : "feedback is-wrong";
   feedback.replaceChildren(
-    h(
-      "div",
-      { class: "feedback-head" },
-      mascotImg(correct ? MASCOT.victory : MASCOT.think, "feedback-mascot", "56"),
-      h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
-    ),
+    feedbackHead(correct),
     h("p", {
       text: correct
         ? question.explication
@@ -2252,7 +2259,7 @@ function paintPairReveal(answer, correct) {
         wikipediaLink(question.right.nom_commun, question.right.nom_scientifique),
       );
   feedback.replaceChildren(
-    h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
+    feedbackHead(correct),
     h("p", { text: detail }),
     latinLine,
   );
@@ -2607,7 +2614,7 @@ function paintSexReveal(correct, correctCount) {
   const feedback = document.querySelector("[data-feedback]");
   feedback.className = correct ? "feedback is-correct" : "feedback is-wrong";
   feedback.replaceChildren(
-    h("h2", { text: correct ? "Bonne réponse" : "Mauvaise réponse" }),
+    feedbackHead(correct),
     h("p", { text: question.explication }),
     latinWithWiki(question.nom_commun, question.nom_scientifique),
   );
