@@ -10,6 +10,30 @@ import {
   setSafeFish,
 } from "./images.js";
 import { getBest, recordScore } from "./scores.js";
+import { startOnboarding } from "./onboarding.js";
+
+const OPTION_LETTERS = ["a", "b", "c", "d"];
+
+function optionButtons(options, onPick) {
+  return (options || []).map((option, index) => {
+    const letter = OPTION_LETTERS[index] || "a";
+    return h(
+      "button",
+      {
+        class: "option",
+        type: "button",
+        "data-answer": option,
+        onClick: () => onPick(option),
+      },
+      h("span", {
+        class: `option-letter option-letter--${letter}`,
+        text: letter.toUpperCase(),
+        "aria-hidden": "true",
+      }),
+      h("span", { class: "option-label", text: option }),
+    );
+  });
+}
 
 const LEVELS = [
   { id: "facile", label: "Facile" },
@@ -982,10 +1006,10 @@ function paintReveal(selected, correct) {
     button.disabled = true;
     const value = button.dataset.answer;
     if (value === question.nom_commun) {
-      button.classList.add("is-correct");
+      button.classList.add("is-correct", "is-pop");
       button.append(h("small", { text: "Bonne réponse" }));
     } else if (value === selected) {
-      button.classList.add("is-wrong");
+      button.classList.add("is-wrong", "is-shake");
       button.append(h("small", { text: "Ton choix" }));
     }
   }
@@ -1216,7 +1240,19 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
   const quizOn = screen !== "reference" && screen !== "fiche";
   const refOn = !quizOn;
   row.append(
-    h("button", { class: "brand", type: "button", text: "Quiz photo", onClick: goHome }),
+    h(
+      "button",
+      { class: "brand", type: "button", onClick: goHome, "aria-label": "QuiQuiz — accueil" },
+      h("img", {
+        class: "brand-mark",
+        src: "assets/mascot/cui-cui.png",
+        alt: "",
+        width: "36",
+        height: "36",
+        decoding: "async",
+      }),
+      h("span", { text: "QuiQuiz" }),
+    ),
     h(
       "div",
       { class: "app-tabs", role: "tablist", "aria-label": "Sections" },
@@ -1287,13 +1323,13 @@ function homeCard(entry, onClick) {
 }
 
 function mountHome() {
-  document.title = "Quiz photo";
+  document.title = "QuiQuiz";
   const themes = catalogThemes();
   if (!themes.length) {
     renderTop({ title: "Choisis une catégorie" });
     view.replaceChildren(
       ...[
-      h("p", { class: "lede", text: "Un quiz en images, joué entièrement dans le navigateur." }),
+      h("p", { class: "lede", text: "Un quiz en images avec Cui-Cui — joué entièrement dans le navigateur." }),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
       h(
         "div",
@@ -1386,7 +1422,7 @@ function mountHome() {
   renderTop({ title: "Choisis un thème" });
   view.replaceChildren(
     ...[
-    h("p", { class: "lede", text: "Un quiz en images. Choisis un thème, puis un lieu." }),
+    h("p", { class: "lede", text: "Avec Cui-Cui : choisis un thème, puis un lieu." }),
     state.notice ? h("p", { class: "note", text: state.notice }) : null,
     h(
       "div",
@@ -1411,7 +1447,7 @@ function mountLevels() {
   const category = state.category;
   const copy = quizCopy(category);
   const modes = availableModes(category);
-  document.title = `${category.categorie} — Quiz photo`;
+  document.title = `${category.categorie} — QuiQuiz`;
   renderTop({ kicker: category.categorie, title: "Choisis un niveau" });
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
@@ -1854,7 +1890,7 @@ function mountChantQuiz() {
   chantPicture = null;
   chantPictureUrl = "";
   chantPictureFailed = false;
-  document.title = `Question ${position} sur ${total} — Quiz photo`;
+  document.title = `Question ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -1925,18 +1961,7 @@ function mountChantQuiz() {
     h(
       "div",
       { class: "options", role: "group", "aria-label": "Réponses" },
-      question.options.map((option) =>
-        h(
-          "button",
-          {
-            class: "option",
-            type: "button",
-            "data-answer": option,
-            onClick: () => choose(option),
-          },
-          h("span", { text: option }),
-        ),
-      ),
+      ...optionButtons(question.options, choose),
     ),
     h("div", { "data-feedback": "true" }),
     h(
@@ -1961,7 +1986,7 @@ function mountClassicQuiz() {
   const total = state.questions.length;
   const position = state.index + 1;
   const showPhoto = state.mode !== "description";
-  document.title = `Question ${position} sur ${total} — Quiz photo`;
+  document.title = `Question ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -2022,18 +2047,7 @@ function mountClassicQuiz() {
       : h(
           "div",
           { class: "options", role: "group", "aria-label": "Réponses" },
-          question.options.map((option) =>
-            h(
-              "button",
-              {
-                class: "option",
-                type: "button",
-                "data-answer": option,
-                onClick: () => choose(option),
-              },
-              h("span", { text: option }),
-            ),
-          ),
+          ...optionButtons(question.options, choose),
         );
 
   show(
@@ -2058,7 +2072,7 @@ function mountClassicQuiz() {
 function mountSortQuiz() {
   const copy = quizCopy();
   const title = copy.modes.groupes?.label || "Ranger par groupe";
-  document.title = `${title} — Quiz photo`;
+  document.title = `${title} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title,
@@ -2120,7 +2134,7 @@ function mountPairQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Question ${position} sur ${total} — Quiz photo`;
+  document.title = `Question ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -2170,10 +2184,10 @@ function paintPairReveal(answer, correct) {
     button.disabled = true;
     const expected = question.same ? "oui" : "non";
     if (button.dataset.pair === expected) {
-      button.classList.add("is-correct");
+      button.classList.add("is-correct", "is-pop");
       button.append(h("small", { text: "Bonne réponse" }));
     } else if (button.dataset.pair === answer) {
-      button.classList.add("is-wrong");
+      button.classList.add("is-wrong", "is-shake");
       button.append(h("small", { text: "Ton choix" }));
     }
   }
@@ -2418,7 +2432,7 @@ function mountVariantQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Série ${position} sur ${total} — Quiz photo`;
+  document.title = `Série ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Série ${position} sur ${total}`,
@@ -2606,7 +2620,7 @@ function mountSexQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Question ${position} sur ${total} — Quiz photo`;
+  document.title = `Question ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -3207,7 +3221,7 @@ function mountLinkQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Série ${position} sur ${total} — Quiz photo`;
+  document.title = `Série ${position} sur ${total} — QuiQuiz`;
   renderTop({
     kicker: quizKicker(),
     title: `Série ${position} sur ${total}`,
@@ -3302,7 +3316,7 @@ function mountLinkQuiz() {
 
 function mountPreparing() {
   const copy = quizCopy();
-  document.title = "Préparation — Quiz photo";
+  document.title = "Préparation — QuiQuiz";
   renderTop({
     kicker: quizKicker(),
     title: copy.preparingTitle,
@@ -3452,13 +3466,15 @@ function fillKnownFrame(frame, url, stillHere) {
 function mountResults() {
   const total = scoreTotal();
   const outcome = state.outcome;
-  document.title = "Résultat — Quiz photo";
+  document.title = "Résultat — QuiQuiz";
   renderTop({
     kicker: quizKicker(),
     title: "Résultat",
   });
 
   const percent = total ? Math.round((state.score / total) * 100) : 0;
+  const mascotPose =
+    percent >= 80 ? "assets/mascot/cui-cui.png" : "assets/mascot/cui-cui-think.png";
   const recordLine = outcome?.improved
     ? "Nouveau record pour ce mode."
     : outcome?.best
@@ -3501,9 +3517,25 @@ function mountResults() {
 
   show(
     view,
-    h("p", { class: "score-xl", text: `${state.score}/${total}` }),
-    h("p", { class: "percent", text: `${percent} %` }),
-    recordLine ? h("p", { class: "record", text: recordLine }) : null,
+    h(
+      "div",
+      { class: "results-hero" },
+      h("img", {
+        class: "results-mascot",
+        src: mascotPose,
+        alt: "",
+        width: "120",
+        height: "120",
+        decoding: "async",
+      }),
+      h(
+        "div",
+        { class: "results-score-wrap" },
+        h("p", { class: "score-xl", text: `${state.score}/${total}` }),
+        h("p", { class: "percent", text: `${percent} %` }),
+        recordLine ? h("p", { class: "record", text: recordLine }) : null,
+      ),
+    ),
     missed,
     h(
       "div",
@@ -3600,7 +3632,7 @@ function referenceCard(question) {
 
 function mountReference() {
   const category = referenceCategory();
-  document.title = "Référence — Quiz photo";
+  document.title = "Référence — QuiQuiz";
   renderTop({ title: "Référence" });
   if (!category) {
     view.replaceChildren(h("p", { class: "lede", text: quizCopy().referenceEmpty }));
@@ -3735,8 +3767,8 @@ async function loadFicheGallery(gallery, question, still) {
 }
 
 function mountError() {
-  document.title = "Quiz photo";
-  renderTop({ title: "Quiz photo" });
+  document.title = "QuiQuiz";
+  renderTop({ title: "QuiQuiz" });
   view.replaceChildren(h("p", { class: "lede", text: state.error }));
 }
 
@@ -3750,7 +3782,7 @@ function mount() {
   else if (screen === "fiche") mountFiche();
   else if (screen === "error") mountError();
   else {
-    renderTop({ title: "Quiz photo" });
+    renderTop({ title: "QuiQuiz" });
     view.replaceChildren(h("p", { class: "lede", text: "Chargement…" }));
   }
 }
@@ -3916,6 +3948,7 @@ async function boot() {
     screen = "error";
   }
   mount();
+  if (screen === "home") startOnboarding();
 }
 
 boot();
