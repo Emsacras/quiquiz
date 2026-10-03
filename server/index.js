@@ -34,7 +34,11 @@ app.use(
     })
 );
 
-installPassport();
+try {
+    installPassport();
+} catch (error) {
+    console.error("[auth] installPassport failed — auth désactivée:", error && error.message ? error.message : error);
+}
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -139,9 +143,15 @@ app.post("/auth/logout", (req, res) => {
 });
 
 app.get("/auth/providers", (_req, res) => {
+    let googlePackage = true;
+    try {
+        require.resolve("passport-google-oauth20");
+    } catch {
+        googlePackage = false;
+    }
     res.json({
         steam: isSteamAuthConfigured(),
-        google: isGoogleAuthConfigured()
+        google: isGoogleAuthConfigured() && googlePackage
     });
 });
 

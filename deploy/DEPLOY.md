@@ -19,6 +19,8 @@ cd /var/www/quiquiz
 cp .env.example .env
 nano .env   # STEAM_*, SESSION_SECRET, COOKIE_SECURE=1, PORT=4789
 npm install --omit=dev
+# Après chaque git pull qui touche package.json :
+#   npm install --omit=dev && sudo systemctl restart quiquiz
 ```
 
 ## 3. Systemd

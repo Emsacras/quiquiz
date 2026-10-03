@@ -1,9 +1,17 @@
 const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const { config, isGoogleAuthConfigured } = require("../config");
 const { upsertFromProvider } = require("../services/userStore");
 
 let installed = false;
+let GoogleStrategy = null;
+
+try {
+    GoogleStrategy = require("passport-google-oauth20").Strategy;
+} catch (error) {
+    console.warn(
+        "[auth] passport-google-oauth20 manquant — lance `npm install` sur le serveur. Google OAuth désactivé."
+    );
+}
 
 function googleAvatar(profile) {
     const photos = profile?.photos;
@@ -13,6 +21,9 @@ function googleAvatar(profile) {
 
 function installGoogleStrategy() {
     if (installed) return;
+    if (!GoogleStrategy) {
+        return;
+    }
     if (!isGoogleAuthConfigured()) {
         console.warn(
             "[auth] Google OAuth désactivé : définis GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_CALLBACK_URL dans .env"
@@ -54,7 +65,12 @@ function installGoogleStrategy() {
     installed = true;
 }
 
+function isGoogleStrategyAvailable() {
+    return Boolean(GoogleStrategy);
+}
+
 module.exports = {
     installGoogleStrategy,
-    isGoogleAuthConfigured
+    isGoogleAuthConfigured,
+    isGoogleStrategyAvailable
 };
