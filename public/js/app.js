@@ -2165,14 +2165,63 @@ function profileChip() {
       class: "profile-chip-avatar",
       src: me.avatarUrl,
       alt: "",
-      width: "36",
-      height: "36",
+      width: "28",
+      height: "28",
     });
   }
-  return h("span", {
-    class: "profile-chip-letter",
-    text: (me?.displayName || "?").slice(0, 1).toUpperCase(),
-  });
+  if (me) {
+    return h("span", {
+      class: "profile-chip-letter",
+      text: (me.displayName || "?").slice(0, 1).toUpperCase(),
+    });
+  }
+  return null;
+}
+
+function googleDisabledHint(providers) {
+  const detail = providers?.googleDetail;
+  if (!detail || detail.ok) return "";
+  if (!detail.packageOk) {
+    return "Google : lance `npm install` sur le serveur, puis redémarre QuiQuiz.";
+  }
+  if (!detail.hasClientId || !detail.hasClientSecret) {
+    return "Google : ajoute GOOGLE_CLIENT_ID et GOOGLE_CLIENT_SECRET dans le .env du serveur.";
+  }
+  if (!detail.hasCallbackUrl) {
+    return "Google : ajoute GOOGLE_CALLBACK_URL=https://quiquiz.fr/auth/google/callback dans le .env.";
+  }
+  return "Google n’est pas encore activé sur le serveur.";
+}
+
+function profileAchievements() {
+  const badges = listBadges();
+  const streak = getStreak();
+  const unlocked = badges.filter((b) => b.unlocked).length;
+  return h(
+    "section",
+    { class: "profile-achievements" },
+    h("h2", { text: "Succès" }),
+    h("p", {
+      class: "meta",
+      text: `${unlocked}/${badges.length} débloqués · série ${streak} jour${streak > 1 ? "s" : ""}`,
+    }),
+    h(
+      "div",
+      { class: "profile-badge-grid" },
+      badges.map((badge) =>
+        h(
+          "article",
+          {
+            class: badge.unlocked ? "profile-badge is-on" : "profile-badge",
+            title: badge.unlocked ? "Débloqué" : "Verrouillé",
+          },
+          mascotImg(badge.pose || MASCOT.victory, "profile-badge-mascot", "48"),
+          h("strong", { text: badge.label }),
+          h("span", { class: "meta", text: badge.unlocked ? "Débloqué" : "À débloquer" }),
+        ),
+      ),
+    ),
+  );
 }
 
 function renderTop({ kicker, title, score, onBack, backLabel }) {
@@ -2223,17 +2272,20 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
       h("p", { class: "score-pill" }, "Score ", h("strong", { "data-score": "true", text: String(score) })),
     );
   }
+  const me = getCachedMe();
+  const chip = profileChip();
   end.append(
     h(
       "button",
       {
-        class: screen === "profil" ? "profile-chip is-selected" : "profile-chip",
+        class: screen === "profil" ? "profile-account-btn is-selected" : "profile-account-btn",
         type: "button",
-        title: getCachedMe() ? "Mon profil" : "Connexion",
-        "aria-label": getCachedMe() ? "Mon profil" : "Connexion",
+        title: me ? "Mon profil et mes succès" : "Créer un compte ou se connecter",
+        "aria-label": me ? "Mon profil" : "Créer un compte",
         onClick: openProfile,
       },
-      profileChip(),
+      chip,
+      h("span", { class: "profile-account-label", text: me ? me.displayName || "Profil" : "Compte" }),
     ),
   );
   row.append(end);
@@ -2254,14 +2306,15 @@ function authFlashMessage(code) {
 }
 
 function mountProfile() {
-  document.title = "Profil — QuiQuiz";
+  document.title = "Compte — QuiQuiz";
   const me = getCachedMe();
   const providers = getProviders();
   const flash = authFlashMessage(authFlashFromLocation());
   if (flash) clearAuthFlashFromLocation();
+  const googleHint = googleDisabledHint(providers);
 
   renderTop({
-    title: "Profil",
+    title: me ? "Mon profil" : "Créer un compte",
     onBack: () => {
       if (state.category) setScreen("levels");
       else goHome();
@@ -2276,34 +2329,32 @@ function mountProfile() {
     nodes.push(
       h("p", {
         class: "lede",
-        text: "Connecte-toi pour synchroniser scores, badges, défi du jour et révisions entre tes appareils.",
+        text: "Crée un compte avec Steam ou Google pour synchroniser scores, succès, défi du jour et révisions.",
       }),
       h(
         "div",
-        { class: "profile-actions" },
+        { class: "profile-auth-grid" },
         providers.steam
           ? h("button", {
-              class: "btn",
+              class: "btn profile-auth-btn",
               type: "button",
               text: "Continuer avec Steam",
               onClick: loginSteam,
             })
-          : null,
+          : h("p", { class: "meta", text: "Steam non configuré sur le serveur." }),
         providers.google
           ? h("button", {
-              class: "btn secondary",
+              class: "btn profile-auth-btn is-google",
               type: "button",
               text: "Continuer avec Google",
               onClick: loginGoogle,
             })
-          : null,
+          : h("p", {
+              class: "note",
+              text: googleHint || "Google non configuré sur le serveur.",
+            }),
       ),
-      !providers.steam && !providers.google
-        ? h("p", {
-            class: "meta",
-            text: "Auth non configurée sur ce serveur (Steam / Google).",
-          })
-        : null,
+      profileAchievements(),
     );
     show(view, ...nodes.filter(Boolean));
     return;
@@ -2342,6 +2393,7 @@ function mountProfile() {
       ),
     ),
     h("p", { class: "meta", text: getSyncStatus() || "Sync prête." }),
+    profileAchievements(),
     h(
       "section",
       { class: "profile-links" },
@@ -2364,7 +2416,7 @@ function mountProfile() {
               },
             })
           : providers.steam
-            ? h("button", { class: "text-btn", type: "button", text: "Lier", onClick: loginSteam })
+            ? h("button", { class: "text-btn", type: "button", text: "Lier Steam", onClick: loginSteam })
             : null,
       ),
       h(
@@ -2385,8 +2437,8 @@ function mountProfile() {
               },
             })
           : providers.google
-            ? h("button", { class: "text-btn", type: "button", text: "Lier", onClick: loginGoogle })
-            : null,
+            ? h("button", { class: "text-btn", type: "button", text: "Lier Google", onClick: loginGoogle })
+            : h("span", { class: "meta", text: googleHint || "Google inactif" }),
       ),
     ),
     h(

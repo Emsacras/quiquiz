@@ -22,9 +22,11 @@ const config = {
         realm: process.env.STEAM_REALM || "http://localhost:4789/"
     },
     google: {
-        clientId: process.env.GOOGLE_CLIENT_ID || "",
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-        callbackUrl: process.env.GOOGLE_CALLBACK_URL || "http://localhost:4789/auth/google/callback"
+        clientId: String(process.env.GOOGLE_CLIENT_ID || "").trim(),
+        clientSecret: String(process.env.GOOGLE_CLIENT_SECRET || "").trim(),
+        callbackUrl: String(
+            process.env.GOOGLE_CALLBACK_URL || "http://localhost:4789/auth/google/callback"
+        ).trim()
     }
 };
 
@@ -36,4 +38,22 @@ function isGoogleAuthConfigured() {
     return Boolean(config.google.clientId && config.google.clientSecret && config.google.callbackUrl);
 }
 
-module.exports = { config, isSteamAuthConfigured, isGoogleAuthConfigured };
+function googleAuthStatus() {
+    let packageOk = true;
+    try {
+        require.resolve("passport-google-oauth20");
+    } catch {
+        packageOk = false;
+    }
+    const envOk = isGoogleAuthConfigured();
+    return {
+        ok: packageOk && envOk,
+        packageOk,
+        envOk,
+        hasClientId: Boolean(config.google.clientId),
+        hasClientSecret: Boolean(config.google.clientSecret),
+        hasCallbackUrl: Boolean(config.google.callbackUrl)
+    };
+}
+
+module.exports = { config, isSteamAuthConfigured, isGoogleAuthConfigured, googleAuthStatus };

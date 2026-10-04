@@ -8,7 +8,7 @@ const DAILY_PREFIX = "quiquiz:daily:";
 const SRS_KEY = "quiquiz:srs:v1";
 
 let cachedMe = null;
-let providers = { steam: false, google: false };
+let providers = { steam: false, google: false, googleDetail: null };
 let syncTimer = null;
 let lastSyncLabel = "";
 
@@ -49,6 +49,7 @@ export async function fetchProviders() {
     providers = {
       steam: Boolean(data.steam),
       google: Boolean(data.google),
+      googleDetail: data.googleDetail || null,
     };
   } catch {
     /* ignore */

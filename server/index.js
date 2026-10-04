@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-const { config, isSteamAuthConfigured, isGoogleAuthConfigured } = require("./config");
+const { config, isSteamAuthConfigured, isGoogleAuthConfigured, googleAuthStatus } = require("./config");
 const { passport, installPassport } = require("./auth/passport");
 const { createQuizRoutes, createQuizAdminRoutes } = require("./routes/quizRoutes");
 const { createProfileRoutes } = require("./routes/profileRoutes");
@@ -143,15 +143,11 @@ app.post("/auth/logout", (req, res) => {
 });
 
 app.get("/auth/providers", (_req, res) => {
-    let googlePackage = true;
-    try {
-        require.resolve("passport-google-oauth20");
-    } catch {
-        googlePackage = false;
-    }
+    const google = googleAuthStatus();
     res.json({
         steam: isSteamAuthConfigured(),
-        google: isGoogleAuthConfigured() && googlePackage
+        google: google.ok,
+        googleDetail: google
     });
 });
 

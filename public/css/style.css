@@ -87,33 +87,106 @@ button:disabled {
   gap: 10px;
 }
 
-.profile-chip {
+.profile-account-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  gap: 8px;
+  min-height: 40px;
+  padding: 6px 12px 6px 8px;
   border: 2px solid var(--line, #c9d2c4);
-  border-radius: 50%;
+  border-radius: 999px;
   background: var(--panel, #fff);
+  color: var(--ink, #1c2418);
+  font: inherit;
+  font-weight: 700;
   cursor: pointer;
-  overflow: hidden;
 }
 
-.profile-chip.is-selected {
+.profile-account-btn.is-selected {
   border-color: var(--accent);
 }
 
+.profile-account-label {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .profile-chip-avatar {
-  width: 100%;
-  height: 100%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   object-fit: cover;
+  flex: none;
 }
 
 .profile-chip-letter {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
   font-weight: 700;
   color: var(--accent);
+  flex: none;
+}
+
+.profile-auth-grid {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 22px;
+}
+
+.profile-auth-btn.is-google {
+  background: #fff;
+  color: #1f1f1f;
+  border: 2px solid #dadce0;
+}
+
+.profile-achievements {
+  margin: 0 0 22px;
+}
+
+.profile-achievements h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.profile-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.profile-badge {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 12px 10px;
+  border: 1px solid var(--line, #e2e8de);
+  border-radius: 14px;
+  background: var(--panel, #fff);
+  text-align: center;
+  opacity: 0.55;
+}
+
+.profile-badge.is-on {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--accent) 40%, #e2e8de);
+}
+
+.profile-badge-mascot {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.profile-badge strong {
+  font-size: 0.92rem;
+  line-height: 1.2;
 }
 
 .profile-card {

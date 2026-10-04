@@ -1,4 +1,4 @@
-const CACHE = "quiquiz-shell-v9";
+const CACHE = "quiquiz-shell-v10";
 const PRECACHE = [
   "/",
   "/index.html",
