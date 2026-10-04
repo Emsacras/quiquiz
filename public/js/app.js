@@ -23,15 +23,22 @@ import { loadAdminSession, syncPhotoModFromImg } from "./admin-mod.js";
 import { attachReportControl, confirmGoodImage, hydrateReportedTitles } from "./report.js";
 import { dueCards, dueCount, markCardAgain, markCardOk, upsertMissedCards } from "./learning.js";
 import {
+  buildDailyPerfectMonth,
   claimDailyAttempt,
+  configureAchievementCategories,
+  countDailyPerfectEntries,
   dailySeed,
+  ensureCategoryAchievement,
   finalizeStaleDailyAttempt,
+  getDailyPerfectLog,
   getDailyResult,
   getStreak,
   listBadges,
+  listBadgesByGroup,
   onQuizFinished,
   saveDailyResult,
   seededShuffle,
+  utcDateKey,
 } from "./progress.js";
 import { onHashChange, parseHash, setHashRoute } from "./router.js";
 import {
@@ -164,6 +171,15 @@ function confirmImageIfGood(img, scientificName) {
   });
 }
 
+function achievementGlyph(badge) {
+  return h("span", {
+    class: `ach-glyph tint-${badge.tint || "accent"}`,
+    "data-glyph": badge.glyph || "★",
+    text: badge.glyph || "★",
+    "aria-hidden": "true",
+  });
+}
+
 function showBadgeToasts(badges) {
   if (!badges?.length) return;
   const host = document.getElementById("badge-toasts") || (() => {
@@ -175,8 +191,8 @@ function showBadgeToasts(badges) {
     const toast = h(
       "div",
       { class: "badge-toast" },
-      mascotImg(badge.pose || MASCOT.victory, "badge-toast-mascot", "48"),
-      h("div", null, h("strong", { text: "Badge débloqué" }), h("p", { text: badge.label })),
+      achievementGlyph(badge),
+      h("div", null, h("strong", { text: "Succès débloqué" }), h("p", { text: badge.label })),
     );
     host.append(toast);
     setTimeout(() => toast.remove(), 4200);
@@ -184,20 +200,24 @@ function showBadgeToasts(badges) {
 }
 
 function badgesStrip() {
-  const badges = listBadges();
+  const badges = listBadges().filter((badge) => badge.group === "global");
   const streak = getStreak();
+  const perfectDays = countDailyPerfectEntries();
   return h(
     "section",
     { class: "badges-strip" },
-    h("p", { class: "meta", text: streak ? `Série : ${streak} jour${streak > 1 ? "s" : ""}` : "Série : 0 jour" }),
+    h("p", {
+      class: "meta",
+      text: `Série jeu : ${streak} j · défis parfaits : ${perfectDays}`,
+    }),
     h(
       "div",
       { class: "badge-list" },
-      badges.map((badge) =>
+      badges.slice(0, 12).map((badge) =>
         h("span", {
           class: badge.unlocked ? "badge-pill is-on" : "badge-pill",
           text: badge.label,
-          title: badge.unlocked ? "Débloqué" : "Verrouillé",
+          title: badge.description || (badge.unlocked ? "Débloqué" : "Verrouillé"),
         }),
       ),
     ),
@@ -243,6 +263,7 @@ function rememberCategory(category) {
   const index = state.categories.findIndex((item) => item.id === category.id);
   if (index >= 0) state.categories[index] = category;
   else state.categories.push(category);
+  ensureCategoryAchievement(category.id, category.categorie || category.id);
   return category;
 }
 
@@ -1222,6 +1243,7 @@ const state = {
   reviseIndex: 0,
   reviseRevealed: false,
   pendingBadges: [],
+  calendarMonth: null,
 };
 
 let screen = "loading";
@@ -1613,10 +1635,10 @@ function finishQuiz(options = {}) {
     score: state.score,
     total,
     isDaily: state.isDaily,
+    categoryId: state.category?.id,
   });
   if (state.isDaily) {
-    const dailyBadge = saveDailyResult(state.category.id, state.score, total);
-    if (dailyBadge) unlocked.push(dailyBadge);
+    unlocked.push(...saveDailyResult(state.category.id, state.score, total));
   }
   state.pendingBadges = unlocked.filter(Boolean);
   state.resultTotal = total;
@@ -2193,34 +2215,134 @@ function googleDisabledHint(providers) {
   return "Google n’est pas encore activé sur le serveur.";
 }
 
+function achievementCard(badge) {
+  return h(
+    "article",
+    {
+      class: badge.unlocked ? "profile-badge is-on" : "profile-badge",
+      title: badge.description || "",
+    },
+    achievementGlyph(badge),
+    h("strong", { text: badge.label }),
+    h("span", {
+      class: "meta",
+      text: badge.unlocked ? "Débloqué" : badge.description || "À débloquer",
+    }),
+  );
+}
+
+function profileDailyCalendar() {
+  const now = new Date();
+  if (!state.calendarMonth) {
+    state.calendarMonth = { year: now.getUTCFullYear(), month: now.getUTCMonth() };
+  }
+  const { year, month } = state.calendarMonth;
+  const log = getDailyPerfectLog();
+  const cells = buildDailyPerfectMonth(year, month, log);
+  const label = new Date(Date.UTC(year, month, 1)).toLocaleDateString("fr-FR", {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+  const today = utcDateKey();
+  const total = countDailyPerfectEntries(log);
+  const weekdays = ["L", "M", "M", "J", "V", "S", "D"];
+
+  return h(
+    "section",
+    { class: "daily-calendar" },
+    h("h2", { text: "Défis du jour" }),
+    h("p", {
+      class: "meta",
+      text: `${total} sans faute · une pastille = un quiz parfait ce jour-là`,
+    }),
+    h(
+      "div",
+      { class: "daily-cal-nav" },
+      h("button", {
+        class: "btn secondary daily-cal-nav-btn",
+        type: "button",
+        text: "←",
+        "aria-label": "Mois précédent",
+        onClick: () => {
+          const prev = new Date(Date.UTC(year, month - 1, 1));
+          state.calendarMonth = { year: prev.getUTCFullYear(), month: prev.getUTCMonth() };
+          mountProfile();
+        },
+      }),
+      h("strong", { class: "daily-cal-label", text: label }),
+      h("button", {
+        class: "btn secondary daily-cal-nav-btn",
+        type: "button",
+        text: "→",
+        "aria-label": "Mois suivant",
+        onClick: () => {
+          const next = new Date(Date.UTC(year, month + 1, 1));
+          state.calendarMonth = { year: next.getUTCFullYear(), month: next.getUTCMonth() };
+          mountProfile();
+        },
+      }),
+    ),
+    h(
+      "div",
+      { class: "daily-cal-grid", role: "grid", "aria-label": `Calendrier ${label}` },
+      ...weekdays.map((day) => h("div", { class: "daily-cal-dow", text: day })),
+      ...cells.map((cell) => {
+        if (cell.empty) return h("div", { class: "daily-cal-cell is-empty" });
+        const title = cell.quizzes.length
+          ? cell.quizzes.map((q) => q.label).join(" · ")
+          : "Aucun défi parfait";
+        return h(
+          "div",
+          {
+            class: cell.date === today ? "daily-cal-cell is-today" : "daily-cal-cell",
+            title,
+          },
+          h("span", { class: "daily-cal-day", text: String(cell.day) }),
+          h(
+            "div",
+            { class: "daily-cal-dots" },
+            ...cell.quizzes.map((quiz) =>
+              h("span", {
+                class: `daily-cal-dot tint-${quiz.tint}`,
+                title: quiz.label,
+              }),
+            ),
+          ),
+        );
+      }),
+    ),
+  );
+}
+
 function profileAchievements() {
-  const badges = listBadges();
+  const groups = listBadgesByGroup();
+  const all = [...groups.global, ...groups.category];
+  const unlocked = all.filter((b) => b.unlocked).length;
   const streak = getStreak();
-  const unlocked = badges.filter((b) => b.unlocked).length;
+  const perfectDays = countDailyPerfectEntries();
+
+  const section = (title, list) => {
+    if (!list.length) return null;
+    return h(
+      "div",
+      { class: "profile-ach-group" },
+      h("h3", { class: "profile-ach-heading", text: title }),
+      h("div", { class: "profile-badge-grid" }, ...list.map(achievementCard)),
+    );
+  };
+
   return h(
     "section",
     { class: "profile-achievements" },
     h("h2", { text: "Succès" }),
     h("p", {
       class: "meta",
-      text: `${unlocked}/${badges.length} débloqués · série ${streak} jour${streak > 1 ? "s" : ""}`,
+      text: `${unlocked}/${all.length} débloqués · série ${streak} j · défis parfaits ${perfectDays}`,
     }),
-    h(
-      "div",
-      { class: "profile-badge-grid" },
-      badges.map((badge) =>
-        h(
-          "article",
-          {
-            class: badge.unlocked ? "profile-badge is-on" : "profile-badge",
-            title: badge.unlocked ? "Débloqué" : "Verrouillé",
-          },
-          mascotImg(badge.pose || MASCOT.victory, "profile-badge-mascot", "48"),
-          h("strong", { text: badge.label }),
-          h("span", { class: "meta", text: badge.unlocked ? "Débloqué" : "À débloquer" }),
-        ),
-      ),
-    ),
+    profileDailyCalendar(),
+    section("Globaux", groups.global),
+    section("Par quiz", groups.category),
   );
 }
 
@@ -5698,6 +5820,21 @@ async function boot() {
       state.categories = france ? [france] : [];
       if (!state.categories.length) throw new Error("empty");
     }
+    const leaves = state.catalog
+      ? flattenCatalogLeaves(state.catalog)
+      : state.categories.map((category) => ({
+          id: category.id,
+          nom: category.categorie,
+          fichier: `data/${category.id}.json`,
+        }));
+    configureAchievementCategories(
+      leaves.map((leaf) => ({
+        id: String(leaf.fichier || "")
+          .replace(/^data\//, "")
+          .replace(/\.json$/i, "") || leaf.id,
+        nom: leaf.nom || leaf.id,
+      })),
+    );
     screen = "home";
   } catch {
     state.error =

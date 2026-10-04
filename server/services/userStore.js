@@ -34,6 +34,8 @@ function emptyProgress() {
         scores: {},
         badges: [],
         streak: { last: "", count: 0 },
+        dailyPerfectLog: {},
+        stats: { perfectCount: 0, playedCategories: [] },
         daily: {},
         srs: {},
         syncedAt: 0
@@ -70,11 +72,30 @@ function normalizeProgress(raw) {
     const base = emptyProgress();
     if (!raw || typeof raw !== "object") return base;
     base.scores = raw.scores && typeof raw.scores === "object" ? raw.scores : {};
-    base.badges = Array.isArray(raw.badges) ? raw.badges.filter((b) => typeof b === "string").slice(0, 50) : [];
+    base.badges = Array.isArray(raw.badges)
+        ? raw.badges.filter((b) => typeof b === "string").slice(0, 400)
+        : [];
     base.streak =
         raw.streak && typeof raw.streak === "object"
             ? { last: String(raw.streak.last || ""), count: Math.max(0, Number(raw.streak.count) || 0) }
             : { last: "", count: 0 };
+    base.dailyPerfectLog = (() => {
+        const src = raw.dailyPerfectLog && typeof raw.dailyPerfectLog === "object" ? raw.dailyPerfectLog : {};
+        const out = {};
+        for (const [date, list] of Object.entries(src)) {
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Array.isArray(list)) continue;
+            const ids = [...new Set(list.map((id) => String(id || "").trim()).filter(Boolean))].slice(0, 40);
+            if (ids.length) out[date] = ids;
+        }
+        return out;
+    })();
+    const stats = raw.stats && typeof raw.stats === "object" ? raw.stats : {};
+    base.stats = {
+        perfectCount: Math.max(0, Number(stats.perfectCount) || 0),
+        playedCategories: Array.isArray(stats.playedCategories)
+            ? stats.playedCategories.filter((id) => typeof id === "string").slice(0, 200)
+            : []
+    };
     base.daily = raw.daily && typeof raw.daily === "object" ? raw.daily : {};
     base.srs = raw.srs && typeof raw.srs === "object" ? raw.srs : {};
     base.syncedAt = Number(raw.syncedAt) || 0;

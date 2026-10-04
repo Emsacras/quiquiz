@@ -166,24 +166,34 @@ button:disabled {
   font-size: 1.15rem;
 }
 
+.profile-ach-group {
+  margin-top: 16px;
+}
+
+.profile-ach-heading {
+  margin: 0 0 8px;
+  font-family: var(--font-display, inherit);
+  font-size: 1rem;
+  font-weight: 650;
+}
+
 .profile-badge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
   gap: 10px;
-  margin-top: 12px;
 }
 
 .profile-badge {
   display: grid;
   justify-items: center;
-  gap: 4px;
+  gap: 6px;
   padding: 12px 10px;
   border: 3px solid var(--ink, #1a2744);
   border-radius: var(--radius-card, 22px);
   background: var(--surface, #f7fbff);
   box-shadow: var(--shadow-hard-sm, 3px 3px 0 #1a2744);
   text-align: center;
-  opacity: 0.45;
+  opacity: 0.42;
 }
 
 .profile-badge.is-on {
@@ -191,18 +201,155 @@ button:disabled {
   background: var(--accent-soft, #c5d8f5);
 }
 
-.profile-badge-mascot {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
 .profile-badge strong {
   font-family: var(--font-display, inherit);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.2;
   color: var(--text, #1a2744);
 }
+
+.profile-badge .meta {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.ach-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--ink, #1a2744);
+  border-radius: 14px;
+  background: var(--surface, #f7fbff);
+  color: var(--ink, #1a2744);
+  font-family: var(--font-display, inherit);
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--ink, #1a2744);
+}
+
+.ach-glyph.tint-accent {
+  background: var(--accent, #2f6fe0);
+  color: var(--accent-ink, #fff);
+}
+
+.ach-glyph.tint-ok {
+  background: var(--ok, #2f9e5c);
+  color: #fff;
+}
+
+.ach-glyph.tint-tassel {
+  background: var(--tassel, #f5c542);
+  color: var(--ink, #1a2744);
+}
+
+.ach-glyph.tint-bec {
+  background: var(--bec, #f08a2e);
+  color: #fff;
+}
+
+.badge-toast .ach-glyph {
+  flex: none;
+}
+
+.daily-calendar {
+  margin: 18px 0 22px;
+  padding: 14px;
+  border: 3px solid var(--ink, #1a2744);
+  border-radius: var(--radius-card, 22px);
+  background: var(--surface, #f7fbff);
+  box-shadow: var(--shadow-hard-sm, 3px 3px 0 #1a2744);
+}
+
+.daily-calendar h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.daily-cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.daily-cal-nav-btn {
+  min-height: 40px;
+  min-width: 44px;
+  padding: 6px 12px;
+}
+
+.daily-cal-label {
+  font-family: var(--font-display, inherit);
+  text-transform: capitalize;
+}
+
+.daily-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.daily-cal-dow {
+  text-align: center;
+  font-family: var(--font-display, inherit);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted, #5a6a86);
+}
+
+.daily-cal-cell {
+  min-height: 52px;
+  padding: 4px;
+  border: 2px solid var(--ink, #1a2744);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface, #fff) 88%, var(--bg, #e8f1fc));
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.daily-cal-cell.is-empty {
+  border-color: transparent;
+  background: transparent;
+  min-height: 0;
+}
+
+.daily-cal-cell.is-today {
+  background: var(--accent-soft, #c5d8f5);
+}
+
+.daily-cal-day {
+  font-family: var(--font-display, inherit);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.daily-cal-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: auto;
+}
+
+.daily-cal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink, #1a2744);
+  background: var(--accent, #2f6fe0);
+}
+
+.daily-cal-dot.tint-accent { background: var(--accent, #2f6fe0); }
+.daily-cal-dot.tint-ok { background: var(--ok, #2f9e5c); }
+.daily-cal-dot.tint-tassel { background: var(--tassel, #f5c542); }
+.daily-cal-dot.tint-bec { background: var(--bec, #f08a2e); }
+.daily-cal-dot.tint-letter-a { background: var(--letter-a, #2f9e5c); }
+.daily-cal-dot.tint-letter-b { background: var(--letter-b, #2f6fe0); }
+.daily-cal-dot.tint-letter-c { background: var(--letter-c, #f08a2e); }
+.daily-cal-dot.tint-letter-d { background: var(--letter-d, #e24b4b); }
 
 .profile-card {
   display: grid;

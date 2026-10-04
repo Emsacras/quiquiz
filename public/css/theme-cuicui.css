@@ -224,6 +224,11 @@ body.theme-cuicui::after {
   box-shadow: var(--shadow-hard-sm);
 }
 
+.theme-cuicui .profile-ach-heading {
+  font-family: var(--font-display);
+  color: var(--text);
+}
+
 .theme-cuicui .profile-badge {
   border-color: var(--ink);
   background: var(--surface);
@@ -237,6 +242,56 @@ body.theme-cuicui::after {
 .theme-cuicui .profile-badge strong {
   font-family: var(--font-display);
   color: var(--text);
+}
+
+.theme-cuicui .ach-glyph {
+  border-color: var(--ink);
+  font-family: var(--font-display);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.theme-cuicui .ach-glyph.tint-accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.theme-cuicui .ach-glyph.tint-ok {
+  background: var(--ok);
+  color: #fff;
+}
+
+.theme-cuicui .ach-glyph.tint-tassel {
+  background: var(--tassel);
+  color: var(--ink);
+}
+
+.theme-cuicui .ach-glyph.tint-bec {
+  background: var(--bec);
+  color: #fff;
+}
+
+.theme-cuicui .daily-calendar {
+  border-color: var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .daily-cal-label,
+.theme-cuicui .daily-cal-day,
+.theme-cuicui .daily-cal-dow {
+  font-family: var(--font-display);
+}
+
+.theme-cuicui .daily-cal-cell {
+  border-color: var(--ink);
+}
+
+.theme-cuicui .daily-cal-cell.is-today {
+  background: var(--accent-soft);
+}
+
+.theme-cuicui .daily-cal-dot {
+  border-color: var(--ink);
 }
 
 .theme-cuicui .back-link,

@@ -6,6 +6,8 @@ const BADGES_KEY = "quiquiz:badges:v1";
 const STREAK_KEY = "quiquiz:streak:v1";
 const DAILY_PREFIX = "quiquiz:daily:";
 const SRS_KEY = "quiquiz:srs:v1";
+const STATS_KEY = "quiquiz:stats:v1";
+const DAILY_PERFECT_LOG_KEY = "quiquiz:daily-perfect-log:v1";
 
 let cachedMe = null;
 let providers = { steam: false, google: false, googleDetail: null };
@@ -161,6 +163,8 @@ export function collectLocalProgress() {
     scores: collectLocalScores(),
     badges: readJson(BADGES_KEY, []).filter((b) => typeof b === "string"),
     streak: readJson(STREAK_KEY, { last: "", count: 0 }),
+    dailyPerfectLog: readJson(DAILY_PERFECT_LOG_KEY, {}),
+    stats: readJson(STATS_KEY, { perfectCount: 0, playedCategories: [] }),
     daily: collectLocalDaily(),
     srs: readJson(SRS_KEY, {}),
     syncedAt: Date.now(),
@@ -199,6 +203,19 @@ function mergeStreak(a, b) {
   return left.last > right.last ? left : right;
 }
 
+function mergePerfectLog(a, b) {
+  const out = {};
+  for (const src of [a, b]) {
+    if (!src || typeof src !== "object") continue;
+    for (const [date, list] of Object.entries(src)) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Array.isArray(list)) continue;
+      const prev = out[date] || [];
+      out[date] = [...new Set([...prev, ...list.map((id) => String(id || "").trim()).filter(Boolean)])];
+    }
+  }
+  return out;
+}
+
 function mergeSrsCard(a, b) {
   if (!a) return b;
   if (!b) return a;
@@ -230,10 +247,23 @@ export function mergeProgress(local, remote) {
   for (const [key, value] of Object.entries(left.srs || {})) {
     srs[key] = mergeSrsCard(srs[key], value);
   }
+  const leftStats = left.stats || {};
+  const rightStats = right.stats || {};
+  const played = [
+    ...new Set([
+      ...(Array.isArray(rightStats.playedCategories) ? rightStats.playedCategories : []),
+      ...(Array.isArray(leftStats.playedCategories) ? leftStats.playedCategories : []),
+    ]),
+  ].filter((id) => typeof id === "string");
   return {
     scores,
     badges,
     streak: mergeStreak(left.streak, right.streak),
+    dailyPerfectLog: mergePerfectLog(left.dailyPerfectLog, right.dailyPerfectLog),
+    stats: {
+      perfectCount: Math.max(Number(leftStats.perfectCount) || 0, Number(rightStats.perfectCount) || 0),
+      playedCategories: played,
+    },
     daily,
     srs,
     syncedAt: Date.now(),
@@ -261,6 +291,8 @@ export function applyLocalProgress(progress) {
 
   writeJson(BADGES_KEY, Array.isArray(progress.badges) ? progress.badges : []);
   writeJson(STREAK_KEY, progress.streak || { last: "", count: 0 });
+  writeJson(DAILY_PERFECT_LOG_KEY, progress.dailyPerfectLog || {});
+  writeJson(STATS_KEY, progress.stats || { perfectCount: 0, playedCategories: [] });
 
   const daily = progress.daily || {};
   const dailyKeep = new Set(Object.keys(daily).map((k) => DAILY_PREFIX + k));
