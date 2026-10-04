@@ -199,22 +199,44 @@ body.theme-cuicui::after {
 }
 
 .theme-cuicui .profile-account-btn {
-  border-color: color-mix(in srgb, var(--accent) 35%, #fff);
-  background: color-mix(in srgb, var(--panel, #fff) 92%, var(--accent));
-  color: var(--ink, #1c2418);
+  border: 3px solid var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  box-shadow: var(--shadow-hard-sm);
 }
 
-.theme-cuicui .profile-account-btn.is-selected {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+.theme-cuicui .profile-account-btn.is-selected,
+.theme-cuicui .profile-account-btn.is-user {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.theme-cuicui .profile-account-btn:hover {
+  filter: none;
 }
 
 .theme-cuicui .profile-name-input {
-  border-color: color-mix(in srgb, var(--accent) 25%, #c9d2c4);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .profile-badge {
+  border-color: var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-sm);
 }
 
 .theme-cuicui .profile-badge.is-on {
-  background: color-mix(in srgb, var(--panel, #fff) 88%, var(--accent));
+  background: var(--accent-soft);
+}
+
+.theme-cuicui .profile-badge strong {
+  font-family: var(--font-display);
+  color: var(--text);
 }
 
 .theme-cuicui .back-link,

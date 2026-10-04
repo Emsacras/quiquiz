@@ -91,23 +91,34 @@ button:disabled {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 40px;
-  padding: 6px 12px 6px 8px;
-  border: 2px solid var(--line, #c9d2c4);
-  border-radius: 999px;
-  background: var(--panel, #fff);
-  color: var(--ink, #1c2418);
-  font: inherit;
-  font-weight: 700;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 3px solid var(--ink, #1a2744);
+  border-radius: var(--radius-btn, 999px);
+  background: var(--accent, #2f6fe0);
+  color: var(--accent-ink, #fff);
+  font-family: var(--font-display, inherit);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.1;
+  box-shadow: var(--shadow-hard-sm, 3px 3px 0 #1a2744);
   cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.profile-account-btn.is-selected {
-  border-color: var(--accent);
+.profile-account-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink, #1a2744);
+}
+
+.profile-account-btn.is-selected,
+.profile-account-btn.is-user {
+  background: var(--surface, #f7fbff);
+  color: var(--text, #1a2744);
 }
 
 .profile-account-label {
-  max-width: 9rem;
+  max-width: 10rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -119,6 +130,7 @@ button:disabled {
   border-radius: 50%;
   object-fit: cover;
   flex: none;
+  border: 2px solid var(--ink, #1a2744);
 }
 
 .profile-chip-letter {
@@ -127,22 +139,22 @@ button:disabled {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  border: 2px solid var(--ink, #1a2744);
+  background: var(--accent-soft, #c5d8f5);
+  font-family: var(--font-display, inherit);
   font-weight: 700;
-  color: var(--accent);
+  color: var(--ink, #1a2744);
   flex: none;
 }
 
 .profile-auth-grid {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   margin: 0 0 22px;
 }
 
-.profile-auth-btn.is-google {
-  background: #fff;
-  color: #1f1f1f;
-  border: 2px solid #dadce0;
+.profile-auth-grid .btn {
+  width: 100%;
 }
 
 .profile-achievements {
@@ -166,16 +178,17 @@ button:disabled {
   justify-items: center;
   gap: 4px;
   padding: 12px 10px;
-  border: 1px solid var(--line, #e2e8de);
-  border-radius: 14px;
-  background: var(--panel, #fff);
+  border: 3px solid var(--ink, #1a2744);
+  border-radius: var(--radius-card, 22px);
+  background: var(--surface, #f7fbff);
+  box-shadow: var(--shadow-hard-sm, 3px 3px 0 #1a2744);
   text-align: center;
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 .profile-badge.is-on {
   opacity: 1;
-  border-color: color-mix(in srgb, var(--accent) 40%, #e2e8de);
+  background: var(--accent-soft, #c5d8f5);
 }
 
 .profile-badge-mascot {
@@ -185,8 +198,10 @@ button:disabled {
 }
 
 .profile-badge strong {
-  font-size: 0.92rem;
+  font-family: var(--font-display, inherit);
+  font-size: 0.95rem;
   line-height: 1.2;
+  color: var(--text, #1a2744);
 }
 
 .profile-card {

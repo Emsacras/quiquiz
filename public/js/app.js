@@ -2274,18 +2274,28 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
   }
   const me = getCachedMe();
   const chip = profileChip();
+  const accountClass = [
+    "profile-account-btn",
+    me ? "is-user" : "",
+    screen === "profil" ? "is-selected" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   end.append(
     h(
       "button",
       {
-        class: screen === "profil" ? "profile-account-btn is-selected" : "profile-account-btn",
+        class: accountClass,
         type: "button",
         title: me ? "Mon profil et mes succès" : "Créer un compte ou se connecter",
         "aria-label": me ? "Mon profil" : "Créer un compte",
         onClick: openProfile,
       },
       chip,
-      h("span", { class: "profile-account-label", text: me ? me.displayName || "Profil" : "Compte" }),
+      h("span", {
+        class: "profile-account-label",
+        text: me ? me.displayName || "Profil" : "Compte",
+      }),
     ),
   );
   row.append(end);
@@ -2336,7 +2346,7 @@ function mountProfile() {
         { class: "profile-auth-grid" },
         providers.steam
           ? h("button", {
-              class: "btn profile-auth-btn",
+              class: "btn",
               type: "button",
               text: "Continuer avec Steam",
               onClick: loginSteam,
@@ -2344,7 +2354,7 @@ function mountProfile() {
           : h("p", { class: "meta", text: "Steam non configuré sur le serveur." }),
         providers.google
           ? h("button", {
-              class: "btn profile-auth-btn is-google",
+              class: "btn secondary",
               type: "button",
               text: "Continuer avec Google",
               onClick: loginGoogle,
