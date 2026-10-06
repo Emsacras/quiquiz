@@ -20,14 +20,18 @@
                   "nom": "France",
                   "fichier": "data/oiseaux-francais.json",
                   "description": "154 espèces, dans les cinq groupes.",
-                  "regions": ["france"]
+                  "regions": [
+                    "france"
+                  ]
                 },
                 {
                   "id": "oiseaux-royaume-uni",
                   "nom": "Royaume-Uni",
                   "fichier": "data/oiseaux-royaume-uni.json",
                   "description": "166 espèces, dans les cinq groupes.",
-                  "regions": ["royaume-uni"]
+                  "regions": [
+                    "royaume-uni"
+                  ]
                 }
               ]
             },
@@ -36,28 +40,45 @@
               "nom": "Reptiles",
               "fichier": "data/reptiles-france.json",
               "description": "40 reptiles de France, des lézards aux tortues marines.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
             },
             {
               "id": "poissons",
               "nom": "Poissons",
               "fichier": "data/poissons-france.json",
               "description": "154 poissons de rivière, de lac et de mer.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
             },
             {
               "id": "insectes",
               "nom": "Insectes",
               "fichier": "data/insectes-france.json",
               "description": "Coléoptères, papillons, abeilles et autres insectes de France.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
             },
             {
               "id": "mammiferes",
               "nom": "Mammifères",
               "fichier": "data/mammiferes-france.json",
               "description": "Carnivores, ongulés, rongeurs, chauves-souris et marins de France.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
+            },
+            {
+              "id": "bebes-animaux",
+              "nom": "Bébés animaux",
+              "fichier": "data/bebes-animaux.json",
+              "description": "Photo d’un petit : retrouve le nom du bébé.",
+              "regions": [
+                "monde"
+              ]
             }
           ]
         },
@@ -71,21 +92,37 @@
               "nom": "Plantes de France",
               "fichier": "data/plantes-france.json",
               "description": "165 plantes de France, du jardin à la montagne.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
             },
             {
               "id": "arbres",
               "nom": "Arbres",
               "fichier": "data/arbres-france.json",
               "description": "Feuillus, conifères, méditerranéens et fruitiers de France.",
-              "regions": ["france"]
+              "regions": [
+                "france"
+              ]
             },
             {
               "id": "fruits-legumes",
               "nom": "Fruits et légumes",
               "fichier": "data/fruits-legumes.json",
               "description": "Fruits, légumes-feuilles, racines et légumineuses du quotidien.",
-              "regions": ["monde"]
+              "regions": [
+                "monde"
+              ]
+            },
+            {
+              "id": "feuilles-arbres",
+              "nom": "Feuilles d’arbres",
+              "fichier": "data/feuilles-arbres.json",
+              "description": "Reconnaître un arbre uniquement par sa feuille.",
+              "regions": [
+                "france",
+                "monde"
+              ]
             }
           ]
         },
@@ -94,7 +131,9 @@
           "nom": "Champignons",
           "fichier": "data/champignons-france.json",
           "description": "167 champignons de France, de la forêt à la pinède.",
-          "regions": ["france"]
+          "regions": [
+            "france"
+          ]
         }
       ]
     },
@@ -108,35 +147,70 @@
           "nom": "Pays du monde",
           "fichier": "data/pays-monde.json",
           "description": "197 pays du monde à reconnaître à leur contour.",
-          "regions": ["monde"]
+          "regions": [
+            "monde"
+          ]
         },
         {
           "id": "capitales",
           "nom": "Capitales",
           "fichier": "data/capitales-monde.json",
           "description": "Capitales du monde, classées par continent.",
-          "regions": ["monde"]
+          "regions": [
+            "monde"
+          ]
         },
         {
           "id": "drapeaux",
           "nom": "Drapeaux",
           "fichier": "data/drapeaux-monde.json",
           "description": "Drapeaux du monde à reconnaître.",
-          "regions": ["monde"]
+          "regions": [
+            "monde"
+          ]
         }
       ]
     },
     {
       "id": "sciences-terre",
       "nom": "Sciences de la Terre",
-      "description": "Rochers, minéraux et plus tard fossiles.",
+      "description": "Rochers, minéraux, nuages, constellations, fossiles…",
       "children": [
         {
           "id": "rochers-mineraux",
           "nom": "Rochers et minéraux",
           "fichier": "data/rochers-mineraux.json",
           "description": "Silicates, carbonates, oxydes, gemmes et métaux.",
-          "regions": ["monde"]
+          "regions": [
+            "monde"
+          ]
+        },
+        {
+          "id": "nuages",
+          "nom": "Nuages",
+          "fichier": "data/nuages.json",
+          "description": "Types de nuages : cumulus, cirrus, cumulonimbus…",
+          "regions": [
+            "monde"
+          ]
+        },
+        {
+          "id": "constellations",
+          "nom": "Constellations",
+          "fichier": "data/constellations.json",
+          "description": "Reconnaître les constellations sur une carte du ciel.",
+          "regions": [
+            "monde"
+          ]
+        },
+        {
+          "id": "fossiles",
+          "nom": "Fossiles",
+          "fichier": "data/fossiles.json",
+          "description": "Ammonites, trilobites, dents et empreintes fossiles.",
+          "regions": [
+            "monde"
+          ]
         }
       ]
     }

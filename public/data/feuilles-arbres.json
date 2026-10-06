@@ -1,0 +1,331 @@
+{
+  "id": "feuilles-arbres",
+  "categorie": "Feuilles d’arbres",
+  "description": "Reconnais l’arbre uniquement grâce à sa feuille (pas le tronc ni le fruit).",
+  "groupes": [
+    {
+      "id": "lobées",
+      "label": "Lobées / découpées",
+      "questions": [
+        {
+          "id": "lobées1",
+          "difficulte": "facile",
+          "nom_commun": "Chêne pédonculé",
+          "nom_scientifique": "Quercus robur",
+          "groupe": "lobées",
+          "options": [
+            "Figuier",
+            "Érable sycomore",
+            "Chêne pédonculé",
+            "Tulipier de Virginie"
+          ],
+          "indice": "Lobes arrondis, sans pointes",
+          "description": "Feuille lobée à lobes arrondis, limbe coriace.",
+          "explication": "Chêne pédonculé : Feuille lobée classique des chênaies.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "lobées2",
+          "difficulte": "facile",
+          "nom_commun": "Érable sycomore",
+          "nom_scientifique": "Acer pseudoplatanus",
+          "groupe": "lobées",
+          "options": [
+            "Chêne pédonculé",
+            "Érable sycomore",
+            "Platane",
+            "Figuier"
+          ],
+          "indice": "Cinq lobes palmés",
+          "description": "Feuille palmée à cinq lobes dentés.",
+          "explication": "Érable sycomore : Feuille palmée, samares en « hélicoptère ».",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "lobées3",
+          "difficulte": "moyen",
+          "nom_commun": "Platane",
+          "nom_scientifique": "Platanus × hispanica",
+          "groupe": "lobées",
+          "options": [
+            "Figuier",
+            "Érable sycomore",
+            "Platane",
+            "Chêne pédonculé"
+          ],
+          "indice": "Grands lobes pointus",
+          "description": "Grande feuille palmée à lobes aigus, nervures marquées.",
+          "explication": "Platane : Feuille large des alignements urbains.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "lobées4",
+          "difficulte": "moyen",
+          "nom_commun": "Figuier",
+          "nom_scientifique": "Ficus carica",
+          "groupe": "lobées",
+          "options": [
+            "Figuier",
+            "Liquidambar",
+            "Platane",
+            "Érable sycomore"
+          ],
+          "indice": "3 à 5 lobes profonds",
+          "description": "Feuille épaisse, lobes profonds, face rugueuse.",
+          "explication": "Figuier : Feuille caractéristique du bassin méditerranéen.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "lobées5",
+          "difficulte": "difficile",
+          "nom_commun": "Liquidambar",
+          "nom_scientifique": "Liquidambar styraciflua",
+          "groupe": "lobées",
+          "options": [
+            "Liquidambar",
+            "Platane",
+            "Chêne pédonculé",
+            "Tulipier de Virginie"
+          ],
+          "indice": "Étoile à 5–7 pointes",
+          "description": "Feuille étoilée à lobes pointus, belles couleurs d’automne.",
+          "explication": "Liquidambar : Feuille étoilée des parcs.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "lobées6",
+          "difficulte": "difficile",
+          "nom_commun": "Tulipier de Virginie",
+          "nom_scientifique": "Liriodendron tulipifera",
+          "groupe": "lobées",
+          "options": [
+            "Liquidambar",
+            "Platane",
+            "Érable sycomore",
+            "Tulipier de Virginie"
+          ],
+          "indice": "Feuille « en selle » tronquée",
+          "description": "Feuille à limbe tronqué au sommet, forme unique.",
+          "explication": "Tulipier : Feuille inimitables, sommets comme coupés.",
+          "imageQuery": "leaf"
+        }
+      ]
+    },
+    {
+      "id": "simples",
+      "label": "Simples ovales",
+      "questions": [
+        {
+          "id": "simples1",
+          "difficulte": "facile",
+          "nom_commun": "Hêtre",
+          "nom_scientifique": "Fagus sylvatica",
+          "groupe": "simples",
+          "options": [
+            "Hêtre",
+            "Aulne glutineux",
+            "Bouleau verruqueux",
+            "Orme champêtre"
+          ],
+          "indice": "Ovale, bord ondulé",
+          "description": "Feuille ovale à bord légèrement ondulé, nervures parallèles.",
+          "explication": "Hêtre : Feuille lisse, tipique des hêtraies.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "simples2",
+          "difficulte": "facile",
+          "nom_commun": "Bouleau verruqueux",
+          "nom_scientifique": "Betula pendula",
+          "groupe": "simples",
+          "options": [
+            "Charme",
+            "Aulne glutineux",
+            "Tilleul",
+            "Bouleau verruqueux"
+          ],
+          "indice": "Petite, triangulaire-dentée",
+          "description": "Petite feuille dentée, base souvent en coin.",
+          "explication": "Bouleau : Petite feuille dentée des clairières.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "simples3",
+          "difficulte": "moyen",
+          "nom_commun": "Tilleul",
+          "nom_scientifique": "Tilia cordata",
+          "groupe": "simples",
+          "options": [
+            "Tilleul",
+            "Hêtre",
+            "Aulne glutineux",
+            "Orme champêtre"
+          ],
+          "indice": "Cœur asymétrique",
+          "description": "Feuille cordiforme, base asymétrique, pointe fine.",
+          "explication": "Tilleul : Feuille en cœur, parfum des fleurs.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "simples4",
+          "difficulte": "moyen",
+          "nom_commun": "Orme champêtre",
+          "nom_scientifique": "Ulmus minor",
+          "groupe": "simples",
+          "options": [
+            "Orme champêtre",
+            "Charme",
+            "Hêtre",
+            "Bouleau verruqueux"
+          ],
+          "indice": "Base très asymétrique",
+          "description": "Feuille doublement dentée, base fortement inégale.",
+          "explication": "Orme : Base de feuille très asymétrique.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "simples5",
+          "difficulte": "difficile",
+          "nom_commun": "Charme",
+          "nom_scientifique": "Carpinus betulus",
+          "groupe": "simples",
+          "options": [
+            "Bouleau verruqueux",
+            "Orme champêtre",
+            "Charme",
+            "Hêtre"
+          ],
+          "indice": "Nervures très marquées, double dent",
+          "description": "Feuille ovale plissée, double denture régulière.",
+          "explication": "Charme : Feuille plissée des haies et forêts.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "simples6",
+          "difficulte": "difficile",
+          "nom_commun": "Aulne glutineux",
+          "nom_scientifique": "Alnus glutinosa",
+          "groupe": "simples",
+          "options": [
+            "Charme",
+            "Hêtre",
+            "Bouleau verruqueux",
+            "Aulne glutineux"
+          ],
+          "indice": "Sommet échancré",
+          "description": "Feuille arrondie au sommet souvent échancré.",
+          "explication": "Aulne : Feuille à sommet tronqué / échancré, bords d’eau.",
+          "imageQuery": "leaf"
+        }
+      ]
+    },
+    {
+      "id": "composees",
+      "label": "Composées / aiguilles",
+      "questions": [
+        {
+          "id": "composees1",
+          "difficulte": "facile",
+          "nom_commun": "Frêne commun",
+          "nom_scientifique": "Fraxinus excelsior",
+          "groupe": "composees",
+          "options": [
+            "Noyer",
+            "Frêne commun",
+            "Sapin pectiné",
+            "Mélèze"
+          ],
+          "indice": "Foliooles opposées",
+          "description": "Feuille composée imparipennée, nombreuses folioles.",
+          "explication": "Frêne : Feuille composée typique.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "composees2",
+          "difficulte": "facile",
+          "nom_commun": "Robinier",
+          "nom_scientifique": "Robinia pseudoacacia",
+          "groupe": "composees",
+          "options": [
+            "Noyer",
+            "Robinier",
+            "Frêne commun",
+            "Sapin pectiné"
+          ],
+          "indice": "Folioles ovales arrondies",
+          "description": "Feuille composée à folioles ovales, souvent épineuse à la base.",
+          "explication": "Robinier (acacia) : Feuille composée des bords de route.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "composees3",
+          "difficulte": "moyen",
+          "nom_commun": "Noyer",
+          "nom_scientifique": "Juglans regia",
+          "groupe": "composees",
+          "options": [
+            "Frêne commun",
+            "Mélèze",
+            "Sapin pectiné",
+            "Noyer"
+          ],
+          "indice": "Grandes folioles aromatiques",
+          "description": "Feuille composée à grandes folioles odorantes.",
+          "explication": "Noyer : Feuille composée forte odeur.",
+          "imageQuery": "leaf"
+        },
+        {
+          "id": "composees4",
+          "difficulte": "moyen",
+          "nom_commun": "Pin sylvestre",
+          "nom_scientifique": "Pinus sylvestris",
+          "groupe": "composees",
+          "options": [
+            "Pin sylvestre",
+            "Mélèze",
+            "Sapin pectiné",
+            "Noyer"
+          ],
+          "indice": "Aiguilles par 2",
+          "description": "Aiguilles groupées par deux, assez courtes.",
+          "explication": "Pin sylvestre : Aiguilles géminées.",
+          "imageQuery": "needles"
+        },
+        {
+          "id": "composees5",
+          "difficulte": "difficile",
+          "nom_commun": "Mélèze",
+          "nom_scientifique": "Larix decidua",
+          "groupe": "composees",
+          "options": [
+            "Noyer",
+            "Robinier",
+            "Mélèze",
+            "Pin sylvestre"
+          ],
+          "indice": "Aiguilles en rosettes, caduques",
+          "description": "Aiguilles souples en touffes sur les rameaux courts.",
+          "explication": "Mélèze : Seul conifère européen à perdre ses aiguilles.",
+          "imageQuery": "needles"
+        },
+        {
+          "id": "composees6",
+          "difficulte": "difficile",
+          "nom_commun": "Sapin pectiné",
+          "nom_scientifique": "Abies alba",
+          "groupe": "composees",
+          "options": [
+            "Mélèze",
+            "Pin sylvestre",
+            "Sapin pectiné",
+            "Frêne commun"
+          ],
+          "indice": "Aiguilles plates en peigne",
+          "description": "Aiguilles aplaties disposées en peigne, face inférieure claire.",
+          "explication": "Sapin : Aiguilles pectinées, non piquantes.",
+          "imageQuery": "needles"
+        }
+      ]
+    }
+  ]
+}

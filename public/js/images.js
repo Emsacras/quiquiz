@@ -25,7 +25,7 @@ const REQUEST_GAP_MS = 180;
 const MAX_IMAGES = 15;
 
 const FILE_REJECT =
-  /distribution|r[ée]partition|verbreitung|locator|drawing|illustration|diagram|schematic|lithograph|engraving|gravure|spectrogram|sonogram|skeleton|skull|painting|artwork|cladogram|\bmaps?\b|\brange\b|\bicon\b|\blogo\b|\beggs?\b|\bnests?\b|\bcartes?\b|\bkarte\b|\bstamp\b|\bfossil\b|\bplate\b/i;
+  /distribution|r[ée]partition|verbreitung|locator|drawing|illustration|diagram|schematic|lithograph|engraving|gravure|spectrogram|sonogram|skeleton|skull|painting|artwork|cladogram|\bmaps?\b|\brange\b|\bicon\b|\blogo\b|\beggs?\b|\bnests?\b|\bcartes?\b|\bkarte\b|\bstamp\b|\bplate\b/i;
 
 const FISH_UNSAFE =
   /\bmorts?\b|morte|carcass|carcasse|\bdead\b|specimen|sp[ée]cimen|museum|mus[ée]e|taxiderm|market|march[ée]|poissonnerie|food|cuisine|\bdish(?:es)?\b|\bplats?\b|sushi|\bfilets?\b|\bfrit(?:e|es|s)?\b|\bfried\b|fum[ée]|s[ée]ch|dried|smoked|aquarium|\bzoos?\b|captiv|fish[\s_-]?tank/i;
@@ -73,7 +73,7 @@ export function setFruitImages(enabled) {
   fruitImages = Boolean(enabled);
 }
 
-/** kind: species | flag | map | safe | capital | mineral | fruit */
+/** kind: species | flag | map | safe | capital | mineral | fruit | baby | leaf | cloud | constellation | fossil */
 function resolveMediaKind(explicit) {
   if (explicit) return explicit;
   if (flagImages) return "flag";
@@ -94,6 +94,11 @@ function poolKey(scientificName, kind = "species") {
   if (kind === "capital") return `capital:${name}`;
   if (kind === "mineral") return `mineral:${name}`;
   if (kind === "fruit") return `fruit:${name}`;
+  if (kind === "baby") return `baby:${name}`;
+  if (kind === "leaf") return `leaf:${name}`;
+  if (kind === "cloud") return `cloud:${name}`;
+  if (kind === "constellation") return `constellation:${name}`;
+  if (kind === "fossil") return `fossil:${name}`;
   return name;
 }
 const titleByUrl = new Map();
@@ -206,7 +211,20 @@ export function invalidateSpeciesImages(scientificName) {
     memoryPools.clear();
     return;
   }
-  for (const kind of ["species", "flag", "map", "safe", "capital", "mineral", "fruit"]) {
+  for (const kind of [
+    "species",
+    "flag",
+    "map",
+    "safe",
+    "capital",
+    "mineral",
+    "fruit",
+    "baby",
+    "leaf",
+    "cloud",
+    "constellation",
+    "fossil",
+  ]) {
     memoryPools.delete(poolKey(name, kind));
   }
 }
@@ -1013,6 +1031,117 @@ async function fetchFruitImages(scientificName, commonName = "") {
   return { urls: [], items: [], source: "none" };
 }
 
+async function fetchTopicImages({ name, commonName = "", imageQuery = "", queries = [], rejectRe }) {
+  const scientific = String(name || "").trim();
+  const common = String(commonName || "").trim();
+  const hint = String(imageQuery || "").trim();
+  const q = [
+    ...queries,
+    hint && scientific ? `${scientific} ${hint}` : "",
+    hint && common ? `${common} ${hint}` : "",
+    hint || "",
+    common || "",
+    scientific || "",
+  ].filter(Boolean);
+  const titles = await searchThemedTitles(q, {
+    rejectRe: rejectRe || /\b(flag|logo|map of|person|portrait|selfie)\b/i,
+    limit: 12,
+  });
+  if (titles.length) {
+    const items = await resolveFileItems(titles, { requireMapTitle: false });
+    const result = applyRejections({ urls: [], items: items.slice(0, MAX_IMAGES), source: "commons" });
+    if (result.urls?.length || result.items?.length) return result;
+  }
+  if (scientific) return fetchSpeciesImages(scientific);
+  if (common) {
+    const wiki = await wikipediaImage("fr", common);
+    if (wiki) {
+      const item = { title: `File:${common} (Wikipedia).jpg`, url: wiki, validated: false };
+      rememberItems([item]);
+      return { urls: [wiki], items: [item], source: "wikipedia" };
+    }
+  }
+  return { urls: [], items: [], source: "none" };
+}
+
+async function fetchBabyImages(scientificName, commonName = "", imageQuery = "") {
+  const hint = imageQuery || "juvenile";
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: hint,
+    queries: [
+      `${hint}`,
+      commonName ? `${commonName} animal` : "",
+      scientificName ? `${scientificName} young` : "",
+      scientificName ? `${scientificName} baby` : "",
+    ],
+    rejectRe: /\b(flag|logo|map|skeleton|skull|meat|cooked|dish)\b/i,
+  });
+}
+
+async function fetchLeafImages(scientificName, commonName = "", imageQuery = "") {
+  const hint = imageQuery || "leaf";
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: hint,
+    queries: [
+      scientificName ? `${scientificName} leaf` : "",
+      scientificName ? `${scientificName} leaves` : "",
+      commonName ? `${commonName} feuille` : "",
+      commonName ? `${commonName} leaf` : "",
+      scientificName ? `${scientificName} needles` : "",
+    ],
+    rejectRe: /\b(flag|logo|map|person|portrait|trunk only|bark only|fruit|acorn|flower)\b/i,
+  });
+}
+
+async function fetchCloudImages(scientificName, commonName = "", imageQuery = "") {
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: imageQuery || "cloud",
+    queries: [
+      `${scientificName} cloud`,
+      `${commonName} nuage`,
+      `${scientificName}`,
+      `${commonName}`,
+    ],
+    rejectRe: /\b(flag|logo|map|person|portrait|aircraft cabin|diagram only)\b/i,
+  });
+}
+
+async function fetchConstellationImages(scientificName, commonName = "", imageQuery = "") {
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: imageQuery || "constellation",
+    queries: [
+      `Constellation ${scientificName}`,
+      `${scientificName} constellation`,
+      `${commonName} constellation`,
+      `Star chart ${scientificName}`,
+    ],
+    rejectRe: /\b(flag|logo|person|portrait|tattoo|jewelry|horoscope art)\b/i,
+  });
+}
+
+async function fetchFossilImages(scientificName, commonName = "", imageQuery = "") {
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: imageQuery || "fossil",
+    queries: [
+      `${scientificName} fossil`,
+      `${commonName} fossile`,
+      `${scientificName}`,
+      `${commonName} fossil`,
+    ],
+    rejectRe: /\b(flag|logo|toy|lego|cartoon|reconstruction only|living animal photo)\b/i,
+  });
+}
+
 async function urlsFromCommons(scientificName) {
   try {
     const titles = await collectTitles(scientificName);
@@ -1126,6 +1255,7 @@ function enqueueSpecies(scientificName, options = {}) {
   const country = String(options.country || "").trim();
   const commonName = String(options.commonName || "").trim();
   const commonsFile = String(options.commonsFile || "").trim();
+  const imageQuery = String(options.imageQuery || "").trim();
   const iso2 = normalizeIso2(options.iso2);
   const key = poolKey(name, kind);
   if (!name) return Promise.resolve({ urls: [], source: "none" });
@@ -1152,7 +1282,18 @@ function enqueueSpecies(scientificName, options = {}) {
   if (pending.has(key)) return pending.get(key);
 
   const promise = new Promise((resolve, reject) => {
-    speciesQueue.push({ name, key, kind, country, commonName, commonsFile, iso2, resolve, reject });
+    speciesQueue.push({
+      name,
+      key,
+      kind,
+      country,
+      commonName,
+      commonsFile,
+      imageQuery,
+      iso2,
+      resolve,
+      reject,
+    });
     pumpSpecies();
   });
   pending.set(key, promise);
@@ -1210,6 +1351,21 @@ async function pumpSpecies() {
       } else if (job.kind === "fruit") {
         await ensureBlockedTitles();
         result = await fetchFruitImages(job.name, job.commonName);
+      } else if (job.kind === "baby") {
+        await ensureBlockedTitles();
+        result = await fetchBabyImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "leaf") {
+        await ensureBlockedTitles();
+        result = await fetchLeafImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "cloud") {
+        await ensureBlockedTitles();
+        result = await fetchCloudImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "constellation") {
+        await ensureBlockedTitles();
+        result = await fetchConstellationImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "fossil") {
+        await ensureBlockedTitles();
+        result = await fetchFossilImages(job.name, job.commonName, job.imageQuery);
       } else if (job.kind === "map") {
         await ensureBlockedTitles();
         if (servedFromQuizApi()) {

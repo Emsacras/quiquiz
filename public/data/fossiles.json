@@ -1,0 +1,331 @@
+{
+  "id": "fossiles",
+  "categorie": "Fossiles",
+  "description": "Reconnais des fossiles emblématiques (animaux, plantes, traces).",
+  "groupes": [
+    {
+      "id": "invertebres",
+      "label": "Invertébrés",
+      "questions": [
+        {
+          "id": "invertebres1",
+          "difficulte": "facile",
+          "nom_commun": "Ammonite",
+          "nom_scientifique": "Ammonoidea",
+          "groupe": "invertebres",
+          "options": [
+            "Ammonite",
+            "Trilobite",
+            "Graptolite",
+            "Bélemnite"
+          ],
+          "indice": "Spirale côtelée",
+          "description": "Coquille spirale fossile de céphalopode.",
+          "explication": "Ammonite : Céphalopode fossile en spirale.",
+          "imageQuery": "fossil"
+        },
+        {
+          "id": "invertebres2",
+          "difficulte": "facile",
+          "nom_commun": "Trilobite",
+          "nom_scientifique": "Trilobita",
+          "groupe": "invertebres",
+          "options": [
+            "Ammonite",
+            "Graptolite",
+            "Bélemnite",
+            "Trilobite"
+          ],
+          "indice": "Trois lobes, segmenté",
+          "description": "Arthropode marin segmenté en trois lobes longitudinaux.",
+          "explication": "Trilobite : Arthropode paléozoïque emblématique.",
+          "imageQuery": "fossil"
+        },
+        {
+          "id": "invertebres3",
+          "difficulte": "moyen",
+          "nom_commun": "Bélemnite",
+          "nom_scientifique": "Belemnitida",
+          "groupe": "invertebres",
+          "options": [
+            "Bélemnite",
+            "Oursin fossile",
+            "Graptolite",
+            "Ammonite"
+          ],
+          "indice": "Rostrum en « balle »",
+          "description": "Rostrum interne en forme de balle / cigare.",
+          "explication": "Bélemnite : Céphalopode, rostrum fossilisé.",
+          "imageQuery": "fossil"
+        },
+        {
+          "id": "invertebres4",
+          "difficulte": "moyen",
+          "nom_commun": "Oursin fossile",
+          "nom_scientifique": "Echinoidea",
+          "groupe": "invertebres",
+          "options": [
+            "Ammonite",
+            "Bélemnite",
+            "Trilobite",
+            "Oursin fossile"
+          ],
+          "indice": "Test rond à plaques",
+          "description": "Test calcaire d’échinide, souvent dans la craie.",
+          "explication": "Oursin fossile : Fréquent dans la craie.",
+          "imageQuery": "fossil echinoid"
+        },
+        {
+          "id": "invertebres5",
+          "difficulte": "difficile",
+          "nom_commun": "Graptolite",
+          "nom_scientifique": "Graptolithina",
+          "groupe": "invertebres",
+          "options": [
+            "Oursin fossile",
+            "Crinoïde",
+            "Graptolite",
+            "Trilobite"
+          ],
+          "indice": "Traits / dentelles sur schiste",
+          "description": "Colonies en lignes ou zigzags sur schistes noirs.",
+          "explication": "Graptolite : Fossile stratigraphique du Paléozoïque.",
+          "imageQuery": "graptolite fossil"
+        },
+        {
+          "id": "invertebres6",
+          "difficulte": "difficile",
+          "nom_commun": "Crinoïde",
+          "nom_scientifique": "Crinoidea",
+          "groupe": "invertebres",
+          "options": [
+            "Ammonite",
+            "Bélemnite",
+            "Graptolite",
+            "Crinoïde"
+          ],
+          "indice": "Tige en « empilement »",
+          "description": "Segments de tige en colonne, « lys de mer ».",
+          "explication": "Crinoïde : Échinoderme fixe, tige fossilisée.",
+          "imageQuery": "crinoid fossil"
+        }
+      ]
+    },
+    {
+      "id": "vertebres",
+      "label": "Vertébrés",
+      "questions": [
+        {
+          "id": "vertebres1",
+          "difficulte": "facile",
+          "nom_commun": "Dent de requin",
+          "nom_scientifique": "Lamniformes",
+          "groupe": "vertebres",
+          "options": [
+            "Mégalodon (dent)",
+            "Ptérosaure",
+            "Dent de requin",
+            "Os de dinosaure"
+          ],
+          "indice": "Triangle tranchant",
+          "description": "Dent triangulaire fossilisée, émail brillant.",
+          "explication": "Dent de requin : Fossile très courant.",
+          "imageQuery": "shark tooth fossil"
+        },
+        {
+          "id": "vertebres2",
+          "difficulte": "facile",
+          "nom_commun": "Os de dinosaure",
+          "nom_scientifique": "Dinosauria",
+          "groupe": "vertebres",
+          "options": [
+            "Os de dinosaure",
+            "Ptérosaure",
+            "Archaeopteryx",
+            "Ichthyosaure"
+          ],
+          "indice": "Os massif pétrifié",
+          "description": "Fragment osseux fossilisé de grand reptile.",
+          "explication": "Os de dinosaure : Vertébré mésozoïque.",
+          "imageQuery": "dinosaur bone fossil"
+        },
+        {
+          "id": "vertebres3",
+          "difficulte": "moyen",
+          "nom_commun": "Ichthyosaure",
+          "nom_scientifique": "Ichthyosauria",
+          "groupe": "vertebres",
+          "options": [
+            "Ichthyosaure",
+            "Archaeopteryx",
+            "Dent de requin",
+            "Ptérosaure"
+          ],
+          "indice": "Reptile marin en forme de dauphin",
+          "description": "Squelette de reptile marin hydrodynamique.",
+          "explication": "Ichthyosaure : Reptile marin du Mésozoïque.",
+          "imageQuery": "ichthyosaur fossil"
+        },
+        {
+          "id": "vertebres4",
+          "difficulte": "moyen",
+          "nom_commun": "Ptérosaure",
+          "nom_scientifique": "Pterosauria",
+          "groupe": "vertebres",
+          "options": [
+            "Ptérosaure",
+            "Dent de requin",
+            "Mégalodon (dent)",
+            "Archaeopteryx"
+          ],
+          "indice": "Aile membraneuse fossile",
+          "description": "Reptile volant, longs doigts soutenant l’aile.",
+          "explication": "Ptérosaure : Reptile volant (pas un dinosaure).",
+          "imageQuery": "pterosaur fossil"
+        },
+        {
+          "id": "vertebres5",
+          "difficulte": "difficile",
+          "nom_commun": "Archaeopteryx",
+          "nom_scientifique": "Archaeopteryx",
+          "groupe": "vertebres",
+          "options": [
+            "Archaeopteryx",
+            "Dent de requin",
+            "Mégalodon (dent)",
+            "Os de dinosaure"
+          ],
+          "indice": "Plumes + dents",
+          "description": "Fossile à plumes et caractères reptiliens.",
+          "explication": "Archaeopteryx : Fossile « entre » dinosaure et oiseau.",
+          "imageQuery": "archaeopteryx fossil"
+        },
+        {
+          "id": "vertebres6",
+          "difficulte": "difficile",
+          "nom_commun": "Mégalodon (dent)",
+          "nom_scientifique": "Otodus megalodon",
+          "groupe": "vertebres",
+          "options": [
+            "Mégalodon (dent)",
+            "Os de dinosaure",
+            "Dent de requin",
+            "Ichthyosaure"
+          ],
+          "indice": "Énorme dent dentelée",
+          "description": "Très grande dent de requin fossile.",
+          "explication": "Mégalodon : Dent géante de requin éteint.",
+          "imageQuery": "megalodon tooth"
+        }
+      ]
+    },
+    {
+      "id": "plantes-traces",
+      "label": "Plantes & traces",
+      "questions": [
+        {
+          "id": "plantes-traces1",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de fougère",
+          "nom_scientifique": "Pteridophyta",
+          "groupe": "plantes-traces",
+          "options": [
+            "Stromatolite",
+            "Empreinte de pas",
+            "Empreinte de fougère",
+            "Ambre (inclusion)"
+          ],
+          "indice": "Feuille découpée sur schiste",
+          "description": "Empreinte de fronde de fougère sur roche.",
+          "explication": "Fougère fossile : Très fréquente au Carbonifère.",
+          "imageQuery": "fern fossil"
+        },
+        {
+          "id": "plantes-traces2",
+          "difficulte": "moyen",
+          "nom_commun": "Tronc silicifié",
+          "nom_scientifique": "Petrified wood",
+          "groupe": "plantes-traces",
+          "options": [
+            "Empreinte de fougère",
+            "Stromatolite",
+            "Ambre (inclusion)",
+            "Tronc silicifié"
+          ],
+          "indice": "Bois devenu pierre",
+          "description": "Bois dont la matière a été remplacée par de la silice.",
+          "explication": "Bois pétrifié : Structure du bois encore visible.",
+          "imageQuery": "petrified wood"
+        },
+        {
+          "id": "plantes-traces3",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de pas",
+          "nom_scientifique": "Ichnite",
+          "groupe": "plantes-traces",
+          "options": [
+            "Empreinte de fougère",
+            "Empreinte de pas",
+            "Stromatolite",
+            "Ambre (inclusion)"
+          ],
+          "indice": "Trace de marche",
+          "description": "Empreinte de pas fossilisée dans un sédiment.",
+          "explication": "Ichnite : Trace fossile (comportement).",
+          "imageQuery": "dinosaur footprint fossil"
+        },
+        {
+          "id": "plantes-traces4",
+          "difficulte": "difficile",
+          "nom_commun": "Coprolithe",
+          "nom_scientifique": "Coprolite",
+          "groupe": "plantes-traces",
+          "options": [
+            "Coprolithe",
+            "Empreinte de fougère",
+            "Stromatolite",
+            "Ambre (inclusion)"
+          ],
+          "indice": "Excrément fossilisé",
+          "description": "Matière fécale fossilisée, parfois avec restes de repas.",
+          "explication": "Coprolithe : Crotte fossile, précieuse pour la paléoécologie.",
+          "imageQuery": "coprolite"
+        },
+        {
+          "id": "plantes-traces5",
+          "difficulte": "difficile",
+          "nom_commun": "Ambre (inclusion)",
+          "nom_scientifique": "Amber",
+          "groupe": "plantes-traces",
+          "options": [
+            "Empreinte de fougère",
+            "Empreinte de pas",
+            "Ambre (inclusion)",
+            "Coprolithe"
+          ],
+          "indice": "Insecte dans la résine",
+          "description": "Résine fossilisée piégeant parfois un insecte.",
+          "explication": "Ambre : Résine fossilisée, inclusions célèbres.",
+          "imageQuery": "amber insect fossil"
+        },
+        {
+          "id": "plantes-traces6",
+          "difficulte": "difficile",
+          "nom_commun": "Stromatolite",
+          "nom_scientifique": "Stromatolite",
+          "groupe": "plantes-traces",
+          "options": [
+            "Empreinte de fougère",
+            "Stromatolite",
+            "Tronc silicifié",
+            "Coprolithe"
+          ],
+          "indice": "Couches en chou-fleur / dôme",
+          "description": "Structure laminée produite par des tapis microbiens.",
+          "explication": "Stromatolite : Parmi les plus anciens indices de vie.",
+          "imageQuery": "stromatolite"
+        }
+      ]
+    }
+  ]
+}

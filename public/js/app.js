@@ -444,6 +444,11 @@ const MODES_BY_KIND = {
   champignons: BIO_MODES,
   fruits: BIO_MODES,
   mineraux: BIO_MODES,
+  bebes: BIO_MODES,
+  feuilles: BIO_MODES,
+  nuages: CORE_MODES,
+  constellations: CORE_MODES,
+  fossiles: CORE_MODES,
   capitales: BIO_MODES,
   pays: CORE_MODES,
   drapeaux: CORE_MODES,
@@ -482,6 +487,16 @@ function mediaKindForQuizId(quizId) {
       return "mineral";
     case "fruits-legumes":
       return "fruit";
+    case "bebes-animaux":
+      return "baby";
+    case "feuilles-arbres":
+      return "leaf";
+    case "nuages":
+      return "cloud";
+    case "constellations":
+      return "constellation";
+    case "fossiles":
+      return "fossil";
     default:
       return "";
   }
@@ -515,6 +530,16 @@ function quizKind(category = state.category) {
       return "mammiferes";
     case "rochers-mineraux":
       return "mineraux";
+    case "bebes-animaux":
+      return "bebes";
+    case "feuilles-arbres":
+      return "feuilles";
+    case "nuages":
+      return "nuages";
+    case "constellations":
+      return "constellations";
+    case "fossiles":
+      return "fossiles";
     case "oiseaux-francais":
     case "oiseaux-royaume-uni":
       return "oiseaux";
@@ -569,16 +594,27 @@ function imageOptionsForQuestion(question, category = state.category) {
       iso2,
     };
   }
+  const qk = quizKind(category);
   const fromQuizKind =
-    quizKind(category) === "capitales"
+    qk === "capitales"
       ? "capital"
-      : quizKind(category) === "pays"
+      : qk === "pays"
         ? "map"
-        : quizKind(category) === "mineraux"
+        : qk === "mineraux"
           ? "mineral"
-          : quizKind(category) === "fruits"
+          : qk === "fruits"
             ? "fruit"
-            : "";
+            : qk === "bebes"
+              ? "baby"
+              : qk === "feuilles"
+                ? "leaf"
+                : qk === "nuages"
+                  ? "cloud"
+                  : qk === "constellations"
+                    ? "constellation"
+                    : qk === "fossiles"
+                      ? "fossil"
+                      : "";
   const kind =
     question?.mediaKind ||
     mediaKindForQuizId(question?.sourceQuizId) ||
@@ -590,6 +626,7 @@ function imageOptionsForQuestion(question, category = state.category) {
     country: question?.paysEn || question?.pays || "",
     commonName: question?.nom_commun || "",
     commonsFile: question?.commonsFile || "",
+    imageQuery: question?.imageQuery || "",
     iso2,
   };
 }
@@ -944,21 +981,61 @@ function quizCopy(category = state.category) {
                       units: "espèces",
                       nameField: "Nom du minéral",
                     }
-                  : kind === "mixed"
+                  : kind === "bebes"
                     ? {
-                        description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
-                        alt: "Élément à identifier",
-                        unit: "entrée",
-                        units: "entrées",
-                        nameField: "Nom",
+                        description: "Pas de photo : un texte décrit le petit, puis quatre noms de bébés.",
+                        alt: "Bébé animal à identifier",
+                        unit: "bébé",
+                        units: "bébés",
+                        nameField: "Nom du bébé",
                       }
-                    : {
-                        description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
-                        alt: "Oiseau à identifier",
-                        unit: "espèce",
-                        units: "espèces",
-                        nameField: "Nom de l'espèce",
-                      };
+                    : kind === "feuilles"
+                      ? {
+                          description: "Pas de photo : un texte décrit la feuille, puis quatre arbres.",
+                          alt: "Feuille d’arbre à identifier",
+                          unit: "arbre",
+                          units: "arbres",
+                          nameField: "Nom de l’arbre",
+                        }
+                      : kind === "nuages"
+                        ? {
+                            description: "Pas de photo : un texte décrit le nuage, puis quatre types.",
+                            alt: "Nuage à identifier",
+                            unit: "nuage",
+                            units: "nuages",
+                            nameField: "Type de nuage",
+                          }
+                        : kind === "constellations"
+                          ? {
+                              description: "Pas de photo : un texte décrit la constellation, puis quatre noms.",
+                              alt: "Constellation à identifier",
+                              unit: "constellation",
+                              units: "constellations",
+                              nameField: "Nom de la constellation",
+                            }
+                          : kind === "fossiles"
+                            ? {
+                                description: "Pas de photo : un texte décrit le fossile, puis quatre noms.",
+                                alt: "Fossile à identifier",
+                                unit: "fossile",
+                                units: "fossiles",
+                                nameField: "Nom du fossile",
+                              }
+                            : kind === "mixed"
+                              ? {
+                                  description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
+                                  alt: "Élément à identifier",
+                                  unit: "entrée",
+                                  units: "entrées",
+                                  nameField: "Nom",
+                                }
+                              : {
+                                  description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
+                                  alt: "Oiseau à identifier",
+                                  unit: "espèce",
+                                  units: "espèces",
+                                  nameField: "Nom de l'espèce",
+                                };
 
   return {
     kind,
@@ -969,7 +1046,21 @@ function quizCopy(category = state.category) {
     levelsHelp: "Choisis un mode, coche les groupes, puis un niveau.",
     levels: { ...LEVEL_COPY },
     modes: {
-      qcm: { label: "Choix multiple", blurb: "Une photo, quatre noms." },
+      qcm: {
+        label: "Choix multiple",
+        blurb:
+          kind === "bebes"
+            ? "Une photo de petit, quatre noms de bébés."
+            : kind === "feuilles"
+              ? "Une feuille, quatre arbres."
+              : kind === "nuages"
+                ? "Une photo de nuage, quatre types."
+                : kind === "constellations"
+                  ? "Une carte du ciel, quatre constellations."
+                  : kind === "fossiles"
+                    ? "Une photo de fossile, quatre noms."
+                    : "Une photo, quatre noms.",
+      },
       texte: {
         label: "Texte libre",
         blurb: "Une photo, tu écris le nom. Les suggestions viennent des espèces de la partie.",

@@ -1,0 +1,331 @@
+{
+  "id": "constellations",
+  "categorie": "Constellations",
+  "description": "Reconnais les constellations sur une carte du ciel ou un schéma.",
+  "groupes": [
+    {
+      "id": "boreales",
+      "label": "Boréales célèbres",
+      "questions": [
+        {
+          "id": "boreales1",
+          "difficulte": "facile",
+          "nom_commun": "Grande Ourse",
+          "nom_scientifique": "Ursa Major",
+          "groupe": "boreales",
+          "options": [
+            "Petite Ourse",
+            "Grande Ourse",
+            "Orion",
+            "Cassiopée"
+          ],
+          "indice": "Casserole à 7 étoiles",
+          "description": "Asterisme en casserole, guide vers l’étoile polaire.",
+          "explication": "Grande Ourse : La « casserole » du nord.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "boreales2",
+          "difficulte": "facile",
+          "nom_commun": "Petite Ourse",
+          "nom_scientifique": "Ursa Minor",
+          "groupe": "boreales",
+          "options": [
+            "Orion",
+            "Grande Ourse",
+            "Céphée",
+            "Petite Ourse"
+          ],
+          "indice": "Porte l’étoile polaire",
+          "description": "Petite casserole dont l’extrémité est Polaris.",
+          "explication": "Petite Ourse : Contient l’étoile polaire.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "boreales3",
+          "difficulte": "facile",
+          "nom_commun": "Orion",
+          "nom_scientifique": "Orion",
+          "groupe": "boreales",
+          "options": [
+            "Orion",
+            "Petite Ourse",
+            "Céphée",
+            "Grande Ourse"
+          ],
+          "indice": "Ceinture à 3 étoiles",
+          "description": "Chasseur avec ceinture alignée de trois étoiles.",
+          "explication": "Orion : Constellation d’hiver très visible.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "boreales4",
+          "difficulte": "moyen",
+          "nom_commun": "Cassiopée",
+          "nom_scientifique": "Cassiopeia",
+          "groupe": "boreales",
+          "options": [
+            "Cassiopée",
+            "Orion",
+            "Petite Ourse",
+            "Céphée"
+          ],
+          "indice": "W ou M",
+          "description": "Cinq étoiles formant un W (ou M) caractéristique.",
+          "explication": "Cassiopée : Le W circumpolaire.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "boreales5",
+          "difficulte": "moyen",
+          "nom_commun": "Cygnus",
+          "nom_scientifique": "Cygnus",
+          "groupe": "boreales",
+          "options": [
+            "Grande Ourse",
+            "Cygnus",
+            "Cassiopée",
+            "Petite Ourse"
+          ],
+          "indice": "Croix du Nord",
+          "description": "Forme de cygne / croix le long de la Voie lactée.",
+          "explication": "Cygnus : La Croix du Nord.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "boreales6",
+          "difficulte": "difficile",
+          "nom_commun": "Céphée",
+          "nom_scientifique": "Cepheus",
+          "groupe": "boreales",
+          "options": [
+            "Petite Ourse",
+            "Cassiopée",
+            "Céphée",
+            "Grande Ourse"
+          ],
+          "indice": "Maison / pentagone",
+          "description": "Constellation proche de Cassiopée, forme de maison.",
+          "explication": "Céphée : Roi mythique, près de Cassiopée.",
+          "imageQuery": "constellation"
+        }
+      ]
+    },
+    {
+      "id": "zodiaque",
+      "label": "Zodiaque",
+      "questions": [
+        {
+          "id": "zodiaque1",
+          "difficulte": "facile",
+          "nom_commun": "Lion",
+          "nom_scientifique": "Leo",
+          "groupe": "zodiaque",
+          "options": [
+            "Scorpion",
+            "Verseau",
+            "Gémeaux",
+            "Lion"
+          ],
+          "indice": "Sickle / point d’interrogation",
+          "description": "Tête du lion en faucille, étoile Régulus.",
+          "explication": "Lion (Leo) : Constellation printanière du zodiaque.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "zodiaque2",
+          "difficulte": "facile",
+          "nom_commun": "Scorpion",
+          "nom_scientifique": "Scorpius",
+          "groupe": "zodiaque",
+          "options": [
+            "Verseau",
+            "Gémeaux",
+            "Taureau",
+            "Scorpion"
+          ],
+          "indice": "Queue courbée, Antarès",
+          "description": "Forme de scorpion, étoile rouge Antarès.",
+          "explication": "Scorpion : Zodiaque d’été austral / bas sur l’horizon.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "zodiaque3",
+          "difficulte": "moyen",
+          "nom_commun": "Gémeaux",
+          "nom_scientifique": "Gemini",
+          "groupe": "zodiaque",
+          "options": [
+            "Lion",
+            "Scorpion",
+            "Capricorne",
+            "Gémeaux"
+          ],
+          "indice": "Castor et Pollux",
+          "description": "Deux étoiles brillantes côte à côte, les jumeaux.",
+          "explication": "Gémeaux : Castor et Pollux.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "zodiaque4",
+          "difficulte": "moyen",
+          "nom_commun": "Taureau",
+          "nom_scientifique": "Taurus",
+          "groupe": "zodiaque",
+          "options": [
+            "Verseau",
+            "Capricorne",
+            "Scorpion",
+            "Taureau"
+          ],
+          "indice": "V des Hyades",
+          "description": "Tête en V (Hyades) et Pléiades proches.",
+          "explication": "Taureau : V des Hyades + Pléiades.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "zodiaque5",
+          "difficulte": "difficile",
+          "nom_commun": "Verseau",
+          "nom_scientifique": "Aquarius",
+          "groupe": "zodiaque",
+          "options": [
+            "Taureau",
+            "Gémeaux",
+            "Capricorne",
+            "Verseau"
+          ],
+          "indice": "Verseur d’eau",
+          "description": "Constellation étendue du verseur, peu d’étoiles très brillantes.",
+          "explication": "Verseau : Zodiaque d’automne.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "zodiaque6",
+          "difficulte": "difficile",
+          "nom_commun": "Capricorne",
+          "nom_scientifique": "Capricornus",
+          "groupe": "zodiaque",
+          "options": [
+            "Gémeaux",
+            "Taureau",
+            "Capricorne",
+            "Lion"
+          ],
+          "indice": "Triangle / corne",
+          "description": "Constellation en triangle allongé du zodiaque.",
+          "explication": "Capricorne : Zodiaque d’hiver.",
+          "imageQuery": "constellation"
+        }
+      ]
+    },
+    {
+      "id": "autres",
+      "label": "Autres classiques",
+      "questions": [
+        {
+          "id": "autres1",
+          "difficulte": "facile",
+          "nom_commun": "Cocher",
+          "nom_scientifique": "Auriga",
+          "groupe": "autres",
+          "options": [
+            "Hercule",
+            "Cocher",
+            "Aigle",
+            "Andromède"
+          ],
+          "indice": "Pentagone avec Capella",
+          "description": "Pentagone brillant dominé par Capella.",
+          "explication": "Cocher (Auriga) : Capella, hiver boréal.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "autres2",
+          "difficulte": "moyen",
+          "nom_commun": "Aigle",
+          "nom_scientifique": "Aquila",
+          "groupe": "autres",
+          "options": [
+            "Hercule",
+            "Persée",
+            "Aigle",
+            "Lyre"
+          ],
+          "indice": "Altaïr au centre",
+          "description": "Constellation avec Altaïr, pointe du Triangle d’été.",
+          "explication": "Aigle : Altaïr, Triangle d’été.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "autres3",
+          "difficulte": "moyen",
+          "nom_commun": "Lyre",
+          "nom_scientifique": "Lyra",
+          "groupe": "autres",
+          "options": [
+            "Andromède",
+            "Lyre",
+            "Aigle",
+            "Persée"
+          ],
+          "indice": "Véga très brillante",
+          "description": "Petite constellation dominée par Véga.",
+          "explication": "Lyre : Véga, une des plus brillantes du ciel.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "autres4",
+          "difficulte": "moyen",
+          "nom_commun": "Persée",
+          "nom_scientifique": "Perseus",
+          "groupe": "autres",
+          "options": [
+            "Persée",
+            "Andromède",
+            "Aigle",
+            "Lyre"
+          ],
+          "indice": "Entre Cassiopée et le Cocher",
+          "description": "Constellation riche en amas, héros mythique.",
+          "explication": "Persée : Entre Cassiopée et Auriga.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "autres5",
+          "difficulte": "difficile",
+          "nom_commun": "Andromède",
+          "nom_scientifique": "Andromeda",
+          "groupe": "autres",
+          "options": [
+            "Andromède",
+            "Aigle",
+            "Hercule",
+            "Persée"
+          ],
+          "indice": "Proche de la galaxie M31",
+          "description": "Chaîne d’étoiles, abrite la galaxie d’Andromède.",
+          "explication": "Andromède : Constellation + galaxie célèbre.",
+          "imageQuery": "constellation"
+        },
+        {
+          "id": "autres6",
+          "difficulte": "difficile",
+          "nom_commun": "Hercule",
+          "nom_scientifique": "Hercules",
+          "groupe": "autres",
+          "options": [
+            "Andromède",
+            "Cocher",
+            "Hercule",
+            "Lyre"
+          ],
+          "indice": "Keystone (clé de voûte)",
+          "description": "Grand héros, asterisme en trapèze (Keystone).",
+          "explication": "Hercule : Trapèze du Keystone.",
+          "imageQuery": "constellation"
+        }
+      ]
+    }
+  ]
+}
