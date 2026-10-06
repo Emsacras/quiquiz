@@ -1,12 +1,13 @@
 {
   "name": "QuiQuiz",
   "short_name": "QuiQuiz",
-  "description": "Quiz nature avec Cui-Cui",
+  "description": "Quiz nature et géographie en images — oiseaux, plantes, pays et plus, avec Cui-Cui.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#E8F1FC",
   "theme_color": "#2F6FE0",
   "lang": "fr",
+  "categories": ["education", "games"],
   "icons": [
     {
       "src": "assets/mascot/cui-cui.png",

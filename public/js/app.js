@@ -426,10 +426,9 @@ const MODES = [
   { id: "variantes", label: "Variantes" },
   { id: "sexes", label: "Mâle ou femelle" },
   { id: "chant", label: "Chant" },
-  { id: "relier", label: "Relier" },
 ];
 
-const CORE_MODES = ["qcm", "texte", "description", "groupes", "relier"];
+const CORE_MODES = ["qcm", "texte", "description", "groupes"];
 const BIO_MODES = [...CORE_MODES, "paire"];
 const BIRD_MODES = [...BIO_MODES, "variantes", "sexes", "chant"];
 
@@ -711,10 +710,6 @@ function quizCopy(category = state.category) {
           blurb: "Jusqu'à six cartes à classer dans les continents cochés.",
         },
         paire: { label: "Même pays", blurb: "Deux cartes : est-ce le même pays ?" },
-        relier: {
-          label: "Relier",
-          blurb: "Clique une carte : elle s'affiche en grand, puis tu choisis son nom.",
-        },
       },
       media: "carte",
       loading: "Chargement de la carte…",
@@ -742,7 +737,6 @@ function quizCopy(category = state.category) {
       referenceLede: "Les pays par continent. Ouvre une fiche pour la carte et les critères.",
       ficheNoMedia: "Pas de carte pour ce pays.",
       groupWord: "continent",
-      linkLede: "Clique une carte : elle s'affiche en grand, puis tu choisis son nom.",
       footer: "© 2026 Emsacras",
     };
   }
@@ -770,10 +764,6 @@ function quizCopy(category = state.category) {
           blurb: "Jusqu'à six photos à classer dans les continents cochés.",
         },
         paire: { label: "Même capitale", blurb: "Deux photos : est-ce la même capitale ?" },
-        relier: {
-          label: "Relier",
-          blurb: "Clique une photo : elle s'affiche en grand, puis tu choisis la capitale.",
-        },
       },
       media: "photo",
       loading: "Chargement de la photo…",
@@ -801,7 +791,6 @@ function quizCopy(category = state.category) {
       referenceLede: "Les capitales par continent. Ouvre une fiche pour la photo.",
       ficheNoMedia: "Pas de photo pour cette capitale.",
       groupWord: "continent",
-      linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis la capitale.",
       footer: "© 2026 Emsacras",
     };
   }
@@ -829,10 +818,6 @@ function quizCopy(category = state.category) {
           blurb: "Jusqu'à six drapeaux à classer dans les continents cochés.",
         },
         paire: { label: "Même pays", blurb: "Deux drapeaux : est-ce le même pays ?" },
-        relier: {
-          label: "Relier",
-          blurb: "Clique un drapeau : il s'affiche en grand, puis tu choisis le pays.",
-        },
       },
       media: "drapeau",
       loading: "Chargement du drapeau…",
@@ -860,7 +845,6 @@ function quizCopy(category = state.category) {
       referenceLede: "Les drapeaux par continent. Ouvre une fiche pour le drapeau.",
       ficheNoMedia: "Pas de drapeau pour ce pays.",
       groupWord: "continent",
-      linkLede: "Clique un drapeau : il s'affiche en grand, puis tu choisis le pays.",
       footer: "© 2026 Emsacras",
     };
   }
@@ -888,10 +872,6 @@ function quizCopy(category = state.category) {
           blurb: "Jusqu'à six photos à classer dans les groupes cochés.",
         },
         paire: { label: "Même espèce", blurb: "Deux photos : est-ce la même espèce ?" },
-        relier: {
-          label: "Relier",
-          blurb: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
-        },
       },
       media: "photo",
       loading: "Chargement de la photo…",
@@ -919,7 +899,6 @@ function quizCopy(category = state.category) {
       referenceLede: "Les espèces par groupe. Ouvre une fiche pour les photos et les critères.",
       ficheNoMedia: "Pas de photo pour cette espèce.",
       groupWord: "groupe",
-      linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
       footer: "© 2026 Emsacras",
     };
   }
@@ -1083,10 +1062,6 @@ function quizCopy(category = state.category) {
         label: "Chant",
         blurb: "D'abord le chant, puis une photo très pixelisée qui s'éclaircit.",
       },
-      relier: {
-        label: "Relier",
-        blurb: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
-      },
     },
     media: "photo",
     loading: "Chargement de la photo…",
@@ -1114,7 +1089,6 @@ function quizCopy(category = state.category) {
     referenceLede: "Les espèces par groupe. Ouvre une fiche pour les photos et les critères.",
     ficheNoMedia: "Pas de photo pour cette espèce.",
     groupWord: "groupe",
-    linkLede: "Clique une photo : elle s'affiche en grand, puis tu choisis son nom.",
     footer: "© 2026 Emsacras",
   };
 }
@@ -1130,6 +1104,28 @@ function availableModes(category = state.category) {
 }
 
 const SITE_FOOTER = "© 2026 Emsacras";
+
+const DEFAULT_SEO = {
+  title: "QuiQuiz — Quiz nature, oiseaux, plantes et géographie",
+  description:
+    "QuiQuiz : quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, minéraux, pays, drapeaux, nuages et fossiles. Jouable tout de suite avec Cui-Cui.",
+};
+
+function setPageSeo({ title, description } = {}) {
+  const nextTitle = title || DEFAULT_SEO.title;
+  const nextDescription = description || DEFAULT_SEO.description;
+  document.title = nextTitle;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", nextDescription);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", nextTitle);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute("content", nextDescription);
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twTitle) twTitle.setAttribute("content", nextTitle);
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twDesc) twDesc.setAttribute("content", nextDescription);
+}
 
 function updateFooter() {
   const node = document.querySelector(".site-footer p");
@@ -1471,41 +1467,9 @@ function sexCandidates(category, levelId) {
   return questionsFor(category, levelId).filter((question) => wanted.has(fold(question.nom_commun)));
 }
 
-function linkBoardSizes(count) {
-  const sizes = [];
-  let left = count;
-  while (left >= 2) {
-    const size = left <= 6 ? left : 5;
-    sizes.push(size);
-    left -= size;
-  }
-  return sizes;
-}
-
-function buildLinkBoards(source) {
-  const birds = shuffle(source);
-  const sizes = linkBoardSizes(birds.length);
-  const boards = [];
-  let index = 0;
-  for (const size of sizes) {
-    const slice = birds.slice(index, index + size);
-    index += size;
-    boards.push({
-      members: slice.map((question) => ({
-        nom_commun: question.nom_commun,
-        nom_scientifique: question.nom_scientifique,
-        explication: question.explication,
-        chosen: "",
-      })),
-      names: shuffle(slice.map((question) => question.nom_commun)),
-      pending: null,
-    });
-  }
-  return boards;
-}
 
 function scoreTotal() {
-  if (state.mode === "variantes" || state.mode === "sexes" || state.mode === "relier") {
+  if (state.mode === "variantes" || state.mode === "sexes") {
     return state.pointTotal || state.questions.length;
   }
   return state.questions.length;
@@ -1526,7 +1490,6 @@ function show(parent, ...nodes) {
 
 function setScreen(next) {
   closePhoto();
-  releaseLinkBoard();
   const screenChanged = screen !== next;
   screen = next;
   mount();
@@ -1651,15 +1614,6 @@ function startQuiz(difficulty) {
     return;
   }
 
-  if (state.mode === "relier") {
-    const boards = buildLinkBoards(capped);
-    if (!boards.length) return;
-    state.questions = boards;
-    state.pointTotal = boards.reduce((sum, board) => sum + board.members.length, 0);
-    setScreen("quiz");
-    preloadQuizQuestions(boards[0].members, boards[0].members[0]);
-    return;
-  }
 
   state.questions = capped.map((question) => ({
     ...question,
@@ -2936,7 +2890,7 @@ function mountHomeTheme(domains) {
 }
 
 function mountHome() {
-  document.title = "QuiQuiz";
+  setPageSeo();
   const domains = catalogDomains();
   if (!domains.length) {
     renderTop({ title: "Choisis une catégorie" });
@@ -2980,7 +2934,12 @@ function mountLevels() {
   const category = state.category;
   const copy = quizCopy(category);
   const modes = availableModes(category);
-  document.title = `${category.categorie} — QuiQuiz`;
+  setPageSeo({
+    title: `${category.categorie} — QuiQuiz`,
+    description:
+      category.description ||
+      `Quiz ${category.categorie} en images sur QuiQuiz : QCM, texte libre, groupes et plus.`,
+  });
   renderTop({ kicker: category.categorie, title: "Choisis un niveau" });
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
@@ -3051,17 +3010,11 @@ function mountLevels() {
             ? variantRounds(category, level.id).length
             : state.mode === "sexes"
               ? sexCandidates(category, level.id).length
-              : state.mode === "relier"
-                ? linkBoardSizes(
-                    levelDisplayCount(questionsFor(category, level.id).length, level.id)
-                  ).length
-                : questionsFor(category, level.id).length;
+              : questionsFor(category, level.id).length;
         const count =
           state.mode === "groupes"
             ? rawCount
-            : state.mode === "relier"
-              ? rawCount
-              : levelDisplayCount(rawCount, level.id);
+            : levelDisplayCount(rawCount, level.id);
         const best = getBest(category.id, level.id, state.mode);
         const questionLabel =
           state.mode === "groupes"
@@ -3076,11 +3029,7 @@ function mountLevels() {
                 ? count === 0
                   ? `Aucun${copy.unit === "pays" ? "" : "e"} ${copy.unit}`
                   : `${count} ${count > 1 ? copy.units : copy.unit}`
-                : state.mode === "relier"
-                  ? count === 0
-                    ? "Aucune série"
-                    : `${count} série${count > 1 ? "s" : ""}`
-                  : count === 0
+                : count === 0
                   ? "Aucune question"
                   : `${count} question${count > 1 ? "s" : ""}`;
         return h(
@@ -3224,10 +3173,6 @@ function mountQuiz() {
   }
   if (state.mode === "chant") {
     mountChantQuiz();
-    return;
-  }
-  if (state.mode === "relier") {
-    mountLinkQuiz();
     return;
   }
   mountClassicQuiz();
@@ -4395,573 +4340,6 @@ async function buildSexes(candidates, token) {
   setScreen("quiz");
 }
 
-let linkPointerMove = null;
-let linkFocusMove = null;
-let linkResizeObserver = null;
-
-function clearFocusPointer() {
-  if (linkFocusMove) {
-    window.removeEventListener("pointermove", linkFocusMove);
-    linkFocusMove = null;
-  }
-}
-
-function releaseLinkBoard() {
-  if (linkPointerMove) {
-    window.removeEventListener("pointermove", linkPointerMove);
-    linkPointerMove = null;
-  }
-  linkResizeObserver?.disconnect();
-  linkResizeObserver = null;
-  clearFocusPointer();
-  document.querySelector(".link-focus")?.remove();
-  document.body.classList.remove("link-focus-open");
-}
-
-function linkNameNode(name) {
-  for (const node of document.querySelectorAll("[data-link-name]")) {
-    if (node.dataset.linkName === name) return node;
-  }
-  return null;
-}
-
-function syncLinkPointer() {
-  if (linkPointerMove) {
-    window.removeEventListener("pointermove", linkPointerMove);
-    linkPointerMove = null;
-  }
-  if (screen !== "quiz" || state.mode !== "relier" || state.revealed) return;
-  const question = currentQuestion();
-  if (!question?.pending || question.focus != null) return;
-  linkPointerMove = (event) => drawLinkLines(event);
-  window.addEventListener("pointermove", linkPointerMove);
-}
-
-function drawLinkLines(pointerEvent) {
-  const board = document.querySelector(".link-board");
-  const svg = board?.querySelector(".link-lines");
-  if (!board || !svg || screen !== "quiz" || state.mode !== "relier") return;
-  const boardRect = board.getBoundingClientRect();
-  if (boardRect.width < 1 || boardRect.height < 1) return;
-  svg.setAttribute("viewBox", `0 0 ${boardRect.width} ${boardRect.height}`);
-  svg.setAttribute("width", String(boardRect.width));
-  svg.setAttribute("height", String(boardRect.height));
-
-  const question = currentQuestion();
-  const stacked = window.matchMedia("(min-width: 800px)").matches;
-  const edgePoint = (node, role) => {
-    const rect = node.getBoundingClientRect();
-    if (stacked) {
-      return {
-        x: rect.left + rect.width / 2 - boardRect.left,
-        y: (role === "bird" ? rect.bottom : rect.top) - boardRect.top,
-      };
-    }
-    return {
-      x: (role === "bird" ? rect.right : rect.left) - boardRect.left,
-      y: rect.top + rect.height / 2 - boardRect.top,
-    };
-  };
-  const lines = [];
-  for (const [index, member] of question.members.entries()) {
-    if (!member.chosen) continue;
-    const bird = board.querySelector(`[data-bird="${index}"]`);
-    const name = linkNameNode(member.chosen);
-    if (!bird || !name) continue;
-    let kind = "set";
-    if (state.revealed) kind = member.chosen === member.nom_commun ? "ok" : "bad";
-    lines.push({ from: edgePoint(bird, "bird"), to: edgePoint(name, "name"), kind });
-  }
-
-  const pending = question.pending;
-  if (!state.revealed && pending && pointerEvent) {
-    const source =
-      pending.side === "bird"
-        ? board.querySelector(`[data-bird="${pending.key}"]`)
-        : linkNameNode(pending.key);
-    const target = pointerEvent.target;
-    const inside = target instanceof Node && source.contains(target);
-    if (source && !inside) {
-      lines.push({
-        from: edgePoint(source, pending.side === "bird" ? "bird" : "name"),
-        to: {
-          x: pointerEvent.clientX - boardRect.left,
-          y: pointerEvent.clientY - boardRect.top,
-        },
-        kind: "draft",
-      });
-    }
-  }
-
-  const svgNs = "http://www.w3.org/2000/svg";
-  svg.replaceChildren(
-    ...lines.flatMap((line) => {
-      const path = document.createElementNS(svgNs, "line");
-      path.setAttribute("x1", String(line.from.x));
-      path.setAttribute("y1", String(line.from.y));
-      path.setAttribute("x2", String(line.to.x));
-      path.setAttribute("y2", String(line.to.y));
-      path.setAttribute("class", `link-line is-${line.kind}`);
-      return [path];
-    }),
-  );
-}
-
-function paintLink() {
-  const question = currentQuestion();
-  const pending = state.revealed ? null : question.pending;
-  for (const card of document.querySelectorAll("[data-bird]")) {
-    const index = Number(card.dataset.bird);
-    const member = question.members[index];
-    if (!member) continue;
-    const correct = state.revealed && member.chosen === member.nom_commun;
-    card.classList.toggle(
-      "is-pending",
-      question.focus === index || (pending?.side === "bird" && pending.key === index),
-    );
-    card.classList.toggle("is-linked", Boolean(member.chosen) && !state.revealed);
-    card.classList.toggle("is-correct", Boolean(correct));
-    card.classList.toggle("is-wrong", state.revealed && !correct);
-    const photo = card.querySelector("[data-photo]");
-    if (state.revealed && photo) photo.alt = member.nom_commun;
-  }
-  for (const chip of document.querySelectorAll("[data-link-name]")) {
-    const name = chip.dataset.linkName;
-    const owner = question.members.find((member) => member.chosen === name);
-    const named = question.members.find((member) => member.nom_commun === name);
-    chip.classList.toggle("is-pending", pending?.side === "name" && pending.key === name);
-    chip.classList.toggle("is-linked", Boolean(owner) && !state.revealed);
-    chip.classList.toggle("is-correct", Boolean(state.revealed && named && named.chosen === name));
-    chip.classList.toggle("is-wrong", Boolean(state.revealed && owner && owner.nom_commun !== name));
-  }
-  const validate = document.querySelector("[data-validate]");
-  if (validate) validate.disabled = question.members.some((member) => !member.chosen);
-  document.querySelector(".link-board")?.classList.toggle("is-revealed", Boolean(state.revealed));
-  syncLinkPointer();
-  if (state.revealed) drawLinkLines();
-  else {
-    const svg = document.querySelector(".link-board .link-lines");
-    if (svg) svg.replaceChildren();
-  }
-}
-
-function usableLinkPhoto(img) {
-  const src = img?.currentSrc || img?.src || "";
-  if (!img || img.hidden || !img.naturalWidth || !src || src.includes("placeholder.svg")) return "";
-  return src;
-}
-
-function closeLinkFocus() {
-  clearFocusPointer();
-  document.querySelector(".link-focus")?.remove();
-  document.body.classList.remove("link-focus-open");
-  if (screen === "quiz" && state.mode === "relier" && !state.revealed) {
-    const question = currentQuestion();
-    if (question) question.focus = null;
-  }
-}
-
-function linkLockIcon() {
-  const svgNs = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNs, "svg");
-  svg.setAttribute("class", "link-lock");
-  svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("aria-hidden", "true");
-  const body = document.createElementNS(svgNs, "rect");
-  body.setAttribute("x", "5");
-  body.setAttribute("y", "11");
-  body.setAttribute("width", "14");
-  body.setAttribute("height", "10");
-  body.setAttribute("rx", "2");
-  const shackle = document.createElementNS(svgNs, "path");
-  shackle.setAttribute("d", "M8 11V8a4 4 0 0 1 8 0v3");
-  for (const node of [body, shackle]) {
-    node.setAttribute("fill", "none");
-    node.setAttribute("stroke", "currentColor");
-    node.setAttribute("stroke-width", "2");
-    node.setAttribute("stroke-linecap", "round");
-  }
-  svg.append(body, shackle);
-  return svg;
-}
-
-function focusNameNode(name) {
-  for (const node of document.querySelectorAll("[data-focus-name]")) {
-    if (node.dataset.focusName === name) return node;
-  }
-  return null;
-}
-
-function drawFocusLines(pointerEvent) {
-  const panel = document.querySelector(".link-focus-panel");
-  const svg = panel?.querySelector(".link-focus-lines");
-  const photo = panel?.querySelector(".link-focus-photo img");
-  if (!panel || !svg || screen !== "quiz" || state.mode !== "relier") return;
-  const panelRect = panel.getBoundingClientRect();
-  if (panelRect.width < 1 || panelRect.height < 1) return;
-  svg.setAttribute("viewBox", `0 0 ${panelRect.width} ${panelRect.height}`);
-  svg.setAttribute("width", String(panelRect.width));
-  svg.setAttribute("height", String(panelRect.height));
-  if (!photo || photo.hidden) {
-    svg.replaceChildren();
-    return;
-  }
-
-  const question = currentQuestion();
-  const member = question?.members?.[question.focus];
-  const photoRect = photo.getBoundingClientRect();
-  const from = {
-    x: photoRect.left + photoRect.width / 2 - panelRect.left,
-    y: photoRect.bottom - panelRect.top,
-  };
-  const lines = [];
-  if (member?.chosen) {
-    const name = focusNameNode(member.chosen);
-    if (name) {
-      const rect = name.getBoundingClientRect();
-      lines.push({
-        from,
-        to: {
-          x: rect.left + rect.width / 2 - panelRect.left,
-          y: rect.top - panelRect.top,
-        },
-        kind: "set",
-      });
-    }
-  }
-  const target = pointerEvent?.target;
-  const hovered = target instanceof Element ? target.closest("[data-focus-name]") : null;
-  if (pointerEvent && !(target instanceof Node && photo.contains(target))) {
-    const rect = hovered?.getBoundingClientRect();
-    lines.push({
-      from,
-      to: rect
-        ? {
-            x: rect.left + rect.width / 2 - panelRect.left,
-            y: rect.top - panelRect.top,
-          }
-        : {
-            x: pointerEvent.clientX - panelRect.left,
-            y: pointerEvent.clientY - panelRect.top,
-          },
-      kind: "draft",
-    });
-  }
-
-  const svgNs = "http://www.w3.org/2000/svg";
-  const dot = document.createElementNS(svgNs, "circle");
-  dot.setAttribute("cx", String(from.x));
-  dot.setAttribute("cy", String(from.y));
-  dot.setAttribute("r", "6");
-  dot.setAttribute("class", "link-focus-dot");
-  svg.replaceChildren(
-    dot,
-    ...lines.map((line) => {
-      const path = document.createElementNS(svgNs, "line");
-      path.setAttribute("x1", String(line.from.x));
-      path.setAttribute("y1", String(line.from.y));
-      path.setAttribute("x2", String(line.to.x));
-      path.setAttribute("y2", String(line.to.y));
-      path.setAttribute("class", `link-line is-${line.kind}`);
-      return path;
-    }),
-  );
-}
-
-function syncFocusPointer() {
-  clearFocusPointer();
-  if (!document.querySelector(".link-focus")) return;
-  linkFocusMove = (event) => drawFocusLines(event);
-  window.addEventListener("pointermove", linkFocusMove);
-}
-
-function chooseFocusName(name) {
-  if (screen !== "quiz" || state.revealed || state.mode !== "relier") return;
-  const question = currentQuestion();
-  const member = question.members[question.focus];
-  if (!member) return;
-  if (member.chosen === name) member.chosen = "";
-  else {
-    for (const other of question.members) {
-      if (other !== member && other.chosen === name) other.chosen = "";
-    }
-    member.chosen = name;
-  }
-  question.pending = null;
-  question.focus = null;
-  clearFocusPointer();
-  document.querySelector(".link-focus")?.remove();
-  document.body.classList.remove("link-focus-open");
-  paintLink();
-}
-
-function openLinkFocus(index) {
-  if (screen !== "quiz" || state.revealed || state.mode !== "relier") return;
-  const question = currentQuestion();
-  const member = question.members[index];
-  if (!member) return;
-  question.pending = null;
-  question.focus = index;
-  paintLink();
-
-  const thumb = document.querySelector(`[data-bird="${index}"] [data-photo]`);
-  const image = h("img", { alt: "", hidden: true });
-  image.dataset.species = member.nom_scientifique;
-  const status = h("p", { class: "link-focus-status", text: quizCopy().loading });
-  const showPhoto = () => {
-    const src = usableLinkPhoto(thumb);
-    if (!src || !image.isConnected) return;
-    image.src = src;
-    image.hidden = false;
-    status.hidden = true;
-    requestAnimationFrame(() => drawFocusLines());
-  };
-
-  const panel = h(
-    "div",
-    { class: "link-focus-panel" },
-    h("div", { class: "link-focus-photo" }, image, status),
-    h(
-      "div",
-      { class: "link-focus-names", role: "group", "aria-label": "Noms" },
-      question.names.map((name) => {
-        const locked = question.members.some((item, itemIndex) => itemIndex !== index && item.chosen === name);
-        return h(
-          "button",
-          {
-            class: [
-              "link-focus-name",
-              member.chosen === name ? "is-current" : "",
-              locked ? "is-locked" : "",
-            ]
-              .filter(Boolean)
-              .join(" "),
-            type: "button",
-            "data-focus-name": name,
-            "aria-label": locked ? `${name}, déjà relié à une autre photo` : name,
-            onClick: () => chooseFocusName(name),
-          },
-          h("span", { text: name }),
-          locked ? linkLockIcon() : null,
-        );
-      }),
-    ),
-  );
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", "link-focus-lines");
-  svg.setAttribute("aria-hidden", "true");
-  panel.append(svg);
-
-  const overlay = h(
-    "div",
-    { class: "link-focus", role: "dialog", "aria-modal": "true", "aria-label": "Choisir le nom de cette photo" },
-    h("button", {
-      class: "link-focus-backdrop",
-      type: "button",
-      "aria-label": "Fermer",
-      onClick: () => {
-        closeLinkFocus();
-        paintLink();
-      },
-    }),
-    panel,
-    h("button", {
-      class: "link-focus-close",
-      type: "button",
-      text: "Fermer",
-      onClick: () => {
-        closeLinkFocus();
-        paintLink();
-      },
-    }),
-  );
-
-  document.querySelector(".link-focus")?.remove();
-  document.body.append(overlay);
-  document.body.classList.add("link-focus-open");
-  showPhoto();
-  thumb?.addEventListener("load", showPhoto);
-  syncFocusPointer();
-  requestAnimationFrame(() => drawFocusLines());
-}
-
-function pickLinkEnd(side, key) {
-  if (screen !== "quiz" || state.revealed || state.mode !== "relier") return;
-  const question = currentQuestion();
-  const pending = question.pending;
-  if (pending && pending.side === side && pending.key === key) {
-    question.pending = null;
-    paintLink();
-    return;
-  }
-  if (pending && pending.side !== side) {
-    const birdIndex = side === "bird" ? key : pending.key;
-    const name = side === "name" ? key : pending.key;
-    const member = question.members[birdIndex];
-    if (!member) return;
-    if (member.chosen === name) member.chosen = "";
-    else {
-      for (const other of question.members) {
-        if (other !== member && other.chosen === name) other.chosen = "";
-      }
-      member.chosen = name;
-    }
-    question.pending = null;
-    paintLink();
-    return;
-  }
-  question.pending = { side, key };
-  paintLink();
-}
-
-function validateLink() {
-  if (screen !== "quiz" || state.revealed || state.mode !== "relier") return;
-  const question = currentQuestion();
-  if (question.members.some((member) => !member.chosen)) return;
-  state.revealed = true;
-  question.pending = null;
-  let correctCount = 0;
-  for (const [index, member] of question.members.entries()) {
-    const correct = member.chosen === member.nom_commun;
-    if (correct) correctCount += 1;
-    else {
-      state.missed.push({
-        nom_commun: member.nom_commun,
-        nom_scientifique: member.nom_scientifique,
-        explication: member.explication,
-        given: member.chosen,
-      });
-      const answer = document.querySelector(`[data-bird="${index}"]`)?.parentElement?.querySelector(".link-answer");
-      if (answer) {
-        answer.hidden = false;
-        answer.textContent = member.nom_commun;
-      }
-    }
-  }
-  state.score += correctCount;
-  const scoreNode = document.querySelector("[data-score]");
-  if (scoreNode) scoreNode.textContent = String(state.score);
-  document.querySelector("[data-validate]")?.remove();
-  const live = document.querySelector("[data-live]");
-  if (live) {
-    live.textContent =
-      correctCount === question.members.length
-        ? "Toute la série est juste."
-        : `${correctCount} photo${correctCount > 1 ? "s" : ""} sur ${question.members.length}.`;
-  }
-  const last = state.index + 1 >= state.questions.length;
-  document.querySelector("[data-actions]")?.append(
-    h("button", {
-      class: "btn",
-      type: "button",
-      text: last ? "Voir le résultat" : "Série suivante",
-      onClick: goNext,
-    }),
-  );
-  paintLink();
-  requestAnimationFrame(() => drawLinkLines());
-}
-
-function mountLinkQuiz() {
-  const question = currentQuestion();
-  const total = state.questions.length;
-  const position = state.index + 1;
-  document.title = `Série ${position} sur ${total} — QuiQuiz`;
-  renderTop({
-    kicker: quizKicker(),
-    title: `Série ${position} sur ${total}`,
-    score: state.score,
-    onBack: backToMenu,
-  });
-
-  const board = h("div", { class: "link-board" });
-  board.style.setProperty("--count", String(question.members.length));
-  question.members.forEach((member, index) => {
-    const frame = photoFrame();
-    const card = h(
-      "button",
-      {
-        class: "link-bird",
-        type: "button",
-        "data-bird": String(index),
-        onClick: () => openLinkFocus(index),
-      },
-      frame,
-    );
-    board.append(
-        h(
-          "div",
-          { class: "link-bird-wrap", style: `--slot: ${index + 1}` },
-          card,
-          h("span", { class: "link-answer", hidden: true }),
-        ),
-    );
-    fillSpeciesFrame(
-      frame,
-      imageSearchName(member),
-      () => screen === "quiz" && state.index + 1 === position && frame.isConnected,
-      undefined,
-      imageOptionsForQuestion(member),
-    );
-  });
-  question.names.forEach((name, index) => {
-    board.append(
-      h("button", {
-        class: "link-name",
-        type: "button",
-        text: name,
-        "data-link-name": name,
-        style: `--slot: ${index + 1}`,
-        onClick: () => pickLinkEnd("name", name),
-      }),
-    );
-  });
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", "link-lines");
-  svg.setAttribute("aria-hidden", "true");
-  board.append(svg);
-
-  show(
-    view,
-    progressBar(position, total),
-    h("p", {
-      class: "lede",
-      text: "Touche une photo : elle s’ouvre en grand, puis choisis son nom. Valide quand tout est relié.",
-    }),
-    board,
-    h("p", { class: "credit", text: quizCopy().creditList }),
-    h(
-      "div",
-      { class: "quiz-actions", "data-actions": "true" },
-      h("button", {
-        class: "btn",
-        type: "button",
-        text: "Valider",
-        disabled: true,
-        "data-validate": "true",
-        onClick: validateLink,
-      }),
-    ),
-    h("p", { class: "sr-only", "data-live": "true", "aria-live": "polite" }),
-  );
-
-  linkResizeObserver = new ResizeObserver(() => {
-    if (state.revealed) drawLinkLines();
-    drawFocusLines();
-  });
-  linkResizeObserver.observe(board);
-  paintLink();
-
-  const upcoming = state.questions[state.index + 1];
-  if (upcoming) {
-    const member = upcoming.members[0];
-    preloadSpecies(
-      upcoming.members.map((m) => m.nom_scientifique),
-      member?.nom_scientifique,
-      imageOptionsForQuestion(member || upcoming),
-    );
-  }
-}
 
 function mountPreparing() {
   const copy = quizCopy();
@@ -5304,8 +4682,6 @@ function mountResults() {
                 ? `Aucune erreur. Chaque ${quizCopy().media} a été reliée au bon nom.`
                 : state.mode === "sexes"
                   ? "Aucune erreur. Mâles et femelles ont été reconnus."
-                  : state.mode === "relier"
-                    ? `Aucune erreur. Chaque ${quizCopy().media} a été reliée au bon nom.`
                     : `Aucune erreur. ${quizCopy().resultsPerfect}`,
       });
 
@@ -5813,18 +5189,11 @@ function openPhoto(src, alt) {
 document.addEventListener("click", (event) => {
   const img = event.target.closest?.("[data-photo]");
   if (!img) return;
-  if (state.mode === "relier" && screen === "quiz" && !state.revealed) return;
   const src = img.currentSrc || img.src;
   if (img.hidden || !img.naturalWidth || !src || src.includes("placeholder.svg")) return;
   openPhoto(src, img.alt);
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape" || !document.querySelector(".link-focus")) return;
-  event.preventDefault();
-  closeLinkFocus();
-  if (screen === "quiz" && state.mode === "relier") paintLink();
-});
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape" || !isPhotoOpen()) return;

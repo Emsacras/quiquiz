@@ -3,11 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuiQuiz — Quiz nature, oiseaux, plantes et géographie</title>
     <meta
       name="description"
-      content="QuiQuiz — reconnais oiseaux, plantes, champignons, poissons, reptiles et pays avec Cui-Cui."
+      content="QuiQuiz : quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, minéraux, pays, drapeaux, nuages et fossiles. Jouable tout de suite avec Cui-Cui."
     />
-    <title>QuiQuiz</title>
+    <meta name="theme-color" content="#2F6FE0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="author" content="Emsacras" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://quiquiz.fr/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuiQuiz" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://quiquiz.fr/" />
+    <meta property="og:title" content="QuiQuiz — Quiz nature, oiseaux, plantes et géographie" />
+    <meta
+      property="og:description"
+      content="Reconnais oiseaux, plantes, champignons, animaux, pays et bien plus en photos. Quiz gratuits, défis du jour, révisions."
+    />
+    <meta property="og:image" content="https://quiquiz.fr/assets/mascot/cui-cui.png" />
+    <meta property="og:image:alt" content="Cui-Cui, la mascotte de QuiQuiz" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="QuiQuiz — Quiz nature et géographie" />
+    <meta
+      name="twitter:description"
+      content="Quiz gratuits en images : oiseaux, plantes, champignons, animaux, pays, drapeaux et sciences de la Terre."
+    />
+    <meta name="twitter:image" content="https://quiquiz.fr/assets/mascot/cui-cui.png" />
+
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="apple-touch-icon" href="assets/mascot/cui-cui.png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -19,6 +45,29 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/theme-cuicui.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "QuiQuiz",
+        "url": "https://quiquiz.fr/",
+        "description": "Quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, minéraux, pays, drapeaux, nuages et fossiles.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "fr",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "image": "https://quiquiz.fr/assets/mascot/cui-cui.png",
+        "author": {
+          "@type": "Person",
+          "name": "Emsacras"
+        }
+      }
+    </script>
   </head>
   <body class="theme-cuicui">
     <div class="side-fillers" aria-hidden="true">
@@ -33,7 +82,17 @@
       </footer>
     </div>
     <div id="onboarding" class="onboarding" hidden></div>
-    <noscript>Active JavaScript pour jouer au quiz.</noscript>
+    <noscript>
+      <div class="app" style="padding: 2rem; max-width: 40rem; margin: 0 auto">
+        <h1>QuiQuiz</h1>
+        <p>
+          Active JavaScript pour jouer. QuiQuiz propose des quiz gratuits en images :
+          oiseaux, plantes, champignons, mammifères, insectes, reptiles, poissons, fruits,
+          minéraux, pays, capitales, drapeaux, nuages, constellations et fossiles.
+        </p>
+        <p>Site : <a href="https://quiquiz.fr/">https://quiquiz.fr/</a></p>
+      </div>
+    </noscript>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

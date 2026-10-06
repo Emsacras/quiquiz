@@ -320,8 +320,6 @@ body.theme-cuicui::after {
 .theme-cuicui .chip,
 .theme-cuicui .suggestions,
 .theme-cuicui .answer-field input,
-.theme-cuicui .link-bird,
-.theme-cuicui .link-name,
 .theme-cuicui .app-tab {
   background: var(--surface);
   border: 3px solid var(--ink);
@@ -712,10 +710,6 @@ html.is-admin .admin-mod {
   margin: 12px 0;
 }
 
-.link-board:not(.is-revealed) .link-lines {
-  display: none;
-}
-
 .theme-cuicui .options {
   gap: 12px;
 }
@@ -846,17 +840,13 @@ html.is-admin .admin-mod {
   box-shadow: 2px 2px 0 var(--ink);
 }
 
-.theme-cuicui .chip.is-correct,
-.theme-cuicui .link-bird.is-correct,
-.theme-cuicui .link-name.is-correct {
+.theme-cuicui .chip.is-correct {
   background: var(--ok-bg);
   border-color: var(--ok);
   color: var(--ok);
 }
 
-.theme-cuicui .chip.is-wrong,
-.theme-cuicui .link-bird.is-wrong,
-.theme-cuicui .link-name.is-wrong {
+.theme-cuicui .chip.is-wrong {
   background: var(--bad-bg);
   border-color: var(--bad);
   color: var(--bad);

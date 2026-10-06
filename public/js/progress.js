@@ -90,14 +90,6 @@ const GLOBAL_BADGES = [
     tint: "accent",
   },
   {
-    id: "first_relier",
-    group: "global",
-    label: "Fil rouge",
-    description: "Termine une partie en mode relier.",
-    glyph: "↔",
-    tint: "accent",
-  },
-  {
     id: "explorer_3",
     group: "global",
     label: "Explorateur",
@@ -445,7 +437,6 @@ function modeBadgeId(mode) {
   if (mode === "texte") return "first_texte";
   if (mode === "paire") return "first_paire";
   if (mode === "groupes") return "first_groupes";
-  if (mode === "relier") return "first_relier";
   return "";
 }
 

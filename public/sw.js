@@ -1,4 +1,4 @@
-const CACHE = "quiquiz-shell-v14";
+const CACHE = "quiquiz-shell-v15";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -22,6 +22,8 @@ const PRECACHE = [
   "/assets/filler/borderleft.png",
   "/assets/filler/borderright.png",
   "/manifest.webmanifest",
+  "/robots.txt",
+  "/sitemap.xml",
 ];
 
 self.addEventListener("install", (event) => {
