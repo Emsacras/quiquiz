@@ -2472,18 +2472,6 @@ function homeMixButton(scopeLabel, onClick) {
   );
 }
 
-function levelMark(levelId) {
-  return h("img", {
-    class: "level-logo",
-    src: `/assets/levels/${levelId}.png`,
-    alt: "",
-    "aria-hidden": "true",
-    decoding: "async",
-    width: 48,
-    height: 48,
-  });
-}
-
 function levelButton(level, category, copy, groupsBlocked) {
   const rawCount =
     state.mode === "variantes"
@@ -2510,6 +2498,18 @@ function levelButton(level, category, copy, groupsBlocked) {
           : count === 0
             ? "Aucune question"
             : `${count} question${count > 1 ? "s" : ""}`;
+  const logo = h("img", {
+    class: "card-logo",
+    src: `/assets/levels/${level.id}.png`,
+    alt: "",
+    "aria-hidden": "true",
+    decoding: "async",
+    onError: (event) => {
+      const wrap = event.currentTarget.closest(".card-wrap");
+      event.currentTarget.remove();
+      wrap?.classList.remove("has-logo");
+    },
+  });
   const btn = h(
     "button",
     {
@@ -2518,17 +2518,12 @@ function levelButton(level, category, copy, groupsBlocked) {
       disabled: (state.mode === "groupes" ? rawCount : count) === 0 || groupsBlocked,
       onClick: () => startQuiz(level.id),
     },
-    levelMark(level.id),
-    h(
-      "span",
-      { class: "level-copy" },
-      h("strong", { text: level.label }),
-      h("span", { text: copy.levels[level.id] }),
-      h("span", { class: "meta", text: questionLabel }),
-      best ? h("em", { text: `Record ${best.score}/${best.total}` }) : null,
-    ),
+    h("strong", { text: level.label }),
+    h("span", { text: copy.levels[level.id] }),
+    h("span", { class: "meta", text: questionLabel }),
+    best ? h("em", { text: `Record ${best.score}/${best.total}` }) : null,
   );
-  return btn;
+  return h("div", { class: "card-wrap has-logo" }, logo, btn);
 }
 
 function authFlashMessage(code) {
