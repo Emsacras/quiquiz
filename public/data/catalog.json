@@ -174,7 +174,7 @@
     {
       "id": "sciences-terre",
       "nom": "Sciences de la Terre",
-      "description": "Rochers, minéraux, nuages, constellations, fossiles…",
+      "description": "Rochers, minéraux, nuages, fossiles…",
       "children": [
         {
           "id": "rochers-mineraux",
@@ -190,15 +190,6 @@
           "nom": "Nuages",
           "fichier": "data/nuages.json",
           "description": "Types de nuages : cumulus, cirrus, cumulonimbus…",
-          "regions": [
-            "monde"
-          ]
-        },
-        {
-          "id": "constellations",
-          "nom": "Constellations",
-          "fichier": "data/constellations.json",
-          "description": "Reconnaître les constellations sur une carte du ciel.",
           "regions": [
             "monde"
           ]

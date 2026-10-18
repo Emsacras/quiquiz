@@ -370,10 +370,13 @@ async function ensureCategoryById(categoryId) {
 
   for (const entry of flattenCatalogLeaves(state.catalog)) {
     const loaded = await loadCategory(entry.fichier);
-    if (loaded?.id === categoryId || loaded?.id === resolvedId) {
-      return rememberCategory(loaded);
-    }
-    if (entry.id === categoryId || CATALOG_ID_ALIASES[entry.id] === loaded?.id) {
+    if (!loaded?.id) continue;
+    if (
+      loaded.id === categoryId ||
+      loaded.id === resolvedId ||
+      entry.id === categoryId ||
+      entry.id === resolvedId
+    ) {
       return rememberCategory(loaded);
     }
   }
@@ -446,7 +449,6 @@ const MODES_BY_KIND = {
   bebes: BIO_MODES,
   feuilles: BIO_MODES,
   nuages: CORE_MODES,
-  constellations: CORE_MODES,
   fossiles: CORE_MODES,
   capitales: BIO_MODES,
   pays: CORE_MODES,
@@ -492,8 +494,6 @@ function mediaKindForQuizId(quizId) {
       return "leaf";
     case "nuages":
       return "cloud";
-    case "constellations":
-      return "constellation";
     case "fossiles":
       return "fossil";
     default:
@@ -535,8 +535,6 @@ function quizKind(category = state.category) {
       return "feuilles";
     case "nuages":
       return "nuages";
-    case "constellations":
-      return "constellations";
     case "fossiles":
       return "fossiles";
     case "oiseaux-francais":
@@ -609,11 +607,9 @@ function imageOptionsForQuestion(question, category = state.category) {
                 ? "leaf"
                 : qk === "nuages"
                   ? "cloud"
-                  : qk === "constellations"
-                    ? "constellation"
-                    : qk === "fossiles"
-                      ? "fossil"
-                      : "";
+                  : qk === "fossiles"
+                    ? "fossil"
+                    : "";
   const kind =
     question?.mediaKind ||
     mediaKindForQuizId(question?.sourceQuizId) ||
@@ -984,37 +980,29 @@ function quizCopy(category = state.category) {
                             units: "nuages",
                             nameField: "Type de nuage",
                           }
-                        : kind === "constellations"
+                        : kind === "fossiles"
                           ? {
-                              description: "Pas de photo : un texte décrit la constellation, puis quatre noms.",
-                              alt: "Constellation à identifier",
-                              unit: "constellation",
-                              units: "constellations",
-                              nameField: "Nom de la constellation",
+                              description: "Pas de photo : un texte décrit le fossile, puis quatre noms.",
+                              alt: "Fossile à identifier",
+                              unit: "fossile",
+                              units: "fossiles",
+                              nameField: "Nom du fossile",
                             }
-                          : kind === "fossiles"
+                          : kind === "mixed"
                             ? {
-                                description: "Pas de photo : un texte décrit le fossile, puis quatre noms.",
-                                alt: "Fossile à identifier",
-                                unit: "fossile",
-                                units: "fossiles",
-                                nameField: "Nom du fossile",
+                                description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
+                                alt: "Élément à identifier",
+                                unit: "entrée",
+                                units: "entrées",
+                                nameField: "Nom",
                               }
-                            : kind === "mixed"
-                              ? {
-                                  description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
-                                  alt: "Élément à identifier",
-                                  unit: "entrée",
-                                  units: "entrées",
-                                  nameField: "Nom",
-                                }
-                              : {
-                                  description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
-                                  alt: "Oiseau à identifier",
-                                  unit: "espèce",
-                                  units: "espèces",
-                                  nameField: "Nom de l'espèce",
-                                };
+                            : {
+                                description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
+                                alt: "Oiseau à identifier",
+                                unit: "espèce",
+                                units: "espèces",
+                                nameField: "Nom de l'espèce",
+                              };
 
   return {
     kind,
@@ -1034,11 +1022,9 @@ function quizCopy(category = state.category) {
               ? "Une feuille, quatre arbres."
               : kind === "nuages"
                 ? "Une photo de nuage, quatre types."
-                : kind === "constellations"
-                  ? "Une carte du ciel, quatre constellations."
-                  : kind === "fossiles"
-                    ? "Une photo de fossile, quatre noms."
-                    : "Une photo, quatre noms.",
+                : kind === "fossiles"
+                  ? "Une photo de fossile, quatre noms."
+                  : "Une photo, quatre noms.",
       },
       texte: {
         label: "Texte libre",
@@ -1134,7 +1120,7 @@ function updateFooter() {
 }
 
 function ficheHref(question) {
-  const categoryId = state.category?.id;
+  const categoryId = question?.sourceQuizId || state.category?.id;
   const scientificName = question?.nom_scientifique;
   if (!categoryId || !scientificName) return "";
   const hash = `#/fiche/${categoryId}/${encodeURIComponent(scientificName)}`;
@@ -2666,9 +2652,30 @@ async function openQuizFile(file) {
   }
 }
 
+function catalogLogoSrc(entry) {
+  const id = String(entry?.id || "").trim();
+  if (!id) return "";
+  return `/assets/catalog/${id}.png`;
+}
+
 function homeCard(entry, onClick, kicker = "") {
   const disabled = Boolean(entry.aVenir);
-  return h(
+  const logoSrc = catalogLogoSrc(entry);
+  const logo = logoSrc
+    ? h("img", {
+        class: "card-logo",
+        src: logoSrc,
+        alt: "",
+        "aria-hidden": "true",
+        decoding: "async",
+        onError: (event) => {
+          const wrap = event.currentTarget.closest(".card-wrap");
+          event.currentTarget.remove();
+          wrap?.classList.remove("has-logo");
+        },
+      })
+    : null;
+  const card = h(
     "button",
     {
       class: "card",
@@ -2680,6 +2687,8 @@ function homeCard(entry, onClick, kicker = "") {
     h("strong", { text: entry.nom }),
     h("span", { text: entry.description || (entry.aVenir ? "Pas encore de partie." : "") }),
   );
+  if (!logo) return card;
+  return h("div", { class: "card-wrap has-logo" }, logo, card);
 }
 
 function homeSection(title, children) {

@@ -1,5 +1,5 @@
 /**
- * Génère : bébés animaux, feuilles d’arbres, nuages, constellations, fossiles.
+ * Génère : bébés animaux, feuilles d’arbres, nuages, fossiles.
  * Usage: node scripts/build-new-quizzes.mjs
  */
 import { readFileSync, writeFileSync } from "fs";
@@ -203,49 +203,6 @@ const nuages = buildQuiz({
   ],
 });
 
-const constellations = buildQuiz({
-  id: "constellations",
-  categorie: "Constellations",
-  description: "Reconnais les constellations sur une carte du ciel ou un schéma.",
-  groups: [
-    {
-      id: "boreales",
-      label: "Boréales célèbres",
-      items: [
-        { difficulte: "facile", nom_commun: "Grande Ourse", nom_scientifique: "Ursa Major", imageQuery: "constellation", indice: "Casserole à 7 étoiles", description: "Asterisme en casserole, guide vers l’étoile polaire.", explication: "Grande Ourse : La « casserole » du nord." },
-        { difficulte: "facile", nom_commun: "Petite Ourse", nom_scientifique: "Ursa Minor", imageQuery: "constellation", indice: "Porte l’étoile polaire", description: "Petite casserole dont l’extrémité est Polaris.", explication: "Petite Ourse : Contient l’étoile polaire." },
-        { difficulte: "facile", nom_commun: "Orion", nom_scientifique: "Orion", imageQuery: "constellation", indice: "Ceinture à 3 étoiles", description: "Chasseur avec ceinture alignée de trois étoiles.", explication: "Orion : Constellation d’hiver très visible." },
-        { difficulte: "moyen", nom_commun: "Cassiopée", nom_scientifique: "Cassiopeia", imageQuery: "constellation", indice: "W ou M", description: "Cinq étoiles formant un W (ou M) caractéristique.", explication: "Cassiopée : Le W circumpolaire." },
-        { difficulte: "moyen", nom_commun: "Cygnus", nom_scientifique: "Cygnus", imageQuery: "constellation", indice: "Croix du Nord", description: "Forme de cygne / croix le long de la Voie lactée.", explication: "Cygnus : La Croix du Nord." },
-        { difficulte: "difficile", nom_commun: "Céphée", nom_scientifique: "Cepheus", imageQuery: "constellation", indice: "Maison / pentagone", description: "Constellation proche de Cassiopée, forme de maison.", explication: "Céphée : Roi mythique, près de Cassiopée." },
-      ],
-    },
-    {
-      id: "zodiaque",
-      label: "Zodiaque",
-      items: [
-        { difficulte: "facile", nom_commun: "Lion", nom_scientifique: "Leo", imageQuery: "constellation", indice: "Sickle / point d’interrogation", description: "Tête du lion en faucille, étoile Régulus.", explication: "Lion (Leo) : Constellation printanière du zodiaque." },
-        { difficulte: "facile", nom_commun: "Scorpion", nom_scientifique: "Scorpius", imageQuery: "constellation", indice: "Queue courbée, Antarès", description: "Forme de scorpion, étoile rouge Antarès.", explication: "Scorpion : Zodiaque d’été austral / bas sur l’horizon." },
-        { difficulte: "moyen", nom_commun: "Gémeaux", nom_scientifique: "Gemini", imageQuery: "constellation", indice: "Castor et Pollux", description: "Deux étoiles brillantes côte à côte, les jumeaux.", explication: "Gémeaux : Castor et Pollux." },
-        { difficulte: "moyen", nom_commun: "Taureau", nom_scientifique: "Taurus", imageQuery: "constellation", indice: "V des Hyades", description: "Tête en V (Hyades) et Pléiades proches.", explication: "Taureau : V des Hyades + Pléiades." },
-        { difficulte: "difficile", nom_commun: "Verseau", nom_scientifique: "Aquarius", imageQuery: "constellation", indice: "Verseur d’eau", description: "Constellation étendue du verseur, peu d’étoiles très brillantes.", explication: "Verseau : Zodiaque d’automne." },
-        { difficulte: "difficile", nom_commun: "Capricorne", nom_scientifique: "Capricornus", imageQuery: "constellation", indice: "Triangle / corne", description: "Constellation en triangle allongé du zodiaque.", explication: "Capricorne : Zodiaque d’hiver." },
-      ],
-    },
-    {
-      id: "autres",
-      label: "Autres classiques",
-      items: [
-        { difficulte: "facile", nom_commun: "Cocher", nom_scientifique: "Auriga", imageQuery: "constellation", indice: "Pentagone avec Capella", description: "Pentagone brillant dominé par Capella.", explication: "Cocher (Auriga) : Capella, hiver boréal." },
-        { difficulte: "moyen", nom_commun: "Aigle", nom_scientifique: "Aquila", imageQuery: "constellation", indice: "Altaïr au centre", description: "Constellation avec Altaïr, pointe du Triangle d’été.", explication: "Aigle : Altaïr, Triangle d’été." },
-        { difficulte: "moyen", nom_commun: "Lyre", nom_scientifique: "Lyra", imageQuery: "constellation", indice: "Véga très brillante", description: "Petite constellation dominée par Véga.", explication: "Lyre : Véga, une des plus brillantes du ciel." },
-        { difficulte: "moyen", nom_commun: "Persée", nom_scientifique: "Perseus", imageQuery: "constellation", indice: "Entre Cassiopée et le Cocher", description: "Constellation riche en amas, héros mythique.", explication: "Persée : Entre Cassiopée et Auriga." },
-        { difficulte: "difficile", nom_commun: "Andromède", nom_scientifique: "Andromeda", imageQuery: "constellation", indice: "Proche de la galaxie M31", description: "Chaîne d’étoiles, abrite la galaxie d’Andromède.", explication: "Andromède : Constellation + galaxie célèbre." },
-        { difficulte: "difficile", nom_commun: "Hercule", nom_scientifique: "Hercules", imageQuery: "constellation", indice: "Keystone (clé de voûte)", description: "Grand héros, asterisme en trapèze (Keystone).", explication: "Hercule : Trapèze du Keystone." },
-      ],
-    },
-  ],
-});
 
 const fossiles = buildQuiz({
   id: "fossiles",
@@ -294,7 +251,6 @@ const fossiles = buildQuiz({
 writeQuiz(bebes);
 writeQuiz(feuilles);
 writeQuiz(nuages);
-writeQuiz(constellations);
 writeQuiz(fossiles);
 
 // Patch catalog.json
@@ -344,15 +300,7 @@ if (terre) {
       regions: ["monde"],
     });
   }
-  if (!terre.children.some((c) => c.id === "constellations")) {
-    terre.children.push({
-      id: "constellations",
-      nom: "Constellations",
-      fichier: "data/constellations.json",
-      description: "Reconnaître les constellations sur une carte du ciel.",
-      regions: ["monde"],
-    });
-  }
+  terre.children = terre.children.filter((c) => c.id !== "constellations");
   if (!terre.children.some((c) => c.id === "fossiles")) {
     terre.children.push({
       id: "fossiles",
@@ -362,7 +310,7 @@ if (terre) {
       regions: ["monde"],
     });
   }
-  terre.description = "Rochers, minéraux, nuages, constellations, fossiles…";
+  terre.description = "Rochers, minéraux, nuages, fossiles…";
 }
 
 writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
