@@ -6,7 +6,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node server/index.js"
+    "dev": "node server/index.js",
+    "sitemap": "node scripts/build-sitemap.mjs"
   },
   "engines": {
     "node": ">=18"

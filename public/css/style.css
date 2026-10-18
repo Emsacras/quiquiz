@@ -52,9 +52,14 @@ body {
   line-height: 1.45;
 }
 
-button, input { font: inherit; color: inherit; }
+button, input, a.card { font: inherit; color: inherit; }
 
 button { cursor: pointer; }
+
+a.card {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 button:disabled {
   cursor: not-allowed;
@@ -786,6 +791,9 @@ h1 {
   padding: 6px 12px;
   background: var(--surface);
   font-weight: 650;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .app-tab.is-selected {
@@ -1119,6 +1127,23 @@ body.lightbox-open { overflow: hidden; }
   margin-top: 28px;
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 6px;
+}
+
+.site-footer-nav a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer-nav a:hover {
+  color: var(--accent);
 }
 
 .modes {

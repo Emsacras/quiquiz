@@ -77,3 +77,13 @@ Profils joueurs + sync : `data-runtime/users/` (à sauvegarder comme le reste du
 ## 7. Données validées
 
 Les images validées vivent dans `data-runtime/`. Persiste ce dossier (backup) ; ne le mets pas dans git.
+
+## 8. SEO (sitemap / liste quiz)
+
+Après ajout ou retrait d’un quiz dans `public/data/catalog.json` :
+
+```bash
+npm run sitemap
+```
+
+Puis commit les fichiers régénérés (`public/sitemap.xml`, `public/index.html`).

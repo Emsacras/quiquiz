@@ -1073,6 +1073,7 @@ function availableModes(category = state.category) {
 }
 
 const SITE_FOOTER = "© 2026 Emsacras";
+const SITE_ORIGIN = "https://quiquiz.fr/";
 
 const DEFAULT_SEO = {
   title: "QuiQuiz — Quiz nature, oiseaux, plantes et géographie",
@@ -1080,20 +1081,55 @@ const DEFAULT_SEO = {
     "QuiQuiz : quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, minéraux, pays, drapeaux, nuages et fossiles. Jouable tout de suite avec Cui-Cui.",
 };
 
+function setMetaContent(selector, content, attr = "content") {
+  const node = document.querySelector(selector);
+  if (node) node.setAttribute(attr, content);
+}
+
 function setPageSeo({ title, description } = {}) {
   const nextTitle = title || DEFAULT_SEO.title;
   const nextDescription = description || DEFAULT_SEO.description;
   document.title = nextTitle;
-  const meta = document.querySelector('meta[name="description"]');
-  if (meta) meta.setAttribute("content", nextDescription);
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.setAttribute("content", nextTitle);
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc) ogDesc.setAttribute("content", nextDescription);
-  const twTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twTitle) twTitle.setAttribute("content", nextTitle);
-  const twDesc = document.querySelector('meta[name="twitter:description"]');
-  if (twDesc) twDesc.setAttribute("content", nextDescription);
+  setMetaContent('meta[name="description"]', nextDescription);
+  setMetaContent('meta[property="og:title"]', nextTitle);
+  setMetaContent('meta[property="og:description"]', nextDescription);
+  setMetaContent('meta[property="og:url"]', SITE_ORIGIN);
+  setMetaContent('meta[name="twitter:title"]', nextTitle);
+  setMetaContent('meta[name="twitter:description"]', nextDescription);
+  setMetaContent('link[rel="canonical"]', SITE_ORIGIN, "href");
+}
+
+function categorySeo(category = state.category) {
+  const name = category?.categorie || "Quiz";
+  return {
+    title: `Quiz ${name} — QuiQuiz`,
+    description:
+      category?.description ||
+      `Quiz ${name} en images sur QuiQuiz : QCM, texte libre, groupes et plus.`,
+  };
+}
+
+function applyPlaySeo(position, total) {
+  const name = state.category?.categorie || "Quiz";
+  setPageSeo({
+    title: `Question ${position} sur ${total} — ${name} — QuiQuiz`,
+    description: categorySeo().description,
+  });
+}
+
+function catalogQuizHref(entry) {
+  if (!entry || entry.aVenir) return "";
+  if (entry.fichier) {
+    const id =
+      String(entry.fichier)
+        .replace(/^data\//, "")
+        .replace(/\.json$/i, "") || entry.id;
+    return id ? `#/quiz/${encodeURIComponent(id)}` : "";
+  }
+  if (entry.id && (entry.categorie || entry.questions)) {
+    return `#/quiz/${encodeURIComponent(entry.id)}`;
+  }
+  return "";
 }
 
 function updateFooter() {
@@ -2374,29 +2410,36 @@ function renderTop({ kicker, title, score, onBack, backLabel, onMenu, menuLabel 
     ),
   );
   if (showReference) {
+    const catId = state.category?.id || "";
+    const levelsHref = catId ? `#/quiz/${encodeURIComponent(catId)}/levels` : "#/";
+    const refHref = catId ? `#/ref/${encodeURIComponent(catId)}` : "#/";
     row.append(
       h(
         "div",
         { class: "app-tabs", role: "tablist", "aria-label": "Sections" },
-        h("button", {
+        h("a", {
           class: quizOn ? "app-tab is-selected" : "app-tab",
-          type: "button",
+          href: levelsHref,
           role: "tab",
           text: "Quiz",
           "aria-selected": quizOn ? "true" : "false",
-          onClick: () => {
+          onClick: (event) => {
+            event.preventDefault();
             if (!state.category || screen === "levels") return;
             state.prepToken += 1;
             setScreen("levels");
           },
         }),
-        h("button", {
+        h("a", {
           class: refOn ? "app-tab is-selected" : "app-tab",
-          type: "button",
+          href: refHref,
           role: "tab",
           text: "Référence",
           "aria-selected": refOn ? "true" : "false",
-          onClick: openReference,
+          onClick: (event) => {
+            event.preventDefault();
+            openReference();
+          },
         }),
       ),
     );
@@ -2535,7 +2578,10 @@ function authFlashMessage(code) {
 }
 
 function mountProfile() {
-  document.title = "Compte — QuiQuiz";
+  setPageSeo({
+    title: "Compte — QuiQuiz",
+    description: "Connecte-toi pour synchroniser ta progression QuiQuiz (scores, défi du jour, succès).",
+  });
   const me = getCachedMe();
   const providers = getProviders();
   const flash = authFlashMessage(authFlashFromLocation());
@@ -2724,7 +2770,7 @@ function catalogLogoSrc(entry) {
   return `/assets/catalog/${id}.png`;
 }
 
-function homeCard(entry, onClick, kicker = "") {
+function homeCard(entry, onClick, kicker = "", href = "") {
   const disabled = Boolean(entry.aVenir);
   const logoSrc = catalogLogoSrc(entry);
   const logo = logoSrc
@@ -2741,18 +2787,36 @@ function homeCard(entry, onClick, kicker = "") {
         },
       })
     : null;
-  const card = h(
-    "button",
-    {
-      class: "card",
-      type: "button",
-      disabled: disabled ? true : undefined,
-      onClick: disabled ? undefined : onClick,
-    },
+  const linkHref = !disabled ? href || catalogQuizHref(entry) : "";
+  const body = [
     h("span", { class: "card-kicker", text: entry.aVenir ? "À venir" : kicker || "Ouvrir" }),
-    h("strong", { text: entry.nom }),
+    h("strong", { text: entry.nom || entry.categorie || "" }),
     h("span", { text: entry.description || (entry.aVenir ? "Pas encore de partie." : "") }),
-  );
+  ];
+  const card = linkHref
+    ? h(
+        "a",
+        {
+          class: "card",
+          href: linkHref,
+          onClick: (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            if (typeof onClick === "function") onClick();
+          },
+        },
+        ...body,
+      )
+    : h(
+        "button",
+        {
+          class: "card",
+          type: "button",
+          disabled: disabled ? true : undefined,
+          onClick: disabled ? undefined : onClick,
+        },
+        ...body,
+      );
   if (!logo) return card;
   return h("div", { class: "card-wrap has-logo" }, logo, card);
 }
@@ -2862,6 +2926,7 @@ function mountHomeRegion(domains) {
                   nom: leafDisplayLabel(leaf),
                   description: leaf.description,
                   aVenir: leaf.aVenir,
+                  fichier: leaf.fichier,
                 },
                 () => void openQuizFile(leaf.fichier),
                 leaf.aVenir ? "À venir" : "Quiz",
@@ -2977,12 +3042,15 @@ function mountHome() {
           "div",
           { class: "cards" },
           state.categories.map((category) =>
-            h(
-              "button",
-              { class: "card", type: "button", onClick: () => openCategory(category) },
-              h("span", { class: "card-kicker", text: "Catégorie" }),
-              h("strong", { text: category.categorie }),
-              h("span", { text: category.description || "" }),
+            homeCard(
+              {
+                id: category.id,
+                nom: category.categorie,
+                description: category.description || "",
+                fichier: `data/${category.id}.json`,
+              },
+              () => openCategory(category),
+              "Catégorie",
             ),
           ),
         ),
@@ -3006,15 +3074,10 @@ function mountLevels() {
   const category = state.category;
   const copy = quizCopy(category);
   const modes = availableModes(category);
-  setPageSeo({
-    title: `${category.categorie} — QuiQuiz`,
-    description:
-      category.description ||
-      `Quiz ${category.categorie} en images sur QuiQuiz : QCM, texte libre, groupes et plus.`,
-  });
+  setPageSeo(categorySeo(category));
   renderTop({
-    kicker: category.categorie,
-    title: "Choisis un niveau",
+    kicker: "Choisis un niveau",
+    title: category.categorie,
     onBack: () => {
       state.category = null;
       state.notice = "";
@@ -3468,7 +3531,7 @@ function mountChantQuiz() {
   chantPicture = null;
   chantPictureUrl = "";
   chantPictureFailed = false;
-  document.title = `Question ${position} sur ${total} — QuiQuiz`;
+  applyPlaySeo(position, total);
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -3564,7 +3627,7 @@ function mountClassicQuiz() {
   const total = state.questions.length;
   const position = state.index + 1;
   const showPhoto = state.mode !== "description";
-  document.title = `Question ${position} sur ${total} — QuiQuiz`;
+  applyPlaySeo(position, total);
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -3661,7 +3724,11 @@ function mountClassicQuiz() {
 function mountSortQuiz() {
   const copy = quizCopy();
   const title = copy.modes.groupes?.label || "Ranger par groupe";
-  document.title = `${title} — QuiQuiz`;
+  const catName = state.category?.categorie || "Quiz";
+  setPageSeo({
+    title: `${title} — ${catName} — QuiQuiz`,
+    description: categorySeo().description,
+  });
   renderTop({
     kicker: quizKicker(),
     title,
@@ -3729,7 +3796,7 @@ function mountPairQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Question ${position} sur ${total} — QuiQuiz`;
+  applyPlaySeo(position, total);
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -4044,7 +4111,11 @@ function mountVariantQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Série ${position} sur ${total} — QuiQuiz`;
+  const catName = state.category?.categorie || "Quiz";
+  setPageSeo({
+    title: `Série ${position} sur ${total} — ${catName} — QuiQuiz`,
+    description: categorySeo().description,
+  });
   renderTop({
     kicker: quizKicker(),
     title: `Série ${position} sur ${total}`,
@@ -4245,7 +4316,7 @@ function mountSexQuiz() {
   const question = currentQuestion();
   const total = state.questions.length;
   const position = state.index + 1;
-  document.title = `Question ${position} sur ${total} — QuiQuiz`;
+  applyPlaySeo(position, total);
   renderTop({
     kicker: quizKicker(),
     title: `Question ${position} sur ${total}`,
@@ -4386,7 +4457,11 @@ async function buildSexes(candidates, token) {
 
 function mountPreparing() {
   const copy = quizCopy();
-  document.title = "Préparation — QuiQuiz";
+  const catName = state.category?.categorie || "Quiz";
+  setPageSeo({
+    title: `Préparation — ${catName} — QuiQuiz`,
+    description: categorySeo().description,
+  });
   renderTop({
     kicker: quizKicker(),
     title: copy.preparingTitle,
@@ -4680,7 +4755,11 @@ function mountResults() {
       ? state.resultTotal
       : scoreTotal();
   const outcome = state.outcome;
-  document.title = "Résultat — QuiQuiz";
+  const catName = state.category?.categorie || "Quiz";
+  setPageSeo({
+    title: `Résultat — ${catName} — QuiQuiz`,
+    description: categorySeo().description,
+  });
   renderTop({
     kicker: quizKicker(),
     title: "Résultat",
@@ -4874,9 +4953,12 @@ function referenceCard(question) {
 
 function mountReference() {
   const category = referenceCategory();
-  document.title = "Référence — QuiQuiz";
-  renderTop({ title: "Référence" });
   if (!category) {
+    setPageSeo({
+      title: "Référence — QuiQuiz",
+      description: "Fiches de référence QuiQuiz pour réviser les espèces et entrées des quiz.",
+    });
+    renderTop({ title: "Référence" });
     view.replaceChildren(h("p", { class: "lede", text: quizCopy().referenceEmpty }));
     return;
   }
@@ -4884,6 +4966,13 @@ function mountReference() {
   syncImagePolicy();
   updateFooter(category);
   const copy = quizCopy(category);
+  setPageSeo({
+    title: `Référence — ${category.categorie} — QuiQuiz`,
+    description:
+      copy.referenceLede ||
+      `Référence ${category.categorie} : fiches et photos pour réviser sur QuiQuiz.`,
+  });
+  renderTop({ kicker: "Référence", title: category.categorie });
   const sections = (category.groupes || []).map((group) => {
     const birds = sortedGroupBirds(group);
     const n = birds.length;
@@ -4920,9 +5009,17 @@ function mountFiche() {
   syncImagePolicy();
   updateFooter(category);
   const groupName = category?.groupes?.find((group) => group.id === question.groupe)?.label || "";
-  document.title = `${question.nom_commun} — Référence`;
+  const ficheDesc = String(
+    question.description ||
+      question.explication ||
+      `Fiche ${question.nom_commun}${category?.categorie ? ` — ${category.categorie}` : ""} sur QuiQuiz.`,
+  ).slice(0, 160);
+  setPageSeo({
+    title: `${question.nom_commun} — fiche QuiQuiz`,
+    description: ficheDesc,
+  });
   renderTop({
-    kicker: groupName,
+    kicker: groupName || category?.categorie || "Fiche",
     title: question.nom_commun,
     onBack: backToReference,
     backLabel: "Retour à la liste",
@@ -5025,7 +5122,10 @@ async function loadFicheGallery(gallery, question, still) {
 function mountRevise() {
   const category = state.category;
   const card = state.reviseQueue[state.reviseIndex];
-  document.title = "Réviser — QuiQuiz";
+  setPageSeo({
+    title: `Réviser — ${category?.categorie || "Quiz"} — QuiQuiz`,
+    description: categorySeo(category).description,
+  });
   renderTop({
     kicker: category?.categorie || "Révision",
     title: "Réviser",
@@ -5109,7 +5209,7 @@ function mountRevise() {
 }
 
 function mountError() {
-  document.title = "QuiQuiz";
+  setPageSeo();
   renderTop({ title: "QuiQuiz" });
   view.replaceChildren(h("p", { class: "lede", text: state.error }));
 }

@@ -20,6 +20,14 @@ npm start
 
 Ouvre http://localhost:4789/ et http://localhost:4789/admin/
 
+Après ajout ou retrait d’un quiz dans `public/data/catalog.json`, régénère le SEO :
+
+```bash
+npm run sitemap
+```
+
+Cela met à jour `public/sitemap.xml` et la liste des quiz dans `public/index.html` (JSON-LD + noscript).
+
 Pour Steam/Google en local, mets des URLs `http://localhost:4789/...` dans `.env` (voir `.env.example`).
 
 Profil joueur : bouton en haut à droite → Steam et/ou Google ; scores, badges, défi du jour et SRS sont synchronisés sur le serveur.
