@@ -645,65 +645,109 @@ html.is-admin .admin-mod {
   cursor: not-allowed;
 }
 
-.badges-strip {
-  margin: 0 0 14px;
-}
-
-.badge-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.badge-pill {
-  display: inline-flex;
-  padding: 4px 10px;
-  border: 2px solid color-mix(in srgb, var(--ink) 35%, transparent);
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  color: var(--muted);
-  opacity: 0.55;
-}
-
-.badge-pill.is-on {
-  opacity: 1;
-  color: var(--ink);
-  border-color: var(--ink);
-  background: color-mix(in srgb, var(--tassel) 35%, var(--surface));
-}
-
 .badge-toasts {
   position: fixed;
   right: 12px;
   bottom: 12px;
   z-index: 50;
   display: grid;
-  gap: 8px;
-  width: min(320px, calc(100vw - 24px));
+  gap: 10px;
+  width: min(340px, calc(100vw - 24px));
   pointer-events: none;
 }
 
 .badge-toast {
+  position: relative;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 3px solid var(--ink);
-  border-radius: 16px;
+  border-radius: 18px;
   background: var(--surface);
   box-shadow: var(--shadow-hard);
-  animation: onboard-in 0.28s ease;
+  overflow: hidden;
+  animation: badge-pop 0.55s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+  animation-delay: calc(var(--toast-i, 0) * 120ms);
 }
 
-.badge-toast-mascot {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+.badge-toast.is-out {
+  animation: badge-out 0.35s ease forwards;
+}
+
+.badge-toast .ach-glyph {
+  transform-origin: center;
+  animation: badge-spin 0.7s ease both;
+  animation-delay: calc(var(--toast-i, 0) * 120ms + 80ms);
+}
+
+.badge-toast-burst {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 40%, color-mix(in srgb, var(--tassel) 45%, transparent), transparent 42%),
+    radial-gradient(circle at 70% 60%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 45%);
+  opacity: 0;
+  animation: badge-burst 0.7s ease both;
+  animation-delay: calc(var(--toast-i, 0) * 120ms);
+  pointer-events: none;
+}
+
+.badge-toast-copy {
+  position: relative;
+  z-index: 1;
 }
 
 .badge-toast p {
   margin: 2px 0 0;
+}
+
+@keyframes badge-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.72) rotate(-4deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.04) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes badge-out {
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+}
+
+@keyframes badge-spin {
+  0% {
+    transform: scale(0.4) rotate(-120deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(12deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes badge-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
 }
 
 .revise-answer {
@@ -927,6 +971,40 @@ html.is-admin .admin-mod {
   background: color-mix(in srgb, var(--bg) 55%, rgba(15, 23, 40, 0.45));
 }
 
+.onboarding.is-spotlight {
+  display: block;
+  padding: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.onboarding-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 18, 32, 0.55);
+  pointer-events: auto;
+}
+
+.onboarding-hole {
+  position: fixed;
+  z-index: 1;
+  border-radius: 18px;
+  box-shadow: 0 0 0 9999px rgba(12, 18, 32, 0.58);
+  border: 3px solid var(--accent);
+  pointer-events: none;
+  transition: left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.onboarding-panel--spotlight {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 2;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 24px));
+  pointer-events: auto;
+}
+
 .onboarding[hidden] {
   display: none !important;
 }
@@ -993,22 +1071,22 @@ html.is-admin .admin-mod {
 }
 
 @media (min-width: 760px) {
-  .onboarding {
+  .onboarding:not(.is-spotlight) {
     align-items: center;
   }
 
-  .onboarding-panel {
+  .onboarding:not(.is-spotlight) .onboarding-panel {
     grid-template-columns: 200px minmax(0, 1fr);
     align-items: end;
     width: min(680px, 100%);
   }
 
-  .onboarding-mascot {
+  .onboarding:not(.is-spotlight) .onboarding-mascot {
     width: 200px;
     grid-row: 1 / span 2;
   }
 
-  .onboarding-bubble::after {
+  .onboarding:not(.is-spotlight) .onboarding-bubble::after {
     left: -12px;
     bottom: 36px;
     transform: rotate(135deg);
@@ -1076,6 +1154,19 @@ html.is-admin .admin-mod {
 
 .theme-cuicui .card:hover:not(:disabled),
 .theme-cuicui .level:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 5px 6px 0 var(--ink);
+}
+
+.theme-cuicui .home-mix {
+  border-width: 3px;
+  border-color: var(--ink);
+  border-style: solid;
+  background: color-mix(in srgb, var(--tassel) 28%, var(--surface));
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .home-mix:hover {
   transform: translateY(-2px);
   box-shadow: 5px 6px 0 var(--ink);
 }

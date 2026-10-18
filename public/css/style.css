@@ -426,15 +426,87 @@ button:disabled {
   color: var(--accent);
 }
 
-.back-link {
-  display: inline-flex;
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
   margin: 0 0 10px;
+}
+
+.back-link,
+.menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
   color: var(--accent);
   font-weight: 700;
   cursor: pointer;
+}
+
+.nav-arrow {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.menu-link {
+  color: var(--ink);
+  opacity: 0.78;
+}
+
+.menu-link:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.home-mix {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  text-align: left;
+  border: 2px dashed color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.home-mix strong {
+  font-size: 1.05rem;
+}
+
+.home-mix span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.home-mix:hover {
+  border-style: solid;
+  border-color: var(--accent);
+}
+
+.levels-grid {
+  gap: 12px;
+}
+
+.level-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.level-logo {
+  display: block;
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+  flex: none;
 }
 
 h1 {
@@ -476,9 +548,6 @@ h1 {
   padding-left: clamp(36px, 9vw, 72px);
 }
 
-.home-play-all {
-  margin: 0 0 16px;
-}
 
 .cards {
   display: grid;
@@ -503,9 +572,19 @@ h1 {
   width: 100%;
   text-align: left;
   padding: 18px;
+  z-index: 1;
+}
+
+.card {
   display: grid;
   gap: 6px;
-  z-index: 1;
+}
+
+.level {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14px;
 }
 
 .card-wrap .card {

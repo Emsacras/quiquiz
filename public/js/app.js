@@ -33,7 +33,6 @@ import {
   getDailyPerfectLog,
   getDailyResult,
   getStreak,
-  listBadges,
   listBadgesByGroup,
   onQuizFinished,
   saveDailyResult,
@@ -187,41 +186,25 @@ function showBadgeToasts(badges) {
     document.body.append(node);
     return node;
   })();
-  for (const badge of badges) {
+  badges.forEach((badge, index) => {
     const toast = h(
       "div",
-      { class: "badge-toast" },
+      { class: "badge-toast is-pop", style: `--toast-i: ${index}` },
+      h("div", { class: "badge-toast-burst", "aria-hidden": "true" }),
       achievementGlyph(badge),
-      h("div", null, h("strong", { text: "Succès débloqué" }), h("p", { text: badge.label })),
+      h(
+        "div",
+        { class: "badge-toast-copy" },
+        h("strong", { text: "Succès débloqué" }),
+        h("p", { text: badge.label }),
+      ),
     );
     host.append(toast);
-    setTimeout(() => toast.remove(), 4200);
-  }
-}
-
-function badgesStrip() {
-  const badges = listBadges().filter((badge) => badge.group === "global");
-  const streak = getStreak();
-  const perfectDays = countDailyPerfectEntries();
-  return h(
-    "section",
-    { class: "badges-strip" },
-    h("p", {
-      class: "meta",
-      text: `Série jeu : ${streak} j · défis parfaits : ${perfectDays}`,
-    }),
-    h(
-      "div",
-      { class: "badge-list" },
-      badges.slice(0, 12).map((badge) =>
-        h("span", {
-          class: badge.unlocked ? "badge-pill is-on" : "badge-pill",
-          text: badge.label,
-          title: badge.description || (badge.unlocked ? "Débloqué" : "Verrouillé"),
-        }),
-      ),
-    ),
-  );
+    setTimeout(() => {
+      toast.classList.add("is-out");
+      setTimeout(() => toast.remove(), 380);
+    }, 4200 + index * 280);
+  });
 }
 
 function syncRouteFromScreen() {
@@ -1354,9 +1337,8 @@ function shuffle(items) {
 const GROUPS_PREFIX = "birdquiz:groupes:";
 
 function defaultGroupIds(category) {
-  const ids = (category.groupes || []).filter((group) => group.defaut).map((group) => group.id);
-  if (ids.length) return ids;
-  return category.groupes?.[0] ? [category.groupes[0].id] : [];
+  // Par défaut : tous les groupes cochés (onboarding + premier lancement).
+  return (category.groupes || []).map((group) => group.id).filter(Boolean);
 }
 
 function loadSelectedGroups(category) {
@@ -2377,7 +2359,7 @@ function profileAchievements() {
   );
 }
 
-function renderTop({ kicker, title, score, onBack, backLabel }) {
+function renderTop({ kicker, title, score, onBack, backLabel, onMenu, menuLabel }) {
   top.replaceChildren();
   const row = h("div", { class: "top-row" });
   const quizOn = screen !== "reference" && screen !== "fiche" && screen !== "profil";
@@ -2453,11 +2435,100 @@ function renderTop({ kicker, title, score, onBack, backLabel }) {
   );
   row.append(end);
   top.append(row);
-  if (onBack) {
-    top.append(h("button", { class: "back-link", type: "button", text: backLabel || "Retour au menu", onClick: onBack }));
+  if (onBack || onMenu) {
+    const nav = h("div", { class: "page-nav" });
+    if (onBack) {
+      nav.append(
+        h(
+          "button",
+          { class: "back-link", type: "button", onClick: onBack },
+          h("span", { class: "nav-arrow", "aria-hidden": "true", text: "←" }),
+          h("span", { text: backLabel || "Retour" }),
+        ),
+      );
+    }
+    if (onMenu) {
+      nav.append(
+        h("button", {
+          class: "menu-link",
+          type: "button",
+          text: menuLabel || "Menu",
+          onClick: onMenu,
+        }),
+      );
+    }
+    top.append(nav);
   }
   if (kicker) top.append(h("p", { class: "kicker", text: kicker }));
   if (title) top.append(h("h1", { text: title }));
+}
+
+function homeMixButton(scopeLabel, onClick) {
+  return h(
+    "button",
+    { class: "home-mix", type: "button", onClick },
+    h("strong", { text: "Lancer un mix" }),
+    h("span", { text: `Tous les quiz · ${scopeLabel}` }),
+  );
+}
+
+function levelMark(levelId) {
+  return h("img", {
+    class: "level-logo",
+    src: `/assets/levels/${levelId}.png`,
+    alt: "",
+    "aria-hidden": "true",
+    decoding: "async",
+    width: 48,
+    height: 48,
+  });
+}
+
+function levelButton(level, category, copy, groupsBlocked) {
+  const rawCount =
+    state.mode === "variantes"
+      ? variantRounds(category, level.id).length
+      : state.mode === "sexes"
+        ? sexCandidates(category, level.id).length
+        : questionsFor(category, level.id).length;
+  const count =
+    state.mode === "groupes" ? rawCount : levelDisplayCount(rawCount, level.id);
+  const best = getBest(category.id, level.id, state.mode);
+  const questionLabel =
+    state.mode === "groupes"
+      ? rawCount === 0
+        ? `Aucune ${copy.media}`
+        : `${Math.min(rawCount, 6)} ${copy.media}${Math.min(rawCount, 6) > 1 ? "s" : ""}`
+      : state.mode === "variantes"
+        ? count === 0
+          ? "Aucune série"
+          : `${count} série${count > 1 ? "s" : ""}`
+        : state.mode === "sexes"
+          ? count === 0
+            ? `Aucun${copy.unit === "pays" ? "" : "e"} ${copy.unit}`
+            : `${count} ${count > 1 ? copy.units : copy.unit}`
+          : count === 0
+            ? "Aucune question"
+            : `${count} question${count > 1 ? "s" : ""}`;
+  const btn = h(
+    "button",
+    {
+      class: `level level--${level.id}`,
+      type: "button",
+      disabled: (state.mode === "groupes" ? rawCount : count) === 0 || groupsBlocked,
+      onClick: () => startQuiz(level.id),
+    },
+    levelMark(level.id),
+    h(
+      "span",
+      { class: "level-copy" },
+      h("strong", { text: level.label }),
+      h("span", { text: copy.levels[level.id] }),
+      h("span", { class: "meta", text: questionLabel }),
+      best ? h("em", { text: `Record ${best.score}/${best.total}` }) : null,
+    ),
+  );
+  return btn;
 }
 
 function authFlashMessage(code) {
@@ -2707,9 +2778,8 @@ function mountHomeRoot(domains) {
     ...[
       h("p", {
         class: "lede",
-        text: "Par thème (biologie, géographie…) ou par pays — puis zoome ou joue tout le dossier.",
+        text: "Par thème (biologie, géographie…) ou par pays — puis zoome ou lance un mix.",
       }),
-      badgesStrip(),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
       homeSection(
         "Par thème",
@@ -2727,6 +2797,7 @@ function mountHomeRoot(domains) {
             regions.map((region) =>
               homeCard(
                 {
+                  id: region.id,
                   nom: region.nom,
                   description: `${region.count} quiz · ${region.description}`,
                 },
@@ -2764,28 +2835,26 @@ function mountHomeRegion(domains) {
       mount();
     },
     backLabel: "Retour",
+    onMenu: goHome,
+    menuLabel: "Menu",
   });
 
   view.replaceChildren(
     ...[
       h("p", {
         class: "lede",
-        text: meta.description || "Choisis un quiz, ou joue tous ceux de cette région.",
+        text: meta.description || "Choisis un quiz, ou lance un mix de toute la région.",
       }),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
       playable.length > 1
-        ? h("button", {
-            class: "btn home-play-all",
-            type: "button",
-            text: `Jouer tout · ${meta.nom}`,
-            onClick: () =>
-              void openMergedLeaves(
-                regionSessionId(regionId),
-                meta.nom,
-                leaves,
-                meta.description || ""
-              ),
-          })
+        ? homeMixButton(meta.nom, () =>
+            void openMergedLeaves(
+              regionSessionId(regionId),
+              meta.nom,
+              leaves,
+              meta.description || "",
+            ),
+          )
         : null,
       h(
         "div",
@@ -2794,6 +2863,7 @@ function mountHomeRegion(domains) {
           ? leaves.map((leaf) =>
               homeCard(
                 {
+                  id: leaf.id,
                   nom: leafDisplayLabel(leaf),
                   description: leaf.description,
                   aVenir: leaf.aVenir,
@@ -2834,6 +2904,8 @@ function mountHomeTheme(domains) {
       mount();
     },
     backLabel: "Retour",
+    onMenu: goHome,
+    menuLabel: "Menu",
   });
 
   if (isLeaf(node)) {
@@ -2859,17 +2931,13 @@ function mountHomeTheme(domains) {
     ...[
       h("p", {
         class: "lede",
-        text: node.description || "Entre dans une sous-catégorie, ou joue tout ce dossier.",
+        text: node.description || "Entre dans une sous-catégorie, ou lance un mix du dossier.",
       }),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
       playable.length > 1
-        ? h("button", {
-            class: "btn home-play-all",
-            type: "button",
-            text: `Jouer tout · ${node.nom}`,
-            onClick: () =>
-              void openMergedLeaves(node.id, node.nom, leaves, node.description || ""),
-          })
+        ? homeMixButton(node.nom, () =>
+            void openMergedLeaves(node.id, node.nom, leaves, node.description || ""),
+          )
         : null,
       h(
         "div",
@@ -2949,7 +3017,20 @@ function mountLevels() {
       category.description ||
       `Quiz ${category.categorie} en images sur QuiQuiz : QCM, texte libre, groupes et plus.`,
   });
-  renderTop({ kicker: category.categorie, title: "Choisis un niveau" });
+  renderTop({
+    kicker: category.categorie,
+    title: "Choisis un niveau",
+    onBack: () => {
+      state.category = null;
+      state.notice = "";
+      syncImagePolicy();
+      updateFooter(null);
+      setScreen("home");
+    },
+    backLabel: "Retour",
+    onMenu: goHome,
+    menuLabel: "Menu",
+  });
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
@@ -2984,7 +3065,6 @@ function mountLevels() {
       class: "lede",
       text: copy.levelsHelp,
     }),
-    badgesStrip(),
     challengePanel,
     h(
       "div",
@@ -3012,54 +3092,13 @@ function mountLevels() {
     state.notice ? h("p", { class: "note", text: state.notice }) : null,
     h(
       "div",
-      { class: "cards" },
-      LEVELS.map((level) => {
-        const rawCount =
-          state.mode === "variantes"
-            ? variantRounds(category, level.id).length
-            : state.mode === "sexes"
-              ? sexCandidates(category, level.id).length
-              : questionsFor(category, level.id).length;
-        const count =
-          state.mode === "groupes"
-            ? rawCount
-            : levelDisplayCount(rawCount, level.id);
-        const best = getBest(category.id, level.id, state.mode);
-        const questionLabel =
-          state.mode === "groupes"
-            ? rawCount === 0
-              ? `Aucune ${copy.media}`
-              : `${Math.min(rawCount, 6)} ${copy.media}${Math.min(rawCount, 6) > 1 ? "s" : ""}`
-            : state.mode === "variantes"
-              ? count === 0
-                ? "Aucune série"
-                : `${count} série${count > 1 ? "s" : ""}`
-              : state.mode === "sexes"
-                ? count === 0
-                  ? `Aucun${copy.unit === "pays" ? "" : "e"} ${copy.unit}`
-                  : `${count} ${count > 1 ? copy.units : copy.unit}`
-                : count === 0
-                  ? "Aucune question"
-                  : `${count} question${count > 1 ? "s" : ""}`;
-        return h(
-          "button",
-          {
-            class: "level",
-            type: "button",
-            disabled: (state.mode === "groupes" ? rawCount : count) === 0 || groupsBlocked,
-            onClick: () => startQuiz(level.id),
-          },
-          h("strong", { text: level.label }),
-          h("span", { text: copy.levels[level.id] }),
-          h("span", { class: "meta", text: questionLabel }),
-          best ? h("em", { text: `Record ${best.score}/${best.total}` }) : null,
-        );
-      }),
+      { class: "cards levels-grid" },
+      LEVELS.map((level) => levelButton(level, category, copy, groupsBlocked)),
     ),
     groups.length
       ? h(
           "fieldset",
-          { class: "groups" },
+          { class: "groups", "data-onboarding": "groups" },
           h("legend", { text: copy.groupLegend }),
           h("p", {
             class: "meta",
@@ -5316,7 +5355,23 @@ async function boot() {
     await applyRoute(initial);
   } else {
     mount();
-    if (screen === "home") startOnboarding();
+    if (screen === "home") {
+      startOnboarding({
+        async openFiltersDemo() {
+          const demoId =
+            (await ensureCategoryById("oiseaux-francais")) ||
+            (await ensureCategoryById("reptiles-france")) ||
+            state.categories[0];
+          if (!demoId) return null;
+          openCategory(demoId);
+          await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          return document.querySelector('[data-onboarding="groups"]');
+        },
+        finishHome() {
+          goHome();
+        },
+      });
+    }
   }
 
   onHashChange((route) => {
