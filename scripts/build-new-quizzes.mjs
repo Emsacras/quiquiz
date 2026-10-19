@@ -67,6 +67,11 @@ function writeQuiz(quiz) {
   writeFileSync(path, `${JSON.stringify(quiz, null, 2)}\n`, "utf8");
   const n = quiz.groupes.reduce((s, g) => s + g.questions.length, 0);
   console.log(`wrote ${quiz.id} (${n} questions)`);
+  return n;
+}
+
+function item(difficulte, nom_commun, nom_scientifique, imageQuery, indice, description, explication) {
+  return { difficulte, nom_commun, nom_scientifique, imageQuery, indice, description, explication };
 }
 
 const bebes = buildQuiz({
@@ -78,41 +83,60 @@ const bebes = buildQuiz({
       id: "ferme",
       label: "Ferme",
       items: [
-        { difficulte: "facile", nom_commun: "Poussin", nom_scientifique: "Gallus gallus domesticus", imageQuery: "chick", indice: "Petit jaune du poulailler", description: "Jeune oiseau couvert de duvet, issu de la poule domestique.", explication: "Poussin : Bébé de la poule." },
-        { difficulte: "facile", nom_commun: "Veau", nom_scientifique: "Bos taurus", imageQuery: "calf", indice: "Petit de la vache", description: "Jeune bovin encore dépendant du lait maternel.", explication: "Veau : Bébé de la vache (ou du taureau)." },
-        { difficulte: "facile", nom_commun: "Agneau", nom_scientifique: "Ovis aries", imageQuery: "lamb", indice: "Petit du mouton", description: "Jeune ovin à la toison encore fine.", explication: "Agneau : Bébé du mouton." },
-        { difficulte: "facile", nom_commun: "Porcelet", nom_scientifique: "Sus domesticus", imageQuery: "piglet", indice: "Petit du cochon", description: "Jeune porc au museau rose et au corps trapu.", explication: "Porcelet : Bébé du porc." },
-        { difficulte: "moyen", nom_commun: "Poulain", nom_scientifique: "Equus caballus", imageQuery: "foal", indice: "Petit du cheval", description: "Jeune cheval aux longues pattes, encore proche de sa mère.", explication: "Poulain : Bébé du cheval (pouliche si femelle)." },
-        { difficulte: "moyen", nom_commun: "Chevreau", nom_scientifique: "Capra hircus", imageQuery: "kid goat", indice: "Petit de la chèvre", description: "Jeune caprin vif, souvent cornu plus tard.", explication: "Chevreau : Bébé de la chèvre." },
-        { difficulte: "moyen", nom_commun: "Caneton", nom_scientifique: "Anas platyrhynchos domesticus", imageQuery: "duckling", indice: "Petit du canard", description: "Jeune canard au duvet jaune, bon nageur.", explication: "Caneton : Bébé du canard." },
-        { difficulte: "difficile", nom_commun: "Oison", nom_scientifique: "Anser anser domesticus", imageQuery: "gosling", indice: "Petit de l’oie", description: "Jeune oie au duvet gris-jaune.", explication: "Oison : Bébé de l’oie." },
-        { difficulte: "difficile", nom_commun: "Dindonneau", nom_scientifique: "Meleagris gallopavo", imageQuery: "turkey poult", indice: "Petit de la dinde", description: "Jeune dindon encore couvert de duvet.", explication: "Dindonneau : Bébé de la dinde / du dindon." },
+        item("facile", "Poussin", "Gallus gallus domesticus", "chick", "Petit jaune du poulailler", "Jeune oiseau couvert de duvet, issu de la poule domestique.", "Poussin : Bébé de la poule."),
+        item("facile", "Veau", "Bos taurus", "calf", "Petit de la vache", "Jeune bovin encore dépendant du lait maternel.", "Veau : Bébé de la vache (ou du taureau)."),
+        item("facile", "Agneau", "Ovis aries", "lamb", "Petit du mouton", "Jeune ovin à la toison encore fine.", "Agneau : Bébé du mouton."),
+        item("facile", "Porcelet", "Sus domesticus", "piglet", "Petit du cochon", "Jeune porc au museau rose et au corps trapu.", "Porcelet : Bébé du porc."),
+        item("facile", "Poulain", "Equus caballus", "foal", "Petit du cheval", "Jeune cheval aux longues pattes, encore proche de sa mère.", "Poulain : Bébé du cheval (pouliche si femelle)."),
+        item("moyen", "Chevreau", "Capra hircus", "kid goat", "Petit de la chèvre", "Jeune caprin vif, souvent cornu plus tard.", "Chevreau : Bébé de la chèvre."),
+        item("moyen", "Caneton", "Anas platyrhynchos domesticus", "duckling", "Petit du canard", "Jeune canard au duvet jaune, bon nageur.", "Caneton : Bébé du canard."),
+        item("moyen", "Ânon", "Equus asinus", "donkey foal", "Petit de l’âne", "Jeune âne aux grandes oreilles, encore près de sa mère.", "Ânon : Bébé de l’âne."),
+        item("moyen", "Cygneau", "Cygnus olor", "cygnet", "Petit du cygne", "Jeune cygne au duvet gris, souvent en famille sur l’eau.", "Cygneau : Bébé du cygne."),
+        item("moyen", "Lapereau", "Oryctolagus cuniculus domesticus", "baby rabbit farm", "Petit du lapin de clapier", "Jeune lapin élevé en élevage, oreilles encore courtes.", "Lapereau : Bébé du lapin."),
+        item("difficile", "Oison", "Anser anser domesticus", "gosling", "Petit de l’oie", "Jeune oie au duvet gris-jaune.", "Oison : Bébé de l’oie."),
+        item("difficile", "Dindonneau", "Meleagris gallopavo", "turkey poult", "Petit de la dinde", "Jeune dindon encore couvert de duvet.", "Dindonneau : Bébé de la dinde / du dindon."),
+        item("difficile", "Pintadeau", "Numida meleagris", "guinea fowl chick", "Petit de la pintade", "Jeune pintade tachetée, très vif dès le jeune âge.", "Pintadeau : Bébé de la pintade."),
+        item("difficile", "Paonneau", "Pavo cristatus", "peachick", "Petit du paon", "Jeune paon sans grande queue, déjà un peu cresté.", "Paonneau : Bébé du paon."),
+        item("difficile", "Mulard", "Cairina moschata × Anas", "muscovy duckling", "Caneton de mule", "Jeune canard issu d’un croisement (canard de Barbarie × colvert).", "Mulard : Caneton hybride d’élevage."),
       ],
     },
     {
       id: "compagnie",
       label: "Compagnie",
       items: [
-        { difficulte: "facile", nom_commun: "Chaton", nom_scientifique: "Felis catus", imageQuery: "kitten", indice: "Petit du chat", description: "Jeune chat aux yeux grands et aux oreilles encore molles.", explication: "Chaton : Bébé du chat." },
-        { difficulte: "facile", nom_commun: "Chiot", nom_scientifique: "Canis familiaris", imageQuery: "puppy", indice: "Petit du chien", description: "Jeune chien joueur, encore en croissance.", explication: "Chiot : Bébé du chien." },
-        { difficulte: "moyen", nom_commun: "Lapereau", nom_scientifique: "Oryctolagus cuniculus", imageQuery: "baby rabbit", indice: "Petit du lapin", description: "Jeune lapin au pelage doux, oreilles encore courtes.", explication: "Lapereau : Bébé du lapin." },
-        { difficulte: "moyen", nom_commun: "Tortillon", nom_scientifique: "Serinus canaria", imageQuery: "canary chick", indice: "Petit du canari", description: "Jeune canari encore au nid ou tout juste sorti.", explication: "Tortillon : Bébé du canari (aussi dit « canarillon »)." },
-        { difficulte: "difficile", nom_commun: "Souriceau", nom_scientifique: "Mus musculus", imageQuery: "baby mouse", indice: "Petit de la souris", description: "Très jeune souris, souvent rose et sans poils au tout début.", explication: "Souriceau : Bébé de la souris." },
-        { difficulte: "difficile", nom_commun: "Ratton", nom_scientifique: "Rattus norvegicus", imageQuery: "baby rat", indice: "Petit du rat", description: "Jeune rat encore dépendant du nid.", explication: "Ratton : Bébé du rat." },
+        item("facile", "Chaton", "Felis catus", "kitten", "Petit du chat", "Jeune chat aux yeux grands et aux oreilles encore molles.", "Chaton : Bébé du chat."),
+        item("facile", "Chiot", "Canis familiaris", "puppy", "Petit du chien", "Jeune chien joueur, encore en croissance.", "Chiot : Bébé du chien."),
+        item("facile", "Lapereau nain", "Oryctolagus cuniculus", "baby rabbit", "Petit lapin de compagnie", "Jeune lapin nain au pelage doux.", "Lapereau : Bébé du lapin de compagnie."),
+        item("moyen", "Cobaye", "Cavia porcellus", "baby guinea pig", "Petit cochon d’Inde", "Jeune cobaye déjà velu, yeux ouverts dès la naissance.", "Petit cobaye : Bébé du cochon d’Inde."),
+        item("moyen", "Hamster", "Mesocricetus auratus", "baby hamster", "Petit hamster", "Très jeune hamster, souvent encore au nid.", "Petit hamster : Bébé du hamster."),
+        item("moyen", "Tortillon", "Serinus canaria", "canary chick", "Petit du canari", "Jeune canari encore au nid ou tout juste sorti.", "Tortillon : Bébé du canari (aussi dit « canarillon »)."),
+        item("moyen", "Fureton", "Mustela putorius furo", "baby ferret", "Petit du furet", "Jeune furet au museau pointu, encore joueur et souple.", "Fureton : Bébé du furet."),
+        item("difficile", "Souriceau", "Mus musculus", "baby mouse", "Petit de la souris", "Très jeune souris, souvent rose et sans poils au tout début.", "Souriceau : Bébé de la souris."),
+        item("difficile", "Ratton", "Rattus norvegicus", "baby rat", "Petit du rat", "Jeune rat encore dépendant du nid.", "Ratton : Bébé du rat."),
+        item("difficile", "Gerbillon", "Meriones unguiculatus", "baby gerbil", "Petit de la gerbille", "Jeune gerbille au long pelage et à la queue touffue.", "Petit gerbillon : Bébé de la gerbille."),
+        item("difficile", "Perrucheau", "Melopsittacus undulatus", "budgerigar chick", "Petit de la perruche", "Jeune perruche ondulée encore au nid, duvet clair.", "Perrucheau : Bébé de la perruche."),
+        item("difficile", "Jeune tortue", "Testudo hermanni", "baby tortoise", "Petit de la tortue", "Très jeune tortue à la carapace encore molle.", "Jeune tortue : Bébé de la tortue terrestre."),
       ],
     },
     {
       id: "sauvage",
       label: "Sauvage",
       items: [
-        { difficulte: "facile", nom_commun: "Ourson", nom_scientifique: "Ursus arctos", imageQuery: "bear cub", indice: "Petit de l’ours", description: "Jeune ours au pelage duveteux.", explication: "Ourson : Bébé de l’ours." },
-        { difficulte: "facile", nom_commun: "Lionceau", nom_scientifique: "Panthera leo", imageQuery: "lion cub", indice: "Petit du lion", description: "Jeune lion encore tacheté, sans crinière.", explication: "Lionceau : Bébé du lion." },
-        { difficulte: "moyen", nom_commun: "Renardeau", nom_scientifique: "Vulpes vulpes", imageQuery: "fox cub", indice: "Petit du renard", description: "Jeune renard au museau pointu et au pelage sombre.", explication: "Renardeau : Bébé du renard." },
-        { difficulte: "moyen", nom_commun: "Louveteau", nom_scientifique: "Canis lupus", imageQuery: "wolf pup", indice: "Petit du loup", description: "Jeune loup élevé au sein de la meute.", explication: "Louveteau : Bébé du loup." },
-        { difficulte: "moyen", nom_commun: "Faon", nom_scientifique: "Cervus elaphus", imageQuery: "fawn", indice: "Petit du cerf / de la biche", description: "Jeune cervidé au pelage tacheté.", explication: "Faon : Bébé du cerf (ou de la biche)." },
-        { difficulte: "difficile", nom_commun: "Marcassin", nom_scientifique: "Sus scrofa", imageQuery: "wild boar piglet", indice: "Petit du sanglier", description: "Jeune sanglier rayé de clair sur le flanc.", explication: "Marcassin : Bébé du sanglier." },
-        { difficulte: "difficile", nom_commun: "Levraut", nom_scientifique: "Lepus europaeus", imageQuery: "baby hare", indice: "Petit du lièvre", description: "Jeune lièvre né déjà velu et les yeux ouverts.", explication: "Levraut : Bébé du lièvre." },
-        { difficulte: "difficile", nom_commun: "Blanchet", nom_scientifique: "Phoca vitulina", imageQuery: "seal pup", indice: "Petit du phoque", description: "Jeune phoque au pelage clair, sur la grève.", explication: "Blanchet (ou blanchon) : Bébé du phoque." },
+        item("facile", "Ourson", "Ursus arctos", "bear cub", "Petit de l’ours", "Jeune ours au pelage duveteux.", "Ourson : Bébé de l’ours."),
+        item("facile", "Lionceau", "Panthera leo", "lion cub", "Petit du lion", "Jeune lion encore tacheté, sans crinière.", "Lionceau : Bébé du lion."),
+        item("facile", "Éléphanteau", "Loxodonta africana", "elephant calf", "Petit de l’éléphant", "Jeune éléphant aux grandes oreilles, près de sa mère.", "Éléphanteau : Bébé de l’éléphant."),
+        item("moyen", "Renardeau", "Vulpes vulpes", "fox cub", "Petit du renard", "Jeune renard au museau pointu et au pelage sombre.", "Renardeau : Bébé du renard."),
+        item("moyen", "Louveteau", "Canis lupus", "wolf pup", "Petit du loup", "Jeune loup élevé au sein de la meute.", "Louveteau : Bébé du loup."),
+        item("moyen", "Faon", "Cervus elaphus", "fawn", "Petit du cerf / de la biche", "Jeune cervidé au pelage tacheté.", "Faon : Bébé du cerf (ou de la biche)."),
+        item("moyen", "Tigreau", "Panthera tigris", "tiger cub", "Petit du tigre", "Jeune tigre déjà rayé, encore joueur.", "Tigreau : Bébé du tigre."),
+        item("moyen", "Girafon", "Giraffa camelopardalis", "giraffe calf", "Petit de la girafe", "Jeune girafe aux longues pattes, déjà tacheté.", "Girafon : Bébé de la girafe."),
+        item("moyen", "Petit dauphin", "Tursiops truncatus", "dolphin calf", "Petit du dauphin", "Jeune dauphin nageant près de sa mère.", "Petit dauphin : Bébé du dauphin."),
+        item("difficile", "Marcassin", "Sus scrofa", "wild boar piglet", "Petit du sanglier", "Jeune sanglier rayé de clair sur le flanc.", "Marcassin : Bébé du sanglier."),
+        item("difficile", "Levraut", "Lepus europaeus", "baby hare", "Petit du lièvre", "Jeune lièvre né déjà velu et les yeux ouverts.", "Levraut : Bébé du lièvre."),
+        item("difficile", "Blanchet", "Phoca vitulina", "seal pup", "Petit du phoque", "Jeune phoque au pelage clair, sur la grève.", "Blanchet (ou blanchon) : Bébé du phoque."),
+        item("difficile", "Baleineau", "Balaenoptera musculus", "whale calf", "Petit de la baleine", "Jeune cétacé de grande taille, encore allaité.", "Baleineau : Bébé de la baleine."),
+        item("difficile", "Loutron", "Lutra lutra", "otter pup", "Petit de la loutre", "Jeune loutre au pelage dense, près de l’eau.", "Loutron : Bébé de la loutre."),
+        item("difficile", "Panthéreau", "Panthera pardus", "leopard cub", "Petit de la panthère", "Jeune léopard / panthère déjà tacheté.", "Panthéreau : Bébé de la panthère."),
       ],
     },
   ],
@@ -127,36 +151,60 @@ const feuilles = buildQuiz({
       id: "lobées",
       label: "Lobées / découpées",
       items: [
-        { difficulte: "facile", nom_commun: "Chêne pédonculé", nom_scientifique: "Quercus robur", imageQuery: "leaf", indice: "Lobes arrondis, sans pointes", description: "Feuille lobée à lobes arrondis, limbe coriace.", explication: "Chêne pédonculé : Feuille lobée classique des chênaies." },
-        { difficulte: "facile", nom_commun: "Érable sycomore", nom_scientifique: "Acer pseudoplatanus", imageQuery: "leaf", indice: "Cinq lobes palmés", description: "Feuille palmée à cinq lobes dentés.", explication: "Érable sycomore : Feuille palmée, samares en « hélicoptère »." },
-        { difficulte: "moyen", nom_commun: "Platane", nom_scientifique: "Platanus × hispanica", imageQuery: "leaf", indice: "Grands lobes pointus", description: "Grande feuille palmée à lobes aigus, nervures marquées.", explication: "Platane : Feuille large des alignements urbains." },
-        { difficulte: "moyen", nom_commun: "Figuier", nom_scientifique: "Ficus carica", imageQuery: "leaf", indice: "3 à 5 lobes profonds", description: "Feuille épaisse, lobes profonds, face rugueuse.", explication: "Figuier : Feuille caractéristique du bassin méditerranéen." },
-        { difficulte: "difficile", nom_commun: "Liquidambar", nom_scientifique: "Liquidambar styraciflua", imageQuery: "leaf", indice: "Étoile à 5–7 pointes", description: "Feuille étoilée à lobes pointus, belles couleurs d’automne.", explication: "Liquidambar : Feuille étoilée des parcs." },
-        { difficulte: "difficile", nom_commun: "Tulipier de Virginie", nom_scientifique: "Liriodendron tulipifera", imageQuery: "leaf", indice: "Feuille « en selle » tronquée", description: "Feuille à limbe tronqué au sommet, forme unique.", explication: "Tulipier : Feuille inimitables, sommets comme coupés." },
+        item("facile", "Chêne pédonculé", "Quercus robur", "oak leaf", "Lobes arrondis, sans pointes", "Feuille lobée à lobes arrondis, limbe coriace.", "Chêne pédonculé : Feuille lobée classique des chênaies."),
+        item("facile", "Érable sycomore", "Acer pseudoplatanus", "sycamore maple leaf", "Cinq lobes palmés", "Feuille palmée à cinq lobes dentés.", "Érable sycomore : Feuille palmée, samares en « hélicoptère »."),
+        item("facile", "Érable plane", "Acer platanoides", "norway maple leaf", "Lobes pointus, sinus en U", "Feuille palmée à lobes aigus, latex blanc à la cassée.", "Érable plane : Lobes plus pointus que le sycomore."),
+        item("facile", "Vigne", "Vitis vinifera", "grape vine leaf", "Grande feuille palmée dentée", "Feuille large à lobes inégaux, nervures marquées.", "Vigne : Feuille palmée du raisin."),
+        item("moyen", "Platane", "Platanus × hispanica", "plane tree leaf", "Grands lobes pointus", "Grande feuille palmée à lobes aigus, nervures marquées.", "Platane : Feuille large des alignements urbains."),
+        item("moyen", "Figuier", "Ficus carica", "fig leaf", "3 à 5 lobes profonds", "Feuille épaisse, lobes profonds, face rugueuse.", "Figuier : Feuille caractéristique du bassin méditerranéen."),
+        item("moyen", "Chêne rouge", "Quercus rubra", "red oak leaf", "Lobes pointus en pointe", "Feuille lobée à lobes aigus (contrairement au chêne pédonculé).", "Chêne rouge : Lobes terminés en pointe."),
+        item("moyen", "Érable champêtre", "Acer campestre", "field maple leaf", "Petits lobes arrondis", "Petite feuille palmée à lobes arrondis, des haies.", "Érable champêtre : Petite feuille des bocages."),
+        item("moyen", "Lierre", "Hedera helix", "ivy leaf", "3 à 5 lobes (jeune)", "Feuille de lierre grimpant, lobes nets sur les rameaux stériles.", "Lierre : Feuille lobée des tiges grimpantes."),
+        item("difficile", "Liquidambar", "Liquidambar styraciflua", "sweetgum leaf", "Étoile à 5–7 pointes", "Feuille étoilée à lobes pointus, belles couleurs d’automne.", "Liquidambar : Feuille étoilée des parcs."),
+        item("difficile", "Tulipier de Virginie", "Liriodendron tulipifera", "tulip tree leaf", "Feuille « en selle » tronquée", "Feuille à limbe tronqué au sommet, forme unique.", "Tulipier : Feuille inimitable, sommet comme coupé."),
+        item("difficile", "Chêne sessile", "Quercus petraea", "sessile oak leaf", "Lobes réguliers, pétiole long", "Feuille lobée proche du pédonculé, pétiole plus long.", "Chêne sessile : Feuille à pétiole net, glands sans pédoncule."),
+        item("difficile", "Mûrier blanc", "Morus alba", "mulberry leaf", "Lobes irréguliers variables", "Feuille souvent lobée de façon irrégulière, base cordiforme.", "Mûrier : Forme de feuille très variable."),
+        item("difficile", "Passiflore", "Passiflora caerulea", "passionflower leaf", "Doigts étroits profonds", "Feuille profondément découpée en longs lobes.", "Passiflore : Feuille digitées des jardins."),
       ],
     },
     {
       id: "simples",
       label: "Simples ovales",
       items: [
-        { difficulte: "facile", nom_commun: "Hêtre", nom_scientifique: "Fagus sylvatica", imageQuery: "leaf", indice: "Ovale, bord ondulé", description: "Feuille ovale à bord légèrement ondulé, nervures parallèles.", explication: "Hêtre : Feuille lisse, tipique des hêtraies." },
-        { difficulte: "facile", nom_commun: "Bouleau verruqueux", nom_scientifique: "Betula pendula", imageQuery: "leaf", indice: "Petite, triangulaire-dentée", description: "Petite feuille dentée, base souvent en coin.", explication: "Bouleau : Petite feuille dentée des clairières." },
-        { difficulte: "moyen", nom_commun: "Tilleul", nom_scientifique: "Tilia cordata", imageQuery: "leaf", indice: "Cœur asymétrique", description: "Feuille cordiforme, base asymétrique, pointe fine.", explication: "Tilleul : Feuille en cœur, parfum des fleurs." },
-        { difficulte: "moyen", nom_commun: "Orme champêtre", nom_scientifique: "Ulmus minor", imageQuery: "leaf", indice: "Base très asymétrique", description: "Feuille doublement dentée, base fortement inégale.", explication: "Orme : Base de feuille très asymétrique." },
-        { difficulte: "difficile", nom_commun: "Charme", nom_scientifique: "Carpinus betulus", imageQuery: "leaf", indice: "Nervures très marquées, double dent", description: "Feuille ovale plissée, double denture régulière.", explication: "Charme : Feuille plissée des haies et forêts." },
-        { difficulte: "difficile", nom_commun: "Aulne glutineux", nom_scientifique: "Alnus glutinosa", imageQuery: "leaf", indice: "Sommet échancré", description: "Feuille arrondie au sommet souvent échancré.", explication: "Aulne : Feuille à sommet tronqué / échancré, bords d’eau." },
+        item("facile", "Hêtre", "Fagus sylvatica", "beech leaf", "Ovale, bord ondulé", "Feuille ovale à bord légèrement ondulé, nervures parallèles.", "Hêtre : Feuille lisse, typique des hêtraies."),
+        item("facile", "Bouleau verruqueux", "Betula pendula", "birch leaf", "Petite, triangulaire-dentée", "Petite feuille dentée, base souvent en coin.", "Bouleau : Petite feuille dentée des clairières."),
+        item("facile", "Châtaignier", "Castanea sativa", "chestnut leaf", "Longue, dents en scie", "Grande feuille allongée, bord fortement denté.", "Châtaignier : Feuille longue à dents aiguës."),
+        item("facile", "Merisier", "Prunus avium", "wild cherry leaf", "Ovale, dents fines", "Feuille ovale dentée, face un peu mate.", "Merisier : Feuille du cerisier sauvage."),
+        item("moyen", "Tilleul", "Tilia cordata", "lime leaf", "Cœur asymétrique", "Feuille cordiforme, base asymétrique, pointe fine.", "Tilleul : Feuille en cœur, parfum des fleurs."),
+        item("moyen", "Orme champêtre", "Ulmus minor", "elm leaf", "Base très asymétrique", "Feuille doublement dentée, base fortement inégale.", "Orme : Base de feuille très asymétrique."),
+        item("moyen", "Peuplier tremble", "Populus tremula", "aspen leaf", "Ronde, pétiole plat", "Feuille quasi ronde, tremble au moindre vent.", "Tremble : Feuille ronde à pétiole aplati."),
+        item("moyen", "Saule blanc", "Salix alba", "willow leaf", "Très allongée, étroite", "Feuille longue et étroite, face inférieure soyeuse.", "Saule blanc : Feuille lancéolée des rives."),
+        item("moyen", "Noisetier", "Corylus avellana", "hazel leaf", "Ronde, double dent", "Feuille large presque ronde, pointe courte, double denture.", "Noisetier : Feuille des fourrés et haies."),
+        item("difficile", "Charme", "Carpinus betulus", "hornbeam leaf", "Nervures très marquées, double dent", "Feuille ovale plissée, double denture régulière.", "Charme : Feuille plissée des haies et forêts."),
+        item("difficile", "Aulne glutineux", "Alnus glutinosa", "alder leaf", "Sommet échancré", "Feuille arrondie au sommet souvent échancré.", "Aulne : Feuille à sommet tronqué / échancré, bords d’eau."),
+        item("difficile", "Cornouiller sanguin", "Cornus sanguinea", "dogwood leaf", "Ovale, nervures arquées", "Feuille ovale à nervures qui se rejoignent vers la pointe.", "Cornouiller : Nervures arquées caractéristiques."),
+        item("difficile", "Fusain d’Europe", "Euonymus europaeus", "spindle leaf", "Ovale fine, bords fins", "Petite feuille ovale-lancéolée, bord finement denté.", "Fusain : Feuille des haies, fruits roses à l’automne."),
+        item("difficile", "Troène", "Ligustrum vulgare", "privet leaf", "Petite, semi-persistante", "Petite feuille ovale lisse, souvent brillante.", "Troène : Petite feuille des haies taillées."),
       ],
     },
     {
       id: "composees",
       label: "Composées / aiguilles",
       items: [
-        { difficulte: "facile", nom_commun: "Frêne commun", nom_scientifique: "Fraxinus excelsior", imageQuery: "leaf", indice: "Foliooles opposées", description: "Feuille composée imparipennée, nombreuses folioles.", explication: "Frêne : Feuille composée typique." },
-        { difficulte: "facile", nom_commun: "Robinier", nom_scientifique: "Robinia pseudoacacia", imageQuery: "leaf", indice: "Folioles ovales arrondies", description: "Feuille composée à folioles ovales, souvent épineuse à la base.", explication: "Robinier (acacia) : Feuille composée des bords de route." },
-        { difficulte: "moyen", nom_commun: "Noyer", nom_scientifique: "Juglans regia", imageQuery: "leaf", indice: "Grandes folioles aromatiques", description: "Feuille composée à grandes folioles odorantes.", explication: "Noyer : Feuille composée forte odeur." },
-        { difficulte: "moyen", nom_commun: "Pin sylvestre", nom_scientifique: "Pinus sylvestris", imageQuery: "needles", indice: "Aiguilles par 2", description: "Aiguilles groupées par deux, assez courtes.", explication: "Pin sylvestre : Aiguilles géminées." },
-        { difficulte: "difficile", nom_commun: "Mélèze", nom_scientifique: "Larix decidua", imageQuery: "needles", indice: "Aiguilles en rosettes, caduques", description: "Aiguilles souples en touffes sur les rameaux courts.", explication: "Mélèze : Seul conifère européen à perdre ses aiguilles." },
-        { difficulte: "difficile", nom_commun: "Sapin pectiné", nom_scientifique: "Abies alba", imageQuery: "needles", indice: "Aiguilles plates en peigne", description: "Aiguilles aplaties disposées en peigne, face inférieure claire.", explication: "Sapin : Aiguilles pectinées, non piquantes." },
+        item("facile", "Frêne commun", "Fraxinus excelsior", "ash leaf", "Folioles opposées", "Feuille composée imparipennée, nombreuses folioles.", "Frêne : Feuille composée typique."),
+        item("facile", "Robinier", "Robinia pseudoacacia", "black locust leaf", "Folioles ovales arrondies", "Feuille composée à folioles ovales, souvent épineuse à la base.", "Robinier (acacia) : Feuille composée des bords de route."),
+        item("facile", "Marronnier", "Aesculus hippocastanum", "horse chestnut leaf", "Doigts palmés (5–7)", "Grande feuille digitées, folioles en éventail.", "Marronnier : Feuille palmée composée des parcs."),
+        item("facile", "Pin sylvestre", "Pinus sylvestris", "scots pine needles", "Aiguilles par 2", "Aiguilles groupées par deux, assez courtes.", "Pin sylvestre : Aiguilles géminées."),
+        item("moyen", "Noyer", "Juglans regia", "walnut leaf", "Grandes folioles aromatiques", "Feuille composée à grandes folioles odorantes.", "Noyer : Feuille composée à forte odeur."),
+        item("moyen", "Sorbier des oiseleurs", "Sorbus aucuparia", "rowan leaf", "Folioles dentées nombreuses", "Feuille composée à folioles dentées, baies rouges plus tard.", "Sorbier : Feuille composée des lisières."),
+        item("moyen", "Sureau noir", "Sambucus nigra", "elder leaf", "Folioles opposées odorantes", "Feuille composée, odeur forte quand on la froisse.", "Sureau : Feuille composée des lisières."),
+        item("moyen", "Épicéa commun", "Picea abies", "spruce needles", "Aiguilles sur coussinets", "Aiguilles courtes sur toute la rameau, piquantes.", "Épicéa : Aiguilles isolées sur coussinets."),
+        item("moyen", "Pin noir", "Pinus nigra", "black pine needles", "Aiguilles par 2, longues", "Aiguilles géminées plus longues et plus raides que le sylvestre.", "Pin noir : Longues aiguilles par deux."),
+        item("difficile", "Mélèze", "Larix decidua", "larch needles", "Aiguilles en rosettes, caduques", "Aiguilles souples en touffes sur les rameaux courts.", "Mélèze : Seul conifère européen à perdre ses aiguilles."),
+        item("difficile", "Sapin pectiné", "Abies alba", "silver fir needles", "Aiguilles plates en peigne", "Aiguilles aplaties disposées en peigne, face inférieure claire.", "Sapin : Aiguilles pectinées, non piquantes."),
+        item("difficile", "Douglas", "Pseudotsuga menziesii", "douglas fir needles", "Aiguilles souples, odeur citronnée", "Aiguilles plates, odorantes, non en peigne strict.", "Douglas : Aiguilles souples, cône à bractées trifides."),
+        item("difficile", "If commun", "Taxus baccata", "yew needles", "Aiguilles plates sombres", "Aiguilles plates vert très sombre, baies rouges (arille).", "If : Aiguilles plates, toxique sauf l’arille."),
+        item("difficile", "Cèdre de l’Atlas", "Cedrus atlantica", "cedar needles", "Aiguilles en bouquets courts", "Aiguilles courtes groupées en rosettes sur rameaux courts.", "Cèdre : Aiguilles en bouquets, conifère des parcs."),
       ],
     },
   ],
@@ -171,38 +219,62 @@ const nuages = buildQuiz({
       id: "bas",
       label: "Étages bas",
       items: [
-        { difficulte: "facile", nom_commun: "Cumulus", nom_scientifique: "Cumulus", imageQuery: "cloud", indice: "Chou-fleur blanc", description: "Nuage blanc bourgeonnant à base plate, beau temps souvent.", explication: "Cumulus : Nuage de beau temps en « chou-fleur »." },
-        { difficulte: "facile", nom_commun: "Stratus", nom_scientifique: "Stratus", imageQuery: "cloud", indice: "Voile gris bas", description: "Couche grise uniforme, bas dans le ciel, bruine possible.", explication: "Stratus : Couche basse uniforme." },
-        { difficulte: "moyen", nom_commun: "Stratocumulus", nom_scientifique: "Stratocumulus", imageQuery: "cloud", indice: "Dalles grises/blanches", description: "Bancs ou dalles de nuages bas, peu d’averses.", explication: "Stratocumulus : Galettes nuageuses basses." },
-        { difficulte: "moyen", nom_commun: "Nimbostratus", nom_scientifique: "Nimbostratus", imageQuery: "cloud", indice: "Pluie continue", description: "Épaisse couche sombre donnant pluie ou neige prolongée.", explication: "Nimbostratus : Nuage de pluie durable." },
-        { difficulte: "difficile", nom_commun: "Cumulus congestus", nom_scientifique: "Cumulus congestus", imageQuery: "cloud", indice: "Tour en croissance", description: "Cumulus très développé verticalement, avant orage parfois.", explication: "Cumulus congestus : Tour nuageuse en croissance." },
+        item("facile", "Cumulus", "Cumulus", "cumulus cloud", "Chou-fleur blanc", "Nuage blanc bourgeonnant à base plate, beau temps souvent.", "Cumulus : Nuage de beau temps en « chou-fleur »."),
+        item("facile", "Stratus", "Stratus", "stratus cloud", "Voile gris bas", "Couche grise uniforme, bas dans le ciel, bruine possible.", "Stratus : Couche basse uniforme."),
+        item("facile", "Stratocumulus", "Stratocumulus", "stratocumulus", "Dalles grises/blanches", "Bancs ou dalles de nuages bas, peu d’averses.", "Stratocumulus : Galettes nuageuses basses."),
+        item("facile", "Brouillard", "Fog", "fog landscape", "Sol invisible, air blanc", "Gouttelettes en suspension au ras du sol, visibilité réduite.", "Brouillard : Stratus au niveau du sol."),
+        item("moyen", "Nimbostratus", "Nimbostratus", "nimbostratus", "Pluie continue", "Épaisse couche sombre donnant pluie ou neige prolongée.", "Nimbostratus : Nuage de pluie durable."),
+        item("moyen", "Cumulus humilis", "Cumulus humilis", "cumulus humilis", "Petits choux plats", "Cumulus aplatis, peu développés verticalement.", "Cumulus humilis : Beau temps, faible extension verticale."),
+        item("moyen", "Cumulus mediocris", "Cumulus mediocris", "cumulus mediocris", "Choux un peu plus hauts", "Cumulus de développement moyen, plus hauts que larges parfois.", "Cumulus mediocris : Étape entre humilis et congestus."),
+        item("moyen", "Stratus fractus", "Stratus fractus", "stratus fractus", "Lambeaux bas déchirés", "Fragments de stratus déchirés, souvent sous la pluie.", "Stratus fractus : Lambeaux bas sous précipitations."),
+        item("moyen", "Cumulus fractus", "Cumulus fractus", "cumulus fractus", "Chiffons blancs déchirés", "Cumulus en lambeaux, contours déchirés.", "Cumulus fractus : Cumulus fragmentés."),
+        item("difficile", "Cumulus congestus", "Cumulus congestus", "cumulus congestus", "Tour en croissance", "Cumulus très développé verticalement, avant orage parfois.", "Cumulus congestus : Tour nuageuse en croissance."),
+        item("difficile", "Stratocumulus castellanus", "Stratocumulus castellanus", "stratocumulus castellanus", "Créneaux bas", "Stratocumulus aux sommets en petites tours.", "Stratocumulus castellanus : Créneaux sur une couche basse."),
+        item("difficile", "Stratocumulus lenticularis", "Stratocumulus lenticularis", "stratocumulus lenticularis", "Lentille basse", "Banc lenticulaire bas, souvent près des reliefs.", "Stratocumulus lenticularis : Lentille à basse altitude."),
+        item("difficile", "Arcus (ligne de grain)", "Arcus", "shelf cloud", "Mur / étagère sous l’orage", "Nuage bas en forme d’étagère ou de rouleau devant l’orage.", "Arcus : Nuage accessoire de grain orageux."),
+        item("difficile", "Tuba (ébauche)", "Tuba", "funnel cloud", "Entonnoir sous le nuage", "Colonnette conique sous un cumulus orageux, sans toucher le sol.", "Tuba : Ébauche de trombe / tornade."),
       ],
     },
     {
       id: "moyen",
       label: "Étages moyens",
       items: [
-        { difficulte: "facile", nom_commun: "Altocumulus", nom_scientifique: "Altocumulus", imageQuery: "cloud", indice: "Moutons du ciel", description: "Bancs de petits flocons ou galettes à moyenne altitude.", explication: "Altocumulus : « Moutons » à moyenne altitude." },
-        { difficulte: "moyen", nom_commun: "Altostratus", nom_scientifique: "Altostratus", imageQuery: "cloud", indice: "Voile laiteux", description: "Voile grisâtre à travers lequel le Soleil apparaît flou.", explication: "Altostratus : Voile moyen, Soleil terne." },
-        { difficulte: "difficile", nom_commun: "Altocumulus lenticularis", nom_scientifique: "Altocumulus lenticularis", imageQuery: "lenticular cloud", indice: "Soucoupe / lentille", description: "Nuage lenticulaire stationnaire, souvent en montagne.", explication: "Altocumulus lenticularis : Forme en lentille au-dessus des reliefs." },
-        { difficulte: "difficile", nom_commun: "Altocumulus castellanus", nom_scientifique: "Altocumulus castellanus", imageQuery: "cloud", indice: "Tours dentelées", description: "Altocumulus aux sommets en créneaux, signe d’instabilité.", explication: "Castellanus : Créneaux annonçant parfois l’orage." },
+        item("facile", "Altocumulus", "Altocumulus", "altocumulus", "Moutons du ciel", "Bancs de petits flocons ou galettes à moyenne altitude.", "Altocumulus : « Moutons » à moyenne altitude."),
+        item("facile", "Altostratus", "Altostratus", "altostratus", "Voile laiteux", "Voile grisâtre à travers lequel le Soleil apparaît flou.", "Altostratus : Voile moyen, Soleil terne."),
+        item("moyen", "Altocumulus undulatus", "Altocumulus undulatus", "altocumulus undulatus", "Vagues / ondulations", "Altocumulus disposés en vagues parallèles.", "Altocumulus undulatus : Ciel ondulé."),
+        item("moyen", "Altocumulus floccus", "Altocumulus floccus", "altocumulus floccus", "Touffes ouatées", "Touffes cumuliformes à moyenne altitude, base souvent déchirée.", "Altocumulus floccus : Flocons ouatés moyens."),
+        item("moyen", "Altostratus translucidus", "Altostratus translucidus", "altostratus translucidus", "Soleil encore visible", "Altostratus assez fin pour laisser voir le Soleil flou.", "Translucidus : Voile moyen encore translucide."),
+        item("moyen", "Altostratus opacus", "Altostratus opacus", "altostratus opacus", "Soleil masqué", "Altostratus assez épais pour cacher complètement le Soleil.", "Opacus : Voile moyen opaque."),
+        item("difficile", "Altocumulus lenticularis", "Altocumulus lenticularis", "lenticular cloud", "Soucoupe / lentille", "Nuage lenticulaire stationnaire, souvent en montagne.", "Altocumulus lenticularis : Forme en lentille au-dessus des reliefs."),
+        item("difficile", "Altocumulus castellanus", "Altocumulus castellanus", "altocumulus castellanus", "Tours dentelées", "Altocumulus aux sommets en créneaux, signe d’instabilité.", "Castellanus : Créneaux annonçant parfois l’orage."),
+        item("difficile", "Altocumulus stratiformis", "Altocumulus stratiformis", "altocumulus stratiformis", "Nappe de moutons", "Vaste nappe d’altocumulus en couche.", "Stratiformis : Couche étendue d’altocumulus."),
+        item("difficile", "Asperitas", "Asperitas", "asperitas cloud", "Vagues renversées", "Dessous de nuage fortement ondulé, aspect de mer agitée.", "Asperitas : Ondulations spectaculaires sous la couche."),
+        item("difficile", "Kelvin-Helmholtz", "Fluctus", "kelvin helmholtz clouds", "Vagues qui déferlent", "Petites vagues en crêtes qui semblent déferler en altitude.", "Fluctus (Kelvin-Helmholtz) : Vagues de cisaillement."),
+        item("difficile", "Virga", "Virga", "virga rain", "Traînes qui n’atteignent pas le sol", "Précipitations qui s’évaporent avant d’arriver au sol.", "Virga : Pluie ou neige suspendue sous le nuage."),
       ],
     },
     {
       id: "haut",
       label: "Étages hauts & orage",
       items: [
-        { difficulte: "facile", nom_commun: "Cirrus", nom_scientifique: "Cirrus", imageQuery: "cirrus cloud", indice: "Filaments blancs", description: "Nuages fins fibreux de cristaux de glace, très hauts.", explication: "Cirrus : Filaments de glace en altitude." },
-        { difficulte: "facile", nom_commun: "Cumulonimbus", nom_scientifique: "Cumulonimbus", imageQuery: "cumulonimbus", indice: "Enclume d’orage", description: "Immense tour orageuse, sommet souvent en enclume.", explication: "Cumulonimbus : Nuage d’orage." },
-        { difficulte: "moyen", nom_commun: "Cirrostratus", nom_scientifique: "Cirrostratus", imageQuery: "cirrostratus", indice: "Halo autour du Soleil", description: "Voile blanc transparent, halo solaire ou lunaire fréquent.", explication: "Cirrostratus : Voile haut avec halo." },
-        { difficulte: "moyen", nom_commun: "Cirrocumulus", nom_scientifique: "Cirrocumulus", imageQuery: "cirrocumulus", indice: "Grain de riz / écaille", description: "Petits flocons blancs très hauts, ciel « pommelé » fin.", explication: "Cirrocumulus : Écailles très hautes." },
-        { difficulte: "difficile", nom_commun: "Cumulonimbus capillatus", nom_scientifique: "Cumulonimbus capillatus", imageQuery: "cumulonimbus anvil", indice: "Sommet fibreux", description: "Cumulonimbus à sommet fibreux / enclume bien formée.", explication: "Capillatus : Orage mature à enclume fibreuse." },
-        { difficulte: "difficile", nom_commun: "Contrail (traînée)", nom_scientifique: "Cirrus aviaticus", imageQuery: "contrail", indice: "Trace d’avion", description: "Traînée de condensation d’avion, parfois persistante.", explication: "Contrail : Traînée d’avion, parfois classée avec les cirrus." },
+        item("facile", "Cirrus", "Cirrus", "cirrus cloud", "Filaments blancs", "Nuages fins fibreux de cristaux de glace, très hauts.", "Cirrus : Filaments de glace en altitude."),
+        item("facile", "Cumulonimbus", "Cumulonimbus", "cumulonimbus", "Enclume d’orage", "Immense tour orageuse, sommet souvent en enclume.", "Cumulonimbus : Nuage d’orage."),
+        item("facile", "Cirrostratus", "Cirrostratus", "cirrostratus", "Halo autour du Soleil", "Voile blanc transparent, halo solaire ou lunaire fréquent.", "Cirrostratus : Voile haut avec halo."),
+        item("moyen", "Cirrocumulus", "Cirrocumulus", "cirrocumulus", "Grain de riz / écaille", "Petits flocons blancs très hauts, ciel « pommelé » fin.", "Cirrocumulus : Écailles très hautes."),
+        item("moyen", "Cirrus uncinus", "Cirrus uncinus", "cirrus uncinus", "Crochets / virgules", "Cirrus en forme de crochets ou de filaments recourbés.", "Cirrus uncinus : Filaments en crochet."),
+        item("moyen", "Cirrus fibratus", "Cirrus fibratus", "cirrus fibratus", "Fils presque droits", "Cirrus en fibres presque rectilignes, sans crochets.", "Cirrus fibratus : Fibres hautes assez droites."),
+        item("moyen", "Cirrus spissatus", "Cirrus spissatus", "cirrus spissatus", "Cirrus épais, grisâtre", "Cirrus denses, parfois assez épais pour voiler le Soleil.", "Cirrus spissatus : Cirrus denses, souvent issus d’enclumes."),
+        item("moyen", "Cumulonimbus calvus", "Cumulonimbus calvus", "cumulonimbus calvus", "Sommet encore « chauve »", "Cumulonimbus sans enclume fibreuse nette, sommet arrondi.", "Calvus : Orage jeune, sans capillatus."),
+        item("difficile", "Cumulonimbus capillatus", "Cumulonimbus capillatus", "cumulonimbus anvil", "Sommet fibreux", "Cumulonimbus à sommet fibreux / enclume bien formée.", "Capillatus : Orage mature à enclume fibreuse."),
+        item("difficile", "Contrail (traînée)", "Cirrus aviaticus", "contrail", "Trace d’avion", "Traînée de condensation d’avion, parfois persistante.", "Contrail : Traînée d’avion, parfois classée avec les cirrus."),
+        item("difficile", "Mammatus", "Mammatus", "mammatus clouds", "Poches sous l’enclume", "Poches arrondies pendant sous un cumulonimbus.", "Mammatus : Mamelles sous l’enclume d’orage."),
+        item("difficile", "Pileus", "Pileus", "pileus cloud", "Calotte sur la tour", "Petit nuage en calotte au-dessus d’un cumulus en croissance.", "Pileus : Capuchon au-dessus d’une tour convective."),
+        item("difficile", "Incus (enclume)", "Incus", "anvil cloud", "Enclume étalée", "Sommet de cumulonimbus étalé en enclume par les vents d’altitude.", "Incus : Enclume du cumulonimbus mature."),
+        item("difficile", "Circumhorizontal (arc)", "Circumhorizontal arc", "circumhorizontal arc", "Arc coloré horizontal", "Arc aux couleurs de l’arc-en-ciel bas sur l’horizon, dans les cirrus.", "Arc circumhorizontal : Halo coloré dans les cristaux de glace."),
       ],
     },
   ],
 });
-
 
 const fossiles = buildQuiz({
   id: "fossiles",
@@ -213,47 +285,73 @@ const fossiles = buildQuiz({
       id: "invertebres",
       label: "Invertébrés",
       items: [
-        { difficulte: "facile", nom_commun: "Ammonite", nom_scientifique: "Ammonoidea", imageQuery: "fossil", indice: "Spirale côtelée", description: "Coquille spirale fossile de céphalopode.", explication: "Ammonite : Céphalopode fossile en spirale." },
-        { difficulte: "facile", nom_commun: "Trilobite", nom_scientifique: "Trilobita", imageQuery: "fossil", indice: "Trois lobes, segmenté", description: "Arthropode marin segmenté en trois lobes longitudinaux.", explication: "Trilobite : Arthropode paléozoïque emblématique." },
-        { difficulte: "moyen", nom_commun: "Bélemnite", nom_scientifique: "Belemnitida", imageQuery: "fossil", indice: "Rostrum en « balle »", description: "Rostrum interne en forme de balle / cigare.", explication: "Bélemnite : Céphalopode, rostrum fossilisé." },
-        { difficulte: "moyen", nom_commun: "Oursin fossile", nom_scientifique: "Echinoidea", imageQuery: "fossil echinoid", indice: "Test rond à plaques", description: "Test calcaire d’échinide, souvent dans la craie.", explication: "Oursin fossile : Fréquent dans la craie." },
-        { difficulte: "difficile", nom_commun: "Graptolite", nom_scientifique: "Graptolithina", imageQuery: "graptolite fossil", indice: "Traits / dentelles sur schiste", description: "Colonies en lignes ou zigzags sur schistes noirs.", explication: "Graptolite : Fossile stratigraphique du Paléozoïque." },
-        { difficulte: "difficile", nom_commun: "Crinoïde", nom_scientifique: "Crinoidea", imageQuery: "crinoid fossil", indice: "Tige en « empilement »", description: "Segments de tige en colonne, « lys de mer ».", explication: "Crinoïde : Échinoderme fixe, tige fossilisée." },
+        item("facile", "Ammonite", "Ammonoidea", "ammonite fossil", "Spirale côtelée", "Coquille spirale fossile de céphalopode.", "Ammonite : Céphalopode fossile en spirale."),
+        item("facile", "Trilobite", "Trilobita", "trilobite fossil", "Trois lobes, segmenté", "Arthropode marin segmenté en trois lobes longitudinaux.", "Trilobite : Arthropode paléozoïque emblématique."),
+        item("facile", "Bivalve fossile", "Bivalvia", "fossil bivalve", "Deux valves symétriques", "Coquille à deux valves, souvent dans les calcaires.", "Bivalve fossile : Mollusque à coquille double."),
+        item("facile", "Gastéropode fossile", "Gastropoda", "fossil gastropod", "Spirale conique", "Coquille en spirale conique de mollusque.", "Gastéropode fossile : Escargot / coquillage spiralé."),
+        item("moyen", "Bélemnite", "Belemnitida", "belemnite fossil", "Rostrum en « balle »", "Rostrum interne en forme de balle / cigare.", "Bélemnite : Céphalopode, rostrum fossilisé."),
+        item("moyen", "Oursin fossile", "Echinoidea", "fossil echinoid", "Test rond à plaques", "Test calcaire d’échinide, souvent dans la craie.", "Oursin fossile : Fréquent dans la craie."),
+        item("moyen", "Corail fossile", "Anthozoa", "fossil coral", "Structure en colonies / calices", "Squelette calcaire de corail, massif ou branchu.", "Corail fossile : Constructeur de récifs anciens."),
+        item("moyen", "Brachiopode", "Brachiopoda", "brachiopod fossil", "Deux valves inégales", "Coquille à plan de symétrie perpendiculaire à la charnière.", "Brachiopode : Très abondant au Paléozoïque."),
+        item("moyen", "Nautile fossile", "Nautilida", "nautilus fossil", "Spirale lisse cloisonnée", "Coquille spiralée à cloisons simples, proche du nautile actuel.", "Nautile fossile : Céphalopode à cloisons simples."),
+        item("difficile", "Graptolite", "Graptolithina", "graptolite fossil", "Traits / dentelles sur schiste", "Colonies en lignes ou zigzags sur schistes noirs.", "Graptolite : Fossile stratigraphique du Paléozoïque."),
+        item("difficile", "Crinoïde", "Crinoidea", "crinoid fossil", "Tige en « empilement »", "Segments de tige en colonne, « lys de mer ».", "Crinoïde : Échinoderme fixe, tige fossilisée."),
+        item("difficile", "Orthocère", "Orthocerida", "orthoceras fossil", "Cône droit cloisonné", "Céphalopode à coquille droite et cloisonnée.", "Orthocère : Céphalopode droit du Paléozoïque."),
+        item("difficile", "Éponge fossile", "Porifera", "fossil sponge", "Masse poreuse / réseau", "Squelette poreux d’éponge, parfois en silex.", "Éponge fossile : Animal filtreur fossilisé."),
+        item("difficile", "Trilobite enroulé", "Trilobita (enrolled)", "enrolled trilobite", "Boule segmentée", "Trilobite fossilisé en position de défense enroulée.", "Trilobite enroulé : Attitude de protection fossilisée."),
       ],
     },
     {
       id: "vertebres",
       label: "Vertébrés",
       items: [
-        { difficulte: "facile", nom_commun: "Dent de requin", nom_scientifique: "Lamniformes", imageQuery: "shark tooth fossil", indice: "Triangle tranchant", description: "Dent triangulaire fossilisée, émail brillant.", explication: "Dent de requin : Fossile très courant." },
-        { difficulte: "facile", nom_commun: "Os de dinosaure", nom_scientifique: "Dinosauria", imageQuery: "dinosaur bone fossil", indice: "Os massif pétrifié", description: "Fragment osseux fossilisé de grand reptile.", explication: "Os de dinosaure : Vertébré mésozoïque." },
-        { difficulte: "moyen", nom_commun: "Ichthyosaure", nom_scientifique: "Ichthyosauria", imageQuery: "ichthyosaur fossil", indice: "Reptile marin en forme de dauphin", description: "Squelette de reptile marin hydrodynamique.", explication: "Ichthyosaure : Reptile marin du Mésozoïque." },
-        { difficulte: "moyen", nom_commun: "Ptérosaure", nom_scientifique: "Pterosauria", imageQuery: "pterosaur fossil", indice: "Aile membraneuse fossile", description: "Reptile volant, longs doigts soutenant l’aile.", explication: "Ptérosaure : Reptile volant (pas un dinosaure)." },
-        { difficulte: "difficile", nom_commun: "Archaeopteryx", nom_scientifique: "Archaeopteryx", imageQuery: "archaeopteryx fossil", indice: "Plumes + dents", description: "Fossile à plumes et caractères reptiliens.", explication: "Archaeopteryx : Fossile « entre » dinosaure et oiseau." },
-        { difficulte: "difficile", nom_commun: "Mégalodon (dent)", nom_scientifique: "Otodus megalodon", imageQuery: "megalodon tooth", indice: "Énorme dent dentelée", description: "Très grande dent de requin fossile.", explication: "Mégalodon : Dent géante de requin éteint." },
+        item("facile", "Dent de requin", "Lamniformes", "shark tooth fossil", "Triangle tranchant", "Dent triangulaire fossilisée, émail brillant.", "Dent de requin : Fossile très courant."),
+        item("facile", "Os de dinosaure", "Dinosauria", "dinosaur bone fossil", "Os massif pétrifié", "Fragment osseux fossilisé de grand reptile.", "Os de dinosaure : Vertébré mésozoïque."),
+        item("facile", "Poisson fossile", "Osteichthyes", "fossil fish", "Squelette de poisson aplati", "Poisson entier ou en empreinte sur une dalle.", "Poisson fossile : Vertébré aquatique fréquent."),
+        item("moyen", "Ichthyosaure", "Ichthyosauria", "ichthyosaur fossil", "Reptile marin en forme de dauphin", "Squelette de reptile marin hydrodynamique.", "Ichthyosaure : Reptile marin du Mésozoïque."),
+        item("moyen", "Ptérosaure", "Pterosauria", "pterosaur fossil", "Aile membraneuse fossile", "Reptile volant, longs doigts soutenant l’aile.", "Ptérosaure : Reptile volant (pas un dinosaure)."),
+        item("moyen", "Plésiosaure", "Plesiosauria", "plesiosaur fossil", "Long cou, quatre nageoires", "Reptile marin à long cou et membres en pagaies.", "Plésiosaure : Reptile marin du Mésozoïque."),
+        item("moyen", "Dent de mammouth", "Mammuthus", "mammoth tooth fossil", "Molaire à lames", "Grande molaire à plaques d’émail, herbivore.", "Dent de mammouth : Proboscidien de l’ère glaciaire."),
+        item("moyen", "Défense d’ivoire", "Mammuthus / Elephantidae", "mammoth tusk fossil", "Longue défense courbée", "Défense allongée fossilisée ou subfossile.", "Défense : Ivoire de proboscidien."),
+        item("difficile", "Archaeopteryx", "Archaeopteryx", "archaeopteryx fossil", "Plumes + dents", "Fossile à plumes et caractères reptiliens.", "Archaeopteryx : Fossile « entre » dinosaure et oiseau."),
+        item("difficile", "Mégalodon (dent)", "Otodus megalodon", "megalodon tooth", "Énorme dent dentelée", "Très grande dent de requin fossile.", "Mégalodon : Dent géante de requin éteint."),
+        item("difficile", "Mosasaure", "Mosasauridae", "mosasaur fossil", "Grand reptile marin denté", "Squelette de grand reptile marin du Crétacé.", "Mosasaure : Prédateur marin du Crétacé."),
+        item("difficile", "Tortue fossile", "Testudines", "fossil turtle", "Carapace fossilisée", "Carapace ou squelette de tortue pétrifié.", "Tortue fossile : Reptile à carapace."),
+        item("difficile", "Amphibien fossile", "Temnospondyli", "amphibian fossil", "Tête plate, membres courts", "Squelette d’amphibien ancien, souvent à large crâne.", "Amphibien fossile : Vertébré des marécages anciens."),
+        item("difficile", "Crâne de primate", "Primates", "primate skull fossil", "Crâne à orbites frontales", "Crâne fossilisé de primate (dont hominidés).", "Crâne de primate : Vertébré proche de la lignée humaine."),
       ],
     },
     {
       id: "plantes-traces",
       label: "Plantes & traces",
       items: [
-        { difficulte: "facile", nom_commun: "Empreinte de fougère", nom_scientifique: "Pteridophyta", imageQuery: "fern fossil", indice: "Feuille découpée sur schiste", description: "Empreinte de fronde de fougère sur roche.", explication: "Fougère fossile : Très fréquente au Carbonifère." },
-        { difficulte: "moyen", nom_commun: "Tronc silicifié", nom_scientifique: "Petrified wood", imageQuery: "petrified wood", indice: "Bois devenu pierre", description: "Bois dont la matière a été remplacée par de la silice.", explication: "Bois pétrifié : Structure du bois encore visible." },
-        { difficulte: "moyen", nom_commun: "Empreinte de pas", nom_scientifique: "Ichnite", imageQuery: "dinosaur footprint fossil", indice: "Trace de marche", description: "Empreinte de pas fossilisée dans un sédiment.", explication: "Ichnite : Trace fossile (comportement)." },
-        { difficulte: "difficile", nom_commun: "Coprolithe", nom_scientifique: "Coprolite", imageQuery: "coprolite", indice: "Excrément fossilisé", description: "Matière fécale fossilisée, parfois avec restes de repas.", explication: "Coprolithe : Crotte fossile, précieuse pour la paléoécologie." },
-        { difficulte: "difficile", nom_commun: "Ambre (inclusion)", nom_scientifique: "Amber", imageQuery: "amber insect fossil", indice: "Insecte dans la résine", description: "Résine fossilisée piégeant parfois un insecte.", explication: "Ambre : Résine fossilisée, inclusions célèbres." },
-        { difficulte: "difficile", nom_commun: "Stromatolite", nom_scientifique: "Stromatolite", imageQuery: "stromatolite", indice: "Couches en chou-fleur / dôme", description: "Structure laminée produite par des tapis microbiens.", explication: "Stromatolite : Parmi les plus anciens indices de vie." },
+        item("facile", "Empreinte de fougère", "Pteridophyta", "fern fossil", "Feuille découpée sur schiste", "Empreinte de fronde de fougère sur roche.", "Fougère fossile : Très fréquente au Carbonifère."),
+        item("facile", "Tronc silicifié", "Petrified wood", "petrified wood", "Bois devenu pierre", "Bois dont la matière a été remplacée par de la silice.", "Bois pétrifié : Structure du bois encore visible."),
+        item("facile", "Empreinte de pas", "Ichnite", "dinosaur footprint fossil", "Trace de marche", "Empreinte de pas fossilisée dans un sédiment.", "Ichnite : Trace fossile (comportement)."),
+        item("moyen", "Cône fossile", "Coniferophyta", "fossil pine cone", "Cône de conifère pétrifié", "Cône ou empreinte de cône de conifère.", "Cône fossile : Reproduction des conifères anciens."),
+        item("moyen", "Calamites", "Calamites", "calamites fossil", "Tige articulée de prêle géante", "Tige segmentée de prêle arborescente du Carbonifère.", "Calamites : Ancêtre géant des prêles."),
+        item("moyen", "Lépidodendron", "Lepidodendron", "lepidodendron fossil", "Écorce en losanges", "Écorce fossilisée à motifs losangiques d’arbre-échelle.", "Lépidodendron : Arbre du Carbonifère à écorce caractéristique."),
+        item("moyen", "Feuille de ginkgo", "Ginkgo", "ginkgo fossil leaf", "Éventail nervuré", "Feuille en éventail fossilisée, proche du ginkgo actuel.", "Ginkgo fossile : Feuille en éventail."),
+        item("difficile", "Coprolithe", "Coprolite", "coprolite", "Excrément fossilisé", "Matière fécale fossilisée, parfois avec restes de repas.", "Coprolithe : Crotte fossile, précieuse pour la paléoécologie."),
+        item("difficile", "Ambre (inclusion)", "Amber", "amber insect fossil", "Insecte dans la résine", "Résine fossilisée piégeant parfois un insecte.", "Ambre : Résine fossilisée, inclusions célèbres."),
+        item("difficile", "Stromatolite", "Stromatolite", "stromatolite", "Couches en chou-fleur / dôme", "Structure laminée produite par des tapis microbiens.", "Stromatolite : Parmi les plus anciens indices de vie."),
+        item("difficile", "Gastrolithe", "Gastrolith", "gastrolith stones", "Cailloux polis d’estomac", "Pierres polies avalées pour broyer les aliments.", "Gastrolithe : Cailloux digestifs fossilisés."),
+        item("difficile", "Terrier fossile", "Burrow fossil", "fossil burrow", "Tube / galerie dans la roche", "Trace de galerie creusée par un animal dans le sédiment.", "Terrier fossile : Trace de comportement (ichnofossile)."),
+        item("difficile", "Racine fossilisée", "Stigmaria", "stigmaria fossil", "Racines / bases d’arbre", "Système racinaire fossilisé d’arbres du Carbonifère.", "Stigmaria : Racines de lépidodendrons."),
+        item("difficile", "Piste de reptile", "Tetrapod trackway", "reptile trackway fossil", "Suite d’empreintes alignées", "Série d’empreintes formant une piste de marche.", "Piste : Séquence d’empreintes fossilisées."),
       ],
     },
   ],
 });
 
-writeQuiz(bebes);
-writeQuiz(feuilles);
-writeQuiz(nuages);
-writeQuiz(fossiles);
+const counts = {
+  bebes: writeQuiz(bebes),
+  feuilles: writeQuiz(feuilles),
+  nuages: writeQuiz(nuages),
+  fossiles: writeQuiz(fossiles),
+};
 
-// Patch catalog.json
+// Patch catalog.json descriptions with counts
 const catalogPath = join(dataDir, "catalog.json");
 const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
 
@@ -266,51 +364,16 @@ function findNode(nodes, id) {
   return null;
 }
 
-const animaux = findNode(catalog.domains, "animaux");
-const plantes = findNode(catalog.domains, "plantes");
-const terre = findNode(catalog.domains, "sciences-terre");
+const patch = [
+  ["bebes-animaux", `Photo d’un petit : retrouve le nom du bébé (${counts.bebes} entrées).`],
+  ["feuilles-arbres", `Reconnaître un arbre uniquement par sa feuille (${counts.feuilles} entrées).`],
+  ["nuages", `Types de nuages : cumulus, cirrus, cumulonimbus… (${counts.nuages} entrées).`],
+  ["fossiles", `Ammonites, trilobites, dents et empreintes fossiles (${counts.fossiles} entrées).`],
+];
 
-if (animaux && !animaux.children.some((c) => c.id === "bebes-animaux")) {
-  animaux.children.push({
-    id: "bebes-animaux",
-    nom: "Bébés animaux",
-    fichier: "data/bebes-animaux.json",
-    description: "Photo d’un petit : retrouve le nom du bébé.",
-    regions: ["monde"],
-  });
-}
-
-if (plantes && !plantes.children.some((c) => c.id === "feuilles-arbres")) {
-  plantes.children.push({
-    id: "feuilles-arbres",
-    nom: "Feuilles d’arbres",
-    fichier: "data/feuilles-arbres.json",
-    description: "Reconnaître un arbre uniquement par sa feuille.",
-    regions: ["france", "monde"],
-  });
-}
-
-if (terre) {
-  if (!terre.children.some((c) => c.id === "nuages")) {
-    terre.children.push({
-      id: "nuages",
-      nom: "Nuages",
-      fichier: "data/nuages.json",
-      description: "Types de nuages : cumulus, cirrus, cumulonimbus…",
-      regions: ["monde"],
-    });
-  }
-  terre.children = terre.children.filter((c) => c.id !== "constellations");
-  if (!terre.children.some((c) => c.id === "fossiles")) {
-    terre.children.push({
-      id: "fossiles",
-      nom: "Fossiles",
-      fichier: "data/fossiles.json",
-      description: "Ammonites, trilobites, dents et empreintes fossiles.",
-      regions: ["monde"],
-    });
-  }
-  terre.description = "Rochers, minéraux, nuages, fossiles…";
+for (const [id, description] of patch) {
+  const node = findNode(catalog.domains, id);
+  if (node) node.description = description;
 }
 
 writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");

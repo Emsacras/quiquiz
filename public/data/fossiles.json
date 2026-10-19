@@ -15,14 +15,14 @@
           "groupe": "invertebres",
           "options": [
             "Ammonite",
-            "Trilobite",
-            "Graptolite",
-            "Bélemnite"
+            "Bivalve fossile",
+            "Nautile fossile",
+            "Trilobite enroulé"
           ],
           "indice": "Spirale côtelée",
           "description": "Coquille spirale fossile de céphalopode.",
           "explication": "Ammonite : Céphalopode fossile en spirale.",
-          "imageQuery": "fossil"
+          "imageQuery": "ammonite fossil"
         },
         {
           "id": "invertebres2",
@@ -39,36 +39,70 @@
           "indice": "Trois lobes, segmenté",
           "description": "Arthropode marin segmenté en trois lobes longitudinaux.",
           "explication": "Trilobite : Arthropode paléozoïque emblématique.",
-          "imageQuery": "fossil"
+          "imageQuery": "trilobite fossil"
         },
         {
           "id": "invertebres3",
+          "difficulte": "facile",
+          "nom_commun": "Bivalve fossile",
+          "nom_scientifique": "Bivalvia",
+          "groupe": "invertebres",
+          "options": [
+            "Bivalve fossile",
+            "Gastéropode fossile",
+            "Corail fossile",
+            "Ammonite"
+          ],
+          "indice": "Deux valves symétriques",
+          "description": "Coquille à deux valves, souvent dans les calcaires.",
+          "explication": "Bivalve fossile : Mollusque à coquille double.",
+          "imageQuery": "fossil bivalve"
+        },
+        {
+          "id": "invertebres4",
+          "difficulte": "facile",
+          "nom_commun": "Gastéropode fossile",
+          "nom_scientifique": "Gastropoda",
+          "groupe": "invertebres",
+          "options": [
+            "Bivalve fossile",
+            "Nautile fossile",
+            "Gastéropode fossile",
+            "Corail fossile"
+          ],
+          "indice": "Spirale conique",
+          "description": "Coquille en spirale conique de mollusque.",
+          "explication": "Gastéropode fossile : Escargot / coquillage spiralé.",
+          "imageQuery": "fossil gastropod"
+        },
+        {
+          "id": "invertebres5",
           "difficulte": "moyen",
           "nom_commun": "Bélemnite",
           "nom_scientifique": "Belemnitida",
           "groupe": "invertebres",
           "options": [
+            "Corail fossile",
+            "Orthocère",
             "Bélemnite",
-            "Oursin fossile",
-            "Graptolite",
-            "Ammonite"
+            "Trilobite"
           ],
           "indice": "Rostrum en « balle »",
           "description": "Rostrum interne en forme de balle / cigare.",
           "explication": "Bélemnite : Céphalopode, rostrum fossilisé.",
-          "imageQuery": "fossil"
+          "imageQuery": "belemnite fossil"
         },
         {
-          "id": "invertebres4",
+          "id": "invertebres6",
           "difficulte": "moyen",
           "nom_commun": "Oursin fossile",
           "nom_scientifique": "Echinoidea",
           "groupe": "invertebres",
           "options": [
+            "Gastéropode fossile",
+            "Oursin fossile",
             "Ammonite",
-            "Bélemnite",
-            "Trilobite",
-            "Oursin fossile"
+            "Nautile fossile"
           ],
           "indice": "Test rond à plaques",
           "description": "Test calcaire d’échinide, souvent dans la craie.",
@@ -76,16 +110,67 @@
           "imageQuery": "fossil echinoid"
         },
         {
-          "id": "invertebres5",
+          "id": "invertebres7",
+          "difficulte": "moyen",
+          "nom_commun": "Corail fossile",
+          "nom_scientifique": "Anthozoa",
+          "groupe": "invertebres",
+          "options": [
+            "Gastéropode fossile",
+            "Graptolite",
+            "Brachiopode",
+            "Corail fossile"
+          ],
+          "indice": "Structure en colonies / calices",
+          "description": "Squelette calcaire de corail, massif ou branchu.",
+          "explication": "Corail fossile : Constructeur de récifs anciens.",
+          "imageQuery": "fossil coral"
+        },
+        {
+          "id": "invertebres8",
+          "difficulte": "moyen",
+          "nom_commun": "Brachiopode",
+          "nom_scientifique": "Brachiopoda",
+          "groupe": "invertebres",
+          "options": [
+            "Bivalve fossile",
+            "Orthocère",
+            "Trilobite enroulé",
+            "Brachiopode"
+          ],
+          "indice": "Deux valves inégales",
+          "description": "Coquille à plan de symétrie perpendiculaire à la charnière.",
+          "explication": "Brachiopode : Très abondant au Paléozoïque.",
+          "imageQuery": "brachiopod fossil"
+        },
+        {
+          "id": "invertebres9",
+          "difficulte": "moyen",
+          "nom_commun": "Nautile fossile",
+          "nom_scientifique": "Nautilida",
+          "groupe": "invertebres",
+          "options": [
+            "Nautile fossile",
+            "Brachiopode",
+            "Corail fossile",
+            "Graptolite"
+          ],
+          "indice": "Spirale lisse cloisonnée",
+          "description": "Coquille spiralée à cloisons simples, proche du nautile actuel.",
+          "explication": "Nautile fossile : Céphalopode à cloisons simples.",
+          "imageQuery": "nautilus fossil"
+        },
+        {
+          "id": "invertebres10",
           "difficulte": "difficile",
           "nom_commun": "Graptolite",
           "nom_scientifique": "Graptolithina",
           "groupe": "invertebres",
           "options": [
-            "Oursin fossile",
-            "Crinoïde",
             "Graptolite",
-            "Trilobite"
+            "Bélemnite",
+            "Corail fossile",
+            "Bivalve fossile"
           ],
           "indice": "Traits / dentelles sur schiste",
           "description": "Colonies en lignes ou zigzags sur schistes noirs.",
@@ -93,21 +178,72 @@
           "imageQuery": "graptolite fossil"
         },
         {
-          "id": "invertebres6",
+          "id": "invertebres11",
           "difficulte": "difficile",
           "nom_commun": "Crinoïde",
           "nom_scientifique": "Crinoidea",
           "groupe": "invertebres",
           "options": [
-            "Ammonite",
-            "Bélemnite",
-            "Graptolite",
-            "Crinoïde"
+            "Trilobite enroulé",
+            "Oursin fossile",
+            "Crinoïde",
+            "Éponge fossile"
           ],
           "indice": "Tige en « empilement »",
           "description": "Segments de tige en colonne, « lys de mer ».",
           "explication": "Crinoïde : Échinoderme fixe, tige fossilisée.",
           "imageQuery": "crinoid fossil"
+        },
+        {
+          "id": "invertebres12",
+          "difficulte": "difficile",
+          "nom_commun": "Orthocère",
+          "nom_scientifique": "Orthocerida",
+          "groupe": "invertebres",
+          "options": [
+            "Orthocère",
+            "Oursin fossile",
+            "Crinoïde",
+            "Bivalve fossile"
+          ],
+          "indice": "Cône droit cloisonné",
+          "description": "Céphalopode à coquille droite et cloisonnée.",
+          "explication": "Orthocère : Céphalopode droit du Paléozoïque.",
+          "imageQuery": "orthoceras fossil"
+        },
+        {
+          "id": "invertebres13",
+          "difficulte": "difficile",
+          "nom_commun": "Éponge fossile",
+          "nom_scientifique": "Porifera",
+          "groupe": "invertebres",
+          "options": [
+            "Éponge fossile",
+            "Gastéropode fossile",
+            "Graptolite",
+            "Trilobite enroulé"
+          ],
+          "indice": "Masse poreuse / réseau",
+          "description": "Squelette poreux d’éponge, parfois en silex.",
+          "explication": "Éponge fossile : Animal filtreur fossilisé.",
+          "imageQuery": "fossil sponge"
+        },
+        {
+          "id": "invertebres14",
+          "difficulte": "difficile",
+          "nom_commun": "Trilobite enroulé",
+          "nom_scientifique": "Trilobita (enrolled)",
+          "groupe": "invertebres",
+          "options": [
+            "Oursin fossile",
+            "Trilobite enroulé",
+            "Gastéropode fossile",
+            "Bivalve fossile"
+          ],
+          "indice": "Boule segmentée",
+          "description": "Trilobite fossilisé en position de défense enroulée.",
+          "explication": "Trilobite enroulé : Attitude de protection fossilisée.",
+          "imageQuery": "enrolled trilobite"
         }
       ]
     },
@@ -123,9 +259,9 @@
           "groupe": "vertebres",
           "options": [
             "Mégalodon (dent)",
+            "Poisson fossile",
             "Ptérosaure",
-            "Dent de requin",
-            "Os de dinosaure"
+            "Dent de requin"
           ],
           "indice": "Triangle tranchant",
           "description": "Dent triangulaire fossilisée, émail brillant.",
@@ -139,9 +275,9 @@
           "nom_scientifique": "Dinosauria",
           "groupe": "vertebres",
           "options": [
+            "Mosasaure",
             "Os de dinosaure",
-            "Ptérosaure",
-            "Archaeopteryx",
+            "Amphibien fossile",
             "Ichthyosaure"
           ],
           "indice": "Os massif pétrifié",
@@ -151,15 +287,32 @@
         },
         {
           "id": "vertebres3",
+          "difficulte": "facile",
+          "nom_commun": "Poisson fossile",
+          "nom_scientifique": "Osteichthyes",
+          "groupe": "vertebres",
+          "options": [
+            "Crâne de primate",
+            "Dent de mammouth",
+            "Poisson fossile",
+            "Ichthyosaure"
+          ],
+          "indice": "Squelette de poisson aplati",
+          "description": "Poisson entier ou en empreinte sur une dalle.",
+          "explication": "Poisson fossile : Vertébré aquatique fréquent.",
+          "imageQuery": "fossil fish"
+        },
+        {
+          "id": "vertebres4",
           "difficulte": "moyen",
           "nom_commun": "Ichthyosaure",
           "nom_scientifique": "Ichthyosauria",
           "groupe": "vertebres",
           "options": [
-            "Ichthyosaure",
-            "Archaeopteryx",
+            "Ptérosaure",
+            "Crâne de primate",
             "Dent de requin",
-            "Ptérosaure"
+            "Ichthyosaure"
           ],
           "indice": "Reptile marin en forme de dauphin",
           "description": "Squelette de reptile marin hydrodynamique.",
@@ -167,16 +320,16 @@
           "imageQuery": "ichthyosaur fossil"
         },
         {
-          "id": "vertebres4",
+          "id": "vertebres5",
           "difficulte": "moyen",
           "nom_commun": "Ptérosaure",
           "nom_scientifique": "Pterosauria",
           "groupe": "vertebres",
           "options": [
+            "Poisson fossile",
             "Ptérosaure",
-            "Dent de requin",
             "Mégalodon (dent)",
-            "Archaeopteryx"
+            "Dent de mammouth"
           ],
           "indice": "Aile membraneuse fossile",
           "description": "Reptile volant, longs doigts soutenant l’aile.",
@@ -184,16 +337,67 @@
           "imageQuery": "pterosaur fossil"
         },
         {
-          "id": "vertebres5",
+          "id": "vertebres6",
+          "difficulte": "moyen",
+          "nom_commun": "Plésiosaure",
+          "nom_scientifique": "Plesiosauria",
+          "groupe": "vertebres",
+          "options": [
+            "Défense d’ivoire",
+            "Plésiosaure",
+            "Poisson fossile",
+            "Os de dinosaure"
+          ],
+          "indice": "Long cou, quatre nageoires",
+          "description": "Reptile marin à long cou et membres en pagaies.",
+          "explication": "Plésiosaure : Reptile marin du Mésozoïque.",
+          "imageQuery": "plesiosaur fossil"
+        },
+        {
+          "id": "vertebres7",
+          "difficulte": "moyen",
+          "nom_commun": "Dent de mammouth",
+          "nom_scientifique": "Mammuthus",
+          "groupe": "vertebres",
+          "options": [
+            "Poisson fossile",
+            "Dent de mammouth",
+            "Os de dinosaure",
+            "Ptérosaure"
+          ],
+          "indice": "Molaire à lames",
+          "description": "Grande molaire à plaques d’émail, herbivore.",
+          "explication": "Dent de mammouth : Proboscidien de l’ère glaciaire.",
+          "imageQuery": "mammoth tooth fossil"
+        },
+        {
+          "id": "vertebres8",
+          "difficulte": "moyen",
+          "nom_commun": "Défense d’ivoire",
+          "nom_scientifique": "Mammuthus / Elephantidae",
+          "groupe": "vertebres",
+          "options": [
+            "Os de dinosaure",
+            "Ichthyosaure",
+            "Amphibien fossile",
+            "Défense d’ivoire"
+          ],
+          "indice": "Longue défense courbée",
+          "description": "Défense allongée fossilisée ou subfossile.",
+          "explication": "Défense : Ivoire de proboscidien.",
+          "imageQuery": "mammoth tusk fossil"
+        },
+        {
+          "id": "vertebres9",
           "difficulte": "difficile",
           "nom_commun": "Archaeopteryx",
           "nom_scientifique": "Archaeopteryx",
           "groupe": "vertebres",
           "options": [
-            "Archaeopteryx",
-            "Dent de requin",
             "Mégalodon (dent)",
-            "Os de dinosaure"
+            "Mosasaure",
+            "Défense d’ivoire",
+            "Archaeopteryx"
           ],
           "indice": "Plumes + dents",
           "description": "Fossile à plumes et caractères reptiliens.",
@@ -201,21 +405,89 @@
           "imageQuery": "archaeopteryx fossil"
         },
         {
-          "id": "vertebres6",
+          "id": "vertebres10",
           "difficulte": "difficile",
           "nom_commun": "Mégalodon (dent)",
           "nom_scientifique": "Otodus megalodon",
           "groupe": "vertebres",
           "options": [
-            "Mégalodon (dent)",
-            "Os de dinosaure",
-            "Dent de requin",
-            "Ichthyosaure"
+            "Poisson fossile",
+            "Ptérosaure",
+            "Défense d’ivoire",
+            "Mégalodon (dent)"
           ],
           "indice": "Énorme dent dentelée",
           "description": "Très grande dent de requin fossile.",
           "explication": "Mégalodon : Dent géante de requin éteint.",
           "imageQuery": "megalodon tooth"
+        },
+        {
+          "id": "vertebres11",
+          "difficulte": "difficile",
+          "nom_commun": "Mosasaure",
+          "nom_scientifique": "Mosasauridae",
+          "groupe": "vertebres",
+          "options": [
+            "Dent de mammouth",
+            "Poisson fossile",
+            "Ichthyosaure",
+            "Mosasaure"
+          ],
+          "indice": "Grand reptile marin denté",
+          "description": "Squelette de grand reptile marin du Crétacé.",
+          "explication": "Mosasaure : Prédateur marin du Crétacé.",
+          "imageQuery": "mosasaur fossil"
+        },
+        {
+          "id": "vertebres12",
+          "difficulte": "difficile",
+          "nom_commun": "Tortue fossile",
+          "nom_scientifique": "Testudines",
+          "groupe": "vertebres",
+          "options": [
+            "Os de dinosaure",
+            "Amphibien fossile",
+            "Mégalodon (dent)",
+            "Tortue fossile"
+          ],
+          "indice": "Carapace fossilisée",
+          "description": "Carapace ou squelette de tortue pétrifié.",
+          "explication": "Tortue fossile : Reptile à carapace.",
+          "imageQuery": "fossil turtle"
+        },
+        {
+          "id": "vertebres13",
+          "difficulte": "difficile",
+          "nom_commun": "Amphibien fossile",
+          "nom_scientifique": "Temnospondyli",
+          "groupe": "vertebres",
+          "options": [
+            "Amphibien fossile",
+            "Dent de mammouth",
+            "Mégalodon (dent)",
+            "Tortue fossile"
+          ],
+          "indice": "Tête plate, membres courts",
+          "description": "Squelette d’amphibien ancien, souvent à large crâne.",
+          "explication": "Amphibien fossile : Vertébré des marécages anciens.",
+          "imageQuery": "amphibian fossil"
+        },
+        {
+          "id": "vertebres14",
+          "difficulte": "difficile",
+          "nom_commun": "Crâne de primate",
+          "nom_scientifique": "Primates",
+          "groupe": "vertebres",
+          "options": [
+            "Ptérosaure",
+            "Mégalodon (dent)",
+            "Ichthyosaure",
+            "Crâne de primate"
+          ],
+          "indice": "Crâne à orbites frontales",
+          "description": "Crâne fossilisé de primate (dont hominidés).",
+          "explication": "Crâne de primate : Vertébré proche de la lignée humaine.",
+          "imageQuery": "primate skull fossil"
         }
       ]
     },
@@ -230,10 +502,10 @@
           "nom_scientifique": "Pteridophyta",
           "groupe": "plantes-traces",
           "options": [
-            "Stromatolite",
+            "Ambre (inclusion)",
             "Empreinte de pas",
             "Empreinte de fougère",
-            "Ambre (inclusion)"
+            "Calamites"
           ],
           "indice": "Feuille découpée sur schiste",
           "description": "Empreinte de fronde de fougère sur roche.",
@@ -242,15 +514,15 @@
         },
         {
           "id": "plantes-traces2",
-          "difficulte": "moyen",
+          "difficulte": "facile",
           "nom_commun": "Tronc silicifié",
           "nom_scientifique": "Petrified wood",
           "groupe": "plantes-traces",
           "options": [
-            "Empreinte de fougère",
+            "Lépidodendron",
             "Stromatolite",
-            "Ambre (inclusion)",
-            "Tronc silicifié"
+            "Tronc silicifié",
+            "Gastrolithe"
           ],
           "indice": "Bois devenu pierre",
           "description": "Bois dont la matière a été remplacée par de la silice.",
@@ -259,15 +531,15 @@
         },
         {
           "id": "plantes-traces3",
-          "difficulte": "moyen",
+          "difficulte": "facile",
           "nom_commun": "Empreinte de pas",
           "nom_scientifique": "Ichnite",
           "groupe": "plantes-traces",
           "options": [
-            "Empreinte de fougère",
+            "Feuille de ginkgo",
+            "Gastrolithe",
             "Empreinte de pas",
-            "Stromatolite",
-            "Ambre (inclusion)"
+            "Terrier fossile"
           ],
           "indice": "Trace de marche",
           "description": "Empreinte de pas fossilisée dans un sédiment.",
@@ -276,15 +548,83 @@
         },
         {
           "id": "plantes-traces4",
+          "difficulte": "moyen",
+          "nom_commun": "Cône fossile",
+          "nom_scientifique": "Coniferophyta",
+          "groupe": "plantes-traces",
+          "options": [
+            "Cône fossile",
+            "Feuille de ginkgo",
+            "Stromatolite",
+            "Piste de reptile"
+          ],
+          "indice": "Cône de conifère pétrifié",
+          "description": "Cône ou empreinte de cône de conifère.",
+          "explication": "Cône fossile : Reproduction des conifères anciens.",
+          "imageQuery": "fossil pine cone"
+        },
+        {
+          "id": "plantes-traces5",
+          "difficulte": "moyen",
+          "nom_commun": "Calamites",
+          "nom_scientifique": "Calamites",
+          "groupe": "plantes-traces",
+          "options": [
+            "Racine fossilisée",
+            "Cône fossile",
+            "Feuille de ginkgo",
+            "Calamites"
+          ],
+          "indice": "Tige articulée de prêle géante",
+          "description": "Tige segmentée de prêle arborescente du Carbonifère.",
+          "explication": "Calamites : Ancêtre géant des prêles.",
+          "imageQuery": "calamites fossil"
+        },
+        {
+          "id": "plantes-traces6",
+          "difficulte": "moyen",
+          "nom_commun": "Lépidodendron",
+          "nom_scientifique": "Lepidodendron",
+          "groupe": "plantes-traces",
+          "options": [
+            "Lépidodendron",
+            "Gastrolithe",
+            "Feuille de ginkgo",
+            "Coprolithe"
+          ],
+          "indice": "Écorce en losanges",
+          "description": "Écorce fossilisée à motifs losangiques d’arbre-échelle.",
+          "explication": "Lépidodendron : Arbre du Carbonifère à écorce caractéristique.",
+          "imageQuery": "lepidodendron fossil"
+        },
+        {
+          "id": "plantes-traces7",
+          "difficulte": "moyen",
+          "nom_commun": "Feuille de ginkgo",
+          "nom_scientifique": "Ginkgo",
+          "groupe": "plantes-traces",
+          "options": [
+            "Cône fossile",
+            "Racine fossilisée",
+            "Feuille de ginkgo",
+            "Ambre (inclusion)"
+          ],
+          "indice": "Éventail nervuré",
+          "description": "Feuille en éventail fossilisée, proche du ginkgo actuel.",
+          "explication": "Ginkgo fossile : Feuille en éventail.",
+          "imageQuery": "ginkgo fossil leaf"
+        },
+        {
+          "id": "plantes-traces8",
           "difficulte": "difficile",
           "nom_commun": "Coprolithe",
           "nom_scientifique": "Coprolite",
           "groupe": "plantes-traces",
           "options": [
+            "Piste de reptile",
             "Coprolithe",
-            "Empreinte de fougère",
-            "Stromatolite",
-            "Ambre (inclusion)"
+            "Empreinte de pas",
+            "Calamites"
           ],
           "indice": "Excrément fossilisé",
           "description": "Matière fécale fossilisée, parfois avec restes de repas.",
@@ -292,16 +632,16 @@
           "imageQuery": "coprolite"
         },
         {
-          "id": "plantes-traces5",
+          "id": "plantes-traces9",
           "difficulte": "difficile",
           "nom_commun": "Ambre (inclusion)",
           "nom_scientifique": "Amber",
           "groupe": "plantes-traces",
           "options": [
-            "Empreinte de fougère",
-            "Empreinte de pas",
+            "Tronc silicifié",
+            "Feuille de ginkgo",
             "Ambre (inclusion)",
-            "Coprolithe"
+            "Calamites"
           ],
           "indice": "Insecte dans la résine",
           "description": "Résine fossilisée piégeant parfois un insecte.",
@@ -309,21 +649,89 @@
           "imageQuery": "amber insect fossil"
         },
         {
-          "id": "plantes-traces6",
+          "id": "plantes-traces10",
           "difficulte": "difficile",
           "nom_commun": "Stromatolite",
           "nom_scientifique": "Stromatolite",
           "groupe": "plantes-traces",
           "options": [
-            "Empreinte de fougère",
+            "Terrier fossile",
             "Stromatolite",
-            "Tronc silicifié",
-            "Coprolithe"
+            "Coprolithe",
+            "Cône fossile"
           ],
           "indice": "Couches en chou-fleur / dôme",
           "description": "Structure laminée produite par des tapis microbiens.",
           "explication": "Stromatolite : Parmi les plus anciens indices de vie.",
           "imageQuery": "stromatolite"
+        },
+        {
+          "id": "plantes-traces11",
+          "difficulte": "difficile",
+          "nom_commun": "Gastrolithe",
+          "nom_scientifique": "Gastrolith",
+          "groupe": "plantes-traces",
+          "options": [
+            "Ambre (inclusion)",
+            "Empreinte de pas",
+            "Racine fossilisée",
+            "Gastrolithe"
+          ],
+          "indice": "Cailloux polis d’estomac",
+          "description": "Pierres polies avalées pour broyer les aliments.",
+          "explication": "Gastrolithe : Cailloux digestifs fossilisés.",
+          "imageQuery": "gastrolith stones"
+        },
+        {
+          "id": "plantes-traces12",
+          "difficulte": "difficile",
+          "nom_commun": "Terrier fossile",
+          "nom_scientifique": "Burrow fossil",
+          "groupe": "plantes-traces",
+          "options": [
+            "Ambre (inclusion)",
+            "Terrier fossile",
+            "Cône fossile",
+            "Coprolithe"
+          ],
+          "indice": "Tube / galerie dans la roche",
+          "description": "Trace de galerie creusée par un animal dans le sédiment.",
+          "explication": "Terrier fossile : Trace de comportement (ichnofossile).",
+          "imageQuery": "fossil burrow"
+        },
+        {
+          "id": "plantes-traces13",
+          "difficulte": "difficile",
+          "nom_commun": "Racine fossilisée",
+          "nom_scientifique": "Stigmaria",
+          "groupe": "plantes-traces",
+          "options": [
+            "Coprolithe",
+            "Terrier fossile",
+            "Cône fossile",
+            "Racine fossilisée"
+          ],
+          "indice": "Racines / bases d’arbre",
+          "description": "Système racinaire fossilisé d’arbres du Carbonifère.",
+          "explication": "Stigmaria : Racines de lépidodendrons.",
+          "imageQuery": "stigmaria fossil"
+        },
+        {
+          "id": "plantes-traces14",
+          "difficulte": "difficile",
+          "nom_commun": "Piste de reptile",
+          "nom_scientifique": "Tetrapod trackway",
+          "groupe": "plantes-traces",
+          "options": [
+            "Empreinte de pas",
+            "Tronc silicifié",
+            "Piste de reptile",
+            "Empreinte de fougère"
+          ],
+          "indice": "Suite d’empreintes alignées",
+          "description": "Série d’empreintes formant une piste de marche.",
+          "explication": "Piste : Séquence d’empreintes fossilisées.",
+          "imageQuery": "reptile trackway fossil"
         }
       ]
     }

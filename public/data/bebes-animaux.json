@@ -14,9 +14,9 @@
           "nom_scientifique": "Gallus gallus domesticus",
           "groupe": "ferme",
           "options": [
-            "Poulain",
-            "Agneau",
-            "Porcelet",
+            "Lapereau",
+            "Cygneau",
+            "Pintadeau",
             "Poussin"
           ],
           "indice": "Petit jaune du poulailler",
@@ -32,7 +32,7 @@
           "groupe": "ferme",
           "options": [
             "Veau",
-            "Caneton",
+            "Ânon",
             "Poussin",
             "Agneau"
           ],
@@ -48,10 +48,10 @@
           "nom_scientifique": "Ovis aries",
           "groupe": "ferme",
           "options": [
-            "Caneton",
-            "Poulain",
             "Porcelet",
-            "Agneau"
+            "Mulard",
+            "Agneau",
+            "Caneton"
           ],
           "indice": "Petit du mouton",
           "description": "Jeune ovin à la toison encore fine.",
@@ -66,9 +66,9 @@
           "groupe": "ferme",
           "options": [
             "Chevreau",
-            "Agneau",
             "Dindonneau",
-            "Porcelet"
+            "Porcelet",
+            "Lapereau"
           ],
           "indice": "Petit du cochon",
           "description": "Jeune porc au museau rose et au corps trapu.",
@@ -77,15 +77,15 @@
         },
         {
           "id": "ferme5",
-          "difficulte": "moyen",
+          "difficulte": "facile",
           "nom_commun": "Poulain",
           "nom_scientifique": "Equus caballus",
           "groupe": "ferme",
           "options": [
-            "Poussin",
             "Poulain",
+            "Cygneau",
             "Dindonneau",
-            "Veau"
+            "Paonneau"
           ],
           "indice": "Petit du cheval",
           "description": "Jeune cheval aux longues pattes, encore proche de sa mère.",
@@ -99,9 +99,9 @@
           "nom_scientifique": "Capra hircus",
           "groupe": "ferme",
           "options": [
-            "Dindonneau",
             "Poulain",
-            "Veau",
+            "Mulard",
+            "Pintadeau",
             "Chevreau"
           ],
           "indice": "Petit de la chèvre",
@@ -116,9 +116,9 @@
           "nom_scientifique": "Anas platyrhynchos domesticus",
           "groupe": "ferme",
           "options": [
-            "Poulain",
-            "Poussin",
+            "Pintadeau",
             "Dindonneau",
+            "Paonneau",
             "Caneton"
           ],
           "indice": "Petit du canard",
@@ -128,15 +128,66 @@
         },
         {
           "id": "ferme8",
+          "difficulte": "moyen",
+          "nom_commun": "Ânon",
+          "nom_scientifique": "Equus asinus",
+          "groupe": "ferme",
+          "options": [
+            "Agneau",
+            "Oison",
+            "Lapereau",
+            "Ânon"
+          ],
+          "indice": "Petit de l’âne",
+          "description": "Jeune âne aux grandes oreilles, encore près de sa mère.",
+          "explication": "Ânon : Bébé de l’âne.",
+          "imageQuery": "donkey foal"
+        },
+        {
+          "id": "ferme9",
+          "difficulte": "moyen",
+          "nom_commun": "Cygneau",
+          "nom_scientifique": "Cygnus olor",
+          "groupe": "ferme",
+          "options": [
+            "Chevreau",
+            "Dindonneau",
+            "Poulain",
+            "Cygneau"
+          ],
+          "indice": "Petit du cygne",
+          "description": "Jeune cygne au duvet gris, souvent en famille sur l’eau.",
+          "explication": "Cygneau : Bébé du cygne.",
+          "imageQuery": "cygnet"
+        },
+        {
+          "id": "ferme10",
+          "difficulte": "moyen",
+          "nom_commun": "Lapereau",
+          "nom_scientifique": "Oryctolagus cuniculus domesticus",
+          "groupe": "ferme",
+          "options": [
+            "Poussin",
+            "Pintadeau",
+            "Lapereau",
+            "Porcelet"
+          ],
+          "indice": "Petit du lapin de clapier",
+          "description": "Jeune lapin élevé en élevage, oreilles encore courtes.",
+          "explication": "Lapereau : Bébé du lapin.",
+          "imageQuery": "baby rabbit farm"
+        },
+        {
+          "id": "ferme11",
           "difficulte": "difficile",
           "nom_commun": "Oison",
           "nom_scientifique": "Anser anser domesticus",
           "groupe": "ferme",
           "options": [
-            "Agneau",
             "Veau",
-            "Oison",
-            "Chevreau"
+            "Poussin",
+            "Mulard",
+            "Oison"
           ],
           "indice": "Petit de l’oie",
           "description": "Jeune oie au duvet gris-jaune.",
@@ -144,21 +195,72 @@
           "imageQuery": "gosling"
         },
         {
-          "id": "ferme9",
+          "id": "ferme12",
           "difficulte": "difficile",
           "nom_commun": "Dindonneau",
           "nom_scientifique": "Meleagris gallopavo",
           "groupe": "ferme",
           "options": [
-            "Chevreau",
+            "Mulard",
+            "Caneton",
             "Dindonneau",
-            "Poulain",
-            "Porcelet"
+            "Cygneau"
           ],
           "indice": "Petit de la dinde",
           "description": "Jeune dindon encore couvert de duvet.",
           "explication": "Dindonneau : Bébé de la dinde / du dindon.",
           "imageQuery": "turkey poult"
+        },
+        {
+          "id": "ferme13",
+          "difficulte": "difficile",
+          "nom_commun": "Pintadeau",
+          "nom_scientifique": "Numida meleagris",
+          "groupe": "ferme",
+          "options": [
+            "Mulard",
+            "Pintadeau",
+            "Porcelet",
+            "Chevreau"
+          ],
+          "indice": "Petit de la pintade",
+          "description": "Jeune pintade tachetée, très vif dès le jeune âge.",
+          "explication": "Pintadeau : Bébé de la pintade.",
+          "imageQuery": "guinea fowl chick"
+        },
+        {
+          "id": "ferme14",
+          "difficulte": "difficile",
+          "nom_commun": "Paonneau",
+          "nom_scientifique": "Pavo cristatus",
+          "groupe": "ferme",
+          "options": [
+            "Chevreau",
+            "Paonneau",
+            "Pintadeau",
+            "Mulard"
+          ],
+          "indice": "Petit du paon",
+          "description": "Jeune paon sans grande queue, déjà un peu cresté.",
+          "explication": "Paonneau : Bébé du paon.",
+          "imageQuery": "peachick"
+        },
+        {
+          "id": "ferme15",
+          "difficulte": "difficile",
+          "nom_commun": "Mulard",
+          "nom_scientifique": "Cairina moschata × Anas",
+          "groupe": "ferme",
+          "options": [
+            "Pintadeau",
+            "Mulard",
+            "Chevreau",
+            "Dindonneau"
+          ],
+          "indice": "Caneton de mule",
+          "description": "Jeune canard issu d’un croisement (canard de Barbarie × colvert).",
+          "explication": "Mulard : Caneton hybride d’élevage.",
+          "imageQuery": "muscovy duckling"
         }
       ]
     },
@@ -173,10 +275,10 @@
           "nom_scientifique": "Felis catus",
           "groupe": "compagnie",
           "options": [
-            "Lapereau",
-            "Chaton",
+            "Hamster",
             "Tortillon",
-            "Chiot"
+            "Chaton",
+            "Lapereau nain"
           ],
           "indice": "Petit du chat",
           "description": "Jeune chat aux yeux grands et aux oreilles encore molles.",
@@ -192,8 +294,8 @@
           "options": [
             "Ratton",
             "Chiot",
-            "Lapereau",
-            "Chaton"
+            "Fureton",
+            "Gerbillon"
           ],
           "indice": "Petit du chien",
           "description": "Jeune chien joueur, encore en croissance.",
@@ -202,32 +304,66 @@
         },
         {
           "id": "compagnie3",
-          "difficulte": "moyen",
-          "nom_commun": "Lapereau",
+          "difficulte": "facile",
+          "nom_commun": "Lapereau nain",
           "nom_scientifique": "Oryctolagus cuniculus",
           "groupe": "compagnie",
           "options": [
-            "Ratton",
-            "Souriceau",
             "Tortillon",
-            "Lapereau"
+            "Souriceau",
+            "Lapereau nain",
+            "Perrucheau"
           ],
-          "indice": "Petit du lapin",
-          "description": "Jeune lapin au pelage doux, oreilles encore courtes.",
-          "explication": "Lapereau : Bébé du lapin.",
+          "indice": "Petit lapin de compagnie",
+          "description": "Jeune lapin nain au pelage doux.",
+          "explication": "Lapereau : Bébé du lapin de compagnie.",
           "imageQuery": "baby rabbit"
         },
         {
           "id": "compagnie4",
           "difficulte": "moyen",
+          "nom_commun": "Cobaye",
+          "nom_scientifique": "Cavia porcellus",
+          "groupe": "compagnie",
+          "options": [
+            "Chaton",
+            "Cobaye",
+            "Hamster",
+            "Fureton"
+          ],
+          "indice": "Petit cochon d’Inde",
+          "description": "Jeune cobaye déjà velu, yeux ouverts dès la naissance.",
+          "explication": "Petit cobaye : Bébé du cochon d’Inde.",
+          "imageQuery": "baby guinea pig"
+        },
+        {
+          "id": "compagnie5",
+          "difficulte": "moyen",
+          "nom_commun": "Hamster",
+          "nom_scientifique": "Mesocricetus auratus",
+          "groupe": "compagnie",
+          "options": [
+            "Tortillon",
+            "Ratton",
+            "Hamster",
+            "Chiot"
+          ],
+          "indice": "Petit hamster",
+          "description": "Très jeune hamster, souvent encore au nid.",
+          "explication": "Petit hamster : Bébé du hamster.",
+          "imageQuery": "baby hamster"
+        },
+        {
+          "id": "compagnie6",
+          "difficulte": "moyen",
           "nom_commun": "Tortillon",
           "nom_scientifique": "Serinus canaria",
           "groupe": "compagnie",
           "options": [
-            "Lapereau",
+            "Tortillon",
+            "Perrucheau",
             "Ratton",
-            "Chaton",
-            "Tortillon"
+            "Gerbillon"
           ],
           "indice": "Petit du canari",
           "description": "Jeune canari encore au nid ou tout juste sorti.",
@@ -235,16 +371,33 @@
           "imageQuery": "canary chick"
         },
         {
-          "id": "compagnie5",
+          "id": "compagnie7",
+          "difficulte": "moyen",
+          "nom_commun": "Fureton",
+          "nom_scientifique": "Mustela putorius furo",
+          "groupe": "compagnie",
+          "options": [
+            "Chiot",
+            "Fureton",
+            "Cobaye",
+            "Tortillon de tortue"
+          ],
+          "indice": "Petit du furet",
+          "description": "Jeune furet au museau pointu, encore joueur et souple.",
+          "explication": "Fureton : Bébé du furet.",
+          "imageQuery": "baby ferret"
+        },
+        {
+          "id": "compagnie8",
           "difficulte": "difficile",
           "nom_commun": "Souriceau",
           "nom_scientifique": "Mus musculus",
           "groupe": "compagnie",
           "options": [
+            "Cobaye",
+            "Chaton",
             "Souriceau",
-            "Tortillon",
-            "Ratton",
-            "Chiot"
+            "Hamster"
           ],
           "indice": "Petit de la souris",
           "description": "Très jeune souris, souvent rose et sans poils au tout début.",
@@ -252,21 +405,72 @@
           "imageQuery": "baby mouse"
         },
         {
-          "id": "compagnie6",
+          "id": "compagnie9",
           "difficulte": "difficile",
           "nom_commun": "Ratton",
           "nom_scientifique": "Rattus norvegicus",
           "groupe": "compagnie",
           "options": [
-            "Chaton",
-            "Lapereau",
-            "Ratton",
-            "Tortillon"
+            "Tortillon de tortue",
+            "Tortillon",
+            "Fureton",
+            "Ratton"
           ],
           "indice": "Petit du rat",
           "description": "Jeune rat encore dépendant du nid.",
           "explication": "Ratton : Bébé du rat.",
           "imageQuery": "baby rat"
+        },
+        {
+          "id": "compagnie10",
+          "difficulte": "difficile",
+          "nom_commun": "Gerbillon",
+          "nom_scientifique": "Meriones unguiculatus",
+          "groupe": "compagnie",
+          "options": [
+            "Souriceau",
+            "Chiot",
+            "Gerbillon",
+            "Chaton"
+          ],
+          "indice": "Petit de la gerbille",
+          "description": "Jeune gerbille au long pelage et à la queue touffue.",
+          "explication": "Petit gerbillon : Bébé de la gerbille.",
+          "imageQuery": "baby gerbil"
+        },
+        {
+          "id": "compagnie11",
+          "difficulte": "difficile",
+          "nom_commun": "Perrucheau",
+          "nom_scientifique": "Melopsittacus undulatus",
+          "groupe": "compagnie",
+          "options": [
+            "Lapereau nain",
+            "Hamster",
+            "Chaton",
+            "Perrucheau"
+          ],
+          "indice": "Petit de la perruche",
+          "description": "Jeune perruche ondulée encore au nid, duvet clair.",
+          "explication": "Perrucheau : Bébé de la perruche.",
+          "imageQuery": "budgerigar chick"
+        },
+        {
+          "id": "compagnie12",
+          "difficulte": "difficile",
+          "nom_commun": "Tortillon de tortue",
+          "nom_scientifique": "Testudo hermanni",
+          "groupe": "compagnie",
+          "options": [
+            "Cobaye",
+            "Tortillon",
+            "Tortillon de tortue",
+            "Gerbillon"
+          ],
+          "indice": "Petit de la tortue",
+          "description": "Très jeune tortue à la carapace encore molle.",
+          "explication": "Petit de tortue : Bébé de la tortue terrestre.",
+          "imageQuery": "baby tortoise"
         }
       ]
     },
@@ -281,10 +485,10 @@
           "nom_scientifique": "Ursus arctos",
           "groupe": "sauvage",
           "options": [
-            "Louveteau",
+            "Éléphanteau",
+            "Tigreau",
             "Levraut",
-            "Ourson",
-            "Blanchet"
+            "Ourson"
           ],
           "indice": "Petit de l’ours",
           "description": "Jeune ours au pelage duveteux.",
@@ -298,10 +502,10 @@
           "nom_scientifique": "Panthera leo",
           "groupe": "sauvage",
           "options": [
+            "Tigreau",
             "Louveteau",
             "Blanchet",
-            "Lionceau",
-            "Levraut"
+            "Lionceau"
           ],
           "indice": "Petit du lion",
           "description": "Jeune lion encore tacheté, sans crinière.",
@@ -310,15 +514,32 @@
         },
         {
           "id": "sauvage3",
+          "difficulte": "facile",
+          "nom_commun": "Éléphanteau",
+          "nom_scientifique": "Loxodonta africana",
+          "groupe": "sauvage",
+          "options": [
+            "Girafon",
+            "Levraut",
+            "Panthéreau",
+            "Éléphanteau"
+          ],
+          "indice": "Petit de l’éléphant",
+          "description": "Jeune éléphant aux grandes oreilles, près de sa mère.",
+          "explication": "Éléphanteau : Bébé de l’éléphant.",
+          "imageQuery": "elephant calf"
+        },
+        {
+          "id": "sauvage4",
           "difficulte": "moyen",
           "nom_commun": "Renardeau",
           "nom_scientifique": "Vulpes vulpes",
           "groupe": "sauvage",
           "options": [
-            "Marcassin",
+            "Baleineau",
             "Renardeau",
-            "Levraut",
-            "Lionceau"
+            "Faon",
+            "Éléphanteau"
           ],
           "indice": "Petit du renard",
           "description": "Jeune renard au museau pointu et au pelage sombre.",
@@ -326,16 +547,16 @@
           "imageQuery": "fox cub"
         },
         {
-          "id": "sauvage4",
+          "id": "sauvage5",
           "difficulte": "moyen",
           "nom_commun": "Louveteau",
           "nom_scientifique": "Canis lupus",
           "groupe": "sauvage",
           "options": [
-            "Blanchet",
-            "Renardeau",
-            "Faon",
-            "Louveteau"
+            "Marcassin",
+            "Louveteau",
+            "Tigreau",
+            "Baleineau"
           ],
           "indice": "Petit du loup",
           "description": "Jeune loup élevé au sein de la meute.",
@@ -343,16 +564,16 @@
           "imageQuery": "wolf pup"
         },
         {
-          "id": "sauvage5",
+          "id": "sauvage6",
           "difficulte": "moyen",
           "nom_commun": "Faon",
           "nom_scientifique": "Cervus elaphus",
           "groupe": "sauvage",
           "options": [
-            "Marcassin",
-            "Blanchet",
-            "Lionceau",
-            "Faon"
+            "Loutron",
+            "Baleineau",
+            "Faon",
+            "Blanchet"
           ],
           "indice": "Petit du cerf / de la biche",
           "description": "Jeune cervidé au pelage tacheté.",
@@ -360,16 +581,67 @@
           "imageQuery": "fawn"
         },
         {
-          "id": "sauvage6",
+          "id": "sauvage7",
+          "difficulte": "moyen",
+          "nom_commun": "Tigreau",
+          "nom_scientifique": "Panthera tigris",
+          "groupe": "sauvage",
+          "options": [
+            "Girafon",
+            "Tigreau",
+            "Loutron",
+            "Lionceau"
+          ],
+          "indice": "Petit du tigre",
+          "description": "Jeune tigre déjà rayé, encore joueur.",
+          "explication": "Tigreau : Bébé du tigre.",
+          "imageQuery": "tiger cub"
+        },
+        {
+          "id": "sauvage8",
+          "difficulte": "moyen",
+          "nom_commun": "Girafon",
+          "nom_scientifique": "Giraffa camelopardalis",
+          "groupe": "sauvage",
+          "options": [
+            "Levraut",
+            "Girafon",
+            "Marcassin",
+            "Blanchet"
+          ],
+          "indice": "Petit de la girafe",
+          "description": "Jeune girafe aux longues pattes, déjà tacheté.",
+          "explication": "Girafon : Bébé de la girafe.",
+          "imageQuery": "giraffe calf"
+        },
+        {
+          "id": "sauvage9",
+          "difficulte": "moyen",
+          "nom_commun": "Petit dauphin",
+          "nom_scientifique": "Tursiops truncatus",
+          "groupe": "sauvage",
+          "options": [
+            "Petit dauphin",
+            "Ourson",
+            "Faon",
+            "Tigreau"
+          ],
+          "indice": "Petit du dauphin",
+          "description": "Jeune dauphin nageant près de sa mère.",
+          "explication": "Petit dauphin : Bébé du dauphin.",
+          "imageQuery": "dolphin calf"
+        },
+        {
+          "id": "sauvage10",
           "difficulte": "difficile",
           "nom_commun": "Marcassin",
           "nom_scientifique": "Sus scrofa",
           "groupe": "sauvage",
           "options": [
-            "Levraut",
             "Marcassin",
-            "Lionceau",
-            "Blanchet"
+            "Girafon",
+            "Loutron",
+            "Baleineau"
           ],
           "indice": "Petit du sanglier",
           "description": "Jeune sanglier rayé de clair sur le flanc.",
@@ -377,16 +649,16 @@
           "imageQuery": "wild boar piglet"
         },
         {
-          "id": "sauvage7",
+          "id": "sauvage11",
           "difficulte": "difficile",
           "nom_commun": "Levraut",
           "nom_scientifique": "Lepus europaeus",
           "groupe": "sauvage",
           "options": [
-            "Louveteau",
+            "Éléphanteau",
             "Levraut",
             "Renardeau",
-            "Lionceau"
+            "Marcassin"
           ],
           "indice": "Petit du lièvre",
           "description": "Jeune lièvre né déjà velu et les yeux ouverts.",
@@ -394,21 +666,72 @@
           "imageQuery": "baby hare"
         },
         {
-          "id": "sauvage8",
+          "id": "sauvage12",
           "difficulte": "difficile",
           "nom_commun": "Blanchet",
           "nom_scientifique": "Phoca vitulina",
           "groupe": "sauvage",
           "options": [
-            "Levraut",
-            "Lionceau",
-            "Marcassin",
+            "Renardeau",
+            "Baleineau",
+            "Girafon",
             "Blanchet"
           ],
           "indice": "Petit du phoque",
           "description": "Jeune phoque au pelage clair, sur la grève.",
           "explication": "Blanchet (ou blanchon) : Bébé du phoque.",
           "imageQuery": "seal pup"
+        },
+        {
+          "id": "sauvage13",
+          "difficulte": "difficile",
+          "nom_commun": "Baleineau",
+          "nom_scientifique": "Balaenoptera musculus",
+          "groupe": "sauvage",
+          "options": [
+            "Baleineau",
+            "Renardeau",
+            "Louveteau",
+            "Lionceau"
+          ],
+          "indice": "Petit de la baleine",
+          "description": "Jeune cétacé de grande taille, encore allaité.",
+          "explication": "Baleineau : Bébé de la baleine.",
+          "imageQuery": "whale calf"
+        },
+        {
+          "id": "sauvage14",
+          "difficulte": "difficile",
+          "nom_commun": "Loutron",
+          "nom_scientifique": "Lutra lutra",
+          "groupe": "sauvage",
+          "options": [
+            "Baleineau",
+            "Éléphanteau",
+            "Tigreau",
+            "Loutron"
+          ],
+          "indice": "Petit de la loutre",
+          "description": "Jeune loutre au pelage dense, près de l’eau.",
+          "explication": "Loutron : Bébé de la loutre.",
+          "imageQuery": "otter pup"
+        },
+        {
+          "id": "sauvage15",
+          "difficulte": "difficile",
+          "nom_commun": "Panthéreau",
+          "nom_scientifique": "Panthera pardus",
+          "groupe": "sauvage",
+          "options": [
+            "Loutron",
+            "Éléphanteau",
+            "Panthéreau",
+            "Renardeau"
+          ],
+          "indice": "Petit de la panthère",
+          "description": "Jeune léopard / panthère déjà tacheté.",
+          "explication": "Panthéreau : Bébé de la panthère.",
+          "imageQuery": "leopard cub"
         }
       ]
     }

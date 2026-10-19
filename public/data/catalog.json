@@ -75,7 +75,7 @@
               "id": "bebes-animaux",
               "nom": "Bébés animaux",
               "fichier": "data/bebes-animaux.json",
-              "description": "Photo d’un petit : retrouve le nom du bébé.",
+              "description": "Photo d’un petit : retrouve le nom du bébé (42 entrées).",
               "regions": [
                 "monde"
               ]
@@ -118,7 +118,7 @@
               "id": "feuilles-arbres",
               "nom": "Feuilles d’arbres",
               "fichier": "data/feuilles-arbres.json",
-              "description": "Reconnaître un arbre uniquement par sa feuille.",
+              "description": "Reconnaître un arbre uniquement par sa feuille (42 entrées).",
               "regions": [
                 "france",
                 "monde"
@@ -189,7 +189,7 @@
           "id": "nuages",
           "nom": "Nuages",
           "fichier": "data/nuages.json",
-          "description": "Types de nuages : cumulus, cirrus, cumulonimbus…",
+          "description": "Types de nuages : cumulus, cirrus, cumulonimbus… (40 entrées).",
           "regions": [
             "monde"
           ]
@@ -198,7 +198,7 @@
           "id": "fossiles",
           "nom": "Fossiles",
           "fichier": "data/fossiles.json",
-          "description": "Ammonites, trilobites, dents et empreintes fossiles.",
+          "description": "Ammonites, trilobites, dents et empreintes fossiles (42 entrées).",
           "regions": [
             "monde"
           ]
