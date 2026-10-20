@@ -1,0 +1,739 @@
+{
+  "id": "traces-animaux",
+  "categorie": "Traces d’animaux",
+  "description": "Reconnais qui est passé : empreintes, crottes, nids et autres indices.",
+  "groupes": [
+    {
+      "id": "empreintes-mam",
+      "label": "Empreintes de mammifères",
+      "questions": [
+        {
+          "id": "empreintes-mam1",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de chien",
+          "nom_scientifique": "Canis familiaris",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de martre",
+            "Empreinte de sanglier",
+            "Empreinte de loup",
+            "Empreinte de chien"
+          ],
+          "indice": "Coussinets + griffes visibles",
+          "description": "Empreinte à 4 doigts avec griffes marquées, coussinet central.",
+          "explication": "Chien : Griffes souvent visibles, piste irregular.",
+          "imageQuery": "dog paw print mud"
+        },
+        {
+          "id": "empreintes-mam2",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de chat",
+          "nom_scientifique": "Felis catus",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de lièvre",
+            "Empreinte de chat",
+            "Empreinte d’ours",
+            "Empreinte de sanglier juvénile"
+          ],
+          "indice": "Ronde, griffes rétractées",
+          "description": "Empreinte ronde sans griffes (rétractées), 4 doigts.",
+          "explication": "Chat : Pas de griffes sur la piste.",
+          "imageQuery": "cat paw print mud"
+        },
+        {
+          "id": "empreintes-mam3",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de sanglier",
+          "nom_scientifique": "Sus scrofa",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte d’ours",
+            "Empreinte de sanglier",
+            "Empreinte de loutre",
+            "Empreinte de castor"
+          ],
+          "indice": "Sabots fendus larges",
+          "description": "Deux sabots larges, souvent avec ergots derrière.",
+          "explication": "Sanglier : Sabot double large, ergots fréquents.",
+          "imageQuery": "wild boar track"
+        },
+        {
+          "id": "empreintes-mam4",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de chevreuil",
+          "nom_scientifique": "Capreolus capreolus",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de castor",
+            "Empreinte de chien",
+            "Empreinte de chat",
+            "Empreinte de chevreuil"
+          ],
+          "indice": "Petits sabots en cœur",
+          "description": "Deux sabots fins formant un cœur allongé.",
+          "explication": "Chevreuil : Petite piste cervidé.",
+          "imageQuery": "roe deer track"
+        },
+        {
+          "id": "empreintes-mam5",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de cerf",
+          "nom_scientifique": "Cervus elaphus",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de loutre",
+            "Empreinte de cerf",
+            "Empreinte de sanglier",
+            "Empreinte de blaireau"
+          ],
+          "indice": "Grands sabots de cervidé",
+          "description": "Sabots plus grands et plus larges que le chevreuil.",
+          "explication": "Cerf : Grande piste de cervidé.",
+          "imageQuery": "red deer track"
+        },
+        {
+          "id": "empreintes-mam6",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de renard",
+          "nom_scientifique": "Vulpes vulpes",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de martre",
+            "Empreinte de chevreuil",
+            "Empreinte de loup",
+            "Empreinte de renard"
+          ],
+          "indice": "4 doigts, piste alignée",
+          "description": "Proche du chien mais plus ovale, piste souvent en ligne.",
+          "explication": "Renard : Empreinte canine légère, piste droite.",
+          "imageQuery": "fox track snow"
+        },
+        {
+          "id": "empreintes-mam7",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de blaireau",
+          "nom_scientifique": "Meles meles",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de blaireau",
+            "Empreinte de sanglier juvénile",
+            "Empreinte d’ours",
+            "Empreinte de martre"
+          ],
+          "indice": "Plantigrade large",
+          "description": "Empreinte large, 5 doigts et griffes longues.",
+          "explication": "Blaireau : Large patte plantigrade.",
+          "imageQuery": "badger paw print"
+        },
+        {
+          "id": "empreintes-mam8",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de lièvre",
+          "nom_scientifique": "Lepus europaeus",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de renard",
+            "Empreinte de lièvre",
+            "Empreinte d’ours",
+            "Empreinte de loup"
+          ],
+          "indice": "Grands pieds arrière",
+          "description": "Deux grands pieds arrière dépassant les antérieurs.",
+          "explication": "Lièvre : Bond avec empreintes arrière longues.",
+          "imageQuery": "hare track snow"
+        },
+        {
+          "id": "empreintes-mam9",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de loutre",
+          "nom_scientifique": "Lutra lutra",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de loutre",
+            "Empreinte de chat",
+            "Empreinte de blaireau",
+            "Empreinte de chien"
+          ],
+          "indice": "Palmé, 5 doigts",
+          "description": "Doigts palmés, souvent près de l’eau.",
+          "explication": "Loutre : Piste palmée au bord de l’eau.",
+          "imageQuery": "otter track mud"
+        },
+        {
+          "id": "empreintes-mam10",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de loup",
+          "nom_scientifique": "Canis lupus",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de loup",
+            "Empreinte de blaireau",
+            "Empreinte de chevreuil",
+            "Empreinte de lièvre"
+          ],
+          "indice": "Grande piste canine",
+          "description": "Plus grande qu’un chien moyen, coussinets marqués.",
+          "explication": "Loup : Grande empreinte canine sauvage.",
+          "imageQuery": "wolf track snow"
+        },
+        {
+          "id": "empreintes-mam11",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte d’ours",
+          "nom_scientifique": "Ursus arctos",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte d’ours",
+            "Empreinte de lièvre",
+            "Empreinte de sanglier",
+            "Empreinte de chat"
+          ],
+          "indice": "Très large, 5 doigts",
+          "description": "Énorme patte plantigrade à 5 doigts.",
+          "explication": "Ours : Empreinte massive.",
+          "imageQuery": "bear paw print mud"
+        },
+        {
+          "id": "empreintes-mam12",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de castor",
+          "nom_scientifique": "Castor fiber",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de martre",
+            "Empreinte d’ours",
+            "Empreinte de castor",
+            "Empreinte de loup"
+          ],
+          "indice": "Pieds palmés + queue",
+          "description": "Pieds arrière palmés, parfois traînée de queue.",
+          "explication": "Castor : Piste palmée près des cours d’eau.",
+          "imageQuery": "beaver track mud"
+        },
+        {
+          "id": "empreintes-mam13",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de martre",
+          "nom_scientifique": "Martes martes",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de cerf",
+            "Empreinte de loutre",
+            "Empreinte de blaireau",
+            "Empreinte de martre"
+          ],
+          "indice": "Petite mustélidé en 2-2",
+          "description": "Petites empreintes souvent groupées par bonds.",
+          "explication": "Martre : Petite piste de mustélidé arboricole.",
+          "imageQuery": "marten track snow"
+        },
+        {
+          "id": "empreintes-mam14",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de sanglier juvénile",
+          "nom_scientifique": "Sus scrofa juvenile",
+          "groupe": "empreintes-mam",
+          "options": [
+            "Empreinte de lièvre",
+            "Empreinte de blaireau",
+            "Empreinte de sanglier juvénile",
+            "Empreinte de renard"
+          ],
+          "indice": "Petits sabots fendus",
+          "description": "Comme le sanglier, mais nettement plus petits.",
+          "explication": "Marcassin : Petite piste de sanglier.",
+          "imageQuery": "wild boar piglet track"
+        }
+      ]
+    },
+    {
+      "id": "empreintes-autres",
+      "label": "Oiseaux & autres",
+      "questions": [
+        {
+          "id": "empreintes-autres1",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de canard",
+          "nom_scientifique": "Anas platyrhynchos",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de canard",
+            "Empreinte de ragondin",
+            "Empreinte de pic",
+            "Empreinte d’écureuil"
+          ],
+          "indice": "Palmé en triangle",
+          "description": "Trois doigts palmés vers l’avant.",
+          "explication": "Canard : Empreinte palmée classique.",
+          "imageQuery": "duck footprint mud"
+        },
+        {
+          "id": "empreintes-autres2",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de pigeon",
+          "nom_scientifique": "Columba livia",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de pigeon",
+            "Empreinte de vipère",
+            "Empreinte de tortue",
+            "Empreinte de bécasse"
+          ],
+          "indice": "3 doigts avant, 1 arrière",
+          "description": "Piste d’oiseau marcheur, doigt arrière marqué.",
+          "explication": "Pigeon : Empreinte d’oiseau terrestre.",
+          "imageQuery": "pigeon footprint"
+        },
+        {
+          "id": "empreintes-autres3",
+          "difficulte": "facile",
+          "nom_commun": "Empreinte de héron",
+          "nom_scientifique": "Ardea cinerea",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de héron",
+            "Empreinte de faisan",
+            "Empreinte de cormoran",
+            "Empreinte de pic"
+          ],
+          "indice": "Très longs doigts",
+          "description": "Grands doigts longs, souvent en zone humide.",
+          "explication": "Héron : Longue empreinte d’échassier.",
+          "imageQuery": "heron footprint mud"
+        },
+        {
+          "id": "empreintes-autres4",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de faisan",
+          "nom_scientifique": "Phasianus colchicus",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de grenouille",
+            "Empreinte de faisan",
+            "Empreinte de pic",
+            "Empreinte de pigeon"
+          ],
+          "indice": "3 doigts, piste de gallinacé",
+          "description": "Doigts assez longs, marche au sol.",
+          "explication": "Faisan : Piste de galliforme.",
+          "imageQuery": "pheasant footprint"
+        },
+        {
+          "id": "empreintes-autres5",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de goéland",
+          "nom_scientifique": "Larus",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de vipère",
+            "Empreinte de goéland",
+            "Empreinte de bécasse",
+            "Empreinte de tortue"
+          ],
+          "indice": "Palmé sur le sable",
+          "description": "Doigts palmés, fréquente sur la plage.",
+          "explication": "Goéland : Empreinte palmée littorale.",
+          "imageQuery": "gull footprint sand"
+        },
+        {
+          "id": "empreintes-autres6",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de bécasse",
+          "nom_scientifique": "Scolopax rusticola",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de pigeon",
+            "Empreinte de goéland",
+            "Empreinte de bécasse",
+            "Empreinte de cormoran"
+          ],
+          "indice": "Doigts fins en forêt",
+          "description": "Petite piste d’échassier en sous-bois humide.",
+          "explication": "Bécasse : Empreinte fine de limicole forestier.",
+          "imageQuery": "woodcock footprint"
+        },
+        {
+          "id": "empreintes-autres7",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de grenouille",
+          "nom_scientifique": "Anura",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de grenouille",
+            "Empreinte de vipère",
+            "Empreinte de héron",
+            "Empreinte de pic"
+          ],
+          "indice": "Petits bonds, pieds palmés",
+          "description": "Petites empreintes groupées, sometimes palmées.",
+          "explication": "Grenouille : Petite piste d’amphibien.",
+          "imageQuery": "frog footprint mud"
+        },
+        {
+          "id": "empreintes-autres8",
+          "difficulte": "moyen",
+          "nom_commun": "Empreinte de tortue",
+          "nom_scientifique": "Testudo",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de canard",
+            "Empreinte de bécasse",
+            "Empreinte de tortue",
+            "Empreinte de goéland"
+          ],
+          "indice": "Trainée + pattes",
+          "description": "Pistes de pattes avec trainée centrale possible.",
+          "explication": "Tortue : Empreinte lente, parfois trainée.",
+          "imageQuery": "tortoise track sand"
+        },
+        {
+          "id": "empreintes-autres9",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de pic",
+          "nom_scientifique": "Picidae",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de tortue",
+            "Empreinte d’écureuil",
+            "Empreinte de pic",
+            "Empreinte de bécasse"
+          ],
+          "indice": "Sur écorce / vertical",
+          "description": "Traces de griffes sur tronc, rarement au sol.",
+          "explication": "Pic : Indices sur l’écorce plus que sur le sol.",
+          "imageQuery": "woodpecker footprint bark"
+        },
+        {
+          "id": "empreintes-autres10",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de cormoran",
+          "nom_scientifique": "Phalacrocorax",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de cormoran",
+            "Empreinte de pic",
+            "Empreinte de héron",
+            "Empreinte de pigeon"
+          ],
+          "indice": "Palmé, doigt arrière inclus",
+          "description": "Palme complète incluant le doigt arrière.",
+          "explication": "Cormoran : Totipalme (4 doigts reliés).",
+          "imageQuery": "cormorant footprint"
+        },
+        {
+          "id": "empreintes-autres11",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de ragondin",
+          "nom_scientifique": "Myocastor coypus",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de canard",
+            "Empreinte de vipère",
+            "Empreinte de ragondin",
+            "Empreinte de hérisson"
+          ],
+          "indice": "5 doigts, près de l’eau",
+          "description": "Grande piste de rongeur semi-aquatique.",
+          "explication": "Ragondin : Empreinte de gros rongeur aquatique.",
+          "imageQuery": "coypu track mud"
+        },
+        {
+          "id": "empreintes-autres12",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de vipère",
+          "nom_scientifique": "Vipera",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de vipère",
+            "Empreinte de bécasse",
+            "Empreinte de faisan",
+            "Empreinte d’écureuil"
+          ],
+          "indice": "Sillon sinueux",
+          "description": "Trace sinueuse sans pattes, dans sable ou poussière.",
+          "explication": "Serpent : Sillage ondulé.",
+          "imageQuery": "snake track sand"
+        },
+        {
+          "id": "empreintes-autres13",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte d’écureuil",
+          "nom_scientifique": "Sciurus vulgaris",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte d’écureuil",
+            "Empreinte de canard",
+            "Empreinte de vipère",
+            "Empreinte de cormoran"
+          ],
+          "indice": "4 pattes groupées en bond",
+          "description": "Empreintes groupées, antérieurs plus petits.",
+          "explication": "Écureuil : Bonds avec 4 empreintes groupées.",
+          "imageQuery": "squirrel track snow"
+        },
+        {
+          "id": "empreintes-autres14",
+          "difficulte": "difficile",
+          "nom_commun": "Empreinte de hérisson",
+          "nom_scientifique": "Erinaceus europaeus",
+          "groupe": "empreintes-autres",
+          "options": [
+            "Empreinte de hérisson",
+            "Empreinte de bécasse",
+            "Empreinte de héron",
+            "Empreinte de tortue"
+          ],
+          "indice": "Petits doigts nombreux",
+          "description": "Petite piste plantigrade à doigts courts.",
+          "explication": "Hérisson : Petite empreinte d’insectivore.",
+          "imageQuery": "hedgehog track mud"
+        }
+      ]
+    },
+    {
+      "id": "autres-indices",
+      "label": "Autres indices",
+      "questions": [
+        {
+          "id": "autres-indices1",
+          "difficulte": "facile",
+          "nom_commun": "Crotte de sanglier",
+          "nom_scientifique": "Sus scrofa scat",
+          "groupe": "autres-indices",
+          "options": [
+            "Crotte de sanglier",
+            "Pelote de réjection",
+            "Galerie de scolyte",
+            "Écorçage de castor"
+          ],
+          "indice": "Boudins sombres en tas",
+          "description": "Excréments en boudins, souvent fibreux.",
+          "explication": "Crotte de sanglier : Indice fréquent en forêt.",
+          "imageQuery": "wild boar scat"
+        },
+        {
+          "id": "autres-indices2",
+          "difficulte": "facile",
+          "nom_commun": "Fiente d’oiseau",
+          "nom_scientifique": "Bird droppings",
+          "groupe": "autres-indices",
+          "options": [
+            "Passage / coulée",
+            "Fiente d’oiseau",
+            "Bois frotté",
+            "Pomme de pin rongée"
+          ],
+          "indice": "Tache blanche / gris",
+          "description": "Déjection claire, souvent sur feuilles ou voitures.",
+          "explication": "Fiente : Indice simple de présence d’oiseaux.",
+          "imageQuery": "bird dropping leaf"
+        },
+        {
+          "id": "autres-indices3",
+          "difficulte": "facile",
+          "nom_commun": "Nid d’oiseau",
+          "nom_scientifique": "Bird nest",
+          "groupe": "autres-indices",
+          "options": [
+            "Crotte de renard",
+            "Galerie de scolyte",
+            "Écorçage de castor",
+            "Nid d’oiseau"
+          ],
+          "indice": "Coupe de brindilles",
+          "description": "Assemblage de brindilles / mousses dans un arbre.",
+          "explication": "Nid : Construction pour les œufs / oisillons.",
+          "imageQuery": "bird nest tree"
+        },
+        {
+          "id": "autres-indices4",
+          "difficulte": "moyen",
+          "nom_commun": "Terrier de renard",
+          "nom_scientifique": "Vulpes vulpes den",
+          "groupe": "autres-indices",
+          "options": [
+            "Plume au sol",
+            "Terrier de renard",
+            "Restes de repas (coquille)",
+            "Écorçage de castor"
+          ],
+          "indice": "Trou avec déblais",
+          "description": "Entrée de terrier, terre remuée, restes possibles.",
+          "explication": "Terrier : Gîte souterrain.",
+          "imageQuery": "fox den entrance"
+        },
+        {
+          "id": "autres-indices5",
+          "difficulte": "moyen",
+          "nom_commun": "Crotte de renard",
+          "nom_scientifique": "Vulpes vulpes scat",
+          "groupe": "autres-indices",
+          "options": [
+            "Écorçage de castor",
+            "Crotte de renard",
+            "Crotte de sanglier",
+            "Pomme de pin rongée"
+          ],
+          "indice": "Boudin effilé à bout pointu",
+          "description": "Crotte allongée, souvent sur un plot bien visible.",
+          "explication": "Crotte de renard : Marquage de territoire.",
+          "imageQuery": "fox scat trail"
+        },
+        {
+          "id": "autres-indices6",
+          "difficulte": "moyen",
+          "nom_commun": "Pomme de pin rongée",
+          "nom_scientifique": "Sciurus / woodpecker pinecone",
+          "groupe": "autres-indices",
+          "options": [
+            "Crotte de sanglier",
+            "Écorçage de castor",
+            "Pomme de pin rongée",
+            "Nid d’oiseau"
+          ],
+          "indice": "Écailles arrachées",
+          "description": "Cône démoli pour les graines, travail de rongeur ou pic.",
+          "explication": "Cône rongé : Repas d’écureuil / oiseau.",
+          "imageQuery": "chewed pine cone"
+        },
+        {
+          "id": "autres-indices7",
+          "difficulte": "moyen",
+          "nom_commun": "Bois frotté",
+          "nom_scientifique": "Deer rub tree",
+          "groupe": "autres-indices",
+          "options": [
+            "Bois frotté",
+            "Crotte de renard",
+            "Crotte de sanglier",
+            "Écorçage de castor"
+          ],
+          "indice": "Écorce frottée / cassée",
+          "description": "Tronc écorcé par les bois d’un cervidé.",
+          "explication": "Frottis : Marque de cervidé.",
+          "imageQuery": "deer rub bark"
+        },
+        {
+          "id": "autres-indices8",
+          "difficulte": "moyen",
+          "nom_commun": "Pelote de réjection",
+          "nom_scientifique": "Owl pellet",
+          "groupe": "autres-indices",
+          "options": [
+            "Restes de repas (coquille)",
+            "Écorçage de castor",
+            "Galerie de scolyte",
+            "Pelote de réjection"
+          ],
+          "indice": "Boule de poils et os",
+          "description": "Masse régurgitée contenant poils, os, plumes.",
+          "explication": "Pelote : Rejet d’un rapace nocturne.",
+          "imageQuery": "owl pellet"
+        },
+        {
+          "id": "autres-indices9",
+          "difficulte": "difficile",
+          "nom_commun": "Coulée de limace",
+          "nom_scientifique": "Slug trail",
+          "groupe": "autres-indices",
+          "options": [
+            "Pomme de pin rongée",
+            "Coulée de limace",
+            "Bois frotté",
+            "Crotte de sanglier"
+          ],
+          "indice": "Filet argenté brillant",
+          "description": "Trainée de mucus séché sur une surface.",
+          "explication": "Coulée : Passage de limace / escargot.",
+          "imageQuery": "slug slime trail"
+        },
+        {
+          "id": "autres-indices10",
+          "difficulte": "difficile",
+          "nom_commun": "Galerie de scolyte",
+          "nom_scientifique": "Bark beetle gallery",
+          "groupe": "autres-indices",
+          "options": [
+            "Écorçage de castor",
+            "Galerie de scolyte",
+            "Plume au sol",
+            "Bois frotté"
+          ],
+          "indice": "Labyrinthe sous l’écorce",
+          "description": "Traces en galeries sous l’écorce d’un arbre mort.",
+          "explication": "Scolyte : Galeries d’insectes xylophages.",
+          "imageQuery": "bark beetle gallery"
+        },
+        {
+          "id": "autres-indices11",
+          "difficulte": "difficile",
+          "nom_commun": "Plume au sol",
+          "nom_scientifique": "Bird feather ground",
+          "groupe": "autres-indices",
+          "options": [
+            "Coulée de limace",
+            "Terrier de renard",
+            "Plume au sol",
+            "Pelote de réjection"
+          ],
+          "indice": "Plume isolée",
+          "description": "Plume tombée, indice d’espèce selon forme et couleur.",
+          "explication": "Plume : Indice simple mais utile.",
+          "imageQuery": "feather on ground"
+        },
+        {
+          "id": "autres-indices12",
+          "difficulte": "difficile",
+          "nom_commun": "Restes de repas (coquille)",
+          "nom_scientifique": "Snail shell predation",
+          "groupe": "autres-indices",
+          "options": [
+            "Coulée de limace",
+            "Passage / coulée",
+            "Bois frotté",
+            "Restes de repas (coquille)"
+          ],
+          "indice": "Coquille d’escargot cassée",
+          "description": "Coquilles brisées sur une pierre (« enclume »).",
+          "explication": "Restes : Repas de grive / prédateur.",
+          "imageQuery": "broken snail shell thrush"
+        },
+        {
+          "id": "autres-indices13",
+          "difficulte": "difficile",
+          "nom_commun": "Passage / coulée",
+          "nom_scientifique": "Animal trail vegetation",
+          "groupe": "autres-indices",
+          "options": [
+            "Coulée de limace",
+            "Crotte de renard",
+            "Pomme de pin rongée",
+            "Passage / coulée"
+          ],
+          "indice": "Sentier bas dans la végétation",
+          "description": "Chemin tassé utilisé régulièrement par la faune.",
+          "explication": "Coulée : Sentier d’animaux sauvages.",
+          "imageQuery": "animal trail forest"
+        },
+        {
+          "id": "autres-indices14",
+          "difficulte": "difficile",
+          "nom_commun": "Écorçage de castor",
+          "nom_scientifique": "Beaver gnawed tree",
+          "groupe": "autres-indices",
+          "options": [
+            "Terrier de renard",
+            "Fiente d’oiseau",
+            "Bois frotté",
+            "Écorçage de castor"
+          ],
+          "indice": "Tronc taillé en pointe",
+          "description": "Bois taillé en crayon, copeaux au pied.",
+          "explication": "Castor : Arbres rongés caractéristiques.",
+          "imageQuery": "beaver chewed tree"
+        }
+      ]
+    }
+  ]
+}

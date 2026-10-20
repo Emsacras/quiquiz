@@ -3,12 +3,12 @@
     {
       "id": "biologie",
       "nom": "Biologie",
-      "description": "Vivant : animaux, plantes, champignons…",
+      "description": "Vivant : animaux, plantes, champignons, coquillages…",
       "children": [
         {
           "id": "animaux",
           "nom": "Animaux",
-          "description": "Oiseaux, reptiles, poissons, insectes, mammifères…",
+          "description": "Oiseaux, reptiles, poissons, insectes, mammifères, traces…",
           "children": [
             {
               "id": "oiseaux",
@@ -79,6 +79,16 @@
               "regions": [
                 "monde"
               ]
+            },
+            {
+              "id": "traces-animaux",
+              "nom": "Traces d’animaux",
+              "fichier": "data/traces-animaux.json",
+              "description": "Empreintes, crottes, nids et autres indices (42 entrées).",
+              "regions": [
+                "france",
+                "monde"
+              ]
             }
           ]
         },
@@ -133,6 +143,16 @@
           "description": "167 champignons de France, de la forêt à la pinède.",
           "regions": [
             "france"
+          ]
+        },
+        {
+          "id": "coquillages",
+          "nom": "Coquillages",
+          "fichier": "data/coquillages.json",
+          "description": "Coquillages de la grève et de la mer (42 entrées).",
+          "regions": [
+            "france",
+            "monde"
           ]
         }
       ]

@@ -73,7 +73,7 @@ export function setFruitImages(enabled) {
   fruitImages = Boolean(enabled);
 }
 
-/** kind: species | flag | map | safe | capital | mineral | fruit | baby | leaf | cloud | constellation | fossil */
+/** kind: species | flag | map | safe | capital | mineral | fruit | baby | leaf | cloud | constellation | fossil | shell | track */
 function resolveMediaKind(explicit) {
   if (explicit) return explicit;
   if (flagImages) return "flag";
@@ -99,6 +99,8 @@ function poolKey(scientificName, kind = "species") {
   if (kind === "cloud") return `cloud:${name}`;
   if (kind === "constellation") return `constellation:${name}`;
   if (kind === "fossil") return `fossil:${name}`;
+  if (kind === "shell") return `shell:${name}`;
+  if (kind === "track") return `track:${name}`;
   return name;
 }
 const titleByUrl = new Map();
@@ -224,6 +226,8 @@ export function invalidateSpeciesImages(scientificName) {
     "cloud",
     "constellation",
     "fossil",
+    "shell",
+    "track",
   ]) {
     memoryPools.delete(poolKey(name, kind));
   }
@@ -1142,6 +1146,39 @@ async function fetchFossilImages(scientificName, commonName = "", imageQuery = "
   });
 }
 
+async function fetchShellImages(scientificName, commonName = "", imageQuery = "") {
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: imageQuery || "shell",
+    queries: [
+      imageQuery,
+      `${scientificName} shell`,
+      `${commonName} coquillage`,
+      `${commonName} shell`,
+      `${scientificName}`,
+    ].filter(Boolean),
+    rejectRe: /\b(flag|logo|toy|lego|cartoon|jewelry only|living animal underwater photo)\b/i,
+  });
+}
+
+async function fetchTrackImages(scientificName, commonName = "", imageQuery = "") {
+  return fetchTopicImages({
+    name: scientificName,
+    commonName,
+    imageQuery: imageQuery || "animal track",
+    queries: [
+      imageQuery,
+      `${scientificName} track`,
+      `${commonName} empreinte`,
+      `${commonName} track`,
+      `${commonName} footprint`,
+      `${scientificName} footprint`,
+    ].filter(Boolean),
+    rejectRe: /\b(flag|logo|toy|lego|cartoon|portrait|taxidermy)\b/i,
+  });
+}
+
 async function urlsFromCommons(scientificName) {
   try {
     const titles = await collectTitles(scientificName);
@@ -1366,6 +1403,12 @@ async function pumpSpecies() {
       } else if (job.kind === "fossil") {
         await ensureBlockedTitles();
         result = await fetchFossilImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "shell") {
+        await ensureBlockedTitles();
+        result = await fetchShellImages(job.name, job.commonName, job.imageQuery);
+      } else if (job.kind === "track") {
+        await ensureBlockedTitles();
+        result = await fetchTrackImages(job.name, job.commonName, job.imageQuery);
       } else if (job.kind === "map") {
         await ensureBlockedTitles();
         if (servedFromQuizApi()) {

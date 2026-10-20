@@ -1,0 +1,739 @@
+{
+  "id": "coquillages",
+  "categorie": "Coquillages",
+  "description": "Reconnais les coquillages de la grève et de la mer (spirales, bivalves, divers).",
+  "groupes": [
+    {
+      "id": "gasteropodes",
+      "label": "Gastéropodes",
+      "questions": [
+        {
+          "id": "gasteropodes1",
+          "difficulte": "facile",
+          "nom_commun": "Patelle",
+          "nom_scientifique": "Patella vulgata",
+          "groupe": "gasteropodes",
+          "options": [
+            "Buccin",
+            "Cauris monétaire",
+            "Patelle",
+            "Crépidule"
+          ],
+          "indice": "Chapeau chinois collé au rocher",
+          "description": "Coquille conique basse, souvent sur les rochers battus.",
+          "explication": "Patelle : Gastéropode collé aux rochers.",
+          "imageQuery": "limpet shell"
+        },
+        {
+          "id": "gasteropodes2",
+          "difficulte": "facile",
+          "nom_commun": "Bigorneau",
+          "nom_scientifique": "Littorina littorea",
+          "groupe": "gasteropodes",
+          "options": [
+            "Bigorneau",
+            "Patelle",
+            "Murex",
+            "Crépidule"
+          ],
+          "indice": "Petite spirale sombre",
+          "description": "Petite coquille spiralée sombre des estrans.",
+          "explication": "Bigorneau : Petit gastéropode des zones de marée.",
+          "imageQuery": "periwinkle shell"
+        },
+        {
+          "id": "gasteropodes3",
+          "difficulte": "facile",
+          "nom_commun": "Buccin",
+          "nom_scientifique": "Buccinum undatum",
+          "groupe": "gasteropodes",
+          "options": [
+            "Cône",
+            "Buccin",
+            "Triton",
+            "Murex"
+          ],
+          "indice": "Grosse spirale côtelée",
+          "description": "Grande coquille spiralée, souvent échouée après tempête.",
+          "explication": "Buccin : Gros bulot des mers froides.",
+          "imageQuery": "whelk shell"
+        },
+        {
+          "id": "gasteropodes4",
+          "difficulte": "facile",
+          "nom_commun": "Escargot de mer",
+          "nom_scientifique": "Nucella lapillus",
+          "groupe": "gasteropodes",
+          "options": [
+            "Buccin",
+            "Murex",
+            "Patelle",
+            "Escargot de mer"
+          ],
+          "indice": "Spirale pointue des rochers",
+          "description": "Coquille fusiforme des rivages rocheux.",
+          "explication": "Pourpre / nucelle : Gastéropode prédateur des estrans.",
+          "imageQuery": "dog whelk shell"
+        },
+        {
+          "id": "gasteropodes5",
+          "difficulte": "moyen",
+          "nom_commun": "Ormeau",
+          "nom_scientifique": "Haliotis tuberculata",
+          "groupe": "gasteropodes",
+          "options": [
+            "Turritelle",
+            "Crépidule",
+            "Bigorneau",
+            "Ormeau"
+          ],
+          "indice": "Oreille nacrée percée",
+          "description": "Coquille en oreille, intérieur nacré, trous respiratoires.",
+          "explication": "Ormeau : Gastéropode à coquille nacrée.",
+          "imageQuery": "abalone shell"
+        },
+        {
+          "id": "gasteropodes6",
+          "difficulte": "moyen",
+          "nom_commun": "Crépidule",
+          "nom_scientifique": "Crepidula fornicata",
+          "groupe": "gasteropodes",
+          "options": [
+            "Crépidule",
+            "Bigorneau",
+            "Buccin",
+            "Ormeau"
+          ],
+          "indice": "Sabot / pantoufle",
+          "description": "Coquille en forme de pantoufle, souvent empilée.",
+          "explication": "Crépidule : Gastéropode en « pantoufle ».",
+          "imageQuery": "slipper limpet"
+        },
+        {
+          "id": "gasteropodes7",
+          "difficulte": "moyen",
+          "nom_commun": "Natice",
+          "nom_scientifique": "Euspira catena",
+          "groupe": "gasteropodes",
+          "options": [
+            "Natice",
+            "Cauris monétaire",
+            "Murex",
+            "Escargot de mer"
+          ],
+          "indice": "Boule lisse globuleuse",
+          "description": "Coquille presque sphérique, très lisse.",
+          "explication": "Natice : Gastéropode prédateur des sables.",
+          "imageQuery": "necklace shell"
+        },
+        {
+          "id": "gasteropodes8",
+          "difficulte": "moyen",
+          "nom_commun": "Turritelle",
+          "nom_scientifique": "Turritella communis",
+          "groupe": "gasteropodes",
+          "options": [
+            "Janthine",
+            "Buccin",
+            "Turritelle",
+            "Crépidule"
+          ],
+          "indice": "Tour très allongée",
+          "description": "Spirale très haute et étroite, en tour.",
+          "explication": "Turritelle : Coquille en longue tour.",
+          "imageQuery": "turritella shell"
+        },
+        {
+          "id": "gasteropodes9",
+          "difficulte": "moyen",
+          "nom_commun": "Cône",
+          "nom_scientifique": "Conus",
+          "groupe": "gasteropodes",
+          "options": [
+            "Escargot de mer",
+            "Bigorneau",
+            "Ormeau",
+            "Cône"
+          ],
+          "indice": "Cône pointu coloré",
+          "description": "Coquille conique, souvent à motifs, tipique des mers chaudes.",
+          "explication": "Cône : Gastéropode venimeux tropical.",
+          "imageQuery": "cone shell"
+        },
+        {
+          "id": "gasteropodes10",
+          "difficulte": "difficile",
+          "nom_commun": "Porcelaine",
+          "nom_scientifique": "Cypraea",
+          "groupe": "gasteropodes",
+          "options": [
+            "Natice",
+            "Cauris monétaire",
+            "Crépidule",
+            "Porcelaine"
+          ],
+          "indice": "Œuf brillant sans spire visible",
+          "description": "Coquille ovoïde très lisse, ouverture dentée en dessous.",
+          "explication": "Porcelaine : Coquillage brillant des mers chaudes.",
+          "imageQuery": "cowrie shell"
+        },
+        {
+          "id": "gasteropodes11",
+          "difficulte": "difficile",
+          "nom_commun": "Triton",
+          "nom_scientifique": "Charonia",
+          "groupe": "gasteropodes",
+          "options": [
+            "Ormeau",
+            "Patelle",
+            "Cône",
+            "Triton"
+          ],
+          "indice": "Grande trompe spiralée",
+          "description": "Très grande coquille spiralée, autrefois utilisée en trompe.",
+          "explication": "Triton : Grand gastéropode des mers chaudes.",
+          "imageQuery": "triton shell"
+        },
+        {
+          "id": "gasteropodes12",
+          "difficulte": "difficile",
+          "nom_commun": "Murex",
+          "nom_scientifique": "Murex",
+          "groupe": "gasteropodes",
+          "options": [
+            "Patelle",
+            "Cône",
+            "Escargot de mer",
+            "Murex"
+          ],
+          "indice": "Épines / ailes sur la spirale",
+          "description": "Coquille spiralée ornée d’épines ou de lamelles.",
+          "explication": "Murex : Gastéropode épineux, pourpre antique.",
+          "imageQuery": "murex shell"
+        },
+        {
+          "id": "gasteropodes13",
+          "difficulte": "difficile",
+          "nom_commun": "Janthine",
+          "nom_scientifique": "Janthina",
+          "groupe": "gasteropodes",
+          "options": [
+            "Janthine",
+            "Porcelaine",
+            "Bigorneau",
+            "Natice"
+          ],
+          "indice": "Spirale violette fragile",
+          "description": "Petite coquille violette, flottante en haute mer.",
+          "explication": "Janthine : Escargot violet pélagique.",
+          "imageQuery": "violet snail shell"
+        },
+        {
+          "id": "gasteropodes14",
+          "difficulte": "difficile",
+          "nom_commun": "Cauris monétaire",
+          "nom_scientifique": "Monetaria moneta",
+          "groupe": "gasteropodes",
+          "options": [
+            "Crépidule",
+            "Cône",
+            "Janthine",
+            "Cauris monétaire"
+          ],
+          "indice": "Petite porcelaine bombée",
+          "description": "Petite cauri autrefois utilisée comme monnaie.",
+          "explication": "Cauris : Petite porcelaine « monétaire ».",
+          "imageQuery": "money cowrie"
+        }
+      ]
+    },
+    {
+      "id": "bivalves",
+      "label": "Bivalves",
+      "questions": [
+        {
+          "id": "bivalves1",
+          "difficulte": "facile",
+          "nom_commun": "Moule",
+          "nom_scientifique": "Mytilus edulis",
+          "groupe": "bivalves",
+          "options": [
+            "Huître",
+            "Moule",
+            "Huître perlière",
+            "Palourde"
+          ],
+          "indice": "Valve allongée bleutée",
+          "description": "Valve sombre allongée, souvent en groupes sur les pieux.",
+          "explication": "Moule : Bivalve fixé par des filaments.",
+          "imageQuery": "mussel shell"
+        },
+        {
+          "id": "bivalves2",
+          "difficulte": "facile",
+          "nom_commun": "Huître",
+          "nom_scientifique": "Ostrea edulis",
+          "groupe": "bivalves",
+          "options": [
+            "Huître",
+            "Pétoncle",
+            "Praire",
+            "Palourde"
+          ],
+          "indice": "Valve irrégulière feuilletée",
+          "description": "Coquille irrégulière, feuillets calcaires empilés.",
+          "explication": "Huître : Bivalve irrégulier des estran.",
+          "imageQuery": "oyster shell"
+        },
+        {
+          "id": "bivalves3",
+          "difficulte": "facile",
+          "nom_commun": "Coque",
+          "nom_scientifique": "Cerastoderma edule",
+          "groupe": "bivalves",
+          "options": [
+            "Coque",
+            "Palourde",
+            "Tridacne",
+            "Praire"
+          ],
+          "indice": "Côtes rayonnantes serrées",
+          "description": "Valve ronde à côtes marquées, typique du sable.",
+          "explication": "Coque : Bivalve côtelé des sables.",
+          "imageQuery": "cockle shell"
+        },
+        {
+          "id": "bivalves4",
+          "difficulte": "facile",
+          "nom_commun": "Palourde",
+          "nom_scientifique": "Ruditapes philippinarum",
+          "groupe": "bivalves",
+          "options": [
+            "Praire",
+            "Palourde",
+            "Saint-Jacques",
+            "Lutraire"
+          ],
+          "indice": "Ovale lisse, charnière nette",
+          "description": "Valve ovale, surface plutôt lisse, fouisseuse.",
+          "explication": "Palourde : Bivalve des sables et vases.",
+          "imageQuery": "clam shell"
+        },
+        {
+          "id": "bivalves5",
+          "difficulte": "moyen",
+          "nom_commun": "Praire",
+          "nom_scientifique": "Venus verrucosa",
+          "groupe": "bivalves",
+          "options": [
+            "Moule",
+            "Lutraire",
+            "Amande de mer",
+            "Praire"
+          ],
+          "indice": "Ovale à stries concentriques",
+          "description": "Valve ovale épaisse, stries concentriques marquées.",
+          "explication": "Praire : Bivalve des fonds sableux.",
+          "imageQuery": "warty venus shell"
+        },
+        {
+          "id": "bivalves6",
+          "difficulte": "moyen",
+          "nom_commun": "Pétoncle",
+          "nom_scientifique": "Aequipecten opercularis",
+          "groupe": "bivalves",
+          "options": [
+            "Coque",
+            "Saint-Jacques",
+            "Praire",
+            "Pétoncle"
+          ],
+          "indice": "Éventail à oreillettes",
+          "description": "Valve en éventail avec deux « oreilles » près de la charnière.",
+          "explication": "Pétoncle : Petit peigne / coquille Saint-Jacques.",
+          "imageQuery": "queen scallop shell"
+        },
+        {
+          "id": "bivalves7",
+          "difficulte": "moyen",
+          "nom_commun": "Saint-Jacques",
+          "nom_scientifique": "Pecten maximus",
+          "groupe": "bivalves",
+          "options": [
+            "Spisule",
+            "Palourde",
+            "Amande de mer",
+            "Saint-Jacques"
+          ],
+          "indice": "Grand éventail classique",
+          "description": "Grande valve en éventail, symbole des pèlerins.",
+          "explication": "Coquille Saint-Jacques : Grand peigne.",
+          "imageQuery": "scallop shell"
+        },
+        {
+          "id": "bivalves8",
+          "difficulte": "moyen",
+          "nom_commun": "Couteau",
+          "nom_scientifique": "Ensis",
+          "groupe": "bivalves",
+          "options": [
+            "Couteau",
+            "Coque",
+            "Amande de mer",
+            "Huître perlière"
+          ],
+          "indice": "Allongé comme un rasoir",
+          "description": "Valve très allongée, droite ou légèrement courbe.",
+          "explication": "Couteau : Bivalve fouisseur allongé.",
+          "imageQuery": "razor clam shell"
+        },
+        {
+          "id": "bivalves9",
+          "difficulte": "moyen",
+          "nom_commun": "Amande de mer",
+          "nom_scientifique": "Glycymeris",
+          "groupe": "bivalves",
+          "options": [
+            "Palourde",
+            "Moule",
+            "Tridacne",
+            "Amande de mer"
+          ],
+          "indice": "Ronde épaisse",
+          "description": "Valve presque circulaire, épaisse et lourde.",
+          "explication": "Amande de mer : Bivalve rond des sables.",
+          "imageQuery": "dog cockle shell"
+        },
+        {
+          "id": "bivalves10",
+          "difficulte": "difficile",
+          "nom_commun": "Huître perlière",
+          "nom_scientifique": "Pinctada",
+          "groupe": "bivalves",
+          "options": [
+            "Amande de mer",
+            "Pétoncle",
+            "Huître perlière",
+            "Couteau"
+          ],
+          "indice": "Valve nacrée irrégulière",
+          "description": "Coquille irrégulière à intérieur nacré, perles.",
+          "explication": "Huître perlière : Bivalve nacré tropical.",
+          "imageQuery": "pearl oyster shell"
+        },
+        {
+          "id": "bivalves11",
+          "difficulte": "difficile",
+          "nom_commun": "Tridacne",
+          "nom_scientifique": "Tridacna",
+          "groupe": "bivalves",
+          "options": [
+            "Huître perlière",
+            "Spisule",
+            "Lutraire",
+            "Tridacne"
+          ],
+          "indice": "Énorme valve ondulée",
+          "description": "Très grande valve ondulée des récifs tropicaux.",
+          "explication": "Tridacne : Bénitier géant.",
+          "imageQuery": "giant clam shell"
+        },
+        {
+          "id": "bivalves12",
+          "difficulte": "difficile",
+          "nom_commun": "Spisule",
+          "nom_scientifique": "Spisula",
+          "groupe": "bivalves",
+          "options": [
+            "Huître",
+            "Spisule",
+            "Couteau",
+            "Huître perlière"
+          ],
+          "indice": "Triangle ovale, fouisseur",
+          "description": "Valve triangulaire-ovale des zones de ressac.",
+          "explication": "Spisule : Bivalve des sables battus.",
+          "imageQuery": "surf clam shell"
+        },
+        {
+          "id": "bivalves13",
+          "difficulte": "difficile",
+          "nom_commun": "Lutraire",
+          "nom_scientifique": "Lutraria",
+          "groupe": "bivalves",
+          "options": [
+            "Pétoncle",
+            "Spisule",
+            "Lutraire",
+            "Huître perlière"
+          ],
+          "indice": "Allongée, bouts ouverts",
+          "description": "Valve allongée aux extrémités légèrement béantes.",
+          "explication": "Lutraire : Bivalve fouisseur allongé.",
+          "imageQuery": "otter shell"
+        },
+        {
+          "id": "bivalves14",
+          "difficulte": "difficile",
+          "nom_commun": "Modiole",
+          "nom_scientifique": "Modiolus",
+          "groupe": "bivalves",
+          "options": [
+            "Saint-Jacques",
+            "Lutraire",
+            "Coque",
+            "Modiole"
+          ],
+          "indice": "Moule plus renflée",
+          "description": "Proche de la moule, plus ventrue, souvent plus au large.",
+          "explication": "Modiole : Grande moule des fonds.",
+          "imageQuery": "horse mussel shell"
+        }
+      ]
+    },
+    {
+      "id": "divers",
+      "label": "Divers & tests",
+      "questions": [
+        {
+          "id": "divers1",
+          "difficulte": "facile",
+          "nom_commun": "Test d’oursin",
+          "nom_scientifique": "Echinoidea",
+          "groupe": "divers",
+          "options": [
+            "Corail (fragment)",
+            "Poulpe (coquille interne)",
+            "Test d’oursin",
+            "Opercule"
+          ],
+          "indice": "Boule calcaire à plaques",
+          "description": "Squelette sphérique d’oursin sans piquants.",
+          "explication": "Test d’oursin : Carcasse calcaire échouée.",
+          "imageQuery": "sea urchin test"
+        },
+        {
+          "id": "divers2",
+          "difficulte": "facile",
+          "nom_commun": "Opercule",
+          "nom_scientifique": "Operculum",
+          "groupe": "divers",
+          "options": [
+            "Opercule",
+            "Spirule",
+            "Dentale",
+            "Bec de calmar"
+          ],
+          "indice": "« Ongle » qui ferme la coquille",
+          "description": "Plaque cornée ou calcaire qui ferme l’ouverture.",
+          "explication": "Opercule : Couvercle de certains gastéropodes.",
+          "imageQuery": "snail operculum"
+        },
+        {
+          "id": "divers3",
+          "difficulte": "facile",
+          "nom_commun": "Tube de serpule",
+          "nom_scientifique": "Serpulidae",
+          "groupe": "divers",
+          "options": [
+            "Tube de serpule",
+            "Bryozoaire",
+            "Spirule",
+            "Poulpe (coquille interne)"
+          ],
+          "indice": "Petit tuyau calcaire collé",
+          "description": "Tube calcaire blanc fixé aux rochers ou coquilles.",
+          "explication": "Serpule : Tube de ver marin.",
+          "imageQuery": "serpulid tube"
+        },
+        {
+          "id": "divers4",
+          "difficulte": "moyen",
+          "nom_commun": "Nautile",
+          "nom_scientifique": "Nautilus",
+          "groupe": "divers",
+          "options": [
+            "Spirule",
+            "Os de seiche",
+            "Nautile",
+            "Violets (tunique)"
+          ],
+          "indice": "Spirale cloisonnée nacrée",
+          "description": "Grande spirale à cloisons, intérieur nacré.",
+          "explication": "Nautile : Céphalopode à coquille externe.",
+          "imageQuery": "nautilus shell"
+        },
+        {
+          "id": "divers5",
+          "difficulte": "moyen",
+          "nom_commun": "Spirule",
+          "nom_scientifique": "Spirula spirula",
+          "groupe": "divers",
+          "options": [
+            "Dentale",
+            "Argonaute",
+            "Spirule",
+            "Opercule"
+          ],
+          "indice": "Petite spirale ouverte",
+          "description": "Petite spirale plane, souvent blanche, échouée.",
+          "explication": "Spirule : Coquille interne de céphalopode.",
+          "imageQuery": "spirula shell"
+        },
+        {
+          "id": "divers6",
+          "difficulte": "moyen",
+          "nom_commun": "Os de seiche",
+          "nom_scientifique": "Sepia officinalis",
+          "groupe": "divers",
+          "options": [
+            "Argonaute",
+            "Os de seiche",
+            "Poulpe (coquille interne)",
+            "Bryozoaire"
+          ],
+          "indice": "Plaque blanche poreuse",
+          "description": "Squelette interne blanc et poreux de la seiche.",
+          "explication": "Os de seiche : Flotteur interne de seiche.",
+          "imageQuery": "cuttlebone"
+        },
+        {
+          "id": "divers7",
+          "difficulte": "moyen",
+          "nom_commun": "Bec de calmar",
+          "nom_scientifique": "Teuthida",
+          "groupe": "divers",
+          "options": [
+            "Balane",
+            "Corail (fragment)",
+            "Bec de calmar",
+            "Violets (tunique)"
+          ],
+          "indice": "Petit bec corné",
+          "description": "Pièce cornée en forme de bec de perroquet.",
+          "explication": "Bec de calmar : Mandibule de céphalopode.",
+          "imageQuery": "squid beak"
+        },
+        {
+          "id": "divers8",
+          "difficulte": "moyen",
+          "nom_commun": "Dentale",
+          "nom_scientifique": "Dentalium",
+          "groupe": "divers",
+          "options": [
+            "Os de seiche",
+            "Dentale",
+            "Spirule",
+            "Poulpe (coquille interne)"
+          ],
+          "indice": "Dent / défense creuse",
+          "description": "Tube légèrement courbe en forme de défense d’éléphant.",
+          "explication": "Dentale : Scaphopode en tube.",
+          "imageQuery": "tusk shell"
+        },
+        {
+          "id": "divers9",
+          "difficulte": "difficile",
+          "nom_commun": "Argonaute",
+          "nom_scientifique": "Argonauta",
+          "groupe": "divers",
+          "options": [
+            "Violets (tunique)",
+            "Argonaute",
+            "Spirule",
+            "Bryozoaire"
+          ],
+          "indice": "Barque fine transparent",
+          "description": "Coquille très fine en forme de barque (femelle).",
+          "explication": "Argonaute : « Nautile de papier ».",
+          "imageQuery": "paper nautilus shell"
+        },
+        {
+          "id": "divers10",
+          "difficulte": "difficile",
+          "nom_commun": "Balane",
+          "nom_scientifique": "Balanus",
+          "groupe": "divers",
+          "options": [
+            "Dentale",
+            "Violets (tunique)",
+            "Bryozoaire",
+            "Balane"
+          ],
+          "indice": "Volcans collés au support",
+          "description": "Petites coquilles coniques fixées, plaques calcaires.",
+          "explication": "Balane : Crustacé fixé (pas un mollusque).",
+          "imageQuery": "barnacle shell"
+        },
+        {
+          "id": "divers11",
+          "difficulte": "difficile",
+          "nom_commun": "Poulpe (coquille interne)",
+          "nom_scientifique": "Octopus",
+          "groupe": "divers",
+          "options": [
+            "Os de seiche",
+            "Poulpe (coquille interne)",
+            "Corail (fragment)",
+            "Opercule"
+          ],
+          "indice": "Petites baguettes internes",
+          "description": "Restes cornés internes, peu visibles, parfois échoués.",
+          "explication": "Stylet de poulpe : Vestige interne.",
+          "imageQuery": "octopus stylets"
+        },
+        {
+          "id": "divers12",
+          "difficulte": "difficile",
+          "nom_commun": "Violets (tunique)",
+          "nom_scientifique": "Microcosmus",
+          "groupe": "divers",
+          "options": [
+            "Spirule",
+            "Test d’oursin",
+            "Violets (tunique)",
+            "Bryozoaire"
+          ],
+          "indice": "Sac rugueux orange/brun",
+          "description": "Tunique coriace d’ascidie, souvent sur les quais.",
+          "explication": "Violet : Ascidie comestible / échouée.",
+          "imageQuery": "sea squirt tunic"
+        },
+        {
+          "id": "divers13",
+          "difficulte": "difficile",
+          "nom_commun": "Corail (fragment)",
+          "nom_scientifique": "Anthozoa",
+          "groupe": "divers",
+          "options": [
+            "Test d’oursin",
+            "Bryozoaire",
+            "Balane",
+            "Corail (fragment)"
+          ],
+          "indice": "Branche calcaire poreuse",
+          "description": "Fragment calcaire de corail sur la plage.",
+          "explication": "Corail : Squelette colonial échoué.",
+          "imageQuery": "coral fragment beach"
+        },
+        {
+          "id": "divers14",
+          "difficulte": "difficile",
+          "nom_commun": "Bryozoaire",
+          "nom_scientifique": "Bryozoa",
+          "groupe": "divers",
+          "options": [
+            "Bryozoaire",
+            "Poulpe (coquille interne)",
+            "Balane",
+            "Bec de calmar"
+          ],
+          "indice": "Dentelle calcaire en croûte",
+          "description": "Colonies en dentelle ou croûte sur les coquillages.",
+          "explication": "Bryozoaire : Colonie en dentelle marine.",
+          "imageQuery": "bryozoan colony"
+        }
+      ]
+    }
+  ]
+}

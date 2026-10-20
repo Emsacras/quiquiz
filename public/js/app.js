@@ -433,6 +433,8 @@ const MODES_BY_KIND = {
   feuilles: BIO_MODES,
   nuages: CORE_MODES,
   fossiles: CORE_MODES,
+  coquillages: CORE_MODES,
+  traces: CORE_MODES,
   capitales: BIO_MODES,
   pays: CORE_MODES,
   drapeaux: CORE_MODES,
@@ -479,6 +481,10 @@ function mediaKindForQuizId(quizId) {
       return "cloud";
     case "fossiles":
       return "fossil";
+    case "coquillages":
+      return "shell";
+    case "traces-animaux":
+      return "track";
     default:
       return "";
   }
@@ -520,6 +526,10 @@ function quizKind(category = state.category) {
       return "nuages";
     case "fossiles":
       return "fossiles";
+    case "coquillages":
+      return "coquillages";
+    case "traces-animaux":
+      return "traces";
     case "oiseaux-francais":
     case "oiseaux-royaume-uni":
       return "oiseaux";
@@ -592,7 +602,11 @@ function imageOptionsForQuestion(question, category = state.category) {
                   ? "cloud"
                   : qk === "fossiles"
                     ? "fossil"
-                    : "";
+                    : qk === "coquillages"
+                      ? "shell"
+                      : qk === "traces"
+                        ? "track"
+                        : "";
   const kind =
     question?.mediaKind ||
     mediaKindForQuizId(question?.sourceQuizId) ||
@@ -971,21 +985,37 @@ function quizCopy(category = state.category) {
                               units: "fossiles",
                               nameField: "Nom du fossile",
                             }
-                          : kind === "mixed"
+                          : kind === "coquillages"
                             ? {
-                                description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
-                                alt: "Élément à identifier",
-                                unit: "entrée",
-                                units: "entrées",
-                                nameField: "Nom",
+                                description: "Pas de photo : un texte décrit le coquillage, puis quatre noms.",
+                                alt: "Coquillage à identifier",
+                                unit: "coquillage",
+                                units: "coquillages",
+                                nameField: "Nom du coquillage",
                               }
-                            : {
-                                description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
-                                alt: "Oiseau à identifier",
-                                unit: "espèce",
-                                units: "espèces",
-                                nameField: "Nom de l'espèce",
-                              };
+                            : kind === "traces"
+                              ? {
+                                  description: "Pas de photo : un texte décrit la trace, puis quatre choix.",
+                                  alt: "Trace d’animal à identifier",
+                                  unit: "trace",
+                                  units: "traces",
+                                  nameField: "Nom de la trace",
+                                }
+                              : kind === "mixed"
+                                ? {
+                                    description: "Pas de photo : un texte décrit l’élément, puis quatre choix.",
+                                    alt: "Élément à identifier",
+                                    unit: "entrée",
+                                    units: "entrées",
+                                    nameField: "Nom",
+                                  }
+                                : {
+                                    description: "Pas de photo : un texte décrit l'oiseau, puis quatre choix.",
+                                    alt: "Oiseau à identifier",
+                                    unit: "espèce",
+                                    units: "espèces",
+                                    nameField: "Nom de l'espèce",
+                                  };
 
   return {
     kind,
@@ -1007,7 +1037,11 @@ function quizCopy(category = state.category) {
                 ? "Une photo de nuage, quatre types."
                 : kind === "fossiles"
                   ? "Une photo de fossile, quatre noms."
-                  : "Une photo, quatre noms.",
+                  : kind === "coquillages"
+                    ? "Une photo de coquillage, quatre noms."
+                    : kind === "traces"
+                      ? "Une photo de trace, quatre choix."
+                      : "Une photo, quatre noms.",
       },
       texte: {
         label: "Texte libre",
@@ -1078,7 +1112,7 @@ const SITE_ORIGIN = "https://quiquiz.fr/";
 const DEFAULT_SEO = {
   title: "QuiQuiz — Quiz nature, oiseaux, plantes et géographie",
   description:
-    "QuiQuiz : quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, minéraux, pays, drapeaux, nuages et fossiles. Jouable tout de suite avec Cui-Cui.",
+    "QuiQuiz : quiz gratuits en images pour reconnaître oiseaux, plantes, champignons, animaux, coquillages, traces, minéraux, pays, drapeaux, nuages et fossiles. Jouable tout de suite avec Cui-Cui.",
 };
 
 function setMetaContent(selector, content, attr = "content") {
@@ -5283,6 +5317,8 @@ const GENERIC_ALT = new Set([
   "Poisson à comparer",
   "Reptile à identifier",
   "Reptile à comparer",
+  "Coquillage à identifier",
+  "Trace d’animal à identifier",
   "Contour de pays à identifier",
   "Contour de pays à comparer",
   "Image indisponible",
