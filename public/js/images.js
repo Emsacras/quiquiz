@@ -106,7 +106,6 @@ function poolKey(scientificName, kind = "species") {
 const titleByUrl = new Map();
 const metaByUrl = new Map();
 const rejectedTitles = new Set();
-let pumping = false;
 let lastRequestAt = 0;
 
 function servedFromQuizApi() {
@@ -363,7 +362,9 @@ async function fetchServerPool(scientificName, options = {}) {
   const params = new URLSearchParams({ name: scientificName });
   if (options.validatedOnly) params.set("validatedOnly", "1");
   if (options.kind) params.set("kind", String(options.kind));
-  const response = await fetch(`/api/pool?${params}`);
+  const response = await fetch(`/api/pool?${params}`, {
+    signal: AbortSignal.timeout(18000),
+  });
   if (!response.ok) throw new Error("pool");
   const data = await response.json();
   return applyRejections({ urls: [], items: data.items || [], source: "pool" });
@@ -1370,137 +1371,144 @@ function enqueueSpecies(scientificName, options = {}) {
   return promise;
 }
 
-async function pumpSpecies() {
-  if (pumping) return;
-  pumping = true;
+const MAX_CONCURRENT_SPECIES = 2;
+let activeSpeciesJobs = 0;
 
-  while (speciesQueue.length) {
-    const job = speciesQueue.shift();
-    try {
-      let result;
-      if (job.kind === "safe") {
-        result = await fetchSafeFishImages(job.name);
-      } else if (job.kind === "flag") {
-        // Jamais de fallback species : sans iso2 → vide (placeholder côté UI).
-        if (!normalizeIso2(job.iso2)) {
-          result = { urls: [], items: [], source: "none" };
-        } else {
-          await ensureBlockedTitles();
-          if (servedFromQuizApi()) {
-            try {
-              const pooled = await fetchServerPool(job.name, {
-                validatedOnly: true,
-                kind: "flag",
-              });
-              // Ignorer d’anciennes « validées » tourisme (Category:France, etc.).
-              const flagItems = (pooled.items || []).filter((item) => isFlagPoolTitle(item.title));
-              if (flagItems.length) {
-                const only = applyRejections({
-                  urls: [],
-                  items: flagItems.slice(0, 1),
-                  source: "pool",
-                });
-                if (only.urls.length) {
-                  memoryPools.set(job.key, only);
-                  job.resolve(only);
-                  continue;
-                }
-              }
-            } catch {
-              /* repli flagcdn */
+async function runSpeciesJob(job) {
+  let result;
+  if (job.kind === "safe") {
+    result = await fetchSafeFishImages(job.name);
+  } else if (job.kind === "flag") {
+    // Jamais de fallback species : sans iso2 → vide (placeholder côté UI).
+    if (!normalizeIso2(job.iso2)) {
+      result = { urls: [], items: [], source: "none" };
+    } else {
+      await ensureBlockedTitles();
+      if (servedFromQuizApi()) {
+        try {
+          const pooled = await fetchServerPool(job.name, {
+            validatedOnly: true,
+            kind: "flag",
+          });
+          // Ignorer d’anciennes « validées » tourisme (Category:France, etc.).
+          const flagItems = (pooled.items || []).filter((item) => isFlagPoolTitle(item.title));
+          if (flagItems.length) {
+            const only = applyRejections({
+              urls: [],
+              items: flagItems.slice(0, 1),
+              source: "pool",
+            });
+            if (only.urls.length) {
+              memoryPools.set(job.key, only);
+              job.resolve(only);
+              return;
             }
           }
-          result = await fetchFlagImages(job.name, { iso2: job.iso2 });
+        } catch {
+          /* repli flagcdn */
         }
-      } else if (job.kind === "capital") {
-        await ensureBlockedTitles();
-        result = await fetchCapitalImages(job.name, job.country);
-      } else if (job.kind === "mineral") {
-        await ensureBlockedTitles();
-        result = await fetchMineralImages(job.name);
-      } else if (job.kind === "fruit") {
-        await ensureBlockedTitles();
-        result = await fetchFruitImages(job.name, job.commonName);
-      } else if (job.kind === "baby") {
-        await ensureBlockedTitles();
-        result = await fetchBabyImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "leaf") {
-        await ensureBlockedTitles();
-        result = await fetchLeafImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "cloud") {
-        await ensureBlockedTitles();
-        result = await fetchCloudImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "constellation") {
-        await ensureBlockedTitles();
-        result = await fetchConstellationImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "fossil") {
-        await ensureBlockedTitles();
-        result = await fetchFossilImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "shell") {
-        await ensureBlockedTitles();
-        result = await fetchShellImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "track") {
-        await ensureBlockedTitles();
-        result = await fetchTrackImages(job.name, job.commonName, job.imageQuery);
-      } else if (job.kind === "map") {
-        await ensureBlockedTitles();
-        if (servedFromQuizApi()) {
-          try {
-            const pooled = await fetchServerPool(job.name, { validatedOnly: true });
-            if (pooled.urls.length) {
-              memoryPools.set(job.key, pooled);
-              job.resolve(pooled);
-              continue;
-            }
-          } catch {
-            /* repli contours Commons */
-          }
-        }
-        result = await fetchOutlineMapImages(job.name);
-      } else {
-        if (servedFromQuizApi()) {
-          try {
-            await ensureBlockedTitles();
-            const pooled = await fetchServerPool(job.name);
-            if (pooled.urls.length) {
-              memoryPools.set(job.key, pooled);
-              job.resolve(pooled);
-              continue;
-            }
-          } catch {
-            // Repli sur Commons si l'API est injoignable.
-          }
-        }
-        const fresh = readCache(job.name);
-        if (fresh?.fresh) {
-          result = { urls: fresh.urls, source: fresh.source };
-        } else {
-          result = await fetchSpeciesImages(job.name);
-          if (result.urls.length) writeCache(job.name, result);
-          else if (fresh?.urls?.length) result = { urls: fresh.urls, source: fresh.source };
-        }
-        result = applyRejections(result);
       }
-      if (result.urls?.length || result.items?.length) memoryPools.set(job.key, result);
-      else memoryPools.delete(job.key);
-      job.resolve(result);
-    } catch (error) {
-      if (job.kind && job.kind !== "species") {
-        job.reject(error);
-        continue;
-      }
-      const stale = readCache(job.name);
-      if (stale?.urls?.length) {
-        const result = applyRejections({ urls: stale.urls, source: stale.source });
-        memoryPools.set(job.key, result);
-        job.resolve(result);
-      } else job.reject(error);
-    } finally {
-      pending.delete(job.key);
+      result = await fetchFlagImages(job.name, { iso2: job.iso2 });
     }
+  } else if (job.kind === "capital") {
+    await ensureBlockedTitles();
+    result = await fetchCapitalImages(job.name, job.country);
+  } else if (job.kind === "mineral") {
+    await ensureBlockedTitles();
+    result = await fetchMineralImages(job.name);
+  } else if (job.kind === "fruit") {
+    await ensureBlockedTitles();
+    result = await fetchFruitImages(job.name, job.commonName);
+  } else if (job.kind === "baby") {
+    await ensureBlockedTitles();
+    result = await fetchBabyImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "leaf") {
+    await ensureBlockedTitles();
+    result = await fetchLeafImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "cloud") {
+    await ensureBlockedTitles();
+    result = await fetchCloudImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "constellation") {
+    await ensureBlockedTitles();
+    result = await fetchConstellationImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "fossil") {
+    await ensureBlockedTitles();
+    result = await fetchFossilImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "shell") {
+    await ensureBlockedTitles();
+    result = await fetchShellImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "track") {
+    await ensureBlockedTitles();
+    result = await fetchTrackImages(job.name, job.commonName, job.imageQuery);
+  } else if (job.kind === "map") {
+    await ensureBlockedTitles();
+    if (servedFromQuizApi()) {
+      try {
+        const pooled = await fetchServerPool(job.name, { validatedOnly: true });
+        if (pooled.urls.length) {
+          memoryPools.set(job.key, pooled);
+          job.resolve(pooled);
+          return;
+        }
+      } catch {
+        /* repli contours Commons */
+      }
+    }
+    result = await fetchOutlineMapImages(job.name);
+  } else {
+    if (servedFromQuizApi()) {
+      try {
+        await ensureBlockedTitles();
+        const pooled = await fetchServerPool(job.name);
+        if (pooled.urls.length) {
+          memoryPools.set(job.key, pooled);
+          job.resolve(pooled);
+          return;
+        }
+      } catch {
+        // Repli sur Commons si l'API est injoignable.
+      }
+    }
+    const fresh = readCache(job.name);
+    if (fresh?.fresh) {
+      result = { urls: fresh.urls, source: fresh.source };
+    } else {
+      result = await fetchSpeciesImages(job.name);
+      if (result.urls.length) writeCache(job.name, result);
+      else if (fresh?.urls?.length) result = { urls: fresh.urls, source: fresh.source };
+    }
+    result = applyRejections(result);
   }
+  if (result.urls?.length || result.items?.length) memoryPools.set(job.key, result);
+  else memoryPools.delete(job.key);
+  job.resolve(result);
+}
 
-  pumping = false;
+function pumpSpecies() {
+  while (activeSpeciesJobs < MAX_CONCURRENT_SPECIES && speciesQueue.length) {
+    const job = speciesQueue.shift();
+    activeSpeciesJobs += 1;
+    void (async () => {
+      try {
+        await runSpeciesJob(job);
+      } catch (error) {
+        if (job.kind && job.kind !== "species") {
+          job.reject(error);
+        } else {
+          const stale = readCache(job.name);
+          if (stale?.urls?.length) {
+            const result = applyRejections({ urls: stale.urls, source: stale.source });
+            memoryPools.set(job.key, result);
+            job.resolve(result);
+          } else job.reject(error);
+        }
+      } finally {
+        pending.delete(job.key);
+        activeSpeciesJobs -= 1;
+        pumpSpecies();
+      }
+    })();
+  }
 }
 
 function readSexCache(scientificName) {
