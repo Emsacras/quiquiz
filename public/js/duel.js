@@ -674,7 +674,13 @@ function renderCreateLobby(ctx, leaves) {
     ];
   }
 
-  const initialCat = duelUi.categoryId || ctx.defaultCategoryId || leaves[0]?.id || "";
+  const leafIds = new Set(leaves.map((leaf) => leaf.id));
+  const preferredCat = duelUi.categoryId || ctx.defaultCategoryId || "";
+  const initialCat = leafIds.has(preferredCat)
+    ? preferredCat
+    : leaves[0]?.id || "";
+  duelUi.categoryId = initialCat;
+
   const catSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Catégorie" },
@@ -686,30 +692,41 @@ function renderCreateLobby(ctx, leaves) {
       }),
     ),
   );
+  // Les options `selected` ne suffisent pas toujours en construction DOM → forcer.
+  if (initialCat) catSelect.value = initialCat;
+
+  const initialDiff = ["melange", "facile", "moyen", "difficile"].includes(duelUi.difficulty)
+    ? duelUi.difficulty
+    : "melange";
   const diffSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Difficulté" },
     h("option", {
       value: "melange",
       text: "Mélange",
-      selected: (duelUi.difficulty || "melange") === "melange",
+      selected: initialDiff === "melange",
     }),
     h("option", {
       value: "facile",
       text: "Facile",
-      selected: duelUi.difficulty === "facile",
+      selected: initialDiff === "facile",
     }),
     h("option", {
       value: "moyen",
       text: "Moyen",
-      selected: duelUi.difficulty === "moyen",
+      selected: initialDiff === "moyen",
     }),
     h("option", {
       value: "difficile",
       text: "Difficile",
-      selected: duelUi.difficulty === "difficile",
+      selected: initialDiff === "difficile",
     }),
   );
+  diffSelect.value = initialDiff;
+
+  const initialCount = [5, 8, 10, 12, 16].includes(Number(duelUi.questionCount))
+    ? Number(duelUi.questionCount)
+    : 10;
   const countSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Nombre de questions" },
@@ -717,10 +734,11 @@ function renderCreateLobby(ctx, leaves) {
       h("option", {
         value: String(n),
         text: `${n} questions`,
-        selected: n === (Number(duelUi.questionCount) || 10),
+        selected: n === initialCount,
       }),
     ),
   );
+  countSelect.value = String(initialCount);
 
   const groupsBox = h("div", { class: "duel-groups-list", text: "Chargement des sous-catégories…" });
   const selected = new Set(

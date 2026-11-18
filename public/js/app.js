@@ -3490,11 +3490,15 @@ function mountLevels() {
           openProfile();
           return;
         }
+        const duelDiff = ["facile", "moyen", "difficile", "melange"].includes(state.difficulty)
+          ? state.difficulty
+          : "melange";
         resetDuelUi({
           phase: "idle",
           categoryId: category.id,
-          difficulty: "melange",
+          difficulty: duelDiff,
           questionCount: 10,
+          groupIds: [],
         });
         setScreen("duel");
       },
