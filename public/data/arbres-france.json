@@ -14,9 +14,9 @@
           "nom_scientifique": "Quercus robur",
           "groupe": "feuillus",
           "options": [
+            "Saule blanc",
             "Chêne pédonculé",
-            "Orme champêtre",
-            "Merisier",
+            "Saule marsault",
             "Hêtre"
           ],
           "indice": "Glands portés par un long pédoncule",
@@ -46,10 +46,10 @@
           "nom_scientifique": "Betula pendula",
           "groupe": "feuillus",
           "options": [
-            "Chêne pédonculé",
+            "Chêne sessile",
             "Bouleau verruqueux",
-            "Hêtre",
-            "Orme champêtre"
+            "Alisier torminal",
+            "Chêne pubescent"
           ],
           "indice": "Écorce blanche, rameaux pendants",
           "description": "Écorce blanche marquée de noir, ramilles pendantes, petites feuilles.",
@@ -62,10 +62,10 @@
           "nom_scientifique": "Fraxinus excelsior",
           "groupe": "feuillus",
           "options": [
-            "Hêtre",
+            "Chêne pubescent",
             "Orme champêtre",
-            "Bouleau verruqueux",
-            "Frêne commun"
+            "Frêne commun",
+            "Hêtre"
           ],
           "indice": "Bourgeons noirs, feuilles composées",
           "description": "Grand arbre aux feuilles composées imparipennées, bourgeons noirs.",
@@ -80,8 +80,8 @@
           "options": [
             "Merisier",
             "Érable sycomore",
-            "Hêtre",
-            "Aulne glutineux"
+            "Aulne glutineux",
+            "Alisier torminal"
           ],
           "indice": "Samares en hélicoptère",
           "description": "Grand érable, feuilles à 5 lobes, fruits en double samare.",
@@ -110,10 +110,10 @@
           "nom_scientifique": "Ulmus minor",
           "groupe": "feuillus",
           "options": [
-            "Merisier",
-            "Bouleau verruqueux",
             "Orme champêtre",
-            "Aulne glutineux"
+            "Bouleau verruqueux",
+            "Aulne glutineux",
+            "Tilleul à petites feuilles"
           ],
           "indice": "Feuilles asymétriques à la base",
           "description": "Feuilles asymétriques à la base, écorce fissurée, souvent taillé en haie.",
@@ -128,8 +128,8 @@
           "options": [
             "Tilleul à grandes feuilles",
             "Charme",
-            "Orme champêtre",
-            "Aulne glutineux"
+            "Tilleul à petites feuilles",
+            "Alisier torminal"
           ],
           "indice": "Tronc cannelé, feuilles doubles dents",
           "description": "Tronc musclé cannelé, feuilles ovales doublement dentées.",
@@ -143,7 +143,7 @@
           "groupe": "feuillus",
           "options": [
             "Peuplier tremble",
-            "Frêne commun",
+            "Chêne pubescent",
             "Orme champêtre",
             "Aulne glutineux"
           ],
@@ -176,8 +176,8 @@
           "options": [
             "Orme champêtre",
             "Aulne glutineux",
-            "Merisier",
-            "Érable sycomore"
+            "Saule marsault",
+            "Merisier"
           ],
           "indice": "Chatons un bois de rivière",
           "description": "Arbre des berges, chatons, « cônes » ligneux persistants.",
@@ -191,13 +191,173 @@
           "groupe": "feuillus",
           "options": [
             "Frêne commun",
+            "Châtaignier",
             "Merisier",
-            "Chêne pédonculé",
-            "Châtaignier"
+            "Chêne sessile"
           ],
           "indice": "Fleurs blanches, fruits rouges",
           "description": "Grand prunus forestier, fleurs blanches en corymbes, cerises petites.",
           "explication": "Merisier : Ancêtre des cerisiers cultivés ; excellent bois."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Chêne sessile",
+          "nom_scientifique": "Quercus petraea",
+          "indice": "Chêne à glands sans long pédoncule",
+          "description": "Grand chêne au fût droit, glands sessiles ou presque.",
+          "explication": "Chêne sessile : Essence majeure des forêts françaises.",
+          "groupe": "feuillus",
+          "id": "feuillus13",
+          "options": [
+            "Chêne sessile",
+            "Tilleul à petites feuilles",
+            "Érable sycomore",
+            "Alisier torminal"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Noisetier",
+          "nom_scientifique": "Corylus avellana",
+          "indice": "Arbrisseau à chatons et noisettes",
+          "description": "Arbrisseau des haies, chatons pendants, fruits en cupule.",
+          "explication": "Noisetier : Très commun des lisières et bocages.",
+          "groupe": "feuillus",
+          "id": "feuillus14",
+          "options": [
+            "Hêtre",
+            "Érable champêtre",
+            "Noisetier",
+            "Alisier torminal"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Saule marsault",
+          "nom_scientifique": "Salix caprea",
+          "indice": "Saule à gros chatons soyeux",
+          "description": "Petit arbre / arbrisseau, chatons ovales duveteux au printemps.",
+          "explication": "Saule marsault : Pioneer des milieux ouverts et bords de chemins.",
+          "groupe": "feuillus",
+          "id": "feuillus15",
+          "options": [
+            "Hêtre",
+            "Saule marsault",
+            "Châtaignier",
+            "Tilleul à grandes feuilles"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chêne pubescent",
+          "nom_scientifique": "Quercus pubescens",
+          "indice": "Chêne du sud, feuilles duvetées",
+          "description": "Chêne méditerranéen-atlantique, jeunes pousses et dessous de feuilles poilus.",
+          "explication": "Chêne pubescent : Typique des collines calcaires du sud et de l’ouest.",
+          "groupe": "feuillus",
+          "id": "feuillus16",
+          "options": [
+            "Merisier",
+            "Chêne pubescent",
+            "Érable plane",
+            "Saule blanc"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Érable plane",
+          "nom_scientifique": "Acer platanoides",
+          "indice": "Érable à lobes pointus",
+          "description": "Érable à feuilles palmées pointues, fleurs jaune-vert précoces.",
+          "explication": "Érable plane : Fréquent en ville et forêts mixtes.",
+          "groupe": "feuillus",
+          "id": "feuillus17",
+          "options": [
+            "Tilleul à petites feuilles",
+            "Érable champêtre",
+            "Chêne sessile",
+            "Érable plane"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Érable champêtre",
+          "nom_scientifique": "Acer campestre",
+          "indice": "Petit érable des haies",
+          "description": "Petit érable à feuilles lobées arrondies, samares horizontales.",
+          "explication": "Érable champêtre : Essence des haies bocagères.",
+          "groupe": "feuillus",
+          "id": "feuillus18",
+          "options": [
+            "Chêne sessile",
+            "Saule marsault",
+            "Érable champêtre",
+            "Frêne commun"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Saule blanc",
+          "nom_scientifique": "Salix alba",
+          "indice": "Grand saule des rivières",
+          "description": "Grand saule au feuillage argenté, fréquent au bord des cours d’eau.",
+          "explication": "Saule blanc : Typique des ripisylves.",
+          "groupe": "feuillus",
+          "id": "feuillus19",
+          "options": [
+            "Tilleul à petites feuilles",
+            "Tilleul à grandes feuilles",
+            "Érable sycomore",
+            "Saule blanc"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Alisier torminal",
+          "nom_scientifique": "Sorbus torminalis",
+          "indice": "Feuilles lobées, fruits brunâtres",
+          "description": "Sorbus à feuilles découpées, fruits bruns à maturité.",
+          "explication": "Alisier torminal : Essence précieuse des forêts calcaires.",
+          "groupe": "feuillus",
+          "id": "feuillus20",
+          "options": [
+            "Charme",
+            "Tilleul à grandes feuilles",
+            "Alisier torminal",
+            "Tilleul à petites feuilles"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cormier",
+          "nom_scientifique": "Sorbus domestica",
+          "indice": "Sorbier à fruits piriformes",
+          "description": "Arbre proche des sorbiers, fruits en forme de petite poire.",
+          "explication": "Cormier : Devenu rare hors vergers et quelques forêts.",
+          "groupe": "feuillus",
+          "id": "feuillus21",
+          "options": [
+            "Frêne commun",
+            "Châtaignier",
+            "Cormier",
+            "Alisier torminal"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Tilleul à petites feuilles",
+          "nom_scientifique": "Tilia cordata",
+          "indice": "Tilleul à feuilles cordiformes petites",
+          "description": "Tilleul aux feuilles plus petites que le tilleul à grandes feuilles.",
+          "explication": "Tilleul à petites feuilles : Essence forestière et d’alignement.",
+          "groupe": "feuillus",
+          "id": "feuillus22",
+          "options": [
+            "Tilleul à petites feuilles",
+            "Cormier",
+            "Érable champêtre",
+            "Chêne pédonculé"
+          ]
         }
       ]
     },
@@ -212,10 +372,10 @@
           "nom_scientifique": "Pinus sylvestris",
           "groupe": "coniferes",
           "options": [
+            "Genévrier cade",
+            "Cèdre de l'Atlas",
             "Pin sylvestre",
-            "Genévrier commun",
-            "Épicéa commun",
-            "Cèdre de l'Atlas"
+            "Genévrier commun"
           ],
           "indice": "Écorce orangée en cime",
           "description": "Pin à écorce saumonée en haut du tronc, aiguilles par deux.",
@@ -228,10 +388,10 @@
           "nom_scientifique": "Abies alba",
           "groupe": "coniferes",
           "options": [
-            "If commun",
-            "Sapin pectiné",
             "Mélèze d'Europe",
-            "Pin sylvestre"
+            "Sapin pectiné",
+            "Pin sylvestre",
+            "Genévrier cade"
           ],
           "indice": "Aiguilles plates en peigne",
           "description": "Aiguilles plates disposées en peigne, cônes dressés qui se désarticulent.",
@@ -244,10 +404,10 @@
           "nom_scientifique": "Picea abies",
           "groupe": "coniferes",
           "options": [
-            "Cèdre de l'Atlas",
             "Épicéa commun",
+            "Genévrier cade",
             "Douglas",
-            "Genévrier commun"
+            "Pin d'Alep"
           ],
           "indice": "Cônes pendants, aiguilles pointues",
           "description": "Conifère à aiguilles pointues sur coussinets, cônes pendants.",
@@ -260,8 +420,8 @@
           "nom_scientifique": "Larix decidua",
           "groupe": "coniferes",
           "options": [
-            "Épicéa commun",
-            "Pin sylvestre",
+            "Pin d'Alep",
+            "Sapin de Vancouver",
             "Mélèze d'Europe",
             "Cèdre de l'Atlas"
           ],
@@ -276,9 +436,9 @@
           "nom_scientifique": "Taxus baccata",
           "groupe": "coniferes",
           "options": [
-            "Mélèze d'Europe",
+            "Genévrier cade",
             "Pin sylvestre",
-            "Genévrier commun",
+            "Pin noir d'Autriche",
             "If commun"
           ],
           "indice": "Arilles rouges, bois toxique",
@@ -293,9 +453,9 @@
           "groupe": "coniferes",
           "options": [
             "Sapin pectiné",
-            "Mélèze d'Europe",
-            "Pin à crochets",
-            "Genévrier commun"
+            "Genévrier commun",
+            "Pin noir d'Autriche",
+            "Mélèze d'Europe"
           ],
           "indice": "Aiguilles piquantes, baies bleues",
           "description": "Arbuste à aiguilles acérées par trois, cônes charnus bleuâtres.",
@@ -309,7 +469,7 @@
           "groupe": "coniferes",
           "options": [
             "Douglas",
-            "Épicéa commun",
+            "Sapin de Vancouver",
             "Mélèze d'Europe",
             "Pin à crochets"
           ],
@@ -356,14 +516,94 @@
           "nom_scientifique": "Cupressus sempervirens",
           "groupe": "coniferes",
           "options": [
-            "Cyprès sempervirens",
+            "Pin d'Alep",
             "Pin à crochets",
-            "Cèdre de l'Atlas",
-            "Genévrier commun"
+            "Cyprès sempervirens",
+            "Cèdre de l'Atlas"
           ],
           "indice": "Colonne sombre méditerranéenne",
           "description": "Conifère colonnaire vert sombre, symbole des cimetières et jardins du sud.",
           "explication": "Cyprès sempervirens : Silhouette en fuseau très reconnaissable."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Pin maritime",
+          "nom_scientifique": "Pinus pinaster",
+          "indice": "Grand pin des Landes",
+          "description": "Pin à long tronc, écorce profonde, aiguilles longues par deux.",
+          "explication": "Pin maritime : Essence emblématique des landes atlantiques.",
+          "groupe": "coniferes",
+          "id": "coniferes11",
+          "options": [
+            "Pin maritime",
+            "Sapin pectiné",
+            "Épicéa commun",
+            "Pin noir d'Autriche"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Pin d'Alep",
+          "nom_scientifique": "Pinus halepensis",
+          "indice": "Pin clair du Midi",
+          "description": "Pin méditerranéen au tronc souvent tortueux, aiguilles fines claires.",
+          "explication": "Pin d'Alep : Très présent sur le littoral méditerranéen.",
+          "groupe": "coniferes",
+          "id": "coniferes12",
+          "options": [
+            "Cyprès sempervirens",
+            "Pin d'Alep",
+            "Épicéa commun",
+            "Mélèze d'Europe"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Pin noir d'Autriche",
+          "nom_scientifique": "Pinus nigra",
+          "indice": "Pin sombre à écorce grisâtre",
+          "description": "Pin à aiguilles longues sombres, écorce en plaques gris-brun.",
+          "explication": "Pin noir : Souvent planté, aussi en reboisement.",
+          "groupe": "coniferes",
+          "id": "coniferes13",
+          "options": [
+            "Mélèze d'Europe",
+            "Pin maritime",
+            "Pin noir d'Autriche",
+            "Cèdre de l'Atlas"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Sapin de Vancouver",
+          "nom_scientifique": "Abies grandis",
+          "indice": "Sapin introduit à aiguilles plates odorantes",
+          "description": "Grand sapin d’ornement / plantation, aiguilles plates très odorantes.",
+          "explication": "Sapin de Vancouver : Introduit, plantations et parcs.",
+          "groupe": "coniferes",
+          "id": "coniferes14",
+          "options": [
+            "Genévrier commun",
+            "Sapin de Vancouver",
+            "Sapin pectiné",
+            "Cyprès sempervirens"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Genévrier cade",
+          "nom_scientifique": "Juniperus oxycedrus",
+          "indice": "Genévrier méditerranéen à baies rougeâtres",
+          "description": "Genévrier épineux du Midi, cônes charnus rouge-brun.",
+          "explication": "Genévrier cade : Garrigues et maquis.",
+          "groupe": "coniferes",
+          "id": "coniferes15",
+          "options": [
+            "Pin sylvestre",
+            "Pin noir d'Autriche",
+            "Pin maritime",
+            "Genévrier cade"
+          ]
         }
       ]
     },
@@ -410,10 +650,10 @@
           "nom_scientifique": "Quercus suber",
           "groupe": "mediterraneens",
           "options": [
-            "Chêne vert",
+            "Filaire à feuilles étroites",
+            "Arbousier",
             "Olivier",
-            "Chêne-liège",
-            "Arbousier"
+            "Chêne-liège"
           ],
           "indice": "Écorce de liège épaisse",
           "description": "Chêne à écorce liégeuse très épaisse, feuilles persistantes.",
@@ -428,7 +668,7 @@
           "options": [
             "Laurier-sauce",
             "Chêne vert",
-            "Figuier",
+            "Pistachier lentisque",
             "Pin parasol"
           ],
           "indice": "Cime en ombrelle, pignons",
@@ -442,10 +682,10 @@
           "nom_scientifique": "Arbutus unedo",
           "groupe": "mediterraneens",
           "options": [
+            "Arbousier",
+            "Chêne kermès",
             "Micocoulier de Provence",
-            "Chêne-liège",
-            "Pin parasol",
-            "Arbousier"
+            "Chêne-liège"
           ],
           "indice": "Fruits granuleux orange-rouge",
           "description": "Arbre ou arbuste, feuilles persistantes, fruits granulés orange à rouge.",
@@ -458,10 +698,10 @@
           "nom_scientifique": "Celtis australis",
           "groupe": "mediterraneens",
           "options": [
+            "Chêne kermès",
+            "Pistachier lentisque",
             "Micocoulier de Provence",
-            "Pin parasol",
-            "Figuier",
-            "Chêne-liège"
+            "Pin parasol"
           ],
           "indice": "Fruits noirs, feuilles asymétriques",
           "description": "Arbre des places du sud, feuilles asymétriques, petites drupes noires.",
@@ -475,9 +715,9 @@
           "groupe": "mediterraneens",
           "options": [
             "Chêne vert",
-            "Pin parasol",
             "Micocoulier de Provence",
-            "Figuier"
+            "Figuier",
+            "Filaire à feuilles étroites"
           ],
           "indice": "Feuilles palmées, sycones",
           "description": "Feuilles larges lobées, latex, fruits charnus (sycones).",
@@ -490,14 +730,62 @@
           "nom_scientifique": "Laurus nobilis",
           "groupe": "mediterraneens",
           "options": [
-            "Micocoulier de Provence",
             "Pin parasol",
-            "Laurier-sauce",
-            "Arbousier"
+            "Micocoulier de Provence",
+            "Chêne kermès",
+            "Laurier-sauce"
           ],
           "indice": "Feuilles aromatiques de cuisine",
           "description": "Arbuste persistant aromatique, feuilles utilisées en cuisine.",
           "explication": "Laurier-sauce : Haies et jardins du sud ; ne pas confondre avec le laurier-rose."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chêne kermès",
+          "nom_scientifique": "Quercus coccifera",
+          "indice": "Petit chêne épineux de garrigue",
+          "description": "Arbrisseau à feuilles persistantes dentées-épineuses.",
+          "explication": "Chêne kermès : Garrigues méditerranéennes.",
+          "groupe": "mediterraneens",
+          "id": "mediterraneens9",
+          "options": [
+            "Chêne kermès",
+            "Figuier",
+            "Laurier-sauce",
+            "Arbousier"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Filaire à feuilles étroites",
+          "nom_scientifique": "Phillyrea angustifolia",
+          "indice": "Arbuste persistant des maquis",
+          "description": "Arbuste à feuilles étroites opposées, proche des oliviers sauvages.",
+          "explication": "Filaire : Maquis et garrigues.",
+          "groupe": "mediterraneens",
+          "id": "mediterraneens10",
+          "options": [
+            "Figuier",
+            "Micocoulier de Provence",
+            "Laurier-sauce",
+            "Filaire à feuilles étroites"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Pistachier lentisque",
+          "nom_scientifique": "Pistacia lentiscus",
+          "indice": "Arbuste résineux du Midi",
+          "description": "Arbuste persistant, feuilles paripennées, odeur résineuse.",
+          "explication": "Lentisque : Typique du maquis méditerranéen.",
+          "groupe": "mediterraneens",
+          "id": "mediterraneens11",
+          "options": [
+            "Arbousier",
+            "Figuier",
+            "Chêne-liège",
+            "Pistachier lentisque"
+          ]
         }
       ]
     },
@@ -512,9 +800,9 @@
           "nom_scientifique": "Malus domestica",
           "groupe": "fruitiers",
           "options": [
-            "Poirier cultivé",
+            "Cerisier cultivé",
+            "Néflier commun",
             "Amandier",
-            "Marronnier d'Inde",
             "Pommier cultivé"
           ],
           "indice": "Fleurs roses, pommes",
@@ -528,9 +816,9 @@
           "nom_scientifique": "Pyrus communis",
           "groupe": "fruitiers",
           "options": [
-            "Pommier cultivé",
+            "Cerisier cultivé",
+            "Prunier",
             "Néflier du Japon",
-            "Robinier faux-acacia",
             "Poirier cultivé"
           ],
           "indice": "Fleurs blanches, poires",
@@ -547,7 +835,7 @@
             "Robinier faux-acacia",
             "Noyer commun",
             "Pommier cultivé",
-            "Amandier"
+            "Jujubier"
           ],
           "indice": "Grandes feuilles composées, noix",
           "description": "Grand arbre, feuilles composées odorantes, fruit dans une brou.",
@@ -562,8 +850,8 @@
           "options": [
             "Amandier",
             "Poirier cultivé",
-            "Néflier du Japon",
-            "Marronnier d'Inde"
+            "Cerisier cultivé",
+            "Sorbier des oiseleurs"
           ],
           "indice": "Floraison très précoce",
           "description": "Prunus à floraison blanche très précoce, fruits à coque.",
@@ -577,9 +865,9 @@
           "groupe": "fruitiers",
           "options": [
             "Marronnier d'Inde",
-            "Pommier cultivé",
+            "Amandier",
             "Néflier du Japon",
-            "Amandier"
+            "Prunier"
           ],
           "indice": "Grandes feuilles, fruits d’hiver",
           "description": "Persistant aux grandes feuilles ridées, grappes de fruits orange.",
@@ -593,9 +881,9 @@
           "groupe": "fruitiers",
           "options": [
             "Plaqueminier",
-            "Marronnier d'Inde",
             "Noyer commun",
-            "Catalpa"
+            "Prunier",
+            "Cognassier"
           ],
           "indice": "Kakis orange en automne",
           "description": "Arbre aux fruits orange persistants après la chute des feuilles.",
@@ -608,10 +896,10 @@
           "nom_scientifique": "Aesculus hippocastanum",
           "groupe": "fruitiers",
           "options": [
+            "Plaqueminier",
             "Marronnier d'Inde",
-            "Amandier",
             "Néflier du Japon",
-            "Plaqueminier"
+            "Cerisier cultivé"
           ],
           "indice": "Candes florales, marrons",
           "description": "Grand ornement, feuilles palmées, fleurs en candélabres, marrons.",
@@ -624,10 +912,10 @@
           "nom_scientifique": "Platanus × hispanica",
           "groupe": "fruitiers",
           "options": [
-            "Catalpa",
             "Amandier",
-            "Marronnier d'Inde",
-            "Platane commun"
+            "Platane commun",
+            "Prunier",
+            "Catalpa"
           ],
           "indice": "Écorce en puzzle, boules",
           "description": "Écorce qui s’exfolie en plaques, feuilles lobées, fruits en boules.",
@@ -640,7 +928,7 @@
           "nom_scientifique": "Catalpa bignonioides",
           "groupe": "fruitiers",
           "options": [
-            "Robinier faux-acacia",
+            "Prunier",
             "Noyer commun",
             "Catalpa",
             "Marronnier d'Inde"
@@ -656,14 +944,126 @@
           "nom_scientifique": "Robinia pseudoacacia",
           "groupe": "fruitiers",
           "options": [
-            "Robinier faux-acacia",
-            "Plaqueminier",
             "Marronnier d'Inde",
-            "Pommier cultivé"
+            "Robinier faux-acacia",
+            "Néflier commun",
+            "Sorbier des oiseleurs"
           ],
           "indice": "Épines, grappes blanches",
           "description": "Feuilles composées, épines, grappes de fleurs blanches parfumées.",
           "explication": "Robinier faux-acacia : Introduit ; colonise friches, miel réputé."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Cerisier cultivé",
+          "nom_scientifique": "Prunus avium",
+          "indice": "Cerisier des vergers (douce)",
+          "description": "Arbre à fleurs blanches, fruits rouges à queue courte.",
+          "explication": "Cerisier : Forme cultivée proche du merisier.",
+          "groupe": "fruitiers",
+          "id": "fruitiers11",
+          "options": [
+            "Catalpa",
+            "Cerisier cultivé",
+            "Marronnier d'Inde",
+            "Platane commun"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Prunier",
+          "nom_scientifique": "Prunus domestica",
+          "indice": "Fruits à noyau allongés",
+          "description": "Arbre fruitier à prunes, écorce souvent rugueuse.",
+          "explication": "Prunier : Vergers et jardins.",
+          "groupe": "fruitiers",
+          "id": "fruitiers12",
+          "options": [
+            "Néflier commun",
+            "Jujubier",
+            "Robinier faux-acacia",
+            "Prunier"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cognassier",
+          "nom_scientifique": "Cydonia oblonga",
+          "indice": "Fruits duveteux parfumés",
+          "description": "Petit arbre à grandes fleurs, fruits jaunes duveteux.",
+          "explication": "Cognassier : Fruitiers anciens, gelées et pâtisseries.",
+          "groupe": "fruitiers",
+          "id": "fruitiers13",
+          "options": [
+            "Néflier du Japon",
+            "Cognassier",
+            "Noyer commun",
+            "Amandier"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Néflier commun",
+          "nom_scientifique": "Mespilus germanica",
+          "indice": "Nèfles à sépales persistants",
+          "description": "Arbre à nèfles brunâtres couronnées de sépales.",
+          "explication": "Néflier commun : Ancien fruitier, distinct du néflier du Japon.",
+          "groupe": "fruitiers",
+          "id": "fruitiers14",
+          "options": [
+            "Sorbier des oiseleurs",
+            "Néflier commun",
+            "Cognassier",
+            "Amandier"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Sorbier des oiseleurs",
+          "nom_scientifique": "Sorbus aucuparia",
+          "indice": "Grappes de baies orange",
+          "description": "Arbre à feuilles composées, grappes de baies orangées.",
+          "explication": "Sorbier des oiseleurs : Montagne et lisières ; fruits pour oiseaux.",
+          "groupe": "fruitiers",
+          "id": "fruitiers15",
+          "options": [
+            "Amandier",
+            "Sorbier des oiseleurs",
+            "Poirier cultivé",
+            "Cerisier cultivé"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cormier",
+          "nom_scientifique": "Sorbus domestica",
+          "indice": "Fruitier rare à cormes",
+          "description": "Grand sorbier à fruits piriformes astringents crus.",
+          "explication": "Cormier : Ancien fruitier forestier devenu rare.",
+          "groupe": "fruitiers",
+          "id": "fruitiers16",
+          "options": [
+            "Catalpa",
+            "Cerisier cultivé",
+            "Cormier",
+            "Poirier cultivé"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Jujubier",
+          "nom_scientifique": "Ziziphus jujuba",
+          "indice": "Petit fruitier méditerranéen",
+          "description": "Arbuste épineux à fruits ovoïdes brun-rouge.",
+          "explication": "Jujubier : Cultivé dans le Midi.",
+          "groupe": "fruitiers",
+          "id": "fruitiers17",
+          "options": [
+            "Amandier",
+            "Poirier cultivé",
+            "Sorbier des oiseleurs",
+            "Jujubier"
+          ]
         }
       ]
     }

@@ -82,10 +82,10 @@
           "nom_scientifique": "Platanus × hispanica",
           "groupe": "lobées",
           "options": [
-            "Chêne pédonculé",
-            "Érable plane",
             "Vigne",
-            "Platane"
+            "Chêne pubescent",
+            "Platane",
+            "Érable plane"
           ],
           "indice": "Grands lobes pointus",
           "description": "Grande feuille palmée à lobes aigus, nervures marquées.",
@@ -99,10 +99,10 @@
           "nom_scientifique": "Ficus carica",
           "groupe": "lobées",
           "options": [
-            "Lierre",
             "Figuier",
             "Passiflore",
-            "Chêne sessile"
+            "Chêne pubescent",
+            "Lierre"
           ],
           "indice": "3 à 5 lobes profonds",
           "description": "Feuille épaisse, lobes profonds, face rugueuse.",
@@ -119,7 +119,7 @@
             "Chêne rouge",
             "Érable sycomore",
             "Tulipier de Virginie",
-            "Passiflore"
+            "Chêne vert"
           ],
           "indice": "Lobes pointus en pointe",
           "description": "Feuille lobée à lobes aigus (contrairement au chêne pédonculé).",
@@ -152,7 +152,7 @@
           "options": [
             "Lierre",
             "Passiflore",
-            "Érable champêtre",
+            "Chêne vert",
             "Chêne pédonculé"
           ],
           "indice": "3 à 5 lobes (jeune)",
@@ -219,7 +219,7 @@
           "groupe": "lobées",
           "options": [
             "Mûrier blanc",
-            "Lierre",
+            "Chêne vert",
             "Chêne rouge",
             "Chêne pédonculé"
           ],
@@ -244,6 +244,40 @@
           "description": "Feuille profondément découpée en longs lobes.",
           "explication": "Passiflore : Feuille digitées des jardins.",
           "imageQuery": "passionflower leaf"
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Chêne vert",
+          "nom_scientifique": "Quercus ilex",
+          "indice": "Feuille persistante dentée",
+          "description": "Feuille coriace persistante, bord parfois denté, dessous clair.",
+          "explication": "Chêne vert : Feuille du Midi, sempervirente.",
+          "imageQuery": "holm oak leaf",
+          "groupe": "lobées",
+          "id": "lobées15",
+          "options": [
+            "Chêne vert",
+            "Mûrier blanc",
+            "Érable sycomore",
+            "Lierre"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chêne pubescent",
+          "nom_scientifique": "Quercus pubescens",
+          "indice": "Feuille lobée duvetée dessous",
+          "description": "Feuille lobée, jeune limbe et dessous poilus.",
+          "explication": "Chêne pubescent : Collines calcaires.",
+          "imageQuery": "downy oak leaf",
+          "groupe": "lobées",
+          "id": "lobées16",
+          "options": [
+            "Chêne pubescent",
+            "Érable sycomore",
+            "Mûrier blanc",
+            "Vigne"
+          ]
         }
       ]
     },
@@ -275,10 +309,10 @@
           "nom_scientifique": "Betula pendula",
           "groupe": "simples",
           "options": [
-            "Merisier",
-            "Bouleau verruqueux",
             "Troène",
-            "Cornouiller sanguin"
+            "Bouleau verruqueux",
+            "Cornouiller sanguin",
+            "Frêne"
           ],
           "indice": "Petite, triangulaire-dentée",
           "description": "Petite feuille dentée, base souvent en coin.",
@@ -292,10 +326,10 @@
           "nom_scientifique": "Castanea sativa",
           "groupe": "simples",
           "options": [
+            "Frêne",
             "Châtaignier",
             "Cornouiller sanguin",
-            "Troène",
-            "Orme champêtre"
+            "Troène"
           ],
           "indice": "Longue, dents en scie",
           "description": "Grande feuille allongée, bord fortement denté.",
@@ -311,8 +345,8 @@
           "options": [
             "Merisier",
             "Hêtre",
-            "Peuplier tremble",
-            "Cornouiller sanguin"
+            "Cornouiller sanguin",
+            "Micocoulier"
           ],
           "indice": "Ovale, dents fines",
           "description": "Feuille ovale dentée, face un peu mate.",
@@ -377,9 +411,9 @@
           "nom_scientifique": "Salix alba",
           "groupe": "simples",
           "options": [
-            "Hêtre",
             "Châtaignier",
             "Saule blanc",
+            "Micocoulier",
             "Noisetier"
           ],
           "indice": "Très allongée, étroite",
@@ -413,8 +447,8 @@
           "options": [
             "Aulne glutineux",
             "Charme",
-            "Châtaignier",
-            "Fusain d’Europe"
+            "Frêne",
+            "Châtaignier"
           ],
           "indice": "Nervures très marquées, double dent",
           "description": "Feuille ovale plissée, double denture régulière.",
@@ -446,9 +480,9 @@
           "groupe": "simples",
           "options": [
             "Cornouiller sanguin",
-            "Châtaignier",
-            "Peuplier tremble",
-            "Noisetier"
+            "Micocoulier",
+            "Noisetier",
+            "Châtaignier"
           ],
           "indice": "Ovale, nervures arquées",
           "description": "Feuille ovale à nervures qui se rejoignent vers la pointe.",
@@ -464,8 +498,8 @@
           "options": [
             "Hêtre",
             "Fusain d’Europe",
-            "Noisetier",
-            "Troène"
+            "Frêne",
+            "Micocoulier"
           ],
           "indice": "Ovale fine, bords fins",
           "description": "Petite feuille ovale-lancéolée, bord finement denté.",
@@ -481,13 +515,47 @@
           "options": [
             "Troène",
             "Cornouiller sanguin",
-            "Merisier",
-            "Hêtre"
+            "Frêne",
+            "Merisier"
           ],
           "indice": "Petite, semi-persistante",
           "description": "Petite feuille ovale lisse, souvent brillante.",
           "explication": "Troène : Petite feuille des haies taillées.",
           "imageQuery": "privet leaf"
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Frêne",
+          "nom_scientifique": "Fraxinus excelsior",
+          "indice": "En réalité composée — limbe de foliole",
+          "description": "Foliole lancéolée dentée (feuille globalement composée).",
+          "explication": "Frêne : Quiz feuille : on montre souvent une foliole.",
+          "imageQuery": "ash leaflet",
+          "groupe": "simples",
+          "id": "simples15",
+          "options": [
+            "Micocoulier",
+            "Frêne",
+            "Noisetier",
+            "Aulne glutineux"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Micocoulier",
+          "nom_scientifique": "Celtis australis",
+          "indice": "Feuille asymétrique à la base",
+          "description": "Feuille lancéolée, base souvent asymétrique, trois nervures.",
+          "explication": "Micocoulier : Midi et alignements.",
+          "imageQuery": "European hackberry leaf",
+          "groupe": "simples",
+          "id": "simples16",
+          "options": [
+            "Merisier",
+            "Troène",
+            "Orme champêtre",
+            "Micocoulier"
+          ]
         }
       ]
     },
@@ -638,10 +706,10 @@
           "nom_scientifique": "Pinus nigra",
           "groupe": "composees",
           "options": [
-            "If commun",
             "Pin noir",
-            "Frêne commun",
-            "Cèdre de l’Atlas"
+            "Cèdre de l’Atlas",
+            "Févier d'Amérique",
+            "Frêne commun"
           ],
           "indice": "Aiguilles par 2, longues",
           "description": "Aiguilles géminées plus longues et plus raides que le sylvestre.",
@@ -672,9 +740,9 @@
           "nom_scientifique": "Abies alba",
           "groupe": "composees",
           "options": [
+            "Févier d'Amérique",
             "Sureau noir",
             "Pin sylvestre",
-            "Pin noir",
             "Sapin pectiné"
           ],
           "indice": "Aiguilles plates en peigne",
@@ -732,6 +800,23 @@
           "description": "Aiguilles courtes groupées en rosettes sur rameaux courts.",
           "explication": "Cèdre : Aiguilles en bouquets, conifère des parcs.",
           "imageQuery": "cedar needles"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Févier d'Amérique",
+          "nom_scientifique": "Gleditsia triacanthos",
+          "indice": "Folioles nombreuses, épines",
+          "description": "Feuille pennée / bipennée, longues épines ramifiées sur le tronc.",
+          "explication": "Févier : Ornemental, gousses longues.",
+          "imageQuery": "honey locust leaf",
+          "groupe": "composees",
+          "id": "composees15",
+          "options": [
+            "Mélèze",
+            "Douglas",
+            "Févier d'Amérique",
+            "Sureau noir"
+          ]
         }
       ]
     }
