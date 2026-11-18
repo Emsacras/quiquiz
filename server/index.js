@@ -11,6 +11,7 @@ const { createQuizRoutes, createQuizAdminRoutes } = require("./routes/quizRoutes
 const { createProfileRoutes } = require("./routes/profileRoutes");
 const { createDuelRoutes } = require("./routes/duelRoutes");
 const { createFriendRoutes } = require("./routes/friendRoutes");
+const { createDailyRoutes } = require("./routes/dailyRoutes");
 const { attachDuelHub } = require("./realtime/duelHub");
 const { steamIdOf } = require("./services/userStore");
 
@@ -18,6 +19,7 @@ fs.mkdirSync(config.runtimeDataDir, { recursive: true });
 fs.mkdirSync(path.join(config.runtimeDataDir, "quiz-pools"), { recursive: true });
 fs.mkdirSync(path.join(config.runtimeDataDir, "quiz-images"), { recursive: true });
 fs.mkdirSync(path.join(config.runtimeDataDir, "users"), { recursive: true });
+fs.mkdirSync(path.join(config.runtimeDataDir, "daily"), { recursive: true });
 
 const app = express();
 if (config.trustProxy) app.set("trust proxy", 1);
@@ -157,6 +159,7 @@ app.get("/auth/providers", (_req, res) => {
 app.use("/api", createProfileRoutes());
 app.use("/api", createFriendRoutes());
 app.use("/api", createDuelRoutes());
+app.use("/api", createDailyRoutes());
 app.use("/api", createQuizRoutes());
 app.use("/api/admin/photos", createQuizAdminRoutes());
 

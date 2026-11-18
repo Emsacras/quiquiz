@@ -32,6 +32,7 @@ import {
   finalizeStaleDailyAttempt,
   getDailyPerfectLog,
   getDailyResult,
+  getGlobalDailyResult,
   getStreak,
   listBadgesByGroup,
   onQuizFinished,
@@ -1383,6 +1384,10 @@ const state = {
   nav: { axis: "", path: [], regionId: "" },
   safeFish: loadSafeFish(),
   isDaily: false,
+  dailyStartedAt: 0,
+  dailyMeta: null,
+  dailyLeaderboard: null,
+  dailyRank: null,
   reviseQueue: [],
   reviseIndex: 0,
   reviseRevealed: false,
@@ -1691,11 +1696,81 @@ function restartQuiz() {
   startQuiz(state.difficulty);
 }
 
+function dailyElapsedMs() {
+  if (!state.dailyStartedAt) return 0;
+  return Math.max(0, Math.min(60 * 60 * 1000, Date.now() - state.dailyStartedAt));
+}
+
+async function submitDailyToServer(score, total, totalMs) {
+  try {
+    const res = await fetch("/api/daily/submit", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        date: state.dailyMeta?.date || utcDateKey(),
+        score,
+        total,
+        totalMs,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (data.leaderboard) state.dailyLeaderboard = data.leaderboard;
+    if (data.rank) state.dailyRank = data.rank;
+    else if (data.mine && data.leaderboard?.entries) {
+      const mine = data.leaderboard.entries.find((e) => e.userId === getCachedMe()?.id);
+      state.dailyRank = mine?.rank || null;
+    }
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchDailyLeaderboard(date = utcDateKey()) {
+  try {
+    const res = await fetch(`/api/daily/leaderboard?date=${encodeURIComponent(date)}`, {
+      headers: { Accept: "application/json" },
+      credentials: "same-origin",
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+async function fetchDailyToday() {
+  try {
+    const res = await fetch("/api/daily/today", {
+      headers: { Accept: "application/json" },
+      credentials: "same-origin",
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
+function formatDailyMs(ms) {
+  const n = Math.max(0, Number(ms) || 0);
+  const s = Math.floor(n / 1000);
+  const m = Math.floor(s / 60);
+  const r = s % 60;
+  if (m <= 0) return `${r}s`;
+  return `${m}m ${String(r).padStart(2, "0")}s`;
+}
+
 function backToMenu() {
   if (state.isDaily && state.category) {
     // Abandon = tentative consommée (score partiel / total du défi).
-    saveDailyResult(state.category.id, state.score, scoreTotal());
+    const total = scoreTotal();
+    const totalMs = dailyElapsedMs();
+    saveDailyResult(state.category.id, state.score, total, utcDateKey(), totalMs);
+    void submitDailyToServer(state.score, total, totalMs);
     state.isDaily = false;
+    state.dailyStartedAt = 0;
     scheduleProgressSync();
   }
   state.prepToken += 1;
@@ -1739,7 +1814,14 @@ function finishQuiz(options = {}) {
     categoryId: state.category?.id,
   });
   if (state.isDaily) {
-    unlocked.push(...saveDailyResult(state.category.id, state.score, total));
+    const totalMs = dailyElapsedMs();
+    unlocked.push(...saveDailyResult(state.category.id, state.score, total, utcDateKey(), totalMs));
+    void submitDailyToServer(state.score, total, totalMs).then(async () => {
+      if (!state.dailyLeaderboard) {
+        state.dailyLeaderboard = await fetchDailyLeaderboard(state.dailyMeta?.date || utcDateKey());
+      }
+      if (screen === "results") mount();
+    });
   }
   state.pendingBadges = unlocked.filter(Boolean);
   state.resultTotal = total;
@@ -1788,19 +1870,37 @@ function replayMissed() {
   setScreen("quiz");
 }
 
-function startDailyChallenge() {
-  const category = state.category;
-  if (!category) return;
-  const already = finalizeStaleDailyAttempt(category.id) || getDailyResult(category.id);
-  if (already) {
+async function startDailyChallenge() {
+  const already = finalizeStaleDailyAttempt() || getGlobalDailyResult();
+  if (already?.status === "done" || already?.status === "started") {
     state.notice =
       already.status === "done"
-        ? `Défi du jour déjà joué : ${already.score}/${already.total}.`
+        ? `Défi du jour déjà joué : ${already.score}/${already.total}${already.totalMs ? ` · ${formatDailyMs(already.totalMs)}` : ""}.`
         : "Défi du jour déjà tenté aujourd’hui.";
-    setScreen("levels");
+    if (screen !== "levels" && screen !== "home") setScreen("levels");
+    else mount();
     return;
   }
-  // Même série pour tous : pool complet du thème (pas les groupes cochés), ordre stable, seed date UTC + categoryId.
+
+  state.notice = "Préparation du défi du jour…";
+  mount();
+
+  const payload = await fetchDailyToday();
+  const daily = payload?.daily;
+  if (!daily?.categoryId || !daily?.seed) {
+    state.notice = "Impossible de charger le défi du jour.";
+    mount();
+    return;
+  }
+
+  const category = await ensureCategoryById(daily.categoryId);
+  if (!category) {
+    state.notice = "Catégorie du défi introuvable.";
+    mount();
+    return;
+  }
+
+  // Même série pour tous : pool complet, seed serveur (date UTC + categoryId).
   const source = [...(category.questions || [])]
     .map(normalizeQuestion)
     .sort((a, b) =>
@@ -1811,19 +1911,33 @@ function startDailyChallenge() {
     );
   if (source.length < 4) {
     state.notice = "Pas assez de questions pour le défi du jour.";
-    setScreen("levels");
+    mount();
     return;
   }
-  const seed = dailySeed(category.id);
-  const picked = seededShuffle(source, seed).slice(0, Math.min(10, source.length));
-  if (!claimDailyAttempt(category.id, picked.length)) {
+
+  const seed = daily.seed || dailySeed(category.id, daily.date);
+  const count = Math.min(Number(daily.questionCount) || 10, source.length, 10);
+  const picked = seededShuffle(source, seed).slice(0, count);
+  if (!claimDailyAttempt(category.id, picked.length, daily.date || utcDateKey())) {
     state.notice = "Défi du jour déjà tenté aujourd’hui.";
-    setScreen("levels");
+    mount();
     return;
   }
+
+  rememberCategory(category);
+  state.category = category;
+  state.selectedGroups = loadSelectedGroups(category);
+  state.mode = "qcm";
+  saveMode(category, "qcm");
+  syncImagePolicy();
+  updateFooter(category);
+
   scheduleProgressSync();
   state.isDaily = true;
-  state.mode = "qcm";
+  state.dailyMeta = daily;
+  state.dailyLeaderboard = null;
+  state.dailyRank = null;
+  state.dailyStartedAt = Date.now();
   state.difficulty = "melange";
   state.questions = picked.map((question, index) => ({
     ...question,
@@ -2974,6 +3088,15 @@ function homeSection(title, children) {
 
 function mountHomeRoot(domains) {
   const regions = listRegions(domains);
+  const dailyLocal = finalizeStaleDailyAttempt() || getGlobalDailyResult();
+  if (!state.dailyMeta || state.dailyMeta.date !== utcDateKey()) {
+    void fetchDailyToday().then((payload) => {
+      if (!payload?.daily) return;
+      state.dailyMeta = payload.daily;
+      if (screen === "home") mount();
+    });
+  }
+  const dailyLabel = state.dailyMeta?.label || "catégorie surprise";
   renderTop({ title: "Choisis un parcours" });
   view.replaceChildren(
     ...[
@@ -2982,6 +3105,42 @@ function mountHomeRoot(domains) {
         text: "Par thème (biologie, géographie…) ou par pays — puis zoome ou lance un mix.",
       }),
       state.notice ? h("p", { class: "note", text: state.notice }) : null,
+      h(
+        "section",
+        { class: dailyLocal ? "challenge-panel is-done" : "challenge-panel" },
+        h(
+          "div",
+          { class: "challenge-panel-copy" },
+          h("p", { class: "challenge-kicker", text: "Tous les joueurs · UTC" }),
+          h("h2", { class: "challenge-title", text: "Défi du jour" }),
+          h("p", {
+            class: "challenge-blurb",
+            text: dailyLocal
+              ? `Déjà joué · ${dailyLocal.score}/${dailyLocal.total}${dailyLocal.totalMs ? ` · ${formatDailyMs(dailyLocal.totalMs)}` : ""}`
+              : `Aujourd’hui : ${dailyLabel}. Même série pour tout le monde, puis classement.`,
+          }),
+        ),
+        h("button", {
+          class: "challenge-cta",
+          type: "button",
+          text: dailyLocal ? "Voir le classement" : "Lancer le défi",
+          onClick: () => {
+            if (dailyLocal) {
+              void fetchDailyLeaderboard(utcDateKey()).then((data) => {
+                state.dailyLeaderboard = data;
+                state.isDaily = true;
+                state.score = dailyLocal.score || 0;
+                state.resultTotal = dailyLocal.total || 10;
+                state.missed = [];
+                state.outcome = null;
+                setScreen("results");
+              });
+              return;
+            }
+            void startDailyChallenge();
+          },
+        }),
+      ),
       homeSection(
         "Par thème",
         domains.map((domain) =>
@@ -3234,16 +3393,25 @@ function mountLevels() {
   const groups = category.groupes || [];
   const selectedMode = modes.find((mode) => mode.id === state.mode) || modes[0];
   const groupsBlocked = state.mode === "groupes" && state.selectedGroups.length < 2;
-  const daily = finalizeStaleDailyAttempt(category.id) || getDailyResult(category.id);
+  const daily = finalizeStaleDailyAttempt() || getGlobalDailyResult();
   const reviseN = dueCount(category.id);
+  const dailyLabel = state.dailyMeta?.label || daily?.categoryId || "catégorie du jour";
   const dailyBlurb = !daily
-    ? "10 questions mélangées · même série pour tout le monde."
-    : `Terminé · ${daily.score}/${daily.total}`;
+    ? `Aujourd’hui : ${dailyLabel} · 10 QCM identiques pour tous · classement score puis temps.`
+    : `Terminé · ${daily.score}/${daily.total}${daily.totalMs ? ` · ${formatDailyMs(daily.totalMs)}` : ""} · ${dailyLabel}`;
+  if (!state.dailyMeta || state.dailyMeta.date !== utcDateKey()) {
+    void fetchDailyToday().then((payload) => {
+      if (!payload?.daily) return;
+      const prev = state.dailyMeta?.categoryId;
+      state.dailyMeta = payload.daily;
+      if (screen === "levels" && payload.daily.categoryId !== prev) mountLevels();
+    });
+  }
   const challengePanel = h(
     "section",
     { class: daily ? "challenge-panel is-done" : "challenge-panel" },
     h("div", { class: "challenge-panel-copy" },
-      h("p", { class: "challenge-kicker", text: "Une seule tentative" }),
+      h("p", { class: "challenge-kicker", text: "Commun · une tentative" }),
       h("h2", { class: "challenge-title", text: "Défi du jour" }),
       h("p", {
         class: "challenge-blurb",
@@ -3255,7 +3423,7 @@ function mountLevels() {
       type: "button",
       text: daily ? "Déjà joué" : "Lancer le défi",
       disabled: Boolean(daily),
-      onClick: () => startDailyChallenge(),
+      onClick: () => void startDailyChallenge(),
     }),
   );
 
@@ -4987,6 +5155,63 @@ function mountResults() {
                     : `Aucune erreur. ${quizCopy().resultsPerfect}`,
       });
 
+  const dailyDone = state.isDaily || Boolean(getGlobalDailyResult());
+  const dailyMs = state.isDaily ? dailyElapsedMs() : getGlobalDailyResult()?.totalMs;
+  const lb = state.dailyLeaderboard;
+  const ranking =
+    dailyDone && lb?.entries?.length
+      ? h(
+          "section",
+          { class: "daily-ranking" },
+          h("h2", { text: "Classement du jour" }),
+          h("p", {
+            class: "meta",
+            text: lb.label
+              ? `${lb.label} · score puis temps`
+              : "Meilleurs scores, puis temps le plus bas",
+          }),
+          state.dailyRank
+            ? h("p", { class: "note", text: `Ta place : #${state.dailyRank}` })
+            : !getCachedMe()
+              ? h("p", { class: "note", text: "Connecte-toi pour apparaître au classement." })
+              : null,
+          h(
+            "ol",
+            { class: "daily-ranking-list" },
+            lb.entries.slice(0, 15).map((entry) =>
+              h(
+                "li",
+                {
+                  class:
+                    getCachedMe()?.id && entry.userId === getCachedMe().id
+                      ? "daily-ranking-row is-me"
+                      : "daily-ranking-row",
+                },
+                h("span", { class: "daily-rank", text: `#${entry.rank}` }),
+                h("span", { class: "daily-name", text: entry.displayName || "Joueur" }),
+                h("span", { class: "daily-score", text: `${entry.score}/${entry.total}` }),
+                h("span", { class: "daily-time meta", text: formatDailyMs(entry.totalMs) }),
+              ),
+            ),
+          ),
+        )
+      : dailyDone
+        ? h("p", {
+            class: "meta",
+            text: getCachedMe()
+              ? "Classement en cours de chargement…"
+              : "Connecte-toi pour publier ton score au classement.",
+          })
+        : null;
+
+  if (dailyDone && !lb) {
+    void fetchDailyLeaderboard(state.dailyMeta?.date || utcDateKey()).then((data) => {
+      if (!data) return;
+      state.dailyLeaderboard = data;
+      if (screen === "results") mount();
+    });
+  }
+
   show(
     view,
     h(
@@ -4999,14 +5224,20 @@ function mountResults() {
         h("p", { class: "score-xl", text: `${state.score}/${total}` }),
         h("p", { class: "percent", text: `${percent} %` }),
         recordLine ? h("p", { class: "record", text: recordLine }) : null,
-        state.isDaily ? h("p", { class: "record", text: "Défi du jour" }) : null,
+        dailyDone
+          ? h("p", {
+              class: "record",
+              text: `Défi du jour${dailyMs ? ` · ${formatDailyMs(dailyMs)}` : ""}`,
+            })
+          : null,
       ),
     ),
+    ranking,
     missed,
     h(
       "div",
       { class: "actions" },
-      state.missed.length
+      state.missed.length && !dailyDone
         ? h("button", {
             class: "btn",
             type: "button",
@@ -5014,12 +5245,18 @@ function mountResults() {
             onClick: replayMissed,
           })
         : null,
-      h("button", { class: "btn secondary", type: "button", text: "Recommencer", onClick: restartQuiz }),
+      !dailyDone
+        ? h("button", { class: "btn secondary", type: "button", text: "Recommencer", onClick: restartQuiz })
+        : null,
       h("button", {
         class: "btn secondary",
         type: "button",
         text: "Menu du thème",
-        onClick: backToMenu,
+        onClick: () => {
+          state.isDaily = false;
+          state.dailyStartedAt = 0;
+          backToMenu();
+        },
       }),
       h("button", {
         class: "btn secondary",
