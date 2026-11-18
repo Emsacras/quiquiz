@@ -3500,9 +3500,16 @@ function mountLevels() {
         const duelDiff = ["facile", "moyen", "difficile", "melange"].includes(state.difficulty)
           ? state.difficulty
           : "melange";
+        // Prefer catalog leaf id when known (poissons ≠ poissons-france).
+        const leafMatch = duelLeaves().find((leaf) => {
+          const fromFile = String(leaf.fichier || "")
+            .replace(/^data\//, "")
+            .replace(/\.json$/i, "");
+          return leaf.id === category.id || fromFile === category.id;
+        });
         resetDuelUi({
           phase: "idle",
-          categoryId: category.id,
+          categoryId: leafMatch?.id || category.id,
           difficulty: duelDiff,
           questionCount: 10,
           groupIds: [],
@@ -5759,13 +5766,22 @@ function paintDuel() {
     description: "Affronte un ami ou un invité en duel QCM synchronisé sur QuiQuiz.",
   });
   const leaves = duelLeaves();
+  const catId = state.category?.id || "";
+  const leafMatch = catId
+    ? leaves.find((leaf) => {
+        const fromFile = String(leaf.fichier || "")
+          .replace(/^data\//, "")
+          .replace(/\.json$/i, "");
+        return leaf.id === catId || fromFile === catId;
+      })
+    : null;
   renderDuelView({
     view,
     renderTop,
     goHome,
     openProfile,
     leaves,
-    defaultCategoryId: state.category?.id || leaves[0]?.id || "",
+    defaultCategoryId: leafMatch?.id || catId || leaves[0]?.id || "",
     backToLevels: () => {
       if (state.category) setScreen("levels");
       else goHome();

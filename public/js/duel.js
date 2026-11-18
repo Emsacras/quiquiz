@@ -657,6 +657,22 @@ export function mountDuelView(ctx) {
   return bindDuelUi(() => ctx.onNeedRemount?.());
 }
 
+/** Match quiz JSON id / catalog short id / fichier stem to a duel leaf option. */
+function resolveDuelLeafId(preferred, leaves) {
+  const id = String(preferred || "").trim();
+  if (!leaves?.length) return "";
+  if (!id) return leaves[0]?.id || "";
+  if (leaves.some((leaf) => leaf.id === id)) return id;
+  const byFile = leaves.find((leaf) => {
+    const fromFile = String(leaf.fichier || "")
+      .replace(/^data\//, "")
+      .replace(/\.json$/i, "");
+    return fromFile === id;
+  });
+  if (byFile) return byFile.id;
+  return leaves[0]?.id || "";
+}
+
 function renderCreateLobby(ctx, leaves) {
   const me = getCachedMe();
   if (!me) {
@@ -674,11 +690,9 @@ function renderCreateLobby(ctx, leaves) {
     ];
   }
 
-  const leafIds = new Set(leaves.map((leaf) => leaf.id));
   const preferredCat = duelUi.categoryId || ctx.defaultCategoryId || "";
-  const initialCat = leafIds.has(preferredCat)
-    ? preferredCat
-    : leaves[0]?.id || "";
+  // Catalog leaf id (ex. "poissons") ≠ quiz JSON id (ex. "poissons-france").
+  const initialCat = resolveDuelLeafId(preferredCat, leaves);
   duelUi.categoryId = initialCat;
 
   const catSelect = h(
