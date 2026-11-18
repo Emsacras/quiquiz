@@ -654,10 +654,17 @@ function imageSearchName(question) {
 
 function preloadQuizQuestions(questions, priorityQuestion = null) {
   const list = [...(questions || [])].filter(Boolean);
-  if (priorityQuestion) {
-    list.sort((a, b) => (a === priorityQuestion ? -1 : b === priorityQuestion ? 1 : 0));
+  // Précharge la question courante + les 3 suivantes (pas tout le quiz d’un coup).
+  const ordered = [];
+  if (priorityQuestion && list.includes(priorityQuestion)) {
+    const start = list.indexOf(priorityQuestion);
+    for (let i = start; i < list.length && ordered.length < 4; i += 1) {
+      ordered.push(list[i]);
+    }
+  } else {
+    ordered.push(...list.slice(0, 4));
   }
-  for (const question of list) {
+  for (const question of ordered) {
     const opts = imageOptionsForQuestion(question);
     if (opts.kind === "flag") {
       const url = flagUrlsForQuestion(question)[0];
@@ -3636,10 +3643,50 @@ function photoFrame() {
     h("img", {
       "data-photo": "true",
       alt: copy.alt,
-      hidden: true,
       decoding: "async",
     }),
   );
+}
+
+const IMAGE_LOAD_TIMEOUT_MS = 14000;
+const SPECIES_RESOLVE_TIMEOUT_MS = 22000;
+
+function withTimeout(promise, ms, label = "timeout") {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(label)), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error) => {
+        clearTimeout(timer);
+        reject(error);
+      },
+    );
+  });
+}
+
+/** Bind load/error with a watchdog — hanging URLs (mobile) used to spin forever. */
+function bindImageAttempt(img, { onLoad, onFail }) {
+  let settled = false;
+  const cleanup = () => {
+    img.removeEventListener("load", onLoadEvent);
+    img.removeEventListener("error", onErrorEvent);
+    clearTimeout(timer);
+  };
+  const finish = (fn) => {
+    if (settled) return;
+    settled = true;
+    cleanup();
+    fn();
+  };
+  const onLoadEvent = () => finish(() => onLoad?.());
+  const onErrorEvent = () => finish(() => onFail?.());
+  const timer = setTimeout(() => finish(() => onFail?.()), IMAGE_LOAD_TIMEOUT_MS);
+  img.addEventListener("load", onLoadEvent);
+  img.addEventListener("error", onErrorEvent);
+  return cleanup;
 }
 
 function progressBar(position, total) {
@@ -4105,7 +4152,10 @@ function mountClassicQuiz() {
     h("p", { class: "sr-only", "data-live": "true", "aria-live": "polite" }),
   );
 
-  if (showPhoto) loadPhoto(question, position);
+  if (showPhoto) {
+    preloadQuizQuestions(state.questions, question);
+    void loadPhoto(question, position);
+  }
   if (state.mode === "texte") document.querySelector("[data-answer-input]")?.focus();
 }
 
@@ -4890,11 +4940,12 @@ function fillFlagFrame(frame, question, stillHere, onReady) {
     .toLowerCase();
   img.dataset.species = name;
   let cursor = 0;
+  let cancelAttempt = null;
 
   const fail = () => {
     if (!stillHere()) return;
+    cancelAttempt?.();
     img.dataset.final = "1";
-    img.hidden = false;
     img.alt = "Image indisponible";
     img.src = PLACEHOLDER;
     if (spinner) spinner.hidden = true;
@@ -4914,48 +4965,42 @@ function fillFlagFrame(frame, question, stillHere, onReady) {
 
   const tryNext = () => {
     if (!stillHere()) return;
+    cancelAttempt?.();
     if (cursor >= urls.length) {
       fail();
       return;
     }
     const url = urls[cursor];
     cursor += 1;
-    img.hidden = true;
     img.alt = quizCopy().alt;
     img.dataset.photoTitle = iso ? `Flag:${iso}` : `Flag:${name}`;
     img.dataset.sourceUrl = url;
     img.dataset.final = "";
-
-    const onError = () => {
-      img.removeEventListener("error", onError);
-      img.removeEventListener("load", onLoad);
-      tryNext();
-    };
-    const onLoad = () => {
-      img.removeEventListener("error", onError);
-      img.removeEventListener("load", onLoad);
-      if (!stillHere()) return;
-      if (img.naturalWidth === 0) {
-        tryNext();
-        return;
-      }
-      img.hidden = false;
-      if (spinner) spinner.hidden = true;
-      frame.classList.remove("is-loading");
-      if (status) status.textContent = "";
-      const source = sourceForUrl(url);
-      const credit = document.querySelector("[data-credit]");
-      if (credit) {
-        credit.textContent =
-          source === "commons"
-            ? "Drapeau : Wikimedia Commons"
-            : quizCopy().creditCommons || "Drapeau : flagcdn.com";
-      }
-      attachPlayerMediaTools(frame, img, name, () => tryNext());
-      onReady?.({ failed: false, source });
-    };
-    img.addEventListener("error", onError);
-    img.addEventListener("load", onLoad);
+    frame.classList.add("is-loading");
+    if (spinner) spinner.hidden = false;
+    cancelAttempt = bindImageAttempt(img, {
+      onLoad: () => {
+        if (!stillHere()) return;
+        if (img.naturalWidth === 0) {
+          tryNext();
+          return;
+        }
+        if (spinner) spinner.hidden = true;
+        frame.classList.remove("is-loading");
+        if (status) status.textContent = "";
+        const source = sourceForUrl(url);
+        const credit = document.querySelector("[data-credit]");
+        if (credit) {
+          credit.textContent =
+            source === "commons"
+              ? "Drapeau : Wikimedia Commons"
+              : quizCopy().creditCommons || "Drapeau : flagcdn.com";
+        }
+        attachPlayerMediaTools(frame, img, name, () => tryNext());
+        onReady?.({ failed: false, source });
+      },
+      onFail: () => tryNext(),
+    });
     img.src = url;
   };
 
@@ -5018,7 +5063,11 @@ async function fillSpeciesFrame(frame, scientificName, stillHere, onReady, image
 
   let result = { urls: [], source: "none" };
   try {
-    result = await getSpeciesImages(scientificName, imageOptions);
+    result = await withTimeout(
+      getSpeciesImages(scientificName, imageOptions),
+      SPECIES_RESOLVE_TIMEOUT_MS,
+      "species-timeout",
+    );
   } catch {
     result = { urls: [], source: "none" };
   }
@@ -5029,10 +5078,11 @@ async function fillSpeciesFrame(frame, scientificName, stillHere, onReady, image
   if (!img) return;
   img.dataset.species = scientificName;
 
+  let cancelAttempt = null;
   const showPlaceholder = () => {
     if (!stillHere()) return;
+    cancelAttempt?.();
     img.dataset.final = "1";
-    img.hidden = false;
     img.alt = "Image indisponible";
     img.src = PLACEHOLDER;
     if (spinner) spinner.hidden = true;
@@ -5053,38 +5103,42 @@ async function fillSpeciesFrame(frame, scientificName, stillHere, onReady, image
   let cursor = 0;
   const tryNext = () => {
     if (!stillHere()) return;
+    cancelAttempt?.();
     if (cursor >= urls.length) {
       showPlaceholder();
       return;
     }
-    img.hidden = true;
-    img.alt = quizCopy().alt;
-    img.src = urls[cursor];
+    const url = urls[cursor];
     cursor += 1;
+    img.dataset.final = "";
+    img.alt = quizCopy().alt;
+    frame.classList.add("is-loading");
+    if (spinner) spinner.hidden = false;
+    cancelAttempt = bindImageAttempt(img, {
+      onLoad: () => {
+        if (!stillHere() || img.dataset.final === "1") return;
+        if (img.naturalWidth === 0) {
+          tryNext();
+          return;
+        }
+        if (spinner) spinner.hidden = true;
+        frame.classList.remove("is-loading");
+        if (status) status.textContent = "";
+        const shownUrl = img.currentSrc || img.src;
+        const meta = metaForUrl(shownUrl);
+        img.dataset.photoTitle = meta.title || "";
+        img.dataset.validated = meta.validated ? "1" : "";
+        if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
+        attachPlayerMediaTools(frame, img, scientificName, () => tryNext());
+        onReady?.({ failed: false, source: result.source });
+      },
+      onFail: () => {
+        if (img.dataset.final === "1") return;
+        tryNext();
+      },
+    });
+    img.src = url;
   };
-
-  img.addEventListener("error", () => {
-    if (img.dataset.final === "1") return;
-    tryNext();
-  });
-  img.addEventListener("load", () => {
-    if (!stillHere() || img.dataset.final === "1") return;
-    if (img.naturalWidth === 0) {
-      tryNext();
-      return;
-    }
-    img.hidden = false;
-    if (spinner) spinner.hidden = true;
-    frame.classList.remove("is-loading");
-    if (status) status.textContent = "";
-    const shownUrl = img.currentSrc || img.src;
-    const meta = metaForUrl(shownUrl);
-    img.dataset.photoTitle = meta.title || "";
-    img.dataset.validated = meta.validated ? "1" : "";
-    if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
-    attachPlayerMediaTools(frame, img, scientificName, () => tryNext());
-    onReady?.({ failed: false, source: result.source });
-  });
 
   tryNext();
 }
@@ -5096,10 +5150,11 @@ function fillKnownFrame(frame, url, stillHere, scientificName = "") {
   if (!img) return;
   if (scientificName) img.dataset.species = scientificName;
 
+  let cancelAttempt = null;
   const fail = () => {
     if (!stillHere()) return;
+    cancelAttempt?.();
     img.dataset.final = "1";
-    img.hidden = false;
     img.alt = "Image indisponible";
     img.src = PLACEHOLDER;
     if (spinner) spinner.hidden = true;
@@ -5108,32 +5163,32 @@ function fillKnownFrame(frame, url, stillHere, scientificName = "") {
     frame.querySelector("[data-admin-mod]")?.remove();
   };
 
-  img.addEventListener("error", () => {
-    if (img.dataset.final === "1") return;
-    fail();
-  });
-  img.addEventListener("load", () => {
-    if (!stillHere() || img.dataset.final === "1") return;
-    if (img.naturalWidth === 0) {
-      fail();
-      return;
-    }
-    img.hidden = false;
-    if (spinner) spinner.hidden = true;
-    frame.classList.remove("is-loading");
-    if (status) status.textContent = "";
-    const shownUrl = img.currentSrc || img.src;
-    const meta = metaForUrl(shownUrl);
-    img.dataset.photoTitle = meta.title || "";
-    img.dataset.validated = meta.validated ? "1" : "";
-    if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
-    attachPlayerMediaTools(frame, img, scientificName || img.dataset.species || "", () => {
-      fail();
-      if (status) status.textContent = quizCopy().mediaSignaled;
-    });
-  });
-
   img.alt = quizCopy().compareAlt;
+  img.dataset.final = "";
+  frame.classList.add("is-loading");
+  if (spinner) spinner.hidden = false;
+  cancelAttempt = bindImageAttempt(img, {
+    onLoad: () => {
+      if (!stillHere() || img.dataset.final === "1") return;
+      if (img.naturalWidth === 0) {
+        fail();
+        return;
+      }
+      if (spinner) spinner.hidden = true;
+      frame.classList.remove("is-loading");
+      if (status) status.textContent = "";
+      const shownUrl = img.currentSrc || img.src;
+      const meta = metaForUrl(shownUrl);
+      img.dataset.photoTitle = meta.title || "";
+      img.dataset.validated = meta.validated ? "1" : "";
+      if (meta.sourceUrl) img.dataset.sourceUrl = meta.sourceUrl;
+      attachPlayerMediaTools(frame, img, scientificName || img.dataset.species || "", () => {
+        fail();
+        if (status) status.textContent = quizCopy().mediaSignaled;
+      });
+    },
+    onFail: () => fail(),
+  });
   img.src = url;
 }
 

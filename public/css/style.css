@@ -1299,6 +1299,13 @@ h1 {
   object-fit: contain;
 }
 
+/* Ne pas utiliser [hidden] pendant le chargement : sur mobile (WebKit) ça peut
+   empêcher load/error et laisser le spinner tourner indéfiniment. */
+.frame.is-loading img[data-photo]:not([data-final="1"]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .frame canvas,
 .frame img[data-chant-fallback] {
   position: absolute;
