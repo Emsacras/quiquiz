@@ -229,6 +229,12 @@ body.theme-cuicui::after {
   color: var(--text);
 }
 
+.theme-cuicui .profile-ach-group {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-sm);
+}
+
 .theme-cuicui .profile-badge {
   border-color: var(--ink);
   background: var(--surface);
