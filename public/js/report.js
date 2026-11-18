@@ -1,4 +1,4 @@
-import { markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
+import { isLocalMediaUrl, markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
 
 const STORAGE_KEY = "quiquiz:reported:v1";
 
@@ -64,7 +64,8 @@ export function confirmGoodImage({ name, title, url } = {}) {
   const source = String(url || "").trim();
   if (!cleanName || !cleanTitle || !source) return;
   if (source.includes("placeholder")) return;
-  if (source.startsWith("/api/media/")) return;
+  // Images déjà validées / hébergées localement : pas de re-confirm.
+  if (isLocalMediaUrl(source)) return;
   if (wasReportedLocally(cleanTitle)) return;
   const meta = metaForUrl(source);
   void fetch("/api/confirm-image", {
@@ -90,6 +91,10 @@ export function attachReportControl(host, options = {}) {
   const title = options.title || meta.title || titleForUrl(url);
   if (!title) return;
 
+  const validated = Boolean(
+    options.validated || meta.validated || isLocalMediaUrl(url),
+  );
+
   const bar = document.createElement("div");
   bar.className = "report-mod";
   bar.dataset.reportMod = "true";
@@ -103,7 +108,8 @@ export function attachReportControl(host, options = {}) {
     event.stopPropagation();
     if (!window.confirm("Signaler cette image comme incorrecte ou inappropriée ?")) return;
     btn.disabled = true;
-    rememberReportedLocally(title);
+    // Validée : pas de rejet local (sinon hydrateReportedTitles la retirerait du pool).
+    if (!validated) rememberReportedLocally(title);
     void postReport({
       name,
       title,
@@ -111,7 +117,8 @@ export function attachReportControl(host, options = {}) {
       categoryId: options.categoryId || "",
     });
     bar.remove();
-    options.onReported?.({ title, name, url, host });
+    // Validée : on garde la photo à l’écran (l’admin tranchera). Sinon → image suivante.
+    options.onReported?.({ title, name, url, host, validated, skip: !validated });
   });
   bar.appendChild(btn);
   host.appendChild(bar);
