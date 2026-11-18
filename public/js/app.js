@@ -72,14 +72,15 @@ import {
   unlinkProvider,
 } from "./profile.js";
 import {
+  bindDuelUi,
   challengeFriend,
   clearPendingChallenge,
   fetchDuelMeta,
   getDuelUi,
   joinDuel,
-  mountDuelView,
   mountFriendsSection,
   onDuelEvent,
+  renderDuelView,
   resetDuelUi,
   warmDuelSocket,
 } from "./duel.js";
@@ -5324,20 +5325,22 @@ function mountError() {
 }
 
 let duelUnsub = null;
+let duelBound = false;
 
-function mountDuel() {
+function duelLeaves() {
+  return flattenCatalogLeaves(state.catalog || { domains: [] }).filter(
+    (leaf) => leaf?.id && !leaf.aVenir,
+  );
+}
+
+function paintDuel() {
+  if (screen !== "duel") return;
   setPageSeo({
     title: "Duel live — QuiQuiz",
     description: "Affronte un ami ou un invité en duel QCM synchronisé sur QuiQuiz.",
   });
-  if (duelUnsub) {
-    duelUnsub();
-    duelUnsub = null;
-  }
-  const leaves = flattenCatalogLeaves(state.catalog || { domains: [] }).filter(
-    (leaf) => leaf?.id && !leaf.aVenir,
-  );
-  duelUnsub = mountDuelView({
+  const leaves = duelLeaves();
+  renderDuelView({
     view,
     renderTop,
     goHome,
@@ -5348,16 +5351,24 @@ function mountDuel() {
       if (state.category) setScreen("levels");
       else goHome();
     },
-    onNeedRemount: () => {
-      if (screen === "duel") mountDuel();
-    },
+    onNeedRemount: () => paintDuel(),
   });
+}
+
+function mountDuel() {
+  if (!duelBound) {
+    duelBound = true;
+    duelUnsub = bindDuelUi(() => paintDuel());
+    warmDuelSocket();
+  }
+  paintDuel();
 }
 
 function mount() {
   if (screen !== "duel" && duelUnsub) {
     duelUnsub();
     duelUnsub = null;
+    duelBound = false;
   }
   if (screen === "home") mountHome();
   else if (screen === "levels") mountLevels();

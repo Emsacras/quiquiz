@@ -55,11 +55,17 @@ function loadGroup(groupRef) {
     }
 }
 
-function allQuestions(quiz) {
+function allQuestions(quiz, groupIds = null) {
+    const allow =
+        Array.isArray(groupIds) && groupIds.length
+            ? new Set(groupIds.map((id) => String(id)))
+            : null;
     const out = [];
     for (const groupRef of quiz.groupes || []) {
         const group = loadGroup(groupRef);
         if (!group) continue;
+        const gid = String(group.id || "");
+        if (allow && !allow.has(gid)) continue;
         for (const q of group.questions || []) {
             out.push({ ...q, groupe: q.groupe || group.id });
         }
@@ -72,10 +78,45 @@ function filterDifficulty(pool, difficulty) {
     return pool.filter((q) => q.difficulte === difficulty);
 }
 
+function normalizeGroupIds(raw) {
+    if (!Array.isArray(raw)) return null;
+    const ids = [...new Set(raw.map((id) => String(id || "").trim()).filter(Boolean))];
+    return ids.length ? ids : null;
+}
+
+/**
+ * Liste les sous-catégories (groupes) d’un quiz pour le lobby duel.
+ */
+function listQuizGroups(categoryId) {
+    const file = resolveQuizFile(categoryId);
+    if (!file || !fs.existsSync(file)) return { ok: false, error: "category", groups: [] };
+    let quiz;
+    try {
+        quiz = readJson(file);
+    } catch {
+        return { ok: false, error: "category", groups: [] };
+    }
+    const groups = [];
+    for (const groupRef of quiz.groupes || []) {
+        const group = loadGroup(groupRef);
+        if (!group?.id) continue;
+        groups.push({
+            id: String(group.id),
+            label: String(group.label || group.id),
+            count: Array.isArray(group.questions) ? group.questions.length : 0
+        });
+    }
+    return {
+        ok: true,
+        label: quiz.categorie || categoryId,
+        groups
+    };
+}
+
 /**
  * @returns {{ ok: true, pack, label } | { ok: false, error: string }}
  */
-function buildDuelPack({ categoryId, difficulty = "melange", questionCount = 10, seed }) {
+function buildDuelPack({ categoryId, difficulty = "melange", questionCount = 10, seed, groupIds }) {
     const file = resolveQuizFile(categoryId);
     if (!file || !fs.existsSync(file)) return { ok: false, error: "category" };
     let quiz;
@@ -84,10 +125,13 @@ function buildDuelPack({ categoryId, difficulty = "melange", questionCount = 10,
     } catch {
         return { ok: false, error: "category" };
     }
-    const pool = filterDifficulty(allQuestions(quiz), difficulty);
+    const groupsFilter = normalizeGroupIds(groupIds);
+    const pool = filterDifficulty(allQuestions(quiz, groupsFilter), difficulty);
     if (!pool.length) return { ok: false, error: "empty" };
 
-    const useSeed = String(seed || `${Date.now()}:${categoryId}:${difficulty}`);
+    const useSeed = String(
+        seed || `${Date.now()}:${categoryId}:${difficulty}:${(groupsFilter || []).join(",")}`
+    );
     const shuffled = seededShuffle(pool, useSeed);
     const n = Math.min(
         Math.max(3, Math.min(LEVEL_CAP, Number(questionCount) || 10)),
@@ -143,4 +187,10 @@ function publicQuestion(q) {
     };
 }
 
-module.exports = { buildDuelPack, publicQuestion, resolveQuizFile };
+module.exports = {
+    buildDuelPack,
+    publicQuestion,
+    resolveQuizFile,
+    listQuizGroups,
+    normalizeGroupIds
+};

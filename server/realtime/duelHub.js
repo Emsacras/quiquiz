@@ -241,10 +241,14 @@ function maybeReveal(room) {
 function createRoom({ userId, config }) {
     const user = getUser(userId);
     if (!user) return { ok: false, error: "auth" };
+    const groupIds = Array.isArray(config.groupIds)
+        ? [...new Set(config.groupIds.map((id) => String(id || "").trim()).filter(Boolean))]
+        : [];
     const built = buildDuelPack({
         categoryId: config.categoryId,
         difficulty: config.difficulty || "melange",
-        questionCount: config.questionCount || 10
+        questionCount: config.questionCount || 10,
+        groupIds: groupIds.length ? groupIds : null
     });
     if (!built.ok) return { ok: false, error: built.error || "pack" };
 
@@ -258,7 +262,8 @@ function createRoom({ userId, config }) {
         config: {
             categoryId: String(config.categoryId || ""),
             difficulty: String(config.difficulty || "melange"),
-            questionCount: built.pack.length
+            questionCount: built.pack.length,
+            groupIds
         },
         seed: built.seed,
         label: built.label,
@@ -297,7 +302,8 @@ function getRoomMeta(code) {
         config: room.config,
         hostName: room.host?.displayName || "Hôte",
         hasGuest: Boolean(room.guest),
-        questionCount: room.pack?.length || 0
+        questionCount: room.pack?.length || 0,
+        groupIds: Array.isArray(room.config?.groupIds) ? room.config.groupIds : []
     };
 }
 
@@ -359,11 +365,18 @@ function handleCreate(ws, meta, payload) {
         config: {
             categoryId: payload?.categoryId,
             difficulty: payload?.difficulty || "melange",
-            questionCount: payload?.questionCount || 10
+            questionCount: payload?.questionCount || 10,
+            groupIds: payload?.groupIds
         }
     });
     if (!result.ok) {
-        send(ws, "duel:error", { error: result.error || "create", message: "Impossible de créer le duel." });
+        send(ws, "duel:error", {
+            error: result.error || "create",
+            message:
+                result.error === "empty"
+                    ? "Aucune question pour ces sous-catégories / difficulté."
+                    : "Impossible de créer le duel."
+        });
         return;
     }
     const room = result.room;
@@ -517,28 +530,52 @@ function handleFriendChallenge(ws, meta, payload) {
         send(ws, "duel:error", { error: "friends", message: "Vous n’êtes pas amis." });
         return;
     }
-    const result = createRoom({
-        userId: meta.userId,
-        config: {
-            categoryId: payload?.categoryId,
-            difficulty: payload?.difficulty || "melange",
-            questionCount: payload?.questionCount || 10
+
+    const host = getUser(meta.userId);
+    let room = null;
+    const existingCode = String(payload?.code || "")
+        .trim()
+        .toUpperCase();
+    if (existingCode) {
+        room = rooms.get(existingCode);
+        if (!room || room.host?.userId !== meta.userId) {
+            send(ws, "duel:error", { error: "not_found", message: "Duel introuvable." });
+            return;
         }
-    });
-    if (!result.ok) {
-        send(ws, "duel:error", { error: result.error || "create", message: "Impossible de créer le duel." });
-        return;
+        room.host.ws = ws;
+        meta.roomCode = room.code;
+        meta.seat = "host";
+        socketMeta.set(ws, meta);
+    } else {
+        const result = createRoom({
+            userId: meta.userId,
+            config: {
+                categoryId: payload?.categoryId,
+                difficulty: payload?.difficulty || "melange",
+                questionCount: payload?.questionCount || 10,
+                groupIds: payload?.groupIds
+            }
+        });
+        if (!result.ok) {
+            send(ws, "duel:error", {
+                error: result.error || "create",
+                message:
+                    result.error === "empty"
+                        ? "Aucune question pour ces sous-catégories / difficulté."
+                        : "Impossible de créer le duel."
+            });
+            return;
+        }
+        room = result.room;
+        room.host.ws = ws;
+        meta.roomCode = room.code;
+        meta.seat = "host";
+        socketMeta.set(ws, meta);
+        send(ws, "duel:created", { code: room.code, duel: roomPublic(room, room.host) });
+        broadcastState(room);
     }
-    const room = result.room;
-    room.host.ws = ws;
-    meta.roomCode = room.code;
-    meta.seat = "host";
-    socketMeta.set(ws, meta);
-    send(ws, "duel:created", { code: room.code, duel: roomPublic(room, room.host) });
-    broadcastState(room);
 
     const friendWs = onlineByUser.get(friendId);
-    const host = getUser(meta.userId);
     if (friendWs) {
         send(friendWs, "friend:challenge", {
             code: room.code,

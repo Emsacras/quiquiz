@@ -520,6 +520,33 @@ button:disabled {
   min-width: min(100%, 260px);
 }
 
+.duel-groups {
+  margin: 4px 0 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line, #c9d2c4);
+  border-radius: 12px;
+  background: var(--panel, #f3f6f0);
+}
+
+.duel-groups summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.duel-groups-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.duel-group-option {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  align-items: center;
+  font: inherit;
+}
+
 .brand, .text-btn, .btn, .card, .level, .option, .mode, .chip, .suggestion {
   border: 0;
   background: transparent;
