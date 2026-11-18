@@ -10,6 +10,26 @@ const {
     getUser
 } = require("../services/userStore");
 
+function summarizeDuelHistory(history) {
+    const list = Array.isArray(history) ? history : [];
+    let wins = 0;
+    let losses = 0;
+    let draws = 0;
+    for (const entry of list) {
+        if (entry?.result === "win") wins += 1;
+        else if (entry?.result === "loss") losses += 1;
+        else draws += 1;
+    }
+    const played = list.length;
+    return {
+        played,
+        wins,
+        losses,
+        draws,
+        winRate: played ? Math.round((wins / played) * 100) : 0
+    };
+}
+
 function createFriendRoutes() {
     const router = express.Router();
     router.use(express.json({ limit: "64kb" }));
@@ -21,7 +41,8 @@ function createFriendRoutes() {
             return;
         }
         const user = getUser(req.user.id);
-        res.json({ friends, duelHistory: user?.duelHistory || [] });
+        const duelHistory = user?.duelHistory || [];
+        res.json({ friends, duelHistory, duelStats: summarizeDuelHistory(duelHistory) });
     });
 
     router.get("/users/search", requireUser, (req, res) => {
