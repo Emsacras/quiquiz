@@ -2423,12 +2423,12 @@ function profileAchievements() {
   const streak = getStreak();
   const perfectDays = countDailyPerfectEntries();
 
-  const section = (title, list) => {
+  const section = (title, list, open = false) => {
     if (!list.length) return null;
     return h(
-      "div",
-      { class: "profile-ach-group" },
-      h("h3", { class: "profile-ach-heading", text: title }),
+      "details",
+      { class: "profile-ach-group", open },
+      h("summary", { class: "profile-ach-heading", text: `${title} (${list.filter((b) => b.unlocked).length}/${list.length})` }),
       h("div", { class: "profile-badge-grid" }, ...list.map(achievementCard)),
     );
   };
@@ -2436,14 +2436,13 @@ function profileAchievements() {
   return h(
     "section",
     { class: "profile-achievements" },
-    h("h2", { text: "Succès" }),
     h("p", {
       class: "meta",
       text: `${unlocked}/${all.length} débloqués · série ${streak} j · défis parfaits ${perfectDays}`,
     }),
     profileDailyCalendar(),
-    section("Globaux", groups.global),
-    section("Par quiz", groups.category),
+    section("Globaux", groups.global, true),
+    section("Par quiz", groups.category, false),
   );
 }
 
@@ -2629,6 +2628,172 @@ function authFlashMessage(code) {
   return "";
 }
 
+let profileTab = "profil"; // profil | duels | succes
+
+function setProfileTab(next) {
+  profileTab = next === "duels" || next === "succes" ? next : "profil";
+  mountProfile();
+}
+
+function profileTabBar(active) {
+  const tab = (id, label) =>
+    h("button", {
+      class: active === id ? "profile-tab is-selected" : "profile-tab",
+      type: "button",
+      role: "tab",
+      "aria-selected": active === id ? "true" : "false",
+      text: label,
+      onClick: () => setProfileTab(id),
+    });
+  return h(
+    "div",
+    { class: "profile-tabs", role: "tablist", "aria-label": "Sections du compte" },
+    tab("profil", "Profil"),
+    tab("duels", "Duels"),
+    tab("succes", "Succès"),
+  );
+}
+
+function profileIdentityCard(me) {
+  const nameInput = h("input", {
+    class: "profile-name-input",
+    type: "text",
+    maxlength: "40",
+    value: me.displayName || "",
+    "aria-label": "Pseudo",
+  });
+  return h(
+    "div",
+    { class: "profile-card" },
+    me.avatarUrl
+      ? h("img", { class: "profile-avatar", src: me.avatarUrl, alt: "", width: "72", height: "72" })
+      : h("div", {
+          class: "profile-avatar is-placeholder",
+          text: (me.displayName || "?").slice(0, 1).toUpperCase(),
+        }),
+    h(
+      "div",
+      { class: "profile-card-copy" },
+      h("label", { class: "field-label", text: "Pseudo" }),
+      nameInput,
+      h("div", { class: "profile-inline-actions" },
+        h("button", {
+          class: "btn secondary",
+          type: "button",
+          text: "Enregistrer",
+          onClick: async () => {
+            const result = await saveDisplayName(nameInput.value);
+            state.notice = result.ok ? "Pseudo enregistré." : "Pseudo invalide (2–40 caractères).";
+            mountProfile();
+          },
+        }),
+      ),
+      h("p", { class: "meta profile-sync-line", text: getSyncStatus() || "Sync prête." }),
+    ),
+  );
+}
+
+function profileSettingsPanel(me, providers, googleHint) {
+  return h(
+    "details",
+    { class: "profile-settings" },
+    h("summary", { text: "Réglages du compte" }),
+    h(
+      "div",
+      { class: "profile-settings-body" },
+      h(
+        "div",
+        { class: "profile-links" },
+        h("h3", { text: "Comptes liés" }),
+        h(
+          "div",
+          { class: "profile-link-row" },
+          h("span", { text: me.steamLinked ? "Steam · lié" : "Steam · non lié" }),
+          me.steamLinked
+            ? h("button", {
+                class: "text-btn",
+                type: "button",
+                text: "Délier",
+                disabled: !me.googleLinked,
+                title: me.googleLinked ? "Délier Steam" : "Impossible : dernier compte",
+                onClick: async () => {
+                  const result = await unlinkProvider("steam");
+                  state.notice = result.ok ? "Steam délié." : "Impossible de délier.";
+                  mountProfile();
+                },
+              })
+            : providers.steam
+              ? h("button", { class: "text-btn", type: "button", text: "Lier Steam", onClick: loginSteam })
+              : null,
+        ),
+        h(
+          "div",
+          { class: "profile-link-row" },
+          h("span", { text: me.googleLinked ? "Google · lié" : "Google · non lié" }),
+          me.googleLinked
+            ? h("button", {
+                class: "text-btn",
+                type: "button",
+                text: "Délier",
+                disabled: !me.steamLinked,
+                title: me.steamLinked ? "Délier Google" : "Impossible : dernier compte",
+                onClick: async () => {
+                  const result = await unlinkProvider("google");
+                  state.notice = result.ok ? "Google délié." : "Impossible de délier.";
+                  mountProfile();
+                },
+              })
+            : providers.google
+              ? h("button", { class: "text-btn", type: "button", text: "Lier Google", onClick: loginGoogle })
+              : h("span", { class: "meta", text: googleHint || "Google inactif" }),
+        ),
+      ),
+      h(
+        "div",
+        { class: "profile-actions" },
+        h("button", {
+          class: "btn secondary",
+          type: "button",
+          text: "Synchroniser",
+          onClick: async () => {
+            await syncProgressNow();
+            mountProfile();
+          },
+        }),
+        h("button", {
+          class: "btn",
+          type: "button",
+          text: "Se déconnecter",
+          onClick: async () => {
+            await logout();
+            profileTab = "profil";
+            mountProfile();
+          },
+        }),
+      ),
+    ),
+  );
+}
+
+function duelAccountContext() {
+  return {
+    onChallengeFriend: (friend) => {
+      const leaves = flattenCatalogLeaves(state.catalog || { domains: [] });
+      const categoryId = state.category?.id || leaves[0]?.id || "oiseaux-francais";
+      resetDuelUi({ phase: "lobby", categoryId });
+      setScreen("duel");
+      challengeFriend({
+        friendId: friend.id,
+        categoryId,
+        difficulty: "melange",
+        questionCount: 10,
+      }).catch(() => {
+        state.notice = "Impossible de défier cet ami.";
+      });
+    },
+  };
+}
+
 function mountProfile() {
   setPageSeo({
     title: "Compte — QuiQuiz",
@@ -2641,7 +2806,7 @@ function mountProfile() {
   const googleHint = googleDisabledHint(providers);
 
   renderTop({
-    title: me ? "Mon profil" : "Créer un compte",
+    title: me ? "Compte" : "Créer un compte",
     onBack: () => {
       if (state.category) setScreen("levels");
       else goHome();
@@ -2650,13 +2815,17 @@ function mountProfile() {
   });
 
   const nodes = [];
+  if (state.notice) {
+    nodes.push(h("p", { class: "note", text: state.notice }));
+    state.notice = "";
+  }
   if (flash) nodes.push(h("p", { class: "note", text: flash }));
 
   if (!me) {
     nodes.push(
       h("p", {
         class: "lede",
-        text: "Crée un compte avec Steam ou Google pour synchroniser scores, succès, défi du jour et révisions.",
+        text: "Connecte-toi pour sync, duels entre amis et succès.",
       }),
       h(
         "div",
@@ -2681,140 +2850,41 @@ function mountProfile() {
               text: googleHint || "Google non configuré sur le serveur.",
             }),
       ),
-      profileAchievements(),
+      h(
+        "details",
+        { class: "profile-settings" },
+        h("summary", { text: "Aperçu des succès" }),
+        profileAchievements(),
+      ),
     );
     show(view, ...nodes.filter(Boolean));
     return;
   }
 
-  const nameInput = h("input", {
-    class: "profile-name-input",
-    type: "text",
-    maxlength: "40",
-    value: me.displayName || "",
-    "aria-label": "Pseudo",
-  });
+  if (profileTab !== "profil" && profileTab !== "duels" && profileTab !== "succes") {
+    profileTab = "profil";
+  }
 
-  nodes.push(
-    h(
-      "div",
-      { class: "profile-card" },
-      me.avatarUrl
-        ? h("img", { class: "profile-avatar", src: me.avatarUrl, alt: "", width: "88", height: "88" })
-        : h("div", { class: "profile-avatar is-placeholder", text: (me.displayName || "?").slice(0, 1).toUpperCase() }),
-      h(
-        "div",
-        { class: "profile-card-copy" },
-        h("label", { class: "field-label", text: "Pseudo" }),
-        nameInput,
-        h("button", {
-          class: "btn secondary",
-          type: "button",
-          text: "Enregistrer le pseudo",
-          onClick: async () => {
-            const result = await saveDisplayName(nameInput.value);
-            state.notice = result.ok ? "Pseudo enregistré." : "Pseudo invalide (2–40 caractères).";
-            mountProfile();
-          },
-        }),
-      ),
-    ),
-    h("p", { class: "meta", text: getSyncStatus() || "Sync prête." }),
-    profileAchievements(),
-    h(
-      "section",
-      { class: "profile-links" },
-      h("h2", { text: "Comptes liés" }),
-      h(
-        "div",
-        { class: "profile-link-row" },
-        h("span", { text: me.steamLinked ? "Steam · lié" : "Steam · non lié" }),
-        me.steamLinked
-          ? h("button", {
-              class: "text-btn",
-              type: "button",
-              text: "Délier",
-              disabled: !me.googleLinked,
-              title: me.googleLinked ? "Délier Steam" : "Impossible : dernier compte",
-              onClick: async () => {
-                const result = await unlinkProvider("steam");
-                state.notice = result.ok ? "Steam délié." : "Impossible de délier.";
-                mountProfile();
-              },
-            })
-          : providers.steam
-            ? h("button", { class: "text-btn", type: "button", text: "Lier Steam", onClick: loginSteam })
-            : null,
-      ),
-      h(
-        "div",
-        { class: "profile-link-row" },
-        h("span", { text: me.googleLinked ? "Google · lié" : "Google · non lié" }),
-        me.googleLinked
-          ? h("button", {
-              class: "text-btn",
-              type: "button",
-              text: "Délier",
-              disabled: !me.steamLinked,
-              title: me.steamLinked ? "Délier Google" : "Impossible : dernier compte",
-              onClick: async () => {
-                const result = await unlinkProvider("google");
-                state.notice = result.ok ? "Google délié." : "Impossible de délier.";
-                mountProfile();
-              },
-            })
-          : providers.google
-            ? h("button", { class: "text-btn", type: "button", text: "Lier Google", onClick: loginGoogle })
-            : h("span", { class: "meta", text: googleHint || "Google inactif" }),
-      ),
-    ),
-    h(
-      "div",
-      { class: "profile-actions" },
-      h("button", {
-        class: "btn secondary",
-        type: "button",
-        text: "Synchroniser maintenant",
-        onClick: async () => {
-          await syncProgressNow();
-          mountProfile();
-        },
+  nodes.push(profileIdentityCard(me), profileTabBar(profileTab));
+
+  if (profileTab === "profil") {
+    nodes.push(
+      h("p", {
+        class: "lede profile-tab-lede",
+        text: "Ton identité QuiQuiz. Les réglages (liaisons, sync, déconnexion) sont juste en dessous.",
       }),
-      h("button", {
-        class: "btn",
-        type: "button",
-        text: "Se déconnecter",
-        onClick: async () => {
-          await logout();
-          mountProfile();
-        },
+      profileSettingsPanel(me, providers, googleHint),
+    );
+  } else if (profileTab === "duels") {
+    nodes.push(
+      h("p", {
+        class: "lede profile-tab-lede",
+        text: "Stats, amis et historique des duels live.",
       }),
-    ),
-  );
-
-  nodes.push(
-    mountFriendsSection({
-      onChallengeFriend: (friend) => {
-        const leaves = flattenCatalogLeaves(state.catalog || { domains: [] });
-        const categoryId =
-          state.category?.id || leaves[0]?.id || "oiseaux-francais";
-        resetDuelUi({ phase: "lobby", categoryId });
-        setScreen("duel");
-        challengeFriend({
-          friendId: friend.id,
-          categoryId,
-          difficulty: "melange",
-          questionCount: 10,
-        }).catch(() => {
-          state.notice = "Impossible de défier cet ami.";
-        });
-      },
-    }),
-  );
-
-  if (state.notice) {
-    nodes.unshift(h("p", { class: "note", text: state.notice }));
-    state.notice = "";
+      mountFriendsSection(duelAccountContext()),
+    );
+  } else {
+    nodes.push(profileAchievements());
   }
 
   show(view, ...nodes.filter(Boolean));
