@@ -1,4 +1,4 @@
-const CACHE = "quiquiz-shell-v26";
+const CACHE = "quiquiz-shell-v27";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -13,6 +13,7 @@ const PRECACHE = [
   "/js/learning.js",
   "/js/progress.js",
   "/js/profile.js",
+  "/js/duel.js",
   "/js/router.js",
   "/assets/favicon.png",
   "/assets/placeholder.svg",

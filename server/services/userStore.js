@@ -54,6 +54,44 @@ function writeIndex(index) {
     writeJson(indexFile(), index);
 }
 
+function emptyFriends() {
+    return { incoming: [], outgoing: [], accepted: [] };
+}
+
+function normalizeIdList(list, max = 200) {
+    if (!Array.isArray(list)) return [];
+    return [...new Set(list.map((id) => String(id || "").trim()).filter(Boolean))].slice(0, max);
+}
+
+function normalizeFriends(raw) {
+    const base = emptyFriends();
+    if (!raw || typeof raw !== "object") return base;
+    return {
+        incoming: normalizeIdList(raw.incoming),
+        outgoing: normalizeIdList(raw.outgoing),
+        accepted: normalizeIdList(raw.accepted)
+    };
+}
+
+function normalizeDuelHistory(raw) {
+    if (!Array.isArray(raw)) return [];
+    return raw
+        .filter((item) => item && typeof item === "object")
+        .slice(0, 20)
+        .map((item) => ({
+            at: Number(item.at) || Date.now(),
+            opponentName: String(item.opponentName || "Adversaire").slice(0, 40),
+            opponentId: item.opponentId ? String(item.opponentId) : null,
+            score: Math.max(0, Number(item.score) || 0),
+            opponentScore: Math.max(0, Number(item.opponentScore) || 0),
+            totalMs: Math.max(0, Number(item.totalMs) || 0),
+            opponentTotalMs: Math.max(0, Number(item.opponentTotalMs) || 0),
+            result: ["win", "loss", "draw"].includes(item.result) ? item.result : "draw",
+            categoryId: String(item.categoryId || "").slice(0, 64),
+            label: String(item.label || "").slice(0, 80)
+        }));
+}
+
 function sanitizeUser(user) {
     if (!user || typeof user !== "object") return null;
     return {
@@ -64,7 +102,9 @@ function sanitizeUser(user) {
         googleId: user.googleId ? String(user.googleId) : null,
         createdAt: Number(user.createdAt) || Date.now(),
         updatedAt: Number(user.updatedAt) || Date.now(),
-        progress: normalizeProgress(user.progress)
+        progress: normalizeProgress(user.progress),
+        friends: normalizeFriends(user.friends),
+        duelHistory: normalizeDuelHistory(user.duelHistory)
     };
 }
 
@@ -145,9 +185,115 @@ function createUser({ displayName, avatarUrl, steamId, googleId }) {
         googleId: googleId ? String(googleId) : null,
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        progress: emptyProgress()
+        progress: emptyProgress(),
+        friends: emptyFriends(),
+        duelHistory: []
     };
     return saveUser(user);
+}
+
+function listUsers() {
+    ensureDirs();
+    const out = [];
+    for (const name of fs.readdirSync(usersDir())) {
+        if (!name.endsWith(".json") || name === "index.json") continue;
+        const user = getUser(name.replace(/\.json$/i, ""));
+        if (user) out.push(user);
+    }
+    return out;
+}
+
+function searchUsers(query, excludeId = "", limit = 12) {
+    const q = String(query || "")
+        .trim()
+        .toLowerCase();
+    if (q.length < 2) return [];
+    const exclude = String(excludeId || "");
+    return listUsers()
+        .filter((user) => user.id !== exclude && user.displayName.toLowerCase().includes(q))
+        .slice(0, Math.max(1, Math.min(30, limit)))
+        .map((user) => publicUser(user));
+}
+
+function friendLists(userId) {
+    const user = getUser(userId);
+    if (!user) return null;
+    const mapPublic = (ids) =>
+        ids.map((id) => publicUser(getUser(id))).filter(Boolean);
+    return {
+        incoming: mapPublic(user.friends.incoming),
+        outgoing: mapPublic(user.friends.outgoing),
+        accepted: mapPublic(user.friends.accepted)
+    };
+}
+
+function requestFriend(fromId, toId) {
+    const from = getUser(fromId);
+    const to = getUser(toId);
+    if (!from || !to) return { ok: false, error: "missing" };
+    if (from.id === to.id) return { ok: false, error: "self" };
+    if (from.friends.accepted.includes(to.id)) return { ok: false, error: "already" };
+    if (from.friends.outgoing.includes(to.id)) return { ok: false, error: "pending" };
+    if (from.friends.incoming.includes(to.id)) {
+        return acceptFriend(from.id, to.id);
+    }
+    from.friends.outgoing = normalizeIdList([...from.friends.outgoing, to.id]);
+    to.friends.incoming = normalizeIdList([...to.friends.incoming, from.id]);
+    saveUser(from);
+    saveUser(to);
+    return { ok: true, friends: friendLists(from.id) };
+}
+
+function acceptFriend(userId, fromId) {
+    const user = getUser(userId);
+    const other = getUser(fromId);
+    if (!user || !other) return { ok: false, error: "missing" };
+    if (!user.friends.incoming.includes(other.id)) return { ok: false, error: "pending" };
+    user.friends.incoming = user.friends.incoming.filter((id) => id !== other.id);
+    other.friends.outgoing = other.friends.outgoing.filter((id) => id !== user.id);
+    user.friends.accepted = normalizeIdList([...user.friends.accepted, other.id]);
+    other.friends.accepted = normalizeIdList([...other.friends.accepted, user.id]);
+    saveUser(user);
+    saveUser(other);
+    return { ok: true, friends: friendLists(user.id) };
+}
+
+function declineFriend(userId, fromId) {
+    const user = getUser(userId);
+    const other = getUser(fromId);
+    if (!user || !other) return { ok: false, error: "missing" };
+    user.friends.incoming = user.friends.incoming.filter((id) => id !== other.id);
+    other.friends.outgoing = other.friends.outgoing.filter((id) => id !== user.id);
+    saveUser(user);
+    saveUser(other);
+    return { ok: true, friends: friendLists(user.id) };
+}
+
+function removeFriend(userId, otherId) {
+    const user = getUser(userId);
+    const other = getUser(otherId);
+    if (!user || !other) return { ok: false, error: "missing" };
+    user.friends.accepted = user.friends.accepted.filter((id) => id !== other.id);
+    user.friends.outgoing = user.friends.outgoing.filter((id) => id !== other.id);
+    user.friends.incoming = user.friends.incoming.filter((id) => id !== other.id);
+    other.friends.accepted = other.friends.accepted.filter((id) => id !== user.id);
+    other.friends.outgoing = other.friends.outgoing.filter((id) => id !== user.id);
+    other.friends.incoming = other.friends.incoming.filter((id) => id !== user.id);
+    saveUser(user);
+    saveUser(other);
+    return { ok: true, friends: friendLists(user.id) };
+}
+
+function appendDuelHistory(userId, entry) {
+    const user = getUser(userId);
+    if (!user) return;
+    user.duelHistory = normalizeDuelHistory([entry, ...(user.duelHistory || [])]);
+    saveUser(user);
+}
+
+function areFriends(aId, bId) {
+    const a = getUser(aId);
+    return Boolean(a && a.friends.accepted.includes(String(bId || "")));
 }
 
 /**
@@ -275,5 +421,13 @@ module.exports = {
     saveProgress,
     publicUser,
     steamIdOf,
-    normalizeProgress
+    normalizeProgress,
+    searchUsers,
+    friendLists,
+    requestFriend,
+    acceptFriend,
+    declineFriend,
+    removeFriend,
+    appendDuelHistory,
+    areFriends
 };

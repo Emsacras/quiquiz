@@ -1,5 +1,5 @@
 /**
- * Hash router minimal : #/, #/quiz/:id, #/quiz/:id/levels, #/ref/:id, #/fiche/:id/:name, #/revise/:id
+ * Hash router minimal : #/, #/quiz/:id, #/quiz/:id/levels, #/ref/:id, #/fiche/:id/:name, #/revise/:id, #/duel, #/duel/:code
  */
 
 function encodeName(name) {
@@ -21,6 +21,10 @@ export function parseHash(hash = location.hash) {
   const parts = path.split("/").filter(Boolean);
   if (!parts.length) return { name: "home" };
   if (parts[0] === "profil" || parts[0] === "profile") return { name: "profil" };
+  if (parts[0] === "duel" && parts[1]) {
+    return { name: "duel", code: String(parts[1]).toUpperCase() };
+  }
+  if (parts[0] === "duel") return { name: "duel" };
   if (parts[0] === "quiz" && parts[1] && parts[2] === "levels") {
     return { name: "levels", categoryId: parts[1] };
   }
@@ -43,7 +47,9 @@ export function setHashRoute(route) {
   let next = "#/";
   if (!route || route.name === "home") next = "#/";
   else if (route.name === "profil") next = "#profil";
-  else if (route.name === "levels" || route.name === "quiz-entry") {
+  else if (route.name === "duel") {
+    next = route.code ? `#/duel/${encodeURIComponent(route.code)}` : "#/duel";
+  } else if (route.name === "levels" || route.name === "quiz-entry") {
     next = route.name === "levels" ? `#/quiz/${route.categoryId}/levels` : `#/quiz/${route.categoryId}`;
   } else if (route.name === "reference") next = `#/ref/${route.categoryId}`;
   else if (route.name === "fiche") {
