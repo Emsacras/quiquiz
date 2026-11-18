@@ -609,13 +609,36 @@ html.is-admin .admin-mod {
   background: var(--surface);
 }
 
-.theme-cuicui .friends-panel {
-  margin-top: 22px;
-  padding: 16px 18px;
-  border: 3px solid var(--ink);
+.theme-cuicui .profile-tabs {
+  gap: 8px;
+}
+
+.theme-cuicui .profile-tab {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .profile-tab.is-selected {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--ink);
+}
+
+.theme-cuicui .profile-settings,
+.theme-cuicui .friends-block {
+  border: 2px solid var(--ink);
   border-radius: var(--radius-card);
   background: var(--surface);
-  box-shadow: var(--shadow-hard);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .friends-panel {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .theme-cuicui .duel-scorebar {

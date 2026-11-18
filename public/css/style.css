@@ -172,14 +172,23 @@ button:disabled {
 }
 
 .profile-ach-group {
-  margin-top: 16px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line, #c9d2c4);
+  border-radius: 14px;
+  background: var(--panel, #f3f6f0);
 }
 
 .profile-ach-heading {
-  margin: 0 0 8px;
+  margin: 0;
   font-family: var(--font-display, inherit);
   font-size: 1rem;
   font-weight: 650;
+  cursor: pointer;
+}
+
+.profile-ach-group .profile-badge-grid {
+  margin-top: 10px;
 }
 
 .profile-badge-grid {
@@ -356,17 +365,81 @@ button:disabled {
 .daily-cal-dot.tint-letter-c { background: var(--letter-c, #f08a2e); }
 .daily-cal-dot.tint-letter-d { background: var(--letter-d, #e24b4b); }
 
+.profile-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.profile-tab {
+  appearance: none;
+  border: 1px solid var(--line, #c9d2c4);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: inherit;
+}
+
+.profile-tab.is-selected {
+  background: var(--accent, #2f6fe0);
+  border-color: var(--accent, #2f6fe0);
+  color: var(--accent-ink, #fff);
+}
+
+.profile-tab-lede {
+  margin-top: 0;
+}
+
+.profile-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-sync-line {
+  margin: 4px 0 0;
+}
+
+.profile-settings {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--line, #c9d2c4);
+  border-radius: 14px;
+  background: var(--panel, #f3f6f0);
+}
+
+.profile-settings summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profile-settings-body {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.profile-settings .profile-links h2,
+.profile-settings .profile-links h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
 .profile-card {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 16px;
+  gap: 14px;
   align-items: start;
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 }
 
 .profile-avatar {
-  width: 88px;
-  height: 88px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--line, #c9d2c4);
@@ -421,9 +494,7 @@ button:disabled {
 
 .duel-form,
 .duel-invite,
-.duel-players,
-.friends-panel,
-.friends-block {
+.duel-players {
   display: grid;
   gap: 10px;
   margin: 0 0 18px;
@@ -522,18 +593,70 @@ button:disabled {
   margin-top: 8px;
 }
 
-.friends-panel h2,
-.friends-block h3 {
+.friends-panel {
   margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.friends-panel h2,
+.friends-block h3,
+.friends-subblock h4 {
+  margin: 0 0 6px;
+}
+
+.friends-block {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line, #c9d2c4);
+  border-radius: 14px;
+  background: var(--panel, #f3f6f0);
+}
+
+.friends-subblock {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0;
+}
+
+.friends-details {
+  margin: 8px 0 0;
+}
+
+.friends-details summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.friends-search-input {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .friends-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px;
   padding: 8px 0;
   border-bottom: 1px solid var(--line, #e2e8de);
+}
+
+.friends-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.friends-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
 }
 
 .friends-avatar {
@@ -685,6 +808,31 @@ button:disabled {
 }
 
 @media (max-width: 640px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .profile-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-tab {
+    width: 100%;
+    text-align: center;
+    padding: 10px 8px;
+  }
+
+  .friends-row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .friends-row-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
   .duel-hud {
     position: sticky;
     top: 0;

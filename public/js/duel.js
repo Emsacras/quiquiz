@@ -1235,15 +1235,15 @@ function resultLabel(result) {
 }
 
 /**
- * Section Amis + stats duels pour le profil.
+ * Panneau Duels du compte (stats + amis + historique compact).
  */
 export function mountFriendsSection(ctx) {
-  const wrap = h("section", { class: "friends-panel" }, h("p", { class: "meta", text: "Chargement des amis…" }));
+  const wrap = h("section", { class: "friends-panel" }, h("p", { class: "meta", text: "Chargement…" }));
 
   (async () => {
     const data = await fetchFriends();
     if (!data?.friends) {
-      wrap.replaceChildren(h("p", { class: "note", text: "Impossible de charger les amis." }));
+      wrap.replaceChildren(h("p", { class: "note", text: "Impossible de charger les duels / amis." }));
       return;
     }
     renderFriends(wrap, data, ctx);
@@ -1255,8 +1255,12 @@ export function mountFriendsSection(ctx) {
 function renderFriends(wrap, data, ctx) {
   const { friends, duelHistory = [] } = data;
   const stats = data.duelStats || summarizeDuelHistory(duelHistory);
+  const incoming = friends.incoming || [];
+  const outgoing = friends.outgoing || [];
+  const accepted = friends.accepted || [];
+
   const searchInput = h("input", {
-    class: "profile-name-input",
+    class: "profile-name-input friends-search-input",
     type: "search",
     placeholder: "Chercher un pseudo…",
     "aria-label": "Recherche joueur",
@@ -1268,130 +1272,177 @@ function renderFriends(wrap, data, ctx) {
     if (next?.friends) renderFriends(wrap, next, ctx);
   };
 
-  searchInput.addEventListener("input", async () => {
-    const q = searchInput.value.trim();
-    if (q.length < 2) {
-      searchOut.replaceChildren();
-      return;
-    }
-    const users = await searchUsers(q);
-    searchOut.replaceChildren(
-      ...users.map((u) =>
-        h(
-          "div",
-          { class: "friends-row" },
-          h("span", { text: u.displayName }),
-          h("button", {
-            class: "text-btn",
-            type: "button",
-            text: "Ajouter",
-            onClick: async () => {
-              await requestFriend(u.id);
-              await refresh();
-            },
-          }),
-        ),
-      ),
-    );
+  let searchTimer = null;
+  searchInput.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(async () => {
+      const q = searchInput.value.trim();
+      if (q.length < 2) {
+        searchOut.replaceChildren();
+        return;
+      }
+      const users = await searchUsers(q);
+      searchOut.replaceChildren(
+        users.length
+          ? users.map((u) =>
+              h(
+                "div",
+                { class: "friends-row" },
+                h("span", { class: "friends-name", text: u.displayName }),
+                h("button", {
+                  class: "text-btn",
+                  type: "button",
+                  text: "Ajouter",
+                  onClick: async () => {
+                    await requestFriend(u.id);
+                    await refresh();
+                  },
+                }),
+              ),
+            )
+          : h("p", { class: "meta", text: "Aucun joueur trouvé." }),
+      );
+    }, 220);
   });
 
-  const listBlock = (title, items, actions) =>
+  const friendRow = (u, actions) =>
     h(
       "div",
-      { class: "friends-block" },
-      h("h3", { text: title }),
-      items.length
-        ? items.map((u) =>
-            h(
-              "div",
-              { class: "friends-row" },
-              u.avatarUrl
-                ? h("img", { class: "friends-avatar", src: u.avatarUrl, alt: "", width: "32", height: "32" })
-                : h("span", { class: "friends-avatar is-placeholder", text: (u.displayName || "?").slice(0, 1) }),
-              h("span", { text: u.displayName }),
-              ...(actions(u) || []),
-            ),
-          )
-        : h("p", { class: "meta", text: "Personne pour l’instant." }),
+      { class: "friends-row" },
+      u.avatarUrl
+        ? h("img", { class: "friends-avatar", src: u.avatarUrl, alt: "", width: "32", height: "32" })
+        : h("span", { class: "friends-avatar is-placeholder", text: (u.displayName || "?").slice(0, 1) }),
+      h("span", { class: "friends-name", text: u.displayName }),
+      h("div", { class: "friends-row-actions" }, ...(actions(u) || [])),
     );
 
+  const historyPreview = duelHistory.slice(0, 5);
+  const historyRest = duelHistory.slice(5, 20);
+
   wrap.replaceChildren(
-    h("h2", { text: "Duels" }),
     h(
       "div",
       { class: "duel-stats" },
       h("div", { class: "duel-stat" }, h("strong", { text: String(stats.played) }), h("span", { text: "Joués" })),
-      h("div", { class: "duel-stat is-win" }, h("strong", { text: String(stats.wins) }), h("span", { text: "Victoires" })),
-      h("div", { class: "duel-stat is-loss" }, h("strong", { text: String(stats.losses) }), h("span", { text: "Défaites" })),
+      h("div", { class: "duel-stat is-win" }, h("strong", { text: String(stats.wins) }), h("span", { text: "V" })),
+      h("div", { class: "duel-stat is-loss" }, h("strong", { text: String(stats.losses) }), h("span", { text: "D" })),
       h("div", { class: "duel-stat" }, h("strong", { text: String(stats.draws) }), h("span", { text: "Nuls" })),
-      h("div", { class: "duel-stat" }, h("strong", { text: `${stats.winRate}%` }), h("span", { text: "Winrate" })),
+      h("div", { class: "duel-stat" }, h("strong", { text: `${stats.winRate}%` }), h("span", { text: "WR" })),
     ),
-    duelHistory.length
-      ? h(
-          "div",
-          { class: "friends-block duel-history" },
-          h("h3", { text: "Historique" }),
-          ...duelHistory.slice(0, 20).map((entry) =>
-            h(
-              "div",
-              { class: `duel-history-row is-${entry.result || "draw"}` },
-              h("strong", { text: resultLabel(entry.result) }),
-              h(
-                "span",
-                {
-                  text: `vs ${entry.opponentName} · ${entry.score}-${entry.opponentScore} · ${formatMs(entry.totalMs)}`,
-                },
-              ),
-              h("span", {
-                class: "meta",
-                text: [entry.label, formatDuelDate(entry.at)].filter(Boolean).join(" · "),
-              }),
+    h(
+      "div",
+      { class: "friends-block" },
+      h("h3", { text: "Amis" }),
+      h("p", { class: "meta", text: "Cherche un pseudo, ajoute, puis défie." }),
+      searchInput,
+      searchOut,
+      incoming.length
+        ? h(
+            "div",
+            { class: "friends-subblock" },
+            h("h4", { text: `Demandes reçues (${incoming.length})` }),
+            ...incoming.map((u) =>
+              friendRow(u, () => [
+                h("button", {
+                  class: "text-btn",
+                  type: "button",
+                  text: "OK",
+                  onClick: async () => {
+                    await acceptFriend(u.id);
+                    await refresh();
+                  },
+                }),
+                h("button", {
+                  class: "text-btn",
+                  type: "button",
+                  text: "Non",
+                  onClick: async () => {
+                    await declineFriend(u.id);
+                    await refresh();
+                  },
+                }),
+              ]),
             ),
-          ),
-        )
-      : h("p", { class: "meta", text: "Aucun duel enregistré pour l’instant." }),
-    h("h2", { text: "Amis" }),
-    h("p", { class: "meta", text: "Ajoute des amis et défie-les en duel live." }),
-    searchInput,
-    searchOut,
-    listBlock("Demandes reçues", friends.incoming || [], (u) => [
-      h("button", {
-        class: "text-btn",
-        type: "button",
-        text: "Accepter",
-        onClick: async () => {
-          await acceptFriend(u.id);
-          await refresh();
-        },
+          )
+        : null,
+      outgoing.length
+        ? h(
+            "details",
+            { class: "friends-details" },
+            h("summary", { text: `Demandes envoyées (${outgoing.length})` }),
+            ...outgoing.map((u) => friendRow(u, () => [])),
+          )
+        : null,
+      accepted.length
+        ? accepted.map((u) =>
+            friendRow(u, () => [
+              h("button", {
+                class: "btn secondary",
+                type: "button",
+                text: "Défier",
+                onClick: () => ctx.onChallengeFriend?.(u),
+              }),
+              h("button", {
+                class: "text-btn",
+                type: "button",
+                text: "Retirer",
+                onClick: async () => {
+                  await removeFriend(u.id);
+                  await refresh();
+                },
+              }),
+            ]),
+          )
+        : h("p", { class: "meta", text: "Pas encore d’amis." }),
+    ),
+    h(
+      "details",
+      { class: "friends-details duel-history", open: duelHistory.length > 0 && duelHistory.length <= 5 },
+      h("summary", {
+        text: duelHistory.length ? `Historique (${duelHistory.length})` : "Historique",
       }),
-      h("button", {
-        class: "text-btn",
-        type: "button",
-        text: "Refuser",
-        onClick: async () => {
-          await declineFriend(u.id);
-          await refresh();
-        },
-      }),
-    ]),
-    listBlock("Demandes envoyées", friends.outgoing || [], () => []),
-    listBlock("Amis", friends.accepted || [], (u) => [
-      h("button", {
-        class: "btn secondary",
-        type: "button",
-        text: "Défier",
-        onClick: () => ctx.onChallengeFriend?.(u),
-      }),
-      h("button", {
-        class: "text-btn",
-        type: "button",
-        text: "Retirer",
-        onClick: async () => {
-          await removeFriend(u.id);
-          await refresh();
-        },
-      }),
-    ]),
+      duelHistory.length
+        ? [
+            ...historyPreview.map((entry) =>
+              h(
+                "div",
+                { class: `duel-history-row is-${entry.result || "draw"}` },
+                h("strong", { text: resultLabel(entry.result) }),
+                h("span", {
+                  text: `vs ${entry.opponentName} · ${entry.score}-${entry.opponentScore}`,
+                }),
+                h("span", {
+                  class: "meta",
+                  text: [formatMs(entry.totalMs), entry.label, formatDuelDate(entry.at)]
+                    .filter(Boolean)
+                    .join(" · "),
+                }),
+              ),
+            ),
+            historyRest.length
+              ? h(
+                  "details",
+                  { class: "friends-details" },
+                  h("summary", { text: `Plus anciennes (${historyRest.length})` }),
+                  ...historyRest.map((entry) =>
+                    h(
+                      "div",
+                      { class: `duel-history-row is-${entry.result || "draw"}` },
+                      h("strong", { text: resultLabel(entry.result) }),
+                      h("span", {
+                        text: `vs ${entry.opponentName} · ${entry.score}-${entry.opponentScore}`,
+                      }),
+                      h("span", {
+                        class: "meta",
+                        text: [entry.label, formatDuelDate(entry.at)].filter(Boolean).join(" · "),
+                      }),
+                    ),
+                  ),
+                )
+              : null,
+          ]
+        : h("p", { class: "meta", text: "Aucune partie enregistrée." }),
+    ),
   );
 }
 
