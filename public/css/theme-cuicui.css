@@ -619,12 +619,23 @@ html.is-admin .admin-mod {
 }
 
 .theme-cuicui .duel-scorebar {
-  margin: 0 0 12px;
+  margin: 0;
   padding: 12px 14px;
   border: 2px solid var(--ink);
   border-radius: 14px;
   background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
   box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .duel-hud {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+}
+
+.theme-cuicui .duel-score-q {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .theme-cuicui .duel-timer-track {
@@ -1265,6 +1276,15 @@ html.is-admin .admin-mod {
 
   .theme-cuicui .option {
     min-height: 56px;
+    align-items: flex-start;
+  }
+
+  .theme-cuicui .option-label {
+    overflow-wrap: anywhere;
+  }
+
+  .theme-cuicui .duel-primary-cta {
+    width: 100%;
   }
 
   .theme-cuicui .results-hero {

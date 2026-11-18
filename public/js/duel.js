@@ -785,7 +785,7 @@ function renderCreateLobby(ctx, leaves) {
   void loadGroups(initialCat);
 
   const createBtn = h("button", {
-    class: "btn",
+    class: "btn duel-primary-cta",
     type: "button",
     text: duelUi.busy ? "Création…" : "Créer le duel",
     disabled: duelUi.busy,
@@ -859,7 +859,7 @@ function renderJoinForm(ctx) {
           nameInput,
         ),
     h("button", {
-      class: "btn",
+      class: "btn duel-primary-cta",
       type: "button",
       text: "Rejoindre",
       onClick: async () => {
@@ -930,7 +930,7 @@ function renderLobby() {
       ),
     ),
     h("button", {
-      class: "btn",
+      class: "btn duel-primary-cta",
       type: "button",
       text: me?.ready ? "Annuler prêt" : "Je suis prêt",
       disabled: !opp,
@@ -973,22 +973,41 @@ function renderPlay() {
   timerBar.style.width = `${leftPct}%`;
 
   const nodes = [
-    h("div", { class: "progress-wrap" }, h("div", { class: "progress", "aria-hidden": "true" }, progressFill)),
     h(
       "div",
-      { class: "duel-scorebar" },
-      h("span", { text: `${me?.displayName || "Toi"} · ${me?.score ?? 0}` }),
-      h("span", { class: "meta", text: `Question ${pos}/${total}` }),
-      h("span", { text: `${opp?.displayName || "Adv."} · ${opp?.score ?? 0}` }),
-    ),
-    h(
-      "div",
-      { class: "duel-timer", "aria-live": "polite" },
-      h("div", { class: "duel-timer-track" }, timerBar),
-      h("p", { class: "duel-timer-meta" },
-        h("strong", { "data-duel-timer": "true", text: duelUi.answered || reveal ? "—" : formatCountdown(left) }),
-        h("span", { class: "meta", text: statusText }),
-        h("span", { class: "meta", text: `Cumul ${formatMs(me?.totalMs)}` }),
+      { class: "duel-hud" },
+      h("div", { class: "progress-wrap" }, h("div", { class: "progress", "aria-hidden": "true" }, progressFill)),
+      h(
+        "div",
+        { class: "duel-scorebar" },
+        h(
+          "div",
+          { class: "duel-score is-me", title: me?.displayName || "Toi" },
+          h("span", { class: "duel-score-name", text: me?.displayName || "Toi" }),
+          h("strong", { text: String(me?.score ?? 0) }),
+        ),
+        h("div", { class: "duel-score-q meta", text: `${pos}/${total}` }),
+        h(
+          "div",
+          { class: "duel-score is-opp", title: opp?.displayName || "Adv." },
+          h("span", { class: "duel-score-name", text: opp?.displayName || "Adv." }),
+          h("strong", { text: String(opp?.score ?? 0) }),
+        ),
+      ),
+      h(
+        "div",
+        { class: "duel-timer", "aria-live": "polite" },
+        h("div", { class: "duel-timer-track" }, timerBar),
+        h(
+          "p",
+          { class: "duel-timer-meta" },
+          h("strong", {
+            "data-duel-timer": "true",
+            text: duelUi.answered || reveal ? "—" : formatCountdown(left),
+          }),
+          h("span", { class: "duel-timer-status meta", text: statusText }),
+          h("span", { class: "duel-timer-cumul meta", text: `Cumul ${formatMs(me?.totalMs)}` }),
+        ),
       ),
     ),
   ];
@@ -1145,7 +1164,7 @@ function renderResult(ctx, openProfile) {
       text: `Temps cumulé : toi ${formatMs(me?.totalMs)} · adversaire ${formatMs(opp?.totalMs)}`,
     }),
     h("button", {
-      class: "btn",
+      class: "btn duel-primary-cta",
       type: "button",
       text: "Nouveau duel",
       onClick: () => {
