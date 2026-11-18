@@ -91,6 +91,10 @@ export function attachReportControl(host, options = {}) {
   const title = options.title || meta.title || titleForUrl(url);
   if (!title) return;
 
+  const validated = Boolean(
+    options.validated || meta.validated || isLocalMediaUrl(url),
+  );
+
   const bar = document.createElement("div");
   bar.className = "report-mod";
   bar.dataset.reportMod = "true";
@@ -104,7 +108,8 @@ export function attachReportControl(host, options = {}) {
     event.stopPropagation();
     if (!window.confirm("Signaler cette image comme incorrecte ou inappropriée ?")) return;
     btn.disabled = true;
-    rememberReportedLocally(title);
+    // Validée : pas de rejet local (sinon hydrateReportedTitles la retirerait du pool).
+    if (!validated) rememberReportedLocally(title);
     void postReport({
       name,
       title,
@@ -112,7 +117,8 @@ export function attachReportControl(host, options = {}) {
       categoryId: options.categoryId || "",
     });
     bar.remove();
-    options.onReported?.({ title, name, url, host });
+    // Validée : on garde la photo à l’écran (l’admin tranchera). Sinon → image suivante.
+    options.onReported?.({ title, name, url, host, validated, skip: !validated });
   });
   bar.appendChild(btn);
   host.appendChild(bar);

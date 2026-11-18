@@ -867,31 +867,47 @@ function allowReport(ip, title) {
     return true;
 }
 
+function findValidatedByTitle(title) {
+    const clean = normalizeFileTitle(title);
+    if (!clean) return null;
+    const store = readValidatedStore();
+    for (const [name, list] of Object.entries(store)) {
+        if (!Array.isArray(list)) continue;
+        const entry = list.find((item) => item && normalizeFileTitle(item.title) === clean);
+        if (entry) return { name, entry };
+    }
+    return null;
+}
+
 function addReport({ name, title, url, categoryId, ip }) {
     const cleanTitle = normalizeFileTitle(title);
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) {
         return { ok: false, error: "title" };
     }
     if (!allowReport(ip, cleanTitle)) return { ok: false, error: "rate" };
-    // Un signalement retire l’auto-validation ; l’admin pourra blacklist ensuite.
-    removeValidatedByTitle(cleanTitle);
     const species = normalizeName(name || "");
-    if (species) removeTitleFromPool(species, cleanTitle);
+    const validated = findValidatedByTitle(cleanTitle);
+    // Image déjà validée : on file juste le signalement à l’admin, sans la retirer du pool.
+    // Sinon (candidat Commons) : on retire du pool candidat pour ne plus la resservir.
+    if (!validated) {
+        if (species) removeTitleFromPool(species, cleanTitle);
+    }
     const items = readReports();
     if (items.some((item) => normalizeFileTitle(item.title) === cleanTitle)) {
-        return { ok: true, duplicate: true };
+        return { ok: true, duplicate: true, validated: Boolean(validated) };
     }
     items.unshift({
-        name: species,
+        name: species || validated?.name || "",
         title: cleanTitle,
         url: isHttps(url) || String(url || "").startsWith("/api/media/") || String(url || "").startsWith("/api/flag/")
             ? String(url).trim()
             : "",
         categoryId: String(categoryId || "").slice(0, 80),
+        validated: Boolean(validated),
         savedAt: Date.now()
     });
     writeReports(items.slice(0, 500));
-    return { ok: true };
+    return { ok: true, validated: Boolean(validated) };
 }
 
 function listReports() {

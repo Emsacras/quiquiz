@@ -156,15 +156,21 @@ function updateShownCredit(url) {
 function attachPlayerMediaTools(frame, img, scientificName, onSkip) {
   if (!frame || !img || !scientificName) return;
   const url = img.currentSrc || img.src;
+  const meta = metaForUrl(url);
+  const validated =
+    img.dataset.validated === "1" || Boolean(meta.validated);
   syncPhotoModFromImg(frame, img, scientificName, ({ action }) => {
     if (action === "blacklist") onSkip?.();
   });
   attachReportControl(frame, {
     name: scientificName,
     url,
-    title: img.dataset.photoTitle || metaForUrl(url).title,
+    title: img.dataset.photoTitle || meta.title,
+    validated,
     categoryId: state.category?.id || "",
-    onReported: () => onSkip?.(),
+    onReported: ({ skip } = {}) => {
+      if (skip !== false) onSkip?.();
+    },
   });
   updateShownCredit(url);
 }
