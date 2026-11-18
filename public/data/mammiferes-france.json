@@ -16,7 +16,7 @@
           "options": [
             "Renard roux",
             "Belette",
-            "Martre des pins",
+            "Chien viverrin",
             "Lynx boréal"
           ],
           "indice": "Queue touffue, robe rousse",
@@ -32,8 +32,8 @@
           "options": [
             "Lynx boréal",
             "Blaireau européen",
-            "Fouine",
-            "Renard roux"
+            "Renard roux",
+            "Raton laveur"
           ],
           "indice": "Masque noir et blanc",
           "description": "Mustélidé trapu, tête blanche à bandes noires, vie en clans.",
@@ -46,9 +46,9 @@
           "nom_scientifique": "Lutra lutra",
           "groupe": "carnivores",
           "options": [
-            "Belette",
             "Blaireau européen",
-            "Hermine",
+            "Chien viverrin",
+            "Raton laveur",
             "Loutre d'Europe"
           ],
           "indice": "Aquatique, queue épaisse",
@@ -62,10 +62,10 @@
           "nom_scientifique": "Martes martes",
           "groupe": "carnivores",
           "options": [
-            "Lynx boréal",
             "Martre des pins",
-            "Hermine",
-            "Renard roux"
+            "Renard roux",
+            "Chien viverrin",
+            "Raton laveur"
           ],
           "indice": "Bavette jaune, forestière",
           "description": "Mustélidé arboricole, gorge jaune crème, queue longue et touffue.",
@@ -78,9 +78,9 @@
           "nom_scientifique": "Martes foina",
           "groupe": "carnivores",
           "options": [
+            "Raton laveur",
             "Fouine",
             "Belette",
-            "Blaireau européen",
             "Loutre d'Europe"
           ],
           "indice": "Bavette blanche, près des maisons",
@@ -94,10 +94,10 @@
           "nom_scientifique": "Felis silvestris",
           "groupe": "carnivores",
           "options": [
-            "Fouine",
             "Loutre d'Europe",
-            "Renard roux",
-            "Chat forestier"
+            "Chien viverrin",
+            "Chat forestier",
+            "Fouine"
           ],
           "indice": "Queue annelée épaisse",
           "description": "Félin sauvage gris-brun, queue touffue annelée à bout noir arrondi.",
@@ -113,7 +113,7 @@
             "Martre des pins",
             "Lynx boréal",
             "Hermine",
-            "Vison d'Europe"
+            "Raton laveur"
           ],
           "indice": "Pinceaux d’oreilles, courte queue",
           "description": "Grand félin tacheté, oreilles à pinceaux, queue courte tipée de noir.",
@@ -145,7 +145,7 @@
             "Martre des pins",
             "Hermine",
             "Belette",
-            "Blaireau européen"
+            "Raton laveur"
           ],
           "indice": "Noir au bout de la queue",
           "description": "Petit mustélidé ; en hiver robe blanche avec bout de queue toujours noir.",
@@ -166,6 +166,86 @@
           "indice": "Plus petite, pas de noir en queue",
           "description": "Plus petit carnivore d’Europe, corps très allongé, queue courte sans noir.",
           "explication": "Belette : Minuscule et nerveuse ; se faufile dans les galeries de rongeurs."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Loup gris",
+          "nom_scientifique": "Canis lupus",
+          "indice": "Canidé sauvage en meute",
+          "description": "Canidé gris à queue touffue, oreilles dressées, allure de grand chien sauvage.",
+          "explication": "Loup gris : Prédateur de grand gibier, en reprise dans les Alpes et l’Est.",
+          "groupe": "carnivores",
+          "id": "carnivores11",
+          "options": [
+            "Loup gris",
+            "Chat forestier",
+            "Lynx boréal",
+            "Putois"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Ours brun",
+          "nom_scientifique": "Ursus arctos",
+          "indice": "Grand plantigrade montagnard",
+          "description": "Grand mammifère brun, museau allongé, bosse d’épaule marquée.",
+          "explication": "Ours brun : Omnivore des Pyrénées ; population très limitée.",
+          "groupe": "carnivores",
+          "id": "carnivores12",
+          "options": [
+            "Ours brun",
+            "Loutre d'Europe",
+            "Renard roux",
+            "Hermine"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Putois",
+          "nom_scientifique": "Mustela putorius",
+          "indice": "Mustélidé sombre au masque clair",
+          "description": "Mustélidé brun-noir, bande claire sur le museau, queue courte.",
+          "explication": "Putois : Prédateur de rongeurs et amphibiens, plutôt nocturne.",
+          "groupe": "carnivores",
+          "id": "carnivores13",
+          "options": [
+            "Renard roux",
+            "Putois",
+            "Chat forestier",
+            "Belette"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Raton laveur",
+          "nom_scientifique": "Procyon lotor",
+          "indice": "Masque noir, queue annelée",
+          "description": "Procyonidé au masque facial noir et à la queue rayée.",
+          "explication": "Raton laveur : Espèce introduite, en expansion en France.",
+          "groupe": "carnivores",
+          "id": "carnivores14",
+          "options": [
+            "Chien viverrin",
+            "Martre des pins",
+            "Raton laveur",
+            "Loutre d'Europe"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Chien viverrin",
+          "nom_scientifique": "Nyctereutes procyonoides",
+          "indice": "Allure de petit raton, queue unicolore",
+          "description": "Canidé trapu au masque sombre, queue touffue sans anneaux nets.",
+          "explication": "Chien viverrin : Introduit, plutôt nocturne et discret.",
+          "groupe": "carnivores",
+          "id": "carnivores15",
+          "options": [
+            "Chien viverrin",
+            "Blaireau européen",
+            "Belette",
+            "Renard roux"
+          ]
         }
       ]
     },
@@ -212,10 +292,10 @@
           "nom_scientifique": "Sus scrofa",
           "groupe": "ongules",
           "options": [
-            "Mouflon méditerranéen",
+            "Bison d'Europe",
             "Sanglier",
             "Bouquetin des Alpes",
-            "Chamois"
+            "Cerf sika"
           ],
           "indice": "Corps massif, soies sombres",
           "description": "Suidé massif au groin discöïde, soies sombres, vie en compagnies.",
@@ -228,9 +308,9 @@
           "nom_scientifique": "Rupicapra rupicapra",
           "groupe": "ongules",
           "options": [
+            "Cerf sika",
             "Chamois",
             "Isard",
-            "Cerf élaphe",
             "Sanglier"
           ],
           "indice": "Crochets, bandeau facial",
@@ -244,9 +324,9 @@
           "nom_scientifique": "Capra ibex",
           "groupe": "ongules",
           "options": [
-            "Sanglier",
             "Cerf élaphe",
             "Daim",
+            "Bison d'Europe",
             "Bouquetin des Alpes"
           ],
           "indice": "Cornes en sabre annelées",
@@ -292,14 +372,46 @@
           "nom_scientifique": "Rupicapra pyrenaica",
           "groupe": "ongules",
           "options": [
-            "Chevreuil",
             "Bouquetin des Alpes",
             "Isard",
-            "Chamois"
+            "Chamois",
+            "Bison d'Europe"
           ],
           "indice": "Chamois des Pyrénées",
           "description": "Proche du chamois, endémique pyrénéen, robe plus claire en hiver.",
           "explication": "Isard : Emblème des Pyrénées, cousin du chamois alpin."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Bison d'Europe",
+          "nom_scientifique": "Bison bonasus",
+          "indice": "Grand bovidé sauvage",
+          "description": "Immense bovidé brun, bosse marquée, crinière courte.",
+          "explication": "Bison d'Europe : Réintroduit dans quelques espaces ; le plus grand herbivore terrestre d’Europe.",
+          "groupe": "ongules",
+          "id": "ongules9",
+          "options": [
+            "Bison d'Europe",
+            "Mouflon méditerranéen",
+            "Isard",
+            "Chamois"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cerf sika",
+          "nom_scientifique": "Cervus nippon",
+          "indice": "Cerf tacheté introduit",
+          "description": "Cervidé souvent encore tacheté à l’âge adulte, plus petit que le cerf élaphe.",
+          "explication": "Cerf sika : Introduit, présents dans quelques massifs.",
+          "groupe": "ongules",
+          "id": "ongules10",
+          "options": [
+            "Bouquetin des Alpes",
+            "Bison d'Europe",
+            "Cerf sika",
+            "Chevreuil"
+          ]
         }
       ]
     },
@@ -314,9 +426,9 @@
           "nom_scientifique": "Sciurus vulgaris",
           "groupe": "rongeurs",
           "options": [
-            "Lièvre d'Europe",
+            "Crossope aquatique",
             "Écureuil roux",
-            "Campagnol amphibie",
+            "Campagnol des champs",
             "Crocidure musette"
           ],
           "indice": "Queue en panache, arboricole",
@@ -346,9 +458,9 @@
           "nom_scientifique": "Oryctolagus cuniculus",
           "groupe": "rongeurs",
           "options": [
+            "Rat noir",
             "Loir gris",
             "Lapin de garenne",
-            "Campagnol amphibie",
             "Castor d'Europe"
           ],
           "indice": "Oreilles moyennes, vie en terrier",
@@ -362,9 +474,9 @@
           "nom_scientifique": "Lepus europaeus",
           "groupe": "rongeurs",
           "options": [
-            "Lapin de garenne",
-            "Castor d'Europe",
+            "Écureuil gris",
             "Muscardin",
+            "Castor d'Europe",
             "Lièvre d'Europe"
           ],
           "indice": "Oreilles longues tipées de noir",
@@ -379,9 +491,9 @@
           "groupe": "rongeurs",
           "options": [
             "Castor d'Europe",
-            "Hérisson d'Europe",
-            "Muscardin",
-            "Écureuil roux"
+            "Écureuil roux",
+            "Musaraigne couronnée",
+            "Muscardin"
           ],
           "indice": "Queue plate, barrages",
           "description": "Grand rongeur aquatique, queue plate écailleuse, ingénieur des cours d’eau.",
@@ -394,10 +506,10 @@
           "nom_scientifique": "Muscardinus avellanarius",
           "groupe": "rongeurs",
           "options": [
-            "Muscardin",
             "Loir gris",
-            "Écureuil roux",
-            "Lapin de garenne"
+            "Rat noir",
+            "Muscardin",
+            "Écureuil roux"
           ],
           "indice": "Petit, roux, queue touffue",
           "description": "Petit gliridé roux orangé, queue touffue, niche dans les fourrés.",
@@ -410,10 +522,10 @@
           "nom_scientifique": "Arvicola sapidus",
           "groupe": "rongeurs",
           "options": [
-            "Loir gris",
-            "Hérisson d'Europe",
             "Campagnol amphibie",
-            "Taupe d'Europe"
+            "Taupe d'Europe",
+            "Campagnol des champs",
+            "Crossope aquatique"
           ],
           "indice": "Gros campagnol des berges",
           "description": "Campagnol de grande taille lié aux berges, nageur habile.",
@@ -426,10 +538,10 @@
           "nom_scientifique": "Crocidura russula",
           "groupe": "rongeurs",
           "options": [
-            "Taupe d'Europe",
-            "Écureuil roux",
             "Crocidure musette",
-            "Lièvre d'Europe"
+            "Campagnol des champs",
+            "Lièvre d'Europe",
+            "Musaraigne couronnée"
           ],
           "indice": "Musaraigne à dents blanches",
           "description": "Petite musaraigne à dents blanches, museau pointu, très active.",
@@ -442,10 +554,10 @@
           "nom_scientifique": "Glis glis",
           "groupe": "rongeurs",
           "options": [
+            "Lérot",
             "Loir gris",
-            "Castor d'Europe",
-            "Lapin de garenne",
-            "Hérisson d'Europe"
+            "Écureuil gris",
+            "Crossope aquatique"
           ],
           "indice": "Gris, queue longue touffue",
           "description": "Gliridé gris argenté, grands yeux, queue touffue, nocturne.",
@@ -458,14 +570,142 @@
           "nom_scientifique": "Talpa europaea",
           "groupe": "rongeurs",
           "options": [
-            "Castor d'Europe",
+            "Lapin de garenne",
+            "Campagnol des champs",
             "Taupe d'Europe",
-            "Lièvre d'Europe",
-            "Lapin de garenne"
+            "Castor d'Europe"
           ],
           "indice": "Velours noir, taupinières",
           "description": "Insectivore fouisseur au pelage noir velouté, pattes antérieures élargies.",
           "explication": "Taupe d'Europe : Galeries et taupinières dans les prairies humides."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Rat surmulot",
+          "nom_scientifique": "Rattus norvegicus",
+          "indice": "Grand rat des villes",
+          "description": "Rongeur robuste, museau émoussé, queue plus courte que le corps.",
+          "explication": "Rat surmulot : Commensal des humains, excellent nageur.",
+          "groupe": "rongeurs",
+          "id": "rongeurs11",
+          "options": [
+            "Écureuil gris",
+            "Muscardin",
+            "Mulot sylvestre",
+            "Rat surmulot"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Mulot sylvestre",
+          "nom_scientifique": "Apodemus sylvaticus",
+          "indice": "Petit rongeur à grandes oreilles",
+          "description": "Petit muridé fauve, ventre blanc, yeux et oreilles grands.",
+          "explication": "Mulot sylvestre : Très commun des haies et jardins.",
+          "groupe": "rongeurs",
+          "id": "rongeurs12",
+          "options": [
+            "Campagnol des champs",
+            "Mulot sylvestre",
+            "Muscardin",
+            "Crocidure musette"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Rat noir",
+          "nom_scientifique": "Rattus rattus",
+          "indice": "Rat à longue queue",
+          "description": "Rongeur plus élancé, queue plus longue que le corps, oreilles grandes.",
+          "explication": "Rat noir : Plus arboricole que le surmulot ; entrepôts, greniers.",
+          "groupe": "rongeurs",
+          "id": "rongeurs13",
+          "options": [
+            "Lérot",
+            "Rat noir",
+            "Musaraigne couronnée",
+            "Mulot sylvestre"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Campagnol des champs",
+          "nom_scientifique": "Microtus arvalis",
+          "indice": "Petit rongeur à queue courte",
+          "description": "Petit campagnol au pelage brun, oreilles peu visibles, queue courte.",
+          "explication": "Campagnol des champs : Rongeur des prairies, pullulations possibles.",
+          "groupe": "rongeurs",
+          "id": "rongeurs14",
+          "options": [
+            "Loir gris",
+            "Rat surmulot",
+            "Lapin de garenne",
+            "Campagnol des champs"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Écureuil gris",
+          "nom_scientifique": "Sciurus carolinensis",
+          "indice": "Écureuil gris introduit",
+          "description": "Sciuridé gris (parfois noirâtre), sans pinceaux d’oreilles.",
+          "explication": "Écureuil gris : Introduit, concurrence l’écureuil roux.",
+          "groupe": "rongeurs",
+          "id": "rongeurs15",
+          "options": [
+            "Muscardin",
+            "Crossope aquatique",
+            "Lièvre d'Europe",
+            "Écureuil gris"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Crossope aquatique",
+          "nom_scientifique": "Neomys fodiens",
+          "indice": "Musaraigne aquatique",
+          "description": "Petite insectivore sombre, ventre clair, adaptée à la nage.",
+          "explication": "Crossope aquatique : Musaraigne des berges, venimeuse à faible dose.",
+          "groupe": "rongeurs",
+          "id": "rongeurs16",
+          "options": [
+            "Mulot sylvestre",
+            "Crossope aquatique",
+            "Taupe d'Europe",
+            "Muscardin"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Lérot",
+          "nom_scientifique": "Eliomys quercinus",
+          "indice": "Petit loir masqué",
+          "description": "Gliridé au masque noir autour des yeux, queue longue bicolore.",
+          "explication": "Lérot : Nocturne, souvent près des habitations en été.",
+          "groupe": "rongeurs",
+          "id": "rongeurs17",
+          "options": [
+            "Rat surmulot",
+            "Lièvre d'Europe",
+            "Taupe d'Europe",
+            "Lérot"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Musaraigne couronnée",
+          "nom_scientifique": "Sorex coronatus",
+          "indice": "Très petite insectivore pointue",
+          "description": "Minuscule insectivore au museau pointu, dents rouges à la pointe.",
+          "explication": "Musaraigne couronnée : Commune des milieux herbeux ; pas un rongeur.",
+          "groupe": "rongeurs",
+          "id": "rongeurs18",
+          "options": [
+            "Lérot",
+            "Castor d'Europe",
+            "Rat surmulot",
+            "Musaraigne couronnée"
+          ]
         }
       ]
     },
@@ -480,9 +720,9 @@
           "nom_scientifique": "Pipistrellus pipistrellus",
           "groupe": "chiropteres",
           "options": [
+            "Petit rhinolophe",
             "Grand murin",
             "Molosse de Cestoni",
-            "Grand rhinolophe",
             "Pipistrelle commune"
           ],
           "indice": "Petite, chasse près des lampadaires",
@@ -496,10 +736,10 @@
           "nom_scientifique": "Rhinolophus ferrumequinum",
           "groupe": "chiropteres",
           "options": [
-            "Sérotine commune",
-            "Pipistrelle commune",
-            "Molosse de Cestoni",
-            "Grand rhinolophe"
+            "Barbastelle d'Europe",
+            "Grand rhinolophe",
+            "Pipistrelle de Kuhl",
+            "Pipistrelle commune"
           ],
           "indice": "Nez en fer à cheval",
           "description": "Chauve-souris au nez en fer à cheval, oreilles sans tragus libre.",
@@ -512,10 +752,10 @@
           "nom_scientifique": "Plecotus auritus",
           "groupe": "chiropteres",
           "options": [
-            "Pipistrelle commune",
-            "Molosse de Cestoni",
+            "Pipistrelle de Kuhl",
             "Oreillard roux",
-            "Sérotine commune"
+            "Petit rhinolophe",
+            "Murin de Daubenton"
           ],
           "indice": "Oreilles énormes",
           "description": "Chauve-souris aux oreilles très longues, presque jointes à la base.",
@@ -528,10 +768,10 @@
           "nom_scientifique": "Myotis myotis",
           "groupe": "chiropteres",
           "options": [
-            "Sérotine commune",
-            "Grand murin",
+            "Pipistrelle de Kuhl",
             "Molosse de Cestoni",
-            "Grand rhinolophe"
+            "Grand murin",
+            "Petit rhinolophe"
           ],
           "indice": "Grande, museau clair",
           "description": "Grande Myotis au museau rose, oreilles longues, chasse au sol.",
@@ -545,7 +785,7 @@
           "groupe": "chiropteres",
           "options": [
             "Pipistrelle commune",
-            "Grand murin",
+            "Barbastelle d'Europe",
             "Grand rhinolophe",
             "Molosse de Cestoni"
           ],
@@ -560,7 +800,7 @@
           "nom_scientifique": "Eptesicus serotinus",
           "groupe": "chiropteres",
           "options": [
-            "Pipistrelle commune",
+            "Murin de Daubenton",
             "Grand rhinolophe",
             "Oreillard roux",
             "Sérotine commune"
@@ -568,6 +808,86 @@
           "indice": "Robuste, brune, urbaine",
           "description": "Chauve-souris robuste brun sombre, fréquente les bâtiments.",
           "explication": "Sérotine commune : Chasse hannetons et papillons de nuit près des villages."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Pipistrelle de Kuhl",
+          "nom_scientifique": "Pipistrellus kuhlii",
+          "indice": "Petite chauve-souris claire",
+          "description": "Petite pipistrelle souvent claire, marge alaire claire fréquente.",
+          "explication": "Pipistrelle de Kuhl : Fréquente le sud et les zones urbanisées.",
+          "groupe": "chiropteres",
+          "id": "chiropteres7",
+          "options": [
+            "Pipistrelle de Kuhl",
+            "Petit rhinolophe",
+            "Molosse de Cestoni",
+            "Oreillard roux"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Murin de Daubenton",
+          "nom_scientifique": "Myotis daubentonii",
+          "indice": "Chasse au ras de l’eau",
+          "description": "Murin aux pieds grands, chasse les insectes au-dessus de l’eau.",
+          "explication": "Murin de Daubenton : Lié aux rivières et plans d’eau.",
+          "groupe": "chiropteres",
+          "id": "chiropteres8",
+          "options": [
+            "Murin de Daubenton",
+            "Grand rhinolophe",
+            "Barbastelle d'Europe",
+            "Molosse de Cestoni"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Barbastelle d'Europe",
+          "nom_scientifique": "Barbastella barbastellus",
+          "indice": "Oreilles larges jointes",
+          "description": "Chauve-souris sombre aux oreilles larges se touchant sur le front.",
+          "explication": "Barbastelle d'Europe : Forestière, sensible à la gestion des boisements.",
+          "groupe": "chiropteres",
+          "id": "chiropteres9",
+          "options": [
+            "Barbastelle d'Europe",
+            "Murin de Daubenton",
+            "Pipistrelle commune",
+            "Sérotine commune"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Petit rhinolophe",
+          "nom_scientifique": "Rhinolophus hipposideros",
+          "indice": "Fer à cheval minuscule",
+          "description": "Petit rhinolophe au fer à cheval nasal, enveloppé dans ses ailes au repos.",
+          "explication": "Petit rhinolophe : Espèce cavernicole / bâtiments, en déclin.",
+          "groupe": "chiropteres",
+          "id": "chiropteres10",
+          "options": [
+            "Petit rhinolophe",
+            "Molosse de Cestoni",
+            "Pipistrelle commune",
+            "Oreillard roux"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Noctule commune",
+          "nom_scientifique": "Nyctalus noctula",
+          "indice": "Grande chauve-souris rapide",
+          "description": "Grande chauve-souris fauve, ailes étroites, vol rapide en hauteur.",
+          "explication": "Noctule commune : Souvent dans les arbres creux et niches urbaines.",
+          "groupe": "chiropteres",
+          "id": "chiropteres11",
+          "options": [
+            "Grand murin",
+            "Noctule commune",
+            "Pipistrelle de Kuhl",
+            "Oreillard roux"
+          ]
         }
       ]
     },
@@ -599,9 +919,9 @@
           "groupe": "marins",
           "options": [
             "Grand dauphin",
+            "Cachalot",
             "Phoque gris",
-            "Marsouin commun",
-            "Genette commune"
+            "Marsouin commun"
           ],
           "indice": "Petit, sans bec marqué",
           "description": "Petit cétacé sans bec proéminent, nageoire triangulaire.",
@@ -615,8 +935,8 @@
           "groupe": "marins",
           "options": [
             "Phoque veau-marin",
+            "Cachalot",
             "Ragondin",
-            "Marsouin commun",
             "Phoque gris"
           ],
           "indice": "Tête de chien, baies du nord",
@@ -630,9 +950,9 @@
           "nom_scientifique": "Halichoerus grypus",
           "groupe": "marins",
           "options": [
-            "Genette commune",
             "Phoque gris",
             "Dauphin commun",
+            "Cachalot",
             "Ragondin"
           ],
           "indice": "Profil romain, plus grand",
@@ -646,10 +966,10 @@
           "nom_scientifique": "Delphinus delphis",
           "groupe": "marins",
           "options": [
-            "Phoque gris",
             "Ragondin",
+            "Globicephale noir",
             "Dauphin commun",
-            "Genette commune"
+            "Cachalot"
           ],
           "indice": "Sablier jaune sur le flanc",
           "description": "Dauphin élancé au motif en sablier beige-jaune sur les flancs.",
@@ -678,14 +998,46 @@
           "nom_scientifique": "Genetta genetta",
           "groupe": "marins",
           "options": [
-            "Phoque veau-marin",
             "Dauphin commun",
             "Phoque gris",
+            "Globicephale noir",
             "Genette commune"
           ],
           "indice": "Queue annelée, tachetée",
           "description": "Viverridé tacheté à longue queue annelée, surtout dans le sud-ouest.",
           "explication": "Genette commune : Nocturne et arboricole ; silhouette de « petit félin tacheté »."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Globicephale noir",
+          "nom_scientifique": "Globicephala melas",
+          "indice": "Dauphin-pilote à tête ronde",
+          "description": "Cétacé noir à front bombé (« melon »), nageoire dorsale recourbée.",
+          "explication": "Globicephale noir : Observé au large des côtes atlantiques.",
+          "groupe": "marins",
+          "id": "marins8",
+          "options": [
+            "Grand dauphin",
+            "Genette commune",
+            "Globicephale noir",
+            "Phoque veau-marin"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cachalot",
+          "nom_scientifique": "Physeter macrocephalus",
+          "indice": "Énorme tête carrée",
+          "description": "Grand cétacé à tête massive carrée, évent unique décalé.",
+          "explication": "Cachalot : Présent au large ; le plus grand des odontocètes.",
+          "groupe": "marins",
+          "id": "marins9",
+          "options": [
+            "Cachalot",
+            "Ragondin",
+            "Phoque gris",
+            "Marsouin commun"
+          ]
         }
       ]
     }

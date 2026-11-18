@@ -244,6 +244,23 @@
           "description": "Colonnette conique sous un cumulus orageux, sans toucher le sol.",
           "explication": "Tuba : Ébauche de trombe / tornade.",
           "imageQuery": "funnel cloud"
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Stratocumulus stratiformis",
+          "nom_scientifique": "Stratocumulus stratiformis",
+          "indice": "Couche basse en dalles",
+          "description": "Nappe basse de dalles ou rouleaux, gris ou blanchâtres.",
+          "explication": "Stratocumulus stratiformis : Forme la plus fréquente de stratocumulus.",
+          "imageQuery": "stratocumulus cloud sheet",
+          "groupe": "bas",
+          "id": "bas15",
+          "options": [
+            "Stratus fractus",
+            "Stratocumulus stratiformis",
+            "Stratus",
+            "Cumulus humilis"
+          ]
         }
       ]
     },
@@ -261,7 +278,7 @@
             "Altostratus",
             "Altostratus translucidus",
             "Altocumulus",
-            "Altocumulus stratiformis"
+            "Altocumulus volutus"
           ],
           "indice": "Moutons du ciel",
           "description": "Bancs de petits flocons ou galettes à moyenne altitude.",
@@ -275,10 +292,10 @@
           "nom_scientifique": "Altostratus",
           "groupe": "moyen",
           "options": [
+            "Altocumulus volutus",
+            "Asperitas",
             "Altocumulus",
-            "Altocumulus undulatus",
-            "Altostratus",
-            "Asperitas"
+            "Altostratus"
           ],
           "indice": "Voile laiteux",
           "description": "Voile grisâtre à travers lequel le Soleil apparaît flou.",
@@ -343,10 +360,10 @@
           "nom_scientifique": "Altostratus opacus",
           "groupe": "moyen",
           "options": [
-            "Altocumulus stratiformis",
+            "Altocumulus volutus",
             "Altostratus",
             "Altostratus opacus",
-            "Altocumulus"
+            "Altocumulus stratiformis"
           ],
           "indice": "Soleil masqué",
           "description": "Altostratus assez épais pour cacher complètement le Soleil.",
@@ -454,6 +471,23 @@
           "description": "Précipitations qui s’évaporent avant d’arriver au sol.",
           "explication": "Virga : Pluie ou neige suspendue sous le nuage.",
           "imageQuery": "virga rain"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Altocumulus volutus",
+          "nom_scientifique": "Altocumulus volutus",
+          "indice": "Rouleau isolé en altitude",
+          "description": "Nuage en tube allongé, espèce rare d’altocumulus.",
+          "explication": "Altocumulus volutus : Rouleau ; à ne pas confondre avec arcus bas.",
+          "imageQuery": "altocumulus volutus",
+          "groupe": "moyen",
+          "id": "moyen13",
+          "options": [
+            "Altocumulus volutus",
+            "Altocumulus lenticularis",
+            "Altostratus",
+            "Altostratus translucidus"
+          ]
         }
       ]
     },
@@ -469,9 +503,9 @@
           "groupe": "haut",
           "options": [
             "Cirrocumulus",
-            "Circumhorizontal (arc)",
             "Cirrus",
-            "Cumulonimbus capillatus"
+            "Cumulonimbus capillatus",
+            "Cirrus floccus"
           ],
           "indice": "Filaments blancs",
           "description": "Nuages fins fibreux de cristaux de glace, très hauts.",
@@ -536,10 +570,10 @@
           "nom_scientifique": "Cirrus uncinus",
           "groupe": "haut",
           "options": [
-            "Cirrus spissatus",
-            "Cirrus uncinus",
             "Cumulonimbus calvus",
-            "Circumhorizontal (arc)"
+            "Cirrus uncinus",
+            "Cirrus floccus",
+            "Cirrus spissatus"
           ],
           "indice": "Crochets / virgules",
           "description": "Cirrus en forme de crochets ou de filaments recourbés.",
@@ -588,9 +622,9 @@
           "groupe": "haut",
           "options": [
             "Cumulonimbus calvus",
-            "Incus (enclume)",
-            "Pileus",
-            "Cirrus"
+            "Cirrus",
+            "Cirrocumulus undulatus",
+            "Pileus"
           ],
           "indice": "Sommet encore « chauve »",
           "description": "Cumulonimbus sans enclume fibreuse nette, sommet arrondi.",
@@ -621,10 +655,10 @@
           "nom_scientifique": "Cirrus aviaticus",
           "groupe": "haut",
           "options": [
-            "Cirrus spissatus",
+            "Cirrus uncinus",
             "Cumulonimbus capillatus",
-            "Contrail (traînée)",
-            "Cirrus uncinus"
+            "Cirrocumulus undulatus",
+            "Contrail (traînée)"
           ],
           "indice": "Trace d’avion",
           "description": "Traînée de condensation d’avion, parfois persistante.",
@@ -638,9 +672,9 @@
           "nom_scientifique": "Mammatus",
           "groupe": "haut",
           "options": [
-            "Cirrus uncinus",
             "Incus (enclume)",
-            "Pileus",
+            "Cirrocumulus undulatus",
+            "Cirrus uncinus",
             "Mammatus"
           ],
           "indice": "Poches sous l’enclume",
@@ -689,15 +723,49 @@
           "nom_scientifique": "Circumhorizontal arc",
           "groupe": "haut",
           "options": [
+            "Cirrus floccus",
             "Incus (enclume)",
-            "Pileus",
-            "Cirrocumulus",
-            "Circumhorizontal (arc)"
+            "Circumhorizontal (arc)",
+            "Cirrocumulus"
           ],
           "indice": "Arc coloré horizontal",
           "description": "Arc aux couleurs de l’arc-en-ciel bas sur l’horizon, dans les cirrus.",
           "explication": "Arc circumhorizontal : Halo coloré dans les cristaux de glace.",
           "imageQuery": "circumhorizontal arc"
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cirrus floccus",
+          "nom_scientifique": "Cirrus floccus",
+          "indice": "Touffes élevées à trainée",
+          "description": "Petites touffes de cirrus souvent avec virga.",
+          "explication": "Cirrus floccus : Étages élevés, structure en flocons.",
+          "imageQuery": "cirrus floccus",
+          "groupe": "haut",
+          "id": "haut15",
+          "options": [
+            "Circumhorizontal (arc)",
+            "Cirrocumulus",
+            "Cirrus floccus",
+            "Cirrus"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cirrocumulus undulatus",
+          "nom_scientifique": "Cirrocumulus undulatus",
+          "indice": "Moutons élevés ondulés",
+          "description": "Banc de cirrocumulus arrangés en ondulations.",
+          "explication": "Cirrocumulus undulatus : Très haut, sans ombre propre.",
+          "imageQuery": "cirrocumulus undulatus",
+          "groupe": "haut",
+          "id": "haut16",
+          "options": [
+            "Contrail (traînée)",
+            "Cirrus",
+            "Cirrocumulus undulatus",
+            "Cumulonimbus"
+          ]
         }
       ]
     }

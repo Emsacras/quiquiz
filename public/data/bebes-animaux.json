@@ -48,10 +48,10 @@
           "nom_scientifique": "Ovis aries",
           "groupe": "ferme",
           "options": [
+            "Pigeonneau",
             "Porcelet",
             "Mulard",
-            "Agneau",
-            "Caneton"
+            "Agneau"
           ],
           "indice": "Petit du mouton",
           "description": "Jeune ovin à la toison encore fine.",
@@ -66,9 +66,9 @@
           "groupe": "ferme",
           "options": [
             "Chevreau",
-            "Dindonneau",
             "Porcelet",
-            "Lapereau"
+            "Dindonneau",
+            "Pigeonneau"
           ],
           "indice": "Petit du cochon",
           "description": "Jeune porc au museau rose et au corps trapu.",
@@ -99,10 +99,10 @@
           "nom_scientifique": "Capra hircus",
           "groupe": "ferme",
           "options": [
-            "Poulain",
             "Mulard",
-            "Pintadeau",
-            "Chevreau"
+            "Poulain",
+            "Chevreau",
+            "Pigeonneau"
           ],
           "indice": "Petit de la chèvre",
           "description": "Jeune caprin vif, souvent cornu plus tard.",
@@ -167,8 +167,8 @@
           "nom_scientifique": "Oryctolagus cuniculus domesticus",
           "groupe": "ferme",
           "options": [
+            "Pigeonneau",
             "Poussin",
-            "Pintadeau",
             "Lapereau",
             "Porcelet"
           ],
@@ -261,6 +261,23 @@
           "description": "Jeune canard issu d’un croisement (canard de Barbarie × colvert).",
           "explication": "Mulard : Caneton hybride d’élevage.",
           "imageQuery": "muscovy duckling"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Pigeonneau",
+          "nom_scientifique": "Columba livia",
+          "indice": "Petit du pigeon",
+          "description": "Jeune pigeon au nid, encore peu emplumé.",
+          "explication": "Pigeonneau : Bébé du pigeon.",
+          "imageQuery": "squab pigeon chick",
+          "groupe": "ferme",
+          "id": "ferme16",
+          "options": [
+            "Pigeonneau",
+            "Caneton",
+            "Cygneau",
+            "Pintadeau"
+          ]
         }
       ]
     },
@@ -278,7 +295,7 @@
             "Hamster",
             "Tortillon",
             "Chaton",
-            "Lapereau nain"
+            "Ouistiti jeune"
           ],
           "indice": "Petit du chat",
           "description": "Jeune chat aux yeux grands et aux oreilles encore molles.",
@@ -343,7 +360,7 @@
           "nom_scientifique": "Mesocricetus auratus",
           "groupe": "compagnie",
           "options": [
-            "Tortillon",
+            "Ouistiti jeune",
             "Ratton",
             "Hamster",
             "Chiot"
@@ -379,8 +396,8 @@
           "options": [
             "Chiot",
             "Fureton",
-            "Cobaye",
-            "Tortillon de tortue"
+            "Ouistiti jeune",
+            "Cobaye"
           ],
           "indice": "Petit du furet",
           "description": "Jeune furet au museau pointu, encore joueur et souple.",
@@ -394,10 +411,10 @@
           "nom_scientifique": "Mus musculus",
           "groupe": "compagnie",
           "options": [
+            "Ouistiti jeune",
             "Cobaye",
             "Chaton",
-            "Souriceau",
-            "Hamster"
+            "Souriceau"
           ],
           "indice": "Petit de la souris",
           "description": "Très jeune souris, souvent rose et sans poils au tout début.",
@@ -471,6 +488,23 @@
           "description": "Très jeune tortue à la carapace encore molle.",
           "explication": "Petit de tortue : Bébé de la tortue terrestre.",
           "imageQuery": "baby tortoise"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ouistiti jeune",
+          "nom_scientifique": "Callithrix jacchus",
+          "indice": "Jeune petit primate",
+          "description": "Très jeune ouistiti, souvent porté sur le dos.",
+          "explication": "Jeune ouistiti : Bébé de ouistiti (animaux de ménagerie).",
+          "imageQuery": "baby marmoset",
+          "groupe": "compagnie",
+          "id": "compagnie13",
+          "options": [
+            "Perrucheau",
+            "Chiot",
+            "Ouistiti jeune",
+            "Cobaye"
+          ]
         }
       ]
     },
@@ -502,10 +536,10 @@
           "nom_scientifique": "Panthera leo",
           "groupe": "sauvage",
           "options": [
+            "Blanchon",
             "Tigreau",
-            "Louveteau",
-            "Blanchet",
-            "Lionceau"
+            "Lionceau",
+            "Louveteau"
           ],
           "indice": "Petit du lion",
           "description": "Jeune lion encore tacheté, sans crinière.",
@@ -536,10 +570,10 @@
           "nom_scientifique": "Vulpes vulpes",
           "groupe": "sauvage",
           "options": [
-            "Baleineau",
             "Renardeau",
             "Faon",
-            "Éléphanteau"
+            "Éléphanteau",
+            "Blanchon"
           ],
           "indice": "Petit du renard",
           "description": "Jeune renard au museau pointu et au pelage sombre.",
@@ -570,10 +604,10 @@
           "nom_scientifique": "Cervus elaphus",
           "groupe": "sauvage",
           "options": [
-            "Loutron",
-            "Baleineau",
+            "Blanchon",
             "Faon",
-            "Blanchet"
+            "Blanchet",
+            "Baleineau"
           ],
           "indice": "Petit du cerf / de la biche",
           "description": "Jeune cervidé au pelage tacheté.",
@@ -604,9 +638,9 @@
           "nom_scientifique": "Giraffa camelopardalis",
           "groupe": "sauvage",
           "options": [
+            "Blanchon",
             "Levraut",
             "Girafon",
-            "Marcassin",
             "Blanchet"
           ],
           "indice": "Petit de la girafe",
@@ -672,9 +706,9 @@
           "nom_scientifique": "Phoca vitulina",
           "groupe": "sauvage",
           "options": [
-            "Renardeau",
             "Baleineau",
             "Girafon",
+            "Blanchon",
             "Blanchet"
           ],
           "indice": "Petit du phoque",
@@ -732,6 +766,23 @@
           "description": "Jeune léopard / panthère déjà tacheté.",
           "explication": "Panthéreau : Bébé de la panthère.",
           "imageQuery": "leopard cub"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Blanchon",
+          "nom_scientifique": "Pagophilus groenlandicus",
+          "indice": "Petit phoque blanc",
+          "description": "Jeune phoque au pelage blanc laineux.",
+          "explication": "Blanchon : Bébé de phoque du Groenland (aussi dit blanchet).",
+          "imageQuery": "harp seal pup",
+          "groupe": "sauvage",
+          "id": "sauvage16",
+          "options": [
+            "Baleineau",
+            "Louveteau",
+            "Loutron",
+            "Blanchon"
+          ]
         }
       ]
     }

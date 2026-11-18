@@ -17,7 +17,7 @@
             "Buccin",
             "Cauris monétaire",
             "Patelle",
-            "Crépidule"
+            "Tonne"
           ],
           "indice": "Chapeau chinois collé au rocher",
           "description": "Coquille conique basse, souvent sur les rochers battus.",
@@ -66,7 +66,7 @@
           "groupe": "gasteropodes",
           "options": [
             "Buccin",
-            "Murex",
+            "Nasse réticulée",
             "Patelle",
             "Escargot de mer"
           ],
@@ -82,7 +82,7 @@
           "nom_scientifique": "Haliotis tuberculata",
           "groupe": "gasteropodes",
           "options": [
-            "Turritelle",
+            "Porcelaine méditerranée",
             "Crépidule",
             "Bigorneau",
             "Ormeau"
@@ -150,9 +150,9 @@
           "nom_scientifique": "Conus",
           "groupe": "gasteropodes",
           "options": [
-            "Escargot de mer",
             "Bigorneau",
-            "Ormeau",
+            "Nasse réticulée",
+            "Escargot de mer",
             "Cône"
           ],
           "indice": "Cône pointu coloré",
@@ -184,8 +184,8 @@
           "nom_scientifique": "Charonia",
           "groupe": "gasteropodes",
           "options": [
-            "Ormeau",
-            "Patelle",
+            "Porcelaine méditerranée",
+            "Tonne",
             "Cône",
             "Triton"
           ],
@@ -203,7 +203,7 @@
           "options": [
             "Patelle",
             "Cône",
-            "Escargot de mer",
+            "Tonne",
             "Murex"
           ],
           "indice": "Épines / ailes sur la spirale",
@@ -219,8 +219,8 @@
           "groupe": "gasteropodes",
           "options": [
             "Janthine",
-            "Porcelaine",
             "Bigorneau",
+            "Nasse réticulée",
             "Natice"
           ],
           "indice": "Spirale violette fragile",
@@ -244,6 +244,57 @@
           "description": "Petite cauri autrefois utilisée comme monnaie.",
           "explication": "Cauris : Petite porcelaine « monétaire ».",
           "imageQuery": "money cowrie"
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Nasse réticulée",
+          "nom_scientifique": "Tritia reticulata",
+          "indice": "Petite coquille réticulée",
+          "description": "Petit buccin à réseau de côtes, sable et vase.",
+          "explication": "Nasse réticulée : Charognarde des estrans.",
+          "imageQuery": "netted dog whelk",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes15",
+          "options": [
+            "Natice",
+            "Porcelaine",
+            "Turritelle",
+            "Nasse réticulée"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Porcelaine méditerranée",
+          "nom_scientifique": "Luria lurida",
+          "indice": "Coquille lisse vernissée",
+          "description": "Petite porcelaine brun-olivâtre brillante.",
+          "explication": "Porcelaine : Méditerranéenne, coquille émaillée.",
+          "imageQuery": "Luria lurida cowrie",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes16",
+          "options": [
+            "Murex",
+            "Porcelaine méditerranée",
+            "Janthine",
+            "Cône"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Tonne",
+          "nom_scientifique": "Tonna galea",
+          "indice": "Très grosse coquille ventrue",
+          "description": "Grande coquille fine à large ouverture, Méditerranée.",
+          "explication": "Tonne : Grand gastéropode méditerranéen.",
+          "imageQuery": "Tonna galea shell",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes17",
+          "options": [
+            "Crépidule",
+            "Tonne",
+            "Escargot de mer",
+            "Porcelaine"
+          ]
         }
       ]
     },
@@ -294,8 +345,8 @@
           "options": [
             "Coque",
             "Palourde",
-            "Tridacne",
-            "Praire"
+            "Pétoncle noir",
+            "Tridacne"
           ],
           "indice": "Côtes rayonnantes serrées",
           "description": "Valve ronde à côtes marquées, typique du sable.",
@@ -343,9 +394,9 @@
           "nom_scientifique": "Aequipecten opercularis",
           "groupe": "bivalves",
           "options": [
-            "Coque",
-            "Saint-Jacques",
             "Praire",
+            "Pétoncle noir",
+            "Coque",
             "Pétoncle"
           ],
           "indice": "Éventail à oreillettes",
@@ -394,9 +445,9 @@
           "nom_scientifique": "Glycymeris",
           "groupe": "bivalves",
           "options": [
-            "Palourde",
-            "Moule",
+            "Pétoncle noir",
             "Tridacne",
+            "Palourde",
             "Amande de mer"
           ],
           "indice": "Ronde épaisse",
@@ -413,8 +464,8 @@
           "options": [
             "Amande de mer",
             "Pétoncle",
-            "Huître perlière",
-            "Couteau"
+            "Pétoncle noir",
+            "Huître perlière"
           ],
           "indice": "Valve nacrée irrégulière",
           "description": "Coquille irrégulière à intérieur nacré, perles.",
@@ -488,6 +539,23 @@
           "description": "Proche de la moule, plus ventrue, souvent plus au large.",
           "explication": "Modiole : Grande moule des fonds.",
           "imageQuery": "horse mussel shell"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Pétoncle noir",
+          "nom_scientifique": "Mimachlamys varia",
+          "indice": "Petite pétoncle variable",
+          "description": "Petite pectinidé à oreilles inégales, couleurs variables.",
+          "explication": "Pétoncle noir : Rochers et graviers côtiers.",
+          "imageQuery": "variegated scallop",
+          "groupe": "bivalves",
+          "id": "bivalves15",
+          "options": [
+            "Tridacne",
+            "Pétoncle noir",
+            "Huître",
+            "Palourde"
+          ]
         }
       ]
     },
@@ -503,7 +571,7 @@
           "groupe": "divers",
           "options": [
             "Corail (fragment)",
-            "Poulpe (coquille interne)",
+            "Gladius de calmar",
             "Test d’oursin",
             "Opercule"
           ],
@@ -537,9 +605,9 @@
           "groupe": "divers",
           "options": [
             "Tube de serpule",
+            "Gladius de calmar",
             "Bryozoaire",
-            "Spirule",
-            "Poulpe (coquille interne)"
+            "Spirule"
           ],
           "indice": "Petit tuyau calcaire collé",
           "description": "Tube calcaire blanc fixé aux rochers ou coquilles.",
@@ -732,6 +800,23 @@
           "description": "Colonies en dentelle ou croûte sur les coquillages.",
           "explication": "Bryozoaire : Colonie en dentelle marine.",
           "imageQuery": "bryozoan colony"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Gladius de calmar",
+          "nom_scientifique": "Loligo vulgaris",
+          "indice": "Plume interne cornée",
+          "description": "Structure interne translucide en plume des calmars.",
+          "explication": "Gladius : Homologue interne de la coquille.",
+          "imageQuery": "squid gladius pen",
+          "groupe": "divers",
+          "id": "divers15",
+          "options": [
+            "Dentale",
+            "Spirule",
+            "Bec de calmar",
+            "Gladius de calmar"
+          ]
         }
       ]
     }

@@ -275,9 +275,9 @@
           "nom_scientifique": "Dinosauria",
           "groupe": "vertebres",
           "options": [
-            "Mosasaure",
             "Os de dinosaure",
             "Amphibien fossile",
+            "Coprolithe",
             "Ichthyosaure"
           ],
           "indice": "Os massif pétrifié",
@@ -445,10 +445,10 @@
           "nom_scientifique": "Testudines",
           "groupe": "vertebres",
           "options": [
-            "Os de dinosaure",
-            "Amphibien fossile",
             "Mégalodon (dent)",
-            "Tortue fossile"
+            "Coprolithe",
+            "Tortue fossile",
+            "Amphibien fossile"
           ],
           "indice": "Carapace fossilisée",
           "description": "Carapace ou squelette de tortue pétrifié.",
@@ -488,6 +488,23 @@
           "description": "Crâne fossilisé de primate (dont hominidés).",
           "explication": "Crâne de primate : Vertébré proche de la lignée humaine.",
           "imageQuery": "primate skull fossil"
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Coprolithe",
+          "nom_scientifique": "Coprolite",
+          "indice": "Fiente fossilisée",
+          "description": "Excrément fossilisé, forme variable, parfois osseuse à l’intérieur.",
+          "explication": "Coprolithe : Trace fossile d’alimentation.",
+          "imageQuery": "coprolite fossil",
+          "groupe": "vertebres",
+          "id": "vertebres15",
+          "options": [
+            "Coprolithe",
+            "Poisson fossile",
+            "Plésiosaure",
+            "Défense d’ivoire"
+          ]
         }
       ]
     },
@@ -536,10 +553,10 @@
           "nom_scientifique": "Ichnite",
           "groupe": "plantes-traces",
           "options": [
-            "Feuille de ginkgo",
-            "Gastrolithe",
             "Empreinte de pas",
-            "Terrier fossile"
+            "Terrier fossile",
+            "Fougère fossile",
+            "Gastrolithe"
           ],
           "indice": "Trace de marche",
           "description": "Empreinte de pas fossilisée dans un sédiment.",
@@ -587,10 +604,10 @@
           "nom_scientifique": "Lepidodendron",
           "groupe": "plantes-traces",
           "options": [
-            "Lépidodendron",
-            "Gastrolithe",
+            "Fougère fossile",
+            "Coprolithe",
             "Feuille de ginkgo",
-            "Coprolithe"
+            "Lépidodendron"
           ],
           "indice": "Écorce en losanges",
           "description": "Écorce fossilisée à motifs losangiques d’arbre-échelle.",
@@ -732,6 +749,23 @@
           "description": "Série d’empreintes formant une piste de marche.",
           "explication": "Piste : Séquence d’empreintes fossilisées.",
           "imageQuery": "reptile trackway fossil"
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Fougère fossile",
+          "nom_scientifique": "Pecopteris",
+          "indice": "Empreinte de fronde",
+          "description": "Empreinte de fronde de fougère sur schiste ou grès.",
+          "explication": "Fougère fossile : Fréquente au Carbonifère.",
+          "imageQuery": "fossil fern pecopteris",
+          "groupe": "plantes-traces",
+          "id": "plantes-traces15",
+          "options": [
+            "Calamites",
+            "Fougère fossile",
+            "Empreinte de fougère",
+            "Stromatolite"
+          ]
         }
       ]
     }

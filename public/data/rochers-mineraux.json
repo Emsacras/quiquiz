@@ -48,7 +48,7 @@
           "options": [
             "Grenat almandin",
             "Tourmaline",
-            "Olivine",
+            "Quartz fumé",
             "Mica muscovite"
           ],
           "indice": "Paillettes argentées flexibles",
@@ -63,9 +63,9 @@
           "groupe": "silicates",
           "options": [
             "Talc",
-            "Olivine",
             "Silex",
-            "Mica muscovite"
+            "Olivine",
+            "Quartz fumé"
           ],
           "indice": "Vert olive dans les basaltes",
           "description": "Minéral vert olive des roches basiques, grains dans le basalte.",
@@ -79,8 +79,8 @@
           "groupe": "silicates",
           "options": [
             "Quartz",
+            "Quartz fumé",
             "Grenat almandin",
-            "Épidote",
             "Améthyste"
           ],
           "indice": "Cristaux dodécaédriques rouge sombre",
@@ -158,7 +158,7 @@
           "nom_scientifique": "Talc",
           "groupe": "silicates",
           "options": [
-            "Mica muscovite",
+            "Quartz fumé",
             "Talc",
             "Tourmaline",
             "Épidote"
@@ -166,6 +166,23 @@
           "indice": "Très tendre, toucher savonneux",
           "description": "Minéral blanc à verdâtre, dureté 1, toucher gras.",
           "explication": "Talc : Le plus tendre de l’échelle de Mohs ; base du talc cosmétique."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Quartz fumé",
+          "nom_scientifique": "Smoky quartz",
+          "indice": "Quartz brun translucide",
+          "description": "Variété de quartz brun à gris fumé, cristallisée.",
+          "explication": "Quartz fumé : Variété de quartz colorée par irradiation naturelle.",
+          "imageQuery": "smoky quartz crystal",
+          "groupe": "silicates",
+          "id": "silicates11",
+          "options": [
+            "Olivine",
+            "Épidote",
+            "Quartz",
+            "Quartz fumé"
+          ]
         }
       ]
     },
@@ -464,10 +481,10 @@
           "nom_scientifique": "Emerald",
           "groupe": "gemmes",
           "options": [
+            "Lapis-lazuli",
+            "Péridot",
             "Turquoise",
-            "Saphir",
-            "Émeraude",
-            "Péridot"
+            "Émeraude"
           ],
           "indice": "Béryl vert vif",
           "description": "Variété verte du béryl, couleur due au chrome ou vanadium.",
@@ -481,7 +498,7 @@
           "groupe": "gemmes",
           "options": [
             "Saphir",
-            "Péridot",
+            "Lapis-lazuli",
             "Opale",
             "Turquoise"
           ],
@@ -529,7 +546,7 @@
           "groupe": "gemmes",
           "options": [
             "Diamant",
-            "Tanzanite",
+            "Lapis-lazuli",
             "Péridot",
             "Turquoise"
           ],
@@ -568,6 +585,23 @@
           "indice": "Bleu-vert opaque",
           "description": "Phosphate bleu-vert opaque, veiné de noir parfois.",
           "explication": "Turquoise : Gemme opaque des zones arides ; bijoux anciens."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Lapis-lazuli",
+          "nom_scientifique": "Lazurite",
+          "indice": "Bleu outremer tacheté de pyrite",
+          "description": "Roche gemme bleue (lazurite) souvent ponctuée d’or de pyrite.",
+          "explication": "Lapis-lazuli : Ornemental depuis l’Antiquité.",
+          "imageQuery": "lapis lazuli stone",
+          "groupe": "gemmes",
+          "id": "gemmes9",
+          "options": [
+            "Turquoise",
+            "Lapis-lazuli",
+            "Tanzanite",
+            "Saphir"
+          ]
         }
       ]
     },
@@ -630,9 +664,9 @@
           "nom_scientifique": "Sphalerite",
           "groupe": "metaux",
           "options": [
-            "Gypse",
-            "Or natif",
             "Graphite",
+            "Or natif",
+            "Argent natif",
             "Sphalérite"
           ],
           "indice": "Minerai de zinc brun",
@@ -646,8 +680,8 @@
           "nom_scientifique": "Cinnabar",
           "groupe": "metaux",
           "options": [
-            "Sphalérite",
             "Cinabre",
+            "Argent natif",
             "Galène",
             "Or natif"
           ],
@@ -662,10 +696,10 @@
           "nom_scientifique": "Fluorite",
           "groupe": "metaux",
           "options": [
-            "Graphite",
-            "Cuivre natif",
+            "Fluorine",
             "Gypse",
-            "Fluorine"
+            "Argent natif",
+            "Cuivre natif"
           ],
           "indice": "Cubes colorés, fluorescence",
           "description": "Halogénure en cubes souvent violets ou verts, fluorescence UV.",
@@ -679,8 +713,8 @@
           "groupe": "metaux",
           "options": [
             "Gypse",
+            "Argent natif",
             "Sphalérite",
-            "Galène",
             "Cuivre natif"
           ],
           "indice": "Très tendre, « rose des sables »",
@@ -734,6 +768,23 @@
           "indice": "Sel gemme, goût salé",
           "description": "Chlorure de sodium en cubes, goût salé, soluble.",
           "explication": "Halite : Sel gemme des évaporites ; clivage cubique."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Argent natif",
+          "nom_scientifique": "Native silver",
+          "indice": "Métal blanc brillant",
+          "description": "Métal blanc, filamenteux ou en masses, ternit.",
+          "explication": "Argent natif : Plus rare que le cuivre natif.",
+          "imageQuery": "native silver mineral",
+          "groupe": "metaux",
+          "id": "metaux11",
+          "options": [
+            "Argent natif",
+            "Galène",
+            "Graphite",
+            "Soufre"
+          ]
         }
       ]
     }
