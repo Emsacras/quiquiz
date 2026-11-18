@@ -1,4 +1,4 @@
-import { markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
+import { isLocalMediaUrl, markTitleRejected, metaForUrl, titleForUrl } from "./images.js";
 
 const STORAGE_KEY = "quiquiz:reported:v1";
 
@@ -64,7 +64,8 @@ export function confirmGoodImage({ name, title, url } = {}) {
   const source = String(url || "").trim();
   if (!cleanName || !cleanTitle || !source) return;
   if (source.includes("placeholder")) return;
-  if (source.startsWith("/api/media/")) return;
+  // Images déjà validées / hébergées localement : pas de re-confirm.
+  if (isLocalMediaUrl(source)) return;
   if (wasReportedLocally(cleanTitle)) return;
   const meta = metaForUrl(source);
   void fetch("/api/confirm-image", {

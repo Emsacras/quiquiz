@@ -156,7 +156,7 @@ function rememberItems(items) {
 
 function commonsTitleFromUrl(url) {
   try {
-    const path = new URL(url).pathname;
+    const path = new URL(url, "https://quiquiz.invalid").pathname;
     const thumb = path.match(/\/wikipedia\/commons\/thumb\/[^/]+\/[^/]+\/([^/]+)\//);
     const plain = path.match(/\/wikipedia\/commons\/[^/]+\/[^/]+\/([^/]+)$/);
     const file = decodeURIComponent((thumb || plain)?.[1] || "").replace(/_/g, " ");
@@ -167,18 +167,51 @@ function commonsTitleFromUrl(url) {
   }
 }
 
+/**
+ * `img.src` / `img.currentSrc` are absolute; pool entries are often `/api/media/...`.
+ * Try both forms so title/meta lookups still hit after the image loads.
+ */
+function urlLookupKeys(url) {
+  const raw = String(url || "").trim();
+  if (!raw) return [];
+  const keys = [raw];
+  try {
+    const parsed = new URL(raw, "https://quiquiz.invalid");
+    if (parsed.pathname.startsWith("/api/media/")) {
+      keys.push(parsed.pathname);
+      try {
+        const decoded = decodeURIComponent(parsed.pathname);
+        if (decoded !== parsed.pathname) keys.push(decoded);
+      } catch {
+        /* ignore */
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  return keys;
+}
+
+export function isLocalMediaUrl(url) {
+  return urlLookupKeys(url).some((key) => key.startsWith("/api/media/"));
+}
+
 export function titleForUrl(url) {
-  if (titleByUrl.has(url)) return titleByUrl.get(url);
+  for (const key of urlLookupKeys(url)) {
+    if (titleByUrl.has(key)) return titleByUrl.get(key);
+  }
   return commonsTitleFromUrl(url);
 }
 
 export function metaForUrl(url) {
-  if (metaByUrl.has(url)) return metaByUrl.get(url);
+  for (const key of urlLookupKeys(url)) {
+    if (metaByUrl.has(key)) return metaByUrl.get(key);
+  }
   const title = titleForUrl(url);
   return {
     title,
     url,
-    validated: Boolean(url && String(url).startsWith("/api/media/")),
+    validated: isLocalMediaUrl(url),
     sourceUrl: "",
     artist: "",
     license: "",
