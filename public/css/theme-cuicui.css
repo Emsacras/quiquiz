@@ -618,6 +618,47 @@ html.is-admin .admin-mod {
   box-shadow: var(--shadow-hard);
 }
 
+.theme-cuicui .duel-scorebar {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .duel-timer-track {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+}
+
+.theme-cuicui .duel-timer-fill {
+  background: var(--accent);
+}
+
+.theme-cuicui .duel-timer-fill.is-urgent {
+  background: var(--bec, #f08a2e);
+}
+
+.theme-cuicui .duel-stat {
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-hard-sm);
+  background: var(--surface);
+}
+
+.theme-cuicui .duel-stat.is-win strong {
+  color: var(--ok, #2f9e5c);
+}
+
+.theme-cuicui .duel-stat.is-loss strong {
+  color: var(--letter-d, #e24b4b);
+}
+
+.theme-cuicui .duel-groups {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+}
+
 .theme-cuicui .revise-panel {
   display: flex;
   flex-wrap: wrap;

@@ -43,7 +43,9 @@ function playerPublic(p) {
         ready: Boolean(p.ready),
         score: p.score || 0,
         totalMs: p.totalMs || 0,
-        answered: Boolean(p.answered)
+        elapsedMs: Number(p.elapsedMs) || 0,
+        answered: Boolean(p.answered),
+        lastCorrect: Boolean(p.lastCorrect)
     };
 }
 

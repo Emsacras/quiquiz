@@ -77,7 +77,7 @@ function normalizeDuelHistory(raw) {
     if (!Array.isArray(raw)) return [];
     return raw
         .filter((item) => item && typeof item === "object")
-        .slice(0, 20)
+        .slice(0, 40)
         .map((item) => ({
             at: Number(item.at) || Date.now(),
             opponentName: String(item.opponentName || "Adversaire").slice(0, 40),

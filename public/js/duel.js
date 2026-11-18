@@ -1,10 +1,18 @@
 /**
  * Client duels live 1v1 (WebSocket) + helpers amis.
  */
-import { flagCdnUrl, getSpeciesImages, pickRandomImage } from "./images.js";
+import {
+  creditHref,
+  creditLabel,
+  flagCdnUrl,
+  getSpeciesImages,
+  metaForUrl,
+  pickRandomImage,
+} from "./images.js";
 import { getCachedMe } from "./profile.js";
 
 const PLACEHOLDER = "assets/placeholder.svg";
+const OPTION_LETTERS = ["a", "b", "c", "d"];
 
 let ws = null;
 let wsReady = null;
@@ -34,11 +42,17 @@ const duelUi = {
   groupIds: [],
   busy: false,
   imageUrl: "",
+  imageCredit: "",
+  imageCreditHref: "",
+  myAnswerIndex: null,
+  questionStartedAt: 0,
+  hintVisible: false,
 };
 
 const WS_TIMEOUT_MS = 8000;
 let remountTimer = null;
 let uiListener = null;
+let questionTimerId = null;
 
 function h(tag, props = {}, ...children) {
   const el = document.createElement(tag);
@@ -206,12 +220,19 @@ function handleServerMessage(msg) {
     duelUi.opponentAnswered = false;
     duelUi.reveal = null;
     duelUi.imageUrl = "";
+    duelUi.imageCredit = "";
+    duelUi.imageCreditHref = "";
+    duelUi.myAnswerIndex = null;
+    duelUi.hintVisible = false;
+    duelUi.questionStartedAt = Date.now();
+    startQuestionClock();
     loadDuelImage(msg.question);
   }
   if (type === "duel:opponentAnswered") {
     duelUi.opponentAnswered = true;
   }
   if (type === "duel:reveal") {
+    stopQuestionClock();
     duelUi.reveal = msg;
     duelUi.duel = {
       ...(duelUi.duel || {}),
@@ -220,6 +241,7 @@ function handleServerMessage(msg) {
     };
   }
   if (type === "duel:finished") {
+    stopQuestionClock();
     duelUi.phase = "result";
     duelUi.finished = msg;
     duelUi.duel = msg.duel || duelUi.duel;
@@ -232,17 +254,27 @@ function handleServerMessage(msg) {
   }
 }
 
+function setDuelImage(url) {
+  duelUi.imageUrl = url || "";
+  if (!url || url.includes("placeholder")) {
+    duelUi.imageCredit = "";
+    duelUi.imageCreditHref = "";
+    return;
+  }
+  const meta = metaForUrl(url);
+  duelUi.imageCredit = creditLabel(meta, "photo");
+  duelUi.imageCreditHref = creditHref(meta) || "";
+}
+
 async function loadDuelImage(question) {
   if (!question) return;
   const token = `${question.id}:${duelUi.questionIndex}`;
   try {
     if (question.iso2 && flagCdnUrl) {
       const url = flagCdnUrl(question.iso2);
-      if (url) {
-        if (token === `${duelUi.question?.id}:${duelUi.questionIndex}`) {
-          duelUi.imageUrl = url;
-          emit({ type: "duel:ui" });
-        }
+      if (url && token === `${duelUi.question?.id}:${duelUi.questionIndex}`) {
+        setDuelImage(url);
+        emit({ type: "duel:ui" });
         return;
       }
     }
@@ -254,12 +286,45 @@ async function loadDuelImage(question) {
     });
     const url = pickRandomImage(result.urls || [], result.items || []);
     if (token === `${duelUi.question?.id}:${duelUi.questionIndex}` && url) {
-      duelUi.imageUrl = url;
+      setDuelImage(url);
       emit({ type: "duel:ui" });
     }
   } catch {
     /* ignore */
   }
+}
+
+function stopQuestionClock() {
+  if (questionTimerId) {
+    clearInterval(questionTimerId);
+    questionTimerId = null;
+  }
+}
+
+function startQuestionClock() {
+  stopQuestionClock();
+  questionTimerId = setInterval(() => {
+    if (duelUi.phase !== "play" || duelUi.answered || duelUi.reveal) {
+      stopQuestionClock();
+      return;
+    }
+    const el = document.querySelector("[data-duel-timer]");
+    const bar = document.querySelector("[data-duel-timer-bar]");
+    if (!el && !bar) return;
+    const elapsed = Math.max(0, Date.now() - (duelUi.questionStartedAt || Date.now()));
+    const left = Math.max(0, (duelUi.timeoutMs || 30000) - elapsed);
+    if (el) el.textContent = formatCountdown(left);
+    if (bar) {
+      const pct = Math.max(0, Math.min(100, (left / (duelUi.timeoutMs || 30000)) * 100));
+      bar.style.width = `${pct}%`;
+      bar.classList.toggle("is-urgent", left <= 5000);
+    }
+  }, 200);
+}
+
+function formatCountdown(ms) {
+  const sec = Math.ceil(Math.max(0, ms) / 1000);
+  return `${sec}s`;
 }
 
 export function getDuelUi() {
@@ -283,8 +348,14 @@ export function resetDuelUi(partial = {}) {
     notice: "",
     finished: null,
     imageUrl: "",
+    imageCredit: "",
+    imageCreditHref: "",
+    myAnswerIndex: null,
+    questionStartedAt: 0,
+    hintVisible: false,
     ...partial,
   });
+  if (partial.phase && partial.phase !== "play") stopQuestionClock();
 }
 
 export async function createDuel({
@@ -387,8 +458,11 @@ export async function setReady(ready = true) {
 }
 
 export async function answerDuel(optionIndex) {
-  if (duelUi.answered) return;
+  if (duelUi.answered || duelUi.reveal) return;
   duelUi.answered = true;
+  duelUi.myAnswerIndex = optionIndex;
+  stopQuestionClock();
+  scheduleUiRefresh();
   await send("duel:answer", { optionIndex });
 }
 
@@ -873,53 +947,115 @@ function renderPlay() {
   const opp = oppPlayer(duel);
   const q = duelUi.question;
   const reveal = duelUi.reveal;
+  const pos = (duelUi.questionIndex || 0) + 1;
+  const total = duelUi.questionTotal || 1;
+  const elapsed = Math.max(0, Date.now() - (duelUi.questionStartedAt || Date.now()));
+  const left = Math.max(0, (duelUi.timeoutMs || 30000) - elapsed);
+  const leftPct = Math.max(0, Math.min(100, (left / (duelUi.timeoutMs || 30000)) * 100));
+
+  const statusText = reveal
+    ? "Révélation"
+    : duelUi.answered
+      ? duelUi.opponentAnswered
+        ? "Révélation…"
+        : "En attente de l’adversaire…"
+      : duelUi.opponentAnswered
+        ? "L’adversaire a répondu — à toi !"
+        : "À toi de jouer";
+
+  const progressFill = h("span");
+  progressFill.style.width = `${Math.round((pos / total) * 100)}%`;
+
+  const timerBar = h("span", {
+    class: left <= 5000 ? "duel-timer-fill is-urgent" : "duel-timer-fill",
+    "data-duel-timer-bar": "true",
+  });
+  timerBar.style.width = `${leftPct}%`;
+
   const nodes = [
+    h("div", { class: "progress-wrap" }, h("div", { class: "progress", "aria-hidden": "true" }, progressFill)),
     h(
       "div",
       { class: "duel-scorebar" },
-      h("span", {
-        text: `${me?.displayName || "Toi"} ${me?.score ?? 0}`,
-      }),
-      h("span", {
-        class: "meta",
-        text: `Q ${(duelUi.questionIndex || 0) + 1}/${duelUi.questionTotal || "?"}`,
-      }),
-      h("span", {
-        text: `${opp?.displayName || "Adv."} ${opp?.score ?? 0}`,
-      }),
+      h("span", { text: `${me?.displayName || "Toi"} · ${me?.score ?? 0}` }),
+      h("span", { class: "meta", text: `Question ${pos}/${total}` }),
+      h("span", { text: `${opp?.displayName || "Adv."} · ${opp?.score ?? 0}` }),
     ),
-    h("p", {
-      class: "meta",
-      text: duelUi.answered
-        ? duelUi.opponentAnswered || reveal
-          ? "Révélation…"
-          : "En attente de l’adversaire…"
-        : duelUi.opponentAnswered
-          ? "L’adversaire a répondu — à toi !"
-          : `Temps max ${(duelUi.timeoutMs / 1000) | 0} s`,
-    }),
+    h(
+      "div",
+      { class: "duel-timer", "aria-live": "polite" },
+      h("div", { class: "duel-timer-track" }, timerBar),
+      h("p", { class: "duel-timer-meta" },
+        h("strong", { "data-duel-timer": "true", text: duelUi.answered || reveal ? "—" : formatCountdown(left) }),
+        h("span", { class: "meta", text: statusText }),
+        h("span", { class: "meta", text: `Cumul ${formatMs(me?.totalMs)}` }),
+      ),
+    ),
   ];
 
   if (duelUi.imageUrl) {
     nodes.push(
       h(
-        "figure",
-        { class: "duel-frame" },
+        "div",
+        { class: "frame", "data-frame": "true" },
         h("img", {
+          "data-photo": "true",
           src: duelUi.imageUrl,
-          alt: "À identifier",
+          alt: "À identifier — cliquer pour agrandir",
           onError: (e) => {
             e.currentTarget.src = PLACEHOLDER;
+            e.currentTarget.removeAttribute("data-photo");
           },
         }),
       ),
+      duelUi.imageCredit
+        ? h(
+            "p",
+            { class: "credit" },
+            duelUi.imageCreditHref
+              ? h("a", {
+                  class: "credit-link",
+                  href: duelUi.imageCreditHref,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  text: duelUi.imageCredit,
+                })
+              : duelUi.imageCredit,
+          )
+        : null,
     );
   } else {
     nodes.push(
-      h("p", {
-        class: "lede",
-        text: q?.indice ? `Indice : ${q.indice}` : "Choisis la bonne réponse",
-      }),
+      h("div", { class: "frame is-loading", "data-frame": "true" },
+        h("div", { class: "spinner", "aria-hidden": "true" }),
+        h("p", { class: "frame-status", text: "Chargement de la photo…" }),
+        h("img", {
+          "data-photo": "true",
+          src: PLACEHOLDER,
+          alt: "",
+          hidden: true,
+        }),
+      ),
+    );
+  }
+
+  if (q?.indice) {
+    nodes.push(
+      h("div", { class: "duel-actions" },
+        h("button", {
+          class: "btn secondary",
+          type: "button",
+          text: duelUi.hintVisible ? "Indice affiché" : "Indice",
+          disabled: duelUi.hintVisible || Boolean(reveal),
+          onClick: () => {
+            duelUi.hintVisible = true;
+            scheduleUiRefresh();
+          },
+        }),
+      ),
+      duelUi.hintVisible || reveal
+        ? h("p", { class: "hint", text: q.indice })
+        : h("p", { class: "hint", hidden: true }),
     );
   }
 
@@ -927,32 +1063,62 @@ function renderPlay() {
     nodes.push(
       h(
         "div",
-        { class: "options duel-choices" },
+        { class: "options", role: "group", "aria-label": "Réponses" },
         q.options.map((opt, index) => {
-          const cls =
-            reveal && index === reveal.correctIndex ? "option is-correct" : "option";
-          return h("button", {
-            class: cls,
-            type: "button",
-            text: opt,
-            disabled: duelUi.answered || Boolean(reveal),
-            onClick: () => answerDuel(index),
-          });
+          const letter = OPTION_LETTERS[index] || "a";
+          let cls = "option";
+          if (reveal) {
+            if (index === reveal.correctIndex) cls += " is-correct is-pop";
+            else if (duelUi.myAnswerIndex === index) cls += " is-wrong is-shake";
+          } else if (duelUi.answered && duelUi.myAnswerIndex === index) {
+            cls += " is-selected";
+          }
+          return h(
+            "button",
+            {
+              class: cls,
+              type: "button",
+              "data-duel-answer": String(index),
+              disabled: duelUi.answered || Boolean(reveal),
+              onClick: () => answerDuel(index),
+            },
+            h("span", {
+              class: `option-letter option-letter--${letter}`,
+              text: letter.toUpperCase(),
+              "aria-hidden": "true",
+            }),
+            h("span", { class: "option-label", text: opt }),
+          );
         }),
       ),
     );
   }
 
   if (reveal) {
+    const myElapsed = me?.elapsedMs || 0;
+    const oppElapsed = opp?.elapsedMs || 0;
+    const myOk = me?.lastCorrect;
     nodes.push(
-      h("p", {
-        class: "note",
-        text: `Réponse : ${reveal.nom_commun || "—"} · Temps toi ${formatMs(me?.totalMs)} · adv. ${formatMs(opp?.totalMs)}`,
-      }),
+      h(
+        "div",
+        { class: myOk ? "feedback is-correct" : "feedback is-wrong" },
+        h("strong", { text: myOk ? "Bien joué !" : "Raté" }),
+        h("p", {
+          text: `Réponse : ${reveal.nom_commun || "—"}`,
+        }),
+        h("p", {
+          class: "meta",
+          text: `Cette question · toi ${formatMs(myElapsed)} · adv. ${formatMs(oppElapsed)}`,
+        }),
+        h("p", {
+          class: "meta",
+          text: `Temps cumulé · toi ${formatMs(me?.totalMs)} · adv. ${formatMs(opp?.totalMs)}`,
+        }),
+      ),
     );
   }
 
-  return nodes;
+  return nodes.filter(Boolean);
 }
 
 function renderResult(ctx, openProfile) {
@@ -1009,8 +1175,48 @@ function renderResult(ctx, openProfile) {
   return nodes;
 }
 
+function summarizeDuelHistory(history) {
+  const list = Array.isArray(history) ? history : [];
+  let wins = 0;
+  let losses = 0;
+  let draws = 0;
+  for (const entry of list) {
+    if (entry?.result === "win") wins += 1;
+    else if (entry?.result === "loss") losses += 1;
+    else draws += 1;
+  }
+  const played = list.length;
+  return {
+    played,
+    wins,
+    losses,
+    draws,
+    winRate: played ? Math.round((wins / played) * 100) : 0,
+  };
+}
+
+function formatDuelDate(at) {
+  try {
+    return new Intl.DateTimeFormat("fr-FR", {
+      timeZone: "Europe/Paris",
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date(at));
+  } catch {
+    return "";
+  }
+}
+
+function resultLabel(result) {
+  if (result === "win") return "Victoire";
+  if (result === "loss") return "Défaite";
+  return "Nul";
+}
+
 /**
- * Section Amis pour le profil.
+ * Section Amis + stats duels pour le profil.
  */
 export function mountFriendsSection(ctx) {
   const wrap = h("section", { class: "friends-panel" }, h("p", { class: "meta", text: "Chargement des amis…" }));
@@ -1029,6 +1235,7 @@ export function mountFriendsSection(ctx) {
 
 function renderFriends(wrap, data, ctx) {
   const { friends, duelHistory = [] } = data;
+  const stats = data.duelStats || summarizeDuelHistory(duelHistory);
   const searchInput = h("input", {
     class: "profile-name-input",
     type: "search",
@@ -1090,6 +1297,40 @@ function renderFriends(wrap, data, ctx) {
     );
 
   wrap.replaceChildren(
+    h("h2", { text: "Duels" }),
+    h(
+      "div",
+      { class: "duel-stats" },
+      h("div", { class: "duel-stat" }, h("strong", { text: String(stats.played) }), h("span", { text: "Joués" })),
+      h("div", { class: "duel-stat is-win" }, h("strong", { text: String(stats.wins) }), h("span", { text: "Victoires" })),
+      h("div", { class: "duel-stat is-loss" }, h("strong", { text: String(stats.losses) }), h("span", { text: "Défaites" })),
+      h("div", { class: "duel-stat" }, h("strong", { text: String(stats.draws) }), h("span", { text: "Nuls" })),
+      h("div", { class: "duel-stat" }, h("strong", { text: `${stats.winRate}%` }), h("span", { text: "Winrate" })),
+    ),
+    duelHistory.length
+      ? h(
+          "div",
+          { class: "friends-block duel-history" },
+          h("h3", { text: "Historique" }),
+          ...duelHistory.slice(0, 20).map((entry) =>
+            h(
+              "div",
+              { class: `duel-history-row is-${entry.result || "draw"}` },
+              h("strong", { text: resultLabel(entry.result) }),
+              h(
+                "span",
+                {
+                  text: `vs ${entry.opponentName} · ${entry.score}-${entry.opponentScore} · ${formatMs(entry.totalMs)}`,
+                },
+              ),
+              h("span", {
+                class: "meta",
+                text: [entry.label, formatDuelDate(entry.at)].filter(Boolean).join(" · "),
+              }),
+            ),
+          ),
+        )
+      : h("p", { class: "meta", text: "Aucun duel enregistré pour l’instant." }),
     h("h2", { text: "Amis" }),
     h("p", { class: "meta", text: "Ajoute des amis et défie-les en duel live." }),
     searchInput,
@@ -1132,23 +1373,28 @@ function renderFriends(wrap, data, ctx) {
         },
       }),
     ]),
-    duelHistory.length
-      ? h(
-          "div",
-          { class: "friends-block" },
-          h("h3", { text: "Derniers duels" }),
-          ...duelHistory.slice(0, 8).map((entry) =>
-            h("p", {
-              class: "meta",
-              text: `${entry.result === "win" ? "Victoire" : entry.result === "loss" ? "Défaite" : "Nul"} vs ${entry.opponentName} · ${entry.score}-${entry.opponentScore} · ${entry.label || ""}`,
-            }),
-          ),
-        )
-      : null,
   );
 }
 
+function onDuelKeydown(event) {
+  if (duelUi.phase !== "play" || duelUi.answered || duelUi.reveal) return;
+  if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  const index = Number(event.key) - 1;
+  if (index < 0 || index > 3) return;
+  const button = document.querySelector(`[data-duel-answer="${index}"]`);
+  if (!button || button.disabled) return;
+  event.preventDefault();
+  answerDuel(index);
+}
+
+let duelKeysBound = false;
+
 /** Précharge la socket (présence / défis). */
 export function warmDuelSocket() {
+  if (!duelKeysBound) {
+    duelKeysBound = true;
+    document.addEventListener("keydown", onDuelKeydown);
+  }
   if (getCachedMe()) ensureWs().catch(() => {});
 }
