@@ -1,11 +1,20 @@
 const express = require("express");
 const { requireUser } = require("../middleware/requireUser");
 const { createRoom, getRoomMeta } = require("../realtime/duelHub");
-const { buildDuelPack } = require("../services/duelPackService");
+const { buildDuelPack, listQuizGroups } = require("../services/duelPackService");
 
 function createDuelRoutes() {
     const router = express.Router();
     router.use(express.json({ limit: "64kb" }));
+
+    router.get("/duels/groups", (req, res) => {
+        const result = listQuizGroups(req.query.categoryId);
+        if (!result.ok) {
+            res.status(400).json({ error: result.error || "category", groups: [] });
+            return;
+        }
+        res.json({ ok: true, label: result.label, groups: result.groups });
+    });
 
     router.post("/duels", requireUser, (req, res) => {
         const result = createRoom({
@@ -13,11 +22,18 @@ function createDuelRoutes() {
             config: {
                 categoryId: req.body?.categoryId,
                 difficulty: req.body?.difficulty || "melange",
-                questionCount: req.body?.questionCount || 10
+                questionCount: req.body?.questionCount || 10,
+                groupIds: req.body?.groupIds
             }
         });
         if (!result.ok) {
-            res.status(400).json({ error: result.error || "create" });
+            res.status(400).json({
+                error: result.error || "create",
+                message:
+                    result.error === "empty"
+                        ? "Aucune question pour ces sous-catégories / difficulté."
+                        : "Impossible de créer le duel."
+            });
             return;
         }
         res.json({
@@ -40,20 +56,6 @@ function createDuelRoutes() {
             return;
         }
         res.json({ duel: meta });
-    });
-
-    router.get("/duels/preview-pack", requireUser, (req, res) => {
-        const built = buildDuelPack({
-            categoryId: req.query.categoryId,
-            difficulty: req.query.difficulty || "melange",
-            questionCount: Number(req.query.questionCount) || 10,
-            seed: "preview"
-        });
-        if (!built.ok) {
-            res.status(400).json({ error: built.error || "pack" });
-            return;
-        }
-        res.json({ ok: true, count: built.pack.length, label: built.label });
     });
 
     return router;

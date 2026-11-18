@@ -31,8 +31,14 @@ const duelUi = {
   categoryId: "",
   difficulty: "melange",
   questionCount: 10,
+  groupIds: [],
+  busy: false,
   imageUrl: "",
 };
+
+const WS_TIMEOUT_MS = 8000;
+let remountTimer = null;
+let uiListener = null;
 
 function h(tag, props = {}, ...children) {
   const el = document.createElement(tag);
@@ -68,6 +74,7 @@ function emit(msg) {
       /* ignore */
     }
   }
+  scheduleUiRefresh();
 }
 
 export function onDuelEvent(fn) {
@@ -84,16 +91,46 @@ export function clearPendingChallenge() {
 }
 
 function ensureWs() {
-  if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
-    return wsReady;
-  }
+  if (ws && ws.readyState === WebSocket.OPEN) return Promise.resolve(ws);
+  if (ws && ws.readyState === WebSocket.CONNECTING && wsReady) return wsReady;
+
   wsReady = new Promise((resolve, reject) => {
-    const socket = new WebSocket(wsUrl());
+    let settled = false;
+    let socket;
+    try {
+      socket = new WebSocket(wsUrl());
+    } catch (error) {
+      wsReady = null;
+      reject(error);
+      return;
+    }
     ws = socket;
-    socket.addEventListener("open", () => resolve(socket));
-    socket.addEventListener("error", () => reject(new Error("ws")));
+
+    const finish = (err, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      if (err) {
+        try {
+          socket.close();
+        } catch {
+          /* ignore */
+        }
+        if (ws === socket) ws = null;
+        wsReady = null;
+        reject(err);
+        return;
+      }
+      resolve(value);
+    };
+
+    const timer = setTimeout(() => finish(new Error("ws_timeout")), WS_TIMEOUT_MS);
+    socket.addEventListener("open", () => finish(null, socket));
+    socket.addEventListener("error", () => finish(new Error("ws")));
     socket.addEventListener("close", () => {
       if (ws === socket) ws = null;
+      if (!settled) finish(new Error("ws_closed"));
+      else wsReady = null;
     });
     socket.addEventListener("message", (event) => {
       let msg;
@@ -111,8 +148,22 @@ function ensureWs() {
 
 function send(type, payload = {}) {
   return ensureWs().then((socket) => {
+    if (!socket || socket.readyState !== WebSocket.OPEN) throw new Error("ws");
     socket.send(JSON.stringify({ type, ...payload }));
   });
+}
+
+function scheduleUiRefresh() {
+  if (!uiListener) return;
+  if (remountTimer) return;
+  remountTimer = setTimeout(() => {
+    remountTimer = null;
+    try {
+      uiListener();
+    } catch {
+      /* ignore */
+    }
+  }, 40);
 }
 
 function handleServerMessage(msg) {
@@ -236,14 +287,89 @@ export function resetDuelUi(partial = {}) {
   });
 }
 
-export async function createDuel({ categoryId, difficulty = "melange", questionCount = 10 }) {
-  resetDuelUi({
-    phase: "lobby",
-    categoryId,
-    difficulty,
-    questionCount,
-  });
-  await send("duel:create", { categoryId, difficulty, questionCount });
+export async function createDuel({
+  categoryId,
+  difficulty = "melange",
+  questionCount = 10,
+  groupIds = [],
+}) {
+  const me = getCachedMe();
+  duelUi.busy = true;
+  duelUi.error = "";
+  duelUi.notice = "Création du duel…";
+  duelUi.categoryId = categoryId;
+  duelUi.difficulty = difficulty;
+  duelUi.questionCount = questionCount;
+  duelUi.groupIds = Array.isArray(groupIds) ? groupIds : [];
+  scheduleUiRefresh();
+
+  try {
+    // HTTP d’abord (auth cookie fiable), puis attache WS en hôte.
+    const res = await fetch("/api/duels", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        categoryId,
+        difficulty,
+        questionCount,
+        groupIds: duelUi.groupIds,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.message || data.error || "create");
+    }
+    const code = String(data.code || "").toUpperCase();
+    if (!code) throw new Error("create");
+
+    duelUi.phase = "lobby";
+    duelUi.code = code;
+    duelUi.seat = "host";
+    duelUi.duel = {
+      code,
+      status: "lobby",
+      label: data.duel?.label || "",
+      config: data.duel?.config || { categoryId, difficulty, questionCount, groupIds },
+      questionCount: data.duel?.questionCount || questionCount,
+      you: "host",
+      host: {
+        displayName: me?.displayName || "Toi",
+        ready: false,
+        score: 0,
+        totalMs: 0,
+      },
+      guest: null,
+    };
+    duelUi.notice = "Connexion temps réel…";
+    scheduleUiRefresh();
+
+    await send("duel:join", { code });
+    duelUi.notice = "";
+  } catch (error) {
+    const msg = String(error?.message || "");
+    if (msg === "ws" || msg === "ws_timeout" || msg === "ws_closed") {
+      duelUi.error =
+        "Duel créé mais WebSocket inaccessible (/ws). Vérifie nginx Upgrade, puis recharge.";
+    } else if (msg === "empty" || /sous-catégories/i.test(msg)) {
+      duelUi.error = "Aucune question pour ces sous-catégories / difficulté.";
+    } else if (msg === "auth" || msg === "Unauthorized") {
+      duelUi.error = "Connecte-toi pour créer un duel.";
+    } else {
+      duelUi.error = msg && msg !== "create" ? msg : "Impossible de créer le duel.";
+    }
+    if (!duelUi.code) {
+      duelUi.phase = "idle";
+      duelUi.duel = null;
+    }
+    throw error;
+  } finally {
+    duelUi.busy = false;
+    scheduleUiRefresh();
+  }
 }
 
 export async function joinDuel(code, displayName = "") {
@@ -275,14 +401,37 @@ export async function leaveDuel() {
   resetDuelUi();
 }
 
-export async function challengeFriend({ friendId, categoryId, difficulty = "melange", questionCount = 10 }) {
-  resetDuelUi({
-    phase: "lobby",
-    categoryId,
-    difficulty,
-    questionCount,
+export async function challengeFriend({
+  friendId,
+  categoryId,
+  difficulty = "melange",
+  questionCount = 10,
+  groupIds = [],
+}) {
+  // Crée via HTTP puis notifie via WS si l’ami est en ligne.
+  await createDuel({ categoryId, difficulty, questionCount, groupIds });
+  try {
+    await send("friend:challenge", {
+      friendId,
+      categoryId,
+      difficulty,
+      questionCount,
+      groupIds,
+      code: duelUi.code,
+    });
+  } catch {
+    /* le lien reste utilisable */
+  }
+}
+
+export async function fetchQuizGroups(categoryId) {
+  const res = await fetch(`/api/duels/groups?categoryId=${encodeURIComponent(categoryId || "")}`, {
+    headers: { Accept: "application/json" },
+    credentials: "same-origin",
   });
-  await send("friend:challenge", { friendId, categoryId, difficulty, questionCount });
+  if (!res.ok) return [];
+  const data = await res.json().catch(() => ({}));
+  return Array.isArray(data.groups) ? data.groups : [];
 }
 
 export async function fetchDuelMeta(code) {
@@ -373,30 +522,36 @@ function oppPlayer(duel) {
 }
 
 /**
- * Rend l’UI duel dans `view` via helpers injectés depuis app.js.
+ * Bind un callback UI (une seule fois côté app) — évite les boucles de remount.
  */
-export function mountDuelView(ctx) {
-  const { view, renderTop, goHome, openProfile, leaves = [], onNeedRemount } = ctx;
-  const unsub = onDuelEvent(() => {
-    if (typeof onNeedRemount === "function") onNeedRemount();
-  });
-  ensureWs().catch(() => {
-    duelUi.error = "Connexion temps réel impossible.";
-    if (typeof onNeedRemount === "function") onNeedRemount();
-  });
+export function bindDuelUi(listener) {
+  uiListener = typeof listener === "function" ? listener : null;
+  return () => {
+    if (uiListener === listener) uiListener = null;
+    if (remountTimer) {
+      clearTimeout(remountTimer);
+      remountTimer = null;
+    }
+  };
+}
+
+/**
+ * Rend l’UI duel dans `view` via helpers injectés depuis app.js.
+ * Ne resouscrit pas le WS à chaque paint.
+ */
+export function renderDuelView(ctx) {
+  const { view, renderTop, goHome, openProfile, leaves = [] } = ctx;
 
   renderTop({
     kicker: "1 contre 1",
     title: "Duel live",
     onBack: async () => {
-      unsub();
       await leaveDuel();
       if (duelUi.categoryId && typeof ctx.backToLevels === "function") ctx.backToLevels();
       else goHome();
     },
     backLabel: "Retour",
     onMenu: async () => {
-      unsub();
       await leaveDuel();
       goHome();
     },
@@ -420,7 +575,12 @@ export function mountDuelView(ctx) {
   }
 
   view.replaceChildren(...nodes.filter(Boolean));
-  return unsub;
+}
+
+/** @deprecated alias */
+export function mountDuelView(ctx) {
+  renderDuelView(ctx);
+  return bindDuelUi(() => ctx.onNeedRemount?.());
 }
 
 function renderCreateLobby(ctx, leaves) {
@@ -440,6 +600,7 @@ function renderCreateLobby(ctx, leaves) {
     ];
   }
 
+  const initialCat = duelUi.categoryId || ctx.defaultCategoryId || leaves[0]?.id || "";
   const catSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Catégorie" },
@@ -447,25 +608,128 @@ function renderCreateLobby(ctx, leaves) {
       h("option", {
         value: leaf.id,
         text: leaf.nom || leaf.categorie || leaf.id,
-        selected: leaf.id === (duelUi.categoryId || ctx.defaultCategoryId),
+        selected: leaf.id === initialCat,
       }),
     ),
   );
   const diffSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Difficulté" },
-    h("option", { value: "melange", text: "Mélange", selected: true }),
-    h("option", { value: "facile", text: "Facile" }),
-    h("option", { value: "moyen", text: "Moyen" }),
-    h("option", { value: "difficile", text: "Difficile" }),
+    h("option", {
+      value: "melange",
+      text: "Mélange",
+      selected: (duelUi.difficulty || "melange") === "melange",
+    }),
+    h("option", {
+      value: "facile",
+      text: "Facile",
+      selected: duelUi.difficulty === "facile",
+    }),
+    h("option", {
+      value: "moyen",
+      text: "Moyen",
+      selected: duelUi.difficulty === "moyen",
+    }),
+    h("option", {
+      value: "difficile",
+      text: "Difficile",
+      selected: duelUi.difficulty === "difficile",
+    }),
   );
   const countSelect = h(
     "select",
     { class: "duel-select", "aria-label": "Nombre de questions" },
     ...[5, 8, 10, 12, 16].map((n) =>
-      h("option", { value: String(n), text: `${n} questions`, selected: n === 10 }),
+      h("option", {
+        value: String(n),
+        text: `${n} questions`,
+        selected: n === (Number(duelUi.questionCount) || 10),
+      }),
     ),
   );
+
+  const groupsBox = h("div", { class: "duel-groups-list", text: "Chargement des sous-catégories…" });
+  const selected = new Set(
+    Array.isArray(duelUi.groupIds) && duelUi.groupIds.length ? duelUi.groupIds.map(String) : [],
+  );
+
+  async function loadGroups(categoryId) {
+    groupsBox.replaceChildren(h("p", { class: "meta", text: "Chargement…" }));
+    const groups = await fetchQuizGroups(categoryId);
+    if (!groups.length) {
+      selected.clear();
+      duelUi.groupIds = [];
+      groupsBox.replaceChildren(
+        h("p", { class: "meta", text: "Pas de sous-catégories : tout le quiz sera utilisé." }),
+      );
+      return;
+    }
+    if (!selected.size) groups.forEach((g) => selected.add(String(g.id)));
+    else {
+      for (const id of [...selected]) {
+        if (!groups.some((g) => String(g.id) === id)) selected.delete(id);
+      }
+      if (!selected.size) groups.forEach((g) => selected.add(String(g.id)));
+    }
+    duelUi.groupIds = [...selected];
+
+    const paint = () => {
+      groupsBox.replaceChildren(
+        ...groups.map((g) => {
+          const id = String(g.id);
+          const input = h("input", {
+            type: "checkbox",
+            checked: selected.has(id),
+            onChange: (event) => {
+              if (event.currentTarget.checked) selected.add(id);
+              else selected.delete(id);
+              if (!selected.size) {
+                event.currentTarget.checked = true;
+                selected.add(id);
+              }
+              duelUi.groupIds = [...selected];
+            },
+          });
+          return h(
+            "label",
+            { class: "duel-group-option" },
+            input,
+            h("span", { text: g.label }),
+            h("span", { class: "meta", text: `${g.count}` }),
+          );
+        }),
+      );
+    };
+    paint();
+  }
+
+  catSelect.addEventListener("change", () => {
+    selected.clear();
+    duelUi.groupIds = [];
+    void loadGroups(catSelect.value);
+  });
+  void loadGroups(initialCat);
+
+  const createBtn = h("button", {
+    class: "btn",
+    type: "button",
+    text: duelUi.busy ? "Création…" : "Créer le duel",
+    disabled: duelUi.busy,
+    onClick: async () => {
+      if (duelUi.busy) return;
+      duelUi.error = "";
+      try {
+        await createDuel({
+          categoryId: catSelect.value,
+          difficulty: diffSelect.value,
+          questionCount: Number(countSelect.value) || 10,
+          groupIds: [...selected],
+        });
+      } catch {
+        /* message déjà posé dans createDuel */
+      }
+    },
+  });
 
   return [
     h("p", {
@@ -481,24 +745,17 @@ function renderCreateLobby(ctx, leaves) {
       diffSelect,
       h("label", { class: "field-label", text: "Longueur" }),
       countSelect,
-      h("button", {
-        class: "btn",
-        type: "button",
-        text: "Créer le duel",
-        onClick: async () => {
-          duelUi.error = "";
-          try {
-            await createDuel({
-              categoryId: catSelect.value,
-              difficulty: diffSelect.value,
-              questionCount: Number(countSelect.value) || 10,
-            });
-          } catch {
-            duelUi.error = "Impossible de créer le duel.";
-          }
-          ctx.onNeedRemount?.();
-        },
-      }),
+      h(
+        "details",
+        { class: "duel-groups" },
+        h("summary", { text: "Sous-catégories (optionnel)" }),
+        h("p", {
+          class: "meta",
+          text: "Décoche les groupes que tu ne veux pas. Au moins un reste actif.",
+        }),
+        groupsBox,
+      ),
+      createBtn,
     ),
   ];
 }
@@ -538,7 +795,7 @@ function renderJoinForm(ctx) {
         } catch {
           duelUi.error = "Impossible de rejoindre.";
         }
-        ctx.onNeedRemount?.();
+        scheduleUiRefresh();
       },
     }),
   ];
@@ -730,7 +987,7 @@ function renderResult(ctx, openProfile) {
           phase: "idle",
           categoryId: duelUi.categoryId || duel?.config?.categoryId || "",
         });
-        ctx.onNeedRemount?.();
+        scheduleUiRefresh();
       },
     }),
   ];
