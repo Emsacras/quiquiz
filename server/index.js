@@ -1,5 +1,5 @@
 /**
- * QuiQuiz — quiz photo autonome (frontend statique + API bassin/admin + profil).
+ * QuiQuiz — quiz photo autonome (frontend statique + API bassin/admin + profil + duels).
  */
 const fs = require("fs");
 const path = require("path");
@@ -9,6 +9,9 @@ const { config, isSteamAuthConfigured, isGoogleAuthConfigured, googleAuthStatus 
 const { passport, installPassport } = require("./auth/passport");
 const { createQuizRoutes, createQuizAdminRoutes } = require("./routes/quizRoutes");
 const { createProfileRoutes } = require("./routes/profileRoutes");
+const { createDuelRoutes } = require("./routes/duelRoutes");
+const { createFriendRoutes } = require("./routes/friendRoutes");
+const { attachDuelHub } = require("./realtime/duelHub");
 const { steamIdOf } = require("./services/userStore");
 
 fs.mkdirSync(config.runtimeDataDir, { recursive: true });
@@ -19,20 +22,20 @@ fs.mkdirSync(path.join(config.runtimeDataDir, "users"), { recursive: true });
 const app = express();
 if (config.trustProxy) app.set("trust proxy", 1);
 
-app.use(
-    session({
-        name: "quiquiz.sid",
-        secret: config.sessionSecret,
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            httpOnly: true,
-            sameSite: "lax",
-            secure: process.env.COOKIE_SECURE === "1",
-            maxAge: 30 * 24 * 60 * 60 * 1000
-        }
-    })
-);
+const sessionMiddleware = session({
+    name: "quiquiz.sid",
+    secret: config.sessionSecret,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: "lax",
+        secure: process.env.COOKIE_SECURE === "1",
+        maxAge: 30 * 24 * 60 * 60 * 1000
+    }
+});
+
+app.use(sessionMiddleware);
 
 try {
     installPassport();
@@ -152,6 +155,8 @@ app.get("/auth/providers", (_req, res) => {
 });
 
 app.use("/api", createProfileRoutes());
+app.use("/api", createFriendRoutes());
+app.use("/api", createDuelRoutes());
 app.use("/api", createQuizRoutes());
 app.use("/api/admin/photos", createQuizAdminRoutes());
 
@@ -164,7 +169,11 @@ app.get("/admin", (req, res) => {
 const server = app.listen(config.port, () => {
     console.log(`[quiquiz] http://localhost:${config.port}/`);
     console.log(`[quiquiz] admin http://localhost:${config.port}/admin/`);
+    console.log(`[quiquiz] ws    ws://localhost:${config.port}/ws`);
 });
+
+attachDuelHub(server, { sessionMiddleware, passport });
+
 server.on("error", (error) => {
     console.error(`[quiquiz] listen failed: ${error.code || error.message}`);
     process.exit(1);

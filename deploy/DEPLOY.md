@@ -74,11 +74,21 @@ GOOGLE_CALLBACK_URL=https://quiquiz.fr/auth/google/callback
 
 Profils joueurs + sync : `data-runtime/users/` (à sauvegarder comme le reste du runtime).
 
-## 7. Données validées
+## 7. WebSocket (duels live)
+
+Les duels 1v1 passent par `ws` sur le même process Node (`/ws`). Nginx doit proxyfier l’upgrade :
+
+- bloc `location /ws` avec `Upgrade` / `Connection "upgrade"` (voir `deploy/nginx-quiquiz.fr.conf`)
+- après `git pull` qui ajoute la dépendance : `npm install --omit=dev && sudo systemctl restart quiquiz`
+- puis `sudo nginx -t && sudo systemctl reload nginx` si la conf nginx a changé
+
+Les salles de duel sont **en mémoire** (un seul process). Pas de multi-instance / sticky Redis en v1.
+
+## 8. Données validées
 
 Les images validées vivent dans `data-runtime/`. Persiste ce dossier (backup) ; ne le mets pas dans git.
 
-## 8. SEO (sitemap / liste quiz)
+## 9. SEO (sitemap / liste quiz)
 
 Après ajout ou retrait d’un quiz dans `public/data/catalog.json` :
 

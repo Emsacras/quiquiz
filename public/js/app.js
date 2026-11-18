@@ -71,6 +71,18 @@ import {
   syncProgressNow,
   unlinkProvider,
 } from "./profile.js";
+import {
+  challengeFriend,
+  clearPendingChallenge,
+  fetchDuelMeta,
+  getDuelUi,
+  joinDuel,
+  mountDuelView,
+  mountFriendsSection,
+  onDuelEvent,
+  resetDuelUi,
+  warmDuelSocket,
+} from "./duel.js";
 
 const OPTION_LETTERS = ["a", "b", "c", "d"];
 
@@ -210,6 +222,11 @@ function showBadgeToasts(badges) {
 function syncRouteFromScreen() {
   if (screen === "profil") {
     setHashRoute({ name: "profil" });
+    return;
+  }
+  if (screen === "duel") {
+    const ui = getDuelUi();
+    setHashRoute({ name: "duel", code: ui.code || undefined });
     return;
   }
   if (!state.category) {
@@ -2774,6 +2791,26 @@ function mountProfile() {
     ),
   );
 
+  nodes.push(
+    mountFriendsSection({
+      onChallengeFriend: (friend) => {
+        const leaves = flattenCatalogLeaves(state.catalog || { domains: [] });
+        const categoryId =
+          state.category?.id || leaves[0]?.id || "oiseaux-francais";
+        resetDuelUi({ phase: "lobby", categoryId });
+        setScreen("duel");
+        challengeFriend({
+          friendId: friend.id,
+          categoryId,
+          difficulty: "melange",
+          questionCount: 10,
+        }).catch(() => {
+          state.notice = "Impossible de défier cet ami.";
+        });
+      },
+    }),
+  );
+
   if (state.notice) {
     nodes.unshift(h("p", { class: "note", text: state.notice }));
     state.notice = "";
@@ -3151,6 +3188,43 @@ function mountLevels() {
     }),
   );
 
+  const me = getCachedMe();
+  const duelPanel = h(
+    "section",
+    { class: "challenge-panel duel-entry-panel" },
+    h(
+      "div",
+      { class: "challenge-panel-copy" },
+      h("p", { class: "challenge-kicker", text: "1 contre 1" }),
+      h("h2", { class: "challenge-title", text: "Duel live" }),
+      h("p", {
+        class: "challenge-blurb",
+        text: me
+          ? "Même QCM, avance synchronisée. Partage un lien ou défie un ami."
+          : "Connecte-toi pour créer un duel (rejoindre via lien reste possible sans compte).",
+      }),
+    ),
+    h("button", {
+      class: "challenge-cta",
+      type: "button",
+      text: me ? "Créer un duel" : "Compte requis",
+      disabled: !me,
+      onClick: () => {
+        if (!me) {
+          openProfile();
+          return;
+        }
+        resetDuelUi({
+          phase: "idle",
+          categoryId: category.id,
+          difficulty: "melange",
+          questionCount: 10,
+        });
+        setScreen("duel");
+      },
+    }),
+  );
+
   show(
     view,
     h("p", {
@@ -3158,6 +3232,7 @@ function mountLevels() {
       text: copy.levelsHelp,
     }),
     challengePanel,
+    duelPanel,
     h(
       "div",
       { class: "modes", role: "group", "aria-label": "Mode de jeu" },
@@ -5248,7 +5323,42 @@ function mountError() {
   view.replaceChildren(h("p", { class: "lede", text: state.error }));
 }
 
+let duelUnsub = null;
+
+function mountDuel() {
+  setPageSeo({
+    title: "Duel live — QuiQuiz",
+    description: "Affronte un ami ou un invité en duel QCM synchronisé sur QuiQuiz.",
+  });
+  if (duelUnsub) {
+    duelUnsub();
+    duelUnsub = null;
+  }
+  const leaves = flattenCatalogLeaves(state.catalog || { domains: [] }).filter(
+    (leaf) => leaf?.id && !leaf.aVenir,
+  );
+  duelUnsub = mountDuelView({
+    view,
+    renderTop,
+    goHome,
+    openProfile,
+    leaves,
+    defaultCategoryId: state.category?.id || leaves[0]?.id || "",
+    backToLevels: () => {
+      if (state.category) setScreen("levels");
+      else goHome();
+    },
+    onNeedRemount: () => {
+      if (screen === "duel") mountDuel();
+    },
+  });
+}
+
 function mount() {
+  if (screen !== "duel" && duelUnsub) {
+    duelUnsub();
+    duelUnsub = null;
+  }
   if (screen === "home") mountHome();
   else if (screen === "levels") mountLevels();
   else if (screen === "preparing") mountPreparing();
@@ -5258,6 +5368,7 @@ function mount() {
   else if (screen === "fiche") mountFiche();
   else if (screen === "revise") mountRevise();
   else if (screen === "profil") mountProfile();
+  else if (screen === "duel") mountDuel();
   else if (screen === "error") mountError();
   else {
     renderTop({ title: "QuiQuiz" });
@@ -5272,6 +5383,33 @@ async function applyRoute(route) {
   }
   if (route.name === "profil") {
     setScreen("profil");
+    return;
+  }
+  if (route.name === "duel") {
+    if (route.code) {
+      const meta = await fetchDuelMeta(route.code);
+      const me = getCachedMe();
+      resetDuelUi({
+        phase: me ? "lobby" : "join",
+        code: route.code,
+        categoryId: meta?.config?.categoryId || state.category?.id || "",
+      });
+      if (!meta) {
+        getDuelUi().error = "Duel introuvable ou expiré.";
+        getDuelUi().phase = "join";
+      } else if (me) {
+        joinDuel(route.code).catch(() => {
+          getDuelUi().error = "Impossible de rejoindre.";
+          getDuelUi().phase = "join";
+        });
+      }
+    } else {
+      resetDuelUi({
+        phase: "idle",
+        categoryId: state.category?.id || "",
+      });
+    }
+    setScreen("duel");
     return;
   }
   const category = await ensureCategoryById(route.categoryId);
@@ -5435,11 +5573,52 @@ async function loadCategory(file) {
   return category;
 }
 
+function showFriendChallengeToast(challenge) {
+  if (!challenge?.code) return;
+  const host = document.getElementById("badge-toasts") || (() => {
+    const node = h("div", { id: "badge-toasts", class: "badge-toasts", "aria-live": "polite" });
+    document.body.append(node);
+    return node;
+  })();
+  const fromName = challenge.from?.displayName || "Un ami";
+  const toast = h(
+    "div",
+    { class: "badge-toast is-pop duel-challenge-toast" },
+    h("strong", { text: `${fromName} te défie` }),
+    h("span", { text: challenge.label || "Duel live" }),
+    h("button", {
+      class: "btn",
+      type: "button",
+      text: "Rejoindre",
+      onClick: () => {
+        clearPendingChallenge();
+        toast.remove();
+        resetDuelUi({ phase: "lobby", code: challenge.code });
+        joinDuel(challenge.code).catch(() => {
+          getDuelUi().error = "Impossible de rejoindre.";
+          getDuelUi().phase = "join";
+        });
+        setHashRoute({ name: "duel", code: challenge.code });
+        setScreen("duel");
+      },
+    }),
+  );
+  host.append(toast);
+  setTimeout(() => {
+    toast.classList.add("is-out");
+    setTimeout(() => toast.remove(), 400);
+  }, 12000);
+}
+
 async function boot() {
   updateFooter();
   hydrateReportedTitles();
   installProgressSyncHooks();
   await bootstrapProfile();
+  warmDuelSocket();
+  onDuelEvent((msg) => {
+    if (msg?.type === "friend:challenge") showFriendChallengeToast(msg);
+  });
   await loadAdminSession();
   try {
     const catalogResponse = await fetch("data/catalog.json");

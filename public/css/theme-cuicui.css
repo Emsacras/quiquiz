@@ -594,6 +594,30 @@ html.is-admin .admin-mod {
   box-shadow: none;
 }
 
+.theme-cuicui .duel-entry-panel {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 18%, var(--surface)) 0%,
+      var(--surface) 58%
+    );
+}
+
+.theme-cuicui .duel-player {
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-hard-sm);
+  background: var(--surface);
+}
+
+.theme-cuicui .friends-panel {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard);
+}
+
 .theme-cuicui .revise-panel {
   display: flex;
   flex-wrap: wrap;
