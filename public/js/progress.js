@@ -380,21 +380,37 @@ export function seededShuffle(items, seedStr) {
   return copy;
 }
 
+/** Clé locale du défi global du jour (une tentative / UTC day pour tout le monde). */
+export function globalDailyStorageKey(date = utcDateKey()) {
+  return `${date}:__global__`;
+}
+
 export function dailySeed(categoryId, date = utcDateKey()) {
   return `${date}:${categoryId}`;
 }
 
 export function getDailyResult(categoryId, date = utcDateKey()) {
-  return readJson(`${DAILY_PREFIX}${date}:${categoryId}`, null);
+  // Nouveau défi global
+  const global = readJson(`${DAILY_PREFIX}${globalDailyStorageKey(date)}`, null);
+  if (global) return global;
+  // Ancien format par catégorie (compat)
+  if (categoryId) return readJson(`${DAILY_PREFIX}${date}:${categoryId}`, null);
+  return null;
+}
+
+export function getGlobalDailyResult(date = utcDateKey()) {
+  return readJson(`${DAILY_PREFIX}${globalDailyStorageKey(date)}`, null);
 }
 
 /** Réserve la tentative du jour (une seule, même en cas d’abandon). */
 export function claimDailyAttempt(categoryId, total, date = utcDateKey()) {
-  if (getDailyResult(categoryId, date)) return false;
+  if (getGlobalDailyResult(date) || (categoryId && getDailyResult(categoryId, date))) return false;
   const n = Math.max(0, Number(total) || 0);
-  writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, {
+  writeJson(`${DAILY_PREFIX}${globalDailyStorageKey(date)}`, {
     score: 0,
     total: n,
+    totalMs: 0,
+    categoryId: String(categoryId || ""),
     at: Date.now(),
     status: "started",
   });
@@ -405,15 +421,17 @@ export function claimDailyAttempt(categoryId, total, date = utcDateKey()) {
  * Clôture le défi du jour. Un sans-faute ajoute une pastille au calendrier.
  * @returns {object[]} badges débloqués (vide — le calendrier remplace les succès défi)
  */
-export function saveDailyResult(categoryId, score, total, date = utcDateKey()) {
+export function saveDailyResult(categoryId, score, total, date = utcDateKey(), totalMs = 0) {
   const payload = {
     score: Math.max(0, Number(score) || 0),
     total: Math.max(0, Number(total) || 0),
+    totalMs: Math.max(0, Number(totalMs) || 0),
+    categoryId: String(categoryId || ""),
     at: Date.now(),
     status: "done",
   };
-  writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, payload);
-  if (payload.total > 0 && payload.score === payload.total) {
+  writeJson(`${DAILY_PREFIX}${globalDailyStorageKey(date)}`, payload);
+  if (payload.total > 0 && payload.score === payload.total && categoryId) {
     recordDailyPerfect(categoryId, date);
   }
   return [];
@@ -421,15 +439,17 @@ export function saveDailyResult(categoryId, score, total, date = utcDateKey()) {
 
 /** Si une partie a été interrompue (rechargement), clôture la tentative. */
 export function finalizeStaleDailyAttempt(categoryId, date = utcDateKey()) {
-  const current = getDailyResult(categoryId, date);
+  const current = getGlobalDailyResult(date) || (categoryId ? getDailyResult(categoryId, date) : null);
   if (!current || current.status !== "started") return current;
-  writeJson(`${DAILY_PREFIX}${date}:${categoryId}`, {
+  writeJson(`${DAILY_PREFIX}${globalDailyStorageKey(date)}`, {
     score: Math.max(0, Number(current.score) || 0),
     total: Math.max(0, Number(current.total) || 0),
+    totalMs: Math.max(0, Number(current.totalMs) || 0),
+    categoryId: String(current.categoryId || categoryId || ""),
     at: Date.now(),
     status: "done",
   });
-  return getDailyResult(categoryId, date);
+  return getGlobalDailyResult(date);
 }
 
 function modeBadgeId(mode) {

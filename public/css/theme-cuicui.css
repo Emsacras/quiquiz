@@ -699,6 +699,24 @@ html.is-admin .admin-mod {
   background: var(--surface);
 }
 
+.theme-cuicui .daily-ranking {
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard);
+}
+
+.theme-cuicui .daily-ranking-row {
+  border: 2px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.theme-cuicui .daily-ranking-row.is-me {
+  outline: none;
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--surface));
+}
+
 .theme-cuicui .revise-panel {
   display: flex;
   flex-wrap: wrap;
