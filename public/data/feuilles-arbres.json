@@ -14,10 +14,10 @@
           "nom_scientifique": "Quercus robur",
           "groupe": "lobées",
           "options": [
-            "Érable plane",
-            "Érable sycomore",
+            "Tulipier de Virginie",
+            "Érable négundo",
             "Chêne pédonculé",
-            "Tulipier de Virginie"
+            "Érable sycomore"
           ],
           "indice": "Lobes arrondis, sans pointes",
           "description": "Feuille lobée à lobes arrondis, limbe coriace.",
@@ -32,9 +32,9 @@
           "groupe": "lobées",
           "options": [
             "Érable sycomore",
-            "Érable champêtre",
             "Figuier",
-            "Érable plane"
+            "Érable plane",
+            "Érable négundo"
           ],
           "indice": "Cinq lobes palmés",
           "description": "Feuille palmée à cinq lobes dentés.",
@@ -48,9 +48,9 @@
           "nom_scientifique": "Acer platanoides",
           "groupe": "lobées",
           "options": [
-            "Érable champêtre",
-            "Lierre",
+            "Chêne tauzin",
             "Érable plane",
+            "Vigne-vierge",
             "Chêne rouge"
           ],
           "indice": "Lobes pointus, sinus en U",
@@ -82,10 +82,10 @@
           "nom_scientifique": "Platanus × hispanica",
           "groupe": "lobées",
           "options": [
+            "Ginkgo",
             "Vigne",
-            "Chêne pubescent",
-            "Platane",
-            "Érable plane"
+            "Vigne-vierge",
+            "Platane"
           ],
           "indice": "Grands lobes pointus",
           "description": "Grande feuille palmée à lobes aigus, nervures marquées.",
@@ -99,10 +99,10 @@
           "nom_scientifique": "Ficus carica",
           "groupe": "lobées",
           "options": [
-            "Figuier",
             "Passiflore",
-            "Chêne pubescent",
-            "Lierre"
+            "Figuier",
+            "Vigne-vierge",
+            "Chêne tauzin"
           ],
           "indice": "3 à 5 lobes profonds",
           "description": "Feuille épaisse, lobes profonds, face rugueuse.",
@@ -116,10 +116,10 @@
           "nom_scientifique": "Quercus rubra",
           "groupe": "lobées",
           "options": [
-            "Chêne rouge",
+            "Érable négundo",
             "Érable sycomore",
-            "Tulipier de Virginie",
-            "Chêne vert"
+            "Chêne rouge",
+            "Tulipier de Virginie"
           ],
           "indice": "Lobes pointus en pointe",
           "description": "Feuille lobée à lobes aigus (contrairement au chêne pédonculé).",
@@ -151,9 +151,9 @@
           "groupe": "lobées",
           "options": [
             "Lierre",
-            "Passiflore",
-            "Chêne vert",
-            "Chêne pédonculé"
+            "Vigne-vierge",
+            "Ginkgo",
+            "Chêne vert"
           ],
           "indice": "3 à 5 lobes (jeune)",
           "description": "Feuille de lierre grimpant, lobes nets sur les rameaux stériles.",
@@ -184,10 +184,10 @@
           "nom_scientifique": "Liriodendron tulipifera",
           "groupe": "lobées",
           "options": [
-            "Lierre",
+            "Vigne-vierge",
             "Tulipier de Virginie",
-            "Érable plane",
-            "Chêne pédonculé"
+            "Chêne tauzin",
+            "Lierre"
           ],
           "indice": "Feuille « en selle » tronquée",
           "description": "Feuille à limbe tronqué au sommet, forme unique.",
@@ -219,9 +219,9 @@
           "groupe": "lobées",
           "options": [
             "Mûrier blanc",
-            "Chêne vert",
+            "Chêne pédonculé",
             "Chêne rouge",
-            "Chêne pédonculé"
+            "Chêne tauzin"
           ],
           "indice": "Lobes irréguliers variables",
           "description": "Feuille souvent lobée de façon irrégulière, base cordiforme.",
@@ -235,10 +235,10 @@
           "nom_scientifique": "Passiflora caerulea",
           "groupe": "lobées",
           "options": [
-            "Liquidambar",
-            "Chêne pédonculé",
+            "Ginkgo",
+            "Vigne-vierge",
             "Passiflore",
-            "Vigne"
+            "Chêne pédonculé"
           ],
           "indice": "Doigts étroits profonds",
           "description": "Feuille profondément découpée en longs lobes.",
@@ -258,8 +258,8 @@
           "options": [
             "Chêne vert",
             "Mûrier blanc",
-            "Érable sycomore",
-            "Lierre"
+            "Lierre",
+            "Ginkgo"
           ]
         },
         {
@@ -278,6 +278,70 @@
             "Mûrier blanc",
             "Vigne"
           ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Vigne-vierge",
+          "nom_scientifique": "Parthenocissus quinquefolia",
+          "indice": "Feuille à 5 folioles",
+          "description": "Palmé à cinq folioles dentées, rouge d’automne.",
+          "explication": "Vigne-vierge : Façades et clôtures.",
+          "groupe": "lobées",
+          "id": "lobées17",
+          "options": [
+            "Chêne rouge",
+            "Chêne vert",
+            "Platane",
+            "Vigne-vierge"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chêne tauzin",
+          "nom_scientifique": "Quercus pyrenaica",
+          "indice": "Feuille lobée duvetée",
+          "description": "Chêne atlantique à feuilles profondément lobées, duvetées.",
+          "explication": "Chêne tauzin : Sud-ouest atlantique.",
+          "groupe": "lobées",
+          "id": "lobées18",
+          "options": [
+            "Chêne tauzin",
+            "Chêne rouge",
+            "Érable négundo",
+            "Vigne-vierge"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Érable négundo",
+          "nom_scientifique": "Acer negundo",
+          "indice": "Feuille composée d’érable",
+          "description": "Érable atypique à feuilles composées.",
+          "explication": "Érable négundo : Introduit, bords de cours d’eau.",
+          "groupe": "lobées",
+          "id": "lobées19",
+          "options": [
+            "Tulipier de Virginie",
+            "Ginkgo",
+            "Érable négundo",
+            "Érable champêtre"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ginkgo",
+          "nom_scientifique": "Ginkgo biloba",
+          "indice": "Feuille en éventail",
+          "description": "Feuille unique en éventail, nervures dichotomes.",
+          "explication": "Ginkgo : Fossile vivant des parcs.",
+          "groupe": "lobées",
+          "id": "lobées20",
+          "options": [
+            "Ginkgo",
+            "Chêne pédonculé",
+            "Vigne",
+            "Chêne tauzin"
+          ]
         }
       ]
     },
@@ -292,10 +356,10 @@
           "nom_scientifique": "Fagus sylvatica",
           "groupe": "simples",
           "options": [
-            "Châtaignier",
             "Hêtre",
-            "Bouleau verruqueux",
-            "Cornouiller sanguin"
+            "Eucalyptus (feuille)",
+            "Châtaignier",
+            "Photinia"
           ],
           "indice": "Ovale, bord ondulé",
           "description": "Feuille ovale à bord légèrement ondulé, nervures parallèles.",
@@ -309,9 +373,9 @@
           "nom_scientifique": "Betula pendula",
           "groupe": "simples",
           "options": [
-            "Troène",
-            "Bouleau verruqueux",
             "Cornouiller sanguin",
+            "Magnolia",
+            "Bouleau verruqueux",
             "Frêne"
           ],
           "indice": "Petite, triangulaire-dentée",
@@ -343,10 +407,10 @@
           "nom_scientifique": "Prunus avium",
           "groupe": "simples",
           "options": [
+            "Bambou (feuille)",
             "Merisier",
             "Hêtre",
-            "Cornouiller sanguin",
-            "Micocoulier"
+            "Cornouiller sanguin"
           ],
           "indice": "Ovale, dents fines",
           "description": "Feuille ovale dentée, face un peu mate.",
@@ -361,9 +425,9 @@
           "groupe": "simples",
           "options": [
             "Tilleul",
-            "Troène",
             "Saule blanc",
-            "Châtaignier"
+            "Châtaignier",
+            "Bambou (feuille)"
           ],
           "indice": "Cœur asymétrique",
           "description": "Feuille cordiforme, base asymétrique, pointe fine.",
@@ -377,10 +441,10 @@
           "nom_scientifique": "Ulmus minor",
           "groupe": "simples",
           "options": [
-            "Noisetier",
+            "Châtaignier",
+            "Catalpa",
             "Orme champêtre",
-            "Fusain d’Europe",
-            "Châtaignier"
+            "Fusain d’Europe"
           ],
           "indice": "Base très asymétrique",
           "description": "Feuille doublement dentée, base fortement inégale.",
@@ -394,10 +458,10 @@
           "nom_scientifique": "Populus tremula",
           "groupe": "simples",
           "options": [
+            "Bambou (feuille)",
             "Merisier",
-            "Fusain d’Europe",
-            "Troène",
-            "Peuplier tremble"
+            "Peuplier tremble",
+            "Eucalyptus (feuille)"
           ],
           "indice": "Ronde, pétiole plat",
           "description": "Feuille quasi ronde, tremble au moindre vent.",
@@ -411,9 +475,9 @@
           "nom_scientifique": "Salix alba",
           "groupe": "simples",
           "options": [
-            "Châtaignier",
+            "Bambou (feuille)",
+            "Eucalyptus (feuille)",
             "Saule blanc",
-            "Micocoulier",
             "Noisetier"
           ],
           "indice": "Très allongée, étroite",
@@ -431,7 +495,7 @@
             "Peuplier tremble",
             "Noisetier",
             "Tilleul",
-            "Châtaignier"
+            "Bambou (feuille)"
           ],
           "indice": "Ronde, double dent",
           "description": "Feuille large presque ronde, pointe courte, double denture.",
@@ -462,10 +526,10 @@
           "nom_scientifique": "Alnus glutinosa",
           "groupe": "simples",
           "options": [
+            "Laurier-cerise",
             "Aulne glutineux",
-            "Fusain d’Europe",
-            "Charme",
-            "Peuplier tremble"
+            "Houx",
+            "Charme"
           ],
           "indice": "Sommet échancré",
           "description": "Feuille arrondie au sommet souvent échancré.",
@@ -534,10 +598,10 @@
           "groupe": "simples",
           "id": "simples15",
           "options": [
-            "Micocoulier",
-            "Frêne",
-            "Noisetier",
-            "Aulne glutineux"
+            "Photinia",
+            "Aulne glutineux",
+            "Houx",
+            "Frêne"
           ]
         },
         {
@@ -555,6 +619,134 @@
             "Troène",
             "Orme champêtre",
             "Micocoulier"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Laurier-cerise",
+          "nom_scientifique": "Prunus laurocerasus",
+          "indice": "Grande feuille persistante lustrée",
+          "description": "Feuille oblongue lustrée persistante, toxique.",
+          "explication": "Laurier-cerise : Haies très fréquentes.",
+          "groupe": "simples",
+          "id": "simples17",
+          "options": [
+            "Laurier-cerise",
+            "Houx",
+            "Bouleau verruqueux",
+            "Troène"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Photinia",
+          "nom_scientifique": "Photinia × fraseri",
+          "indice": "Jeunes feuilles rouges",
+          "description": "Feuilles persistantes ; jeunes pousses rouge vif.",
+          "explication": "Photinia : Haies ornementales.",
+          "groupe": "simples",
+          "id": "simples18",
+          "options": [
+            "Châtaignier",
+            "Photinia",
+            "Tilleul",
+            "Eucalyptus (feuille)"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Houx",
+          "nom_scientifique": "Ilex aquifolium",
+          "indice": "Feuille épineuse persistante",
+          "description": "Feuille coriace à bord épineux, baies rouges.",
+          "explication": "Houx : Sous-bois et haies.",
+          "groupe": "simples",
+          "id": "simples19",
+          "options": [
+            "Magnolia",
+            "Peuplier tremble",
+            "Photinia",
+            "Houx"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Magnolia",
+          "nom_scientifique": "Magnolia grandiflora",
+          "indice": "Grande feuille persistante du sud",
+          "description": "Grande feuille lustrée, dessous souvent roux.",
+          "explication": "Magnolia : Parcs du Midi et Atlantique.",
+          "groupe": "simples",
+          "id": "simples20",
+          "options": [
+            "Magnolia",
+            "Paulownia (feuille)",
+            "Eucalyptus (feuille)",
+            "Charme"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Catalpa",
+          "nom_scientifique": "Catalpa bignonioides",
+          "indice": "Très grande feuille cordiforme",
+          "description": "Feuille très large cordiforme, verticilles.",
+          "explication": "Catalpa : Alignements et parcs.",
+          "groupe": "simples",
+          "id": "simples21",
+          "options": [
+            "Catalpa",
+            "Troène",
+            "Houx",
+            "Aulne glutineux"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Paulownia (feuille)",
+          "nom_scientifique": "Paulownia tomentosa",
+          "indice": "Très grande feuille duveteuse",
+          "description": "Feuille cordiforme géante, face duveteuse.",
+          "explication": "Paulownia : Croissance rapide.",
+          "groupe": "simples",
+          "id": "simples22",
+          "options": [
+            "Paulownia (feuille)",
+            "Noisetier",
+            "Merisier",
+            "Châtaignier"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Bambou (feuille)",
+          "nom_scientifique": "Phyllostachys aurea",
+          "indice": "Feuille linéaire de graminée arborescente",
+          "description": "Feuille allongée de bambou, nervure parallèle.",
+          "explication": "Bambou : Naturalisé localement.",
+          "groupe": "simples",
+          "id": "simples23",
+          "options": [
+            "Aulne glutineux",
+            "Merisier",
+            "Eucalyptus (feuille)",
+            "Bambou (feuille)"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Eucalyptus (feuille)",
+          "nom_scientifique": "Eucalyptus globulus",
+          "indice": "Feuille falciforme odorante",
+          "description": "Feuille en faucille, forte odeur de cinéole.",
+          "explication": "Eucalyptus : Midi.",
+          "groupe": "simples",
+          "id": "simples24",
+          "options": [
+            "Troène",
+            "Eucalyptus (feuille)",
+            "Micocoulier",
+            "Houx"
           ]
         }
       ]
@@ -587,10 +779,10 @@
           "nom_scientifique": "Robinia pseudoacacia",
           "groupe": "composees",
           "options": [
-            "Pin noir",
+            "Acacia (mimosa)",
             "Robinier",
             "Cèdre de l’Atlas",
-            "Sapin pectiné"
+            "Pin noir"
           ],
           "indice": "Folioles ovales arrondies",
           "description": "Feuille composée à folioles ovales, souvent épineuse à la base.",
@@ -621,9 +813,9 @@
           "nom_scientifique": "Pinus sylvestris",
           "groupe": "composees",
           "options": [
-            "Cèdre de l’Atlas",
+            "Ailante",
             "Pin sylvestre",
-            "Sapin pectiné",
+            "Noyer noir",
             "Noyer"
           ],
           "indice": "Aiguilles par 2",
@@ -638,10 +830,10 @@
           "nom_scientifique": "Juglans regia",
           "groupe": "composees",
           "options": [
-            "Robinier",
             "Sureau noir",
             "Noyer",
-            "Marronnier"
+            "Marronnier",
+            "Mahonia"
           ],
           "indice": "Grandes folioles aromatiques",
           "description": "Feuille composée à grandes folioles odorantes.",
@@ -689,10 +881,10 @@
           "nom_scientifique": "Picea abies",
           "groupe": "composees",
           "options": [
+            "Sapin pectiné",
             "Épicéa commun",
-            "Pin noir",
-            "If commun",
-            "Sapin pectiné"
+            "Aralia",
+            "Pin noir"
           ],
           "indice": "Aiguilles sur coussinets",
           "description": "Aiguilles courtes sur toute la rameau, piquantes.",
@@ -723,8 +915,8 @@
           "nom_scientifique": "Larix decidua",
           "groupe": "composees",
           "options": [
-            "Épicéa commun",
             "Sorbier des oiseleurs",
+            "Mahonia",
             "Frêne commun",
             "Mélèze"
           ],
@@ -741,8 +933,8 @@
           "groupe": "composees",
           "options": [
             "Févier d'Amérique",
-            "Sureau noir",
-            "Pin sylvestre",
+            "Noyer noir",
+            "Ailante",
             "Sapin pectiné"
           ],
           "indice": "Aiguilles plates en peigne",
@@ -812,10 +1004,90 @@
           "groupe": "composees",
           "id": "composees15",
           "options": [
-            "Mélèze",
             "Douglas",
+            "Sureau noir",
             "Févier d'Amérique",
-            "Sureau noir"
+            "Aralia"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Acacia (mimosa)",
+          "nom_scientifique": "Acacia dealbata",
+          "indice": "Folioles bipennées argentées",
+          "description": "Feuillage bipenné fin, fleurs jaunes d’hiver.",
+          "explication": "Mimosa : Côte d’Azur naturalisé.",
+          "groupe": "composees",
+          "id": "composees16",
+          "options": [
+            "Ailante",
+            "Acacia (mimosa)",
+            "Sureau noir",
+            "Sapin pectiné"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Mahonia",
+          "nom_scientifique": "Mahonia aquifolium",
+          "indice": "Folioles épineuses persistantes",
+          "description": "Feuille composée à folioles épineuses type houx.",
+          "explication": "Mahonia : Haies et sous-bois ornementaux.",
+          "groupe": "composees",
+          "id": "composees17",
+          "options": [
+            "Sapin pectiné",
+            "Robinier",
+            "Mélèze",
+            "Mahonia"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Aralia",
+          "nom_scientifique": "Aralia elata",
+          "indice": "Grandes feuilles doublement composées",
+          "description": "Très grandes feuilles bipennées, port érigé.",
+          "explication": "Aralia : Ornemental d’origine asiatique.",
+          "groupe": "composees",
+          "id": "composees18",
+          "options": [
+            "Aralia",
+            "Marronnier",
+            "Douglas",
+            "Mélèze"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Noyer noir",
+          "nom_scientifique": "Juglans nigra",
+          "indice": "Folioles nombreuses aromatiques",
+          "description": "Feuille imparipennée à nombreuses folioles.",
+          "explication": "Noyer noir : Parcs, introduit.",
+          "groupe": "composees",
+          "id": "composees19",
+          "options": [
+            "Noyer noir",
+            "Frêne commun",
+            "Sorbier des oiseleurs",
+            "If commun"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ailante",
+          "nom_scientifique": "Ailanthus altissima",
+          "indice": "Grandes feuilles à glandes",
+          "description": "Folioles avec dents basales glanduleuses ; odeur forte.",
+          "explication": "Ailante : Invasif urbain.",
+          "groupe": "composees",
+          "id": "composees20",
+          "options": [
+            "Pin sylvestre",
+            "Mahonia",
+            "Ailante",
+            "Douglas"
           ]
         }
       ]

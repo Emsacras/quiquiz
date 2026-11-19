@@ -14,10 +14,10 @@
           "nom_scientifique": "Coccinella septempunctata",
           "groupe": "coleopteres",
           "options": [
+            "Lucane petit cerf",
             "Charançon du chêne",
             "Hanneton commun",
-            "Coccinelle à sept points",
-            "Oedemère noble"
+            "Coccinelle à sept points"
           ],
           "indice": "Rouge à 7 points noirs",
           "description": "Coléoptère hémisphérique rouge vif, sept points noirs sur les élytres.",
@@ -30,10 +30,10 @@
           "nom_scientifique": "Melolontha melolontha",
           "groupe": "coleopteres",
           "options": [
-            "Silphe noir",
-            "Staphylin odorant",
+            "Hister unicolor",
             "Hanneton commun",
-            "Geotrupe stercoraire"
+            "Silphe noir",
+            "Staphylin odorant"
           ],
           "indice": "Gros scarabée brun du soir",
           "description": "Scarabée brun massif, antennes en éventail, vol lourd au crépuscule.",
@@ -46,9 +46,9 @@
           "nom_scientifique": "Lucanus cervus",
           "groupe": "coleopteres",
           "options": [
-            "Carabe doré",
+            "Cétoine grise",
             "Agril du troène",
-            "Hanneton commun",
+            "Gnorime",
             "Lucane cerf-volant"
           ],
           "indice": "Mandibules en bois de cerf",
@@ -62,9 +62,9 @@
           "nom_scientifique": "Carabus auratus",
           "groupe": "coleopteres",
           "options": [
+            "Coccinelle asiatique",
+            "Cétoine grise",
             "Hanneton commun",
-            "Lucane cerf-volant",
-            "Ténébrion meunier",
             "Carabe doré"
           ],
           "indice": "Vert métallique brillant",
@@ -78,10 +78,10 @@
           "nom_scientifique": "Cetonia aurata",
           "groupe": "coleopteres",
           "options": [
-            "Hanneton commun",
+            "Lucane cerf-volant",
+            "Lucane petit cerf",
             "Capricorne du chêne",
-            "Cétoine dorée",
-            "Lucane cerf-volant"
+            "Cétoine dorée"
           ],
           "indice": "Vert cuivré sur les fleurs",
           "description": "Scarabée vert métallique qui se nourrit de pollen et de pétales.",
@@ -94,10 +94,10 @@
           "nom_scientifique": "Cerambyx cerdo",
           "groupe": "coleopteres",
           "options": [
-            "Lepture tachetée",
-            "Capricorne du chêne",
+            "Gnorime",
             "Charançon du chêne",
-            "Silphe noir"
+            "Capricorne du chêne",
+            "Lucane petit cerf"
           ],
           "indice": "Longues antennes, corps noir",
           "description": "Grand longicorne noir, antennes très longues, lié aux chênes âgés.",
@@ -110,9 +110,9 @@
           "nom_scientifique": "Buprestis octoguttata",
           "groupe": "coleopteres",
           "options": [
-            "Lucane cerf-volant",
+            "Coccinelle asiatique",
+            "Anthrenus",
             "Capricorne du chêne",
-            "Cétoine dorée",
             "Bupreste du pin"
           ],
           "indice": "Élytres bleus à taches jaunes",
@@ -159,9 +159,9 @@
           "groupe": "coleopteres",
           "options": [
             "Dytique bordé",
-            "Coccinelle à deux points",
             "Cicindèle champêtre",
-            "Staphylin odorant"
+            "Coccinelle asiatique",
+            "Bupreste à neuf taches"
           ],
           "indice": "Gros nageur jaune-brun",
           "description": "Grand coléoptère aquatique ovale, bord jaune sur le thorax et les élytres.",
@@ -174,9 +174,9 @@
           "nom_scientifique": "Curculio glandium",
           "groupe": "coleopteres",
           "options": [
+            "Carabe à reflets",
+            "Clairon des ruches",
             "Charançon du chêne",
-            "Cétoine dorée",
-            "Dytique bordé",
             "Lepture tachetée"
           ],
           "indice": "Long rostre sur gland",
@@ -190,10 +190,10 @@
           "nom_scientifique": "Ocypus olens",
           "groupe": "coleopteres",
           "options": [
-            "Hanneton commun",
-            "Dytique bordé",
-            "Staphylin odorant",
-            "Silphe noir"
+            "Silphe noir",
+            "Cétoine grise",
+            "Lucane petit cerf",
+            "Staphylin odorant"
           ],
           "indice": "Élytres courts, abdomen mobile",
           "description": "Grand staphylin noir, élytres courts laissant voir un abdomen flexible.",
@@ -225,8 +225,8 @@
           "groupe": "coleopteres",
           "id": "coleopteres14",
           "options": [
-            "Dytique bordé",
             "Coccinelle à deux points",
+            "Cétoine morio",
             "Carabe des bois",
             "Coccinelle à sept points"
           ]
@@ -241,10 +241,10 @@
           "groupe": "coleopteres",
           "id": "coleopteres15",
           "options": [
+            "Coccinelle à damier",
             "Staphylin odorant",
             "Lepture cordigère",
-            "Dytique bordé",
-            "Oedemère noble"
+            "Lucane petit cerf"
           ]
         },
         {
@@ -257,10 +257,10 @@
           "groupe": "coleopteres",
           "id": "coleopteres16",
           "options": [
-            "Geotrupe stercoraire",
-            "Ténébrion meunier",
-            "Capricorne du chêne",
-            "Oedemère noble"
+            "Cétoine grise",
+            "Oedemère noble",
+            "Scarabée rhinocéros",
+            "Coccinelle à damier"
           ]
         },
         {
@@ -274,9 +274,9 @@
           "id": "coleopteres17",
           "options": [
             "Rhizophage noir",
-            "Hanneton commun",
-            "Capricorne du chêne",
-            "Lucane cerf-volant"
+            "Lucane cerf-volant",
+            "Clairon des ruches",
+            "Hanneton commun"
           ]
         },
         {
@@ -305,10 +305,10 @@
           "groupe": "coleopteres",
           "id": "coleopteres19",
           "options": [
+            "Lucane petit cerf",
             "Silphe noir",
             "Bupreste du pin",
-            "Agril du troène",
-            "Hanneton commun"
+            "Agril du troène"
           ]
         },
         {
@@ -321,10 +321,10 @@
           "groupe": "coleopteres",
           "id": "coleopteres20",
           "options": [
-            "Geotrupe stercoraire",
-            "Carabe doré",
             "Ténébrion meunier",
-            "Dytique bordé"
+            "Longicorne tissé",
+            "Dytique bordé",
+            "Clairon des ruches"
           ]
         },
         {
@@ -338,9 +338,297 @@
           "id": "coleopteres21",
           "options": [
             "Geotrupe stercoraire",
-            "Carabe des bois",
             "Lepture tachetée",
+            "Bupreste à neuf taches",
+            "Cétoine morio"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Coccinelle asiatique",
+          "nom_scientifique": "Harmonia axyridis",
+          "indice": "Coccinelle variable souvent à M noir",
+          "description": "Coccinelle très variable, souvent M noir sur le pronotum.",
+          "explication": "Coccinelle asiatique : Introduite, très fréquente.",
+          "groupe": "coleopteres",
+          "id": "coleopteres22",
+          "options": [
+            "Coccinelle asiatique",
+            "Capricorne du chêne",
+            "Lucane petit cerf",
+            "Cantharide commune"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Taupin des moissons",
+          "nom_scientifique": "Agriotes lineatus",
+          "indice": "Coléoptère allongé des céréales",
+          "description": "Élatéridé brun allongé ; larve = ver fil-de-fer.",
+          "explication": "Taupin : Ravageur des cultures ; « saute » sur le dos.",
+          "groupe": "coleopteres",
+          "id": "coleopteres23",
+          "options": [
+            "Bupreste à neuf taches",
+            "Taupin des moissons",
+            "Anthrenus",
+            "Cétoine grise"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Scarabée rhinocéros",
+          "nom_scientifique": "Oryctes nasicornis",
+          "indice": "Grand scarabée cornu",
+          "description": "Grand scarabée ; mâle avec corne thoracique.",
+          "explication": "Scarabée rhinocéros : Larves dans compost / bois mort.",
+          "groupe": "coleopteres",
+          "id": "coleopteres24",
+          "options": [
+            "Bupreste du pin",
+            "Prione tanneur",
+            "Geotrupe stercoraire",
+            "Scarabée rhinocéros"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cétoine grise",
+          "nom_scientifique": "Oxythyrea funesta",
+          "indice": "Petite cétoine noire ponctuée",
+          "description": "Petite cétoine noire à taches blanches, sur fleurs.",
+          "explication": "Cétoine grise : Communes sur fleurs au printemps.",
+          "groupe": "coleopteres",
+          "id": "coleopteres25",
+          "options": [
+            "Scarabée rhinocéros",
+            "Charançon du chêne",
+            "Cétoine grise",
             "Agril du troène"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cantharide commune",
+          "nom_scientifique": "Cantharis fusca",
+          "indice": "Malachine noir et rouge",
+          "description": "Coléoptère mou, élytres noirs, thorax souvent rougeâtre.",
+          "explication": "Cantharide : Prédateur utile sur la végétation.",
+          "groupe": "coleopteres",
+          "id": "coleopteres26",
+          "options": [
+            "Clairon des ruches",
+            "Cantharide commune",
+            "Geotrupe stercoraire",
+            "Cétoine morio"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Clairon des ruches",
+          "nom_scientifique": "Trichodes alvearius",
+          "indice": "Clairon rouge et noir",
+          "description": "Coléoptère rouge à bandes noires, sur fleurs.",
+          "explication": "Clairon : Larves liées aux nids d’abeilles solitaires.",
+          "groupe": "coleopteres",
+          "id": "coleopteres27",
+          "options": [
+            "Geotrupe stercoraire",
+            "Coccinelle asiatique",
+            "Clairon des ruches",
+            "Rhizophage noir"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Hister unicolor",
+          "nom_scientifique": "Hister unicolor",
+          "indice": "Petit coléoptère brillant noir",
+          "description": "Petit histeridé compact, brillant, lié aux cadavres / fumier.",
+          "explication": "Hister : Charognard / prédateur de larves.",
+          "groupe": "coleopteres",
+          "id": "coleopteres28",
+          "options": [
+            "Hister unicolor",
+            "Bupreste du pin",
+            "Agril du troène",
+            "Oedemère noble"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Carabe à reflets",
+          "nom_scientifique": "Carabus intricatus",
+          "indice": "Grand carabe bleu-vert",
+          "description": "Grand carabe aux reflets bleutés / verdâtres.",
+          "explication": "Carabe intricatus : Forestier, plutôt atlantique.",
+          "groupe": "coleopteres",
+          "id": "coleopteres29",
+          "options": [
+            "Lepture tachetée",
+            "Carabe à reflets",
+            "Bupreste du pin",
+            "Carabe des bois"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Bupreste à neuf taches",
+          "nom_scientifique": "Buprestis novemmaculata",
+          "indice": "Bupreste du pin tacheté",
+          "description": "Bupreste aux élytres jaunes tachetées de noir.",
+          "explication": "Bupreste : Lié aux pins ; spectaculaire.",
+          "groupe": "coleopteres",
+          "id": "coleopteres30",
+          "options": [
+            "Carabe violet",
+            "Hister unicolor",
+            "Anthrenus",
+            "Bupreste à neuf taches"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Longicorne tissé",
+          "nom_scientifique": "Acanthocinus aedilis",
+          "indice": "Longicorne aux antennes très longues",
+          "description": "Cerambycidé gris ; mâle aux antennes démesurées.",
+          "explication": "Acanthocinus : Bois de pin ; antennes record.",
+          "groupe": "coleopteres",
+          "id": "coleopteres31",
+          "options": [
+            "Oedemère noble",
+            "Longicorne tissé",
+            "Capricorne du chêne",
+            "Rhizophage noir"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Gnorime",
+          "nom_scientifique": "Gnorimus nobilis",
+          "indice": "Cétoine verte des fleurs",
+          "description": "Cétoine vert métallique des fleurs d’été.",
+          "explication": "Gnorimus nobilis : Espèce des prairies fleuries.",
+          "groupe": "coleopteres",
+          "id": "coleopteres32",
+          "options": [
+            "Dytique bordé",
+            "Coccinelle asiatique",
+            "Coccinelle à damier",
+            "Gnorime"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Coccinelle à damier",
+          "nom_scientifique": "Propylea quatuordecimpunctata",
+          "indice": "Petite coccinelle jaune à damier",
+          "description": "Petite coccinelle jaune à taches noires en damier.",
+          "explication": "Propylea : Très commune au jardin.",
+          "groupe": "coleopteres",
+          "id": "coleopteres33",
+          "options": [
+            "Coccinelle à damier",
+            "Coccinelle à deux points",
+            "Carabe à reflets",
+            "Silphe noir"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Malachius bipustulatus",
+          "nom_scientifique": "Malachius bipustulatus",
+          "indice": "Malachine vert à taches rouges",
+          "description": "Petit coléoptère vert métallique à taches rouges apicales.",
+          "explication": "Malachius : Sur fleurs au printemps.",
+          "groupe": "coleopteres",
+          "id": "coleopteres34",
+          "options": [
+            "Malachius bipustulatus",
+            "Dytique bordé",
+            "Lucane petit cerf",
+            "Carabe violet"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Anthrenus",
+          "nom_scientifique": "Anthrenus verbasci",
+          "indice": "Petite « mite » des tapis (coléoptère)",
+          "description": "Petit dermestidé tacheté ; larves des textiles / collections.",
+          "explication": "Anthrenus : Ravageur des lainages et insectariums.",
+          "groupe": "coleopteres",
+          "id": "coleopteres35",
+          "options": [
+            "Anthrenus",
+            "Coccinelle à sept points",
+            "Longicorne tissé",
+            "Coccinelle à deux points"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Lucane petit cerf",
+          "nom_scientifique": "Dorcus parallelipipedus",
+          "indice": "Petit lucane noir",
+          "description": "Lucanidé noir mat, plus petit que le cerf-volant.",
+          "explication": "Dorcus : Bois mort des forêts.",
+          "groupe": "coleopteres",
+          "id": "coleopteres36",
+          "options": [
+            "Lucane petit cerf",
+            "Charançon du chêne",
+            "Lepture tachetée",
+            "Longicorne tissé"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Carabe violet",
+          "nom_scientifique": "Carabus violaceus",
+          "indice": "Grand carabe aux reflets violets",
+          "description": "Grand carabe sombre à reflets violacés.",
+          "explication": "Carabe violet : Forestier nocturne.",
+          "groupe": "coleopteres",
+          "id": "coleopteres37",
+          "options": [
+            "Coccinelle à deux points",
+            "Taupin des moissons",
+            "Cicindèle champêtre",
+            "Carabe violet"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cétoine morio",
+          "nom_scientifique": "Protaetia morio",
+          "indice": "Cétoine noirâtre mate",
+          "description": "Cétoine sombre mate, sur fruits / fleurs.",
+          "explication": "Protaetia morio : Midi et zones chaudes.",
+          "groupe": "coleopteres",
+          "id": "coleopteres38",
+          "options": [
+            "Rhizophage noir",
+            "Lepture cordigère",
+            "Dytique bordé",
+            "Cétoine morio"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Prione tanneur",
+          "nom_scientifique": "Prionus coriarius",
+          "indice": "Très grand longicorne brun",
+          "description": "Énorme cerambycidé brun, antennes dentées chez le mâle.",
+          "explication": "Prione : Bois mort ; impressionnant.",
+          "groupe": "coleopteres",
+          "id": "coleopteres39",
+          "options": [
+            "Lucane cerf-volant",
+            "Rhizophage noir",
+            "Prione tanneur",
+            "Cétoine dorée"
           ]
         }
       ]
@@ -356,10 +644,10 @@
           "nom_scientifique": "Aglais io",
           "groupe": "lepidopteres",
           "options": [
-            "Thècle du chêne",
             "Paon-du-jour",
+            "Tircis",
             "Sylvain azuré",
-            "Écaille chinée"
+            "Bombyx du chêne"
           ],
           "indice": "Ocelles bleus sur ailes",
           "description": "Papillon aux ailes rouge-brun marquées de grands ocelles bleutés.",
@@ -374,7 +662,7 @@
           "options": [
             "Vulcain",
             "Aurore",
-            "Sylvain azuré",
+            "Grande tortue",
             "Zygène de la coronille"
           ],
           "indice": "Bandes rouges et blanches",
@@ -388,10 +676,10 @@
           "nom_scientifique": "Pieris brassicae",
           "groupe": "lepidopteres",
           "options": [
+            "Belle-dame",
             "Piéride du chou",
-            "Lucine",
-            "Thècle du chêne",
-            "Belle-dame"
+            "Sphinx tête-de-mort",
+            "Thècle du chêne"
           ],
           "indice": "Blanc à taches noires",
           "description": "Papillon blanc à nervures sombres et taches noires sur les ailes antérieures.",
@@ -405,9 +693,9 @@
           "groupe": "lepidopteres",
           "options": [
             "Flambé",
-            "Petit nacré",
-            "Aurore",
-            "Vulcain"
+            "Piéride du navet",
+            "Vulcain",
+            "Petit nacré"
           ],
           "indice": "Queues et bandes jaunes",
           "description": "Grand papillon jaune pâle à bandes noires et longues queues aux ailes postérieures.",
@@ -422,8 +710,8 @@
           "options": [
             "Machaon",
             "Moro-sphinx",
-            "Zygène de la coronille",
-            "Piéride du chou"
+            "Piéride du chou",
+            "Argus bleu"
           ],
           "indice": "Jaune et noir, point rouge",
           "description": "Grand papillon jaune rayé de noir, ocelle rouge sur l’aile postérieure.",
@@ -436,9 +724,9 @@
           "nom_scientifique": "Gonepteryx rhamni",
           "groupe": "lepidopteres",
           "options": [
-            "Paon-du-jour",
+            "Fadet commun",
             "Robert-le-Diable",
-            "Moro-sphinx",
+            "Souci",
             "Citron"
           ],
           "indice": "Ailes en feuille jaune",
@@ -469,7 +757,7 @@
           "groupe": "lepidopteres",
           "options": [
             "Vulcain",
-            "Tabac d'Espagne",
+            "Souci",
             "Sylvain azuré",
             "Zygène de la coronille"
           ],
@@ -500,10 +788,10 @@
           "nom_scientifique": "Macroglossum stellatarum",
           "groupe": "lepidopteres",
           "options": [
-            "Zygène de la filipendule",
             "Vulcain",
             "Belle-dame",
-            "Moro-sphinx"
+            "Moro-sphinx",
+            "Argus bleu"
           ],
           "indice": "Vol du colibri devant fleurs",
           "description": "Sphinx diurne au vol stationnaire, longue trompe, ailes floues en mouvement.",
@@ -516,10 +804,10 @@
           "nom_scientifique": "Vanessa cardui",
           "groupe": "lepidopteres",
           "options": [
-            "Machaon",
             "Belle-dame",
+            "Machaon",
             "Cuivré commun",
-            "Vulcain"
+            "Cuivré fuligineux"
           ],
           "indice": "Orange saumon migrateur",
           "description": "Ailes orange saumon tachetées de noir et de blanc, migrateur mondial.",
@@ -533,9 +821,9 @@
           "groupe": "lepidopteres",
           "options": [
             "Petit nacré",
-            "Aurore",
+            "Fadet commun",
             "Robert-le-Diable",
-            "Paon-du-jour"
+            "Piéride du navet"
           ],
           "indice": "Ailes découpées en C blanc",
           "description": "Ailes découpées irrégulièrement, dessous brun avec un C blanc.",
@@ -567,9 +855,9 @@
           "groupe": "lepidopteres",
           "id": "lepidopteres14",
           "options": [
-            "Flambé",
-            "Sylvain azuré",
-            "Vulcain",
+            "Souci",
+            "Demi-deuil",
+            "Grande tortue",
             "Aurore"
           ]
         },
@@ -585,7 +873,7 @@
           "options": [
             "Tabac d'Espagne",
             "Moro-sphinx",
-            "Petit nacré",
+            "Cuivré fuligineux",
             "Thècle du chêne"
           ]
         },
@@ -599,10 +887,10 @@
           "groupe": "lepidopteres",
           "id": "lepidopteres16",
           "options": [
-            "Tabac d'Espagne",
+            "Argus bleu",
             "Paon de nuit",
-            "Moro-sphinx",
-            "Sylvain azuré"
+            "Sylvain azuré",
+            "Tircis"
           ]
         },
         {
@@ -618,7 +906,7 @@
             "Belle-dame",
             "Moro-sphinx",
             "Cuivré commun",
-            "Petit nacré"
+            "Souci"
           ]
         },
         {
@@ -631,10 +919,10 @@
           "groupe": "lepidopteres",
           "id": "lepidopteres18",
           "options": [
-            "Lucine",
             "Tabac d'Espagne",
-            "Piéride de la rave",
-            "Vulcain"
+            "Lucine",
+            "Sphinx tête-de-mort",
+            "Demi-deuil"
           ]
         },
         {
@@ -647,10 +935,10 @@
           "groupe": "lepidopteres",
           "id": "lepidopteres19",
           "options": [
-            "Belle-dame",
+            "Piéride du navet",
+            "Souci",
             "Thècle du chêne",
-            "Machaon",
-            "Moro-sphinx"
+            "Machaon"
           ]
         },
         {
@@ -664,9 +952,9 @@
           "id": "lepidopteres20",
           "options": [
             "Sylvain azuré",
-            "Paon-du-jour",
             "Zygène de la filipendule",
-            "Zygène de la coronille"
+            "Zygène de la coronille",
+            "Tircis"
           ]
         },
         {
@@ -681,8 +969,280 @@
           "options": [
             "Zygène de la coronille",
             "Écaille chinée",
-            "Thècle du chêne",
+            "Piéride du navet",
             "Machaon"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Piéride du navet",
+          "nom_scientifique": "Pieris napi",
+          "indice": "Blanc verdâtre veiné dessous",
+          "description": "Papillon blanc ; dessous des ailes veiné de vert.",
+          "explication": "Piéride du navet : Prairies et lisières.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres22",
+          "options": [
+            "Grande tortue",
+            "Paon-du-jour",
+            "Argus bleu",
+            "Piéride du navet"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Myrtil",
+          "nom_scientifique": "Maniola jurtina",
+          "indice": "Brun à ocelle unique",
+          "description": "Satyriné brun avec un ocelle noir à point blanc.",
+          "explication": "Myrtil : Très commun des prairies.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres23",
+          "options": [
+            "Souci",
+            "Myrtil",
+            "Tabac d'Espagne",
+            "Piéride du navet"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Tircis",
+          "nom_scientifique": "Pararge aegeria",
+          "indice": "Brun tacheté de crème",
+          "description": "Satyriné des sous-bois, taches crème sur fond brun.",
+          "explication": "Tircis : Clairières et allées forestières.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres24",
+          "options": [
+            "Citron",
+            "Tircis",
+            "Paon-du-jour",
+            "Petit nacré"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Grande tortue",
+          "nom_scientifique": "Nymphalis polychloros",
+          "indice": "Grand nymphalide orangé",
+          "description": "Grand papillon orange-brun à bord découpé.",
+          "explication": "Grande tortue : Orties et ormes ; plus rare que la Petite.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres25",
+          "options": [
+            "Azuré commun",
+            "Paon de nuit",
+            "Grande tortue",
+            "Aurore"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Petite tortue",
+          "nom_scientifique": "Aglais urticae",
+          "indice": "Orange à bord noir découpé",
+          "description": "Nymphalide orange vif à bordure noire dentelée.",
+          "explication": "Petite tortue : Chenille sur ortie.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres26",
+          "options": [
+            "Zygène de la coronille",
+            "Souci",
+            "Petite tortue",
+            "Moro-sphinx"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Souci",
+          "nom_scientifique": "Colias croceus",
+          "indice": "Jaune orangé migrant",
+          "description": "Piéride jaune-orange ; mâle sans tache noire centrale.",
+          "explication": "Souci : Migrateur, fin d’été.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres27",
+          "options": [
+            "Écaille chinée",
+            "Piéride du chou",
+            "Souci",
+            "Cuivré fuligineux"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Azuré commun",
+          "nom_scientifique": "Polyommatus icarus",
+          "indice": "Petit bleu des prairies",
+          "description": "Mâle bleu vif dessus ; femelle brune à lunules orange.",
+          "explication": "Azuré commun : Très répandu.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres28",
+          "options": [
+            "Azuré commun",
+            "Petite tortue",
+            "Sphinx tête-de-mort",
+            "Souci"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Argus bleu",
+          "nom_scientifique": "Lysandra bellargus",
+          "indice": "Bleu électrique calcaire",
+          "description": "Mâle bleu très vif ; pelouses calcaires.",
+          "explication": "Argus bleu : Spécialiste des pelouses sèches.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres29",
+          "options": [
+            "Belle-dame",
+            "Petite tortue",
+            "Argus bleu",
+            "Myrtil"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Apollon",
+          "nom_scientifique": "Parnassius apollo",
+          "indice": "Grand blanc à ocelles rouges",
+          "description": "Papilionidé montagnard blanc à ocelles rouges.",
+          "explication": "Apollon : Protégé, pelouses alpines.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres30",
+          "options": [
+            "Citron",
+            "Sphinx du liseron",
+            "Apollon",
+            "Souci"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Damier de la succise",
+          "nom_scientifique": "Euphydryas aurinia",
+          "indice": "Damier orange des tourbières",
+          "description": "Nymphalide orange à damier sombre.",
+          "explication": "Damier de la succise : Protégé, milieux humides.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres31",
+          "options": [
+            "Tabac d'Espagne",
+            "Sphinx du liseron",
+            "Diane",
+            "Damier de la succise"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Sphinx du liseron",
+          "nom_scientifique": "Agrius convolvuli",
+          "indice": "Grand sphinx gris migrateur",
+          "description": "Grand hétérocère gris, longue trompe, migrateur.",
+          "explication": "Sphinx du liseron : Visiteur nocturne des jardins.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres32",
+          "options": [
+            "Sphinx du liseron",
+            "Robert-le-Diable",
+            "Belle-dame",
+            "Vulcain"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Bombyx du chêne",
+          "nom_scientifique": "Lasiocampa quercus",
+          "indice": "Grosse chenille / papillon fauve",
+          "description": "Grand bombyx ; femelle plus claire, mâle brun.",
+          "explication": "Bombyx du chêne : Chenille urticante-ish, polyphage.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres33",
+          "options": [
+            "Bombyx du chêne",
+            "Cuivré fuligineux",
+            "Machaon",
+            "Tircis"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Fadet commun",
+          "nom_scientifique": "Coenonympha pamphilus",
+          "indice": "Petit satyriné fauve",
+          "description": "Petit papillon fauve à ocelle discret.",
+          "explication": "Fadet commun : Prairies très répandu.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres34",
+          "options": [
+            "Lucine",
+            "Fadet commun",
+            "Grande tortue",
+            "Zygène de la filipendule"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Demi-deuil",
+          "nom_scientifique": "Melanargia galathea",
+          "indice": "Blanc damier noir",
+          "description": "Satyriné blanc à damier noir caractéristique.",
+          "explication": "Demi-deuil : Prairies fleuries.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres35",
+          "options": [
+            "Petit nacré",
+            "Demi-deuil",
+            "Myrtil",
+            "Sphinx tête-de-mort"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Cuivré fuligineux",
+          "nom_scientifique": "Lycaena tityrus",
+          "indice": "Cuivré sombre",
+          "description": "Lycène ; mâle brun-cuivré sombre.",
+          "explication": "Cuivré fuligineux : Prairies.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres36",
+          "options": [
+            "Cuivré fuligineux",
+            "Tircis",
+            "Aurore",
+            "Bombyx du chêne"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Diane",
+          "nom_scientifique": "Zerynthia polyxena",
+          "indice": "Papillon jaune à motifs noirs/rouges",
+          "description": "Papilionidé printanier sur aristoloches.",
+          "explication": "Diane : Midi et est ; protégée localement.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres37",
+          "options": [
+            "Machaon",
+            "Aurore",
+            "Demi-deuil",
+            "Diane"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Sphinx tête-de-mort",
+          "nom_scientifique": "Acherontia atropos",
+          "indice": "Grand sphinx à motif crâne",
+          "description": "Grand hétérocère ; thorax à dessin évoquant un crâne.",
+          "explication": "Sphinx tête-de-mort : Migrateur rare, ruches.",
+          "groupe": "lepidopteres",
+          "id": "lepidopteres38",
+          "options": [
+            "Flambé",
+            "Sphinx tête-de-mort",
+            "Paon-du-jour",
+            "Azuré commun"
           ]
         }
       ]
@@ -698,10 +1258,10 @@
           "nom_scientifique": "Apis mellifera",
           "groupe": "hymenopteres",
           "options": [
+            "Pimpla",
+            "Bourdon des champs",
             "Abeille charpentière",
-            "Tenthrède de la rose",
-            "Abeille domestique",
-            "Bourdon des champs"
+            "Abeille domestique"
           ],
           "indice": "Ouvrière rayée du rucher",
           "description": "Abeille socialisée, abdomen rayé, corbeilles de pollen sur les pattes.",
@@ -714,10 +1274,10 @@
           "nom_scientifique": "Bombus terrestris",
           "groupe": "hymenopteres",
           "options": [
-            "Frelon européen",
-            "Guêpe commune",
+            "Ammophile des sables",
+            "Osmie cornue",
             "Bourdon terrestre",
-            "Osmie cornue"
+            "Chalicodome des murailles"
           ],
           "indice": "Gros, jaune-noir, cul blanc",
           "description": "Bourdon trapu, bandes jaunes et extrémité blanche de l’abdomen.",
@@ -730,10 +1290,10 @@
           "nom_scientifique": "Vespula vulgaris",
           "groupe": "hymenopteres",
           "options": [
-            "Fourmi rousse des bois",
+            "Bourdon des champs",
             "Guêpe commune",
-            "Tenthrède de la rose",
-            "Bourdon des champs"
+            "Bourdon terrestre à bande",
+            "Sapyga"
           ],
           "indice": "Noir et jaune, taille fine",
           "description": "Guêpe sociale jaune et noire, face marquée, nid papier.",
@@ -747,9 +1307,9 @@
           "groupe": "hymenopteres",
           "options": [
             "Fourmi rousse des bois",
-            "Guêpe poliste",
             "Gasteruption",
-            "Frelon européen"
+            "Frelon européen",
+            "Bourdon terrestre à bande"
           ],
           "indice": "Plus grand, roux et jaune",
           "description": "Grande guêpe sociale, thorax roux, abdomen jaune à bandes noires.",
@@ -762,7 +1322,7 @@
           "nom_scientifique": "Vespa velutina",
           "groupe": "hymenopteres",
           "options": [
-            "Chrysis ignite",
+            "Guêpe germanique",
             "Abeille charpentière",
             "Frelon asiatique",
             "Osmie cornue"
@@ -778,9 +1338,9 @@
           "nom_scientifique": "Formica rufa",
           "groupe": "hymenopteres",
           "options": [
-            "Tenthrède de la rose",
             "Fourmi rousse des bois",
-            "Gasteruption",
+            "Tenthrède de la rose",
+            "Ammophile des sables",
             "Guêpe poliste"
           ],
           "indice": "Dômes d’aiguilles en forêt",
@@ -826,10 +1386,10 @@
           "nom_scientifique": "Chrysis ignita",
           "groupe": "hymenopteres",
           "options": [
+            "Guêpe poliste",
             "Scolie des jardins",
             "Chrysis ignite",
-            "Frelon asiatique",
-            "Guêpe poliste"
+            "Fourmi noire des jardins"
           ],
           "indice": "Guêpe-coucou métallique",
           "description": "Petite guêpe parasitoïde au corps rouge-vert métallique brillant.",
@@ -843,7 +1403,7 @@
           "groupe": "hymenopteres",
           "options": [
             "Frelon européen",
-            "Guêpe commune",
+            "Fourmi noire des jardins",
             "Fourmi rousse des bois",
             "Tenthrède de la rose"
           ],
@@ -862,9 +1422,9 @@
           "id": "hymenopteres11",
           "options": [
             "Bourdon des champs",
-            "Chrysis ignite",
+            "Osmie cornue",
             "Abeille charpentière",
-            "Osmie cornue"
+            "Bembex"
           ]
         },
         {
@@ -878,8 +1438,8 @@
           "id": "hymenopteres12",
           "options": [
             "Abeille charpentière",
+            "Ammophile des sables",
             "Osmie cornue",
-            "Scolie des jardins",
             "Fourmi rousse des bois"
           ]
         },
@@ -893,10 +1453,10 @@
           "groupe": "hymenopteres",
           "id": "hymenopteres13",
           "options": [
-            "Scolie des jardins",
             "Chrysis ignite",
             "Guêpe poliste",
-            "Gasteruption"
+            "Fourmi noire des jardins",
+            "Sapyga"
           ]
         },
         {
@@ -925,10 +1485,170 @@
           "groupe": "hymenopteres",
           "id": "hymenopteres15",
           "options": [
-            "Frelon européen",
+            "Abeille maçonne",
             "Abeille charpentière",
             "Scolie des jardins",
-            "Fourmi rousse des bois"
+            "Pimpla"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Fourmi noire des jardins",
+          "nom_scientifique": "Lasius niger",
+          "indice": "Petite fourmi noire courante",
+          "description": "Petite fourmi noire des trottoirs et jardins.",
+          "explication": "Lasius niger : Très commune en milieu urbain.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres16",
+          "options": [
+            "Abeille charpentière",
+            "Guêpe germanique",
+            "Fourmi noire des jardins",
+            "Bourdon des champs"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Bourdon des prés",
+          "nom_scientifique": "Bombus pratorum",
+          "indice": "Petit bourdon à queue orangée",
+          "description": "Petit bourdon ; extrémité de l’abdomen souvent orangée.",
+          "explication": "Bourdon des prés : Précoce au printemps.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres17",
+          "options": [
+            "Osmie cornue",
+            "Bourdon des prés",
+            "Frelon asiatique",
+            "Chalicodome des murailles"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Abeille maçonne",
+          "nom_scientifique": "Osmia bicornis",
+          "indice": "Osmie rousse des nichoirs",
+          "description": "Abeille solitaire rousse, niche dans cavités / tubes.",
+          "explication": "Osmie rousse : Très utilisée en nichoirs à abeilles.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres18",
+          "options": [
+            "Abeille maçonne",
+            "Abeille domestique",
+            "Bourdon terrestre à bande",
+            "Bembex"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Guêpe germanique",
+          "nom_scientifique": "Vespula germanica",
+          "indice": "Guêpe à trois points noirs",
+          "description": "Proche de la guêpe commune ; face à points caractéristiques.",
+          "explication": "Guêpe germanique : Nids souvent souterrains.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres19",
+          "options": [
+            "Sirex géant",
+            "Bourdon des prés",
+            "Chalicodome des murailles",
+            "Guêpe germanique"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Bembex",
+          "nom_scientifique": "Bembix rostrata",
+          "indice": "Guêpe fouisseuse à face jaune",
+          "description": "Guêpe solitaire au large bandeau facial jaune, sur sable.",
+          "explication": "Bembex : Chasse des diptères pour ses larves.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres20",
+          "options": [
+            "Sapyga",
+            "Pimpla",
+            "Bourdon des prés",
+            "Bembex"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Chalicodome des murailles",
+          "nom_scientifique": "Megachile parietina",
+          "indice": "Abeille maçonne des murs",
+          "description": "Grande abeille solitaire construisant des nids de mortier.",
+          "explication": "Chalicodome : Murs ensoleillés du sud.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres21",
+          "options": [
+            "Guêpe germanique",
+            "Chalicodome des murailles",
+            "Sapyga",
+            "Fourmi noire des jardins"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Sapyga",
+          "nom_scientifique": "Sapyga quinquepunctata",
+          "indice": "Petit hyménoptère noir tacheté",
+          "description": "Parasitoïde noir à taches jaunes / blanches.",
+          "explication": "Sapyga : Parasite d’abeilles solitaires.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres22",
+          "options": [
+            "Guêpe poliste",
+            "Frelon européen",
+            "Frelon asiatique",
+            "Sapyga"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Pimpla",
+          "nom_scientifique": "Pimpla rufipes",
+          "indice": "Ichneumon noir à pattes rousses",
+          "description": "Grand ichneumon noir, pattes souvent rougeâtres.",
+          "explication": "Pimpla : Parasitoïde de chenilles / chrysalides.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres23",
+          "options": [
+            "Pimpla",
+            "Abeille domestique",
+            "Frelon européen",
+            "Bourdon terrestre"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Bourdon terrestre à bande",
+          "nom_scientifique": "Bombus lucorum",
+          "indice": "Bourdon à bandes jaunes",
+          "description": "Bourdon à bandes jaunes et queue blanche (groupe lucorum).",
+          "explication": "Bombus lucorum : Très commun.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres24",
+          "options": [
+            "Bourdon terrestre à bande",
+            "Frelon asiatique",
+            "Tenthrède de la rose",
+            "Abeille domestique"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ammophile des sables",
+          "nom_scientifique": "Ammophila sabulosa",
+          "indice": "Guêpe fouisseuse à long pétiole",
+          "description": "Guêpe solitaire très allongée, transporte des chenilles.",
+          "explication": "Ammophile : Sables et sols meubles.",
+          "groupe": "hymenopteres",
+          "id": "hymenopteres25",
+          "options": [
+            "Fourmi noire des jardins",
+            "Abeille charpentière",
+            "Sapyga",
+            "Ammophile des sables"
           ]
         }
       ]
@@ -944,8 +1664,8 @@
           "nom_scientifique": "Musca domestica",
           "groupe": "dipteres",
           "options": [
-            "Asile frelon",
-            "Eristale gluante",
+            "Chironomé",
+            "Diopsis",
             "Mouche domestique",
             "Bombyle du lierre"
           ],
@@ -960,10 +1680,10 @@
           "nom_scientifique": "Episyrphus balteatus",
           "groupe": "dipteres",
           "options": [
-            "Asile frelon",
+            "Stratiome",
+            "Volucelle transparente",
             "Syrphe ceinturé",
-            "Bombyle discontinu",
-            "Moustique commun"
+            "Asile frelon"
           ],
           "indice": "Fausse guêpe des fleurs",
           "description": "Syrphe à abdomen rayé noir et jaune orange, mime une guêpe.",
@@ -992,10 +1712,10 @@
           "nom_scientifique": "Tipula paludosa",
           "groupe": "dipteres",
           "options": [
+            "Mouche domestique",
             "Eristale gluante",
             "Tipule des prairies",
-            "Syrphe ceinturé",
-            "Mouche domestique"
+            "Mouche verte"
           ],
           "indice": "Longues pattes, « cousin »",
           "description": "Grand diptère frêle aux très longues pattes, confondu avec un moustique géant.",
@@ -1040,7 +1760,7 @@
           "nom_scientifique": "Culex pipiens",
           "groupe": "dipteres",
           "options": [
-            "Tipule des prairies",
+            "Chironomé",
             "Taon des bovins",
             "Mouche à fruits",
             "Moustique commun"
@@ -1058,8 +1778,8 @@
           "options": [
             "Mouche à fruits",
             "Syrphe ceinturé",
-            "Syrphe porte-plume",
-            "Bombyle discontinu"
+            "Stratiome",
+            "Syrphe porte-plume"
           ],
           "indice": "Minuscule sur fruits mûrs",
           "description": "Très petite mouche jaunâtre attirée par fruits et vinaigre.",
@@ -1076,9 +1796,9 @@
           "id": "dipteres9",
           "options": [
             "Syrphe porte-plume",
-            "Eristale gluante",
-            "Bombyle du lierre",
-            "Moustique commun"
+            "Mouche verte",
+            "Moustique commun",
+            "Eristale gluante"
           ]
         },
         {
@@ -1091,10 +1811,10 @@
           "groupe": "dipteres",
           "id": "dipteres10",
           "options": [
-            "Bombyle discontinu",
-            "Mouche à fruits",
             "Eristale gluante",
-            "Conops"
+            "Conops",
+            "Stratiome",
+            "Empis tessellatus"
           ]
         },
         {
@@ -1123,10 +1843,106 @@
           "groupe": "dipteres",
           "id": "dipteres12",
           "options": [
-            "Bombyle discontinu",
             "Conops",
+            "Tipule des prairies",
             "Moustique commun",
-            "Tipule des prairies"
+            "Diopsis"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Mouche verte",
+          "nom_scientifique": "Lucilia sericata",
+          "indice": "Mouche métallique verte",
+          "description": "Calliphoridé vert brillant, sur matières organiques.",
+          "explication": "Lucilia : Aussi utilisée en maggot therapy.",
+          "groupe": "dipteres",
+          "id": "dipteres13",
+          "options": [
+            "Diopsis",
+            "Syrphe ceinturé",
+            "Moustique commun",
+            "Mouche verte"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Volucelle transparente",
+          "nom_scientifique": "Volucella pellucens",
+          "indice": "Gros syrphe à bande blanche",
+          "description": "Grand syrphe noir à large bande blanche translucide.",
+          "explication": "Volucella : Fréquente les fleurs ; larves dans nids de guêpes.",
+          "groupe": "dipteres",
+          "id": "dipteres14",
+          "options": [
+            "Tipule des prairies",
+            "Eristale gluante",
+            "Volucelle transparente",
+            "Diopsis"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chironomé",
+          "nom_scientifique": "Chironomus plumosus",
+          "indice": "Petit moustique non piqueur",
+          "description": "Diptère grêle type « cousin » ; mâles en essaims.",
+          "explication": "Chironome : Larves en eaux riches ; adultes ne piquent pas.",
+          "groupe": "dipteres",
+          "id": "dipteres15",
+          "options": [
+            "Tipule des prairies",
+            "Mouche verte",
+            "Stratiome",
+            "Chironomé"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Stratiome",
+          "nom_scientifique": "Stratiomys chameleon",
+          "indice": "Diptère plat jaune et noir",
+          "description": "Diptère aplati mimant une guêpe, près de l’eau.",
+          "explication": "Stratiome : Larves aquatiques.",
+          "groupe": "dipteres",
+          "id": "dipteres16",
+          "options": [
+            "Taon des bovins",
+            "Conops",
+            "Stratiome",
+            "Volucelle transparente"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Empis tessellatus",
+          "nom_scientifique": "Empis tessellata",
+          "indice": "Mouche danseuse sombre",
+          "description": "Diptère prédateur allongé, pattes longues.",
+          "explication": "Empis : Chasse d’autres insectes en vol.",
+          "groupe": "dipteres",
+          "id": "dipteres17",
+          "options": [
+            "Syrphe ceinturé",
+            "Bombyle du lierre",
+            "Tipule des prairies",
+            "Empis tessellatus"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Diopsis",
+          "nom_scientifique": "Sphyracephala europaea",
+          "indice": "Mouche à yeux pédonculés (rare)",
+          "description": "Diptère aux yeux au bout de pédoncules.",
+          "explication": "Sphyracephala : Rare en Europe.",
+          "groupe": "dipteres",
+          "id": "dipteres18",
+          "options": [
+            "Diopsis",
+            "Syrphe ceinturé",
+            "Stratiome",
+            "Mouche à fruits"
           ]
         }
       ]
@@ -1158,10 +1974,10 @@
           "nom_scientifique": "Mantis religiosa",
           "groupe": "autres",
           "options": [
-            "Criquet migrateur",
+            "Libellule déprimée",
             "Puceron vert du pêcher",
             "Mante religieuse",
-            "Libellule déprimée"
+            "Ranâtre"
           ],
           "indice": "Pattes ravisseuses jointes",
           "description": "Insecte allongé vert ou brun, pattes antérieures pliées en « prière ».",
@@ -1174,10 +1990,10 @@
           "nom_scientifique": "Forficula auricularia",
           "groupe": "autres",
           "options": [
-            "Mante religieuse",
-            "Gerris lacustre",
             "Perce-oreille commun",
-            "Empuse pennée"
+            "Gerris lacustre",
+            "Nèpe cendrée",
+            "Mante religieuse"
           ],
           "indice": "Pinces à l’abdomen",
           "description": "Dermaptère brun, cerques en pinces à l’extrémité de l’abdomen.",
@@ -1190,10 +2006,10 @@
           "nom_scientifique": "Libellula depressa",
           "groupe": "autres",
           "options": [
-            "Criquet duetiste",
-            "Libellule déprimée",
-            "Criquet migrateur",
-            "Puceron vert du pêcher"
+            "Decticelle bariolée",
+            "Puceron lanigère",
+            "Leste vert",
+            "Libellule déprimée"
           ],
           "indice": "Abdomen plat, mâle bleu",
           "description": "Libellule au corps large et aplati ; mâle bleuté, femelle jaunâtre.",
@@ -1206,7 +2022,7 @@
           "nom_scientifique": "Ischnura elegans",
           "groupe": "autres",
           "options": [
-            "Demoiselle aquatique",
+            "Orthétrum réticulé",
             "Agrion élégant",
             "Criquet duetiste",
             "Aeschne bleue"
@@ -1222,10 +2038,10 @@
           "nom_scientifique": "Phryganea grandis",
           "groupe": "autres",
           "options": [
-            "Criquet duetiste",
             "Phrygane commune",
-            "Puceron vert du pêcher",
-            "Agrion élégant"
+            "Mante empuse",
+            "Panorpe",
+            "Sympétrum sanguin"
           ],
           "indice": "Fourreau de débris",
           "description": "Trichoptère dont la larve construit un fourreau de débris végétaux.",
@@ -1238,10 +2054,10 @@
           "nom_scientifique": "Lyristes plebejus",
           "groupe": "autres",
           "options": [
-            "Cigale plébéienne",
-            "Mante religieuse",
             "Gerris lacustre",
-            "Phrygane commune"
+            "Cigale plébéienne",
+            "Orthétrum réticulé",
+            "Mante religieuse"
           ],
           "indice": "Chant d’été méditerranéen",
           "description": "Grande cigale brune, chant strident des pins et garrigues du sud.",
@@ -1254,10 +2070,10 @@
           "nom_scientifique": "Myzus persicae",
           "groupe": "autres",
           "options": [
-            "Empuse pennée",
+            "Leste vert",
             "Puceron vert du pêcher",
-            "Mante religieuse",
-            "Phrygane commune"
+            "Phrygane commune",
+            "Mante religieuse"
           ],
           "indice": "Colonies sur jeunes pousses",
           "description": "Petit puceron vert à rose, colonies denses sous les feuilles.",
@@ -1270,10 +2086,10 @@
           "nom_scientifique": "Empusa pennata",
           "groupe": "autres",
           "options": [
-            "Demoiselle aquatique",
-            "Criquet duetiste",
             "Empuse pennée",
-            "Aeschne bleue"
+            "Cigale rouge",
+            "Sympétrum sanguin",
+            "Criquet duetiste"
           ],
           "indice": "Mante couronnée du sud",
           "description": "Mante élancée à crête céphalique, prothorax allongé, sud de la France.",
@@ -1288,8 +2104,8 @@
           "options": [
             "Demoiselle aquatique",
             "Gerris lacustre",
-            "Libellule déprimée",
-            "Phrygane commune"
+            "Criquet mélodieux",
+            "Sympétrum sanguin"
           ],
           "indice": "Patineur à la surface",
           "description": "Punaise allongée qui « marche » sur l’eau grâce à ses longues pattes.",
@@ -1307,8 +2123,8 @@
           "options": [
             "Empuse pennée",
             "Aeschne bleue",
-            "Libellule déprimée",
-            "Demoiselle aquatique"
+            "Demoiselle aquatique",
+            "Cigale rouge"
           ]
         },
         {
@@ -1321,9 +2137,9 @@
           "groupe": "autres",
           "id": "autres12",
           "options": [
+            "Caloptéryx vierge",
+            "Nèpe cendrée",
             "Libellule déprimée",
-            "Perce-oreille commun",
-            "Empuse pennée",
             "Criquet duetiste"
           ]
         },
@@ -1337,10 +2153,10 @@
           "groupe": "autres",
           "id": "autres13",
           "options": [
-            "Phrygane commune",
-            "Empuse pennée",
+            "Criquet mélodieux",
+            "Leste vert",
             "Anax empereur",
-            "Libellule déprimée"
+            "Phrygane commune"
           ]
         },
         {
@@ -1354,9 +2170,9 @@
           "id": "autres14",
           "options": [
             "Sauterelle verte",
-            "Agrion élégant",
+            "Sympétrum sanguin",
             "Gerris lacustre",
-            "Anax empereur"
+            "Mante religieuse brune"
           ]
         },
         {
@@ -1369,10 +2185,250 @@
           "groupe": "autres",
           "id": "autres15",
           "options": [
-            "Aeschne bleue",
-            "Empuse pennée",
+            "Mante religieuse brune",
             "Mante religieuse",
+            "Aeschne bleue",
+            "Puceron lanigère"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Panorpe",
+          "nom_scientifique": "Panorpa communis",
+          "indice": "Mécoptère à « queue de scorpion »",
+          "description": "Insecte à face en bec ; mâle avec bulbe terminal en massue.",
+          "explication": "Panorpe : Mécoptère des haies et lisières.",
+          "groupe": "autres",
+          "id": "autres16",
+          "options": [
+            "Gerris lacustre",
+            "Empuse pennée",
+            "Panorpe",
             "Agrion élégant"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Cigale de l'Orne",
+          "nom_scientifique": "Cicada orni",
+          "indice": "Cigale méditerranéenne commune",
+          "description": "Cigale au corps robuste, chant estival du Midi.",
+          "explication": "Cicada orni : Emblématique des soirs du sud.",
+          "groupe": "autres",
+          "id": "autres17",
+          "options": [
+            "Mante religieuse",
+            "Cigale plébéienne",
+            "Cigale de l'Orne",
+            "Aeschne bleue"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Puceron lanigère",
+          "nom_scientifique": "Eriosoma lanigerum",
+          "indice": "Pucerons blancs cotonneux",
+          "description": "Colonies blanc-cotonneuses sur pommiers.",
+          "explication": "Puceron lanigère : Ravageur des vergers.",
+          "groupe": "autres",
+          "id": "autres18",
+          "options": [
+            "Demoiselle aquatique",
+            "Puceron lanigère",
+            "Gerris lacustre",
+            "Criquet migrateur"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Orthétrum réticulé",
+          "nom_scientifique": "Orthetrum cancellatum",
+          "indice": "Libellule au mâle bleu-pruiné",
+          "description": "Libellule ; mâle abdomen bleu pruiné, femelle jaunâtre.",
+          "explication": "Orthétrum : Plans d’eau ensoleillés.",
+          "groupe": "autres",
+          "id": "autres19",
+          "options": [
+            "Orthétrum réticulé",
+            "Empuse pennée",
+            "Sympétrum sanguin",
+            "Mante religieuse"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Leste vert",
+          "nom_scientifique": "Lestes viridis",
+          "indice": "Demoiselle vert métallique",
+          "description": "Zygoptère vert brillant, ailes écartées au repos.",
+          "explication": "Leste vert : Souvent sur arbres près de l’eau.",
+          "groupe": "autres",
+          "id": "autres20",
+          "options": [
+            "Caloptéryx vierge",
+            "Sauterelle verte",
+            "Leste vert",
+            "Phrygane commune"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Criquet mélodieux",
+          "nom_scientifique": "Gomphocerippus rufus",
+          "indice": "Criquet à antennes en massue",
+          "description": "Criquet aux antennes épaissies à l’extrémité.",
+          "explication": "Criquet mélodieux : Lisières et friches.",
+          "groupe": "autres",
+          "id": "autres21",
+          "options": [
+            "Criquet mélodieux",
+            "Gerris",
+            "Ranâtre",
+            "Demoiselle aquatique"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Decticelle bariolée",
+          "nom_scientifique": "Roeseliana roeselii",
+          "indice": "Sauterelle à bande claire",
+          "description": "Ensifère brune à bande latérale claire nette.",
+          "explication": "Decticelle : Prairies et friches.",
+          "groupe": "autres",
+          "id": "autres22",
+          "options": [
+            "Ranâtre",
+            "Gerris",
+            "Puceron lanigère",
+            "Decticelle bariolée"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Mante empuse",
+          "nom_scientifique": "Empusa fasciata",
+          "indice": "Empuse orientale rare",
+          "description": "Proche d’Empusa pennata, plus orientale / sud-est.",
+          "explication": "Empusa fasciata : Méditerranéenne orientale.",
+          "groupe": "autres",
+          "id": "autres23",
+          "options": [
+            "Cigale de l'Orne",
+            "Cigale plébéienne",
+            "Anax empereur",
+            "Mante empuse"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Gerris",
+          "nom_scientifique": "Aquarius najas",
+          "indice": "Patineur d’eau plus grand",
+          "description": "Hétéroptère marcheur d’eau, plus grand que Gerris lacustre.",
+          "explication": "Aquarius najas : Surfaces d’eau calme.",
+          "groupe": "autres",
+          "id": "autres24",
+          "options": [
+            "Puceron vert du pêcher",
+            "Mante religieuse brune",
+            "Aeschne bleue",
+            "Gerris"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Nèpe cendrée",
+          "nom_scientifique": "Nepa cinerea",
+          "indice": "Punaise d’eau à « queue »",
+          "description": "Hétéroptère aquatique plat, siphon respiratoire long.",
+          "explication": "Nèpe : Fonds vaseux des mares.",
+          "groupe": "autres",
+          "id": "autres25",
+          "options": [
+            "Nèpe cendrée",
+            "Caloptéryx vierge",
+            "Gerris",
+            "Phrygane commune"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ranâtre",
+          "nom_scientifique": "Ranatra linearis",
+          "indice": "Punaise-bâton aquatique",
+          "description": "Hétéroptère très allongé, allure de bâton dans l’eau.",
+          "explication": "Ranâtre : Chasse à l’affût sous l’eau.",
+          "groupe": "autres",
+          "id": "autres26",
+          "options": [
+            "Ranâtre",
+            "Perce-oreille commun",
+            "Gerris lacustre",
+            "Panorpe"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Cigale rouge",
+          "nom_scientifique": "Tibicina haematodes",
+          "indice": "Cigale à veines rougeâtres",
+          "description": "Cigale aux nervures alaires teintées de rouge.",
+          "explication": "Tibicina : Midi.",
+          "groupe": "autres",
+          "id": "autres27",
+          "options": [
+            "Cigale rouge",
+            "Caloptéryx vierge",
+            "Criquet migrateur",
+            "Libellule déprimée"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Caloptéryx vierge",
+          "nom_scientifique": "Calopteryx virgo",
+          "indice": "Demoiselle aux ailes très sombres",
+          "description": "Mâle aux ailes presque entièrement bleu-noir.",
+          "explication": "Caloptéryx vierge : Ruisseaux ombragés.",
+          "groupe": "autres",
+          "id": "autres28",
+          "options": [
+            "Criquet duetiste",
+            "Cigale rouge",
+            "Ranâtre",
+            "Caloptéryx vierge"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Sympétrum sanguin",
+          "nom_scientifique": "Sympetrum sanguineum",
+          "indice": "Libellule rougeâtre d’automne",
+          "description": "Libellule ; mâle abdomen rougeâtre en fin de saison.",
+          "explication": "Sympétrum : Plans d’eau, fin d’été.",
+          "groupe": "autres",
+          "id": "autres29",
+          "options": [
+            "Perce-oreille commun",
+            "Criquet mélodieux",
+            "Criquet duetiste",
+            "Sympétrum sanguin"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Mante religieuse brune",
+          "nom_scientifique": "Iris oratoria",
+          "indice": "Mante méditerranéenne ocellée",
+          "description": "Mante aux ailes postérieures ocellées.",
+          "explication": "Iris oratoria : Midi méditerranéen.",
+          "groupe": "autres",
+          "id": "autres30",
+          "options": [
+            "Perce-oreille commun",
+            "Phrygane commune",
+            "Mante religieuse brune",
+            "Criquet duetiste"
           ]
         }
       ]

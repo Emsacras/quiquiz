@@ -57,7 +57,7 @@
               "id": "insectes",
               "nom": "Insectes",
               "fichier": "data/insectes-france.json",
-              "description": "84 insectes de France : coléoptères, papillons, abeilles…",
+              "description": "150 insectes de France : coléoptères, papillons, abeilles…",
               "regions": [
                 "france"
               ]
@@ -66,7 +66,7 @@
               "id": "mammiferes",
               "nom": "Mammifères",
               "fichier": "data/mammiferes-france.json",
-              "description": "63 mammifères de France : carnivores, ongulés, chauves-souris…",
+              "description": "90 mammifères de France : carnivores, ongulés, chauves-souris…",
               "regions": [
                 "france"
               ]
@@ -75,7 +75,7 @@
               "id": "bebes-animaux",
               "nom": "Bébés animaux",
               "fichier": "data/bebes-animaux.json",
-              "description": "Photo d’un petit : retrouve le nom du bébé (45 entrées).",
+              "description": "Photo d’un petit : retrouve le nom du bébé (54 entrées).",
               "regions": [
                 "monde"
               ]
@@ -110,7 +110,7 @@
               "id": "arbres",
               "nom": "Arbres",
               "fichier": "data/arbres-france.json",
-              "description": "65 arbres de France : feuillus, conifères, méditerranéens…",
+              "description": "97 arbres de France : feuillus, conifères, méditerranéens…",
               "regions": [
                 "france"
               ]
@@ -119,7 +119,7 @@
               "id": "fruits-legumes",
               "nom": "Fruits et légumes",
               "fichier": "data/fruits-legumes.json",
-              "description": "59 fruits et légumes du quotidien à reconnaître.",
+              "description": "101 fruits et légumes du quotidien à reconnaître.",
               "regions": [
                 "monde"
               ]
@@ -128,7 +128,7 @@
               "id": "feuilles-arbres",
               "nom": "Feuilles d’arbres",
               "fichier": "data/feuilles-arbres.json",
-              "description": "Reconnaître un arbre uniquement par sa feuille (47 entrées).",
+              "description": "Reconnaître un arbre uniquement par sa feuille (64 entrées).",
               "regions": [
                 "france",
                 "monde"
@@ -149,7 +149,7 @@
           "id": "coquillages",
           "nom": "Coquillages",
           "fichier": "data/coquillages.json",
-              "description": "Coquillages de la grève et de la mer (47 entrées).",
+          "description": "Coquillages de la grève et de la mer (69 entrées).",
           "regions": [
             "france",
             "monde"
@@ -200,7 +200,7 @@
           "id": "rochers-mineraux",
           "nom": "Rochers et minéraux",
           "fichier": "data/rochers-mineraux.json",
-          "description": "47 roches et minéraux : silicates, gemmes, métaux…",
+          "description": "71 roches et minéraux : silicates, gemmes, métaux…",
           "regions": [
             "monde"
           ]
@@ -218,7 +218,7 @@
           "id": "fossiles",
           "nom": "Fossiles",
           "fichier": "data/fossiles.json",
-          "description": "Ammonites, trilobites, dents et empreintes fossiles (44 entrées).",
+          "description": "Ammonites, trilobites, dents et empreintes fossiles (54 entrées).",
           "regions": [
             "monde"
           ]
