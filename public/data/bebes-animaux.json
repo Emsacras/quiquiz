@@ -14,9 +14,9 @@
           "nom_scientifique": "Gallus gallus domesticus",
           "groupe": "ferme",
           "options": [
-            "Lapereau",
             "Cygneau",
             "Pintadeau",
+            "Cailleteau",
             "Poussin"
           ],
           "indice": "Petit jaune du poulailler",
@@ -99,7 +99,7 @@
           "nom_scientifique": "Capra hircus",
           "groupe": "ferme",
           "options": [
-            "Mulard",
+            "Cailleteau",
             "Poulain",
             "Chevreau",
             "Pigeonneau"
@@ -117,8 +117,8 @@
           "groupe": "ferme",
           "options": [
             "Pintadeau",
+            "Perdreau",
             "Dindonneau",
-            "Paonneau",
             "Caneton"
           ],
           "indice": "Petit du canard",
@@ -220,7 +220,7 @@
           "options": [
             "Mulard",
             "Pintadeau",
-            "Porcelet",
+            "Perdreau",
             "Chevreau"
           ],
           "indice": "Petit de la pintade",
@@ -236,8 +236,8 @@
           "groupe": "ferme",
           "options": [
             "Chevreau",
+            "Cailleteau",
             "Paonneau",
-            "Pintadeau",
             "Mulard"
           ],
           "indice": "Petit du paon",
@@ -277,6 +277,38 @@
             "Caneton",
             "Cygneau",
             "Pintadeau"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cailleteau",
+          "nom_scientifique": "Coturnix coturnix",
+          "indice": "Petit de la caille",
+          "description": "Très jeune caille au duvet tacheté.",
+          "explication": "Cailleteau : Bébé de la caille.",
+          "groupe": "ferme",
+          "id": "ferme17",
+          "options": [
+            "Paonneau",
+            "Poulain",
+            "Cailleteau",
+            "Pintadeau"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Perdreau",
+          "nom_scientifique": "Perdix perdix",
+          "indice": "Petit de la perdrix",
+          "description": "Jeune perdrix encore dépendant des parents.",
+          "explication": "Perdreau : Bébé de la perdrix.",
+          "groupe": "ferme",
+          "id": "ferme18",
+          "options": [
+            "Ânon",
+            "Perdreau",
+            "Oison",
+            "Agneau"
           ]
         }
       ]
@@ -505,6 +537,22 @@
             "Ouistiti jeune",
             "Cobaye"
           ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Perroqueteau",
+          "nom_scientifique": "Psittacus erithacus",
+          "indice": "Petit du perroquet",
+          "description": "Jeune perroquet encore duveté.",
+          "explication": "Perroqueteau : Bébé du perroquet.",
+          "groupe": "compagnie",
+          "id": "compagnie14",
+          "options": [
+            "Tortillon de tortue",
+            "Ouistiti jeune",
+            "Perroqueteau",
+            "Souriceau"
+          ]
         }
       ]
     },
@@ -520,7 +568,7 @@
           "groupe": "sauvage",
           "options": [
             "Éléphanteau",
-            "Tigreau",
+            "Petit crocodile",
             "Levraut",
             "Ourson"
           ],
@@ -537,7 +585,7 @@
           "groupe": "sauvage",
           "options": [
             "Blanchon",
-            "Tigreau",
+            "Petit manchot",
             "Lionceau",
             "Louveteau"
           ],
@@ -553,10 +601,10 @@
           "nom_scientifique": "Loxodonta africana",
           "groupe": "sauvage",
           "options": [
-            "Girafon",
-            "Levraut",
+            "Éléphanteau",
             "Panthéreau",
-            "Éléphanteau"
+            "Aiglon",
+            "Girafon"
           ],
           "indice": "Petit de l’éléphant",
           "description": "Jeune éléphant aux grandes oreilles, près de sa mère.",
@@ -571,9 +619,9 @@
           "groupe": "sauvage",
           "options": [
             "Renardeau",
-            "Faon",
-            "Éléphanteau",
-            "Blanchon"
+            "Bébé panda",
+            "Ourson polaire",
+            "Éléphanteau"
           ],
           "indice": "Petit du renard",
           "description": "Jeune renard au museau pointu et au pelage sombre.",
@@ -587,10 +635,10 @@
           "nom_scientifique": "Canis lupus",
           "groupe": "sauvage",
           "options": [
+            "Baleineau",
             "Marcassin",
             "Louveteau",
-            "Tigreau",
-            "Baleineau"
+            "Petit manchot"
           ],
           "indice": "Petit du loup",
           "description": "Jeune loup élevé au sein de la meute.",
@@ -621,9 +669,9 @@
           "nom_scientifique": "Panthera tigris",
           "groupe": "sauvage",
           "options": [
-            "Girafon",
+            "Ourson polaire",
             "Tigreau",
-            "Loutron",
+            "Aiglon",
             "Lionceau"
           ],
           "indice": "Petit du tigre",
@@ -657,8 +705,8 @@
           "options": [
             "Petit dauphin",
             "Ourson",
-            "Faon",
-            "Tigreau"
+            "Tigreau",
+            "Petit manchot"
           ],
           "indice": "Petit du dauphin",
           "description": "Jeune dauphin nageant près de sa mère.",
@@ -689,8 +737,8 @@
           "nom_scientifique": "Lepus europaeus",
           "groupe": "sauvage",
           "options": [
-            "Éléphanteau",
             "Levraut",
+            "Ourson polaire",
             "Renardeau",
             "Marcassin"
           ],
@@ -757,8 +805,8 @@
           "nom_scientifique": "Panthera pardus",
           "groupe": "sauvage",
           "options": [
-            "Loutron",
-            "Éléphanteau",
+            "Aiglon",
+            "Petit manchot",
             "Panthéreau",
             "Renardeau"
           ],
@@ -778,10 +826,106 @@
           "groupe": "sauvage",
           "id": "sauvage16",
           "options": [
-            "Baleineau",
+            "Aiglon",
+            "Ourson polaire",
             "Louveteau",
-            "Loutron",
             "Blanchon"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Ourson polaire",
+          "nom_scientifique": "Ursus maritimus",
+          "indice": "Petit de l’ours blanc",
+          "description": "Jeune ours polaire au pelage blanc.",
+          "explication": "Ourson polaire : Bébé de l’ours blanc.",
+          "groupe": "sauvage",
+          "id": "sauvage17",
+          "options": [
+            "Blanchet",
+            "Ourson polaire",
+            "Loutron",
+            "Petit crocodile"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Bébé panda",
+          "nom_scientifique": "Ailuropoda melanoleuca",
+          "indice": "Petit du panda géant",
+          "description": "Très petit à la naissance, noir et blanc ensuite.",
+          "explication": "Bébé panda : Bébé du panda géant.",
+          "groupe": "sauvage",
+          "id": "sauvage18",
+          "options": [
+            "Petit dauphin",
+            "Loutron",
+            "Renardeau",
+            "Bébé panda"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Petit kangourou",
+          "nom_scientifique": "Macropus rufus",
+          "indice": "Joey dans la poche",
+          "description": "Jeune marsupial dans la poche maternelle.",
+          "explication": "Joey : Bébé du kangourou.",
+          "groupe": "sauvage",
+          "id": "sauvage19",
+          "options": [
+            "Petit dauphin",
+            "Petit kangourou",
+            "Louveteau",
+            "Loutron"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Petit manchot",
+          "nom_scientifique": "Aptenodytes forsteri",
+          "indice": "Poussin de manchot",
+          "description": "Jeune manchot au duvet duveteux.",
+          "explication": "Poussin de manchot : Bébé du manchot.",
+          "groupe": "sauvage",
+          "id": "sauvage20",
+          "options": [
+            "Ourson polaire",
+            "Petit manchot",
+            "Faon",
+            "Girafon"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Petit crocodile",
+          "nom_scientifique": "Crocodylus niloticus",
+          "indice": "Jeune crocodile",
+          "description": "Très jeune crocodile déjà denté.",
+          "explication": "Jeune crocodile : Bébé du crocodile.",
+          "groupe": "sauvage",
+          "id": "sauvage21",
+          "options": [
+            "Tigreau",
+            "Panthéreau",
+            "Girafon",
+            "Petit crocodile"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Aiglon",
+          "nom_scientifique": "Aquila chrysaetos",
+          "indice": "Petit de l’aigle",
+          "description": "Jeune aigle au nid.",
+          "explication": "Aiglon : Bébé de l’aigle.",
+          "groupe": "sauvage",
+          "id": "sauvage22",
+          "options": [
+            "Petit kangourou",
+            "Ourson",
+            "Aiglon",
+            "Louveteau"
           ]
         }
       ]

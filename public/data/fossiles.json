@@ -15,9 +15,9 @@
           "groupe": "invertebres",
           "options": [
             "Ammonite",
-            "Bivalve fossile",
-            "Nautile fossile",
-            "Trilobite enroulé"
+            "Cystoïde",
+            "Trilobite enroulé",
+            "Nautile fossile"
           ],
           "indice": "Spirale côtelée",
           "description": "Coquille spirale fossile de céphalopode.",
@@ -31,8 +31,8 @@
           "nom_scientifique": "Trilobita",
           "groupe": "invertebres",
           "options": [
+            "Cystoïde",
             "Ammonite",
-            "Graptolite",
             "Bélemnite",
             "Trilobite"
           ],
@@ -48,10 +48,10 @@
           "nom_scientifique": "Bivalvia",
           "groupe": "invertebres",
           "options": [
-            "Bivalve fossile",
             "Gastéropode fossile",
+            "Bivalve fossile",
             "Corail fossile",
-            "Ammonite"
+            "Cystoïde"
           ],
           "indice": "Deux valves symétriques",
           "description": "Coquille à deux valves, souvent dans les calcaires.",
@@ -66,9 +66,9 @@
           "groupe": "invertebres",
           "options": [
             "Bivalve fossile",
-            "Nautile fossile",
             "Gastéropode fossile",
-            "Corail fossile"
+            "Nummulite",
+            "Nautile fossile"
           ],
           "indice": "Spirale conique",
           "description": "Coquille en spirale conique de mollusque.",
@@ -83,7 +83,7 @@
           "groupe": "invertebres",
           "options": [
             "Corail fossile",
-            "Orthocère",
+            "Rudiste",
             "Bélemnite",
             "Trilobite"
           ],
@@ -101,7 +101,7 @@
           "options": [
             "Gastéropode fossile",
             "Oursin fossile",
-            "Ammonite",
+            "Eurypteride",
             "Nautile fossile"
           ],
           "indice": "Test rond à plaques",
@@ -117,8 +117,8 @@
           "groupe": "invertebres",
           "options": [
             "Gastéropode fossile",
+            "Nummulite",
             "Graptolite",
-            "Brachiopode",
             "Corail fossile"
           ],
           "indice": "Structure en colonies / calices",
@@ -134,8 +134,8 @@
           "groupe": "invertebres",
           "options": [
             "Bivalve fossile",
-            "Orthocère",
             "Trilobite enroulé",
+            "Rudiste",
             "Brachiopode"
           ],
           "indice": "Deux valves inégales",
@@ -204,7 +204,7 @@
             "Orthocère",
             "Oursin fossile",
             "Crinoïde",
-            "Bivalve fossile"
+            "Rudiste"
           ],
           "indice": "Cône droit cloisonné",
           "description": "Céphalopode à coquille droite et cloisonnée.",
@@ -219,8 +219,8 @@
           "groupe": "invertebres",
           "options": [
             "Éponge fossile",
+            "Rudiste",
             "Gastéropode fossile",
-            "Graptolite",
             "Trilobite enroulé"
           ],
           "indice": "Masse poreuse / réseau",
@@ -244,6 +244,86 @@
           "description": "Trilobite fossilisé en position de défense enroulée.",
           "explication": "Trilobite enroulé : Attitude de protection fossilisée.",
           "imageQuery": "enrolled trilobite"
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Nummulite",
+          "nom_scientifique": "Nummulites",
+          "indice": "Foraminifère en pièce de monnaie",
+          "description": "Disques calcaires de grands foraminifères tertiaires.",
+          "explication": "Nummulite : Calcaires nummulitiques (ex. Égypte, Pyrénées).",
+          "groupe": "invertebres",
+          "id": "invertebres15",
+          "options": [
+            "Oursin fossile",
+            "Bélemnite",
+            "Nummulite",
+            "Trilobite enroulé"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Rudiste",
+          "nom_scientifique": "Hippurites",
+          "indice": "Bivalve récifal mésozoïque",
+          "description": "Bivalve à valves inégales formant des bioconstructions.",
+          "explication": "Rudiste : Crétacé des mers chaudes.",
+          "groupe": "invertebres",
+          "id": "invertebres16",
+          "options": [
+            "Brachiopode",
+            "Bivalve fossile",
+            "Rudiste",
+            "Oursin fossile"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Goniatite",
+          "nom_scientifique": "Goniatites",
+          "indice": "Ammonïde paléozoïque",
+          "description": "Coquille spiralée à sutures en zigzag simples.",
+          "explication": "Goniatite : Ancêtre relatif des ammonites.",
+          "groupe": "invertebres",
+          "id": "invertebres17",
+          "options": [
+            "Oursin fossile",
+            "Nautile fossile",
+            "Nummulite",
+            "Goniatite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cystoïde",
+          "nom_scientifique": "Cystoidea",
+          "indice": "Échinoderme en sac",
+          "description": "Échinoderme fossile en forme de sac / calice.",
+          "explication": "Cystoïde : Paléozoïque.",
+          "groupe": "invertebres",
+          "id": "invertebres18",
+          "options": [
+            "Bivalve fossile",
+            "Corail fossile",
+            "Cystoïde",
+            "Graptolite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Eurypteride",
+          "nom_scientifique": "Eurypterida",
+          "indice": "« Scorpion de mer » géant",
+          "description": "Arthropode aquatique souvent grand, Silurien-Dévonien.",
+          "explication": "Eurypteride : Prédateurs aquatiques paléozoïques.",
+          "groupe": "invertebres",
+          "id": "invertebres19",
+          "options": [
+            "Trilobite",
+            "Rudiste",
+            "Cystoïde",
+            "Eurypteride"
+          ]
         }
       ]
     },
@@ -277,7 +357,7 @@
           "options": [
             "Os de dinosaure",
             "Amphibien fossile",
-            "Coprolithe",
+            "Œuf de dinosaure",
             "Ichthyosaure"
           ],
           "indice": "Os massif pétrifié",
@@ -326,8 +406,8 @@
           "nom_scientifique": "Pterosauria",
           "groupe": "vertebres",
           "options": [
-            "Poisson fossile",
             "Ptérosaure",
+            "Œuf de dinosaure",
             "Mégalodon (dent)",
             "Dent de mammouth"
           ],
@@ -445,10 +525,10 @@
           "nom_scientifique": "Testudines",
           "groupe": "vertebres",
           "options": [
-            "Mégalodon (dent)",
+            "Amphibien fossile",
             "Coprolithe",
-            "Tortue fossile",
-            "Amphibien fossile"
+            "Œuf de dinosaure",
+            "Tortue fossile"
           ],
           "indice": "Carapace fossilisée",
           "description": "Carapace ou squelette de tortue pétrifié.",
@@ -464,7 +544,7 @@
           "options": [
             "Amphibien fossile",
             "Dent de mammouth",
-            "Mégalodon (dent)",
+            "Œuf de dinosaure",
             "Tortue fossile"
           ],
           "indice": "Tête plate, membres courts",
@@ -505,6 +585,38 @@
             "Plésiosaure",
             "Défense d’ivoire"
           ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Œuf de dinosaure",
+          "nom_scientifique": "Dinosauria (ootaxa)",
+          "indice": "Coquille d’œuf fossilisée",
+          "description": "Fragment ou œuf complet à coquille sculptée.",
+          "explication": "Œuf de dinosaure : Sites de ponte fossilisés.",
+          "groupe": "vertebres",
+          "id": "vertebres16",
+          "options": [
+            "Coprolithe",
+            "Défense d’ivoire",
+            "Ptérosaure",
+            "Œuf de dinosaure"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Mégalocéros (bois)",
+          "nom_scientifique": "Megaloceros giganteus",
+          "indice": "Bois géant de cerf géant",
+          "description": "Fragment de bois immense du cerf géant quaternaire.",
+          "explication": "Mégalocéros : Pléistocène européen.",
+          "groupe": "vertebres",
+          "id": "vertebres17",
+          "options": [
+            "Mégalocéros (bois)",
+            "Défense d’ivoire",
+            "Os de dinosaure",
+            "Dent de mammouth"
+          ]
         }
       ]
     },
@@ -519,7 +631,7 @@
           "nom_scientifique": "Pteridophyta",
           "groupe": "plantes-traces",
           "options": [
-            "Ambre (inclusion)",
+            "Coprolithe de poisson",
             "Empreinte de pas",
             "Empreinte de fougère",
             "Calamites"
@@ -554,7 +666,7 @@
           "groupe": "plantes-traces",
           "options": [
             "Empreinte de pas",
-            "Terrier fossile",
+            "Coprolithe de poisson",
             "Fougère fossile",
             "Gastrolithe"
           ],
@@ -571,9 +683,9 @@
           "groupe": "plantes-traces",
           "options": [
             "Cône fossile",
-            "Feuille de ginkgo",
             "Stromatolite",
-            "Piste de reptile"
+            "Feuille de ginkgo",
+            "Coprolithe de poisson"
           ],
           "indice": "Cône de conifère pétrifié",
           "description": "Cône ou empreinte de cône de conifère.",
@@ -587,10 +699,10 @@
           "nom_scientifique": "Calamites",
           "groupe": "plantes-traces",
           "options": [
-            "Racine fossilisée",
             "Cône fossile",
             "Feuille de ginkgo",
-            "Calamites"
+            "Calamites",
+            "Coprolithe de poisson"
           ],
           "indice": "Tige articulée de prêle géante",
           "description": "Tige segmentée de prêle arborescente du Carbonifère.",
@@ -638,10 +750,10 @@
           "nom_scientifique": "Coprolite",
           "groupe": "plantes-traces",
           "options": [
-            "Piste de reptile",
+            "Glossopteris",
             "Coprolithe",
-            "Empreinte de pas",
-            "Calamites"
+            "Calamites",
+            "Piste de reptile"
           ],
           "indice": "Excrément fossilisé",
           "description": "Matière fécale fossilisée, parfois avec restes de repas.",
@@ -656,9 +768,9 @@
           "groupe": "plantes-traces",
           "options": [
             "Tronc silicifié",
-            "Feuille de ginkgo",
             "Ambre (inclusion)",
-            "Calamites"
+            "Coprolithe de poisson",
+            "Feuille de ginkgo"
           ],
           "indice": "Insecte dans la résine",
           "description": "Résine fossilisée piégeant parfois un insecte.",
@@ -761,10 +873,58 @@
           "groupe": "plantes-traces",
           "id": "plantes-traces15",
           "options": [
-            "Calamites",
             "Fougère fossile",
+            "Sigillaire",
             "Empreinte de fougère",
-            "Stromatolite"
+            "Coprolithe de poisson"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Sigillaire",
+          "nom_scientifique": "Sigillaria",
+          "indice": "Tronc à cicatrices verticales",
+          "description": "Lycophyte arborescente à cicatrices foliaires en files.",
+          "explication": "Sigillaire : Carbonifère, cousine du Lépidodendron.",
+          "groupe": "plantes-traces",
+          "id": "plantes-traces16",
+          "options": [
+            "Coprolithe de poisson",
+            "Racine fossilisée",
+            "Empreinte de fougère",
+            "Sigillaire"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Glossopteris",
+          "nom_scientifique": "Glossopteris",
+          "indice": "Feuille entier du Gondwana",
+          "description": "Feuille allongée à réseau de nervures, Permien gondwanien.",
+          "explication": "Glossopteris : Symbole de la dérive des continents.",
+          "groupe": "plantes-traces",
+          "id": "plantes-traces17",
+          "options": [
+            "Cône fossile",
+            "Glossopteris",
+            "Empreinte de fougère",
+            "Terrier fossile"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Coprolithe de poisson",
+          "nom_scientifique": "Fish coprolite",
+          "indice": "Fiente fossile spiralée",
+          "description": "Coprolithe souvent spiralé attribué à des poissons.",
+          "explication": "Coprolithe : Trace d’alimentation.",
+          "groupe": "plantes-traces",
+          "id": "plantes-traces18",
+          "options": [
+            "Empreinte de fougère",
+            "Terrier fossile",
+            "Sigillaire",
+            "Coprolithe de poisson"
           ]
         }
       ]

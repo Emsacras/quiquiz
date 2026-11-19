@@ -14,7 +14,7 @@
           "nom_scientifique": "Quartz",
           "groupe": "silicates",
           "options": [
-            "Mica muscovite",
+            "Labradorite",
             "Quartz",
             "Feldspath orthose",
             "Silex"
@@ -31,9 +31,9 @@
           "groupe": "silicates",
           "options": [
             "Grenat almandin",
+            "Prehnite",
             "Feldspath orthose",
-            "Améthyste",
-            "Mica muscovite"
+            "Améthyste"
           ],
           "indice": "Rose à blanc, clivages",
           "description": "Minéral rose saumon à blanc, clivages nets, constitutif du granite.",
@@ -46,9 +46,9 @@
           "nom_scientifique": "Muscovite",
           "groupe": "silicates",
           "options": [
+            "Prehnite",
             "Grenat almandin",
-            "Tourmaline",
-            "Quartz fumé",
+            "Zircon",
             "Mica muscovite"
           ],
           "indice": "Paillettes argentées flexibles",
@@ -63,9 +63,9 @@
           "groupe": "silicates",
           "options": [
             "Talc",
-            "Silex",
             "Olivine",
-            "Quartz fumé"
+            "Quartz fumé",
+            "Mica biotite"
           ],
           "indice": "Vert olive dans les basaltes",
           "description": "Minéral vert olive des roches basiques, grains dans le basalte.",
@@ -78,10 +78,10 @@
           "nom_scientifique": "Almandine",
           "groupe": "silicates",
           "options": [
+            "Prehnite",
+            "Améthyste",
             "Quartz",
-            "Quartz fumé",
-            "Grenat almandin",
-            "Améthyste"
+            "Grenat almandin"
           ],
           "indice": "Cristaux dodécaédriques rouge sombre",
           "description": "Cristaux isométriques rouge-brun sombre, dureté élevée.",
@@ -94,10 +94,10 @@
           "nom_scientifique": "Schorl",
           "groupe": "silicates",
           "options": [
+            "Pyroxène",
             "Silex",
-            "Talc",
-            "Tourmaline",
-            "Mica muscovite"
+            "Mica muscovite",
+            "Tourmaline"
           ],
           "indice": "Prismes striés noirs",
           "description": "Prismes allongés striés verticalement, souvent noirs (schorl).",
@@ -110,10 +110,10 @@
           "nom_scientifique": "Amethyst",
           "groupe": "silicates",
           "options": [
-            "Silex",
             "Améthyste",
             "Mica muscovite",
-            "Tourmaline"
+            "Tourmaline",
+            "Amphibole"
           ],
           "indice": "Quartz violet",
           "description": "Variété violette du quartz, géodes fréquentes.",
@@ -129,7 +129,7 @@
             "Silex",
             "Grenat almandin",
             "Épidote",
-            "Quartz"
+            "Zircon"
           ],
           "indice": "Concassé, cortex blanc",
           "description": "Nodules de silice opaque, cortex blanc, cassure conchoïdale.",
@@ -158,9 +158,9 @@
           "nom_scientifique": "Talc",
           "groupe": "silicates",
           "options": [
-            "Quartz fumé",
+            "Labradorite",
+            "Sodalite",
             "Talc",
-            "Tourmaline",
             "Épidote"
           ],
           "indice": "Très tendre, toucher savonneux",
@@ -178,10 +178,146 @@
           "groupe": "silicates",
           "id": "silicates11",
           "options": [
-            "Olivine",
-            "Épidote",
             "Quartz",
-            "Quartz fumé"
+            "Quartz fumé",
+            "Amphibole",
+            "Zircon"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Mica biotite",
+          "nom_scientifique": "Biotite",
+          "indice": "Mica noir flexible",
+          "description": "Phyllosilicate noir, feuillets flexibles.",
+          "explication": "Biotite : Courante dans granites et schistes.",
+          "imageQuery": "biotite mica",
+          "groupe": "silicates",
+          "id": "silicates12",
+          "options": [
+            "Quartz fumé",
+            "Épidote",
+            "Mica biotite",
+            "Amphibole"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Pyroxène",
+          "nom_scientifique": "Augite",
+          "indice": "Silicate sombre des basaltes",
+          "description": "Cristaux sombres trapus des roches basiques.",
+          "explication": "Augite : Pyroxène fréquent des basaltes.",
+          "imageQuery": "augite pyroxene",
+          "groupe": "silicates",
+          "id": "silicates13",
+          "options": [
+            "Quartz",
+            "Labradorite",
+            "Pyroxène",
+            "Mica muscovite"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Amphibole",
+          "nom_scientifique": "Hornblende",
+          "indice": "Silicate noir prismatique",
+          "description": "Prismes noirs allongés, clivages à ~120°.",
+          "explication": "Hornblende : Amphibole des roches magmatiques.",
+          "imageQuery": "hornblende amphibole",
+          "groupe": "silicates",
+          "id": "silicates14",
+          "options": [
+            "Épidote",
+            "Tourmaline",
+            "Amphibole",
+            "Béryl"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Zircon",
+          "nom_scientifique": "Zircon",
+          "indice": "Petit cristal prismatique dense",
+          "description": "Nésosilicate très dense, souvent brun/rougeâtre.",
+          "explication": "Zircon : Datation U-Pb ; gemme hyacinthe.",
+          "imageQuery": "zircon crystal",
+          "groupe": "silicates",
+          "id": "silicates15",
+          "options": [
+            "Sodalite",
+            "Mica biotite",
+            "Zircon",
+            "Feldspath orthose"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Béryl",
+          "nom_scientifique": "Beryl",
+          "indice": "Prismes hexagonaux (émeraude/aigue)",
+          "description": "Silicate hexagonal ; variétés émeraude, aigue-marine.",
+          "explication": "Béryl : Famille de l’émeraude.",
+          "imageQuery": "beryl crystal",
+          "groupe": "silicates",
+          "id": "silicates16",
+          "options": [
+            "Béryl",
+            "Prehnite",
+            "Mica muscovite",
+            "Quartz"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Sodalite",
+          "nom_scientifique": "Sodalite",
+          "indice": "Bleu royal opaque",
+          "description": "Tectosilicate bleu utilisé en ornement.",
+          "explication": "Sodalite : Souvent associée au lapis.",
+          "imageQuery": "sodalite mineral",
+          "groupe": "silicates",
+          "id": "silicates17",
+          "options": [
+            "Béryl",
+            "Sodalite",
+            "Olivine",
+            "Mica biotite"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Labradorite",
+          "nom_scientifique": "Labradorite",
+          "indice": "Feldspath à reflets bleus",
+          "description": "Plagioclase aux irisations bleues (labradorescence).",
+          "explication": "Labradorite : Ornement et spécimens.",
+          "imageQuery": "labradorite",
+          "groupe": "silicates",
+          "id": "silicates18",
+          "options": [
+            "Pyroxène",
+            "Labradorite",
+            "Améthyste",
+            "Épidote"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Prehnite",
+          "nom_scientifique": "Prehnite",
+          "indice": "Vert pomme botryoïdal",
+          "description": "Silicate vert souvent en masses mamelonnées.",
+          "explication": "Prehnite : Fentes hydrothermales.",
+          "imageQuery": "prehnite",
+          "groupe": "silicates",
+          "id": "silicates19",
+          "options": [
+            "Olivine",
+            "Améthyste",
+            "Prehnite",
+            "Béryl"
           ]
         }
       ]
@@ -198,9 +334,9 @@
           "groupe": "carbonates",
           "options": [
             "Sidèrite",
+            "Smithsonite",
             "Azurite",
-            "Calcite",
-            "Aragonite"
+            "Calcite"
           ],
           "indice": "Effervescente à l’acide",
           "description": "Cristaux rhomboédriques, effervescence vive à l’acide dilué.",
@@ -229,8 +365,8 @@
           "nom_scientifique": "Dolomite",
           "groupe": "carbonates",
           "options": [
-            "Calcite",
             "Calcaire",
+            "Rhodochrosite",
             "Malachite",
             "Dolomie"
           ],
@@ -261,10 +397,10 @@
           "nom_scientifique": "Azurite",
           "groupe": "carbonates",
           "options": [
-            "Calcaire",
             "Calcite",
             "Azurite",
-            "Aragonite"
+            "Aragonite",
+            "Rhodochrosite"
           ],
           "indice": "Bleu profond cuivreux",
           "description": "Carbonate de cuivre bleu intense, souvent associé à la malachite.",
@@ -278,8 +414,8 @@
           "groupe": "carbonates",
           "options": [
             "Magnésite",
+            "Smithsonite",
             "Aragonite",
-            "Calcaire",
             "Sidèrite"
           ],
           "indice": "Carbonate de fer brun",
@@ -311,12 +447,46 @@
           "options": [
             "Calcaire",
             "Azurite",
-            "Sidèrite",
-            "Magnésite"
+            "Magnésite",
+            "Smithsonite"
           ],
           "indice": "Roche sédimentaire effervescente",
           "description": "Roche sédimentaire riche en calcite, effervescente, fossiles fréquents.",
           "explication": "Calcaire : Roche dominante des plateaux ; base du ciment."
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Rhodochrosite",
+          "nom_scientifique": "Rhodochrosite",
+          "indice": "Rose bandé manganésien",
+          "description": "Carbonate de manganèse rose, souvent bandé.",
+          "explication": "Rhodochrosite : Gemme ornementale.",
+          "imageQuery": "rhodochrosite",
+          "groupe": "carbonates",
+          "id": "carbonates9",
+          "options": [
+            "Rhodochrosite",
+            "Dolomie",
+            "Aragonite",
+            "Smithsonite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Smithsonite",
+          "nom_scientifique": "Smithsonite",
+          "indice": "Carbonate de zinc",
+          "description": "Carbonate de Zn, souvent botryoïdal coloré.",
+          "explication": "Smithsonite : Minerai secondaire de zinc.",
+          "imageQuery": "smithsonite",
+          "groupe": "carbonates",
+          "id": "carbonates10",
+          "options": [
+            "Rhodochrosite",
+            "Magnésite",
+            "Smithsonite",
+            "Calcite"
+          ]
         }
       ]
     },
@@ -347,10 +517,10 @@
           "nom_scientifique": "Magnetite",
           "groupe": "oxydes",
           "options": [
-            "Corindon",
+            "Ilménite",
             "Hématite",
-            "Goethite",
-            "Magnétite"
+            "Magnétite",
+            "Chromite"
           ],
           "indice": "Attire l’aimant",
           "description": "Oxyde de fer noir, fortement magnétique, cristaux octaédriques.",
@@ -379,10 +549,10 @@
           "nom_scientifique": "Goethite",
           "groupe": "oxydes",
           "options": [
-            "Limonite",
-            "Pyrite",
             "Hématite",
-            "Goethite"
+            "Goethite",
+            "Limonite",
+            "Ilménite"
           ],
           "indice": "Rouille fibreuse brune",
           "description": "Hydroxyde de fer brun à ocre, formes fibreuses ou massives.",
@@ -397,7 +567,7 @@
           "options": [
             "Rutile",
             "Limonite",
-            "Pyrite",
+            "Chromite",
             "Corindon"
           ],
           "indice": "Aiguilles rouge-brun dans quartz",
@@ -427,10 +597,10 @@
           "nom_scientifique": "Corundum",
           "groupe": "oxydes",
           "options": [
+            "Cassitérite",
             "Corindon",
-            "Limonite",
-            "Rutile",
-            "Cassitérite"
+            "Chromite",
+            "Rutile"
           ],
           "indice": "Dureté 9, rubis/saphir",
           "description": "Oxyde d’aluminium très dur ; rubis rouge, saphir bleu.",
@@ -446,11 +616,62 @@
             "Limonite",
             "Magnétite",
             "Rutile",
-            "Goethite"
+            "Ilménite"
           ],
           "indice": "Ocre jaune-brun terreux",
           "description": "Mélange d’hydroxydes de fer ocre, aspect terreux.",
           "explication": "Limonite : Pigment ocre ; altération courante des sulfures."
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Spinelle",
+          "nom_scientifique": "Spinel",
+          "indice": "Oxide gemme octaédrique",
+          "description": "Cristaux octaédriques, couleurs variées.",
+          "explication": "Spinelle : Longtemps confondu avec le rubis.",
+          "imageQuery": "spinel crystal",
+          "groupe": "oxydes",
+          "id": "oxydes9",
+          "options": [
+            "Ilménite",
+            "Limonite",
+            "Spinelle",
+            "Corindon"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chromite",
+          "nom_scientifique": "Chromite",
+          "indice": "Oxide de chrome noir",
+          "description": "Oxide noir dense des roches ultramafiques.",
+          "explication": "Chromite : Principal minerai de chrome.",
+          "imageQuery": "chromite mineral",
+          "groupe": "oxydes",
+          "id": "oxydes10",
+          "options": [
+            "Ilménite",
+            "Corindon",
+            "Chromite",
+            "Limonite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ilménite",
+          "nom_scientifique": "Ilmenite",
+          "indice": "Oxide de fer-titane",
+          "description": "Noir métallique, source de titane.",
+          "explication": "Ilménite : Sables noirs et roches basiques.",
+          "imageQuery": "ilmenite mineral",
+          "groupe": "oxydes",
+          "id": "oxydes11",
+          "options": [
+            "Rutile",
+            "Chromite",
+            "Spinelle",
+            "Ilménite"
+          ]
         }
       ]
     },
@@ -465,10 +686,10 @@
           "nom_scientifique": "Diamond",
           "groupe": "gemmes",
           "options": [
-            "Opale",
-            "Turquoise",
             "Saphir",
-            "Diamant"
+            "Grenat pyrope",
+            "Diamant",
+            "Citrine"
           ],
           "indice": "Dureté 10, vif éclat",
           "description": "Carbone cristallisé, dureté maximale, éclat adamantin.",
@@ -481,10 +702,10 @@
           "nom_scientifique": "Emerald",
           "groupe": "gemmes",
           "options": [
-            "Lapis-lazuli",
-            "Péridot",
+            "Grenat pyrope",
             "Turquoise",
-            "Émeraude"
+            "Émeraude",
+            "Lapis-lazuli"
           ],
           "indice": "Béryl vert vif",
           "description": "Variété verte du béryl, couleur due au chrome ou vanadium.",
@@ -497,8 +718,8 @@
           "nom_scientifique": "Sapphire",
           "groupe": "gemmes",
           "options": [
+            "Aigue-marine",
             "Saphir",
-            "Lapis-lazuli",
             "Opale",
             "Turquoise"
           ],
@@ -529,8 +750,8 @@
           "nom_scientifique": "Tanzanite",
           "groupe": "gemmes",
           "options": [
-            "Saphir",
-            "Émeraude",
+            "Alexandrite",
+            "Spinelle rouge",
             "Tanzanite",
             "Topaze"
           ],
@@ -561,10 +782,10 @@
           "nom_scientifique": "Opal",
           "groupe": "gemmes",
           "options": [
-            "Tanzanite",
+            "Aigue-marine",
             "Opale",
-            "Péridot",
-            "Saphir"
+            "Alexandrite",
+            "Jade"
           ],
           "indice": "Jeux de couleurs",
           "description": "Silice hydratée amorphe, jeux de couleurs (opalescence).",
@@ -578,9 +799,9 @@
           "groupe": "gemmes",
           "options": [
             "Opale",
-            "Émeraude",
-            "Tanzanite",
-            "Turquoise"
+            "Spinelle rouge",
+            "Turquoise",
+            "Grenat pyrope"
           ],
           "indice": "Bleu-vert opaque",
           "description": "Phosphate bleu-vert opaque, veiné de noir parfois.",
@@ -597,10 +818,112 @@
           "groupe": "gemmes",
           "id": "gemmes9",
           "options": [
-            "Turquoise",
             "Lapis-lazuli",
-            "Tanzanite",
+            "Alexandrite",
+            "Jade",
             "Saphir"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Jade",
+          "nom_scientifique": "Jadeite",
+          "indice": "Vert translucide sculpté",
+          "description": "Silicate vert (jadéite ou néphrite) pour sculptures.",
+          "explication": "Jade : Ornemental depuis des millénaires.",
+          "imageQuery": "jade gemstone",
+          "groupe": "gemmes",
+          "id": "gemmes10",
+          "options": [
+            "Citrine",
+            "Aigue-marine",
+            "Jade",
+            "Grenat pyrope"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Aigue-marine",
+          "nom_scientifique": "Aquamarine",
+          "indice": "Béryl bleu-vert pâle",
+          "description": "Variété bleue du béryl, cristaux prismatiques.",
+          "explication": "Aigue-marine : Gemme de la famille du béryl.",
+          "imageQuery": "aquamarine gem",
+          "groupe": "gemmes",
+          "id": "gemmes11",
+          "options": [
+            "Spinelle rouge",
+            "Grenat pyrope",
+            "Aigue-marine",
+            "Opale"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Grenat pyrope",
+          "nom_scientifique": "Pyrope",
+          "indice": "Grenat rouge sang",
+          "description": "Grenat magnésien rouge vif.",
+          "explication": "Pyrope : Grenats des roches ultramafiques.",
+          "imageQuery": "pyrope garnet",
+          "groupe": "gemmes",
+          "id": "gemmes12",
+          "options": [
+            "Grenat pyrope",
+            "Lapis-lazuli",
+            "Spinelle rouge",
+            "Diamant"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Alexandrite",
+          "nom_scientifique": "Alexandrite",
+          "indice": "Change de couleur",
+          "description": "Variété de chrysobéryl : vert au jour, rouge à la lampe.",
+          "explication": "Alexandrite : Gemme rare à changement de couleur.",
+          "imageQuery": "alexandrite gem",
+          "groupe": "gemmes",
+          "id": "gemmes13",
+          "options": [
+            "Saphir",
+            "Tanzanite",
+            "Topaze",
+            "Alexandrite"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Citrine",
+          "nom_scientifique": "Citrine",
+          "indice": "Quartz jaune",
+          "description": "Variété jaune du quartz.",
+          "explication": "Citrine : Gemme ; souvent améthyste chauffée.",
+          "imageQuery": "citrine quartz",
+          "groupe": "gemmes",
+          "id": "gemmes14",
+          "options": [
+            "Saphir",
+            "Turquoise",
+            "Citrine",
+            "Aigue-marine"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Spinelle rouge",
+          "nom_scientifique": "Red spinel",
+          "indice": "Rouge vif octaédrique",
+          "description": "Spinelle rouge longtemps pris pour du rubis.",
+          "explication": "Spinelle rouge : Gemme historique.",
+          "imageQuery": "red spinel",
+          "groupe": "gemmes",
+          "id": "gemmes15",
+          "options": [
+            "Émeraude",
+            "Citrine",
+            "Diamant",
+            "Spinelle rouge"
           ]
         }
       ]
@@ -616,7 +939,7 @@
           "nom_scientifique": "Gold",
           "groupe": "metaux",
           "options": [
-            "Halite",
+            "Molybénite",
             "Or natif",
             "Galène",
             "Soufre"
@@ -633,9 +956,9 @@
           "groupe": "metaux",
           "options": [
             "Cuivre natif",
-            "Sphalérite",
-            "Halite",
-            "Gypse"
+            "Stibine",
+            "Gypse",
+            "Halite"
           ],
           "indice": "Rouge-orangé métallique",
           "description": "Métal rouge-orangé, souvent en masses irrégulières oxydées en vert.",
@@ -648,10 +971,10 @@
           "nom_scientifique": "Galena",
           "groupe": "metaux",
           "options": [
+            "Or natif",
             "Galène",
             "Graphite",
-            "Or natif",
-            "Halite"
+            "Stibine"
           ],
           "indice": "Gris plomb, cubes",
           "description": "Sulfure de plomb gris métallique, clivages cubiques parfaits.",
@@ -664,8 +987,8 @@
           "nom_scientifique": "Sphalerite",
           "groupe": "metaux",
           "options": [
+            "Wolframite",
             "Graphite",
-            "Or natif",
             "Argent natif",
             "Sphalérite"
           ],
@@ -682,8 +1005,8 @@
           "options": [
             "Cinabre",
             "Argent natif",
-            "Galène",
-            "Or natif"
+            "Molybénite",
+            "Barite"
           ],
           "indice": "Rouge vermillon, mercure",
           "description": "Sulfure de mercure rouge vermillon, dense et toxique.",
@@ -696,10 +1019,10 @@
           "nom_scientifique": "Fluorite",
           "groupe": "metaux",
           "options": [
+            "Cuivre natif",
             "Fluorine",
-            "Gypse",
             "Argent natif",
-            "Cuivre natif"
+            "Chalcopyrite"
           ],
           "indice": "Cubes colorés, fluorescence",
           "description": "Halogénure en cubes souvent violets ou verts, fluorescence UV.",
@@ -713,9 +1036,9 @@
           "groupe": "metaux",
           "options": [
             "Gypse",
+            "Chalcopyrite",
             "Argent natif",
-            "Sphalérite",
-            "Cuivre natif"
+            "Stibine"
           ],
           "indice": "Très tendre, « rose des sables »",
           "description": "Sulfate hydraté tendre, cristaux en fer de lance ou rose des sables.",
@@ -746,7 +1069,7 @@
           "options": [
             "Cuivre natif",
             "Or natif",
-            "Cinabre",
+            "Wolframite",
             "Graphite"
           ],
           "indice": "Noir gras, écrit sur papier",
@@ -780,10 +1103,95 @@
           "groupe": "metaux",
           "id": "metaux11",
           "options": [
+            "Molybénite",
+            "Argent natif",
+            "Graphite",
+            "Galène"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Chalcopyrite",
+          "nom_scientifique": "Chalcopyrite",
+          "indice": "Sulfure de cuivre doré",
+          "description": "Jaune doré ternissant souvent irisé.",
+          "explication": "Chalcopyrite : Principal minerai de cuivre.",
+          "imageQuery": "chalcopyrite",
+          "groupe": "metaux",
+          "id": "metaux12",
+          "options": [
             "Argent natif",
             "Galène",
-            "Graphite",
-            "Soufre"
+            "Chalcopyrite",
+            "Cuivre natif"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Barite",
+          "nom_scientifique": "Barite",
+          "indice": "Sulfate de baryum dense",
+          "description": "Cristaux souvent tabulaire, très denses.",
+          "explication": "Barytine : Charge industrielle et spécimens.",
+          "imageQuery": "barite crystal",
+          "groupe": "metaux",
+          "id": "metaux13",
+          "options": [
+            "Cuivre natif",
+            "Barite",
+            "Fluorine",
+            "Chalcopyrite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Wolframite",
+          "nom_scientifique": "Wolframite",
+          "indice": "Minerai de tungstène",
+          "description": "Oxide/ tungstate noir dense monoclinal.",
+          "explication": "Wolframite : Source historique de tungstène.",
+          "imageQuery": "wolframite",
+          "groupe": "metaux",
+          "id": "metaux14",
+          "options": [
+            "Cuivre natif",
+            "Halite",
+            "Wolframite",
+            "Graphite"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Molybénite",
+          "nom_scientifique": "Molybdenite",
+          "indice": "Sulfure gris bleuté gras",
+          "description": "Feuillets gris-bleu à toucher gras, marque le papier.",
+          "explication": "Molybénite : Minerai de molybdène.",
+          "imageQuery": "molybdenite",
+          "groupe": "metaux",
+          "id": "metaux15",
+          "options": [
+            "Wolframite",
+            "Cinabre",
+            "Cuivre natif",
+            "Molybénite"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Stibine",
+          "nom_scientifique": "Stibnite",
+          "indice": "Sulfure d’antimoine en aiguilles",
+          "description": "Prismes/aiguilles gris métalliques d’antimoine.",
+          "explication": "Stibine : Minerai d’antimoine.",
+          "imageQuery": "stibnite",
+          "groupe": "metaux",
+          "id": "metaux16",
+          "options": [
+            "Gypse",
+            "Stibine",
+            "Sphalérite",
+            "Fluorine"
           ]
         }
       ]

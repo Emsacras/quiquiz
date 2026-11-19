@@ -14,10 +14,10 @@
           "nom_scientifique": "Patella vulgata",
           "groupe": "gasteropodes",
           "options": [
-            "Buccin",
+            "Simnie",
             "Cauris monétaire",
-            "Patelle",
-            "Tonne"
+            "Cymbium",
+            "Patelle"
           ],
           "indice": "Chapeau chinois collé au rocher",
           "description": "Coquille conique basse, souvent sur les rochers battus.",
@@ -32,9 +32,9 @@
           "groupe": "gasteropodes",
           "options": [
             "Bigorneau",
-            "Patelle",
-            "Murex",
-            "Crépidule"
+            "Calliostome",
+            "Fusus",
+            "Murex"
           ],
           "indice": "Petite spirale sombre",
           "description": "Petite coquille spiralée sombre des estrans.",
@@ -65,9 +65,9 @@
           "nom_scientifique": "Nucella lapillus",
           "groupe": "gasteropodes",
           "options": [
-            "Buccin",
+            "Nasse réticulée atlantique",
             "Nasse réticulée",
-            "Patelle",
+            "Simnie",
             "Escargot de mer"
           ],
           "indice": "Spirale pointue des rochers",
@@ -82,9 +82,9 @@
           "nom_scientifique": "Haliotis tuberculata",
           "groupe": "gasteropodes",
           "options": [
-            "Porcelaine méditerranée",
-            "Crépidule",
+            "Fusus",
             "Bigorneau",
+            "Crépidule",
             "Ormeau"
           ],
           "indice": "Oreille nacrée percée",
@@ -100,9 +100,9 @@
           "groupe": "gasteropodes",
           "options": [
             "Crépidule",
-            "Bigorneau",
             "Buccin",
-            "Ormeau"
+            "Ormeau",
+            "Fusus"
           ],
           "indice": "Sabot / pantoufle",
           "description": "Coquille en forme de pantoufle, souvent empilée.",
@@ -133,10 +133,10 @@
           "nom_scientifique": "Turritella communis",
           "groupe": "gasteropodes",
           "options": [
-            "Janthine",
-            "Buccin",
+            "Nasse réticulée atlantique",
             "Turritelle",
-            "Crépidule"
+            "Crépidule",
+            "Fusus"
           ],
           "indice": "Tour très allongée",
           "description": "Spirale très haute et étroite, en tour.",
@@ -150,9 +150,9 @@
           "nom_scientifique": "Conus",
           "groupe": "gasteropodes",
           "options": [
-            "Bigorneau",
+            "Escargot de Bourgogne",
             "Nasse réticulée",
-            "Escargot de mer",
+            "Gibbule",
             "Cône"
           ],
           "indice": "Cône pointu coloré",
@@ -167,9 +167,9 @@
           "nom_scientifique": "Cypraea",
           "groupe": "gasteropodes",
           "options": [
-            "Natice",
             "Cauris monétaire",
-            "Crépidule",
+            "Calliostome",
+            "Escargot de Bourgogne",
             "Porcelaine"
           ],
           "indice": "Œuf brillant sans spire visible",
@@ -184,8 +184,8 @@
           "nom_scientifique": "Charonia",
           "groupe": "gasteropodes",
           "options": [
+            "Littorine obtuse",
             "Porcelaine méditerranée",
-            "Tonne",
             "Cône",
             "Triton"
           ],
@@ -203,7 +203,7 @@
           "options": [
             "Patelle",
             "Cône",
-            "Tonne",
+            "Calliostome",
             "Murex"
           ],
           "indice": "Épines / ailes sur la spirale",
@@ -257,8 +257,8 @@
           "id": "gasteropodes15",
           "options": [
             "Natice",
+            "Cymbium",
             "Porcelaine",
-            "Turritelle",
             "Nasse réticulée"
           ]
         },
@@ -273,10 +273,10 @@
           "groupe": "gasteropodes",
           "id": "gasteropodes16",
           "options": [
-            "Murex",
+            "Cône",
             "Porcelaine méditerranée",
-            "Janthine",
-            "Cône"
+            "Littorine obtuse",
+            "Murex"
           ]
         },
         {
@@ -290,10 +290,154 @@
           "groupe": "gasteropodes",
           "id": "gasteropodes17",
           "options": [
-            "Crépidule",
+            "Cymbium",
             "Tonne",
-            "Escargot de mer",
+            "Ranelle",
             "Porcelaine"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Escargot de Bourgogne",
+          "nom_scientifique": "Helix pomatia",
+          "indice": "Gros escargot terrestre",
+          "description": "Grande coquille hélice claire, terrestre comestible.",
+          "explication": "Escargot de Bourgogne : Terrestre ; souvent sur la grève de collections.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes18",
+          "options": [
+            "Buccin",
+            "Calliostome",
+            "Escargot de Bourgogne",
+            "Ormeau"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Gibbule",
+          "nom_scientifique": "Gibbula umbilicalis",
+          "indice": "Petit top trochidé",
+          "description": "Petite coquille conique ombiliquée des estrans.",
+          "explication": "Gibbule : Rochers du médiolittoral.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes19",
+          "options": [
+            "Escargot de Bourgogne",
+            "Escargot de mer",
+            "Crépidule",
+            "Gibbule"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Calliostome",
+          "nom_scientifique": "Calliostoma zizyphinum",
+          "indice": "Trochus coloré",
+          "description": "Coquille conique à bandes colorées.",
+          "explication": "Calliostome : Estran rocheux.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes20",
+          "options": [
+            "Cymbium",
+            "Murex",
+            "Calliostome",
+            "Fusus"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Nasse réticulée atlantique",
+          "nom_scientifique": "Tritia neritea",
+          "indice": "Petite nasse des sables vaseux",
+          "description": "Petite nasse des sables et vases littorales.",
+          "explication": "Tritia neritea : Charognarde des estrans.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes21",
+          "options": [
+            "Nasse réticulée atlantique",
+            "Ranelle",
+            "Escargot de Bourgogne",
+            "Gibbule"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Cymbium",
+          "nom_scientifique": "Cymbium olla",
+          "indice": "Grande volute méditerranéenne",
+          "description": "Grande coquille ventrue lisse du plateau continental.",
+          "explication": "Cymbium : Méditerranée.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes22",
+          "options": [
+            "Porcelaine",
+            "Turritelle",
+            "Cymbium",
+            "Cône"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Ranelle",
+          "nom_scientifique": "Charonia lampas",
+          "indice": "Gros triton / ranelle",
+          "description": "Très grande coquille spiralée, Méditerranée / Atlantique sud.",
+          "explication": "Ranelle : Grand prédateur de fond.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes23",
+          "options": [
+            "Janthine",
+            "Buccin",
+            "Tonne",
+            "Ranelle"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Simnie",
+          "nom_scientifique": "Simnia spelta",
+          "indice": "Petite ovulidé sur gorgones",
+          "description": "Petite coquille lisse allongée, sur gorgones.",
+          "explication": "Simnie : Associée aux gorgones.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes24",
+          "options": [
+            "Simnie",
+            "Tonne",
+            "Calliostome",
+            "Murex"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Littorine obtuse",
+          "nom_scientifique": "Littorina obtusata",
+          "indice": "Petite littorine globuleuse",
+          "description": "Petite coquille globuleuse des algues de l’estran.",
+          "explication": "Littorina obtusata : Zone des fucales.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes25",
+          "options": [
+            "Patelle",
+            "Littorine obtuse",
+            "Escargot de Bourgogne",
+            "Ormeau"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Fusus",
+          "nom_scientifique": "Aporrhais pespelecani",
+          "indice": "Pied de pélican",
+          "description": "Coquille à expansions digitatives de l’ouverture.",
+          "explication": "Aporrhais : Sables vaseux subtidaux.",
+          "groupe": "gasteropodes",
+          "id": "gasteropodes26",
+          "options": [
+            "Escargot de Bourgogne",
+            "Janthine",
+            "Triton",
+            "Fusus"
           ]
         }
       ]
@@ -309,10 +453,10 @@
           "nom_scientifique": "Mytilus edulis",
           "groupe": "bivalves",
           "options": [
+            "Mactre",
             "Huître",
-            "Moule",
-            "Huître perlière",
-            "Palourde"
+            "Glycymère",
+            "Moule"
           ],
           "indice": "Valve allongée bleutée",
           "description": "Valve sombre allongée, souvent en groupes sur les pieux.",
@@ -327,9 +471,9 @@
           "groupe": "bivalves",
           "options": [
             "Huître",
-            "Pétoncle",
-            "Praire",
-            "Palourde"
+            "Palourde",
+            "Lima",
+            "Praire"
           ],
           "indice": "Valve irrégulière feuilletée",
           "description": "Coquille irrégulière, feuillets calcaires empilés.",
@@ -343,10 +487,10 @@
           "nom_scientifique": "Cerastoderma edule",
           "groupe": "bivalves",
           "options": [
+            "Pétoncle noir",
             "Coque",
             "Palourde",
-            "Pétoncle noir",
-            "Tridacne"
+            "Panope"
           ],
           "indice": "Côtes rayonnantes serrées",
           "description": "Valve ronde à côtes marquées, typique du sable.",
@@ -360,10 +504,10 @@
           "nom_scientifique": "Ruditapes philippinarum",
           "groupe": "bivalves",
           "options": [
-            "Praire",
             "Palourde",
-            "Saint-Jacques",
-            "Lutraire"
+            "Praire",
+            "Lutraire",
+            "Telline"
           ],
           "indice": "Ovale lisse, charnière nette",
           "description": "Valve ovale, surface plutôt lisse, fouisseuse.",
@@ -411,9 +555,9 @@
           "nom_scientifique": "Pecten maximus",
           "groupe": "bivalves",
           "options": [
-            "Spisule",
+            "Lima",
+            "Myes",
             "Palourde",
-            "Amande de mer",
             "Saint-Jacques"
           ],
           "indice": "Grand éventail classique",
@@ -429,9 +573,9 @@
           "groupe": "bivalves",
           "options": [
             "Couteau",
-            "Coque",
-            "Amande de mer",
-            "Huître perlière"
+            "Myes",
+            "Huître perlière",
+            "Lima"
           ],
           "indice": "Allongé comme un rasoir",
           "description": "Valve très allongée, droite ou légèrement courbe.",
@@ -446,7 +590,7 @@
           "groupe": "bivalves",
           "options": [
             "Pétoncle noir",
-            "Tridacne",
+            "Panope",
             "Palourde",
             "Amande de mer"
           ],
@@ -463,9 +607,9 @@
           "groupe": "bivalves",
           "options": [
             "Amande de mer",
-            "Pétoncle",
             "Pétoncle noir",
-            "Huître perlière"
+            "Huître perlière",
+            "Glycymère"
           ],
           "indice": "Valve nacrée irrégulière",
           "description": "Coquille irrégulière à intérieur nacré, perles.",
@@ -496,10 +640,10 @@
           "nom_scientifique": "Spisula",
           "groupe": "bivalves",
           "options": [
-            "Huître",
             "Spisule",
             "Couteau",
-            "Huître perlière"
+            "Panope",
+            "Lima"
           ],
           "indice": "Triangle ovale, fouisseur",
           "description": "Valve triangulaire-ovale des zones de ressac.",
@@ -513,10 +657,10 @@
           "nom_scientifique": "Lutraria",
           "groupe": "bivalves",
           "options": [
-            "Pétoncle",
-            "Spisule",
-            "Lutraire",
-            "Huître perlière"
+            "Glycymère",
+            "Panope",
+            "Huître creuse",
+            "Lutraire"
           ],
           "indice": "Allongée, bouts ouverts",
           "description": "Valve allongée aux extrémités légèrement béantes.",
@@ -530,9 +674,9 @@
           "nom_scientifique": "Modiolus",
           "groupe": "bivalves",
           "options": [
-            "Saint-Jacques",
-            "Lutraire",
+            "Lima",
             "Coque",
+            "Lutraire",
             "Modiole"
           ],
           "indice": "Moule plus renflée",
@@ -551,10 +695,138 @@
           "groupe": "bivalves",
           "id": "bivalves15",
           "options": [
-            "Tridacne",
+            "Mactre",
+            "Myes",
             "Pétoncle noir",
+            "Lima"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Huître creuse",
+          "nom_scientifique": "Magallana gigas",
+          "indice": "Huître japonaise d’élevage",
+          "description": "Huître à coquille plus allongée / irrégulière que la plate.",
+          "explication": "Huître creuse : Espèce d’élevage dominante.",
+          "groupe": "bivalves",
+          "id": "bivalves16",
+          "options": [
             "Huître",
+            "Huître creuse",
+            "Saint-Jacques",
+            "Myes"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Telline",
+          "nom_scientifique": "Donax trunculus",
+          "indice": "Petit bivalve des sables",
+          "description": "Petites valves triangulaires colorées des plages.",
+          "explication": "Telline : Sables battus.",
+          "groupe": "bivalves",
+          "id": "bivalves17",
+          "options": [
+            "Telline",
+            "Lutraire",
+            "Moule",
+            "Huître creuse"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Mactre",
+          "nom_scientifique": "Mactra stultorum",
+          "indice": "Bivalve lisse des sables",
+          "description": "Valves assez lisses, sables subtidaux.",
+          "explication": "Mactre : Sables fins.",
+          "groupe": "bivalves",
+          "id": "bivalves18",
+          "options": [
+            "Pétoncle",
+            "Telline",
+            "Huître creuse",
+            "Mactre"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Glycymère",
+          "nom_scientifique": "Glycymeris glycymeris",
+          "indice": "Amande de mer ronde",
+          "description": "Valves presque circulaires, robustes.",
+          "explication": "Glycymère : Graviers et sables.",
+          "groupe": "bivalves",
+          "id": "bivalves19",
+          "options": [
+            "Glycymère",
+            "Coque",
+            "Huître",
+            "Amande de mer"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Panope",
+          "nom_scientifique": "Panopea glycymeris",
+          "indice": "Très grand bivalve fouisseur",
+          "description": "Grand bivalve aux siphons longs, profondément enfoui.",
+          "explication": "Panope : Atlantique / Méditerranée.",
+          "groupe": "bivalves",
+          "id": "bivalves20",
+          "options": [
+            "Glycymère",
+            "Panope",
+            "Coque",
             "Palourde"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Lima",
+          "nom_scientifique": "Lima lima",
+          "indice": "Bivalve à côtes épineuses",
+          "description": "Valves à côtes souvent épineuses, nage parfois.",
+          "explication": "Lima : Fonds rocheux.",
+          "groupe": "bivalves",
+          "id": "bivalves21",
+          "options": [
+            "Huître perlière",
+            "Lutraire",
+            "Lima",
+            "Amande de mer"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Myes",
+          "nom_scientifique": "Mya arenaria",
+          "indice": "Grande mye des vases",
+          "description": "Grand bivalve fouisseur des vases estuariennes.",
+          "explication": "Mye : Introduite / estuaires.",
+          "groupe": "bivalves",
+          "id": "bivalves22",
+          "options": [
+            "Myes",
+            "Huître",
+            "Huître creuse",
+            "Moule"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Pinne marine",
+          "nom_scientifique": "Pinna nobilis",
+          "indice": "Grande nacre méditerranéenne",
+          "description": "Très grande coquille triangulaire des herbiers.",
+          "explication": "Pinne : Protégée en Méditerranée.",
+          "groupe": "bivalves",
+          "id": "bivalves23",
+          "options": [
+            "Pinne marine",
+            "Lima",
+            "Praire",
+            "Spisule"
           ]
         }
       ]
@@ -570,10 +842,10 @@
           "nom_scientifique": "Echinoidea",
           "groupe": "divers",
           "options": [
+            "Spirastrella (éponge)",
             "Corail (fragment)",
-            "Gladius de calmar",
             "Test d’oursin",
-            "Opercule"
+            "Balane géante"
           ],
           "indice": "Boule calcaire à plaques",
           "description": "Squelette sphérique d’oursin sans piquants.",
@@ -588,8 +860,8 @@
           "groupe": "divers",
           "options": [
             "Opercule",
+            "Étoile de mer (ossicule)",
             "Spirule",
-            "Dentale",
             "Bec de calmar"
           ],
           "indice": "« Ongle » qui ferme la coquille",
@@ -621,10 +893,10 @@
           "nom_scientifique": "Nautilus",
           "groupe": "divers",
           "options": [
-            "Spirule",
-            "Os de seiche",
+            "Poulpe (bec)",
+            "Violets (tunique)",
             "Nautile",
-            "Violets (tunique)"
+            "Balane géante"
           ],
           "indice": "Spirale cloisonnée nacrée",
           "description": "Grande spirale à cloisons, intérieur nacré.",
@@ -655,10 +927,10 @@
           "nom_scientifique": "Sepia officinalis",
           "groupe": "divers",
           "options": [
-            "Argonaute",
+            "Spirastrella (éponge)",
             "Os de seiche",
             "Poulpe (coquille interne)",
-            "Bryozoaire"
+            "Velelle"
           ],
           "indice": "Plaque blanche poreuse",
           "description": "Squelette interne blanc et poreux de la seiche.",
@@ -674,8 +946,8 @@
           "options": [
             "Balane",
             "Corail (fragment)",
-            "Bec de calmar",
-            "Violets (tunique)"
+            "Velelle",
+            "Bec de calmar"
           ],
           "indice": "Petit bec corné",
           "description": "Pièce cornée en forme de bec de perroquet.",
@@ -724,7 +996,7 @@
           "groupe": "divers",
           "options": [
             "Dentale",
-            "Violets (tunique)",
+            "Poulpe (bec)",
             "Bryozoaire",
             "Balane"
           ],
@@ -757,10 +1029,10 @@
           "nom_scientifique": "Microcosmus",
           "groupe": "divers",
           "options": [
-            "Spirule",
             "Test d’oursin",
-            "Violets (tunique)",
-            "Bryozoaire"
+            "Étoile de mer (ossicule)",
+            "Balane géante",
+            "Violets (tunique)"
           ],
           "indice": "Sac rugueux orange/brun",
           "description": "Tunique coriace d’ascidie, souvent sur les quais.",
@@ -775,7 +1047,7 @@
           "groupe": "divers",
           "options": [
             "Test d’oursin",
-            "Bryozoaire",
+            "Poulpe (bec)",
             "Balane",
             "Corail (fragment)"
           ],
@@ -816,6 +1088,86 @@
             "Spirule",
             "Bec de calmar",
             "Gladius de calmar"
+          ]
+        },
+        {
+          "difficulte": "facile",
+          "nom_commun": "Étoile de mer (ossicule)",
+          "nom_scientifique": "Asterias rubens",
+          "indice": "Plaque calcaire d’échinoderme",
+          "description": "Petit ossicule / plaque calcaire d’étoile.",
+          "explication": "Ossicule : Fragment d’échinoderme sur la grève.",
+          "groupe": "divers",
+          "id": "divers16",
+          "options": [
+            "Nautile",
+            "Dentale",
+            "Violets (tunique)",
+            "Étoile de mer (ossicule)"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Poulpe (bec)",
+          "nom_scientifique": "Octopus vulgaris",
+          "indice": "Bec corné de céphalopode",
+          "description": "Bec en « bec de perroquet » de poulpe.",
+          "explication": "Bec de poulpe : Parfois échoué.",
+          "groupe": "divers",
+          "id": "divers17",
+          "options": [
+            "Dentale",
+            "Étoile de mer (ossicule)",
+            "Poulpe (bec)",
+            "Violets (tunique)"
+          ]
+        },
+        {
+          "difficulte": "moyen",
+          "nom_commun": "Velelle",
+          "nom_scientifique": "Velella velella",
+          "indice": "Voile chitineux échoué",
+          "description": "Petite « méduse » à voile, échouages massifs possibles.",
+          "explication": "Velelle : Hydrozoaire de surface.",
+          "groupe": "divers",
+          "id": "divers18",
+          "options": [
+            "Dentale",
+            "Balane géante",
+            "Velelle",
+            "Poulpe (coquille interne)"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Spirastrella (éponge)",
+          "nom_scientifique": "Spirastrella cunctatrix",
+          "indice": "Fragment d’éponge colorée",
+          "description": "Éponge encroûtante ; fragments sur la grève.",
+          "explication": "Éponge : Squelette siliceux / corné.",
+          "groupe": "divers",
+          "id": "divers19",
+          "options": [
+            "Spirastrella (éponge)",
+            "Velelle",
+            "Poulpe (bec)",
+            "Test d’oursin"
+          ]
+        },
+        {
+          "difficulte": "difficile",
+          "nom_commun": "Balane géante",
+          "nom_scientifique": "Balanus perforatus",
+          "indice": "Grande balane volcaniforme",
+          "description": "Grande balane volcaniforme des rochers battus.",
+          "explication": "Balanus perforatus : Méditerranée / Atlantique sud.",
+          "groupe": "divers",
+          "id": "divers20",
+          "options": [
+            "Nautile",
+            "Corail (fragment)",
+            "Violets (tunique)",
+            "Balane géante"
           ]
         }
       ]
