@@ -184,12 +184,53 @@ function publicQuestion(q) {
         iso2: q.iso2,
         commonsFile: q.commonsFile,
         paysEn: q.paysEn,
+        // Image choisie côté serveur (même URL pour les deux joueurs)
+        imageUrl: q.imageUrl || "",
+        imageCredit: q.imageCredit || "",
+        imageCreditHref: q.imageCreditHref || "",
     };
+}
+
+/**
+ * Fixe une image déterministe sur la question de pack (équité duel).
+ * @param {object} q
+ * @param {string} seedKey
+ */
+async function attachSharedImage(q, seedKey) {
+    if (!q || q.imageUrl) return q;
+    const iso = String(q.iso2 || "")
+        .trim()
+        .toLowerCase();
+    if (iso && /^[a-z]{2}$/.test(iso)) {
+        q.imageUrl = `/api/flag/${iso}`;
+        q.imageCredit = "";
+        q.imageCreditHref = "";
+        return q;
+    }
+    const name = String(q.nom_scientifique || q.imageQuery || "").trim();
+    if (!name) return q;
+    try {
+        const { getPool } = require("./quizPoolService");
+        const kind = String(q.mediaKind || "").trim().toLowerCase();
+        let items = await getPool(name, { validatedOnly: true, kind });
+        if (!items.length) items = await getPool(name, { kind });
+        if (!items.length) return q;
+        const picked = seededShuffle(items, `${seedKey}:img:${q.id}:${name}`)[0];
+        if (!picked?.url) return q;
+        q.imageUrl = picked.url;
+        const creditParts = [picked.artist, picked.license].filter(Boolean);
+        q.imageCredit = creditParts.join(" · ");
+        q.imageCreditHref = picked.commonsPage || picked.licenseUrl || "";
+    } catch {
+        /* leave empty — client may fallback */
+    }
+    return q;
 }
 
 module.exports = {
     buildDuelPack,
     publicQuestion,
+    attachSharedImage,
     resolveQuizFile,
     listQuizGroups,
     normalizeGroupIds
