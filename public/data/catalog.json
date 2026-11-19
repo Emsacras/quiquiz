@@ -110,7 +110,7 @@
               "id": "arbres",
               "nom": "Arbres",
               "fichier": "data/arbres-france.json",
-              "description": "97 arbres de France : feuillus, conifères, méditerranéens…",
+              "description": "96 arbres de France : feuillus, conifères, méditerranéens…",
               "regions": [
                 "france"
               ]
@@ -128,7 +128,7 @@
               "id": "feuilles-arbres",
               "nom": "Feuilles d’arbres",
               "fichier": "data/feuilles-arbres.json",
-              "description": "Reconnaître un arbre uniquement par sa feuille (64 entrées).",
+              "description": "Reconnaître un arbre uniquement par sa feuille (63 entrées).",
               "regions": [
                 "france",
                 "monde"
@@ -149,7 +149,7 @@
           "id": "coquillages",
           "nom": "Coquillages",
           "fichier": "data/coquillages.json",
-          "description": "Coquillages de la grève et de la mer (69 entrées).",
+          "description": "Coquillages de la grève et de la mer (68 entrées).",
           "regions": [
             "france",
             "monde"
@@ -218,7 +218,7 @@
           "id": "fossiles",
           "nom": "Fossiles",
           "fichier": "data/fossiles.json",
-          "description": "Ammonites, trilobites, dents et empreintes fossiles (54 entrées).",
+          "description": "Ammonites, trilobites, dents et empreintes fossiles (53 entrées).",
           "regions": [
             "monde"
           ]

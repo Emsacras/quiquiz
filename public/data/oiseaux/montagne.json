@@ -214,7 +214,7 @@
     {
       "id": "mon-d4",
       "groupe": "montagne",
-      "difficulte": "difficile",
+      "difficulte": "moyen",
       "nom_commun": "Mésange nonnette",
       "nom_scientifique": "Poecile palustris",
       "options": [
@@ -358,7 +358,7 @@
     {
       "id": "montagne-x08",
       "groupe": "montagne",
-      "difficulte": "difficile",
+      "difficulte": "moyen",
       "nom_commun": "Mésange huppée",
       "nom_scientifique": "Lophophanes cristatus",
       "options": [
@@ -374,7 +374,7 @@
     {
       "id": "montagne-x09",
       "groupe": "montagne",
-      "difficulte": "difficile",
+      "difficulte": "moyen",
       "nom_commun": "Mésange noire",
       "nom_scientifique": "Periparus ater",
       "options": [
