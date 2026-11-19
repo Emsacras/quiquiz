@@ -754,6 +754,35 @@ button:disabled {
   width: min(100%, 420px);
 }
 
+.duel-recap {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+
+.duel-recap-row {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  display: grid;
+  gap: 4px;
+}
+
+.duel-recap-row strong {
+  font-size: 1rem;
+}
+
+.duel-recap-row.is-ok {
+  border-color: color-mix(in srgb, var(--ok) 35%, var(--line));
+  background: color-mix(in srgb, var(--ok-bg) 55%, var(--surface));
+}
+
+.duel-recap-row.is-bad {
+  border-color: color-mix(in srgb, var(--bad) 30%, var(--line));
+  background: color-mix(in srgb, var(--bad-bg) 45%, var(--surface));
+}
+
 .duel-actions {
   display: flex;
   flex-wrap: wrap;

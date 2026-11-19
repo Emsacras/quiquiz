@@ -4,9 +4,11 @@
 const crypto = require("crypto");
 const { WebSocketServer } = require("ws");
 const { getUser, publicUser, appendDuelHistory, areFriends } = require("../services/userStore");
-const { buildDuelPack, publicQuestion } = require("../services/duelPackService");
+const { buildDuelPack, publicQuestion, attachSharedImage } = require("../services/duelPackService");
 
 const ANSWER_TIMEOUT_MS = 30_000;
+/** Temps pour lire la bonne réponse (surtout si on a répondu en 2ᵉ). */
+const REVEAL_PAUSE_MS = 4_200;
 const ROOM_TTL_MS = 45 * 60 * 1000;
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
@@ -127,7 +129,8 @@ function finishRoom(room, reason = "complete") {
         reason,
         host: playerPublic(host),
         guest: playerPublic(guest),
-        winner
+        winner,
+        rounds: Array.isArray(room.roundLog) ? room.roundLog : []
     };
     broadcast(room, "duel:finished", resultPayload);
 
@@ -165,7 +168,7 @@ function finishRoom(room, reason = "complete") {
     }, 5 * 60 * 1000);
 }
 
-function startQuestion(room) {
+async function startQuestion(room) {
     clearAnswerTimer(room);
     if (!room.pack?.length) return finishRoom(room);
     if (room.questionIndex >= room.pack.length) return finishRoom(room);
@@ -176,9 +179,19 @@ function startQuestion(room) {
         p.answered = false;
         p.answerIndex = null;
         p.elapsedMs = 0;
+        p.lastCorrect = false;
     }
-    room.questionStartedAt = Date.now();
     const q = room.pack[room.questionIndex];
+    const startToken = `${room.code}:${room.questionIndex}`;
+    room.questionStartToken = startToken;
+    try {
+        await attachSharedImage(q, `${room.seed || room.code}:${room.questionIndex}`);
+    } catch {
+        /* ignore — clients may fallback independently */
+    }
+    if (room.status !== "playing" || room.questionStartToken !== startToken) return;
+
+    room.questionStartedAt = Date.now();
     const payload = {
         index: room.questionIndex,
         total: room.pack.length,
@@ -219,10 +232,34 @@ function doReveal(room) {
         p.lastCorrect = correct;
     }
 
+    if (!Array.isArray(room.roundLog)) room.roundLog = [];
+    room.roundLog.push({
+        index: room.questionIndex,
+        nom_commun: q.nom_commun,
+        options: Array.isArray(q.options) ? q.options : [],
+        correctIndex: q.correctIndex,
+        imageUrl: q.imageUrl || "",
+        host: {
+            displayName: room.host?.displayName || "Hôte",
+            answerIndex: room.host?.answerIndex ?? -1,
+            correct: Boolean(room.host?.lastCorrect),
+            elapsedMs: Number(room.host?.elapsedMs) || 0
+        },
+        guest: {
+            displayName: room.guest?.displayName || "Adversaire",
+            answerIndex: room.guest?.answerIndex ?? -1,
+            correct: Boolean(room.guest?.lastCorrect),
+            elapsedMs: Number(room.guest?.elapsedMs) || 0
+        }
+    });
+
     broadcast(room, "duel:reveal", {
         index: room.questionIndex,
         correctIndex: q.correctIndex,
         nom_commun: q.nom_commun,
+        options: Array.isArray(q.options) ? q.options : [],
+        hostAnswerIndex: room.host?.answerIndex ?? -1,
+        guestAnswerIndex: room.guest?.answerIndex ?? -1,
         host: playerPublic(room.host),
         guest: playerPublic(room.guest)
     });
@@ -232,8 +269,8 @@ function doReveal(room) {
     setTimeout(() => {
         if (room.status !== "playing") return;
         if (room.questionIndex >= room.pack.length) finishRoom(room);
-        else startQuestion(room);
-    }, 1600);
+        else void startQuestion(room);
+    }, REVEAL_PAUSE_MS);
 }
 
 function maybeReveal(room) {
@@ -274,6 +311,8 @@ function createRoom({ userId, config }) {
         questionStartedAt: 0,
         answerTimer: null,
         winner: null,
+        roundLog: [],
+        questionStartToken: "",
         host: {
             seat: "host",
             userId: user.id,
@@ -485,11 +524,12 @@ function handleReady(ws, meta, payload) {
         room.host.totalMs = 0;
         room.guest.score = 0;
         room.guest.totalMs = 0;
+        room.roundLog = [];
         broadcast(room, "duel:start", {
             duel: roomPublic(room),
             questionCount: room.pack.length
         });
-        startQuestion(room);
+        void startQuestion(room);
     }
 }
 
