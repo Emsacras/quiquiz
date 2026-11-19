@@ -329,34 +329,18 @@
         },
         {
           "difficulte": "difficile",
-          "nom_commun": "Cormier",
-          "nom_scientifique": "Sorbus domestica",
-          "indice": "Sorbier à fruits piriformes",
-          "description": "Arbre proche des sorbiers, fruits en forme de petite poire.",
-          "explication": "Cormier : Devenu rare hors vergers et quelques forêts.",
-          "groupe": "feuillus",
-          "id": "feuillus21",
-          "options": [
-            "Alisier torminal",
-            "Châtaignier",
-            "Cormier",
-            "Charme-houblon"
-          ]
-        },
-        {
-          "difficulte": "difficile",
           "nom_commun": "Tilleul à petites feuilles",
           "nom_scientifique": "Tilia cordata",
           "indice": "Tilleul à feuilles cordiformes petites",
           "description": "Tilleul aux feuilles plus petites que le tilleul à grandes feuilles.",
           "explication": "Tilleul à petites feuilles : Essence forestière et d’alignement.",
           "groupe": "feuillus",
-          "id": "feuillus22",
+          "id": "feuillus21",
           "options": [
-            "Charme-houblon",
+            "Alisier torminal",
+            "Châtaignier",
             "Tilleul à petites feuilles",
-            "Érable champêtre",
-            "Chêne pédonculé"
+            "Charme-houblon"
           ]
         },
         {
@@ -367,12 +351,12 @@
           "description": "Grand peuplier ; souvent forme italica en alignement.",
           "explication": "Peuplier noir : Ripisylves et alignements.",
           "groupe": "feuillus",
-          "id": "feuillus23",
+          "id": "feuillus22",
           "options": [
-            "Noisetier",
-            "Aulne glutineux",
-            "Hêtre",
-            "Peuplier noir"
+            "Charme-houblon",
+            "Peuplier noir",
+            "Érable champêtre",
+            "Chêne pédonculé"
           ]
         },
         {
@@ -383,12 +367,12 @@
           "description": "Bouleau à jeunes rameaux pubescents, landes humides.",
           "explication": "Bouleau pubescent : Plus hygrophile que le verruqueux.",
           "groupe": "feuillus",
-          "id": "feuillus24",
+          "id": "feuillus23",
           "options": [
-            "Charme-houblon",
+            "Noisetier",
+            "Aulne glutineux",
             "Bouleau pubescent",
-            "Alisier torminal",
-            "Chêne pubescent"
+            "Hêtre"
           ]
         },
         {
@@ -399,12 +383,12 @@
           "description": "Chêne aux glands à cupule « chevelue ».",
           "explication": "Chêne chevelu : Introduit / sud-est.",
           "groupe": "feuillus",
-          "id": "feuillus25",
+          "id": "feuillus24",
           "options": [
+            "Charme-houblon",
             "Chêne chevelu",
-            "Cormier",
-            "Poirier sauvage",
-            "Chêne sessile"
+            "Alisier torminal",
+            "Chêne pubescent"
           ]
         },
         {
@@ -415,12 +399,12 @@
           "description": "Orme aux feuilles grandes, base très asymétrique.",
           "explication": "Orme de montagne : Vallées et montagnes.",
           "groupe": "feuillus",
-          "id": "feuillus26",
+          "id": "feuillus25",
           "options": [
-            "Orme champêtre",
-            "Frêne commun",
+            "Chêne pubescent",
             "Orme de montagne",
-            "Peuplier tremble"
+            "Poirier sauvage",
+            "Chêne sessile"
           ]
         },
         {
@@ -431,12 +415,12 @@
           "description": "Frêne méditerranéen / sud-ouest, folioles plus étroites.",
           "explication": "Frêne oxyphylle : Ripisylves du sud.",
           "groupe": "feuillus",
-          "id": "feuillus27",
+          "id": "feuillus26",
           "options": [
-            "Noisetier",
-            "Chêne chevelu",
+            "Orme champêtre",
             "Frêne oxyphylle",
-            "Tilleul à petites feuilles"
+            "Frêne commun",
+            "Peuplier tremble"
           ]
         },
         {
@@ -447,12 +431,12 @@
           "description": "Aulne à face inférieure claire, montagnes et graviers.",
           "explication": "Aulne blanc : Alpes et Pyrénées surtout.",
           "groupe": "feuillus",
-          "id": "feuillus28",
+          "id": "feuillus27",
           "options": [
-            "Érable sycomore",
+            "Noisetier",
+            "Chêne chevelu",
             "Aulne blanc",
-            "Aulne glutineux",
-            "Charme"
+            "Tilleul à petites feuilles"
           ]
         },
         {
@@ -463,11 +447,11 @@
           "description": "Petit arbre épineux, fruits petits durs.",
           "explication": "Poirier sauvage : Lisières et haies.",
           "groupe": "feuillus",
-          "id": "feuillus29",
+          "id": "feuillus28",
           "options": [
-            "Châtaignier",
-            "Tilleul à petites feuilles",
-            "Chêne rouge d'Amérique",
+            "Érable sycomore",
+            "Aulne glutineux",
+            "Charme",
             "Poirier sauvage"
           ]
         },
@@ -479,12 +463,12 @@
           "description": "Petit arbre, fruits petits acides.",
           "explication": "Pommier sauvage : Ancêtre partiel des cultivés.",
           "groupe": "feuillus",
-          "id": "feuillus30",
+          "id": "feuillus29",
           "options": [
-            "Aulne glutineux",
+            "Châtaignier",
+            "Tilleul à petites feuilles",
             "Pommier sauvage",
-            "Chêne pédonculé",
-            "Poirier sauvage"
+            "Chêne rouge d'Amérique"
           ]
         },
         {
@@ -495,12 +479,12 @@
           "description": "Arbuste à feuilles semi-persistantes, baies noires.",
           "explication": "Troène : Haies et lisières.",
           "groupe": "feuillus",
-          "id": "feuillus31",
+          "id": "feuillus30",
           "options": [
-            "Tilleul à petites feuilles",
+            "Aulne glutineux",
             "Troène commun",
-            "Saule blanc",
-            "Fusain d'Europe"
+            "Chêne pédonculé",
+            "Poirier sauvage"
           ]
         },
         {
@@ -511,12 +495,12 @@
           "description": "Arbuste ; fruits roses à graines orange.",
           "explication": "Fusain : Haies ; bois pour fusains à dessiner.",
           "groupe": "feuillus",
-          "id": "feuillus32",
+          "id": "feuillus31",
           "options": [
-            "Saule marsault",
-            "Érable sycomore",
-            "Fusain d'Europe",
-            "Aulne blanc"
+            "Chêne pubescent",
+            "Tilleul à petites feuilles",
+            "Saule blanc",
+            "Fusain d'Europe"
           ]
         },
         {
@@ -527,12 +511,12 @@
           "description": "Chêne à lobes aigus, rouge d’automne.",
           "explication": "Chêne rouge : Planté, naturalisé localement.",
           "groupe": "feuillus",
-          "id": "feuillus33",
+          "id": "feuillus32",
           "options": [
+            "Saule marsault",
+            "Érable sycomore",
             "Chêne rouge d'Amérique",
-            "Merisier",
-            "Érable champêtre",
-            "Tilleul à petites feuilles"
+            "Aulne blanc"
           ]
         },
         {
@@ -543,12 +527,12 @@
           "description": "Feuilles très découpées, dessous argenté.",
           "explication": "Érable argenté : Parcs et alignements.",
           "groupe": "feuillus",
-          "id": "feuillus34",
+          "id": "feuillus33",
           "options": [
-            "Frêne commun",
-            "Érable argenté",
-            "Érable sycomore",
-            "Tilleul à grandes feuilles"
+            "Merisier",
+            "Érable champêtre",
+            "Tilleul à petites feuilles",
+            "Érable argenté"
           ]
         },
         {
@@ -559,12 +543,12 @@
           "description": "Feuilles type charme ; fruits en chatons en cône.",
           "explication": "Charme-houblon : Sud-est.",
           "groupe": "feuillus",
-          "id": "feuillus35",
+          "id": "feuillus34",
           "options": [
-            "Fusain d'Europe",
-            "Chêne sessile",
             "Frêne commun",
-            "Charme-houblon"
+            "Charme-houblon",
+            "Érable sycomore",
+            "Tilleul à grandes feuilles"
           ]
         }
       ]
@@ -1356,7 +1340,7 @@
         {
           "difficulte": "facile",
           "nom_commun": "Cerisier cultivé",
-          "nom_scientifique": "Prunus avium",
+          "nom_scientifique": "Prunus avium (cultivar)",
           "indice": "Cerisier des vergers (douce)",
           "description": "Arbre à fleurs blanches, fruits rouges à queue courte.",
           "explication": "Cerisier : Forme cultivée proche du merisier.",

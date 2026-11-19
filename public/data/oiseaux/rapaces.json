@@ -322,6 +322,54 @@
       "indice": "Très grand, longues aigrettes, yeux orange, poitrine fortement rayée",
       "explication": "Le hibou grand-duc est très grand, avec de longues aigrettes et des yeux orange. La poitrine est fortement rayée de noir.",
       "description": "Très grand, longues aigrettes, yeux orange. Poitrine fortement rayée de noir."
+    },
+    {
+      "id": "d6",
+      "difficulte": "facile",
+      "nom_commun": "Buse variable",
+      "nom_scientifique": "Buteo buteo",
+      "options": [
+        "Buse variable",
+        "Milan noir",
+        "Faucon crécerelle",
+        "Épervier d'Europe"
+      ],
+      "indice": "Silhouette large, queue courte et arrondie",
+      "explication": "La buse variable a des ailes larges et une queue courte, souvent barrée. Le plumage brun est très variable, du très clair au très sombre.",
+      "groupe": "rapaces",
+      "description": "Ailes larges, queue courte souvent barrée. Plumage brun, du très clair au très sombre."
+    },
+    {
+      "id": "d7",
+      "difficulte": "moyen",
+      "nom_commun": "Milan noir",
+      "nom_scientifique": "Milvus migrans",
+      "options": [
+        "Milan noir",
+        "Buse variable",
+        "Milan royal",
+        "Faucon crécerelle"
+      ],
+      "indice": "Queue légèrement échancrée, ailes longues",
+      "explication": "Le milan noir est brun sombre, avec de longues ailes coudées. Sa queue est peu échancrée, moins fourchue que celle du milan royal.",
+      "groupe": "rapaces",
+      "description": "Brun sombre, longues ailes coudées. Queue peu échancrée, moins fourchue que chez son proche parent roux."
+    },
+    {
+      "id": "d8",
+      "difficulte": "facile",
+      "nom_commun": "Faucon crécerelle",
+      "nom_scientifique": "Falco tinnunculus",
+      "options": [
+        "Faucon crécerelle",
+        "Épervier d'Europe",
+        "Buse variable",
+        "Milan noir"
+      ],
+      "indice": "Dos roux tacheté et ailes pointues",
+      "explication": "Le faucon crécerelle a le dos roux tacheté de noir et des ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout de la queue.",
+      "groupe": "rapaces",
+      "description": "Dos roux tacheté de noir, ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout."
     }
   ]
 }

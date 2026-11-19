@@ -373,10 +373,10 @@
           "nom_scientifique": "Betula pendula",
           "groupe": "simples",
           "options": [
+            "Bouleau verruqueux",
             "Cornouiller sanguin",
             "Magnolia",
-            "Bouleau verruqueux",
-            "Frêne"
+            "Paulownia (feuille)"
           ],
           "indice": "Petite, triangulaire-dentée",
           "description": "Petite feuille dentée, base souvent en coin.",
@@ -390,10 +390,10 @@
           "nom_scientifique": "Castanea sativa",
           "groupe": "simples",
           "options": [
-            "Frêne",
             "Châtaignier",
             "Cornouiller sanguin",
-            "Troène"
+            "Troène",
+            "Orme champêtre"
           ],
           "indice": "Longue, dents en scie",
           "description": "Grande feuille allongée, bord fortement denté.",
@@ -511,8 +511,8 @@
           "options": [
             "Aulne glutineux",
             "Charme",
-            "Frêne",
-            "Châtaignier"
+            "Châtaignier",
+            "Fusain d’Europe"
           ],
           "indice": "Nervures très marquées, double dent",
           "description": "Feuille ovale plissée, double denture régulière.",
@@ -562,7 +562,7 @@
           "options": [
             "Hêtre",
             "Fusain d’Europe",
-            "Frêne",
+            "Houx",
             "Micocoulier"
           ],
           "indice": "Ovale fine, bords fins",
@@ -579,30 +579,13 @@
           "options": [
             "Troène",
             "Cornouiller sanguin",
-            "Frêne",
-            "Merisier"
+            "Merisier",
+            "Hêtre"
           ],
           "indice": "Petite, semi-persistante",
           "description": "Petite feuille ovale lisse, souvent brillante.",
           "explication": "Troène : Petite feuille des haies taillées.",
           "imageQuery": "privet leaf"
-        },
-        {
-          "difficulte": "moyen",
-          "nom_commun": "Frêne",
-          "nom_scientifique": "Fraxinus excelsior",
-          "indice": "En réalité composée — limbe de foliole",
-          "description": "Foliole lancéolée dentée (feuille globalement composée).",
-          "explication": "Frêne : Quiz feuille : on montre souvent une foliole.",
-          "imageQuery": "ash leaflet",
-          "groupe": "simples",
-          "id": "simples15",
-          "options": [
-            "Photinia",
-            "Aulne glutineux",
-            "Houx",
-            "Frêne"
-          ]
         },
         {
           "difficulte": "difficile",
@@ -613,11 +596,11 @@
           "explication": "Micocoulier : Midi et alignements.",
           "imageQuery": "European hackberry leaf",
           "groupe": "simples",
-          "id": "simples16",
+          "id": "simples15",
           "options": [
-            "Merisier",
-            "Troène",
-            "Orme champêtre",
+            "Photinia",
+            "Aulne glutineux",
+            "Houx",
             "Micocoulier"
           ]
         },
@@ -629,12 +612,12 @@
           "description": "Feuille oblongue lustrée persistante, toxique.",
           "explication": "Laurier-cerise : Haies très fréquentes.",
           "groupe": "simples",
-          "id": "simples17",
+          "id": "simples16",
           "options": [
-            "Laurier-cerise",
-            "Houx",
-            "Bouleau verruqueux",
-            "Troène"
+            "Merisier",
+            "Troène",
+            "Orme champêtre",
+            "Laurier-cerise"
           ]
         },
         {
@@ -645,12 +628,12 @@
           "description": "Feuilles persistantes ; jeunes pousses rouge vif.",
           "explication": "Photinia : Haies ornementales.",
           "groupe": "simples",
-          "id": "simples18",
+          "id": "simples17",
           "options": [
-            "Châtaignier",
-            "Photinia",
-            "Tilleul",
-            "Eucalyptus (feuille)"
+            "Houx",
+            "Bouleau verruqueux",
+            "Troène",
+            "Photinia"
           ]
         },
         {
@@ -661,11 +644,11 @@
           "description": "Feuille coriace à bord épineux, baies rouges.",
           "explication": "Houx : Sous-bois et haies.",
           "groupe": "simples",
-          "id": "simples19",
+          "id": "simples18",
           "options": [
-            "Magnolia",
-            "Peuplier tremble",
-            "Photinia",
+            "Châtaignier",
+            "Tilleul",
+            "Eucalyptus (feuille)",
             "Houx"
           ]
         },
@@ -677,12 +660,12 @@
           "description": "Grande feuille lustrée, dessous souvent roux.",
           "explication": "Magnolia : Parcs du Midi et Atlantique.",
           "groupe": "simples",
-          "id": "simples20",
+          "id": "simples19",
           "options": [
+            "Peuplier tremble",
+            "Houx",
             "Magnolia",
-            "Paulownia (feuille)",
-            "Eucalyptus (feuille)",
-            "Charme"
+            "Photinia"
           ]
         },
         {
@@ -693,12 +676,12 @@
           "description": "Feuille très large cordiforme, verticilles.",
           "explication": "Catalpa : Alignements et parcs.",
           "groupe": "simples",
-          "id": "simples21",
+          "id": "simples20",
           "options": [
             "Catalpa",
-            "Troène",
-            "Houx",
-            "Aulne glutineux"
+            "Paulownia (feuille)",
+            "Eucalyptus (feuille)",
+            "Charme"
           ]
         },
         {
@@ -709,12 +692,12 @@
           "description": "Feuille cordiforme géante, face duveteuse.",
           "explication": "Paulownia : Croissance rapide.",
           "groupe": "simples",
-          "id": "simples22",
+          "id": "simples21",
           "options": [
-            "Paulownia (feuille)",
-            "Noisetier",
-            "Merisier",
-            "Châtaignier"
+            "Troène",
+            "Houx",
+            "Aulne glutineux",
+            "Paulownia (feuille)"
           ]
         },
         {
@@ -725,12 +708,12 @@
           "description": "Feuille allongée de bambou, nervure parallèle.",
           "explication": "Bambou : Naturalisé localement.",
           "groupe": "simples",
-          "id": "simples23",
+          "id": "simples22",
           "options": [
-            "Aulne glutineux",
-            "Merisier",
-            "Eucalyptus (feuille)",
-            "Bambou (feuille)"
+            "Paulownia (feuille)",
+            "Bambou (feuille)",
+            "Noisetier",
+            "Merisier"
           ]
         },
         {
@@ -741,12 +724,12 @@
           "description": "Feuille en faucille, forte odeur de cinéole.",
           "explication": "Eucalyptus : Midi.",
           "groupe": "simples",
-          "id": "simples24",
+          "id": "simples23",
           "options": [
-            "Troène",
             "Eucalyptus (feuille)",
-            "Micocoulier",
-            "Houx"
+            "Orme champêtre",
+            "Aulne glutineux",
+            "Merisier"
           ]
         }
       ]

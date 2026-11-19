@@ -525,10 +525,10 @@
           "nom_scientifique": "Testudines",
           "groupe": "vertebres",
           "options": [
-            "Amphibien fossile",
-            "Coprolithe",
+            "Mégalodon (dent)",
+            "Tortue fossile",
             "Œuf de dinosaure",
-            "Tortue fossile"
+            "Amphibien fossile"
           ],
           "indice": "Carapace fossilisée",
           "description": "Carapace ou squelette de tortue pétrifié.",
@@ -571,34 +571,17 @@
         },
         {
           "difficulte": "difficile",
-          "nom_commun": "Coprolithe",
-          "nom_scientifique": "Coprolite",
-          "indice": "Fiente fossilisée",
-          "description": "Excrément fossilisé, forme variable, parfois osseuse à l’intérieur.",
-          "explication": "Coprolithe : Trace fossile d’alimentation.",
-          "imageQuery": "coprolite fossil",
-          "groupe": "vertebres",
-          "id": "vertebres15",
-          "options": [
-            "Coprolithe",
-            "Poisson fossile",
-            "Plésiosaure",
-            "Défense d’ivoire"
-          ]
-        },
-        {
-          "difficulte": "difficile",
           "nom_commun": "Œuf de dinosaure",
           "nom_scientifique": "Dinosauria (ootaxa)",
           "indice": "Coquille d’œuf fossilisée",
           "description": "Fragment ou œuf complet à coquille sculptée.",
           "explication": "Œuf de dinosaure : Sites de ponte fossilisés.",
           "groupe": "vertebres",
-          "id": "vertebres16",
+          "id": "vertebres15",
           "options": [
-            "Coprolithe",
+            "Poisson fossile",
+            "Plésiosaure",
             "Défense d’ivoire",
-            "Ptérosaure",
             "Œuf de dinosaure"
           ]
         },
@@ -610,12 +593,12 @@
           "description": "Fragment de bois immense du cerf géant quaternaire.",
           "explication": "Mégalocéros : Pléistocène européen.",
           "groupe": "vertebres",
-          "id": "vertebres17",
+          "id": "vertebres16",
           "options": [
-            "Mégalocéros (bois)",
+            "Œuf de dinosaure",
             "Défense d’ivoire",
-            "Os de dinosaure",
-            "Dent de mammouth"
+            "Ptérosaure",
+            "Mégalocéros (bois)"
           ]
         }
       ]

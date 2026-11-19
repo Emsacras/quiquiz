@@ -197,7 +197,7 @@
     },
     {
       "id": "d3",
-      "difficulte": "difficile",
+      "difficulte": "moyen",
       "nom_commun": "Corneille noire",
       "nom_scientifique": "Corvus corone",
       "options": [
@@ -229,7 +229,7 @@
     },
     {
       "id": "d5",
-      "difficulte": "difficile",
+      "difficulte": "moyen",
       "nom_commun": "Choucas des tours",
       "nom_scientifique": "Corvus monedula",
       "options": [
@@ -242,54 +242,6 @@
       "explication": "Le choucas est plus petit, avec la nuque et les côtés de la tête gris clair, un œil pâle et un bec court. Le reste du corps est noir.",
       "groupe": "jardin",
       "description": "Plus petit, nuque et côtés de la tête gris clair, œil pâle, bec court. Le reste du corps est noir."
-    },
-    {
-      "id": "d6",
-      "difficulte": "difficile",
-      "nom_commun": "Buse variable",
-      "nom_scientifique": "Buteo buteo",
-      "options": [
-        "Buse variable",
-        "Milan noir",
-        "Faucon crécerelle",
-        "Épervier d'Europe"
-      ],
-      "indice": "Silhouette large, queue courte et arrondie",
-      "explication": "La buse variable a des ailes larges et une queue courte, souvent barrée. Le plumage brun est très variable, du très clair au très sombre.",
-      "groupe": "jardin",
-      "description": "Ailes larges, queue courte souvent barrée. Plumage brun, du très clair au très sombre."
-    },
-    {
-      "id": "d7",
-      "difficulte": "difficile",
-      "nom_commun": "Milan noir",
-      "nom_scientifique": "Milvus migrans",
-      "options": [
-        "Milan noir",
-        "Buse variable",
-        "Milan royal",
-        "Faucon crécerelle"
-      ],
-      "indice": "Queue légèrement échancrée, ailes longues",
-      "explication": "Le milan noir est brun sombre, avec de longues ailes coudées. Sa queue est peu échancrée, moins fourchue que celle du milan royal.",
-      "groupe": "jardin",
-      "description": "Brun sombre, longues ailes coudées. Queue peu échancrée, moins fourchue que chez son proche parent roux."
-    },
-    {
-      "id": "d8",
-      "difficulte": "difficile",
-      "nom_commun": "Faucon crécerelle",
-      "nom_scientifique": "Falco tinnunculus",
-      "options": [
-        "Faucon crécerelle",
-        "Épervier d'Europe",
-        "Buse variable",
-        "Milan noir"
-      ],
-      "indice": "Dos roux tacheté et ailes pointues",
-      "explication": "Le faucon crécerelle a le dos roux tacheté de noir et des ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout de la queue.",
-      "groupe": "jardin",
-      "description": "Dos roux tacheté de noir, ailes pointues. Le mâle a la tête et la queue grises, avec une large bande noire au bout."
     },
     {
       "id": "jardin-x01",

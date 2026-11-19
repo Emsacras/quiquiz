@@ -502,9 +502,9 @@
           "groupe": "oxydes",
           "options": [
             "Hématite",
+            "Cassitérite",
             "Limonite",
-            "Pyrite",
-            "Cassitérite"
+            "Chromite"
           ],
           "indice": "Trait rouge sang",
           "description": "Oxyde de fer, trait rouge caractéristique, éclat métallique ou terreux.",
@@ -529,94 +529,78 @@
         {
           "id": "oxydes3",
           "difficulte": "moyen",
-          "nom_commun": "Pyrite",
-          "nom_scientifique": "Pyrite",
-          "groupe": "oxydes",
-          "options": [
-            "Pyrite",
-            "Corindon",
-            "Rutile",
-            "Goethite"
-          ],
-          "indice": "Or des fous, cubes",
-          "description": "Sulfure (souvent classé avec les métalliques) en cubes laitonés.",
-          "explication": "Pyrite : « Or des fous » ; éclat métallique jaune laiton."
-        },
-        {
-          "id": "oxydes4",
-          "difficulte": "moyen",
           "nom_commun": "Goethite",
           "nom_scientifique": "Goethite",
           "groupe": "oxydes",
           "options": [
-            "Hématite",
+            "Rutile",
             "Goethite",
-            "Limonite",
-            "Ilménite"
+            "Corindon",
+            "Magnétite"
           ],
           "indice": "Rouille fibreuse brune",
           "description": "Hydroxyde de fer brun à ocre, formes fibreuses ou massives.",
           "explication": "Goethite : Constituant majeur des limonites et rouilles."
         },
         {
-          "id": "oxydes5",
+          "id": "oxydes4",
           "difficulte": "difficile",
           "nom_commun": "Rutile",
           "nom_scientifique": "Rutile",
           "groupe": "oxydes",
           "options": [
             "Rutile",
+            "Hématite",
             "Limonite",
-            "Chromite",
-            "Corindon"
+            "Ilménite"
           ],
           "indice": "Aiguilles rouge-brun dans quartz",
           "description": "Oxyde de titane en aiguilles rougeâtres, souvent inclus dans le quartz.",
           "explication": "Rutile : Source de titane ; inclusions « cheveux de Vénus »."
         },
         {
-          "id": "oxydes6",
+          "id": "oxydes5",
           "difficulte": "difficile",
           "nom_commun": "Cassitérite",
           "nom_scientifique": "Cassiterite",
           "groupe": "oxydes",
           "options": [
             "Cassitérite",
-            "Magnétite",
-            "Corindon",
-            "Hématite"
+            "Limonite",
+            "Chromite",
+            "Corindon"
           ],
           "indice": "Minerai d’étain dense",
           "description": "Oxyde d’étain brun-noir, très dense, éclat adamantin.",
           "explication": "Cassitérite : Principal minerai d’étain historique."
         },
         {
-          "id": "oxydes7",
+          "id": "oxydes6",
           "difficulte": "moyen",
           "nom_commun": "Corindon",
           "nom_scientifique": "Corundum",
           "groupe": "oxydes",
           "options": [
-            "Cassitérite",
-            "Corindon",
-            "Chromite",
-            "Rutile"
+            "Magnétite",
+            "Hématite",
+            "Rutile",
+            "Corindon"
           ],
           "indice": "Dureté 9, rubis/saphir",
           "description": "Oxyde d’aluminium très dur ; rubis rouge, saphir bleu.",
           "explication": "Corindon : Dureté 9 ; abrasif et gemmes précieuses."
         },
         {
-          "id": "oxydes8",
+          "id": "oxydes7",
           "difficulte": "facile",
           "nom_commun": "Limonite",
           "nom_scientifique": "Limonite",
           "groupe": "oxydes",
           "options": [
+            "Cassitérite",
             "Limonite",
-            "Magnétite",
-            "Rutile",
-            "Ilménite"
+            "Chromite",
+            "Rutile"
           ],
           "indice": "Ocre jaune-brun terreux",
           "description": "Mélange d’hydroxydes de fer ocre, aspect terreux.",
@@ -631,12 +615,12 @@
           "explication": "Spinelle : Longtemps confondu avec le rubis.",
           "imageQuery": "spinel crystal",
           "groupe": "oxydes",
-          "id": "oxydes9",
+          "id": "oxydes8",
           "options": [
+            "Magnétite",
+            "Rutile",
             "Ilménite",
-            "Limonite",
-            "Spinelle",
-            "Corindon"
+            "Spinelle"
           ]
         },
         {
@@ -648,12 +632,12 @@
           "explication": "Chromite : Principal minerai de chrome.",
           "imageQuery": "chromite mineral",
           "groupe": "oxydes",
-          "id": "oxydes10",
+          "id": "oxydes9",
           "options": [
-            "Ilménite",
-            "Corindon",
+            "Limonite",
             "Chromite",
-            "Limonite"
+            "Spinelle",
+            "Corindon"
           ]
         },
         {
@@ -665,12 +649,12 @@
           "explication": "Ilménite : Sables noirs et roches basiques.",
           "imageQuery": "ilmenite mineral",
           "groupe": "oxydes",
-          "id": "oxydes11",
+          "id": "oxydes10",
           "options": [
+            "Ilménite",
+            "Corindon",
             "Rutile",
-            "Chromite",
-            "Spinelle",
-            "Ilménite"
+            "Limonite"
           ]
         }
       ]
@@ -930,7 +914,7 @@
     },
     {
       "id": "metaux",
-      "label": "Métaux et autres",
+      "label": "Métaux, sulfures et autres",
       "questions": [
         {
           "id": "metaux1",
@@ -971,10 +955,10 @@
           "nom_scientifique": "Galena",
           "groupe": "metaux",
           "options": [
-            "Or natif",
             "Galène",
-            "Graphite",
-            "Stibine"
+            "Stibine",
+            "Pyrite",
+            "Graphite"
           ],
           "indice": "Gris plomb, cubes",
           "description": "Sulfure de plomb gris métallique, clivages cubiques parfaits.",
@@ -1103,10 +1087,10 @@
           "groupe": "metaux",
           "id": "metaux11",
           "options": [
-            "Molybénite",
             "Argent natif",
-            "Graphite",
-            "Galène"
+            "Pyrite",
+            "Galène",
+            "Molybénite"
           ]
         },
         {
@@ -1139,8 +1123,8 @@
           "options": [
             "Cuivre natif",
             "Barite",
-            "Fluorine",
-            "Chalcopyrite"
+            "Chalcopyrite",
+            "Pyrite"
           ]
         },
         {
@@ -1193,6 +1177,22 @@
             "Sphalérite",
             "Fluorine"
           ]
+        },
+        {
+          "id": "metaux17",
+          "difficulte": "moyen",
+          "nom_commun": "Pyrite",
+          "nom_scientifique": "Pyrite",
+          "groupe": "metaux",
+          "options": [
+            "Sphalérite",
+            "Pyrite",
+            "Molybénite",
+            "Halite"
+          ],
+          "indice": "Or des fous, cubes",
+          "description": "Sulfure (souvent classé avec les métalliques) en cubes laitonés.",
+          "explication": "Pyrite : « Or des fous » ; éclat métallique jaune laiton."
         }
       ]
     }

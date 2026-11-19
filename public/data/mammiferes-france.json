@@ -31,9 +31,9 @@
           "groupe": "carnivores",
           "options": [
             "Blaireau européen",
-            "Vison d'Amérique",
             "Lynx boréal",
-            "Chat domestique haretté"
+            "Chat domestique haretté",
+            "Genette commune"
           ],
           "indice": "Masque noir et blanc",
           "description": "Mustélidé trapu, tête blanche à bandes noires, vie en clans.",
@@ -62,10 +62,10 @@
           "nom_scientifique": "Martes martes",
           "groupe": "carnivores",
           "options": [
-            "Vison d'Amérique",
+            "Genette commune",
             "Martre des pins",
-            "Chien viverrin",
-            "Raton laveur"
+            "Raton laveur",
+            "Chien viverrin"
           ],
           "indice": "Bavette jaune, forestière",
           "description": "Mustélidé arboricole, gorge jaune crème, queue longue et touffue.",
@@ -78,10 +78,10 @@
           "nom_scientifique": "Martes foina",
           "groupe": "carnivores",
           "options": [
-            "Vison d'Amérique",
+            "Loutre d'Europe",
             "Fouine",
-            "Belette",
-            "Loutre d'Europe"
+            "Genette commune",
+            "Belette"
           ],
           "indice": "Bavette blanche, près des maisons",
           "description": "Proche de la martre mais bavette blanche bifide, plus anthropophile.",
@@ -112,8 +112,8 @@
           "options": [
             "Martre des pins",
             "Lynx boréal",
-            "Chat domestique haretté",
-            "Hermine"
+            "Hermine",
+            "Genette commune"
           ],
           "indice": "Pinceaux d’oreilles, courte queue",
           "description": "Grand félin tacheté, oreilles à pinceaux, queue courte tipée de noir.",
@@ -212,7 +212,7 @@
             "Renard roux",
             "Putois",
             "Chat forestier",
-            "Belette"
+            "Genette commune"
           ]
         },
         {
@@ -278,6 +278,22 @@
             "Hermine",
             "Blaireau européen"
           ]
+        },
+        {
+          "id": "carnivores18",
+          "difficulte": "difficile",
+          "nom_commun": "Genette commune",
+          "nom_scientifique": "Genetta genetta",
+          "groupe": "carnivores",
+          "options": [
+            "Genette commune",
+            "Blaireau européen",
+            "Raton laveur",
+            "Hermine"
+          ],
+          "indice": "Queue annelée, tachetée",
+          "description": "Viverridé tacheté à longue queue annelée, surtout dans le sud-ouest.",
+          "explication": "Genette commune : Nocturne et arboricole ; silhouette de « petit félin tacheté »."
         }
       ]
     },
@@ -603,7 +619,7 @@
           "groupe": "rongeurs",
           "options": [
             "Loir gris",
-            "Hérisson oriental",
+            "Ragondin",
             "Écureuil gris",
             "Crossope aquatique"
           ],
@@ -701,8 +717,8 @@
           "groupe": "rongeurs",
           "id": "rongeurs15",
           "options": [
+            "Ragondin",
             "Muscardin",
-            "Mulot à collier",
             "Crossope aquatique",
             "Écureuil gris"
           ]
@@ -830,8 +846,8 @@
           "id": "rongeurs23",
           "options": [
             "Souris grise",
+            "Ragondin",
             "Crocidure musette",
-            "Hérisson d'Europe",
             "Musaraigne couronnée"
           ]
         },
@@ -914,6 +930,22 @@
             "Desman des Pyrénées",
             "Crocidure leucode"
           ]
+        },
+        {
+          "id": "rongeurs29",
+          "difficulte": "moyen",
+          "nom_commun": "Ragondin",
+          "nom_scientifique": "Myocastor coypus",
+          "groupe": "rongeurs",
+          "options": [
+            "Crocidure leucode",
+            "Ragondin",
+            "Campagnol roussâtre",
+            "Lièvre d'Europe"
+          ],
+          "indice": "Gros rongeur aquatique introduit",
+          "description": "Gros rongeur semi-aquatique, moustaches blanches, queue ronde.",
+          "explication": "Ragondin : Introduit d’Amérique ; souvent confondu avec le castor (queue différente)."
         }
       ]
     },
@@ -1003,7 +1035,7 @@
         },
         {
           "id": "chiropteres6",
-          "difficulte": "moyen",
+          "difficulte": "facile",
           "nom_commun": "Sérotine commune",
           "nom_scientifique": "Eptesicus serotinus",
           "groupe": "chiropteres",
@@ -1018,7 +1050,7 @@
           "explication": "Sérotine commune : Chasse hannetons et papillons de nuit près des villages."
         },
         {
-          "difficulte": "moyen",
+          "difficulte": "facile",
           "nom_commun": "Pipistrelle de Kuhl",
           "nom_scientifique": "Pipistrellus kuhlii",
           "indice": "Petite chauve-souris claire",
@@ -1082,7 +1114,7 @@
           ]
         },
         {
-          "difficulte": "difficile",
+          "difficulte": "moyen",
           "nom_commun": "Noctule commune",
           "nom_scientifique": "Nyctalus noctula",
           "indice": "Grande chauve-souris rapide",
@@ -1245,7 +1277,7 @@
     },
     {
       "id": "marins",
-      "label": "Marins et autres",
+      "label": "Marins",
       "questions": [
         {
           "id": "marins1",
@@ -1328,38 +1360,6 @@
           "explication": "Dauphin commun : Bancs rapides au large des façades maritimes."
         },
         {
-          "id": "marins6",
-          "difficulte": "moyen",
-          "nom_commun": "Ragondin",
-          "nom_scientifique": "Myocastor coypus",
-          "groupe": "marins",
-          "options": [
-            "Ragondin",
-            "Orque",
-            "Dauphin commun",
-            "Lagénorhynque à bec blanc"
-          ],
-          "indice": "Gros rongeur aquatique introduit",
-          "description": "Gros rongeur semi-aquatique, moustaches blanches, queue ronde.",
-          "explication": "Ragondin : Introduit d’Amérique ; souvent confondu avec le castor (queue différente)."
-        },
-        {
-          "id": "marins7",
-          "difficulte": "difficile",
-          "nom_commun": "Genette commune",
-          "nom_scientifique": "Genetta genetta",
-          "groupe": "marins",
-          "options": [
-            "Phoque gris",
-            "Dauphin bleu et blanc",
-            "Globicephale noir",
-            "Genette commune"
-          ],
-          "indice": "Queue annelée, tachetée",
-          "description": "Viverridé tacheté à longue queue annelée, surtout dans le sud-ouest.",
-          "explication": "Genette commune : Nocturne et arboricole ; silhouette de « petit félin tacheté »."
-        },
-        {
           "difficulte": "moyen",
           "nom_commun": "Globicephale noir",
           "nom_scientifique": "Globicephala melas",
@@ -1367,12 +1367,12 @@
           "description": "Cétacé noir à front bombé (« melon »), nageoire dorsale recourbée.",
           "explication": "Globicephale noir : Observé au large des côtes atlantiques.",
           "groupe": "marins",
-          "id": "marins8",
+          "id": "marins6",
           "options": [
-            "Grand dauphin",
-            "Lagénorhynque à bec blanc",
-            "Genette commune",
-            "Globicephale noir"
+            "Orque",
+            "Dauphin commun",
+            "Globicephale noir",
+            "Lagénorhynque à bec blanc"
           ]
         },
         {
@@ -1383,12 +1383,12 @@
           "description": "Grand cétacé à tête massive carrée, évent unique décalé.",
           "explication": "Cachalot : Présent au large ; le plus grand des odontocètes.",
           "groupe": "marins",
-          "id": "marins9",
+          "id": "marins7",
           "options": [
             "Cachalot",
-            "Ragondin",
             "Phoque gris",
-            "Marsouin commun"
+            "Dauphin bleu et blanc",
+            "Globicephale noir"
           ]
         },
         {
@@ -1399,12 +1399,12 @@
           "description": "Petit delphinidé à rayures claires sur le flanc.",
           "explication": "Dauphin bleu et blanc : Large distribution au large.",
           "groupe": "marins",
-          "id": "marins10",
+          "id": "marins8",
           "options": [
+            "Grand dauphin",
             "Lagénorhynque à bec blanc",
-            "Cachalot",
-            "Dauphin commun",
-            "Dauphin bleu et blanc"
+            "Dauphin bleu et blanc",
+            "Phoque veau-marin"
           ]
         },
         {
@@ -1415,12 +1415,12 @@
           "description": "Deuxième plus grand animal ; sillon ventral, nageoire dorsale.",
           "explication": "Rorqual commun : Observé au large des côtes.",
           "groupe": "marins",
-          "id": "marins11",
+          "id": "marins9",
           "options": [
-            "Dauphin bleu et blanc",
-            "Orque",
             "Rorqual commun",
-            "Phoque moine"
+            "Phoque gris",
+            "Marsouin commun",
+            "Dauphin bleu et blanc"
           ]
         },
         {
@@ -1431,12 +1431,12 @@
           "description": "Noir et blanc contrasté, grande nageoire dorsale.",
           "explication": "Orque : Observations occasionnelles au large.",
           "groupe": "marins",
-          "id": "marins12",
+          "id": "marins10",
           "options": [
             "Orque",
-            "Phoque gris",
-            "Phoque moine",
-            "Rorqual commun"
+            "Lagénorhynque à bec blanc",
+            "Cachalot",
+            "Dauphin commun"
           ]
         },
         {
@@ -1447,12 +1447,12 @@
           "description": "Phoque brun, face claire ; extrêmement rare en Méditerranée.",
           "explication": "Phoque moine : Espèce menacée.",
           "groupe": "marins",
-          "id": "marins13",
+          "id": "marins11",
           "options": [
-            "Marsouin commun",
-            "Dauphin bleu et blanc",
+            "Phoque moine",
             "Lagénorhynque à bec blanc",
-            "Phoque moine"
+            "Dauphin bleu et blanc",
+            "Orque"
           ]
         },
         {
@@ -1463,12 +1463,12 @@
           "description": "Delphinidé à bec clair, eaux fraîches au large.",
           "explication": "Lagénorhynque : Manche / Atlantique nord.",
           "groupe": "marins",
-          "id": "marins14",
+          "id": "marins12",
           "options": [
-            "Ragondin",
-            "Rorqual commun",
             "Lagénorhynque à bec blanc",
-            "Phoque moine"
+            "Phoque gris",
+            "Phoque moine",
+            "Rorqual commun"
           ]
         }
       ]

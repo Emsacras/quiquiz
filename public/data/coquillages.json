@@ -150,9 +150,9 @@
           "nom_scientifique": "Conus",
           "groupe": "gasteropodes",
           "options": [
-            "Escargot de Bourgogne",
-            "Nasse réticulée",
+            "Escargot de mer",
             "Gibbule",
+            "Nasse réticulée",
             "Cône"
           ],
           "indice": "Cône pointu coloré",
@@ -167,9 +167,9 @@
           "nom_scientifique": "Cypraea",
           "groupe": "gasteropodes",
           "options": [
-            "Cauris monétaire",
+            "Simnie",
             "Calliostome",
-            "Escargot de Bourgogne",
+            "Cauris monétaire",
             "Porcelaine"
           ],
           "indice": "Œuf brillant sans spire visible",
@@ -297,22 +297,6 @@
           ]
         },
         {
-          "difficulte": "facile",
-          "nom_commun": "Escargot de Bourgogne",
-          "nom_scientifique": "Helix pomatia",
-          "indice": "Gros escargot terrestre",
-          "description": "Grande coquille hélice claire, terrestre comestible.",
-          "explication": "Escargot de Bourgogne : Terrestre ; souvent sur la grève de collections.",
-          "groupe": "gasteropodes",
-          "id": "gasteropodes18",
-          "options": [
-            "Buccin",
-            "Calliostome",
-            "Escargot de Bourgogne",
-            "Ormeau"
-          ]
-        },
-        {
           "difficulte": "moyen",
           "nom_commun": "Gibbule",
           "nom_scientifique": "Gibbula umbilicalis",
@@ -320,11 +304,11 @@
           "description": "Petite coquille conique ombiliquée des estrans.",
           "explication": "Gibbule : Rochers du médiolittoral.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes19",
+          "id": "gasteropodes18",
           "options": [
-            "Escargot de Bourgogne",
-            "Escargot de mer",
-            "Crépidule",
+            "Buccin",
+            "Calliostome",
+            "Ormeau",
             "Gibbule"
           ]
         },
@@ -336,12 +320,12 @@
           "description": "Coquille conique à bandes colorées.",
           "explication": "Calliostome : Estran rocheux.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes20",
+          "id": "gasteropodes19",
           "options": [
-            "Cymbium",
-            "Murex",
             "Calliostome",
-            "Fusus"
+            "Janthine",
+            "Crépidule",
+            "Escargot de mer"
           ]
         },
         {
@@ -352,12 +336,12 @@
           "description": "Petite nasse des sables et vases littorales.",
           "explication": "Tritia neritea : Charognarde des estrans.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes21",
+          "id": "gasteropodes20",
           "options": [
+            "Cymbium",
+            "Murex",
             "Nasse réticulée atlantique",
-            "Ranelle",
-            "Escargot de Bourgogne",
-            "Gibbule"
+            "Fusus"
           ]
         },
         {
@@ -368,12 +352,12 @@
           "description": "Grande coquille ventrue lisse du plateau continental.",
           "explication": "Cymbium : Méditerranée.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes22",
+          "id": "gasteropodes21",
           "options": [
-            "Porcelaine",
-            "Turritelle",
+            "Ranelle",
             "Cymbium",
-            "Cône"
+            "Simnie",
+            "Gibbule"
           ]
         },
         {
@@ -384,12 +368,12 @@
           "description": "Très grande coquille spiralée, Méditerranée / Atlantique sud.",
           "explication": "Ranelle : Grand prédateur de fond.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes23",
+          "id": "gasteropodes22",
           "options": [
-            "Janthine",
-            "Buccin",
-            "Tonne",
-            "Ranelle"
+            "Porcelaine",
+            "Turritelle",
+            "Ranelle",
+            "Cône"
           ]
         },
         {
@@ -400,12 +384,12 @@
           "description": "Petite coquille lisse allongée, sur gorgones.",
           "explication": "Simnie : Associée aux gorgones.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes24",
+          "id": "gasteropodes23",
           "options": [
-            "Simnie",
+            "Janthine",
+            "Buccin",
             "Tonne",
-            "Calliostome",
-            "Murex"
+            "Simnie"
           ]
         },
         {
@@ -416,12 +400,12 @@
           "description": "Petite coquille globuleuse des algues de l’estran.",
           "explication": "Littorina obtusata : Zone des fucales.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes25",
+          "id": "gasteropodes24",
           "options": [
-            "Patelle",
-            "Littorine obtuse",
-            "Escargot de Bourgogne",
-            "Ormeau"
+            "Tonne",
+            "Calliostome",
+            "Murex",
+            "Littorine obtuse"
           ]
         },
         {
@@ -432,12 +416,12 @@
           "description": "Coquille à expansions digitatives de l’ouverture.",
           "explication": "Aporrhais : Sables vaseux subtidaux.",
           "groupe": "gasteropodes",
-          "id": "gasteropodes26",
+          "id": "gasteropodes25",
           "options": [
-            "Escargot de Bourgogne",
-            "Janthine",
-            "Triton",
-            "Fusus"
+            "Patelle",
+            "Littorine obtuse",
+            "Fusus",
+            "Ormeau"
           ]
         }
       ]
