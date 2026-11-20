@@ -45,12 +45,16 @@ async function postReport(body) {
   try {
     const res = await fetch("/api/reports", {
       method: "POST",
+      credentials: "same-origin",
       headers: { Accept: "application/json", "Content-Type": "application/json" },
       body: JSON.stringify(body || {}),
     });
-    return res.ok || res.status === 429;
+    if (res.status === 401) return { ok: false, error: "auth" };
+    if (res.status === 429) return { ok: false, error: "rate" };
+    if (!res.ok) return { ok: false, error: "report" };
+    return { ok: true };
   } catch {
-    return false;
+    return { ok: false, error: "report" };
   }
 }
 
@@ -58,25 +62,41 @@ async function postReport(body) {
  * Auto-validation : bonne réponse + image non signalée (localement).
  * Les autres joueurs peuvent encore signaler ensuite.
  */
-export function confirmGoodImage({ name, title, url } = {}) {
+export function confirmGoodImage({ name, title, url, answer } = {}) {
   const cleanName = String(name || "").trim();
   const cleanTitle = String(title || "").trim();
+  const cleanAnswer = String(answer || "").trim();
   const source = String(url || "").trim();
-  if (!cleanName || !cleanTitle || !source) return;
+  if (!cleanName || !cleanTitle || !cleanAnswer || !source) return;
   if (source.includes("placeholder")) return;
   // Images déjà validées / hébergées localement : pas de re-confirm.
   if (isLocalMediaUrl(source)) return;
   if (wasReportedLocally(cleanTitle)) return;
-  const meta = metaForUrl(source);
-  void fetch("/api/confirm-image", {
-    method: "POST",
-    headers: { Accept: "application/json", "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: cleanName,
-      title: cleanTitle,
-      url: meta.sourceUrl || source,
-    }),
-  }).catch(() => {});
+  void (async () => {
+    const grantRes = await fetch("/api/image-grant", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: cleanName,
+        title: cleanTitle,
+        answer: cleanAnswer,
+      }),
+    });
+    if (!grantRes.ok) return;
+    const grant = await grantRes.json().catch(() => null);
+    if (!grant?.token) return;
+    await fetch("/api/confirm-image", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: cleanName,
+        title: cleanTitle,
+        token: grant.token,
+      }),
+    });
+  })().catch(() => {});
 }
 
 export function attachReportControl(host, options = {}) {
@@ -108,14 +128,25 @@ export function attachReportControl(host, options = {}) {
     event.stopPropagation();
     if (!window.confirm("Signaler cette image comme incorrecte ou inappropriée ?")) return;
     btn.disabled = true;
-    // Validée : pas de rejet local (sinon hydrateReportedTitles la retirerait du pool).
-    if (!validated) rememberReportedLocally(title);
-    void postReport({
+    const posted = await postReport({
       name,
       title,
       url: meta.sourceUrl || url,
       categoryId: options.categoryId || "",
     });
+    if (!posted.ok) {
+      btn.disabled = false;
+      window.alert(
+        posted.error === "auth"
+          ? "Connecte-toi pour signaler une image."
+          : posted.error === "rate"
+            ? "Patiente un instant avant de signaler à nouveau."
+            : "Le signalement n’a pas pu être envoyé.",
+      );
+      return;
+    }
+    // Validée : pas de rejet local (sinon hydrateReportedTitles la retirerait du pool).
+    if (!validated) rememberReportedLocally(title);
     bar.remove();
     // Validée : on garde la photo à l’écran (l’admin tranchera). Sinon → image suivante.
     options.onReported?.({ title, name, url, host, validated, skip: !validated });

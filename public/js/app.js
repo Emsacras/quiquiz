@@ -176,7 +176,7 @@ function attachPlayerMediaTools(frame, img, scientificName, onSkip) {
 }
 
 /** Bonne réponse + pas de signalement local → propose l’image au pool validé. */
-function confirmImageIfGood(img, scientificName) {
+function confirmImageIfGood(img, scientificName, commonName) {
   if (!img || !scientificName) return;
   const url = img.currentSrc || img.src || "";
   if (!url || url.includes("placeholder")) return;
@@ -187,6 +187,7 @@ function confirmImageIfGood(img, scientificName) {
     name: scientificName,
     title,
     url: meta.sourceUrl || url,
+    answer: commonName || "",
   });
 }
 
@@ -2138,7 +2139,7 @@ function validateSort() {
     const photo = card.querySelector("[data-photo]");
     if (photo) photo.alt = question.nom_commun;
     if (correct && photo) {
-      confirmImageIfGood(photo, imageSearchName(question));
+      confirmImageIfGood(photo, imageSearchName(question), question.nom_commun);
     }
     card.append(
       h("p", { class: "caption", text: `Bon ${quizCopy().groupWord} : ${groupLabel(question.groupe)}` }),
@@ -2226,7 +2227,7 @@ function paintReveal(selected, correct) {
     photo.alt = question.nom_commun;
   }
   if (correct && photo) {
-    confirmImageIfGood(photo, imageSearchName(question));
+    confirmImageIfGood(photo, imageSearchName(question), question.nom_commun);
   }
 
   if (!correct && selected && selected !== question.nom_commun) {
@@ -4341,15 +4342,12 @@ function paintPairReveal(answer, correct) {
   const rightPhoto = frames[1]?.querySelector("[data-photo]");
   if (leftPhoto) leftPhoto.alt = question.left.nom_commun;
   if (rightPhoto) rightPhoto.alt = question.right.nom_commun;
+  const rightBird = question.same ? question.left : question.right;
   if (correct) {
-    confirmImageIfGood(leftPhoto, imageSearchName(question.left));
-    confirmImageIfGood(
-      rightPhoto,
-      imageSearchName(question.same ? question.left : question.right),
-    );
+    confirmImageIfGood(leftPhoto, imageSearchName(question.left), question.left.nom_commun);
+    confirmImageIfGood(rightPhoto, imageSearchName(rightBird), rightBird.nom_commun);
   }
   attachImageSearch(frames[0], question.left.nom_commun, question.left.nom_scientifique);
-  const rightBird = question.same ? question.left : question.right;
   attachImageSearch(frames[1], rightBird.nom_commun, rightBird.nom_scientifique);
 
   const score = document.querySelector("[data-score]");

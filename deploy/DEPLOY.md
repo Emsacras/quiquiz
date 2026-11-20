@@ -33,6 +33,8 @@ sudo systemctl enable --now quiquiz
 sudo systemctl status quiquiz
 ```
 
+Le service force `NODE_ENV=production`. Node 20 est en fin de support depuis avril 2026 : `/usr/bin/node` sur le VPS doit être une version encore maintenue (22 LTS). Ce dépôt ne change pas la version majeure de Node.
+
 ## 4. Nginx + TLS
 
 ```bash
