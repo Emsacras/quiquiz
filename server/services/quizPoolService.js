@@ -6,6 +6,8 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { config } = require("../config");
+const { fetchAllowlisted, reencodeRaster } = require("./safeImageFetch");
+const { takeImageGrant } = require("./imageGrant");
 
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
 const WIKIDATA = "https://www.wikidata.org/w/api.php";
@@ -125,18 +127,6 @@ function isModerationTitle(title) {
 
 function serveCapForKind(kind) {
     return kind === "flag" ? FLAG_SERVE_CAP : SERVE_CAP;
-}
-
-function extForTitle(title, contentType, sourceUrl) {
-    const type = String(contentType || "").toLowerCase();
-    const src = String(sourceUrl || "");
-    if (type.includes("svg") || /\.svg(\?|$)/i.test(src) || /\.svg$/i.test(String(title || ""))) {
-        return "svg";
-    }
-    if (type.includes("png") || /\.png(\?|$)/i.test(src)) return "png";
-    if (type.includes("jpeg") || type.includes("jpg") || /\.jpe?g(\?|$)/i.test(src)) return "jpg";
-    if (/\.png$/i.test(String(title || ""))) return "png";
-    return "jpg";
 }
 
 function mediaPublicUrl(localRel) {
@@ -538,25 +528,55 @@ async function getPool(scientificName, options = {}) {
     ];
 }
 
-async function downloadLocalImage(name, title, sourceUrl) {
-    const response = await fetch(sourceUrl, {
-        headers: { "User-Agent": USER_AGENT, Accept: "image/*,*/*" },
-        redirect: "follow"
+async function lookupCommonsRasterUrl(title) {
+    const data = await commonsJson({
+        action: "query",
+        titles: title,
+        prop: "imageinfo",
+        iiprop: "url|mime|size",
+        iiurlwidth: "1600"
     });
-    if (!response.ok) throw new Error(`download ${response.status}`);
-    const contentType = String(response.headers.get("content-type") || "").toLowerCase();
-    if (contentType && !contentType.startsWith("image/")) {
-        throw new Error("not-image");
+    const page = Object.values(data?.query?.pages || {})[0];
+    if (!page || page.missing !== undefined || page.invalid !== undefined) return "";
+    const info = page.imageinfo?.[0];
+    if (!info) return "";
+    if (!/^image\/(jpeg|png)$/i.test(String(info.mime || ""))) return "";
+    const size = Number(info.size) || 0;
+    const original = String(info.url || "");
+    const thumb = String(info.thumburl || "");
+    const fileUrl =
+        isHttps(original) && (!size || size <= 8 * 1024 * 1024)
+            ? original
+            : isHttps(thumb)
+              ? thumb
+              : original;
+    if (!isHttps(fileUrl)) return "";
+    const returned = normalizeFileTitle(page.title || "").toLowerCase();
+    if (!returned || returned !== normalizeFileTitle(title).toLowerCase()) return "";
+    return fileUrl;
+}
+
+async function resolveAutoDownloadUrl(cleanTitle) {
+    const flag = String(cleanTitle).match(/^Flag:([a-z]{2})$/i);
+    if (flag) return `https://flagcdn.com/w1280/${flag[1].toLowerCase()}.png`;
+    try {
+        return await lookupCommonsRasterUrl(cleanTitle);
+    } catch (error) {
+        console.warn("[quiz-validate] commons", error && error.message ? error.message : "commons");
+        return "";
     }
-    const buffer = Buffer.from(await response.arrayBuffer());
-    if (!buffer.length || buffer.length > 12 * 1024 * 1024) throw new Error("size");
+}
+
+async function downloadLocalImage(name, title, sourceUrl) {
+    const fetched = await fetchAllowlisted(sourceUrl);
+    const encoded = await reencodeRaster(fetched.body);
     const dirName = safeSpeciesDir(name);
     const hash = crypto.createHash("sha1").update(title).digest("hex").slice(0, 16);
-    const filename = `${hash}.${extForTitle(title, contentType, sourceUrl)}`;
+    const filename = `${hash}.${encoded.ext}`;
     const absDir = path.join(imagesRoot(), dirName);
     fs.mkdirSync(absDir, { recursive: true });
     const abs = path.join(absDir, filename);
-    fs.writeFileSync(abs, buffer);
+    fs.writeFileSync(abs, encoded.buffer);
     return `${dirName}/${filename}`;
 }
 
@@ -620,11 +640,10 @@ function preferredDownloadUrl(title, url) {
 async function validatePhoto({ name, title, url, auto = false }) {
     const species = normalizeName(name);
     const cleanTitle = normalizeFileTitle(title);
-    let sourceUrl = preferredDownloadUrl(cleanTitle, url);
-    if (!sourceUrl && isHttps(String(url || "").trim())) sourceUrl = String(url).trim();
     if (!species || species.length > 120) return { ok: false, error: "name" };
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
-    if (!isHttps(sourceUrl)) return { ok: false, error: "url" };
+    const sourceUrl = auto ? await resolveAutoDownloadUrl(cleanTitle) : preferredDownloadUrl(cleanTitle, url);
+    if (!isHttps(sourceUrl)) return { ok: false, error: auto ? "commons" : "url" };
     if (auto && blacklistTitleSet().has(cleanTitle)) return { ok: false, error: "blacklisted" };
 
     if (!auto) removeFromBlacklist(cleanTitle);
@@ -635,19 +654,8 @@ async function validatePhoto({ name, title, url, auto = false }) {
     try {
         local = await downloadLocalImage(species, cleanTitle, sourceUrl);
     } catch (error) {
-        // Drapeau Flag:xx : si flagcdn échoue côté serveur, tenter le SVG Commons.
-        if (auto && /^Flag:[a-z]{2}$/i.test(cleanTitle) && isHttps(String(url || ""))) {
-            try {
-                local = await downloadLocalImage(species, cleanTitle, String(url).trim());
-                sourceUrl = String(url).trim();
-            } catch (retryError) {
-                console.warn("[quiz-validate]", error && error.message ? error.message : error);
-                return { ok: false, error: "download" };
-            }
-        } else {
-            console.warn("[quiz-validate]", error && error.message ? error.message : error);
-            return { ok: false, error: "download" };
-        }
+        console.warn("[quiz-validate]", error && error.message ? error.message : error);
+        return { ok: false, error: "download" };
     }
 
     // Un signalement peut arriver pendant le téléchargement.
@@ -700,19 +708,20 @@ function allowConfirm(ip, title) {
     return true;
 }
 
-/** Auto-validation : bonne réponse joueur + image non signalée. */
-async function confirmImage({ name, title, url, ip }) {
+/** Auto-validation : jeton d'une bonne réponse, fichier Wikimedia (ou drapeau flagcdn), image ré-encodée. */
+async function confirmImage({ name, title, token, ip }) {
     const species = normalizeName(name);
     const cleanTitle = normalizeFileTitle(title);
     if (!species || species.length > 120) return { ok: false, error: "name" };
     if (!isModerationTitle(cleanTitle) || cleanTitle.length > 300) return { ok: false, error: "title" };
     if (!allowConfirm(ip, cleanTitle)) return { ok: false, error: "rate" };
+    if (!takeImageGrant(token, { name: species, title: cleanTitle }).ok) return { ok: false, error: "token" };
     if (blacklistTitleSet().has(cleanTitle)) return { ok: false, error: "blacklisted" };
     if (isReportedTitle(cleanTitle)) return { ok: false, error: "reported" };
     if (validatedEntriesFor(species).some((entry) => normalizeFileTitle(entry.title) === cleanTitle)) {
         return { ok: true, duplicate: true };
     }
-    return validatePhoto({ name: species, title: cleanTitle, url, auto: true });
+    return validatePhoto({ name: species, title: cleanTitle, auto: true });
 }
 
 function blacklistPhoto({ name, title, url }) {
@@ -929,6 +938,9 @@ module.exports = {
     listCandidates,
     validatePhoto,
     confirmImage,
+    normalizeName,
+    normalizeFileTitle,
+    isModerationTitle,
     blacklistPhoto,
     restoreValidatedFromBlacklist,
     listValidated,

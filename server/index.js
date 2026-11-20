@@ -5,7 +5,11 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 const { config, isSteamAuthConfigured, isGoogleAuthConfigured, googleAuthStatus } = require("./config");
+const { createRateLimit } = require("./http/rateLimit");
+const { securityHeaders } = require("./http/securityHeaders");
+const { quietErrorHandler } = require("./http/errorHandler");
 const { passport, installPassport } = require("./auth/passport");
 const { createQuizRoutes, createQuizAdminRoutes } = require("./routes/quizRoutes");
 const { createProfileRoutes } = require("./routes/profileRoutes");
@@ -22,10 +26,24 @@ fs.mkdirSync(path.join(config.runtimeDataDir, "users"), { recursive: true });
 fs.mkdirSync(path.join(config.runtimeDataDir, "daily"), { recursive: true });
 
 const app = express();
+app.disable("x-powered-by");
+app.use(securityHeaders);
 if (config.trustProxy) app.set("trust proxy", 1);
+
+const sessionStore = new FileStore({
+    path: path.join(config.runtimeDataDir, "sessions"),
+    ttl: 30 * 24 * 60 * 60,
+    retries: 1,
+    reapInterval: 60 * 60,
+    logFn() {}
+});
+if (sessionStore.options?.reapIntervalObject?.unref) {
+    sessionStore.options.reapIntervalObject.unref();
+}
 
 const sessionMiddleware = session({
     name: "quiquiz.sid",
+    store: sessionStore,
     secret: config.sessionSecret,
     resave: false,
     saveUninitialized: false,
@@ -37,6 +55,7 @@ const sessionMiddleware = session({
     }
 });
 
+app.use("/auth", createRateLimit({ windowMs: 10 * 60 * 1000, max: 180, plain: true }));
 app.use(sessionMiddleware);
 
 try {
@@ -163,11 +182,21 @@ app.use("/api", createDailyRoutes());
 app.use("/api", createQuizRoutes());
 app.use("/api/admin/photos", createQuizAdminRoutes());
 
+const dataJsonLimit = createRateLimit({ windowMs: 60_000, max: 800 });
+app.use((req, res, next) => {
+    if (req.method === "GET" && /^\/data\/.+\.json$/i.test(req.path)) {
+        dataJsonLimit(req, res, next);
+        return;
+    }
+    next();
+});
 app.use(express.static(config.publicRoot, { extensions: ["html"] }));
 
 app.get("/admin", (req, res) => {
     res.sendFile(path.join(config.publicRoot, "admin", "index.html"));
 });
+
+app.use(quietErrorHandler);
 
 const server = app.listen(config.port, () => {
     console.log(`[quiquiz] http://localhost:${config.port}/`);

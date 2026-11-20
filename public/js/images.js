@@ -340,7 +340,10 @@ async function ensureBlockedTitles(force = false) {
   if (blockedTitlesPromise) return blockedTitlesPromise;
   blockedTitlesPromise = (async () => {
     try {
-      const response = await fetch("/api/blocked-titles", { cache: "no-store" });
+      const response = await fetch("/api/blocked-titles", {
+        cache: "no-store",
+        credentials: "same-origin",
+      });
       if (!response.ok) return;
       const data = await response.json();
       for (const title of data.titles || []) {

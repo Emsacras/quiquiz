@@ -37,7 +37,9 @@ function installGoogleStrategy() {
                 clientID: config.google.clientId,
                 clientSecret: config.google.clientSecret,
                 callbackURL: config.google.callbackUrl,
-                passReqToCallback: true
+                passReqToCallback: true,
+                state: true,
+                pkce: true
             },
             (req, accessToken, refreshToken, profile, done) => {
                 const googleId = profile && profile.id ? String(profile.id) : "";

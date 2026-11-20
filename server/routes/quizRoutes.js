@@ -7,6 +7,9 @@ const {
     listCandidates,
     validatePhoto,
     confirmImage,
+    normalizeName,
+    normalizeFileTitle,
+    isModerationTitle,
     blacklistPhoto,
     restoreValidatedFromBlacklist,
     listValidated,
@@ -17,19 +20,25 @@ const {
     listReports,
     dismissReport
 } = require("../services/quizPoolService");
+const { issueImageGrant } = require("../services/imageGrant");
 const { requireAdminSteam } = require("../middleware/requireAdminSteam");
+const { requireUser } = require("../middleware/requireUser");
+const { createRateLimit } = require("../http/rateLimit");
 
 function createQuizRoutes() {
     const router = express.Router();
     router.use(express.json({ limit: "8kb" }));
+    const poolLimit = createRateLimit({ windowMs: 60_000, max: 600 });
+    const grantLimit = createRateLimit({ windowMs: 10 * 60_000, max: 100 });
+    const confirmLimit = createRateLimit({ windowMs: 10 * 60_000, max: 100 });
 
-    router.post("/reports", (req, res) => {
+    router.post("/reports", requireUser, (req, res) => {
         const result = addReport({
             name: req.body?.name,
             title: req.body?.title,
             url: req.body?.url,
             categoryId: req.body?.categoryId,
-            ip: req.ip || req.headers["x-forwarded-for"] || ""
+            ip: req.ip || ""
         });
         if (!result.ok) {
             res.status(result.error === "rate" ? 429 : 400).json({ error: result.error || "report" });
@@ -38,14 +47,38 @@ function createQuizRoutes() {
         res.json({ ok: true, duplicate: Boolean(result.duplicate) });
     });
 
+    /** Jeton court après une bonne réponse enregistrée côté serveur. */
+    router.post("/image-grant", grantLimit, (req, res) => {
+        const name = normalizeName(req.body?.name);
+        const title = normalizeFileTitle(req.body?.title);
+        if (!name || name.length > 120) {
+            res.status(400).json({ error: "name" });
+            return;
+        }
+        if (!isModerationTitle(title) || title.length > 300) {
+            res.status(400).json({ error: "title" });
+            return;
+        }
+        const result = issueImageGrant({
+            name,
+            title,
+            answer: req.body?.answer
+        });
+        if (!result.ok) {
+            res.status(400).json({ error: result.error || "grant" });
+            return;
+        }
+        res.json({ ok: true, token: result.token });
+    });
+
     /** Auto-validation après une bonne réponse (image non signalée). */
-    router.post("/confirm-image", async (req, res) => {
+    router.post("/confirm-image", confirmLimit, async (req, res) => {
         try {
             const result = await confirmImage({
                 name: req.body?.name,
                 title: req.body?.title,
-                url: req.body?.url,
-                ip: req.ip || req.headers["x-forwarded-for"] || ""
+                token: req.body?.token,
+                ip: req.ip || ""
             });
             if (!result.ok) {
                 res.status(result.error === "rate" ? 429 : 400).json({ error: result.error || "confirm" });
@@ -58,7 +91,7 @@ function createQuizRoutes() {
         }
     });
 
-    router.get("/pool", async (req, res) => {
+    router.get("/pool", poolLimit, async (req, res) => {
         const name = String(req.query.name || "").trim().replace(/\s+/g, " ");
         if (!name || name.length > 120) {
             res.status(400).json({ error: "name" });
@@ -78,7 +111,7 @@ function createQuizRoutes() {
         }
     });
 
-    router.get("/blocked-titles", (req, res) => {
+    router.get("/blocked-titles", requireUser, (req, res) => {
         res.set("Cache-Control", "no-store");
         res.json({ titles: listBlacklist().map((entry) => entry.title) });
     });
